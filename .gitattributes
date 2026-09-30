@@ -1,0 +1,2 @@
+# Preserve the byte-exact screen/runtime baselines across operating systems.
+* -text
