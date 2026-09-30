@@ -1,0 +1,5 @@
+# NutriSole frontend architecture
+
+Product Design Vite/React mobile runtime is preserved. App-specific `Prototype.tsx` wraps shared React Native-compatible screens. A web primitive adapter imports React Native Web, and the Expo Metro resolver selects `.native.tsx` adapters importing React Native. Platform adapters own icons, asset paths, native versus simulated sheets/keyboard, and local persistence.
+
+Expo SDK 57 is confined to `native/` with a separate npm lockfile; both projects use npm. Expo Router owns native navigation, while platform adapters supply native forms and SVG imagery. Metro permits nested dependencies and pins React requests to the native instance. Native type checks use the root TS7 compiler; SDK TS6 remains installed for lint compatibility. No REST handlers, database, secrets, network data service, or background jobs. Local state has a versioned synthetic storage namespace and domain functions enforcing positive portions, draft conversion, and duplicate-save protection. Refined UI bounds and asset provenance accompany source. Runtime shell files are protected and checked before preview/build.

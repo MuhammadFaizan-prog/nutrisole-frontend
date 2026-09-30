@@ -1,0 +1,217 @@
+[
+  {
+    "id": "paper-onboarding-upper",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+    "sha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+    "boundsLTRB": [
+      60,
+      136,
+      804,
+      169
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "Clean source paper or control-surface texture without any text, data, icon or hardware pixels. App stretches the original strip inside real components; exact whole-surface lighting cannot be recovered from the occluded raster."
+  },
+  {
+    "id": "paper-onboarding-middle",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+    "sha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+    "boundsLTRB": [
+      60,
+      454,
+      804,
+      476
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "Clean source paper or control-surface texture without any text, data, icon or hardware pixels. App stretches the original strip inside real components; exact whole-surface lighting cannot be recovered from the occluded raster."
+  },
+  {
+    "id": "paper-onboarding-bottom",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+    "sha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+    "boundsLTRB": [
+      300,
+      1599,
+      617,
+      1677
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "Clean source paper or control-surface texture without any text, data, icon or hardware pixels. App stretches the original strip inside real components; exact whole-surface lighting cannot be recovered from the occluded raster."
+  },
+  {
+    "id": "paper-home",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      300,
+      278,
+      780,
+      306
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "Clean source paper or control-surface texture without any text, data, icon or hardware pixels. App stretches the original strip inside real components; exact whole-surface lighting cannot be recovered from the occluded raster."
+  },
+  {
+    "id": "paper-profile",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      90,
+      1440,
+      740,
+      1630
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "Clean source paper or control-surface texture without any text, data, icon or hardware pixels. App stretches the original strip inside real components; exact whole-surface lighting cannot be recovered from the occluded raster."
+  },
+  {
+    "id": "paper-weekly",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+    "sha256": "9beb42cb03f676d4ee5fdd3846bafbb750a68115c0bfc09933720de3ac09537c",
+    "boundsLTRB": [
+      80,
+      354,
+      780,
+      392
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "Clean source paper or control-surface texture without any text, data, icon or hardware pixels. App stretches the original strip inside real components; exact whole-surface lighting cannot be recovered from the occluded raster."
+  },
+  {
+    "id": "onboarding-card-paper",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+    "sha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+    "boundsLTRB": [
+      221,
+      1115,
+      764,
+      1138
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "Clean source paper or control-surface texture without any text, data, icon or hardware pixels. App stretches the original strip inside real components; exact whole-surface lighting cannot be recovered from the occluded raster."
+  },
+  {
+    "id": "scan-detection-surface",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+    "sha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+    "boundsLTRB": [
+      279,
+      434,
+      733,
+      447
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "Clean source paper or control-surface texture without any text, data, icon or hardware pixels. App stretches the original strip inside real components; exact whole-surface lighting cannot be recovered from the occluded raster."
+  },
+  {
+    "id": "scan-instruction-surface",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+    "sha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+    "boundsLTRB": [
+      174,
+      1237,
+      695,
+      1261
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "Clean source paper or control-surface texture without any text, data, icon or hardware pixels. App stretches the original strip inside real components; exact whole-surface lighting cannot be recovered from the occluded raster."
+  },
+  {
+    "id": "scan-controls-surface",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+    "sha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+    "boundsLTRB": [
+      216,
+      1408,
+      330,
+      1754
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "Clean source paper or control-surface texture without any text, data, icon or hardware pixels. App stretches the original strip inside real components; exact whole-surface lighting cannot be recovered from the occluded raster."
+  },
+  {
+    "id": "paper-onboarding-calibrated",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+    "sha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+    "cleanSourceBandsLTRB": [
+      [
+        60,
+        136,
+        804,
+        169
+      ],
+      [
+        60,
+        258,
+        804,
+        280
+      ],
+      [
+        60,
+        454,
+        804,
+        476
+      ],
+      [
+        60,
+        610,
+        780,
+        631
+      ],
+      [
+        80,
+        1599,
+        617,
+        1631
+      ],
+      [
+        80,
+        1643,
+        617,
+        1677
+      ],
+      [
+        110,
+        1756,
+        617,
+        1764
+      ]
+    ],
+    "operations": [
+      "sample clean paper rows",
+      "interpolate original RGB lighting between sampled rows",
+      "lossless PNG encode"
+    ],
+    "content": "Background only; no text, icons, photographs, controls or device pixels. Reconstructed occluded paper lighting is an estimate, not a claim of exact source pixels."
+  }
+]

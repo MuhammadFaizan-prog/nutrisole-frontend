@@ -1,0 +1,436 @@
+{
+  "headline": [
+    {
+      "iou": 0.5652,
+      "font": "C:\\Windows\\Fonts\\georgiab.ttf",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 1.2233
+    },
+    {
+      "iou": 0.564,
+      "font": "C:\\Windows\\Fonts\\georgiab.ttf",
+      "letterSpacingAt100": 1,
+      "shapeRatio": 1.2452
+    },
+    {
+      "iou": 0.5611,
+      "font": "C:\\Windows\\Fonts\\georgiab.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.2013
+    },
+    {
+      "iou": 0.5542,
+      "font": "C:\\Windows\\Fonts\\georgiab.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.1794
+    },
+    {
+      "iou": 0.5153,
+      "font": "C:\\Windows\\Fonts\\times.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.0148
+    },
+    {
+      "iou": 0.5096,
+      "font": "C:\\Windows\\Fonts\\LBRITE.TTF",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.1188
+    },
+    {
+      "iou": 0.5095,
+      "font": "C:\\Windows\\Fonts\\times.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9912
+    },
+    {
+      "iou": 0.5092,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\libre-caslon-text\\400Regular\\LibreCaslonText_400Regular.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9906
+    },
+    {
+      "iou": 0.5059,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\libre-caslon-text\\400Regular\\LibreCaslonText_400Regular.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.0104
+    },
+    {
+      "iou": 0.5055,
+      "font": "C:\\Windows\\Fonts\\times.ttf",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 1.0384
+    }
+  ],
+  "headline-second": [
+    {
+      "iou": 0.7341,
+      "font": "C:\\Windows\\Fonts\\constan.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.0286
+    },
+    {
+      "iou": 0.7301,
+      "font": "C:\\Windows\\Fonts\\constan.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.0083
+    },
+    {
+      "iou": 0.7235,
+      "font": "C:\\Windows\\Fonts\\georgia.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.0508
+    },
+    {
+      "iou": 0.7116,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\libre-caslon-text\\400Regular\\LibreCaslonText_400Regular.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.997
+    },
+    {
+      "iou": 0.7096,
+      "font": "C:\\Windows\\Fonts\\georgia.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.0304
+    },
+    {
+      "iou": 0.7021,
+      "font": "C:\\Windows\\Fonts\\constan.ttf",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 1.0489
+    },
+    {
+      "iou": 0.7013,
+      "font": "C:\\Windows\\Fonts\\georgia.ttf",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 1.0711
+    },
+    {
+      "iou": 0.7011,
+      "font": "C:\\Windows\\Fonts\\times.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.0242
+    },
+    {
+      "iou": 0.7011,
+      "font": "C:\\Windows\\Fonts\\times.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.0023
+    },
+    {
+      "iou": 0.6853,
+      "font": "C:\\Windows\\Fonts\\himalaya.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.0206
+    }
+  ],
+  "brand": [
+    {
+      "iou": 0.4863,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\libre-caslon-text\\400Regular\\LibreCaslonText_400Regular.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.1608
+    },
+    {
+      "iou": 0.4855,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\libre-caslon-text\\400Regular\\LibreCaslonText_400Regular.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.1398
+    },
+    {
+      "iou": 0.4831,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\libre-caslon-text\\400Regular\\LibreCaslonText_400Regular.ttf",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 1.1819
+    },
+    {
+      "iou": 0.4772,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\libre-caslon-text\\400Regular\\LibreCaslonText_400Regular.ttf",
+      "letterSpacingAt100": 1,
+      "shapeRatio": 1.203
+    },
+    {
+      "iou": 0.4753,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\inter\\600SemiBold\\Inter_600SemiBold.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.2037
+    },
+    {
+      "iou": 0.4702,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\libre-caslon-text\\400Regular\\LibreCaslonText_400Regular.ttf",
+      "letterSpacingAt100": 2,
+      "shapeRatio": 1.224
+    },
+    {
+      "iou": 0.4696,
+      "font": "C:\\Windows\\Fonts\\framdit.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.2063
+    },
+    {
+      "iou": 0.4692,
+      "font": "C:\\Windows\\Fonts\\TCM_____.TTF",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.1492
+    },
+    {
+      "iou": 0.4692,
+      "font": "C:\\Windows\\Fonts\\corbelb.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.2057
+    },
+    {
+      "iou": 0.4688,
+      "font": "C:\\Windows\\Fonts\\TCM_____.TTF",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.1764
+    }
+  ],
+  "body": [
+    {
+      "iou": 0.5116,
+      "font": "C:\\Windows\\Fonts\\SegUIVar.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9375
+    },
+    {
+      "iou": 0.4987,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\inter\\500Medium\\Inter_500Medium.ttf",
+      "letterSpacingAt100": 2,
+      "shapeRatio": 1.1308
+    },
+    {
+      "iou": 0.4975,
+      "font": "C:\\Windows\\Fonts\\SegUIVar.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 0.9601
+    },
+    {
+      "iou": 0.4953,
+      "font": "C:\\Windows\\Fonts\\phagspa.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9269
+    },
+    {
+      "iou": 0.4911,
+      "font": "C:\\Windows\\Fonts\\ebrima.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9362
+    },
+    {
+      "iou": 0.4901,
+      "font": "C:\\Windows\\Fonts\\LeelawUI.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9362
+    },
+    {
+      "iou": 0.4901,
+      "font": "C:\\Windows\\Fonts\\mmrtext.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9362
+    },
+    {
+      "iou": 0.4901,
+      "font": "C:\\Windows\\Fonts\\ntailu.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9362
+    },
+    {
+      "iou": 0.4901,
+      "font": "C:\\Windows\\Fonts\\seguihis.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9362
+    },
+    {
+      "iou": 0.4901,
+      "font": "C:\\Windows\\Fonts\\seguisym.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9362
+    }
+  ],
+  "profile-title": [
+    {
+      "iou": 0.721,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\roboto\\800ExtraBold\\Roboto_800ExtraBold.ttf",
+      "letterSpacingAt100": 2,
+      "shapeRatio": 1.0168
+    },
+    {
+      "iou": 0.7026,
+      "font": "C:\\Windows\\Fonts\\seguisb.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9211
+    },
+    {
+      "iou": 0.6979,
+      "font": "C:\\Windows\\Fonts\\corbelb.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 0.9343
+    },
+    {
+      "iou": 0.6968,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\roboto\\800ExtraBold\\Roboto_800ExtraBold.ttf",
+      "letterSpacingAt100": 1,
+      "shapeRatio": 0.9964
+    },
+    {
+      "iou": 0.6944,
+      "font": "C:\\Windows\\Fonts\\corbelb.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9128
+    },
+    {
+      "iou": 0.6925,
+      "font": "C:\\Windows\\Fonts\\calibrib.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.933
+    },
+    {
+      "iou": 0.6913,
+      "font": "C:\\Windows\\Fonts\\corbelb.ttf",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 0.9557
+    },
+    {
+      "iou": 0.6824,
+      "font": "C:\\Windows\\Fonts\\FRADM.TTF",
+      "letterSpacingAt100": 2,
+      "shapeRatio": 1.0674
+    },
+    {
+      "iou": 0.6787,
+      "font": "C:\\Windows\\Fonts\\seguisb.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 0.9416
+    },
+    {
+      "iou": 0.6761,
+      "font": "C:\\Windows\\Fonts\\corbelb.ttf",
+      "letterSpacingAt100": 1,
+      "shapeRatio": 0.9771
+    }
+  ],
+  "profile-name": [
+    {
+      "iou": 0.7968,
+      "font": "C:\\Windows\\Fonts\\ARLRDBD.TTF",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.0207
+    },
+    {
+      "iou": 0.7865,
+      "font": "C:\\Windows\\Fonts\\ARLRDBD.TTF",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.0383
+    },
+    {
+      "iou": 0.7665,
+      "font": "C:\\Windows\\Fonts\\ARLRDBD.TTF",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 1.0559
+    },
+    {
+      "iou": 0.764,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\inter\\600SemiBold\\Inter_600SemiBold.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9958
+    },
+    {
+      "iou": 0.7548,
+      "font": "C:\\Windows\\Fonts\\FRAMDCN.TTF",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 0.8187
+    },
+    {
+      "iou": 0.7519,
+      "font": "C:\\Windows\\Fonts\\FRAMDCN.TTF",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 0.8375
+    },
+    {
+      "iou": 0.7517,
+      "font": "C:\\Windows\\Fonts\\framd.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 0.9649
+    },
+    {
+      "iou": 0.7486,
+      "font": "C:\\Windows\\Fonts\\framd.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.9461
+    },
+    {
+      "iou": 0.7484,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\inter\\600SemiBold\\Inter_600SemiBold.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.0127
+    },
+    {
+      "iou": 0.7474,
+      "font": "C:\\Windows\\Fonts\\framd.ttf",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 0.9838
+    }
+  ],
+  "home-greeting": [
+    {
+      "iou": 0.6101,
+      "font": "C:\\Windows\\Fonts\\FRABK.TTF",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 1.0509
+    },
+    {
+      "iou": 0.6074,
+      "font": "C:\\Windows\\Fonts\\FRABK.TTF",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 1.0302
+    },
+    {
+      "iou": 0.6,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\roboto\\500Medium\\Roboto_500Medium.ttf",
+      "letterSpacingAt100": -1,
+      "shapeRatio": 0.9978
+    },
+    {
+      "iou": 0.5971,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\roboto\\500Medium\\Roboto_500Medium.ttf",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 1.0166
+    },
+    {
+      "iou": 0.5953,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\roboto\\500Medium\\Roboto_500Medium.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 0.979
+    },
+    {
+      "iou": 0.5944,
+      "font": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\native\\node_modules\\@expo-google-fonts\\inter\\400Regular\\Inter_400Regular.ttf",
+      "letterSpacingAt100": -2,
+      "shapeRatio": 1.0325
+    },
+    {
+      "iou": 0.5932,
+      "font": "C:\\Windows\\Fonts\\FRABK.TTF",
+      "letterSpacingAt100": 1,
+      "shapeRatio": 1.0716
+    },
+    {
+      "iou": 0.5926,
+      "font": "C:\\Windows\\Fonts\\phagspa.ttf",
+      "letterSpacingAt100": 2,
+      "shapeRatio": 1.042
+    },
+    {
+      "iou": 0.5896,
+      "font": "C:\\Windows\\Fonts\\calibril.ttf",
+      "letterSpacingAt100": 1,
+      "shapeRatio": 1.0579
+    },
+    {
+      "iou": 0.5884,
+      "font": "C:\\Windows\\Fonts\\calibril.ttf",
+      "letterSpacingAt100": 0,
+      "shapeRatio": 1.0369
+    }
+  ]
+}

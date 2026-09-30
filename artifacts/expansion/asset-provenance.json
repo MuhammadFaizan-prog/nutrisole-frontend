@@ -1,0 +1,38 @@
+[
+  {
+    "asset": "extension-banana",
+    "reference": "artifacts\\screen-coverage\\images\\food-selector.png",
+    "crop": [
+      61,
+      732,
+      243,
+      912
+    ],
+    "containsUI": false,
+    "sha256": "fb1e220073688f1131730b28d9c61004e8d3856e3ad697cef808a38a18204296"
+  },
+  {
+    "asset": "extension-tomato",
+    "reference": "artifacts\\screen-coverage\\images\\food-selector.png",
+    "crop": [
+      61,
+      976,
+      243,
+      1154
+    ],
+    "containsUI": false,
+    "sha256": "0ca0dec3028a52de44d32ab11e62d69b4316b944340592e5f05147156835c393"
+  },
+  {
+    "asset": "extension-blurred-apple",
+    "reference": "artifacts\\screen-coverage\\images\\capture-retry.png",
+    "crop": [
+      48,
+      250,
+      804,
+      787
+    ],
+    "containsUI": false,
+    "sha256": "2dca07defd3f808ce6929da54667bacdfe41cfe8a84d9bf25c9db69965a8d822"
+  }
+]

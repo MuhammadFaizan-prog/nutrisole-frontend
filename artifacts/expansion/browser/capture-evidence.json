@@ -1,0 +1,518 @@
+{
+  "capturedAt": "2026-09-30T09:38:34.052Z",
+  "notes": [
+    "Retry photo initially pending at the immediate DOM check; fresh follow-up confirmed loaded and recaptured."
+  ],
+  "screens": [
+    {
+      "brokenImages": [],
+      "buttons": 4,
+      "id": "sign-in",
+      "inputs": 2,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "NutriSoleWelcome back.Your food and health, together.EmailPasswordForgot password?Sign inorNew to NutriSole?Create accountCreate account"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 5,
+      "id": "create-account",
+      "inputs": 3,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Create accountJoin NutriSole to get personalized\nnutrition guidance and build healthier\nhabits, one meal at a time.NameEmailPasswordUse at least 8 characters.I agree to the Terms and Privacy PolicyRead Terms and Privacy PolicyCreate accountAlready registered? Sign inNutriSole"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 4,
+      "id": "verify-email",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Check your inbox.We sent a verification link to\nyour email.Open the link to activate\nyour account.Open email appOrResend linkResend linkUse another emailUse another emailNutriSole"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 3,
+      "id": "recover-account",
+      "inputs": 1,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "NutriSoleReset your\npasswordEnter your email and we will send a\nrecovery link if an account exists.EmailSend recovery linkBack to sign in"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 4,
+      "id": "reset-password",
+      "inputs": 2,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "New passwordAt least 8 charactersConfirm passwordSave new passwordChoose a new password"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 7,
+      "id": "analysis-result",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Food assessmentReview what we can see in your photo.AppleSample analysisVISIBLE GRADEAGood visible conditionRipenessEven colourRipenessSurfaceMinor marksSurfaceEvidenceVisible features onlyEvidenceModel v1.0 · Rubric v1.0\nA photo cannot confirm food safety.Market referenceTypical seasonal infoMarket referenceNutritionTypical values for 1 medium (sample)NutritionNutriSoleConfirm food"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 4,
+      "id": "market-reference",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "AppleGrade AMarketSelect a marketMarketUnitper kgUnitNo verified price yetChoose a market to check dated,\ncomparable observations.SourceNot available—ObservedNot available—Market referenceChoose market"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 3,
+      "id": "capture-retry",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "The image is too blurredFrame one item in good light.Keep the item in focus\nHold your camera steady and\nmake sure the item is sharp.Avoid multiple items\nFrame one supported produce\nitem at a time.Retake photoChoose a photoTry another photo"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 8,
+      "id": "food-selector",
+      "inputs": 1,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "SUPPORTED PRODUCEAppleRaw · Supported foodSelect AppleBananaRaw · Supported foodSelect BananaTomatoRaw · Supported foodSelect TomatoYour choice is kept separate from the original\nprediction.Choose the foodConfirm Apple"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 4,
+      "id": "nutrition-details",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Apple · RawSample catalogBasisper 100 gBasisEnergy52 kcalCarbohydrate13.8 gProtein0.3 gFat0.2 gFibre2.4 gSourceDemo catalog v1 · Sample values onlySourceNutritionConfirm portion"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 13,
+      "id": "glucose-overview",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Sep 28 – Oct 4Mon\n28Tue\n29Wed\n30Thu\n1Fri\n2Sat\n3Sun\n4No readings yetAdd a meter reading to start your history.UnitDisplay format for your readingsmg/dLUnitSourceHow you add your readingsManualSourceHealth connectionsSync from your device or appsHealth connectionsGlucose historyAdd readingConnect a health source"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 7,
+      "id": "add-reading",
+      "inputs": 1,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Readingmg/dLmmol/LMeasured onSep 30, 2026Measured onTime8:15 AMTimeContextBefore a mealContextSourceManual meter entryPacific TimeEnter an existing meter reading.\nNutriSole does not measure glucose.Add readingReview reading"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 3,
+      "id": "reading-detail",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Sample record110mg/dLDemo fixtureDateSep 30, 2026Time8:15 AMContextBefore a mealSourceManual entryTime zonePacific TimeEdit readingRemove recordReading details"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 5,
+      "id": "health-connections",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Choose what you share.Connect your health data to get a more\ncomplete picture and more personalized\nnutrition insights.Apple HealthExport your health data\nto NutriSoleNot connectedApple HealthCHOOSE DATA TO SHAREGlucose readingsShare your glucose recordsActivity recordsShare workouts and daily activityLast syncNot syncedImported recordsNoneReview permissionsManual entry is always available.Health connections"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 8,
+      "id": "plan-generation",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "NutriSoleBuild your\nweekly planCreate a personalized meal plan based\non your preferences and recent activity.DietBalanced, higher proteinDietAllergensTree nuts, shellfishAllergensActivityStrength trainingActivityMobilityNone reportedMobilityLimited personalization\nNo glucose readings selected. This plan\nuses your preferences.Plan weekSep 28 – Oct 4Mon, Sep 28 – Sun, Oct 4, 2026Sep 28 – Oct 4Data usedLast 7 daysMeals, activity, and preferencesLast 7 daysCreate plan"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 10,
+      "id": "activity-plan",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Weekly ActivitySep 28 – Oct 4Mon\n28Tue\n29Wed\n30Thu\n1Fri\n2Sat\n3Sun\n4TodayWEDNESDAYGentle movementSample suggestion · 15 minAny comfortable timeBASED ON YOUR RECORDED PREFERENCESA short, low-intensity walk can support\nyour overall wellbeing and fit easily\ninto your day.Mark completeSubstituteIf a recorded concern needs assessment,\nactivity is deferred.NutriSole"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 5,
+      "id": "plan-rationale",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Sep 28 – Oct 4 · Version 1Built around your\npreferences.Your weekly plan is tailored to the information\nyou have shared, so it fits your goals and lifestyle.Dietary choicesMeals match your preferences\nfor a balanced, higher protein diet.Dietary choicesDeclared allergens excludedTree nuts and shellfish are\nleft out of your plan.Declared allergens excludedRecorded mobility constraints\nrespectedNone reported. Activity follows your\nrecorded preferences.Recorded mobility constraints\nrespectedProfile v1Data window: last 7 daysGlucose readingsNoneDietary preferencesSetRule setv1Why this plan?Review weekly plan"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 9,
+      "id": "foot-questionnaire",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Comfort starts here.A few questions about fit and movement.Shoe fitHow do your shoes usually feel?ComfortableComfortableTightTightLooseLooseCurrent comfortHow would you describe your foot comfort\nduring daily activities?No concernNo concernConcernConcernMobilityHow would you describe your current mobility?UnrestrictedUnrestrictedLimitedLimitedFoot supportStep 1 of 2Review answers"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 5,
+      "id": "foot-guidance",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Everyday fit and\ncomfortHere are some general tips based on\nyour answers. These are not a diagnosis\nand not a substitute for professional advice.Everyday fit and comfortSupport your feet with simple\npractical steps.Choose a comfortable fitLook for enough room, a secure\nfit, and stable support.Choose a comfortable fitReview changes in comfortNotice any patterns and adjust\nyour footwear or routine.Review changes in comfortBased on your questionnaire · Rule set v1Concern reported?\nSeek a qualified assessment\nwhen needed.Review my answersSave this sessionKeep a copy in your profile.Foot supportSAMPLE RESPONSE"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 6,
+      "id": "assistant",
+      "inputs": 1,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "General questions · No health contextWhat can I ask you?I can help with food, everyday\nactivity and using NutriSole.\n\nYou can ask for meal ideas,\nnutrition tips, help with your plan,\nor how to make healthier choices.View sourcesReport a concernI do not diagnose or advise on\nmedicines or insulin doses.Try asking aboutFood questionsUsing my planNutriSole Assistant"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 8,
+      "id": "privacy-data-rights",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Your data,\nyour choice.Control how your information is used\nand manage your data at any time.Health importAllow importing data from\nApple Health to personalize\nyour experience.Retain food photosSave your food photos to\nimprove your experience\nand show your history.Use health context in AssistantAllow your meal and health data\nto be used for more personalized\nguidance.Export my dataNo export requestedExport my dataManage retained recordsManage retained recordsDelete accountDeletion requires sign-in confirmation.Delete accountPrivacy & ConsentSave preferences"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 8,
+      "id": "reminders",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Stay on track with gentle reminders\nthat fit your routine.Meal remindersGentle reminders to log your mealsGlucose loggingRemind me to log my glucosePlan check-inWeekly check-in to review progressQuiet hours10:00 PM – 7:00 AMQuiet hoursTime zonePacific TimeTime zoneNotification previews hide health details.NotificationsNot enabledNotificationsRemindersSave preferences"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 6,
+      "id": "report-output",
+      "inputs": 1,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Apple assessmentSample outputWhat needs review?Help us understand what is not right.Wrong foodThe food was identified incorrectlyWrong foodMisleading priceThe price or its source seems wrongMisleading priceUnsuitable guidanceThe advice is not appropriate or safeUnsuitable guidanceOtherSomething elseOtherTell us more (optional)Add any details that could help us improve.Only this output reference, your reason and\noptional details will be shared.Report a resultReview report"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 2,
+      "id": "report-status",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "In reviewYour report has been received for review.Sample IDDEMO-104ReasonWrong foodCreatedSep 30, 2026Shared contextOutput reference onlyReceivedSep 30, 2026\nYour report has been submitted.In reviewWe are reviewing your report.ResolvedYou will see the outcome here.My reportView reported result"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 11,
+      "id": "personal-history",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Your historySample records: food, meals, and plans\nin one place.AllFoodMealsPlansLast 7 daysThu, Sep 24 – Wed, Sep 30, 2026Last 7 daysFood assessmentAppleSep 30, 2026 · Good matchOpen Food assessmentMealAppleSep 30, 2026 · 182 gOpen MealWeekly planWeekly PlanSep 28 – Oct 4, 2026 · v1Open Weekly planSaved draftAppleSaved for laterOpen Saved draftNutriSoleFilter records"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 6,
+      "id": "catalog-queue",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Catalog curatorCatalog reviewReview and edit shared food catalog entries\nbefore they are published.PendingPublishedWithdrawnUnpublishedApple nutrition mappingUnit and source reviewRecord type\nAppleSubmitted\nSep 29, 2026Review Apple nutrition mappingUnpublishedApple market observationObservation date requiredRecord type\nMarket observationSubmitted\nSep 30, 2026Review Apple market observationNutriSoleReview next entry"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 9,
+      "id": "catalog-review",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "Review catalog entryCheck the details before publishing.AppleSample draftFood formRawFood formSourceNot verifiedSourceUnitper kgUnitObservation dateNot suppliedObservation dateGrade applicabilityPendingGrade applicabilityPublishing is blocked\nuntil the source and date are verified.Save reviewReject entryPublishNutriSole"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 7,
+      "id": "model-release",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "MODEL ADMINISTRATORRelease reviewReview the model package, confirm required\nelements, and activate when ready.CANDIDATEProduce model v1.1 · DraftCreated Sep 30, 2026Not ready\nfor activationRelease checklistAll items must be complete to activate.Model manifestModel details and filesPresentModel manifestDataset licenceData source and usage rightsReview neededDataset licenceClass thresholdsCategory configurationReview neededClass thresholdsSafety regressionAutomated test resultsPendingSafety regressionActive packagev1.0 · DemoActivated Sep 15, 2026ActiveReview evidenceActivate packageRollback historyRollback historyNutriSole"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 6,
+      "id": "operations-audit",
+      "inputs": 0,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "OPERATIONS ADMINISTRATORAudit reviewReview recent system events and\nactions for security and compliance.DateSep 30, 2026DateEvent categoryAll eventsEvent categoryFilter eventsSample audit eventsRedacted metadata onlyCatalog review savedREQ-104 · 9:10 AMSuccessCatalog review savedModel activationREQ-103 · 9:04 AMDeniedModel activationProtected accessREQ-102 · 8:55 AMDeniedProtected accessNutriSole"
+    },
+    {
+      "brokenImages": [],
+      "buttons": 3,
+      "id": "report-triage",
+      "inputs": 1,
+      "rect": {
+        "bottom": 1092.6505126953125,
+        "height": 851.9907836914062,
+        "left": 577.9398193359375,
+        "right": 970.937530517578,
+        "top": 240.65972900390625,
+        "width": 392.9977111816406,
+        "x": 577.9398193359375,
+        "y": 240.65972900390625
+      },
+      "text": "STAFFReview reportCheck the details and add your review.DEMO-104Food analysis reportReasonWrong foodOutput referenceANALYSIS-DEMO-17CreatedWed, Sep 30, 2026Shared contextRedactedReview noteStatusIn reviewResolvedNutriSoleSave reviewOriginal analysis evidence is retained."
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "source": "Live native Figma exportAsync, saved through plugin UI",
+  "pageId": "34:254",
+  "frames": [
+    {
+      "route": "sign-in",
+      "frameId": "41:10643",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "ae9259c738951f9269135c88d6c88d2469b11b8addf0e321e3197810e341d7de"
+    },
+    {
+      "route": "create-account",
+      "frameId": "41:10706",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "4d54b7a19ad499bfc11e8f46668d1067be9a481d26731ccf8a4893e2faa8ac82"
+    },
+    {
+      "route": "verify-email",
+      "frameId": "41:10773",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "4b851402efb72415e2b36a6f9e8238d71e5526a2a3111f04641eb31bbe4b3ffe"
+    },
+    {
+      "route": "recover-account",
+      "frameId": "41:10824",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "fd217b8089bf4380de643b5ba4d02b00089a1622af1d9d5e6ebbee362d83573e"
+    },
+    {
+      "route": "reset-password",
+      "frameId": "41:10859",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "defd78ecb32e08d702605b59d7172071a790e6a066fbef6b41728043a6632f22"
+    },
+    {
+      "route": "analysis-result",
+      "frameId": "41:10894",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "88e6f7506dd4789428289a722f3f0389078d34d25c8767033d0eee1101d569cc"
+    },
+    {
+      "route": "market-reference",
+      "frameId": "41:10992",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "9e0cbd3a3a76d54f9281f72177ca1d5bef1b4a937f7edc77945afb6be6168e38"
+    },
+    {
+      "route": "capture-retry",
+      "frameId": "41:11072",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "22b356bf089b2eb57dbad2a10f371388cb97eeb2aed1f87bf6db4e3c2dd739bb"
+    },
+    {
+      "route": "food-selector",
+      "frameId": "41:11108",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "24a01a1a479e544c2fa3261e5e2ffb988cf46d2785b654d5beea15a91e5a7ae1"
+    },
+    {
+      "route": "nutrition-details",
+      "frameId": "41:11159",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "2b28fa12bb1ec3860c3daebc2eba78ac2a2970aa8382a44bc527635ccea290f5"
+    },
+    {
+      "route": "glucose-overview",
+      "frameId": "41:11242",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "8469478e2a5f34ddf8cd0089fdd7e8f515401789f968efb7a1a996d1d5804c64"
+    },
+    {
+      "route": "add-reading",
+      "frameId": "41:11359",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "e76bb0af982720b898b6af4f65f4849246341417b2cbf2189ed9c8844ca8014b"
+    },
+    {
+      "route": "reading-detail",
+      "frameId": "41:11462",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "787455be363b8896c14110e86f50f698078874c0336cec2fe4d0772d07fbb635"
+    },
+    {
+      "route": "health-connections",
+      "frameId": "41:11537",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "2fa148d3144a00c3e6b9d30d9d501ce5cbb6003d3b1a2277d195b9f7111b2339"
+    },
+    {
+      "route": "plan-generation",
+      "frameId": "41:11609",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "637125ce07400787d212c59d43f2e08722553779dc856e68f74ac43145a59e81"
+    },
+    {
+      "route": "activity-plan",
+      "frameId": "41:11732",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "3519d150866b9c87c1d37b23769be84ec0445347782d0631eee88dd09de77463"
+    },
+    {
+      "route": "plan-rationale",
+      "frameId": "41:11830",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "405f2c8decd2316e65c14e01ad61b8f6fea97c9f31baf3cf702f98486d8dd6dd"
+    },
+    {
+      "route": "foot-questionnaire",
+      "frameId": "41:11920",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "ce081c8988fc73be09233387ef559f7b1241d046d72556fa1be1edeaa4c95ab1"
+    },
+    {
+      "route": "foot-guidance",
+      "frameId": "41:11979",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "3e949b8c84822739b36b6313bd13fa40f60155ec25a153b90802b408e23cd106"
+    },
+    {
+      "route": "assistant",
+      "frameId": "41:12052",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "705c8b53dc01178c092b2767a37b41cf05386eb66e7b961b0a413cf400d28d14"
+    },
+    {
+      "route": "privacy-data-rights",
+      "frameId": "41:12122",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "05b4a5dc00dd3dd0d35f9561cc89553b407eadd5ff5d2266f888a3c7ba773041"
+    },
+    {
+      "route": "reminders",
+      "frameId": "41:12206",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "96e20f063af1fe527840c58a8aeb765d6b253b61127dd85ec287295d34f04b75"
+    },
+    {
+      "route": "report-output",
+      "frameId": "41:12293",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "6b6816c83c1eca93407b487ba986ea6cd28b5b654111868049fa3b089a7e0350"
+    },
+    {
+      "route": "report-status",
+      "frameId": "41:12353",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "172239653ced48683e504cf7d19550c0196acfe3240a82e028c2efcc94ed114d"
+    },
+    {
+      "route": "personal-history",
+      "frameId": "41:12433",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "877e58aae8783cf31404b894c12383b7731eeb8e1ddfae24a0f62e4952719f42"
+    },
+    {
+      "route": "catalog-queue",
+      "frameId": "41:12520",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "7cfa46d7aa4bfb467915a19625f167205d3d27e79d2f186cf3508c00832f7ae8"
+    },
+    {
+      "route": "catalog-review",
+      "frameId": "41:12575",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "744017ab49a9c99ecaa271b0e8990b3275c22bc43fddaf075ce06528d1423721"
+    },
+    {
+      "route": "model-release",
+      "frameId": "41:12678",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "55f2602bc2662c69d04ea2aae0dd2d2f335b632eb883955fb4f1d4d2c5b17a4d"
+    },
+    {
+      "route": "operations-audit",
+      "frameId": "41:12783",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "b5d1952811abae678f52c2586b739a0aae286c8f6b816fd584d973c2d5ca8ea1"
+    },
+    {
+      "route": "report-triage",
+      "frameId": "41:12868",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "0108cb4412c53057fb3891430fe01033fa3fc564edfaf39302f18c2dfecb2a08"
+    },
+    {
+      "route": "flow-directory",
+      "frameId": "41:12959",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "c84ff29e0eeb8f1367bfb61f26230e449f6558309130727823d76395e01bffa0"
+    },
+    {
+      "route": "portion-confirmation",
+      "frameId": "41:13076",
+      "pixels": [
+        393,
+        852
+      ],
+      "sha256": "f7592e1debd53bf63e8da9e4c38a0f1a93d7fc48b18733084129a4fda8cd5bdd"
+    }
+  ],
+  "pixelIdentityCertified": false
+}

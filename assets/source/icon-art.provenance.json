@@ -1,0 +1,706 @@
+[
+  {
+    "id": "icon-onboarding-recognition",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+    "sha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+    "boundsLTRB": [
+      102,
+      1127,
+      210,
+      1236
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-onboarding-personalized",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+    "sha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+    "boundsLTRB": [
+      102,
+      1285,
+      210,
+      1394
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-onboarding-support",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+    "sha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+    "boundsLTRB": [
+      102,
+      1444,
+      210,
+      1553
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-onboarding-continue",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+    "sha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+    "boundsLTRB": [
+      649,
+      1613,
+      795,
+      1755
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-scan-camera",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      119,
+      766,
+      288,
+      934
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-plan-calendar",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      113,
+      1015,
+      167,
+      1073
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-health-bars",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      489,
+      1015,
+      542,
+      1073
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-plan-chevron",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      379,
+      1087,
+      396,
+      1116
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-health-chevron",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      747,
+      1087,
+      765,
+      1116
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-scan-chevron",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      736,
+      833,
+      758,
+      868
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-see-all-chevron",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      750,
+      1260,
+      765,
+      1284
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-nav-home",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      112,
+      1649,
+      156,
+      1696
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-nav-plan",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      260,
+      1650,
+      301,
+      1697
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-nav-health",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      560,
+      1650,
+      611,
+      1699
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-nav-profile",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      710,
+      1650,
+      753,
+      1699
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-home-nav-camera",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+    "sha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+    "boundsLTRB": [
+      353,
+      1586,
+      510,
+      1739
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-scan-close",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+    "sha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+    "boundsLTRB": [
+      79,
+      169,
+      177,
+      267
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-scan-flash",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+    "sha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+    "boundsLTRB": [
+      690,
+      168,
+      788,
+      267
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-scan-confirmation",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+    "sha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+    "boundsLTRB": [
+      300,
+      460,
+      363,
+      522
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-scan-instruction-target",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+    "sha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+    "boundsLTRB": [
+      241,
+      1278,
+      291,
+      1331
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-scan-shutter",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+    "sha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+    "boundsLTRB": [
+      347,
+      1442,
+      513,
+      1607
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-log-back",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+    "sha256": "7e548454df10228814de921d4b71aba751c7c3be75e150dd59ef9005992ac5a1",
+    "boundsLTRB": [
+      99,
+      252,
+      124,
+      292
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-log-info",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+    "sha256": "7e548454df10228814de921d4b71aba751c7c3be75e150dd59ef9005992ac5a1",
+    "boundsLTRB": [
+      705,
+      405,
+      752,
+      451
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-log-minus",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+    "sha256": "7e548454df10228814de921d4b71aba751c7c3be75e150dd59ef9005992ac5a1",
+    "boundsLTRB": [
+      91,
+      887,
+      169,
+      965
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-log-plus",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+    "sha256": "7e548454df10228814de921d4b71aba751c7c3be75e150dd59ef9005992ac5a1",
+    "boundsLTRB": [
+      297,
+      887,
+      376,
+      965
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-log-estimate-apple",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+    "sha256": "7e548454df10228814de921d4b71aba751c7c3be75e150dd59ef9005992ac5a1",
+    "boundsLTRB": [
+      115,
+      1052,
+      153,
+      1094
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-weekly-back",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+    "sha256": "9beb42cb03f676d4ee5fdd3846bafbb750a68115c0bfc09933720de3ac09537c",
+    "boundsLTRB": [
+      94,
+      285,
+      130,
+      320
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-weekly-calendar",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+    "sha256": "9beb42cb03f676d4ee5fdd3846bafbb750a68115c0bfc09933720de3ac09537c",
+    "boundsLTRB": [
+      717,
+      281,
+      764,
+      329
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-weekly-accept",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+    "sha256": "9beb42cb03f676d4ee5fdd3846bafbb750a68115c0bfc09933720de3ac09537c",
+    "boundsLTRB": [
+      163,
+      1149,
+      201,
+      1178
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-weekly-substitute",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+    "sha256": "9beb42cb03f676d4ee5fdd3846bafbb750a68115c0bfc09933720de3ac09537c",
+    "boundsLTRB": [
+      439,
+      1148,
+      475,
+      1184
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-weekly-more",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+    "sha256": "9beb42cb03f676d4ee5fdd3846bafbb750a68115c0bfc09933720de3ac09537c",
+    "boundsLTRB": [
+      705,
+      1157,
+      740,
+      1174
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-weekly-feedback",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+    "sha256": "9beb42cb03f676d4ee5fdd3846bafbb750a68115c0bfc09933720de3ac09537c",
+    "boundsLTRB": [
+      126,
+      1252,
+      164,
+      1290
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-back",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      89,
+      291,
+      116,
+      331
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-account-chevron",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      735,
+      440,
+      755,
+      474
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-dietary",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      102,
+      586,
+      143,
+      628
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-allergens",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      102,
+      676,
+      143,
+      718
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-activity",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      102,
+      764,
+      144,
+      814
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-mobility",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      103,
+      858,
+      144,
+      905
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-glucose",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      105,
+      952,
+      140,
+      995
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-timezone",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      102,
+      1040,
+      144,
+      1082
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-health",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      95,
+      1154,
+      163,
+      1223
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-connected",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      598,
+      1175,
+      620,
+      1196
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-privacy",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      105,
+      1318,
+      145,
+      1363
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  },
+  {
+    "id": "icon-profile-privacy-chevron",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+    "sha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+    "boundsLTRB": [
+      738,
+      1325,
+      757,
+      1356
+    ],
+    "operations": [
+      "crop only",
+      "lossless PNG encode"
+    ],
+    "content": "One original icon, badge or unlabeled icon button. Background retained. No UI text, data, device chrome, or full-screen image."
+  }
+]

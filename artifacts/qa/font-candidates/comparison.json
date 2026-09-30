@@ -1,0 +1,218 @@
+{
+  "headline": [
+    {
+      "iou": 0.6516,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Regular.ttf",
+      "weight": 400,
+      "spacing": -2,
+      "ratio": 1.0428
+    },
+    {
+      "iou": 0.6503,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Regular.ttf",
+      "weight": 400,
+      "spacing": -1,
+      "ratio": 1.0635
+    },
+    {
+      "iou": 0.6434,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\gelasio-Gelasio[wght].ttf",
+      "weight": 700,
+      "spacing": -1,
+      "ratio": 1.2645
+    },
+    {
+      "iou": 0.6418,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\gelasio-Gelasio[wght].ttf",
+      "weight": 600,
+      "spacing": 0,
+      "ratio": 1.226
+    },
+    {
+      "iou": 0.6416,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\gelasio-Gelasio[wght].ttf",
+      "weight": 700,
+      "spacing": 0,
+      "ratio": 1.2876
+    },
+    {
+      "iou": 0.6388,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\gelasio-Gelasio[wght].ttf",
+      "weight": 700,
+      "spacing": -2,
+      "ratio": 1.2414
+    },
+    {
+      "iou": 0.6386,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\gelasio-Gelasio[wght].ttf",
+      "weight": 600,
+      "spacing": 1,
+      "ratio": 1.2491
+    },
+    {
+      "iou": 0.6382,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\gelasio-Gelasio[wght].ttf",
+      "weight": 600,
+      "spacing": -1,
+      "ratio": 1.2029
+    },
+    {
+      "iou": 0.6336,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Regular.ttf",
+      "weight": 400,
+      "spacing": 0,
+      "ratio": 1.0843
+    },
+    {
+      "iou": 0.6306,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\gelasio-Gelasio[wght].ttf",
+      "weight": 700,
+      "spacing": 1,
+      "ratio": 1.3107
+    }
+  ],
+  "headline-second": [
+    {
+      "iou": 0.7116,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Regular.ttf",
+      "weight": 400,
+      "spacing": -2,
+      "ratio": 0.997
+    },
+    {
+      "iou": 0.6986,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\librebaskerville-LibreBaskerville[wght].ttf",
+      "weight": 600,
+      "spacing": 1,
+      "ratio": 1.1655
+    },
+    {
+      "iou": 0.6944,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\librebaskerville-LibreBaskerville[wght].ttf",
+      "weight": 500,
+      "spacing": 1,
+      "ratio": 1.1539
+    },
+    {
+      "iou": 0.6935,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\librebaskerville-LibreBaskerville[wght].ttf",
+      "weight": 700,
+      "spacing": 0,
+      "ratio": 1.1639
+    },
+    {
+      "iou": 0.6907,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\librebaskerville-LibreBaskerville[wght].ttf",
+      "weight": 700,
+      "spacing": 1,
+      "ratio": 1.1821
+    },
+    {
+      "iou": 0.6882,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\librebaskerville-LibreBaskerville[wght].ttf",
+      "weight": 600,
+      "spacing": 2,
+      "ratio": 1.1838
+    },
+    {
+      "iou": 0.6854,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\librebaskerville-LibreBaskerville[wght].ttf",
+      "weight": 600,
+      "spacing": 0,
+      "ratio": 1.1473
+    },
+    {
+      "iou": 0.684,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\librebaskerville-LibreBaskerville[wght].ttf",
+      "weight": 500,
+      "spacing": 2,
+      "ratio": 1.1722
+    },
+    {
+      "iou": 0.6826,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\librebaskerville-LibreBaskerville[wght].ttf",
+      "weight": 500,
+      "spacing": 0,
+      "ratio": 1.1357
+    },
+    {
+      "iou": 0.6771,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\librebaskerville-LibreBaskerville[wght].ttf",
+      "weight": 400,
+      "spacing": 0,
+      "ratio": 1.134
+    }
+  ],
+  "brand": [
+    {
+      "iou": 0.4863,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Regular.ttf",
+      "weight": 400,
+      "spacing": -1,
+      "ratio": 1.1608
+    },
+    {
+      "iou": 0.4855,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Regular.ttf",
+      "weight": 400,
+      "spacing": -2,
+      "ratio": 1.1398
+    },
+    {
+      "iou": 0.4831,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Regular.ttf",
+      "weight": 400,
+      "spacing": 0,
+      "ratio": 1.1819
+    },
+    {
+      "iou": 0.481,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Bold.ttf",
+      "weight": 400,
+      "spacing": -2,
+      "ratio": 1.2892
+    },
+    {
+      "iou": 0.4772,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Regular.ttf",
+      "weight": 400,
+      "spacing": 1,
+      "ratio": 1.203
+    },
+    {
+      "iou": 0.476,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Bold.ttf",
+      "weight": 400,
+      "spacing": -1,
+      "ratio": 1.3105
+    },
+    {
+      "iou": 0.4713,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\artifacts\\qa\\font-candidates\\dmserifdisplay-DMSerifDisplay-Regular.ttf",
+      "weight": 400,
+      "spacing": -2,
+      "ratio": 1.2275
+    },
+    {
+      "iou": 0.4702,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Regular.ttf",
+      "weight": 400,
+      "spacing": 2,
+      "ratio": 1.224
+    },
+    {
+      "iou": 0.4698,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Bold.ttf",
+      "weight": 400,
+      "spacing": 0,
+      "ratio": 1.3318
+    },
+    {
+      "iou": 0.4656,
+      "path": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\fonts\\LibreCaslonText-Bold.ttf",
+      "weight": 400,
+      "spacing": 1,
+      "ratio": 1.3531
+    }
+  ]
+}

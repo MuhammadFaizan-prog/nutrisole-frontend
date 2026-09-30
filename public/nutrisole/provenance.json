@@ -1,0 +1,1082 @@
+{
+  "coordinateSystem": "Original PNG pixels; origin top-left; crop right/bottom bounds exclusive.",
+  "method": "All source assets are lossless crops of supplied references. No assets were generated and no whole-screen image is an implementation asset.",
+  "sourceReferences": [
+    {
+      "screen": "onboarding",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+      "dimensionsPx": [
+        863,
+        1822
+      ]
+    },
+    {
+      "screen": "home",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+      "dimensionsPx": [
+        863,
+        1822
+      ]
+    },
+    {
+      "screen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "dimensionsPx": [
+        863,
+        1822
+      ]
+    },
+    {
+      "screen": "log-meal",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+      "dimensionsPx": [
+        863,
+        1822
+      ]
+    },
+    {
+      "screen": "weekly-plan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+      "dimensionsPx": [
+        863,
+        1822
+      ]
+    },
+    {
+      "screen": "profile",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+      "dimensionsPx": [
+        863,
+        1822
+      ]
+    },
+    {
+      "screen": "overview",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/final ui design.png",
+      "dimensionsPx": [
+        1448,
+        1086
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "apple-thumbnail",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/apple-thumbnail.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+      "sourceScreen": "log-meal",
+      "sourceSha256": "7e548454df10228814de921d4b71aba751c7c3be75e150dd59ef9005992ac5a1",
+      "cropBoxLTRBExclusivePx": [
+        103,
+        352,
+        278,
+        505
+      ],
+      "cropRectXYWHPx": [
+        103,
+        352,
+        175,
+        153
+      ],
+      "outputDimensionsPx": [
+        175,
+        153
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Complete pictured thumbnail; rounded corners and cream surround retained."
+    },
+    {
+      "id": "apple-thumbnail-home",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/apple-thumbnail-home.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+      "sourceScreen": "home",
+      "sourceSha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+      "cropBoxLTRBExclusivePx": [
+        96,
+        1321,
+        218,
+        1437
+      ],
+      "cropRectXYWHPx": [
+        96,
+        1321,
+        122,
+        116
+      ],
+      "outputDimensionsPx": [
+        122,
+        116
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Separate Home thumbnail; pictured source crop retained."
+    },
+    {
+      "id": "berry-oats",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/berry-oats.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+      "sourceScreen": "weekly-plan",
+      "sourceSha256": "9beb42cb03f676d4ee5fdd3846bafbb750a68115c0bfc09933720de3ac09537c",
+      "cropBoxLTRBExclusivePx": [
+        104,
+        932,
+        270,
+        1100
+      ],
+      "cropRectXYWHPx": [
+        104,
+        932,
+        166,
+        168
+      ],
+      "outputDimensionsPx": [
+        166,
+        168
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Complete pictured breakfast photo; rounded corners retained."
+    },
+    {
+      "id": "chicken-quinoa-bowl",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/chicken-quinoa-bowl.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+      "sourceScreen": "weekly-plan",
+      "sourceSha256": "9beb42cb03f676d4ee5fdd3846bafbb750a68115c0bfc09933720de3ac09537c",
+      "cropBoxLTRBExclusivePx": [
+        104,
+        1453,
+        270,
+        1615
+      ],
+      "cropRectXYWHPx": [
+        104,
+        1453,
+        166,
+        162
+      ],
+      "outputDimensionsPx": [
+        166,
+        162
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Complete pictured lunch photo; rounded corners retained."
+    },
+    {
+      "id": "chicken-bowl-home",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/chicken-bowl-home.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+      "sourceScreen": "home",
+      "sourceSha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+      "cropBoxLTRBExclusivePx": [
+        96,
+        1471,
+        218,
+        1589
+      ],
+      "cropRectXYWHPx": [
+        96,
+        1471,
+        122,
+        118
+      ],
+      "outputDimensionsPx": [
+        122,
+        118
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Separate Home recent-scan bowl image; differs from the weekly plan bowl."
+    },
+    {
+      "id": "alex-avatar",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/alex-avatar.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+      "sourceScreen": "profile",
+      "sourceSha256": "f080bf629ea25f1c03e59d8d04b62cf66a7beb353767cab7fbc506ac1ce59103",
+      "cropBoxLTRBExclusivePx": [
+        108,
+        386,
+        246,
+        521
+      ],
+      "cropRectXYWHPx": [
+        108,
+        386,
+        138,
+        135
+      ],
+      "outputDimensionsPx": [
+        138,
+        135
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Pictured circular avatar in bounding rectangle; mask to circle in UI."
+    },
+    {
+      "id": "alex-avatar-home",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/alex-avatar-home.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+      "sourceScreen": "home",
+      "sourceSha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+      "cropBoxLTRBExclusivePx": [
+        693,
+        171,
+        781,
+        258
+      ],
+      "cropRectXYWHPx": [
+        693,
+        171,
+        88,
+        87
+      ],
+      "outputDimensionsPx": [
+        88,
+        87
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Separate Home avatar bounding rectangle; mask to circle in UI."
+    },
+    {
+      "id": "onboarding-hero",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/onboarding-hero.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+      "sourceScreen": "onboarding",
+      "sourceSha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+      "cropBoxLTRBExclusivePx": [
+        39,
+        635,
+        824,
+        1091
+      ],
+      "cropRectXYWHPx": [
+        39,
+        635,
+        785,
+        456
+      ],
+      "outputDimensionsPx": [
+        785,
+        456
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Unobstructed upper photo strip only. Bowl below y=1091 is obscured by the reference feature panel; full clean bowl unavailable."
+    },
+    {
+      "id": "leaf-brand-mark",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/leaf-brand-mark.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+      "sourceScreen": "onboarding",
+      "sourceSha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+      "cropBoxLTRBExclusivePx": [
+        92,
+        173,
+        155,
+        253
+      ],
+      "cropRectXYWHPx": [
+        92,
+        173,
+        63,
+        80
+      ],
+      "outputDimensionsPx": [
+        63,
+        80
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Original brand leaf pixels and warm paper background retained; no vector tracing or substitute artwork."
+    },
+    {
+      "id": "gallery-thumbnail",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/gallery-thumbnail.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceScreen": "scan",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "cropBoxLTRBExclusivePx": [
+        80,
+        1461,
+        203,
+        1575
+      ],
+      "cropRectXYWHPx": [
+        80,
+        1461,
+        123,
+        114
+      ],
+      "outputDimensionsPx": [
+        123,
+        114
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Complete pictured camera gallery photo; rounded corners retained."
+    },
+    {
+      "id": "scan-apple-detail",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/scan-apple-detail.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceScreen": "scan",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "cropBoxLTRBExclusivePx": [
+        223,
+        714,
+        728,
+        1058
+      ],
+      "cropRectXYWHPx": [
+        223,
+        714,
+        505,
+        344
+      ],
+      "outputDimensionsPx": [
+        505,
+        344
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Unobstructed central foreground apple detail only. This is not a full camera backdrop; apple is cropped on multiple sides."
+    },
+    {
+      "id": "warm-background-tile",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/warm-background-tile.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+      "sourceScreen": "log-meal",
+      "sourceSha256": "7e548454df10228814de921d4b71aba751c7c3be75e150dd59ef9005992ac5a1",
+      "cropBoxLTRBExclusivePx": [
+        100,
+        1490,
+        750,
+        1660
+      ],
+      "cropRectXYWHPx": [
+        100,
+        1490,
+        650,
+        170
+      ],
+      "outputDimensionsPx": [
+        650,
+        170
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Clean cream background patch below all app controls; no UI or device chrome. Stretching/repeating the patch may differ from the reference whole-surface lighting."
+    },
+    {
+      "id": "dark-green-texture-tile",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/dark-green-texture-tile.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+      "sourceScreen": "log-meal",
+      "sourceSha256": "7e548454df10228814de921d4b71aba751c7c3be75e150dd59ef9005992ac5a1",
+      "cropBoxLTRBExclusivePx": [
+        118,
+        1263,
+        273,
+        1329
+      ],
+      "cropRectXYWHPx": [
+        118,
+        1263,
+        155,
+        66
+      ],
+      "outputDimensionsPx": [
+        155,
+        66
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Text-free interior of dark green Log Meal button; original surface texture. Stretching/repeating the patch may differ from the reference whole-surface lighting."
+    },
+    {
+      "id": "dark-green-scan-texture-tile",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/dark-green-scan-texture-tile.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+      "sourceScreen": "home",
+      "sourceSha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+      "cropBoxLTRBExclusivePx": [
+        305,
+        746,
+        740,
+        778
+      ],
+      "cropRectXYWHPx": [
+        305,
+        746,
+        435,
+        32
+      ],
+      "outputDimensionsPx": [
+        435,
+        32
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Text-free upper interior strip of Scan Food card; no icon or label pixels. Stretching/repeating the patch may differ from the reference whole-surface lighting."
+    },
+    {
+      "id": "pale-green-texture-tile",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/pale-green-texture-tile.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+      "sourceScreen": "home",
+      "sourceSha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+      "cropBoxLTRBExclusivePx": [
+        191,
+        1002,
+        396,
+        1075
+      ],
+      "cropRectXYWHPx": [
+        191,
+        1002,
+        205,
+        73
+      ],
+      "outputDimensionsPx": [
+        205,
+        73
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Text-free interior of pale green View Plan tile. Stretching/repeating the patch may differ from the reference whole-surface lighting."
+    },
+    {
+      "id": "lavender-texture-tile",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/lavender-texture-tile.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+      "sourceScreen": "home",
+      "sourceSha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+      "cropBoxLTRBExclusivePx": [
+        576,
+        1002,
+        770,
+        1075
+      ],
+      "cropRectXYWHPx": [
+        576,
+        1002,
+        194,
+        73
+      ],
+      "outputDimensionsPx": [
+        194,
+        73
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Text-free interior of lavender Health tile. Stretching/repeating the patch may differ from the reference whole-surface lighting."
+    },
+    {
+      "id": "pale-green-estimate-texture-tile",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/pale-green-estimate-texture-tile.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+      "sourceScreen": "log-meal",
+      "sourceSha256": "7e548454df10228814de921d4b71aba751c7c3be75e150dd59ef9005992ac5a1",
+      "cropBoxLTRBExclusivePx": [
+        690,
+        1044,
+        750,
+        1177
+      ],
+      "cropRectXYWHPx": [
+        690,
+        1044,
+        60,
+        133
+      ],
+      "outputDimensionsPx": [
+        60,
+        133
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Text-free right interior of portion estimate panel. Stretching/repeating the patch may differ from the reference whole-surface lighting."
+    },
+    {
+      "id": "gray-track-texture-tile",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/gray-track-texture-tile.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+      "sourceScreen": "log-meal",
+      "sourceSha256": "7e548454df10228814de921d4b71aba751c7c3be75e150dd59ef9005992ac5a1",
+      "cropBoxLTRBExclusivePx": [
+        551,
+        754,
+        608,
+        821
+      ],
+      "cropRectXYWHPx": [
+        551,
+        754,
+        57,
+        67
+      ],
+      "outputDimensionsPx": [
+        57,
+        67
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Text-free interior between By weight and By size labels. Stretching/repeating the patch may differ from the reference whole-surface lighting."
+    },
+    {
+      "id": "warm-card-texture-tile",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/warm-card-texture-tile.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+      "sourceScreen": "log-meal",
+      "sourceSha256": "7e548454df10228814de921d4b71aba751c7c3be75e150dd59ef9005992ac5a1",
+      "cropBoxLTRBExclusivePx": [
+        653,
+        357,
+        695,
+        505
+      ],
+      "cropRectXYWHPx": [
+        653,
+        357,
+        42,
+        148
+      ],
+      "outputDimensionsPx": [
+        42,
+        148
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "limitations": "Text-free interior of food summary card; thin patch avoids information icon. Stretching/repeating the patch may differ from the reference whole-surface lighting."
+    },
+    {
+      "id": "home-progress-ring",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/home-progress-ring.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+      "sourceScreen": "home",
+      "sourceSha256": "af767b813f043d4615126002cc8c2b20e786e7f0ed209f054ee022c1645f17bc",
+      "cropBoxLTRBExclusivePx": [
+        541,
+        334,
+        755,
+        548
+      ],
+      "cropRectXYWHPx": [
+        541,
+        334,
+        214,
+        214
+      ],
+      "outputDimensionsPx": [
+        214,
+        214
+      ],
+      "operations": [
+        "crop",
+        "binary alpha annulus mask; original RGB unchanged",
+        "lossless PNG encode"
+      ],
+      "alphaAnnulusPx": {
+        "center": [
+          106.5,
+          106.5
+        ],
+        "innerRadius": 80,
+        "outerRadius": 107
+      },
+      "limitations": "Original reference ring fixture only; center is transparent for real UI text. Mask boundary may retain a thin original card anti-alias fringe. For changed values use an accessible progress indicator matching the ring style."
+    },
+    {
+      "id": "weekly-progress-ring",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/weekly-progress-ring.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+      "sourceScreen": "weekly-plan",
+      "sourceSha256": "9beb42cb03f676d4ee5fdd3846bafbb750a68115c0bfc09933720de3ac09537c",
+      "cropBoxLTRBExclusivePx": [
+        339,
+        560,
+        424,
+        645
+      ],
+      "cropRectXYWHPx": [
+        339,
+        560,
+        85,
+        85
+      ],
+      "outputDimensionsPx": [
+        85,
+        85
+      ],
+      "operations": [
+        "crop",
+        "binary alpha annulus mask; original RGB unchanged",
+        "lossless PNG encode"
+      ],
+      "alphaAnnulusPx": {
+        "center": [
+          42.0,
+          42.0
+        ],
+        "innerRadius": 29,
+        "outerRadius": 42.5
+      },
+      "limitations": "Original reference ring fixture only; center is transparent for real UI text. Mask boundary may retain a thin original card anti-alias fringe. For changed values use an accessible progress indicator matching the ring style."
+    }
+  ],
+  "scanBackdrop": {
+    "cleanFullBackdropAvailable": false,
+    "reason": "Recognition bubble, target corners, instructions, top controls and device chrome are baked into the supplied scan PNG. Only small disconnected or partial photographic regions are unobstructed. DOCX media have no corresponding clean backdrop.",
+    "usablePartialAsset": "scan-apple-detail.png"
+  },
+  "onboardingHero": {
+    "cleanFullHeroAvailable": false,
+    "reason": "Feature panel covers lower bowl. Upper unobstructed photo strip is extracted and can match the visible region."
+  },
+  "docxInspection": {
+    "mediaCount": 44,
+    "allMediaVisuallyInspectedVia": "docx-media-contact-sheet.png",
+    "findings": "Diagrams and university logos; proposal has one unrelated phone-in-hand food recognition illustration. No clean originals of supplied UI photo assets.",
+    "media": [
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/FYP-Deliverables-2026-27.docx",
+        "member": "word/media/image1.png",
+        "dimensionsPx": [
+          298,
+          250
+        ],
+        "sha256": "a571d4045e82ee81b582fb199fdea4c631c18be7686d7eae7b4ccc87958d4ace"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/FYP-proposal edit one.docx",
+        "member": "word/media/image4.png",
+        "dimensionsPx": [
+          1268,
+          436
+        ],
+        "sha256": "e75f317c33d001d825f86481c06b2d055423cdb9160a9a1ff7302f136dbcb9ba"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/FYP-proposal edit one.docx",
+        "member": "word/media/image1.jpeg",
+        "dimensionsPx": [
+          365,
+          309
+        ],
+        "sha256": "4ed036ec32d98a3caa7b9a841fdefa62b8570aefecfb0ed53448f2d2364a0b81"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/FYP-proposal edit one.docx",
+        "member": "word/media/image3.png",
+        "dimensionsPx": [
+          1266,
+          1242
+        ],
+        "sha256": "29ab52d6d067b27d60c641ca9ace8d8623a87cae133e655c7eed9b12a6fa0dac"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/FYP-proposal edit one.docx",
+        "member": "word/media/image2.png",
+        "dimensionsPx": [
+          1268,
+          842
+        ],
+        "sha256": "7e717c64252efdd3a07695fdd61116d3642aa1b06925b8f90021540217598c0b"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/FYP-proposal edit one.docx",
+        "member": "word/media/image5.png",
+        "dimensionsPx": [
+          1269,
+          792
+        ],
+        "sha256": "ee86f92ca47986753ad8e24a141c79273e9fe88346f3aa855c7d161c74f86a12"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image27.png",
+        "dimensionsPx": [
+          1568,
+          2072
+        ],
+        "sha256": "65620dc82f46abe2b3b49dd0ce88b2c04cad35549b1227f7ca51c632069dcc93"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image26.png",
+        "dimensionsPx": [
+          1568,
+          1960
+        ],
+        "sha256": "49b8b423a0851e8f8d35190c41efb532e10bf6f5f4daded9ed39e4ae13d10f82"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image28.png",
+        "dimensionsPx": [
+          1568,
+          2072
+        ],
+        "sha256": "864440b716fbf3bff323af621f6fc918c9be1245d77d290b5e48fa5d9ff59431"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image23.png",
+        "dimensionsPx": [
+          1568,
+          1960
+        ],
+        "sha256": "3e4ccd19038186fbdf30f38c827fc7460a18bd5928203522c5cc9293120ebe17"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image24.png",
+        "dimensionsPx": [
+          1568,
+          1960
+        ],
+        "sha256": "4cf2ba498babbda794a496dd432dd1f457dd914155aada508a4d21d5c48f0775"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image29.png",
+        "dimensionsPx": [
+          1568,
+          2072
+        ],
+        "sha256": "2439cd6cac27099ab133070b66bb015be6e04eaed6eab09f20109a25ccfa1455"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image22.png",
+        "dimensionsPx": [
+          1568,
+          1960
+        ],
+        "sha256": "4717bb68bdd93cded49468def21b41c15a4330181304934d8a499900d3ad6dd7"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image25.png",
+        "dimensionsPx": [
+          1568,
+          2016
+        ],
+        "sha256": "9290554c8dab2692e0325451ef60f04d2268cb9a04617f06d85798c52d883411"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image31.png",
+        "dimensionsPx": [
+          1568,
+          2072
+        ],
+        "sha256": "c18ecedbe8022413a729448690aaf2d72f534bdec2d0a61511c75f98ac5da454"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image21.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "e6d7504324b7a0337ac5183f21f556a79122e35688e6f92816906b6d7dd15189"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image38.png",
+        "dimensionsPx": [
+          1568,
+          1960
+        ],
+        "sha256": "6ee653f3d2cc4da8d4cec66ffc017eb91ad8bec88f7c1569d2fcba04ebf70f9d"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image37.png",
+        "dimensionsPx": [
+          1568,
+          1960
+        ],
+        "sha256": "064213385102fdce9b2efcd37315acdc502029e9d5744b6dd5eafcefe406ed9d"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image36.png",
+        "dimensionsPx": [
+          1568,
+          1960
+        ],
+        "sha256": "b8ee33c0952e0c57ac39995cd8c91fc7eed4295635f87c074a6330666210b274"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image35.png",
+        "dimensionsPx": [
+          1122,
+          1402
+        ],
+        "sha256": "762da6ce97c0a3659c4ee6fa4154d87d936b1361b1de550e1f484afd6a969c34"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image34.png",
+        "dimensionsPx": [
+          1568,
+          1960
+        ],
+        "sha256": "8d79346dad435ce8332bb8b0bab6fa692ebd37c76c702cce00ed25ae84bf67a0"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image33.png",
+        "dimensionsPx": [
+          1568,
+          2072
+        ],
+        "sha256": "a7c5e4f2d29fa7e10caaa5505256ed62dfce1711750c6f6a3cf7f4de5cb4f83b"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image32.png",
+        "dimensionsPx": [
+          1568,
+          2072
+        ],
+        "sha256": "f2ad8aee0ec255251d8f7796a945057311f0bba086e579facefcfaeb5490eb8b"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image30.png",
+        "dimensionsPx": [
+          1568,
+          2072
+        ],
+        "sha256": "5b66548cddd3ad7430beff360208ec16187783d6b9dff3e2f5c5e29f8dfc14dd"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image18.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "a8c8d5a7c6800db759fb420d113c04dbe706cd2a49d94a113bf02353bf64f1ae"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image19.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "0f4beaf454c7fa83c5d018aa92c355c6c84e1c2b4e325bafac43dcb099e53ee6"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image7.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "52661137670b1c19ce3cf33c371a68a56a7f7e92c06669b0c6732c6b4905b26d"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image6.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "0535d5590c2def6e43ce6e968a8ebfa3bfe0b041d9847c198677a247f4033d12"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image5.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "99f4c670c2bd29a851d5791e17b03743665f6fedfaee4eabcf8236f5f929bf77"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image4.png",
+        "dimensionsPx": [
+          1268,
+          829
+        ],
+        "sha256": "01e18c026dcc322694e6c018eabc55dc4f4746dc4df9ce12ea21f716b362c3f3"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image3.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "db06aa3766ad08feca27c75415048fc7f2c8ac3eda66b3979a46570313eb6c2e"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image2.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "890ddd4d7a74fdcd8b29caccdc9ad6209fa7d3dbe3a5e62b97600c2b237a3568"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image1.png",
+        "dimensionsPx": [
+          298,
+          250
+        ],
+        "sha256": "a571d4045e82ee81b582fb199fdea4c631c18be7686d7eae7b4ccc87958d4ace"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image8.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "f443fe24efb25302c5cfe97b4a77e99c9dce5c36fd3387e648c38fb15020fa98"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image9.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "bb345caf8f17a301b959e2913e0cefbd3fcbcf7015ba58662b912ab9f0659e8a"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image10.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "c7093f11d599eea5e3240515704536eac3b6e7d1bd90e6715947b3ca118c13fb"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image17.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "8cc1c61a81689e6f40ea321d00b1a13460341c3e1cede6b66378fac0a33b4046"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image16.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "99aeded1ba536bb503d668618ca98849f414aaabe187468051cf2fe343d56899"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image15.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "d40028620b54333897aa44b3069f60cb51b31d50d07b8073e8f8b3e00ababe05"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image14.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "709e961a885658d154431094743e8b370fd7f2910b894e0beaaa76a8b74ee34f"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image13.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "24a3af9e3567b51bac4970c18afe73c4f36127896189c0110bcef80a4e69ecc2"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image12.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "8da0259588ba349a8dfbe03798dddbc4591bdd2afb485f1b0434b7a1240d56c3"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image11.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "620662ef084be8fa4ae5a160c8211ccc6d76899bbbc6f678e755d08056a285b6"
+      },
+      {
+        "documentPath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-FYP-Deliverable-2026-27-Final.docx",
+        "member": "word/media/image20.png",
+        "dimensionsPx": [
+          1456,
+          952
+        ],
+        "sha256": "6d3e986ff88ea1eddf4d78344e78935533a045c93d513c77a6ec050d170f5d68"
+      }
+    ]
+  }
+}

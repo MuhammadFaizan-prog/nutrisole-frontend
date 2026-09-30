@@ -1,0 +1,519 @@
+[
+  {
+    "id": "sign-in",
+    "title": "Sign in",
+    "role": "consumer",
+    "requirements": [
+      "FR-02"
+    ],
+    "path": "images/sign-in.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "c6880cc5ea95b7a75b5d9c6353ae13c9699db443afc00a0b0f5db6b097d336f5",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "create-account",
+    "title": "Create account",
+    "role": "consumer",
+    "requirements": [
+      "FR-01"
+    ],
+    "path": "images/create-account.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "260522d3a564734aff57ee1c068ddd58cb009711a29778971524f9d055d61a1a",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "verify-email",
+    "title": "Verify email",
+    "role": "consumer",
+    "requirements": [
+      "FR-01"
+    ],
+    "path": "images/verify-email.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "8145588209347fd64b634c9535c46d5c456a8ac005096767b1133bbc2c6ac9c0",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "recover-account",
+    "title": "Account recovery",
+    "role": "consumer",
+    "requirements": [
+      "FR-03"
+    ],
+    "path": "images/recover-account.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "403b5ab8428f88d3154c81540b645692de57518dd01135b4a4693c675259ed5e",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "reset-password",
+    "title": "New password",
+    "role": "consumer",
+    "requirements": [
+      "FR-03"
+    ],
+    "path": "images/reset-password.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "28eef0730298ccdcd123ba51b881d6f105cc221347e8aa86d8b9f9eb1759095d",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "analysis-result",
+    "title": "Produce assessment",
+    "role": "consumer",
+    "requirements": [
+      "FR-08",
+      "FR-09",
+      "FR-30"
+    ],
+    "path": "images/analysis-result.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "9b487a0d8a83ff5378966e59368ccf9634db4dfaeba129dedd4bed5fe42d7089",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "market-reference",
+    "title": "Market reference",
+    "role": "consumer",
+    "requirements": [
+      "FR-10",
+      "FR-30"
+    ],
+    "path": "images/market-reference.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "625c3cfeb097ea28920b9471d6e8958d72d8af4483d66ee519077ea3f1d76291",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "capture-retry",
+    "title": "Capture needs review",
+    "role": "consumer",
+    "requirements": [
+      "FR-07",
+      "FR-29"
+    ],
+    "path": "images/capture-retry.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "feabbdb0e889fdad81e1810c5ae36aeca1f2b7b88e9341233119e40e4f0648f8",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Restricted recapture wording to supported produce.",
+    "initialImage": "refinement-initials/capture-retry.png",
+    "refinementPrompt": "Edit this NutriSole UI mockup with a single precise text correction. Preserve every other element, exact size, spacing, colors, typography, icon, image, card and button. In the card titled 'Avoid multiple items', replace the description 'Frame one food or drink at a time for the best results.' with exactly 'Frame one supported produce item at a time.' This app's camera supports selected produce classes; do not imply all foods or drinks are supported. Keep the text inside its existing card without clipping. No hardware/status bar."
+  },
+  {
+    "id": "food-selector",
+    "title": "Confirm food",
+    "role": "consumer",
+    "requirements": [
+      "FR-08",
+      "FR-11",
+      "FR-12"
+    ],
+    "path": "images/food-selector.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "0a4851a6b4a6226efceaca3818eb028a726d4b2c70d3bf7a67ddef7f85a6b2c8",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "nutrition-details",
+    "title": "Nutrition details",
+    "role": "consumer",
+    "requirements": [
+      "FR-11",
+      "FR-12",
+      "FR-30"
+    ],
+    "path": "images/nutrition-details.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "78fb6ebf8b750387ab076cdbfb00416d39fd99617a0056f7228ce20dff7ae537",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "glucose-overview",
+    "title": "Glucose history",
+    "role": "consumer",
+    "requirements": [
+      "FR-13",
+      "FR-14",
+      "FR-23"
+    ],
+    "path": "images/glucose-overview.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "bb2cb3121a1dd68a0f5f2d67ce67d5c232aba2976124a06930bc2be9952828ae",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "add-reading",
+    "title": "Add glucose reading",
+    "role": "consumer",
+    "requirements": [
+      "FR-13",
+      "FR-14",
+      "FR-29"
+    ],
+    "path": "images/add-reading.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "b90edbcd556b43615063b883ccef953771fa6b5715a56dbb89498f39c01b2585",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Removed fixed UTC offset; date-aware timezone handling belongs in code.",
+    "initialImage": "refinement-initials/add-reading.png",
+    "refinementPrompt": "Edit this NutriSole Add reading screen with one precise copy change. Preserve every other visual detail, size, layout, fonts, cards, icons, colors and values. Replace the standalone timezone text '(UTC-8) Pacific Time' with exactly 'Pacific Time'. Keep its same text style and location. Do not add a UTC offset because the app will resolve timezone offsets by the selected measurement date. Keep all date/time/value fields and other copy unchanged. No hardware/status bar."
+  },
+  {
+    "id": "reading-detail",
+    "title": "Reading detail",
+    "role": "consumer",
+    "requirements": [
+      "FR-14",
+      "FR-24"
+    ],
+    "path": "images/reading-detail.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "17d3ab3a59ab2f174b11fb188e58c97c696c8a356396cb14dc5a9f3f8bac499f",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "health-connections",
+    "title": "Health connections",
+    "role": "consumer",
+    "requirements": [
+      "FR-15",
+      "FR-16"
+    ],
+    "path": "images/health-connections.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "168316b2e52370f2407ab155d14dd7a9f6f047dfded98525a5e49410009cb279",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "plan-generation",
+    "title": "Prepare weekly plan",
+    "role": "consumer",
+    "requirements": [
+      "FR-17",
+      "FR-18",
+      "FR-30"
+    ],
+    "path": "images/plan-generation.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "00d5749faa343f1b221707546b956b246502d910717993f3dd46d9f84749c6ad",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "activity-plan",
+    "title": "Weekly activity",
+    "role": "consumer",
+    "requirements": [
+      "FR-18",
+      "FR-19"
+    ],
+    "path": "images/activity-plan.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "c94a943e0fe528e1bd3eb4e5535a70c7b901b883c881e1e9585302eb4ee35cc5",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "plan-rationale",
+    "title": "Plan rationale",
+    "role": "consumer",
+    "requirements": [
+      "FR-17",
+      "FR-19",
+      "FR-30"
+    ],
+    "path": "images/plan-rationale.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "fd428c7f02b57e44b4647ad8ef3ee39e98db577420f2b6a35097c7bb4858a06a",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Separated mobility constraints from activity preferences.",
+    "initialImage": "refinement-initials/plan-rationale.png",
+    "refinementPrompt": "Edit this NutriSole Why this plan screen with one precise description correction. Preserve every other detail, exact screen size, typography, spacing, colors, cards, icons and content. Under 'Recorded mobility constraints respected', replace the paragraph about 3–4 days/week strength training with exactly 'None reported. Activity follows your recorded preferences.' Keep this new paragraph inside the same row, with the same font size and enough wrapping. Strength training is an activity preference, not a mobility constraint. Everything else remains visually identical. No hardware/status bar."
+  },
+  {
+    "id": "foot-questionnaire",
+    "title": "Foot support questionnaire",
+    "role": "consumer",
+    "requirements": [
+      "FR-20"
+    ],
+    "path": "images/foot-questionnaire.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "05e42a82510c627fdd4b271f02b06b3dc03522adf67257558b9c9fd15572cb15",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "foot-guidance",
+    "title": "Foot support guidance",
+    "role": "consumer",
+    "requirements": [
+      "FR-20",
+      "FR-30"
+    ],
+    "path": "images/foot-guidance.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "ad0a08e949c21ac35af4082468152919b2f8caba4cf574a934d0326379b867d7",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "assistant",
+    "title": "NutriSole assistant",
+    "role": "consumer",
+    "requirements": [
+      "FR-21",
+      "FR-22",
+      "FR-32"
+    ],
+    "path": "images/assistant.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "19930d50ba5a8650c38ac9350490a5521215a8a41a06236217a4d17f687ab1be",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "privacy-data-rights",
+    "title": "Privacy and data rights",
+    "role": "consumer",
+    "requirements": [
+      "FR-05"
+    ],
+    "path": "images/privacy-data-rights.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "137ac8d308630188445f3e26abf29019ca4affd43d029150f06ec70b0b9538c2",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "reminders",
+    "title": "Reminder preferences",
+    "role": "consumer",
+    "requirements": [
+      "FR-31"
+    ],
+    "path": "images/reminders.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "b660079c8088d145a1e7a4665847a938cdf4983fbc2de4bb6c9fcfa6d653da1a",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "report-output",
+    "title": "Report an output",
+    "role": "consumer",
+    "requirements": [
+      "FR-32"
+    ],
+    "path": "images/report-output.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "95b5e25097f6458e2171662fdaead3593cb3df28f653dcd7204c040faba7f85a",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Corrected misleading-price explanation and disclosure of optional details.",
+    "initialImage": "refinement-initials/report-output.png",
+    "refinementPrompt": "Edit this NutriSole Report a result UI with exactly two text corrections. Preserve all other layout, size, typography, icons, card shapes and colors. 1 Under 'Misleading price', replace the incorrect calorie/nutrition description with exactly 'The price or its source seems wrong'. 2 In the pale green privacy/disclosure card, replace the text with exactly 'Only this output reference, your reason and optional details will be shared.' Fit naturally in its current card at the current body font size. Do not alter any other copy or add elements. No hardware/status bar."
+  },
+  {
+    "id": "report-status",
+    "title": "Report status",
+    "role": "consumer",
+    "requirements": [
+      "FR-32"
+    ],
+    "path": "images/report-status.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "5c9ed62ed14427a4fe934de2210fa4e8bbd2d42244b9d48c53e72ee626bef112",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "personal-history",
+    "title": "Personal history",
+    "role": "consumer",
+    "requirements": [
+      "FR-24",
+      "FR-23"
+    ],
+    "path": "images/personal-history.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "aa2083c7dc1440cdc07877e18763bd5090ce55038ac51432ca54c4aa25e71409",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Corrected trailing seven-day date range and labelled sample records.",
+    "initialImage": "refinement-initials/personal-history.png",
+    "refinementPrompt": "Edit this NutriSole Your history UI with exactly two text corrections, preserving all other size, typography, layout, spacing, images, cards, colors and buttons. 1 Replace the subtitle 'See your food, meals, and plans in one place.' with exactly 'Sample records: food, meals, and plans in one place.' Keep it wrapping in the same subtitle area. 2 In the 'Last 7 days' date-range card, replace its current date range with exactly 'Thu, Sep 24 – Wed, Sep 30, 2026'. Do not change the Weekly Plan record's Sep 28 – Oct 4, 2026 dates: that is the plan's own week. The history filter is a trailing seven-day window ending Sep 30. All other content must remain unchanged. No hardware/status bar."
+  },
+  {
+    "id": "catalog-queue",
+    "title": "Catalog review queue",
+    "role": "curator",
+    "requirements": [
+      "FR-25"
+    ],
+    "path": "images/catalog-queue.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "badacd0bc6778854fc3922591376d30534efb3a793296e3048adaddfea81c07a",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "catalog-review",
+    "title": "Catalog entry review",
+    "role": "curator",
+    "requirements": [
+      "FR-25"
+    ],
+    "path": "images/catalog-review.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "0e273b6ca3b86b5fd7342040f15f6965f04f0326f3d645c4cd738e202edde8f1",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "model-release",
+    "title": "Model and rule releases",
+    "role": "model-administrator",
+    "requirements": [
+      "FR-26"
+    ],
+    "path": "images/model-release.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "ae79374ddb4fcb1ad102b2da53a39e71b38d2e4649ade143be4eacdc0da52501",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "operations-audit",
+    "title": "Operations and audit",
+    "role": "operations-administrator",
+    "requirements": [
+      "FR-27",
+      "FR-28"
+    ],
+    "path": "images/operations-audit.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "da95336478a6003ff7985f2a6b33ef590a74bad8a39340890e3e1817e27bad95",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Labelled synthetic audit events as samples.",
+    "initialImage": "refinement-initials/operations-audit.png",
+    "refinementPrompt": "Edit this NutriSole Operations administrator UI with exactly one text change. Preserve every other pixel-layout detail, typography, colors, dimensions, spacing, cards, icons and values. Change the lower events card heading 'Audit events' to exactly 'Sample audit events'. It must remain clearly legible beside 'Redacted metadata only'; the records are synthetic design examples, not real system events. Keep all other text unchanged. No hardware/status bar."
+  },
+  {
+    "id": "report-triage",
+    "title": "Staff report review",
+    "role": "support-curator",
+    "requirements": [
+      "FR-32",
+      "FR-27"
+    ],
+    "path": "images/report-triage.png",
+    "dimensions": [
+      853,
+      1844
+    ],
+    "sha256": "ab379cad085e3a63395b3581d0caeb81882d6bfde6fad86079e9405524d79f03",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "reviewNotes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  }
+]

@@ -1,0 +1,783 @@
+{
+  "schemaVersion": "1.0",
+  "coordinateSystem": "Source PNG pixels, top-left origin. Rectangles use XYWH; crop boxes use LTRB with right/bottom exclusive.",
+  "method": "Independent lossless photographic rectangular crops, excluding baked-in UI. Use at original coordinates behind real UI. Do not combine into a flattened screenshot implementation.",
+  "sceneBoundsPx": {
+    "scan": [
+      41,
+      37,
+      781,
+      1371
+    ],
+    "onboardingFullHeroRegionApprox": [
+      38,
+      635,
+      786,
+      955
+    ]
+  },
+  "limitations": [
+    "The source lacks clean photographs beneath baked-in UI; gaps in the crop coverage must be concealed by reconstructed controls or treated as an explicitly documented image gap.",
+    "Scan top status region and all UI regions are intentionally excluded.",
+    "Photo rectangles use 1-3 px conservative clearance from UI anti-aliasing; avoid enlarging boxes without reinspection.",
+    "Onboarding side strips are 24 px wide and stop at y=1590; panel edge pixels are excluded."
+  ],
+  "patches": [
+    {
+      "id": "scan-top-under-status",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-top-under-status.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        43,
+        129,
+        778,
+        38
+      ],
+      "cropBoxLTRBExclusivePx": [
+        43,
+        129,
+        821,
+        167
+      ],
+      "outputDimensionsPx": [
+        778,
+        38
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-between-top-buttons",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-between-top-buttons.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        177,
+        167,
+        512,
+        100
+      ],
+      "cropBoxLTRBExclusivePx": [
+        177,
+        167,
+        689,
+        267
+      ],
+      "outputDimensionsPx": [
+        512,
+        100
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-top-left-margin",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-top-left-margin.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        43,
+        169,
+        35,
+        97
+      ],
+      "cropBoxLTRBExclusivePx": [
+        43,
+        169,
+        78,
+        266
+      ],
+      "outputDimensionsPx": [
+        35,
+        97
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-top-right-margin",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-top-right-margin.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        789,
+        169,
+        32,
+        97
+      ],
+      "cropBoxLTRBExclusivePx": [
+        789,
+        169,
+        821,
+        266
+      ],
+      "outputDimensionsPx": [
+        32,
+        97
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-above-recognition",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-above-recognition.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        43,
+        267,
+        778,
+        143
+      ],
+      "cropBoxLTRBExclusivePx": [
+        43,
+        267,
+        821,
+        410
+      ],
+      "outputDimensionsPx": [
+        778,
+        143
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-recognition-left",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-recognition-left.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        43,
+        410,
+        219,
+        173
+      ],
+      "cropBoxLTRBExclusivePx": [
+        43,
+        410,
+        262,
+        583
+      ],
+      "outputDimensionsPx": [
+        219,
+        173
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-recognition-right",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-recognition-right.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        751,
+        410,
+        70,
+        173
+      ],
+      "cropBoxLTRBExclusivePx": [
+        751,
+        410,
+        821,
+        583
+      ],
+      "outputDimensionsPx": [
+        70,
+        173
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-below-recognition-left",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-below-recognition-left.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        263,
+        570,
+        220,
+        13
+      ],
+      "cropBoxLTRBExclusivePx": [
+        263,
+        570,
+        483,
+        583
+      ],
+      "outputDimensionsPx": [
+        220,
+        13
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-below-recognition-right",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-below-recognition-right.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        518,
+        570,
+        232,
+        13
+      ],
+      "cropBoxLTRBExclusivePx": [
+        518,
+        570,
+        750,
+        583
+      ],
+      "outputDimensionsPx": [
+        232,
+        13
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-above-frame-band",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-above-frame-band.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        43,
+        583,
+        778,
+        50
+      ],
+      "cropBoxLTRBExclusivePx": [
+        43,
+        583,
+        821,
+        633
+      ],
+      "outputDimensionsPx": [
+        778,
+        50
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-frame-top-left-exterior",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-frame-top-left-exterior.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        43,
+        633,
+        168,
+        81
+      ],
+      "cropBoxLTRBExclusivePx": [
+        43,
+        633,
+        211,
+        714
+      ],
+      "outputDimensionsPx": [
+        168,
+        81
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-frame-top-center",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-frame-top-center.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        292,
+        633,
+        366,
+        81
+      ],
+      "cropBoxLTRBExclusivePx": [
+        292,
+        633,
+        658,
+        714
+      ],
+      "outputDimensionsPx": [
+        366,
+        81
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-frame-top-right-exterior",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-frame-top-right-exterior.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        741,
+        633,
+        80,
+        81
+      ],
+      "cropBoxLTRBExclusivePx": [
+        741,
+        633,
+        821,
+        714
+      ],
+      "outputDimensionsPx": [
+        80,
+        81
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-frame-top-left-interior",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-frame-top-left-interior.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        225,
+        679,
+        67,
+        35
+      ],
+      "cropBoxLTRBExclusivePx": [
+        225,
+        679,
+        292,
+        714
+      ],
+      "outputDimensionsPx": [
+        67,
+        35
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-frame-top-right-interior",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-frame-top-right-interior.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        658,
+        680,
+        69,
+        34
+      ],
+      "cropBoxLTRBExclusivePx": [
+        658,
+        680,
+        727,
+        714
+      ],
+      "outputDimensionsPx": [
+        69,
+        34
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-apple-main-band",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-apple-main-band.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        43,
+        714,
+        778,
+        342
+      ],
+      "cropBoxLTRBExclusivePx": [
+        43,
+        714,
+        821,
+        1056
+      ],
+      "outputDimensionsPx": [
+        778,
+        342
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-frame-bottom-left-exterior",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-frame-bottom-left-exterior.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        43,
+        1056,
+        168,
+        81
+      ],
+      "cropBoxLTRBExclusivePx": [
+        43,
+        1056,
+        211,
+        1137
+      ],
+      "outputDimensionsPx": [
+        168,
+        81
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-frame-bottom-center",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-frame-bottom-center.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        292,
+        1056,
+        366,
+        81
+      ],
+      "cropBoxLTRBExclusivePx": [
+        292,
+        1056,
+        658,
+        1137
+      ],
+      "outputDimensionsPx": [
+        366,
+        81
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-frame-bottom-right-exterior",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-frame-bottom-right-exterior.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        741,
+        1056,
+        80,
+        81
+      ],
+      "cropBoxLTRBExclusivePx": [
+        741,
+        1056,
+        821,
+        1137
+      ],
+      "outputDimensionsPx": [
+        80,
+        81
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-frame-bottom-left-interior",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-frame-bottom-left-interior.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        225,
+        1056,
+        67,
+        44
+      ],
+      "cropBoxLTRBExclusivePx": [
+        225,
+        1056,
+        292,
+        1100
+      ],
+      "outputDimensionsPx": [
+        67,
+        44
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-frame-bottom-right-interior",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-frame-bottom-right-interior.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        658,
+        1056,
+        69,
+        44
+      ],
+      "cropBoxLTRBExclusivePx": [
+        658,
+        1056,
+        727,
+        1100
+      ],
+      "outputDimensionsPx": [
+        69,
+        44
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-below-frame-band",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-below-frame-band.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        43,
+        1137,
+        778,
+        87
+      ],
+      "cropBoxLTRBExclusivePx": [
+        43,
+        1137,
+        821,
+        1224
+      ],
+      "outputDimensionsPx": [
+        778,
+        87
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-instruction-left",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-instruction-left.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        43,
+        1224,
+        97,
+        159
+      ],
+      "cropBoxLTRBExclusivePx": [
+        43,
+        1224,
+        140,
+        1383
+      ],
+      "outputDimensionsPx": [
+        97,
+        159
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-instruction-right",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-instruction-right.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        727,
+        1224,
+        94,
+        159
+      ],
+      "cropBoxLTRBExclusivePx": [
+        727,
+        1224,
+        821,
+        1383
+      ],
+      "outputDimensionsPx": [
+        94,
+        159
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "scan-below-instruction-band",
+      "sourceScreen": "scan",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/scan-below-instruction-band.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "sourceSha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+      "sourceRectXYWHPx": [
+        43,
+        1383,
+        778,
+        24
+      ],
+      "cropBoxLTRBExclusivePx": [
+        43,
+        1383,
+        821,
+        1407
+      ],
+      "outputDimensionsPx": [
+        778,
+        24
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "onboarding-photo-left-strip",
+      "sourceScreen": "onboarding",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/onboarding-photo-left-strip.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+      "sourceSha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+      "sourceRectXYWHPx": [
+        39,
+        1091,
+        24,
+        499
+      ],
+      "cropBoxLTRBExclusivePx": [
+        39,
+        1091,
+        63,
+        1590
+      ],
+      "outputDimensionsPx": [
+        24,
+        499
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    },
+    {
+      "id": "onboarding-photo-right-strip",
+      "sourceScreen": "onboarding",
+      "path": "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/assets/source/photo-patches/onboarding-photo-right-strip.png",
+      "sourcePath": "C:/Users/DELL/Downloads/fvp deliverable 1/NutriSole-UI-Concepts/ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+      "sourceSha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+      "sourceRectXYWHPx": [
+        799,
+        1091,
+        24,
+        499
+      ],
+      "cropBoxLTRBExclusivePx": [
+        799,
+        1091,
+        823,
+        1590
+      ],
+      "outputDimensionsPx": [
+        24,
+        499
+      ],
+      "operations": [
+        "crop only",
+        "lossless PNG encode"
+      ],
+      "content": "Original unobscured photographic pixels only; no UI text, icons, controls, target strokes, or device chrome."
+    }
+  ]
+}

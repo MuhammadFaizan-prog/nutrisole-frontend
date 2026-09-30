@@ -1,0 +1,34 @@
+{
+  "time": "2026-09-30T00:17:51.715Z",
+  "assets": [
+    {
+      "route": "onboarding",
+      "broken": []
+    },
+    {
+      "route": "home",
+      "broken": []
+    },
+    {
+      "route": "scan",
+      "broken": []
+    },
+    {
+      "route": "log-meal",
+      "broken": []
+    },
+    {
+      "route": "weekly-plan",
+      "broken": []
+    },
+    {
+      "route": "profile",
+      "broken": []
+    }
+  ],
+  "errors": [],
+  "keyboard": {
+    "screenScroll": 0,
+    "visible": "false"
+  }
+}

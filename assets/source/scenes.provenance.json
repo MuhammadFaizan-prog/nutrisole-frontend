@@ -1,0 +1,50 @@
+[
+  {
+    "id": "scan-photo-region",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+    "sha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+    "boundsLTRB": [
+      41,
+      37,
+      822,
+      1408
+    ],
+    "method": "Lossless photographic region crop. Must be rendered ONLY by ScenePhoto: an SVG mask excludes every source UI pixel. Never render this asset directly."
+  },
+  {
+    "id": "onboarding-photo-region",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+    "sha256": "3784c2b2181b86973cb52ff43e58709da0a87a984376be2381b21f8d7a8583f5",
+    "boundsLTRB": [
+      38,
+      609,
+      824,
+      1591
+    ],
+    "method": "Lossless photographic region crop. Must be rendered ONLY by ScenePhoto: an SVG mask excludes every source UI pixel. Never render this asset directly."
+  },
+  {
+    "id": "scan-time-background",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+    "sha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+    "boundsLTRB": [
+      116,
+      112,
+      190,
+      149
+    ],
+    "method": "Lossless photographic region crop. Must be rendered ONLY by ScenePhoto: an SVG mask excludes every source UI pixel. Never render this asset directly."
+  },
+  {
+    "id": "scan-indicators-background",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\NutriSole-UI-Concepts\\ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+    "sha256": "644ca243fc64aeff6a63edcda873ad4e5648e60ea135aaf33260be7a90682308",
+    "boundsLTRB": [
+      620,
+      112,
+      780,
+      152
+    ],
+    "method": "Lossless photographic region crop. Must be rendered ONLY by ScenePhoto: an SVG mask excludes every source UI pixel. Never render this asset directly."
+  }
+]

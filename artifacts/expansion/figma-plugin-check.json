@@ -1,0 +1,4 @@
+{
+  "compilerOptions": { "allowJs": true, "checkJs": true, "noEmit": true, "strict": false, "skipLibCheck": true, "target": "ES2022", "lib": ["ES2022"], "types": [] },
+  "files": ["../../scripts/figma-expansion-plugin.js", "figma-plugin-api.d.ts", "figma-globals.d.ts"]
+}

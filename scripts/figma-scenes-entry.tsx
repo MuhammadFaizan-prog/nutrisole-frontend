@@ -1,0 +1,12 @@
+import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
+import Onboarding from '../src/nutrisole/Onboarding';
+import Home from '../src/nutrisole/Home';
+import Scan from '../src/nutrisole/Scan';
+import LogMeal from '../src/nutrisole/LogMeal';
+import WeeklyPlan from '../src/nutrisole/WeeklyPlan';
+import Profile from '../src/nutrisole/Profile';
+const state={version:1,profile:{name:'Alex Chen',email:'alex.chen@email.com',dietary:'Balanced, Higher protein',allergens:'Tree nuts, Shellfish',activity:'Strength training, 3–4 days/week',mobility:'None',glucoseUnit:'mg/dL',timezone:'(UTC-8) Pacific Time'},connected:true,meals:[],drafts:[],accepted:[],substitutes:{},feedback:{},retainImages:false};
+const noop=()=>{};
+const props={store:{state,ready:true,update:noop,saveMeal:noop,reset:noop},home:noop,back:noop,go:noop,open:noop,capture:noop} as any;
+export const markup=Object.entries({onboarding:Onboarding,home:Home,scan:Scan,'log-meal':LogMeal,'weekly-plan':WeeklyPlan,profile:Profile}).map(([route,C])=>({route,html:renderToStaticMarkup(<n-root><C {...props}/></n-root>)}));

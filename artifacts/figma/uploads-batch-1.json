@@ -1,0 +1,362 @@
+[
+  {
+    "asset": "paper-onboarding-calibrated",
+    "nodeId": "3:18",
+    "status": 200,
+    "bytes": 54742
+  },
+  {
+    "asset": "leaf-brand-mark",
+    "nodeId": "3:19",
+    "status": 200,
+    "bytes": 7992
+  },
+  {
+    "asset": "onboarding-photo-masked",
+    "nodeId": "3:20",
+    "status": 200,
+    "bytes": 1122304
+  },
+  {
+    "asset": "onboarding-card-paper",
+    "nodeId": "3:21",
+    "status": 200,
+    "bytes": 6762
+  },
+  {
+    "asset": "icon-onboarding-recognition",
+    "nodeId": "3:22",
+    "status": 200,
+    "bytes": 12246
+  },
+  {
+    "asset": "icon-onboarding-personalized",
+    "nodeId": "3:23",
+    "status": 200,
+    "bytes": 12133
+  },
+  {
+    "asset": "icon-onboarding-support",
+    "nodeId": "3:24",
+    "status": 200,
+    "bytes": 13332
+  },
+  {
+    "asset": "icon-onboarding-continue",
+    "nodeId": "3:25",
+    "status": 200,
+    "bytes": 20753
+  },
+  {
+    "asset": "paper-home",
+    "nodeId": "3:26",
+    "status": 200,
+    "bytes": 7959
+  },
+  {
+    "asset": "alex-avatar-home",
+    "nodeId": "3:27",
+    "status": 200,
+    "bytes": 13104
+  },
+  {
+    "asset": "warm-card-texture-tile",
+    "nodeId": "3:28",
+    "status": 200,
+    "bytes": 3933
+  },
+  {
+    "asset": "home-progress-ring",
+    "nodeId": "3:29",
+    "status": 200,
+    "bytes": 51833
+  },
+  {
+    "asset": "dark-green-scan-texture-tile",
+    "nodeId": "3:30",
+    "status": 200,
+    "bytes": 7987
+  },
+  {
+    "asset": "icon-home-scan-camera",
+    "nodeId": "3:31",
+    "status": 200,
+    "bytes": 26182
+  },
+  {
+    "asset": "icon-home-scan-chevron",
+    "nodeId": "3:32",
+    "status": 200,
+    "bytes": 1550
+  },
+  {
+    "asset": "pale-green-texture-tile",
+    "nodeId": "3:33",
+    "status": 200,
+    "bytes": 8517
+  },
+  {
+    "asset": "icon-home-plan-calendar",
+    "nodeId": "3:34",
+    "status": 200,
+    "bytes": 4711
+  },
+  {
+    "asset": "icon-home-plan-chevron",
+    "nodeId": "3:35",
+    "status": 200,
+    "bytes": 1098
+  },
+  {
+    "asset": "lavender-texture-tile",
+    "nodeId": "3:36",
+    "status": 200,
+    "bytes": 9400
+  },
+  {
+    "asset": "icon-home-health-bars",
+    "nodeId": "3:37",
+    "status": 200,
+    "bytes": 3385
+  },
+  {
+    "asset": "icon-home-health-chevron",
+    "nodeId": "3:38",
+    "status": 200,
+    "bytes": 1126
+  },
+  {
+    "asset": "icon-home-see-all-chevron",
+    "nodeId": "3:39",
+    "status": 200,
+    "bytes": 897
+  },
+  {
+    "asset": "apple-thumbnail-home",
+    "nodeId": "3:40",
+    "status": 200,
+    "bytes": 24780
+  },
+  {
+    "asset": "chicken-bowl-home",
+    "nodeId": "3:41",
+    "status": 200,
+    "bytes": 34132
+  },
+  {
+    "asset": "icon-home-nav-home",
+    "nodeId": "3:42",
+    "status": 200,
+    "bytes": 2998
+  },
+  {
+    "asset": "icon-home-nav-plan",
+    "nodeId": "3:43",
+    "status": 200,
+    "bytes": 2909
+  },
+  {
+    "asset": "icon-home-nav-health",
+    "nodeId": "3:44",
+    "status": 200,
+    "bytes": 4244
+  },
+  {
+    "asset": "icon-home-nav-profile",
+    "nodeId": "3:45",
+    "status": 200,
+    "bytes": 3533
+  },
+  {
+    "asset": "icon-home-nav-camera",
+    "nodeId": "3:46",
+    "status": 200,
+    "bytes": 26070
+  },
+  {
+    "asset": "scan-backdrop-clean",
+    "nodeId": "3:47",
+    "status": 200,
+    "bytes": 1690188
+  },
+  {
+    "asset": "scan-time-background",
+    "nodeId": "3:48",
+    "status": 200,
+    "bytes": 2072
+  },
+  {
+    "asset": "scan-indicators-background",
+    "nodeId": "3:49",
+    "status": 200,
+    "bytes": 4741
+  },
+  {
+    "asset": "scan-photo-masked",
+    "nodeId": "3:50",
+    "status": 200,
+    "bytes": 1309988
+  },
+  {
+    "asset": "icon-scan-close",
+    "nodeId": "3:51",
+    "status": 200,
+    "bytes": 11528
+  },
+  {
+    "asset": "icon-scan-flash",
+    "nodeId": "3:52",
+    "status": 200,
+    "bytes": 10666
+  },
+  {
+    "asset": "scan-detection-surface",
+    "nodeId": "3:53",
+    "status": 200,
+    "bytes": 4079
+  },
+  {
+    "asset": "icon-scan-confirmation",
+    "nodeId": "3:54",
+    "status": 200,
+    "bytes": 5595
+  },
+  {
+    "asset": "scan-instruction-surface",
+    "nodeId": "3:55",
+    "status": 200,
+    "bytes": 8864
+  },
+  {
+    "asset": "icon-scan-instruction-target",
+    "nodeId": "3:56",
+    "status": 200,
+    "bytes": 5047
+  },
+  {
+    "asset": "scan-controls-surface",
+    "nodeId": "3:57",
+    "status": 200,
+    "bytes": 26576
+  },
+  {
+    "asset": "gallery-thumbnail",
+    "nodeId": "3:58",
+    "status": 200,
+    "bytes": 28414
+  },
+  {
+    "asset": "icon-scan-shutter",
+    "nodeId": "3:59",
+    "status": 200,
+    "bytes": 31216
+  },
+  {
+    "asset": "warm-background-tile",
+    "nodeId": "3:60",
+    "status": 200,
+    "bytes": 50595
+  },
+  {
+    "asset": "icon-log-back",
+    "nodeId": "3:61",
+    "status": 200,
+    "bytes": 1902
+  },
+  {
+    "asset": "apple-thumbnail",
+    "nodeId": "3:62",
+    "status": 200,
+    "bytes": 38617
+  },
+  {
+    "asset": "icon-log-info",
+    "nodeId": "3:63",
+    "status": 200,
+    "bytes": 3953
+  },
+  {
+    "asset": "gray-track-texture-tile",
+    "nodeId": "3:64",
+    "status": 200,
+    "bytes": 2096
+  },
+  {
+    "asset": "dark-green-texture-tile",
+    "nodeId": "3:65",
+    "status": 200,
+    "bytes": 6015
+  },
+  {
+    "asset": "icon-log-minus",
+    "nodeId": "3:66",
+    "status": 200,
+    "bytes": 6484
+  },
+  {
+    "asset": "icon-log-plus",
+    "nodeId": "3:67",
+    "status": 200,
+    "bytes": 7616
+  },
+  {
+    "asset": "pale-green-estimate-texture-tile",
+    "nodeId": "3:68",
+    "status": 200,
+    "bytes": 4278
+  },
+  {
+    "asset": "icon-log-estimate-apple",
+    "nodeId": "3:69",
+    "status": 200,
+    "bytes": 3208
+  },
+  {
+    "asset": "paper-weekly",
+    "nodeId": "3:70",
+    "status": 200,
+    "bytes": 14453
+  },
+  {
+    "asset": "icon-weekly-back",
+    "nodeId": "3:71",
+    "status": 200,
+    "bytes": 2228
+  },
+  {
+    "asset": "icon-weekly-calendar",
+    "nodeId": "3:72",
+    "status": 200,
+    "bytes": 4007
+  },
+  {
+    "asset": "weekly-progress-ring",
+    "nodeId": "3:73",
+    "status": 200,
+    "bytes": 10700
+  },
+  {
+    "asset": "berry-oats",
+    "nodeId": "3:74",
+    "status": 200,
+    "bytes": 51564
+  },
+  {
+    "asset": "icon-weekly-accept",
+    "nodeId": "3:75",
+    "status": 200,
+    "bytes": 1845
+  },
+  {
+    "asset": "icon-weekly-substitute",
+    "nodeId": "3:76",
+    "status": 200,
+    "bytes": 2800
+  },
+  {
+    "asset": "icon-weekly-more",
+    "nodeId": "3:77",
+    "status": 200,
+    "bytes": 1151
+  }
+]

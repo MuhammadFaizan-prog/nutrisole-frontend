@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-30",
+  "surface": "Existing Codex in-app browser tab at localhost:4173, controlled with its original CUA APIs",
+  "finalScreensCaptured": 30,
+  "observedConsoleErrors": [],
+  "passed": [
+    "Banana correction updates food confirmation and nutrition to 89 kcal per 100 g",
+    "Zero edible weight opens validation; 200 g Banana reviews as 178 sample calories",
+    "Reviewed meal appears in new session history; clearing session records preserves original demo",
+    "Zero manual glucose value rejected",
+    "110 mg/dL reading review retains date, time, Pacific Time context and manual source",
+    "Confirmed reading appears as a Manual record",
+    "Foot concern review retains Concern; activity is deferred and substitution disabled",
+    "Empty/invalid sign-in email rejected, including a first-tap submission with keyboard focus",
+    "Report payload contains output reference, reason and optional details; demo submission is recorded",
+    "Catalog Publish and model Activate package disabled while gates incomplete",
+    "Pixel 10 food selector renders without page horizontal overflow",
+    "All 30 added concept views render live text/buttons; captured retry photo follow-up loaded"
+  ],
+  "fixesFromBrowserReview": [
+    "Prevent button focus from moving keyboard-attached surfaces before press completion",
+    "Remove duplicate accessible actions in questionnaire/report radio rows",
+    "Refine account card anatomy, input borders, button arrows and selected-food outline"
+  ],
+  "limits": [
+    "Not every secondary action or accessibility/native device behaviour was exercised",
+    "No pixel-identity percentage is asserted",
+    "Figma API limit prevents live import and post-import visual verification"
+  ]
+}

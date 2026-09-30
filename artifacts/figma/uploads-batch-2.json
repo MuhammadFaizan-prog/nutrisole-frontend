@@ -1,0 +1,98 @@
+[
+  {
+    "asset": "icon-weekly-feedback",
+    "nodeId": "3:78",
+    "status": 200,
+    "bytes": 2122
+  },
+  {
+    "asset": "chicken-quinoa-bowl",
+    "nodeId": "3:79",
+    "status": 200,
+    "bytes": 63203
+  },
+  {
+    "asset": "paper-profile",
+    "nodeId": "3:80",
+    "status": 200,
+    "bytes": 55668
+  },
+  {
+    "asset": "icon-profile-back",
+    "nodeId": "3:81",
+    "status": 200,
+    "bytes": 1975
+  },
+  {
+    "asset": "alex-avatar",
+    "nodeId": "3:82",
+    "status": 200,
+    "bytes": 28856
+  },
+  {
+    "asset": "icon-profile-account-chevron",
+    "nodeId": "3:83",
+    "status": 200,
+    "bytes": 1378
+  },
+  {
+    "asset": "icon-profile-dietary",
+    "nodeId": "3:84",
+    "status": 200,
+    "bytes": 3419
+  },
+  {
+    "asset": "icon-profile-allergens",
+    "nodeId": "3:85",
+    "status": 200,
+    "bytes": 3954
+  },
+  {
+    "asset": "icon-profile-activity",
+    "nodeId": "3:86",
+    "status": 200,
+    "bytes": 4110
+  },
+  {
+    "asset": "icon-profile-mobility",
+    "nodeId": "3:87",
+    "status": 200,
+    "bytes": 3597
+  },
+  {
+    "asset": "icon-profile-glucose",
+    "nodeId": "3:88",
+    "status": 200,
+    "bytes": 3077
+  },
+  {
+    "asset": "icon-profile-timezone",
+    "nodeId": "3:89",
+    "status": 200,
+    "bytes": 3529
+  },
+  {
+    "asset": "icon-profile-health",
+    "nodeId": "3:90",
+    "status": 200,
+    "bytes": 4872
+  },
+  {
+    "asset": "icon-profile-connected",
+    "nodeId": "3:91",
+    "status": 200,
+    "bytes": 1034
+  },
+  {
+    "asset": "icon-profile-privacy",
+    "nodeId": "3:92",
+    "status": 200,
+    "bytes": 2861
+  },
+  {
+    "asset": "icon-profile-privacy-chevron",
+    "nodeId": "3:93",
+    "status": 200,
+    "bytes": 1252
+  }
+]

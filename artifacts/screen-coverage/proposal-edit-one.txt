@@ -1,0 +1,170 @@
+# FYP-proposal edit one.docx
+SHA-256: 8f92233c1a5cb3ec8c6b2fe700300e690a3a1a322890ad5eb31699ac00207936
+[proposal-edit-one:P0003] [paragraph] NutriSole: Computer Vision-Based Food and Health Assistant 	
+[proposal-edit-one:P0004] [paragraph]  [embedded images: ['rId9']]
+[proposal-edit-one:P0006] [paragraph] NutriSole
+[proposal-edit-one:P0008] [paragraph] Session 2023 – 2027
+[proposal-edit-one:P0011] [paragraph]     Dr. Hannan Bin Liaqat, Associate Professor
+[proposal-edit-one:P0013] [paragraph]                             Ahsan Iqbal ,Software Engineer,Codefinity Solutions
+[proposal-edit-one:P0015] [paragraph]                             Program: Bachelor of Science in Computer Sciences
+[proposal-edit-one:P0017] [paragraph]                                                         Shift: Evening 
+[proposal-edit-one:P0019] [paragraph]                                                         Submitted By
+[proposal-edit-one:P0021] [paragraph] Manahil Amir , BSF23006519
+[proposal-edit-one:P0022] [paragraph] M. Faizan , BSF23006565
+[proposal-edit-one:P0023] [paragraph] M. Kabir , BSF23006486	
+[proposal-edit-one:P0027] [paragraph] DEPARTMENT OF INFORMATION SCIENCES
+[proposal-edit-one:P0028] [paragraph] UNIVERSITY OF EDUCATION, LAHORE
+[proposal-edit-one:P0029] [paragraph] TOWNSHIP
+[proposal-edit-one:P0038] [paragraph] SEP 25, 2026
+[proposal-edit-one:P0042] [paragraph] 
+Declaration
+[proposal-edit-one:P0044] [paragraph] This is to certify that, We declare that our FYP  “NutriSole” is the result of our own research and development. We have not copied the proposal from anywhere. We declare that in our FYP proposal similarity index is less than 20%.  
+[proposal-edit-one:P0046] [paragraph] 	Submission Date: _________ 
+[proposal-edit-one:P0049] [paragraph] Signature: _______________				Signature: _______________
+[proposal-edit-one:P0050] [paragraph] Name: Manahil Amir     		            	Name: M. Faizan 
+[proposal-edit-one:P0051] [paragraph] Date: 09,25, 2026				            Date: 09,25, 2026
+[proposal-edit-one:P0053] [paragraph] Signature: _______________
+[proposal-edit-one:P0054] [paragraph] Name: M. Kabir 
+[proposal-edit-one:P0055] [paragraph] Date: 09,25, 2026
+[proposal-edit-one:P0081] [paragraph] Table of Contents
+[proposal-edit-one:P0082] [paragraph] 		1	Introduction	12
+[proposal-edit-one:P0083] [paragraph] 		2	Related Work	12
+[proposal-edit-one:P0084] [paragraph] 		3	Problem Description	12
+[proposal-edit-one:P0085] [paragraph] 		4	Aims and Objectives	12
+[proposal-edit-one:P0086] [paragraph] 		5	Domain of the Project	12
+[proposal-edit-one:P0087] [paragraph] 		6	Project Scope	12
+[proposal-edit-one:P0088] [paragraph] 		7	Methodology	12
+[proposal-edit-one:P0089] [paragraph] 		8	Tools and Technology	12
+[proposal-edit-one:P0090] [paragraph] 		9	Mile Stone (Gantt Chart)	12
+[proposal-edit-one:P0091] [paragraph] 		10    References	12
+[proposal-edit-one:P0095] [ListParagraph] INTRODUCTION
+[proposal-edit-one:P0097] [isselectedend] Food choices, glucose levels, physical activity, and everyday health decisions are closely connected, yet the information needed to understand these areas is often spread across different tools. A person may use one application to record glucose readings, another to check nutritional information, and separate sources for exercise or foot-related guidance. This makes it harder to see how food, glucose, and lifestyle choices are related. NutriSole is proposed as a mobile application that brings these functions together and provides connected information within one platform.
+[proposal-edit-one:P0098] [isselectedend] One of the main features of NutriSole is its Computer Vision-based food analysis. Using a smartphone camera, the application will recognize supported fruits and vegetables and examine visible characteristics such as ripeness, color, shape, surface condition, and defects. These observations will be used to assign a quality grade.The grade can be combined with verified market-price data to provide a reference price range, giving users a more structured way to understand produce quality and value.
+[proposal-edit-one:P0099] [isselectedend] NutriSole also connects food recognition with nutrition and glucose-related information. After a food item is identified, the application can display relevant nutritional information and consider glucose records provided by the user. Depending on available integration, readings may be entered manually or obtained through supported health-data sources or compatible devices. This information can then contribute to personalized weekly food and exercise planning based on the user's available data.
+[proposal-edit-one:P0100] [isselectedend] The application also provides basic footwear and injury-prevention support through defined rules. A conversational assistant will handle food, lifestyle, and diabetes-related questions within clear safety boundaries. It will not provide medical diagnoses, prescriptions, insulin-dose decisions, or other clinical instructions outside the project's scope.
+[proposal-edit-one:P0101] [isselectedend] From a technical perspective, NutriSole combines Computer Vision, machine learning, mobile application development, data management, health-data integration, and recommendation logic. The system is modular, allowing relevant information to move between components. For example, an identified food can be linked to nutritional information, while user and glucose records can contribute to diet and exercise guidance.
+[proposal-edit-one:P0102] [NormalWeb] The overall goal of NutriSole is to reduce the separation between food assessment and everyday lifestyle management. It is designed as a supportive software platform rather than a replacement for healthcare professionals, providing food analysis, nutrition information, glucose-related tracking, and personalized lifestyle guidance within defined safety limits.
+[proposal-edit-one:P0105] [ListParagraph] RELATED WORK 
+[proposal-edit-one:P0107] [Heading3] 2.1 Computer Vision for Fruit and Vegetable Quality Assessment
+[proposal-edit-one:P0108] [NormalWeb] Computer Vision has been studied as a practical way to make fruit and vegetable inspection more consistent. Traditional grading often depends on visual judgment, so results can vary from one person to another and can take considerable time when large quantities of produce have to be checked. Bhargava and Bansal [1] reviewed computer-vision techniques used for fruit and vegetable quality evaluation and grouped the main stages into image preprocessing, segmentation, feature extraction, and classification. Their review shows that visible properties such as colour, texture, size, shape, and surface defects can provide useful information for automated grading.
+[proposal-edit-one:P0109] [NormalWeb] The findings are directly relevant to the food-analysis component of NutriSole. Instead of treating a captured image only as an identification task, NutriSole uses the image to examine visible quality characteristics of supported fruits and vegetables, including ripeness and defects. This creates a second layer after recognition: the system first determines what the item is and then evaluates its visible condition. An explainable grade can be produced from the characteristics that the model is designed to inspect. The approach also supports the project's defined scope, because the system can focus on a selected produce dataset instead of attempting to recognise every possible food item.
+[proposal-edit-one:P0110] [NormalWeb] The review also highlights an important limitation of image-based grading: quality assessment depends on the information that can actually be observed in an image. Lighting, viewpoint, image quality, and the visibility of surface features can affect the result. For NutriSole, this means that uncertain or unsupported images should not be treated as reliable assessments. The project therefore includes reasonable image-capture assumptions and uncertainty handling rather than presenting every computer-vision output as a definitive judgement.
+[proposal-edit-one:P0111] [NormalWeb] 2.2 Image-Based Food Recognition and Nutritional Estimation
+[proposal-edit-one:P0112] [NormalWeb] Food recognition research has moved beyond simple image classification toward linking visual recognition with dietary information. Ma et al. [2] developed the ChinaFood-100 dataset containing 10,074 images across 100 food categories, with nutrient annotations connected to the recognised food items. Their study compared deep-learning architectures for food recognition and reported that Inception V3 achieved a top-1 recognition accuracy of 78.26% and a top-5 accuracy of 96.62%. They also evaluated nutrient-estimation methods and reported an R² value of up to 0.73 for protein estimation.
+[proposal-edit-one:P0113] [NormalWeb] This work is useful to NutriSole because it demonstrates how a food image can act as the starting point for a wider nutrition pipeline. Once an item is recognised, its nutritional information can be retrieved and presented to the user rather than ending the process at the class label. NutriSole follows this general direction but narrows the visual task to its supported food library and connects the identified food with user-specific information, including glucose records where available.
+[proposal-edit-one:P0114] [NormalWeb] There is still an important difference between recognising a food and deciding how that food fits a particular user's situation. A nutrition database can describe the food itself, but it does not automatically account for the user's recorded information or broader lifestyle context. NutriSole addresses this gap by using food identification as one input to a larger decision-support process. The result is intended to be more useful for everyday planning while remaining within the project's limits and avoiding clinical diagnosis or treatment decisions.
+[proposal-edit-one:P0115] [NormalWeb] 2.3 AI-Based Personalization for Diabetes and Lifestyle Management
+[proposal-edit-one:P0116] [NormalWeb] Artificial intelligence can be used to connect health records with personalised lifestyle planning. Xin et al. [3] evaluated an AI and big-data-based diabetes management model using data from 280 patients with type 2 diabetes. Their approach combined XGBoost for risk prediction with rule-based reasoning and reinforcement learning to generate individualized dietary, exercise, and blood-glucose-monitoring plans through a mobile application. After six months, the personalized management group showed better glycemic-control measures, self-care scores, and quality-of-life results than the conventional management group used in the study.
+[proposal-edit-one:P0117] [NormalWeb] This research supports an important part of the NutriSole concept: recommendations can be based on a user's available data instead of applying the same plan to everyone. For NutriSole, relevant information may include identified foods, nutritional information, glucose records, user preferences, and mobility or foot-related information. These inputs can contribute to weekly diet and exercise guidance. The project does not attempt to reproduce a clinical management model, however. Its purpose is lifestyle and informational support, with clear boundaries around diagnosis, prescriptions, insulin dosing, and other medical decisions.
+[proposal-edit-one:P0118] [NormalWeb] Taken together, the reviewed studies cover three important building blocks: visual assessment of produce quality, image-based food and nutrient analysis, and data-driven personalization for diabetes management. They also reveal the space between these areas. The first focuses on produce inspection, the second connects images with nutritional data, and the third focuses on personalized chronic-disease management. NutriSole brings these functions into a single mobile workflow: a supported food can be analysed through the camera, its quality and reference price can be assessed, nutritional information can be displayed, and relevant glucose and user data can contribute to personalized lifestyle guidance. This combination forms the main research and development focus of the proposed system.
+[proposal-edit-one:P0125] [ListParagraph] PROBLEM DESCRIPTION
+[proposal-edit-one:P0126] [NormalWeb] Managing food, glucose levels, physical activity, and foot-related concerns can be difficult when the required information is spread across different applications and sources. Users may need separate tools for checking food and nutrition, recording glucose readings, planning meals and exercise, and finding footwear or injury-related guidance, making it difficult to understand how these factors relate to one another. NutriSole addresses this gap through an integrated platform that combines food analysis, nutrition information, glucose tracking, personalized diet and exercise guidance, and basic footwear and injury-related support. The system also faces challenges such as unclear food images, uncertain AI results, incomplete user records, and dependencies between different modules. Since health-related information is involved, unreliable results or inappropriate recommendations could cause harm. Therefore, NutriSole must handle uncertainty clearly, protect user data, provide reliable information within its defined scope, and maintain appropriate safety boundaries while giving users a more connected way to manage diet, activity, and related lifestyle information.
+[proposal-edit-one:P0128] [paragraph] AIMS AND OBJECTIVES
+[proposal-edit-one:P0129] [NormalWeb] AIM: To develop a modular AI-based platform that integrates food/produce analysis, nutrition, glucose tracking, and personalized lifestyle guidance.
+[proposal-edit-one:P0130] [paragraph] OBJECTIVES:
+[proposal-edit-one:P0131] [ListParagraph] To identify supported fruits and vegetables using Computer Vision. 
+[proposal-edit-one:P0132] [ListParagraph] To assess visible produce characteristics such as ripeness, defects, color, shape, and surface condition. 
+[proposal-edit-one:P0133] [ListParagraph] To assign an understandable quality grade to analyzed produce. 
+[proposal-edit-one:P0134] [ListParagraph] To combine produce quality and verified market-price data to provide a reference price range. 
+[proposal-edit-one:P0135] [ListParagraph] To record and visualize user glucose data through manual entry or supported health-data sources. 
+[proposal-edit-one:P0136] [ListParagraph] To generate personalized weekly diet and exercise guidance using available user, nutrition, and glucose information. 
+[proposal-edit-one:P0137] [ListParagraph] To provide basic footwear and injury-prevention guidance within defined system rules. 
+[proposal-edit-one:P0138] [ListParagraph] To develop a conversational assistant for food, lifestyle, and diabetes-related queries within appropriate safety boundaries. 
+[proposal-edit-one:P0139] [NormalWeb] To handle uncertain or unsupported inputs clearly and maintain appropriate safety and data-protection measures.
+[proposal-edit-one:P0140] [ListParagraph] DOMAIN OF THE PROJECT 
+[proposal-edit-one:P0141] [NormalWeb] PRIMARY  DOMAIN: Software Engineering and Artificial Intelligence
+[proposal-edit-one:P0142] [NormalWeb] TECHNICAL DOMAINS:
+[proposal-edit-one:P0143] [paragraph] Computer Vision
+[proposal-edit-one:P0144] [paragraph] Machine Learning / Deep Learning
+[proposal-edit-one:P0145] [paragraph] Agricultural Technology (AgriTech)
+[proposal-edit-one:P0146] [paragraph] Market Information Systems
+[proposal-edit-one:P0147] [paragraph] Mobile Application Development
+[proposal-edit-one:P0148] [paragraph] IoT / Hardware Integration (if device added)
+[proposal-edit-one:P0149] [paragraph] Data Analytics
+[proposal-edit-one:P0150] [paragraph] Personalized Recommendation Systems
+[proposal-edit-one:P0151] [paragraph] Digital Health / Health Data Integration
+[proposal-edit-one:P0152] [paragraph] Cloud and Backend Engineering
+[proposal-edit-one:P0153] [NormalWeb] The project is therefore a multi-domain AI-enabled software engineering system, with computer vision and decision-support algorithms forming its primary technical foundation.
+[proposal-edit-one:P0155] [ListParagraph] Project Scope 
+[proposal-edit-one:P0156] [Heading4] 5.1 In Scope
+[proposal-edit-one:P0157] [NormalWeb] NutriSole will include:
+[proposal-edit-one:P0158] [NormalWeb] Food Recognition & Nutrition: Image-based identification of supported foods and estimation/display of nutritional information.
+[proposal-edit-one:P0159] [NormalWeb] Glucose Management: Manual or supported API-based glucose recording, history, and visualization.
+[proposal-edit-one:P0160] [NormalWeb] Personalized Diet: Food and portion recommendations based on user-provided health and dietary information.
+[proposal-edit-one:P0161] [NormalWeb] Exercise Guidance: Personalized exercise recommendations based on user preferences and relevant mobility/foot-related information.
+[proposal-edit-one:P0162] [NormalWeb] Footwear/Injury Support: Basic footwear guidance and injury-prevention information based on defined rules and available user data.
+[proposal-edit-one:P0163] [NormalWeb] AI Assistant: A conversational module for answering food, lifestyle, and system-related queries within defined safety boundaries.
+[proposal-edit-one:P0164] [NormalWeb] User Management: Profile, health-data records, recommendations, feedback, and progress tracking.
+[proposal-edit-one:P0166] [Heading4] 5.2 Out of Scope
+[proposal-edit-one:P0167] [Heading5] Custom hardware manufacturing or development of smart shoes, pressure sensors, or medical devices
+Direct control of insulin pumps, CGMs, or other medical equipment.
+Medical diagnosis, prescriptions, insulin-dose recommendations, or replacement of healthcare professionals.
+Laboratory-level nutritional, biochemical, or medical testing.
+Recognition of every food; the system will support a defined dataset/library.
+Advanced clinical diagnosis of foot injuries or diseases.
+
+[proposal-edit-one:P0168] [Heading4] 5.3 Technical Assumptions
+The system assumes that users have a compatible Android/iOS smartphone, camera, and internet connection. Real time Food will be captured under reasonable lighting conditions, while glucose and health information will be entered manually or obtained through supported health-data APIs/device where available. AI recommendations will be based on available user data and predefined safety rules, and uncertain or unsupported inputs will be clearly identified rather than treated as reliable results.
+[proposal-edit-one:P0171] [ListParagraph] METHODOLOGY
+[proposal-edit-one:P0173] [paragraph] NutriSole will follow an iterative AI and software engineering methodology, combining conventional software development with dataset-driven machine-learning development.
+[proposal-edit-one:P0177] [paragraph]  [embedded images: ['rId10']]
+[proposal-edit-one:P0178] [paragraph]  [embedded images: ['rId11']]
+[proposal-edit-one:P0183] [paragraph]  [embedded images: ['rId12']]
+[proposal-edit-one:P0190] [ListParagraph] TOOLS AND  TECHNOLOGY
+[proposal-edit-one:P0191] [paragraph] Python ,TypeScript / JavaScript ,SQL 
+
+[proposal-edit-one:P0192] [Heading2] AI / Computer Vision
+[proposal-edit-one:P0193] [NormalWeb] PyTorch ,YOLO .,OpenCV ,CNN / Transfer Learning Models ,Segmentation Model,Numpy,pandas 
+[proposal-edit-one:P0194] [Heading2] Backend
+[proposal-edit-one:P0195] [NormalWeb] Nest js, Rest Api, Pydantic
+[proposal-edit-one:P0196] [Heading2] Database
+[proposal-edit-one:P0197] [NormalWeb]  Supabase 
+[proposal-edit-one:P0198] [Heading2] Frontend
+[proposal-edit-one:P0199] [NormalWeb] React Native ,Tailwind CSS 
+[proposal-edit-one:P0200] [Heading2] Hardware
+[proposal-edit-one:P0201] [NormalWeb] Glucose Meter / Supported Health Data Source 
+[proposal-edit-one:P0202] [Heading2] Development Environment
+[proposal-edit-one:P0203] [NormalWeb] Git + GitHub 
+[proposal-edit-one:P0204] [Heading2] Deployment
+[proposal-edit-one:P0205] [NormalWeb] Docker 
+[proposal-edit-one:P0209] [ListParagraph] MILE STONE (GANTT CHART)
+[proposal-edit-one:P0211] [paragraph] Task
+[proposal-edit-one:P0212] [paragraph] Duration
+[proposal-edit-one:P0213] [paragraph]     Timeline
+[proposal-edit-one:P0214] [paragraph] Requirement Analysis
+[proposal-edit-one:P0215] [paragraph] 4 weeks
+[proposal-edit-one:P0216] [paragraph]                   Oct-Nov 2026
+[proposal-edit-one:P0217] [paragraph] System & App Design
+[proposal-edit-one:P0218] [paragraph] 4 weeks
+[proposal-edit-one:P0219] [paragraph]                   Nov-Dec 2026
+[proposal-edit-one:P0220] [paragraph] Dataset Development & Preparation
+[proposal-edit-one:P0221] [paragraph] 5 weeks
+[proposal-edit-one:P0222] [paragraph]                   Dec 2026-Jan 2027
+[proposal-edit-one:P0223] [paragraph] Computer Vision & AI Development
+[proposal-edit-one:P0224] [paragraph] 6 weeks
+[proposal-edit-one:P0225] [paragraph]                   Jan-Feb 2027
+[proposal-edit-one:P0226] [paragraph] Market Intelligence & Nutrition Module
+[proposal-edit-one:P0227] [paragraph] 4 weeks
+[proposal-edit-one:P0228] [paragraph]                   Feb-Mar 2027
+[proposal-edit-one:P0229] [paragraph] System Integration & Testing
+[proposal-edit-one:P0230] [paragraph] 3 weeks
+[proposal-edit-one:P0231] [paragraph]                   Mar-Apr 2027
+[proposal-edit-one:P0232] [paragraph] Deployment & Documentation
+[proposal-edit-one:P0233] [paragraph] 3 weeks
+[proposal-edit-one:P0234] [paragraph]                   Apr-May 2027
+[proposal-edit-one:P0237] [paragraph]  [embedded images: ['rId13']]
+[proposal-edit-one:P0239] [ListParagraph] References 
+[proposal-edit-one:P0240] [NormalWeb] [1] Bhargava, A., & Bansal, A. (2021). Fruits and vegetables quality evaluation using computer vision: A review. Journal of King Saud University - Computer and Information Sciences, 33(3), 243–257. https://doi.org/10.1016/j.jksuci.2018.06.002
+[proposal-edit-one:P0241] [NormalWeb] [2] Ma, P., Lau, C. P., Yu, N., Li, A., Liu, P., Wang, Q., & Sheng, J. (2021). Image-based nutrient estimation for Chinese dishes using deep learning. Food Research International, 147, Article 110437. https://doi.org/10.1016/j.foodres.2021.110437
+[proposal-edit-one:P0242] [NormalWeb] [3] Xin, M., Yao, Y., Huang, P., & Li, Q. (2026). Application study of an artificial intelligence and big data-based personalized chronic disease management model for diabetes patients. Frontiers in Public Health, 14, Article 1735295. https://doi.org/10.3389/fpubh.2026.1735295
+[proposal-edit-one:P0243] [NormalWeb] [4] Zeng, T., Li, S., Song, Q., Zhong, F., & Wei, X. (2023). Lightweight tomato real-time detection method based on improved YOLO and mobile deployment. Computers and Electronics in Agriculture, 205, 107625. doi:10.1016/j.compag.2023.107625. 
+[proposal-edit-one:P0244] [NormalWeb] [5] Fang, S., Liu, C., Zhu, F., Delp, E. J., & Boushey, C. J. (2015). Single-view food portion estimation based on geometric models. 2015 IEEE International Symposium on Multimedia (ISM), 385–390. doi:10.1109/ISM.2015.67. 
+[proposal-edit-one:P0245] [NormalWeb] [6] Lee, Y.-B., Kim, G., Jun, J. E., Park, H., Lee, W. J., Hwang, Y.-C., & Kim, J. H. (2023). An integrated digital health care platform for diabetes management with AI-based dietary management: 48-week results from a randomized controlled trial. Diabetes Care, 46(5), 959–966. doi:10.2337/dc22-1929. 
+[proposal-edit-one:P0246] [NormalWeb] [7] Zeevi, D., Korem, T., Zmora, N., et al. (2015). Personalized nutrition by prediction of glycemic responses. Cell, 163(5), 1079–1094. doi:10.1016/j.cell.2015.11.001. 
+
+## word/footnotes.xml
+
+## word/footer1.xml
+[proposal-edit-one:P0001] 		12
+
+## word/endnotes.xml

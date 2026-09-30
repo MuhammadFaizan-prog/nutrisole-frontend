@@ -1,0 +1,2 @@
+import type { referenceIcons } from './referenceIcons';
+export type IconName = keyof typeof referenceIcons | 'Camera' | 'CalendarDays' | 'ChartNoAxesColumnIncreasing' | 'Footprints' | 'UserRound' | 'PersonStanding' | 'ChevronRight' | 'ChevronLeft' | 'ArrowLeft' | 'ArrowRight' | 'House' | 'NotebookText' | 'Heart' | 'X' | 'Zap' | 'Check' | 'Scan' | 'Minus' | 'Plus' | 'Info' | 'Apple' | 'RefreshCw' | 'Ellipsis' | 'MessageSquare' | 'Flower' | 'Accessibility' | 'Droplet' | 'Clock3' | 'LockKeyhole' | 'Activity' | 'Settings';

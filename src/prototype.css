@@ -1,0 +1,24 @@
+@font-face { font-family: NutriSans; src: url('../node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: NutriSansBold; src: url('../node_modules/@fontsource/roboto/files/roboto-latin-600-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: NutriSerif; src: url('../node_modules/@fontsource/libre-caslon-display/files/libre-caslon-display-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: NutriSerifBold; src: url('../assets/fonts/LibreCaslonText-Bold.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: NutriSerifText; src: url('../assets/fonts/LibreCaslonText-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+.nutri-scroll { background: #faf8f1; }
+.nutri-scroll [role='button']:focus-visible { outline: 3px solid #82ad84; outline-offset: -3px; border-radius: 8px; }
+.nutri-scroll svg { display: block; }
+.nutri-camera-mode .status-bar { color: #fff; }
+.nutri-camera-mode .status-indicator-svg { filter: invert(1); }
+.nutri-review-toolbar { position: fixed; z-index: 103; left: 24px; top: 22px; display: flex; align-items: center; gap: 10px; color: #294936; font: 14px NutriSans, sans-serif; }
+.nutri-review-brand { font: 25px Georgia, serif; margin-right: 10px; }
+.nutri-review-toolbar select, .nutri-review-toolbar button { color: #294936; background: #fff; border: 1px solid #e4e9e0; padding: 7px 10px; border-radius: 8px; text-transform: capitalize; }
+.nutri-sheet-content { display: grid; gap: 12px; padding-bottom: 22px; font: 15px/1.4 NutriSans, sans-serif; color: #263e32; }
+.nutri-field { display: grid; gap: 7px; }
+.nutri-field input, .nutri-field textarea { width: 100%; border: 1px solid #dce2d8; background: #fafbf6; color: #17251d; border-radius: 12px; padding: 14px; outline: none; }
+.nutri-field input:focus, .nutri-field textarea:focus { border-color: #326b4b; box-shadow: 0 0 0 2px #daeadb; }
+.nutri-field textarea { min-height: 90px; resize: none; }
+.nutri-choice { background: #f8faf4; border: 1px solid #e1e6dc; color: #1c4c32; padding: 13px 15px; text-align: left; border-radius: 13px; }
+.nutri-choice.is-selected { background: #e5f0e1; border-color: #b2cbb2; }
+.nutri-sheet-primary { border: 0; border-radius: 14px; background: #194a32; color: white; padding: 14px; font-weight: 600; }
+.nutri-sheet-cancel { border: 0; border-radius: 12px; padding: 12px; background: transparent; color: #27513b; }
+.nutri-form-error { color: #a52d22; margin: 0; }
+@media (max-width: 650px) { .nutri-review-toolbar { left: 9px; top: 9px; gap: 5px; font-size: 11px; } .nutri-review-brand { display: none; } .nutri-review-toolbar select { max-width: 115px; } .nutri-review-toolbar select, .nutri-review-toolbar button { padding: 5px; } }

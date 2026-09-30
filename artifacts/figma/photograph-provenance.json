@@ -1,0 +1,14 @@
+[
+  {
+    "asset": "onboarding-photo-masked.png",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\source\\onboarding-photo-region.png",
+    "sha256": "3ddfdf62ce0b9e3f8fa2633628cc271b4acb49a1d3dd2f2d4285412d3d494e1a",
+    "method": "Source photograph with alpha exclusions matching ScenePhoto.tsx. Original UI removed before Figma import."
+  },
+  {
+    "asset": "scan-photo-masked.png",
+    "source": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend\\assets\\source\\scan-photo-region.png",
+    "sha256": "8e534149661a77306a2a14f8fc2dd5fa75f038dbabc2e542045622f8d734f7ea",
+    "method": "Source photograph with alpha exclusions matching ScenePhoto.tsx. Original UI removed before Figma import."
+  }
+]

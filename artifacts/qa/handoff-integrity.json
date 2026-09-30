@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-30",
+  "originalScreenPNGsUnchanged": 6,
+  "sourceIconArtwork": 44,
+  "cleanSurfaceAssetsIncludingCalibratedPaper": 11,
+  "semanticSourceScenes": 6,
+  "sourceTextValues": 126,
+  "missingFigmaSourceAssets": [],
+  "figmaAssetMasters": 76,
+  "prototypeNavigationLinks": 16,
+  "figmaUnicodeCorrectionSaved": true,
+  "runtimeProtectedFilesVerified": 28,
+  "latestVisualCheck": "pending: browser review, Figma quota and native desktop activation blockers; see design-qa.md"
+}

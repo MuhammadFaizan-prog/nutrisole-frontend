@@ -1,0 +1,194 @@
+[
+  {
+    "id": "sign-in",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-26f31469-71f5-4e1e-9569-67e14efaaae2.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "create-account",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-ac680b93-2270-4336-b4dd-a745e3e8661c.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "verify-email",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-dada3d42-8de1-44ee-9d39-922eee47ac38.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "recover-account",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-9d46a148-b3fd-497b-b905-17aa0d29cecd.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "reset-password",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-57fdb866-205f-40f6-96ed-48c74c4b46ad.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "analysis-result",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-2495092e-6be2-447b-af27-d386abd05067.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "market-reference",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-c993b2a0-aeb8-4fe7-9628-2ad9f3827908.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "capture-retry",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-4c5c85ed-4568-4d4f-b943-01a6263f132e.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Restricted recapture wording to supported produce.",
+    "originalSourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-14585076-b087-4771-b3cc-1535d8f86adc.png",
+    "refinementPrompt": "Edit this NutriSole UI mockup with a single precise text correction. Preserve every other element, exact size, spacing, colors, typography, icon, image, card and button. In the card titled 'Avoid multiple items', replace the description 'Frame one food or drink at a time for the best results.' with exactly 'Frame one supported produce item at a time.' This app's camera supports selected produce classes; do not imply all foods or drinks are supported. Keep the text inside its existing card without clipping. No hardware/status bar."
+  },
+  {
+    "id": "food-selector",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-a8d1892a-c61f-449d-83b3-bacb8de0ac14.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "nutrition-details",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-70ce2c30-578b-418b-9f73-6ac9b78332b0.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "glucose-overview",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-ff44b37e-4134-4b06-92b2-354ec14be12b.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "add-reading",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-a06fc8fa-2d76-46bc-8088-80c778e4933c.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Removed fixed UTC offset; date-aware timezone handling belongs in code.",
+    "originalSourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-974d04b3-e84b-4ef8-aa20-e80b9a8d954d.png",
+    "refinementPrompt": "Edit this NutriSole Add reading screen with one precise copy change. Preserve every other visual detail, size, layout, fonts, cards, icons, colors and values. Replace the standalone timezone text '(UTC-8) Pacific Time' with exactly 'Pacific Time'. Keep its same text style and location. Do not add a UTC offset because the app will resolve timezone offsets by the selected measurement date. Keep all date/time/value fields and other copy unchanged. No hardware/status bar."
+  },
+  {
+    "id": "reading-detail",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-edd143d2-c793-4bed-90e4-64f598ae2c82.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "health-connections",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-ee7220ce-7247-48f1-a4a3-b7d3914efce4.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "plan-generation",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-ed773405-a617-483c-b5ea-73bb29ed627b.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "activity-plan",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-7336ddf1-2a3f-4ccc-82c0-01d5587c82b4.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "plan-rationale",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-4c3ca73b-04cd-465a-9842-6e2d21008a95.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Separated mobility constraints from activity preferences.",
+    "originalSourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-291291b8-f881-4ff7-aafd-7f56036abac8.png",
+    "refinementPrompt": "Edit this NutriSole Why this plan screen with one precise description correction. Preserve every other detail, exact screen size, typography, spacing, colors, cards, icons and content. Under 'Recorded mobility constraints respected', replace the paragraph about 3–4 days/week strength training with exactly 'None reported. Activity follows your recorded preferences.' Keep this new paragraph inside the same row, with the same font size and enough wrapping. Strength training is an activity preference, not a mobility constraint. Everything else remains visually identical. No hardware/status bar."
+  },
+  {
+    "id": "foot-questionnaire",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-e01af607-0bf0-4356-9092-0995c89237d9.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "foot-guidance",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-b40f9b69-34ef-4f2f-88e0-388dfb77e7b3.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "assistant",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-3427f6f4-4901-4edc-8d0c-218194f5d773.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "privacy-data-rights",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-e936a39f-1ac7-49fc-9f17-13c9567360e5.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "reminders",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-dd9dd3e2-bd0e-41b6-9201-74d2de727b1d.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "report-output",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-94bd6c01-d622-4422-b534-d479267bffd5.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Corrected misleading-price explanation and disclosure of optional details.",
+    "originalSourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-d45cf054-af47-4167-84ef-d5e78781fdcc.png",
+    "refinementPrompt": "Edit this NutriSole Report a result UI with exactly two text corrections. Preserve all other layout, size, typography, icons, card shapes and colors. 1 Under 'Misleading price', replace the incorrect calorie/nutrition description with exactly 'The price or its source seems wrong'. 2 In the pale green privacy/disclosure card, replace the text with exactly 'Only this output reference, your reason and optional details will be shared.' Fit naturally in its current card at the current body font size. Do not alter any other copy or add elements. No hardware/status bar."
+  },
+  {
+    "id": "report-status",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-1edf6ed5-8247-4533-82d7-256e691f2380.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "personal-history",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-2fbb4127-92d0-4f8e-83e2-90994fb69b60.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Corrected trailing seven-day date range and labelled sample records.",
+    "originalSourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-7aa0de0d-00c5-45cb-926a-fb9de3fd9743.png",
+    "refinementPrompt": "Edit this NutriSole Your history UI with exactly two text corrections, preserving all other size, typography, layout, spacing, images, cards, colors and buttons. 1 Replace the subtitle 'See your food, meals, and plans in one place.' with exactly 'Sample records: food, meals, and plans in one place.' Keep it wrapping in the same subtitle area. 2 In the 'Last 7 days' date-range card, replace its current date range with exactly 'Thu, Sep 24 – Wed, Sep 30, 2026'. Do not change the Weekly Plan record's Sep 28 – Oct 4, 2026 dates: that is the plan's own week. The history filter is a trailing seven-day window ending Sep 30. All other content must remain unchanged. No hardware/status bar."
+  },
+  {
+    "id": "catalog-queue",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-30136ae0-743e-4adf-83f3-347b543842a7.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "catalog-review",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-a6880dad-f885-47cf-86e1-fda35234e58d.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "model-release",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-90662e81-1949-4d64-aa91-45dc3fd4f180.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  },
+  {
+    "id": "operations-audit",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-54be06ac-6426-4a9e-8dca-8bd4efd96302.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json. Labelled synthetic audit events as samples.",
+    "originalSourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-0c06ad38-118f-4cd6-a1aa-2e3b7ebedc50.png",
+    "refinementPrompt": "Edit this NutriSole Operations administrator UI with exactly one text change. Preserve every other pixel-layout detail, typography, colors, dimensions, spacing, cards, icons and values. Change the lower events card heading 'Audit events' to exactly 'Sample audit events'. It must remain clearly legible beside 'Redacted metadata only'; the records are synthetic design examples, not real system events. Keep all other text unchanged. No hardware/status bar."
+  },
+  {
+    "id": "report-triage",
+    "sourcePath": "C:\\Users\\DELL\\.codex\\generated_images\\01a0ef16-9991-7491-9cc9-5c7043acab3e\\exec-9f53503f-67f2-4b19-bc27-097dd8517aae.png",
+    "reviewStatus": "visually-reviewed-primary-concept",
+    "notes": "Reviewed for NutriSole style, legible primary content, complete app surface, absence of phone hardware and fixture/empty-data wording. Secondary states remain specified in coverage.json."
+  }
+]

@@ -1,0 +1,1104 @@
+# NutriSole-FYP-Deliverable-2026-27-Final (1).docx
+SHA-256: 54e46b5a486bc9933db1a4d121a52654633679c5567a28c9905e76e2b0322ae6
+[final-deliverable:P0002] [paragraph] NUTRISOLE: COMPUTER VISION-BASED
+FOOD AND HEALTH ASSISTANT
+[final-deliverable:P0003] [paragraph]  [embedded images: ['rId7']]
+[final-deliverable:P0004] [paragraph] Session 2023–2027
+[final-deliverable:P0006] [paragraph] Supervisor: Dr. HANNAN BIN  LIAQAT , ASSOCIATE PROFESSOR
+[final-deliverable:P0008] [paragraph] Industry Supervisor: Ahsan Iqbal, Software Engineer, Codefinity Solutions
+[final-deliverable:P0009] [paragraph] Project ID: To be confirmed
+[final-deliverable:P0010] [paragraph] Program: Bachelor of Science in Computer Sciences
+[final-deliverable:P0011] [paragraph] Shift: Evening
+[final-deliverable:P0013] [paragraph] Submitted By
+[final-deliverable:P0014] [paragraph] Manahil Amir  |  BSF23006519
+[final-deliverable:P0015] [paragraph] M. Faizan  |  BSF23006565
+[final-deliverable:P0016] [paragraph] M. Kabir  |  BSF23006486
+[final-deliverable:P0018] [paragraph] DEPARTMENT OF INFORMATION SCIENCES
+[final-deliverable:P0019] [paragraph] UNIVERSITY OF EDUCATION, LAHORE
+[final-deliverable:P0020] [paragraph] TOWNSHIP CAMPUS
+[final-deliverable:P0023] [171] September 2026
+[final-deliverable:P0026] [171] NutriSole: Computer Vision-Based Food and Health Assistant
+[final-deliverable:P0030] [paragraph] BS Computer Sciences  |  Session 2023–2027
+[final-deliverable:P0037] [paragraph] A project documentation submitted in partial fulfillment of the requirements for the award of the degree of Bachelor of Science in Computer Sciences.
+[final-deliverable:P0049] [paragraph] Department of Information Sciences
+University of Education, Township Campus, Lahore
+[final-deliverable:P0053] [paragraph] September 2026
+[final-deliverable:P0067] [paragraph] © Copyight 2026 
+[final-deliverable:P0085] [171] Project Approval and Endorsement
+[final-deliverable:P0087] [paragraph] “I hereby declare that I have read this project documentation, and in my opinion this project is sufficient in terms of scope and quality for the award of the degree of BS Computer Science”
+[final-deliverable:P0105] [paragraph] __________________________                 __________________________
+Primary Supervisor                                   External Examiner
+[final-deliverable:P0106] [paragraph] Name: Dr. Hannan Bin Liaqat                Name: To be confirmed
+Designation: Associate Professor            Designation: To be confirmed
+[final-deliverable:P0116] [171] Declaration
+[final-deliverable:P0117] [paragraph] We declare that the project documentation entitled “NutriSole: Computer Vision-Based Food and Health Assistant” is our own work except where sources are acknowledged. This declaration is presented for our review and signatures; it is not an attestation signed on our behalf.
+[final-deliverable:P0123] [paragraph] Signature: __________________  	  	  	Signature: __________________
+[final-deliverable:P0124] [paragraph] 
+Manahil Amir  |  BSF23006519    		  	M. Faizan  |  BSF23006565
+[final-deliverable:P0126] [paragraph] Date: __________________			  	Date: __________________
+[final-deliverable:P0133] [paragraph] Signature: __________________
+[final-deliverable:P0134] [paragraph] 
+M. Kabir  |  BSF23006486
+[final-deliverable:P0136] [paragraph] Date: __________________
+[final-deliverable:P0145] [171] Plagiarism Undertaking
+[final-deliverable:P0147] [paragraph] We acknowledge the University of Education requirements for originality, source attribution and the ethical use of artificial intelligence. All externally sourced literature, datasets, code and other material used in the project must be credited according to the applicable university policy. The students’ final undertaking and similarity evidence require their own confirmation and signatures.
+[final-deliverable:P0151] [paragraph] Signature: __________________  	  	  	Signature: __________________
+[final-deliverable:P0152] [paragraph] 
+Manahil Amir  |  BSF23006519    		  	M. Faizan  |  BSF23006565
+[final-deliverable:P0154] [paragraph] Date: __________________			  	Date: __________________
+[final-deliverable:P0161] [paragraph] Signature: __________________
+[final-deliverable:P0162] [paragraph] 
+M. Kabir  |  BSF23006486
+[final-deliverable:P0164] [paragraph] Date: __________________
+[final-deliverable:P0173] [171] Acknowledgement
+[final-deliverable:P0174] [paragraph] The project team acknowledges the academic guidance of  Dr. Hannan Bin Liaqat and the technical perspective of Ahsan Iqbal as identified in the proposal. This documentation also reflects the University of Education’s prescribed FYP structure. Individual acknowledgements may be reviewed and expanded by the students before submission.
+[final-deliverable:P0204] [171] Abstract
+[final-deliverable:P0206] [paragraph] NutriSole is a proposed mobile application that connects computer-vision analysis of supported food with nutrition information, glucose records and weekly lifestyle guidance. The real time camera checks for suitability, classified against a defined food library and assessed for visible quality attributes. A grade may be paired with a dated, verified market-price reference. Users can confirm a food and portion before recording a meal, enter glucose readings manually, or authorize an available device health-data connection. Profile information and available records support weekly food and activity suggestions. A versioned rule set provides basic footwear and injury-prevention information, while a guarded assistant answers permitted food and lifestyle questions.
+[final-deliverable:P0208] [paragraph] The design uses a React Native client, NestJS backend, Python inference services and Supabase PostgreSQL. It emphasizes source provenance, uncertainty, owner-scoped access and explicit failure handling. This report specifies requirements, interactions, architecture, database design, proposed interfaces and a test plan. The supplied material does not establish that the application has been implemented or evaluated; performance, model quality and user outcomes remain pending implementation and testing.
+[final-deliverable:P0230] [171] List of Tables
+[final-deliverable:P0231] [38] 	Table 1.1: Terms and abbreviations	10
+[final-deliverable:P0232] [38] 	Table 2.1: NutriSole stakeholders	18
+[final-deliverable:P0233] [38] 	Table 2.2: Functional requirements 01–05	22
+[final-deliverable:P0234] [38] 	Table 2.3: Functional requirements 06–10	24
+[final-deliverable:P0235] [38] 	Table 2.4: Functional requirements 11–15	26
+[final-deliverable:P0236] [38] 	Table 2.5: Functional requirements 16–20	28
+[final-deliverable:P0237] [38] 	Table 2.6: Functional requirements 21–25	30
+[final-deliverable:P0238] [38] 	Table 2.7: Functional requirements 26–30	32
+[final-deliverable:P0239] [38] 	Table 2.8: Functional requirements 31–32	34
+[final-deliverable:P0240] [38] 	Table 2.9: Non-functional requirements 01–04	38
+[final-deliverable:P0241] [38] 	Table 2.10: Non-functional requirements 05–08	40
+[final-deliverable:P0242] [38] 	Table 2.11: Non-functional requirements 09–12	42
+[final-deliverable:P0243] [38] 	Table 2.12: Non-functional requirements 13–16	44
+[final-deliverable:P0244] [38] 	Table 4.1: Representative application API contracts	108
+[final-deliverable:P0245] [38] 	Table 4.2: Schema integrity and cardinality	128
+[final-deliverable:P0262] [171] List of Figures  Chapter 3
+[final-deliverable:P0263] [38] 	Figure 3.1: UC-01 User Registration	50
+[final-deliverable:P0264] [38] 	Figure 3.2: UC-02 User Login	52
+[final-deliverable:P0265] [38] 	Figure 3.3: UC-03 Food Capture and Computer Vision Analysis	54
+[final-deliverable:P0266] [38] 	Figure 3.4: UC-04 Quality Grading and Price Reference Verification	56
+[final-deliverable:P0267] [38] 	Figure 3.5: UC-05 Glucose Level Logging and Visualization	58
+[final-deliverable:P0268] [38] 	Figure 3.6: UC-06 Weekly Diet and Exercise Plan Generation	60
+[final-deliverable:P0269] [38] 	Figure 3.7: UC-07 AI Conversational Chatbot Assistant Queries	62
+[final-deliverable:P0270] [38] 	Figure 3.8: UC-08 Profile and Preference Management	64
+[final-deliverable:P0271] [38] 	Figure 3.9: UC-09 Nutrition Review and Meal Logging	66
+[final-deliverable:P0272] [38] 	Figure 3.10: UC-10 Health Source Connection and Synchronization	68
+[final-deliverable:P0273] [38] 	Figure 3.11: UC-11 Plan Revision and Adherence Feedback	70
+[final-deliverable:P0274] [38] 	Figure 3.12: UC-12 Account Recovery and Logout	72
+[final-deliverable:P0275] [38] 	Figure 3.13: UC-13 Footwear and Injury Prevention Support	74
+[final-deliverable:P0276] [38] 	Figure 3.14: UC-14 Dashboard and Personal History	76
+[final-deliverable:P0277] [38] 	Figure 3.15: UC-15 Consent Export and Account Deletion	78
+[final-deliverable:P0278] [38] 	Figure 3.16: UC-16 Catalog and Market Source Curation	80
+[final-deliverable:P0279] [38] 	Figure 3.17: UC-17 Model and Safety Rule Release	82
+[final-deliverable:P0280] [38] 	Figure 3.18: UC-18 Authorized Operations and Audit Review	84
+[final-deliverable:P0281] [38] 	Figure 3.19: UC-19 Reminder Preferences	86
+[final-deliverable:P0282] [38] 	Figure 3.20: UC-20 Report Incorrect or Unsuitable Output	88
+[final-deliverable:P0283] [38] 	Figure 3.21: Consumer use cases	92
+[final-deliverable:P0284] [38] 	Figure 3.22: Privileged use cases	94
+[final-deliverable:P0285] [38] 	Figure 3.23: NutriSole context diagram	96
+[final-deliverable:P0286] [38] 	Figure 3.24: NutriSole Level 1 data flow	98
+[final-deliverable:P0296] [171] List of Figures  Chapters 4 
+[final-deliverable:P0297] [38] 	Figure 4.1: Three-tier NutriSole architecture	104
+[final-deliverable:P0298] [38] 	Figure 4.2: Application service class diagram	112
+[final-deliverable:P0299] [38] 	Figure 4.3: Data model subject area 1 of 6	116
+[final-deliverable:P0300] [38] 	Figure 4.4: Data model subject area 2 of 6	118
+[final-deliverable:P0301] [38] 	Figure 4.5: Data model subject area 3 of 6	120
+[final-deliverable:P0302] [38] 	Figure 4.6: Data model subject area 4 of 6	122
+[final-deliverable:P0303] [38] 	Figure 4.7: Data model subject area 5 of 6	124
+[final-deliverable:P0304] [38] 	Figure 4.8: Data model subject area 6 of 6	126
+[final-deliverable:P0305] [38] 	Figure 4.9: Authenticated session and owned dashboard	132
+[final-deliverable:P0306] [38] 	Figure 4.10: Image capture and visual assessment	134
+[final-deliverable:P0307] [38] 	Figure 4.11: Consented idempotent health sync	136
+[final-deliverable:P0308] [38] 	Figure 4.12: Versioned weekly plan generation	138
+[final-deliverable:P0309] [38] 	Figure 4.13: Guarded conversational response	140
+[final-deliverable:P0330] [171] Table of Contents  
+[final-deliverable:P0331] [39] 	1.1 Introduction	2
+[final-deliverable:P0332] [39] 	1.2 Problem Statement	2
+[final-deliverable:P0333] [39] 	1.3 Aim and Objectives	4
+[final-deliverable:P0334] [39] 	1.4 Scope	4
+[final-deliverable:P0335] [39] 	1.5 Research Questions	6
+[final-deliverable:P0336] [39] 	1.6 Methodology	6
+[final-deliverable:P0337] [39] 	1.6.1 Feasibility and Delivery Plan	8
+[final-deliverable:P0338] [39] 	1.7 Definitions Acronyms and Abbreviations	8
+[final-deliverable:P0339] [38] 	CHAPTER 2	12
+[final-deliverable:P0340] [39] 	2.1 Literature Review	14
+[final-deliverable:P0341] [39] 	2.1.1 Research Gap	14
+[final-deliverable:P0342] [39] 	2.2 Stakeholders List	16
+[final-deliverable:P0343] [39] 	2.3 Domain Requirements	16
+[final-deliverable:P0344] [39] 	2.4 Functional Requirements	20
+[final-deliverable:P0345] [39] 	2.5 Non Functional Requirements	36
+[final-deliverable:P0346] [38] 	CHAPTER 3	46
+[final-deliverable:P0347] [39] 	3.1 Introduction	48
+[final-deliverable:P0348] [39] 	3.2 Use Cases	48
+[final-deliverable:P0349] [39] 	3.3 Use Case Diagrams	90
+[final-deliverable:P0350] [39] 	3.4 Data Flow Diagrams	90
+[final-deliverable:P0353] [39] 	4.1 Introduction	102
+[final-deliverable:P0354] [39] 	4.2 Software Architecture	102
+[final-deliverable:P0355] [39] 	4.3 Component Design	106
+[final-deliverable:P0356] [39] 	4.3.1 External Interfaces	106
+[final-deliverable:P0357] [39] 	4.4 Class Diagram	110
+[final-deliverable:P0358] [39] 	4.5 Database Diagram and Data Dictionary	110
+[final-deliverable:P0359] [39] 	4.5.1 Integrity Indexes and Transactions	114
+[final-deliverable:P0360] [39] 	4.5.2 Data Retention and Provenance	114
+[final-deliverable:P0361] [39] 	4.6 Sequence Diagrams	130
+[final-deliverable:P0362] [39] 	4.6.1 Deployment and Operations	130
+[final-deliverable:P0367] [2] CHAPTER 1
+[final-deliverable:P0368] [172] Gathering and Analyzing Information
+[final-deliverable:P0383] [3] 1.1 Introduction
+[final-deliverable:P0384] [paragraph] NutriSole is a proposed mobile food and health assistant that connects produce assessment with everyday lifestyle records. A user can capture a supported food , review its visible condition, consult a traceable price reference, and connect the identified food to nutritional information. The same application records glucose observations and uses available preferences and records to support weekly food and activity planning.
+[final-deliverable:P0385] [paragraph] These functions share information but answer different questions. A recognition model identifies a produce class; a grading rubric describes visible quality; a market record provides a dated price reference; a composition database supplies nutrient values. Keeping these meanings separate prevents a confident class prediction from being mistaken for proof of food safety, exact portion weight or a clinically suitable meal.
+[final-deliverable:P0386] [paragraph] The proposed implementation combines a React Native client, a NestJS application API, Python inference and recommendation services, and Supabase PostgreSQL with protected object storage. Health-data adapters are optional. Manual glucose entry remains a complete baseline workflow, so a missing device integration does not make the application unusable.
+[final-deliverable:P0388] [3] 1.2 Problem Statement
+[final-deliverable:P0389] [paragraph] Food selection, glucose recording, meal planning and footwear information are commonly handled in separate workflows. Information is repeatedly entered, evidence behind a recommendation may be unclear, and records can be incomplete. NutriSole addresses this coordination problem by providing a common profile and history while retaining the provenance and uncertainty of each input.
+[final-deliverable:P0390] [paragraph] The engineering challenge is not simply to join screens. Poor lighting can invalidate the captured food , stale market data can mislead a price comparison, and an unqualified generated answer can exceed the system’s purpose. The project therefore requires explicit rejection states, controlled data sharing and rule-governed recommendations. Its success will be evaluated as a software and computer-vision system, not as evidence of improved clinical outcomes.
+[final-deliverable:P0392] [3] 1.3 Aim and Objectives
+[final-deliverable:P0393] [paragraph] The aim is to develop a modular platform that integrates computer-vision produce analysis, nutrition information, glucose tracking and personalized lifestyle guidance within an explicit non-clinical scope.
+[final-deliverable:P0394] [152]  Identify supported food and reject unsuitable or unsupported CV analysis. 
+[final-deliverable:P0395] [152] Assess visible ripeness, color, shape, surface condition and defects using class-specific evidence.
+[final-deliverable:P0396] [152] Express that assessment as an understandable, uncertainty-aware grade.
+[final-deliverable:P0397] [152] Retrieve a verified, dated market-price range with comparable units.
+[final-deliverable:P0398] [152] Record and visualize manually entered or authorized imported glucose observations. 
+[final-deliverable:P0399] [152] Prepare weekly food and activity suggestions that respect recorded preferences and constraints.
+[final-deliverable:P0400] [152] Provide rule-based footwear and injury-prevention information. 
+[final-deliverable:P0401] [152] Answer food, lifestyle and application questions through a guarded conversational assistant. 
+[final-deliverable:P0402] [152] Protect personal data, make sources traceable and disclose the limits of every output.
+[final-deliverable:P0404] [3] 1.4 Scope
+[final-deliverable:P0405] [paragraph] The baseline includes account and profile management; a released list of produce classes; capture and computer vision quality checks; visual grading; nutrition lookup and user-confirmed portions; manual glucose records and charts; weekly diet/activity planning; rule-based foot support; a constrained assistant; feedback, history and administrative catalog/model controls.
+[final-deliverable:P0406] [paragraph] Optional health import depends on device support, permission and available records. It does not include manufacturing glucose meters, smart shoes, pressure sensors or medical devices. NutriSole will not control pumps or continuous glucose monitors, calculate insulin doses, prescribe treatment, diagnose disease or foot injuries, certify food safety, perform laboratory analysis, or recognize every possible food.
+[final-deliverable:P0409] [3] 1.5 Research Questions
+[final-deliverable:P0410] [152] How reliably can supported produce classes and visible quality categories be recognized under realistic mobile capture conditions? Compare a reproducible baseline with the selected transfer-learning model on item-disjoint data, reporting per-class performance and rejection coverage.
+[final-deliverable:P0411] [152] How does rejecting unsuitable or uncertain analysis affect the reliability and usefulness of accepted grades? Vary thresholds on validation data, then fix them before final evaluation and report both error rates and the proportion of real time analysis rceiving a result.
+[final-deliverable:P0412] [152] Can dated catalog evidence and unit matching make a produce price reference reproducible? Evaluate complete, stale, missing and mismatched observations using deterministic query fixtures.
+[final-deliverable:P0413] [152] Can integrated records produce understandable weekly suggestions without violating declared constraints or clinical boundaries? Evaluate rule compliance, provenance and task completion. A clinical effectiveness claim would require a separate approved study.
+[final-deliverable:P0415] [3] 1.6 Methodology
+[final-deliverable:P0416] [paragraph] Development will use short iterations with parallel attention to application behavior and dataset quality. Each iteration begins with a requirement and its acceptance test, then updates the design, implementation, evaluation evidence and documentation. A conventional real time analysis classifier provides an early baseline before more complex detection or segmentation is adopted.
+[final-deliverable:P0417] [paragraph] Dataset work begins with source and license review, a defined produce-class list and a visible-quality annotation rubric. Real time analysis of the same physical item or capture session must remain in one split. Annotation disagreement is recorded and reviewed before training. The held-out test set is not used to choose thresholds or models.
+[final-deliverable:P0418] [paragraph] Integration proceeds from profile and manual records to recognition, grading, catalogs and planning. External services are introduced behind adapters and first tested with controlled fixtures. Each release records the code, schema, model and rule versions so a failure can be reproduced and rolled back.
+[final-deliverable:P0420] [3] 1.6.1 Feasibility and Delivery Plan
+[final-deliverable:P0421] [paragraph] The project is feasible as a bounded academic prototype if the supported produce list and annotation workload are agreed early. The main uncertainties are dataset quality, access to verified local market observations and health-source availability. The initial release should prioritize a small defensible class set, manual glucose entry and explainable rules before expanding coverage.
+[final-deliverable:P0422] [paragraph] The proposal schedules requirements during October–November 2026, design during November–December, dataset preparation during December–January, vision work during January–February, catalogs during February–March, integration during March–April and deployment/documentation during April–May 2027. These are overlapping planning windows, not records of completed work.
+[final-deliverable:P0423] [paragraph] Responsibilities are assigned by workstream: application/API development, model/data preparation and integration/quality assurance. The team reviews cross-module changes together; a feature is complete only when its error states and evidence are documented. The schedule reserves time for annotation revision and integration defects rather than assuming the first model will meet the release gates.
+[final-deliverable:P0425] [3] 1.7 Definitions Acronyms and Abbreviations
+[final-deliverable:P0426] [paragraph] The terminology table on the following page defines the terms used throughout the specification. “Grade” always means an assessment of visible produce characteristics. “Reference price” means a dated catalog comparison and does not constitute a sale offer. “Plan” means lifestyle guidance, not a prescription.
+[final-deliverable:P0427] [paragraph] A glucose observation is an existing measurement entered or imported with its source and unit. NutriSole does not measure blood glucose from a food image. An unknown value is preserved as unknown; missing data is never replaced by a plausible-looking zero.
+[final-deliverable:P0429] [167] Table 1.1: Terms and abbreviations
+[final-deliverable:P0430] [paragraph] Term
+[final-deliverable:P0431] [paragraph] Meaning
+[final-deliverable:P0432] [paragraph] API
+[final-deliverable:P0433] [paragraph] Application programming interface.
+[final-deliverable:P0434] [paragraph] CV
+[final-deliverable:P0435] [paragraph] Computer vision.
+[final-deliverable:P0436] [paragraph] ERD
+[final-deliverable:P0437] [paragraph] Entity relationship diagram.
+[final-deliverable:P0438] [paragraph] DFD
+[final-deliverable:P0439] [paragraph] Data flow diagram.
+[final-deliverable:P0440] [paragraph] FR / NFR
+[final-deliverable:P0441] [paragraph] Functional / non-functional requirement.
+[final-deliverable:P0442] [paragraph] Glucose record
+[final-deliverable:P0443] [paragraph] User-entered or permitted imported observation, with original unit and source.
+[final-deliverable:P0444] [paragraph] Visible grade
+[final-deliverable:P0445] [paragraph] Class-specific assessment of observable produce characteristics, not a food-safety verdict.
+[final-deliverable:P0446] [paragraph] Reference price
+[final-deliverable:P0447] [paragraph] Dated, source-attributed market range for a compatible item, grade and unit.
+[final-deliverable:P0448] [paragraph] Health Connect
+[final-deliverable:P0449] [paragraph] Android on-device health-data access framework.
+[final-deliverable:P0450] [paragraph] HealthKit
+[final-deliverable:P0451] [paragraph] Apple’s health-data framework for authorized applications.
+[final-deliverable:P0452] [paragraph] RLS
+[final-deliverable:P0453] [paragraph] PostgreSQL row-level security for record ownership.
+[final-deliverable:P0457] [2] CHAPTER 2
+[final-deliverable:P0458] [172] Software Requirement Specification
+[final-deliverable:P0476] [3] 2.1 Literature Review
+[final-deliverable:P0477] [paragraph] Bhargava and Bansal (2021) [1] review vision-based fruit and vegetable evaluation, including color, texture, shape and defects. The relevance to NutriSole is the separation of image preparation, feature/model inference and quality classification. Their discussion of lighting and surface assessment supports a capture-quality gate. It does not justify judging invisible internal contamination from an ordinary photograph.
+[final-deliverable:P0478] [paragraph] Ma et al. (2021) [2] connect food recognition to nutrient estimation using ChinaFood-100, containing 10,074 images across 100 categories. They report 78.26% top-1 recognition accuracy and 96.62% top-5 accuracy for Inception V3. These results demonstrate a recognition-to-nutrition pipeline, but they concern a different dataset and must not be presented as NutriSole performance. NutriSole instead uses a supported produce catalog and explicit portion confirmation.
+[final-deliverable:P0479] [paragraph] Xin et al. (2026) [3] investigate an AI and big-data approach to personalized diabetes management. The work motivates connecting relevant records and recommendations, but a clinical management study cannot establish the effectiveness of an unevaluated student prototype. NutriSole adopts bounded informational guidance and a separate software-safety evaluation.
+[final-deliverable:P0480] [paragraph] Zeevi et al. (2015) [4] report substantial differences in glycemic responses to identical meals and model those responses using rich personal data. NutriSole does not collect an equivalent research dataset. The design implication is to avoid universal claims that a food is clinically suitable and to disclose what personal information actually supported a suggestion.
+[final-deliverable:P0482] [3] 2.1.1 Research Gap
+[final-deliverable:P0483] [paragraph] The reviewed work addresses visual quality, real time analyzed nutrition or personalized health support. NutriSole’s contribution is the proposed integration and traceability of these workflows: the user should be able to distinguish an observed real time analysis feature, a catalog value and a rule-derived suggestion. The research gap is evaluated through reliable information flow and usability rather than a claim that combining features alone creates a new clinical algorithm.
+[final-deliverable:P0485] [3] 2.2 Stakeholders List
+[final-deliverable:P0486] [paragraph] Primary stakeholders are individuals using the application for produce information and personal lifestyle records. 
+[final-deliverable:P0487] [paragraph] Catalog curators verify nutrition mappings and market observations.
+[final-deliverable:P0488] [paragraph] Operational administrators manage service health and permissions, while model maintainers review data, thresholds and inference releases. 
+
+[final-deliverable:P0489] [paragraph] These roles are separated to limit unnecessary access to sensitive information.
+[final-deliverable:P0492] [paragraph] Secondary stakeholders include the student development team, project supervisors, academic evaluators and consenting usability participants. A qualified health reviewer may assess the wording and boundaries of the informational rule set, but the application does not create a clinician–patient relationship. External actors are authentication, nutrition/market sources, health stores and the assistant provider.
+[final-deliverable:P0494] [3] 2.3 Domain Requirements
+[final-deliverable:P0495] [152] A computer vision  may support a visible-condition assessment only; it cannot certify microbiological safety, internal composition or exact mass.
+[final-deliverable:P0496] [152] A nutrient entry must identify the food form, source, unit basis and version. 
+[final-deliverable:P0497] [152]  A reference price must identify produce, market, observation time, currency and compatible unit.
+[final-deliverable:P0498] [152] Every glucose record requires source, measurement time and original unit. 
+[final-deliverable:P0499] [152] Optional imports require explicit OS permission and application-purpose consent. An empty import does not prove that access was denied.
+[final-deliverable:P0500] [152] Allergies and recorded mobility restrictions are hard planning constraints.
+[final-deliverable:P0501] [152] Clinical diagnosis, prescribing, insulin dosing and medical-device control are excluded from every interface and generated response. 
+[final-deliverable:P0502] [152] Unsupported classes, weak evidence and stale sources cause an explicit unavailable or uncertain state.
+[final-deliverable:P0503] [152] Personal records are owner-scoped, while approved catalog records are shared. 
+[final-deliverable:P0504] [152] Dataset licenses, third-party sources and AI assistance must be acknowledged. The team must obtain any required institutional permission before involving people or collecting identifiable health data.
+[final-deliverable:P0506] [167] Table 2.1: NutriSole stakeholders
+[final-deliverable:P0507] [152] Stakeholder
+[final-deliverable:P0508] [152] Primary interest
+[final-deliverable:P0509] [152] Access boundary
+[final-deliverable:P0510] [paragraph] User
+[final-deliverable:P0511] [paragraph] Food and health information; own history and preferences
+[final-deliverable:P0512] [paragraph] Own records and shared published catalogs
+[final-deliverable:P0513] [paragraph] Catalog curator
+[final-deliverable:P0514] [paragraph] Verified nutrition and market records
+[final-deliverable:P0515] [paragraph] Shared catalogs only
+[final-deliverable:P0516] [paragraph] Model administrator
+[final-deliverable:P0517] [paragraph] Versioned model and rule releases
+[final-deliverable:P0518] [paragraph] Release artifacts and evaluation evidence
+[final-deliverable:P0519] [paragraph] Operations administrator
+[final-deliverable:P0520] [paragraph] Availability and incident review
+[final-deliverable:P0521] [paragraph] Redacted operational metadata
+[final-deliverable:P0522] [paragraph] Project team and supervisors
+[final-deliverable:P0523] [paragraph] Delivery and academic evaluation
+[final-deliverable:P0524] [paragraph] Approved project evidence and synthetic fixtures
+[final-deliverable:P0525] [paragraph] External data providers
+[final-deliverable:P0526] [paragraph] Authentication, health or reference data
+[final-deliverable:P0527] [paragraph] Only permitted, scoped exchanges
+[final-deliverable:P0531] [3] 2.4 Functional Requirements
+[final-deliverable:P0532] [paragraph] Tables 2.2–2.8 specify the baseline functional contract. Each requirement has a stable FR identifier and one or more complete use cases in Chapter 3. “Shall” indicates expected system behavior; proposed operational values remain design acceptance targets until measured. Optional integrations do not replace the mandatory manual workflow.
+[final-deliverable:P0533] [paragraph] A successful action includes the intended persisted state, ownership enforcement and a meaningful failure response. For example, recognition is not complete merely because a label appears: the accepted/rejected state, confidence and model version must also be recoverable. Requirement changes require a corresponding update to the use case, schema/API contract and test mapping.
+[final-deliverable:P0535] [167] Table 2.2: Functional requirements 01–05
+[final-deliverable:P0536] [paragraph] ID
+[final-deliverable:P0537] [paragraph] Requirement
+[final-deliverable:P0538] [paragraph] Expected behavior
+[final-deliverable:P0539] [paragraph] Use case
+[final-deliverable:P0540] [paragraph] FR-01
+[final-deliverable:P0541] [paragraph] Registration
+[final-deliverable:P0542] [paragraph] Create an account with a unique normalized email, password and accepted terms. Record the consent version and creation time; reject invalid or duplicate submissions without creating a partial profile.
+[final-deliverable:P0543] [paragraph] UC-01
+[final-deliverable:P0544] [paragraph] FR-02
+[final-deliverable:P0545] [paragraph] Authentication
+[final-deliverable:P0546] [paragraph] Authenticate through Supabase Auth, establish a time-limited session and enforce the account role on every protected request. Display a generic failure for invalid credentials.
+[final-deliverable:P0547] [paragraph] UC-02
+[final-deliverable:P0548] [paragraph] FR-03
+[final-deliverable:P0549] [paragraph] Account recovery and logout
+[final-deliverable:P0550] [paragraph] Support an expiring password-reset link, invalidate revoked sessions and remove local access credentials on logout. Reauthentication is required for account deletion.
+[final-deliverable:P0551] [paragraph] UC-12
+[final-deliverable:P0552] [paragraph] FR-04
+[final-deliverable:P0553] [paragraph] Personal profile
+[final-deliverable:P0554] [paragraph] Create and edit dietary preferences, allergies, activity preferences, mobility constraints, preferred glucose unit and time zone. Validate fields and retain a profile version for recommendation reproducibility.
+[final-deliverable:P0555] [paragraph] UC-08
+[final-deliverable:P0556] [paragraph] FR-05
+[final-deliverable:P0557] [paragraph] Consent and data rights
+[final-deliverable:P0558] [paragraph] Let users grant or revoke health-import and optional image-retention consent, request an authenticated export, and delete their account and associated personal records. Record each request and outcome.
+[final-deliverable:P0559] [paragraph] UC-15
+[final-deliverable:P0562] [167] Table 2.3: Functional requirements 06–10
+[final-deliverable:P0563] [paragraph] ID
+[final-deliverable:P0564] [paragraph] Requirement
+[final-deliverable:P0565] [paragraph] Expected behavior
+[final-deliverable:P0566] [paragraph] Use case
+[final-deliverable:P0567] [paragraph] FR-06
+[final-deliverable:P0568] [paragraph] real time analysis 
+[final-deliverable:P0569] [paragraph] Accept a real time analysis up to the configured 10 MB limit. Check decoded format, dimensions and analyis validity; obtain camera permission and strip unnecessary metadata.
+[final-deliverable:P0570] [paragraph] UC-03
+[final-deliverable:P0571] [paragraph] FR-07
+[final-deliverable:P0572] [paragraph] Image suitability
+[final-deliverable:P0573] [paragraph] Check blur, exposure, visible item coverage and multiple-item ambiguity before inference. Return a specific recapture reason if the image does not satisfy the released capture criteria.
+[final-deliverable:P0574] [paragraph] UC-03
+[final-deliverable:P0575] [paragraph] FR-08
+[final-deliverable:P0576] [paragraph] Produce identification
+[final-deliverable:P0577] [paragraph] Identify only classes in the published model manifest. Store candidate label, confidence and model version; return unsupported or uncertain when validation-derived thresholds are not met.
+[final-deliverable:P0578] [paragraph] UC-03
+[final-deliverable:P0579] [paragraph] FR-09
+[final-deliverable:P0580] [paragraph] Visual quality grading
+[final-deliverable:P0581] [paragraph] For an accepted produce class, grade visible ripeness, color, shape, surface condition and defects using a versioned class-specific rubric. Store evidence and confidence without claiming internal food safety.
+[final-deliverable:P0582] [paragraph] UC-04
+[final-deliverable:P0583] [paragraph] FR-10
+[final-deliverable:P0584] [paragraph] Reference price matching
+[final-deliverable:P0585] [paragraph] Match a verified observation by produce, market, date, currency, unit and compatible grade. Show a supported minimum–maximum range and source; suppress an unsupported grade premium or stale range.
+[final-deliverable:P0586] [paragraph] UC-04
+[final-deliverable:P0589] [167] Table 2.4: Functional requirements 11–15
+[final-deliverable:P0590] [paragraph] ID
+[final-deliverable:P0591] [paragraph] Requirement
+[final-deliverable:P0592] [paragraph] Expected behavior
+[final-deliverable:P0593] [paragraph] Use case
+[final-deliverable:P0594] [paragraph] FR-11
+[final-deliverable:P0595] [paragraph] Nutrition lookup
+[final-deliverable:P0596] [paragraph] Retrieve the matched food-composition entry and display energy, carbohydrate, protein, fat and fiber with source and per-100-g basis. Clearly distinguish raw and prepared food entries.
+[final-deliverable:P0597] [paragraph] UC-09
+[final-deliverable:P0598] [paragraph] FR-12
+[final-deliverable:P0599] [paragraph] Portion and meal record
+[final-deliverable:P0600] [paragraph] Allow the user to confirm food identity and edible mass in grams before calculating portion nutrients and saving a meal. The camera alone shall not be treated as a weighing instrument.
+[final-deliverable:P0601] [paragraph] UC-09
+[final-deliverable:P0602] [paragraph] FR-13
+[final-deliverable:P0603] [paragraph] Manual glucose recording
+[final-deliverable:P0604] [paragraph] Save a positive numeric reading with an explicit mg/dL or mmol/L unit, measurement time, context and source. Preserve the original value and unit alongside the normalized value.
+[final-deliverable:P0605] [paragraph] UC-05
+[final-deliverable:P0606] [paragraph] FR-14
+[final-deliverable:P0607] [paragraph] Glucose history and visualization
+[final-deliverable:P0608] [paragraph] Display chronological readings, time range, units and source. Permit corrections to manual records and show missing-data gaps without presenting irregular samples as continuous monitoring.
+[final-deliverable:P0609] [paragraph] UC-05
+[final-deliverable:P0610] [paragraph] FR-15
+[final-deliverable:P0611] [paragraph] Health data connection
+[final-deliverable:P0612] [paragraph] Check device support, request narrowly scoped OS permission and import available glucose/activity records through an approved adapter. Manual entry shall remain available if the connection is declined.
+[final-deliverable:P0613] [paragraph] UC-10
+[final-deliverable:P0616] [167] Table 2.5: Functional requirements 16–20
+[final-deliverable:P0617] [paragraph] ID
+[final-deliverable:P0618] [paragraph] Requirement
+[final-deliverable:P0619] [paragraph] Expected behavior
+[final-deliverable:P0620] [paragraph] Use case
+[final-deliverable:P0621] [paragraph] FR-16
+[final-deliverable:P0622] [paragraph] Idempotent synchronization
+[final-deliverable:P0623] [paragraph] Deduplicate imported records by user, provider and external record ID. Process updates/deletions and checkpoint only after successful persistence; revoked permission stops further imports.
+[final-deliverable:P0624] [paragraph] UC-10
+[final-deliverable:P0625] [paragraph] FR-17
+[final-deliverable:P0626] [paragraph] Weekly diet guidance
+[final-deliverable:P0627] [paragraph] Produce seven dated days of food and portion suggestions from supported nutrition data, user preferences and available records. Exclude declared allergens and show the data window and rationale.
+[final-deliverable:P0628] [paragraph] UC-06
+[final-deliverable:P0629] [paragraph] FR-18
+[final-deliverable:P0630] [paragraph] Weekly activity guidance
+[final-deliverable:P0631] [paragraph] Produce activity suggestions compatible with recorded preferences and mobility constraints. Block or defer suggestions when the safety rule set requires professional assessment.
+[final-deliverable:P0632] [paragraph] UC-06
+[final-deliverable:P0633] [paragraph] FR-19
+[final-deliverable:P0634] [paragraph] Plan revision and feedback
+[final-deliverable:P0635] [paragraph] Allow acceptance, compatible substitutions, regeneration and adherence feedback. Save each plan version and preserve the inputs and rule/model versions that generated it.
+[final-deliverable:P0636] [paragraph] UC-11
+[final-deliverable:P0637] [paragraph] FR-20
+[final-deliverable:P0638] [paragraph] Footwear and prevention guidance
+[final-deliverable:P0639] [paragraph] Apply a versioned questionnaire rule set to footwear fit, comfort and reported mobility concerns. Return general prevention information or a referral message without diagnosing foot conditions.
+[final-deliverable:P0640] [paragraph] UC-13
+[final-deliverable:P0643] [167] Table 2.6: Functional requirements 21–25
+[final-deliverable:P0644] [paragraph] ID
+[final-deliverable:P0645] [paragraph] Requirement
+[final-deliverable:P0646] [paragraph] Expected behavior
+[final-deliverable:P0647] [paragraph] Use case
+[final-deliverable:P0648] [paragraph] FR-21
+[final-deliverable:P0649] [paragraph] Conversational assistance
+[final-deliverable:P0650] [paragraph] Answer food, lifestyle and application questions using approved knowledge and minimum consented context. Separate source-grounded statements from unavailable information.
+[final-deliverable:P0651] [paragraph] UC-07
+[final-deliverable:P0652] [paragraph] FR-22
+[final-deliverable:P0653] [paragraph] Conversation safety
+[final-deliverable:P0654] [paragraph] Screen requests and responses for diagnosis, prescribing, insulin-dose calculation and device-control instructions. Replace prohibited responses with a clear boundary and appropriate professional-help direction.
+[final-deliverable:P0655] [paragraph] UC-07
+[final-deliverable:P0656] [paragraph] FR-23
+[final-deliverable:P0657] [paragraph] Progress dashboard
+[final-deliverable:P0658] [paragraph] Combine recent meals, recorded glucose, plan adherence and last-sync state. Label absent data explicitly and make every summary traceable to the underlying records.
+[final-deliverable:P0659] [paragraph] UC-14
+[final-deliverable:P0660] [paragraph] FR-24
+[final-deliverable:P0661] [paragraph] History and correction
+[final-deliverable:P0662] [paragraph] Let users inspect saved analyses, meals, plans and their own feedback, correct supported fields and remove an image or record according to retention rules. Do not overwrite model evidence with a user correction.
+[final-deliverable:P0663] [paragraph] UC-14
+[final-deliverable:P0664] [paragraph] FR-25
+[final-deliverable:P0665] [paragraph] Price and nutrition curation
+[final-deliverable:P0666] [paragraph] Allow authorized curators to validate source, units, dates and class mappings before publishing market or nutrition records. Retain a review trail and support withdrawal of unreliable entries.
+[final-deliverable:P0667] [paragraph] UC-16
+[final-deliverable:P0670] [167] Table 2.7: Functional requirements 26–30
+[final-deliverable:P0671] [paragraph] ID
+[final-deliverable:P0672] [paragraph] Requirement
+[final-deliverable:P0673] [paragraph] Expected behavior
+[final-deliverable:P0674] [paragraph] Use case
+[final-deliverable:P0675] [paragraph] FR-26
+[final-deliverable:P0676] [paragraph] Model and rule release
+[final-deliverable:P0677] [paragraph] Register the model manifest, dataset version, grading rubric, confidence thresholds and safety-rule version. Require review before activation and retain a rollback pointer.
+[final-deliverable:P0678] [paragraph] UC-17
+[final-deliverable:P0679] [paragraph] FR-27
+[final-deliverable:P0680] [paragraph] Role and ownership enforcement
+[final-deliverable:P0681] [paragraph] Restrict a user to their own personal records, a curator to catalog duties, and an administrator to approved operational actions. A staff role shall not imply unrestricted health-record access.
+[final-deliverable:P0682] [paragraph] UC-18
+[final-deliverable:P0683] [paragraph] FR-28
+[final-deliverable:P0684] [paragraph] Operational audit
+[final-deliverable:P0685] [paragraph] Write a redacted audit event for sign-in, data changes, catalog publication, model activation and denied access. Include actor, action, resource reference, time and request ID.
+[final-deliverable:P0686] [paragraph] UC-18
+[final-deliverable:P0687] [paragraph] FR-29
+[final-deliverable:P0688] [paragraph] Recoverable failures
+[final-deliverable:P0689] [paragraph] Show actionable errors for network loss, unsupported images, stale catalogs and provider failures. Bound retries and prevent duplicate meal, reading or plan creation on resubmission.
+[final-deliverable:P0690] [paragraph] UC-03, UC-05, UC-06
+[final-deliverable:P0691] [paragraph] FR-30
+[final-deliverable:P0692] [paragraph] Source and uncertainty disclosure
+[final-deliverable:P0693] [paragraph] Display the model/rule version, source date and uncertainty relevant to each output. Withhold an authoritative-looking grade, price or personalized plan when prerequisites are missing.
+[final-deliverable:P0694] [paragraph] UC-04, UC-06
+[final-deliverable:P0697] [167] Table 2.8: Functional requirements 31–32
+[final-deliverable:P0698] [paragraph] ID
+[final-deliverable:P0699] [paragraph] Requirement
+[final-deliverable:P0700] [paragraph] Expected behavior
+[final-deliverable:P0701] [paragraph] Use case
+[final-deliverable:P0702] [paragraph] FR-31
+[final-deliverable:P0703] [paragraph] Notifications and preferences
+[final-deliverable:P0704] [paragraph] Let a user opt into meal, logging or plan reminders, set quiet hours and disable them. Notification previews shall omit glucose values and other sensitive health details by default.
+[final-deliverable:P0705] [paragraph] UC-19
+[final-deliverable:P0706] [paragraph] FR-32
+[final-deliverable:P0707] [paragraph] User reporting
+[final-deliverable:P0708] [paragraph] Accept feedback about a wrong food label, misleading price, unsuitable suggestion or chatbot answer. Route a redacted report to staff and expose its status to the reporting user.
+[final-deliverable:P0709] [paragraph] UC-20
+[final-deliverable:P0713] [3] 2.5 Non Functional Requirements
+[final-deliverable:P0714] [paragraph] Tables 2.9–2.12 define measurable quality targets for the proposed pilot. The thresholds are engineering acceptance criteria, not achieved results. Performance results must record hardware, image sizes, network conditions, concurrency and model configuration; model metrics must state the test split and acceptance coverage.
+[final-deliverable:P0715] [paragraph] Security, privacy and clinical boundaries are release gates rather than optional quality improvements. A high average recognition score cannot compensate for a cross-account data leak or a known unsafe assistant response. Usability and accessibility are reviewed on both supported mobile platforms, with failures tracked alongside functional defects.
+[final-deliverable:P0717] [167] Table 2.9: Non-functional requirements 01–04
+[final-deliverable:P0718] [paragraph] ID
+[final-deliverable:P0719] [paragraph] Area
+[final-deliverable:P0720] [paragraph] Acceptance criterion
+[final-deliverable:P0721] [paragraph] Evidence method
+[final-deliverable:P0722] [paragraph] NFR-01
+[final-deliverable:P0723] [paragraph] Privacy and authorization
+[final-deliverable:P0724] [paragraph] All personal-data queries shall enforce ownership. Every cross-account access attempt in the security suite must fail without disclosing the target record.
+[final-deliverable:P0725] [paragraph] Two-account read/write/export tests; inspect RLS and API guards.
+[final-deliverable:P0726] [paragraph] NFR-02
+[final-deliverable:P0727] [paragraph] Transport and secrets
+[final-deliverable:P0728] [paragraph] Use TLS for external traffic; keep service credentials outside the mobile bundle and repository. Store mobile tokens in platform-protected storage.
+[final-deliverable:P0729] [paragraph] Inspect network traffic, build artifacts and secret-scan results.
+[final-deliverable:P0730] [paragraph] NFR-03
+[final-deliverable:P0731] [paragraph] Interactive performance
+[final-deliverable:P0732] [paragraph] Proposed target: p95 ordinary API response ≤2 s and accepted image analysis ≤10 s for 5 MB images at 10 Mbps with 50 concurrent test users. External-provider wait is reported separately.
+[final-deliverable:P0733] [paragraph] Run a fixed workload on documented hardware; retain percentile samples.
+[final-deliverable:P0734] [paragraph] NFR-04
+[final-deliverable:P0735] [paragraph] Reliability and retries
+[final-deliverable:P0736] [paragraph] A repeated request with the same user and idempotency key shall create at most one committed record. Failed multi-record writes shall leave no partial result.
+[final-deliverable:P0737] [paragraph] Retry, timeout and transaction-rollback fault injection.
+[final-deliverable:P0741] [167] Table 2.10: Non-functional requirements 05–08
+[final-deliverable:P0742] [paragraph] ID
+[final-deliverable:P0743] [paragraph] Area
+[final-deliverable:P0744] [paragraph] Acceptance criterion
+[final-deliverable:P0745] [paragraph] Evidence method
+[final-deliverable:P0746] [paragraph] NFR-05
+[final-deliverable:P0747] [paragraph] Model quality
+[final-deliverable:P0748] [paragraph] Proposed release gates: recognition macro-F1 ≥0.85, grading macro-F1 ≥0.75, and ≥95% rejection of a held-out unsupported-input set. Report per-class results and accepted coverage.
+[final-deliverable:P0749] [paragraph] Item-disjoint held-out evaluation; thresholds fixed on validation data.
+[final-deliverable:P0750] [paragraph] NFR-06
+[final-deliverable:P0751] [paragraph] Safety behavior
+[final-deliverable:P0752] [paragraph] Every prohibited diagnostic, prescribing, dosing and device-control prompt in the release test suite shall be blocked. No known critical safety failure may remain open.
+[final-deliverable:P0753] [paragraph] Adversarial prompt suite and independent output review.
+[final-deliverable:P0754] [paragraph] NFR-07
+[final-deliverable:P0755] [paragraph] Data accuracy
+[final-deliverable:P0756] [paragraph] Unit conversion shall preserve source readings and round only for display. Portion arithmetic shall match reference calculations within 0.1 g for nutrients and 1 kcal for displayed energy.
+[final-deliverable:P0757] [paragraph] Boundary/unit tests with decimal arithmetic and known fixtures.
+[final-deliverable:P0758] [paragraph] NFR-08
+[final-deliverable:P0759] [paragraph] Usability
+[final-deliverable:P0760] [paragraph] At least 8 of 10 consenting pilot participants should complete registration, food capture and glucose logging without facilitator intervention. No clinical benefit is implied.
+[final-deliverable:P0761] [paragraph] Moderated task study with completion, time and error records.
+[final-deliverable:P0764] [167] Table 2.11: Non-functional requirements 09–12
+[final-deliverable:P0765] [paragraph] ID
+[final-deliverable:P0766] [paragraph] Area
+[final-deliverable:P0767] [paragraph] Acceptance criterion
+[final-deliverable:P0768] [paragraph] Evidence method
+[final-deliverable:P0769] [paragraph] NFR-09
+[final-deliverable:P0770] [paragraph] Accessibility
+[final-deliverable:P0771] [paragraph] Core flows shall expose labels to screen readers, support text scaling and avoid color-only status indicators. Controls shall remain operable at supported larger text settings.
+[final-deliverable:P0772] [paragraph] Manual assistive-technology and large-text checks on both platforms.
+[final-deliverable:P0773] [paragraph] NFR-10
+[final-deliverable:P0774] [paragraph] Maintainability
+[final-deliverable:P0775] [paragraph] Separate authentication, analysis, catalogs, records and planning modules. Version API contracts and model manifests; every release shall reproduce its documented build and schema migration.
+[final-deliverable:P0776] [paragraph] Clean build, contract tests and release-manifest inspection.
+[final-deliverable:P0777] [paragraph] NFR-11
+[final-deliverable:P0778] [paragraph] Recoverability
+[final-deliverable:P0779] [paragraph] Proposed pilot target: recovery-point objective 24 h and recovery-time objective 4 h for application records. Backups must be access-controlled and restoration demonstrated before release.
+[final-deliverable:P0780] [paragraph] Restore a test backup into an isolated environment and reconcile counts.
+[final-deliverable:P0781] [paragraph] NFR-12
+[final-deliverable:P0782] [paragraph] Availability
+[final-deliverable:P0783] [paragraph] Proposed pilot service target: 99% monthly backend availability excluding declared maintenance. Manual logging shall degrade with a clear pending/offline state rather than claim successful sync.
+[final-deliverable:P0784] [paragraph] Monitor health probes and test provider/backend outages.
+[final-deliverable:P0789] [167] 
+Table 2.12: Non-functional requirements 13–16
+[final-deliverable:P0790] [paragraph] ID
+[final-deliverable:P0791] [paragraph] Area
+[final-deliverable:P0792] [paragraph] Acceptance criterion
+[final-deliverable:P0793] [paragraph] Evidence method
+[final-deliverable:P0794] [paragraph] NFR-13
+[final-deliverable:P0795] [paragraph] Compatibility
+[final-deliverable:P0796] [paragraph] Validate the selected React Native release on the documented Android/iOS test matrix. Detect Health Connect or HealthKit availability at runtime and preserve the manual workflow.
+[final-deliverable:P0797] [paragraph] Real-device tests on each released configuration.
+[final-deliverable:P0798] [paragraph] NFR-14
+[final-deliverable:P0799] [paragraph] Auditability
+[final-deliverable:P0800] [paragraph] Every grade, price range and plan shall resolve to its model/rule/catalog version. Operational logs shall exclude passwords, tokens, raw images and full health/chat payloads.
+[final-deliverable:P0801] [paragraph] Trace sampled outputs and inspect redacted log fixtures.
+[final-deliverable:P0802] [paragraph] NFR-15
+[final-deliverable:P0803] [paragraph] Retention and deletion
+[final-deliverable:P0804] [paragraph] Proposed policy: delete unretained transient images within 24 h, honor account deletion within 30 days, and expire deleted data from backups within the documented backup lifecycle.
+[final-deliverable:P0805] [paragraph] Scheduled cleanup, deletion-workflow and backup-retention verification.
+[final-deliverable:P0806] [paragraph] NFR-16
+[final-deliverable:P0807] [paragraph] Resource limits
+[final-deliverable:P0808] [paragraph] Validate upload size and decoded pixel count, rate-limit costly inference/chat requests, and cap retry attempts. A rejected request shall not launch an unbounded worker.
+[final-deliverable:P0809] [paragraph] Oversize/decompression tests and rate-limit/load tests.
+[final-deliverable:P0813] [2] CHAPTER 3
+[final-deliverable:P0815] [172] Analysis
+[final-deliverable:P0835] [3] 3.1 Introduction
+[final-deliverable:P0836] [paragraph] Analysis converts the requirements into interactions, states and data flows. A visitor can register or recover an account. An authenticated user can manage only their own profile and records, while optional permissions enable health imports. Curator and administrator actions use distinct authorization scopes.
+[final-deliverable:P0837] [paragraph] The normal food path is capture, suitability validation, recognition, visible grading, reference lookup and optional confirmed meal logging. Rejection is a valid outcome at any evidence gate. The glucose path preserves the source and units before updating a chart. Planning uses a snapshot of available records so later edits do not silently change the explanation of an older plan.
+[final-deliverable:P0839] [3] 3.2 Use Cases
+[final-deliverable:P0840] [paragraph] The following specification tables cover the seven principal interactions and the supporting account, consent, catalog, model, history, notification and reporting workflows. Each includes its functional-requirement mapping, actors, preconditions, ordered success steps, alternative paths, postconditions and extensions.
+[final-deliverable:P0841] [paragraph] Main success steps describe a completed permitted interaction. Alternatives capture valid branches such as a manually selected food or declined permission. Extensions describe exceptional handling, recovery or linked behavior. Authentication is a precondition for protected cases and is not duplicated as a misleading mandatory login step in every workflow.
+[final-deliverable:P0848] [4] 3.2.1  UC-01  User Registration
+[final-deliverable:P0849] [paragraph]  [embedded images: ['rId8']]
+[final-deliverable:P0850] [168] Figure 3.1: UC-01 User Registration
+[final-deliverable:P0852] [paragraph] Use Case Description
+[final-deliverable:P0853] [paragraph] Use Case ID: UC-01
+[final-deliverable:P0854] [paragraph] Functional Requirement No.: FR-01
+[final-deliverable:P0855] [paragraph] Primary Actor: Visitor
+[final-deliverable:P0856] [paragraph] Secondary Actors or Systems: Supabase Auth and email delivery service
+[final-deliverable:P0857] [paragraph] Description: Establish an individual NutriSole account.
+[final-deliverable:P0859] [paragraph] Preconditions: The visitor has an accessible email address and accepts the displayed terms.
+[final-deliverable:P0861] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P0862] [paragraph] 1. Open Register
+2. Enter name, email and password
+3. Read and accept terms and required consent
+4. Submit the form
+5. System validates input and sends verification
+6. Open the verification link
+7. System activates the account and offers profile setup.
+[final-deliverable:P0864] [paragraph] Alternative Paths: A1 Invalid fields: show field-specific corrections. A2 Existing email: offer sign-in or recovery without exposing private account details.
+[final-deliverable:P0866] [paragraph] Postconditions: A verified account exists; no health-import permission has been assumed.
+[final-deliverable:P0868] [paragraph] Extensions: E1 Expired verification: request a fresh link. E2 Delivery or network failure: retain safe form values and allow a bounded retry.
+[final-deliverable:P0871] [4] 3.2.2  UC-02  User Login
+[final-deliverable:P0872] [paragraph]  [embedded images: ['rId9']]
+[final-deliverable:P0873] [168] Figure 3.2: UC-02 User Login
+[final-deliverable:P0875] [paragraph] Use Case Description
+[final-deliverable:P0876] [paragraph] Use Case ID: UC-02
+[final-deliverable:P0877] [paragraph] Functional Requirement No.: FR-02, FR-27
+[final-deliverable:P0878] [paragraph] Primary Actor: Registered user
+[final-deliverable:P0879] [paragraph] Secondary Actors or Systems: Supabase Auth
+[final-deliverable:P0880] [paragraph] Description: Start an authenticated session with the correct permissions.
+[final-deliverable:P0882] [paragraph] Preconditions: The account is registered and active; the authentication service is reachable.
+[final-deliverable:P0884] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P0885] [paragraph] 1. Open Login
+2. Enter email and password
+3. Submit credentials
+4. Auth service validates the account
+5. Client receives protected session credentials
+6. Backend validates token and role
+7. Dashboard loads only the user’s records.
+[final-deliverable:P0887] [paragraph] Alternative Paths: A1 Invalid credentials: show a generic error. A2 Existing valid session: open the dashboard after token validation.
+[final-deliverable:P0888] [paragraph] Postconditions: An authenticated session exists and the role is enforced on protected requests.
+[final-deliverable:P0890] [paragraph] Extensions: E1 Expired token: refresh once, then require sign-in. E2 Repeated failures: apply throttling. E3 Disabled account: deny access and offer support.
+[final-deliverable:P0892] [4] 3.2.3  UC-03  Food Capture and Computer Vision Analysis
+[final-deliverable:P0893] [paragraph]  [embedded images: ['rId10']]
+[final-deliverable:P0894] [168] Figure 3.3: UC-03 Food Capture and Computer Vision Analysis
+[final-deliverable:P0896] [paragraph] Use Case Description
+[final-deliverable:P0897] [paragraph] Use Case ID: UC-03
+[final-deliverable:P0898] [paragraph] Functional Requirement No.: FR-06, FR-07, FR-08, FR-29
+[final-deliverable:P0899] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P0900] [paragraph] Secondary Actors or Systems: Camera library ; Python inference service
+[final-deliverable:P0901] [paragraph] Description: Identify a supported food from a suitable capture .
+[final-deliverable:P0902] [paragraph] Preconditions: The user is signed in; the model manifest is active; upload processing is available.
+[final-deliverable:P0904] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P0905] [paragraph] 1. Open Capture and permit camera access or select a file
+2. Frame one item in adequate lighting
+3. Confirm the real time analysis
+4. Client validates size and backend validates decoding
+5. Backend creates an analysis job
+6. Inference checks suitability and predicts a class
+7. System saves confidence and model version
+8. User reviews the result.
+[final-deliverable:P0907] [paragraph] Alternative Paths: A1 Permission denied: offer photo selection. A2 Blurred or crowded image: explain the recapture reason. A3 Unsupported class: return no reliable identification.
+[final-deliverable:P0908] [paragraph] Postconditions: A completed or rejected analysis is recorded; no meal is saved without confirmation.
+[final-deliverable:P0909] [paragraph] Extensions: E1 Timeout: show job status and retry by job ID. E2 Duplicate upload request: return the existing job. E3 Corrupt file: reject before inference.
+[final-deliverable:P0912] [4] 3.2.4  UC-04  Quality Grading and Price Reference Verification
+[final-deliverable:P0913] [paragraph]  [embedded images: ['rId11']]
+[final-deliverable:P0914] [168] Figure 3.4: UC-04 Quality Grading and Price Reference Verification
+[final-deliverable:P0916] [paragraph] Use Case Description
+[final-deliverable:P0917] [paragraph] Use Case ID: UC-04
+[final-deliverable:P0918] [paragraph] Functional Requirement No.: FR-09, FR-10, FR-30
+[final-deliverable:P0919] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P0920] [paragraph] Secondary Actors or Systems: Grading service; verified market catalog
+[final-deliverable:P0921] [paragraph] Description: Explain visible produce quality and retrieve a comparable market range.
+[final-deliverable:P0923] [paragraph] Preconditions: An accepted class and usable image exist; the grading rubric is active.
+[final-deliverable:P0925] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P0926] [paragraph] 1. Open analysis details
+2. Grading service evaluates visible features
+3. System stores grade, evidence and rubric version
+4. User selects market and unit
+5. Backend finds fresh verified comparable observations
+6. System shows supported range, currency, source and observation date
+7. User inspects the evidence.
+[final-deliverable:P0928] [paragraph] Alternative Paths: A1 Low grade confidence: show uncertain, not a definitive grade. A2 No grade-specific observations: show a clearly labeled ungraded reference only.
+[final-deliverable:P0929] [paragraph] Postconditions: The assessment and price provenance are visible; no transaction price or internal safety is guaranteed.
+[final-deliverable:P0931] [paragraph] Extensions: E1 Stale or mismatched units: suppress the range. E2 Catalog failure: retain the grade and explain price unavailability. E3 User disputes result: open UC-20.
+[final-deliverable:P0934] [4] 3.2.5  UC-05  Glucose Level Logging and Visualization
+[final-deliverable:P0935] [paragraph]  [embedded images: ['rId12']]
+[final-deliverable:P0936] [168] Figure 3.5: UC-05 Glucose Level Logging and Visualization
+[final-deliverable:P0938] [paragraph] Use Case Description
+[final-deliverable:P0939] [paragraph] Use Case ID: UC-05
+[final-deliverable:P0940] [paragraph] Functional Requirement No.: FR-13, FR-14, FR-29
+[final-deliverable:P0941] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P0942] [paragraph] Secondary Actors or Systems: Record service
+[final-deliverable:P0943] [paragraph] Description: Record an existing meter reading and review its history.
+[final-deliverable:P0945] [paragraph] Preconditions: The user is signed in and has a reading with a known unit and measurement time.
+[final-deliverable:P0947] [paragraph] Main Success Scenario (MSS):
+[final-deliverable:P0948] [paragraph] 1. Open Add Reading
+2. Enter value, unit, time and meal context
+3. Review the source and time-zone display
+4. System validates and normalizes the value
+5. Confirm Save
+6. System commits once and refreshes history
+7. Select a date range to inspect readings and gaps.
+[final-deliverable:P0950] [paragraph] Alternative Paths: A1 Invalid or future time: request correction. A2 Suspected duplicate manual entry: ask whether it is a separate measurement.
+[final-deliverable:P0951] [paragraph] Postconditions: One owned reading is stored with original and normalized units and appears in the selected history.
+[final-deliverable:P0953] [paragraph] Extensions: E1 Network loss: retain a clearly marked pending draft. E2 Edit manual record: save corrected value with audit event. E3 Imported record: preserve provider identity and apply source-aware correction rules.  
+[final-deliverable:P0956] [4] 3.2.6  UC-06  Weekly Diet and Exercise Plan Generation
+[final-deliverable:P0957] [paragraph]  [embedded images: ['rId13']]
+[final-deliverable:P0958] [168] Figure 3.6: UC-06 Weekly Diet and Exercise Plan Generation
+[final-deliverable:P0960] [paragraph] Use Case Description
+[final-deliverable:P0961] [paragraph] Use Case ID: UC-06
+[final-deliverable:P0962] [paragraph] Functional Requirement No.: FR-17, FR-18, FR-29, FR-30
+[final-deliverable:P0963] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P0964] [paragraph] Secondary Actors or Systems: Recommendation engine and safety-rule service
+[final-deliverable:P0965] [paragraph] Description: Generate a seven-day lifestyle plan from available information.
+[final-deliverable:P0967] [paragraph] Preconditions: A profile has dietary constraints and activity preferences; consent permits use of selected records.
+[final-deliverable:P0969] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P0970] [paragraph] 1. Open Weekly Plan
+2. Confirm week and preferences
+3. System snapshots profile, meals and available glucose/activity data
+4. Engine filters foods and activities by hard constraints
+5. Safety service reviews candidate suggestions
+6. System saves plan, reasons and input versions
+7. User reviews the seven days and accepts or revises them.
+[final-deliverable:P0972] [paragraph] Alternative Paths: A1 Sparse records: disclose limited personalization and offer a conservative preference-based plan. A2 Conflicting constraints: request clarification without inventing feasible meals.
+[final-deliverable:P0973] [paragraph] Postconditions: A versioned plan or an explicit deferral is saved; no medication or insulin advice is generated.
+[final-deliverable:P0974] [paragraph] Extensions: E1 Safety concern: defer affected exercise and show professional-help direction. E2 Engine unavailable: retain the last plan with its original date. E3 Retry: return the same requested version.
+[final-deliverable:P0977] [4] 3.2.7  UC-07  AI Conversational Chatbot Assistant Queries
+[final-deliverable:P0978] [paragraph]  [embedded images: ['rId14']]
+[final-deliverable:P0979] [168] Figure 3.7: UC-07 AI Conversational Chatbot Assistant Queries
+[final-deliverable:P0981] [paragraph] Use Case Description
+[final-deliverable:P0982] [paragraph] Use Case ID: UC-07
+[final-deliverable:P0983] [paragraph] Functional Requirement No.: FR-21, FR-22
+[final-deliverable:P0984] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P0985] [paragraph] Secondary Actors or Systems: Approved knowledge service and language-model provider
+[final-deliverable:P0986] [paragraph] Description: Answer an allowed question with source-grounded information.
+[final-deliverable:P0987] [paragraph] Preconditions: The user is signed in; chatbot terms and context-sharing choices are available.
+[final-deliverable:P0989] [paragraph] Main Success Scenario (MSS):
+[final-deliverable:P0990] [paragraph] 1. Open Assistant
+2. Submit a question
+3. Input guard classifies scope and safety
+4. Service retrieves approved knowledge and minimum consented context
+5. Model drafts an answer
+6. Output guard checks claims and prohibited advice
+7. System returns the answer with relevant source or uncertainty
+8. User may report the answer.
+[final-deliverable:P0992] [paragraph] Alternative Paths: A1 No supporting material: state the limitation. A2 General question without health consent: answer without private context.
+[final-deliverable:P0993] [paragraph] Postconditions: An allowed response or a boundary message is displayed with the selected retention policy.
+[final-deliverable:P0994] [paragraph] Extensions: E1 Diagnosis or dosing request: refuse the clinical instruction. E2 Provider timeout: show retry without fabricating an answer. E3 Prompt injection: disregard instructions embedded in retrieved content.
+[final-deliverable:P0997] [4] 3.2.8  UC-08  Profile and Preference Management
+[final-deliverable:P0998] [paragraph]  [embedded images: ['rId15']]
+[final-deliverable:P0999] [168] Figure 3.8: UC-08 Profile and Preference Management
+[final-deliverable:P1001] [paragraph] Use Case Description
+[final-deliverable:P1002] [paragraph] Use Case ID: UC-08
+[final-deliverable:P1003] [paragraph] Functional Requirement No.: FR-04
+[final-deliverable:P1004] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P1005] [paragraph] Secondary Actors or Systems: Profile service
+[final-deliverable:P1006] [paragraph] Description: Maintain the constraints used by the guidance modules.
+[final-deliverable:P1008] [paragraph] Preconditions: The account is active and the current profile can be retrieved.
+[final-deliverable:P1010] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P1011] [paragraph] 1. Open Profile
+2. Review current preferences and constraints
+3. Edit dietary choices, allergies, mobility information, units or time zone
+4. System validates values
+5. Confirm changes
+6. Save a new profile version
+7. System flags an existing plan for review if constraints changed.
+[final-deliverable:P1013] [paragraph] Alternative Paths: A1 Missing optional health fields: keep them unknown. A2 Invalid values: explain the failed validation and retain valid input.
+[final-deliverable:P1015] [paragraph] Postconditions: The profile is updated atomically and its version can be traced by future plans.
+[final-deliverable:P1017] [paragraph] Extensions: E1 Concurrent edit: reload latest values before overwriting. E2 Allergy added: warn that an earlier plan needs regeneration. E3 Cancel: discard unsaved changes.
+[final-deliverable:P1020] [4] 3.2.9  UC-09  Nutrition Review and Meal Logging
+[final-deliverable:P1021] [paragraph]  [embedded images: ['rId16']]
+[final-deliverable:P1022] [168] Figure 3.9: UC-09 Nutrition Review and Meal Logging
+[final-deliverable:P1024] [paragraph] Use Case Description
+[final-deliverable:P1025] [paragraph] Use Case ID: UC-09
+[final-deliverable:P1026] [paragraph] Functional Requirement No.: FR-11, FR-12
+[final-deliverable:P1027] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P1028] [paragraph] Secondary Actors or Systems: Nutrition catalog
+[final-deliverable:P1029] [paragraph] Description: Translate a confirmed food and portion into a meal record.
+[final-deliverable:P1031] [paragraph] Preconditions: The user has a recognized or manually selected supported food; a source entry is available.
+[final-deliverable:P1033] [paragraph] Main Success Scenario (MSS):
+[final-deliverable:P1034] [paragraph] 1. Open Nutrition
+2. Confirm raw/prepared food identity
+3. Review source and per-100-g nutrients
+4. Enter edible mass in grams
+5. System calculates the portion values
+6. Select meal date and context
+7. Confirm Save
+8. System records food, portion and source version.
+[final-deliverable:P1036] [paragraph] Alternative Paths: A1 Wrong recognition: manually select another supported food. A2 Unknown portion: show per-100-g values and do not invent consumed nutrients.
+[final-deliverable:P1037] [paragraph] Postconditions: An explicitly confirmed meal exists with reproducible nutrition values.
+[final-deliverable:P1039] [paragraph] Extensions: E1 Missing catalog entry: explain unavailability. E2 Zero or negative mass: reject. E3 Duplicate save request: return the existing meal.
+[final-deliverable:P1043] [4] 3.2.10  UC-10  Health Source Connection and Synchronization
+[final-deliverable:P1044] [paragraph]  [embedded images: ['rId17']]
+[final-deliverable:P1045] [168] Figure 3.10: UC-10 Health Source Connection and Synchronization
+[final-deliverable:P1047] [paragraph] Use Case Description
+[final-deliverable:P1048] [paragraph] Use Case ID: UC-10
+[final-deliverable:P1049] [paragraph] Functional Requirement No.: FR-15, FR-16
+[final-deliverable:P1050] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P1051] [paragraph] Secondary Actors or Systems: Apple HealthKit or Android Health Connect
+[final-deliverable:P1052] [paragraph] Description: Import authorized records from an available on-device source.
+[final-deliverable:P1054] [paragraph] Preconditions: A compatible device and health store exist; the user is signed in.
+[final-deliverable:P1055] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P1056] [paragraph] 1. Open Connections
+2. Select the available provider
+3. Review data types and request OS permission
+4. Adapter reads permitted records and source IDs
+5. Client sends authorized records to the API
+6. Server deduplicates and commits
+7. Adapter advances checkpoint
+8. Show last-sync time and record counts.
+[final-deliverable:P1058] [paragraph] Alternative Paths: A1 Permission declined: keep manual entry available. A2 No readable records: show no data without inferring denial.
+[final-deliverable:P1059] [paragraph] Postconditions: Authorized records are stored once with provenance and the completed sync checkpoint.
+[final-deliverable:P1061] [paragraph] Extensions: E1 Revocation: stop future imports. E2 Partial failure: retry uncommitted records. E3 Provider deletion: reconcile the imported copy according to the disclosed policy.
+[final-deliverable:P1064] [4] 3.2.11  UC-11  Plan Revision and Adherence Feedback
+[final-deliverable:P1065] [paragraph]  [embedded images: ['rId18']]
+[final-deliverable:P1066] [168] Figure 3.11: UC-11 Plan Revision and Adherence Feedback
+[final-deliverable:P1068] [paragraph] Use Case Description
+[final-deliverable:P1069] [paragraph] Use Case ID: UC-11
+[final-deliverable:P1070] [paragraph] Functional Requirement No.: FR-19
+[final-deliverable:P1071] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P1072] [paragraph] Secondary Actors or Systems: Recommendation engine
+[final-deliverable:P1073] [paragraph] Description: Revise a saved plan while retaining its history.
+[final-deliverable:P1075] [paragraph] Preconditions: A plan belongs to the user and the current profile is available.
+[final-deliverable:P1077] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P1078] [paragraph] 1. Open a plan day
+2. Select a meal or activity
+3. Request a substitution and state preference
+4. Engine applies current constraints and safety checks
+5. Review the replacement
+6. Confirm a new plan version
+7. Record completion or feedback.
+[final-deliverable:P1080] [paragraph] Alternative Paths: A1 No compatible substitute: retain the original and explain why. A2 User only marks completion: save adherence without regenerating the plan.
+[final-deliverable:P1082] [paragraph] Postconditions: Revision and feedback are stored without altering historical plan evidence.
+[final-deliverable:P1084] [paragraph] Extensions: E1 Profile changed: regenerate against current constraints. E2 Concurrent plan revision: prompt refresh. E3 Unsafe request: decline the substitute and retain a safe state.
+[final-deliverable:P1087] [4] 3.2.12  UC-12  Account Recovery and Logout
+[final-deliverable:P1088] [paragraph]  [embedded images: ['rId19']]
+[final-deliverable:P1089] [168] Figure 3.12: UC-12 Account Recovery and Logout
+[final-deliverable:P1091] [paragraph] Use Case Description
+[final-deliverable:P1092] [paragraph] Use Case ID: UC-12
+[final-deliverable:P1093] [paragraph] Functional Requirement No.: FR-03
+[final-deliverable:P1094] [paragraph] Primary Actor: Account holder
+[final-deliverable:P1095] [paragraph] Secondary Actors or Systems: Supabase Auth and email delivery service
+[final-deliverable:P1096] [paragraph] Description: Recover access or end a session.
+[final-deliverable:P1098] [paragraph] Preconditions: Recovery requires access to the registered mailbox; logout requires a local session.
+[final-deliverable:P1099] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P1100] [paragraph] 1. Select Forgot Password
+2. Enter email
+3. System returns a neutral acknowledgement
+4. Open a valid one-time recovery link
+5. Set a compliant new password
+6. System revokes applicable sessions
+7. Sign in with the new password
+8. Select Logout to clear local credentials and protected cached views.
+[final-deliverable:P1102] [paragraph] Alternative Paths: A1 Logout without recovery: revoke the session directly. A2 Unknown email: preserve the same acknowledgement.
+[final-deliverable:P1103] [paragraph] Postconditions: A completed recovery updates credentials; completed logout removes local access.
+[final-deliverable:P1105] [paragraph] Extensions: E1 Expired link: request a replacement. E2 Offline logout: clear local credentials immediately and retry remote revocation when possible. E3 Reused token: reject it.
+[final-deliverable:P1108] [4] 3.2.13  UC-13  Footwear and Injury Prevention Support
+[final-deliverable:P1109] [paragraph]  [embedded images: ['rId20']]
+[final-deliverable:P1110] [168] Figure 3.13: UC-13 Footwear and Injury Prevention Support
+[final-deliverable:P1112] [paragraph] Use Case Description
+[final-deliverable:P1113] [paragraph] Use Case ID: UC-13
+[final-deliverable:P1114] [paragraph] Functional Requirement No.: FR-20
+[final-deliverable:P1115] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P1116] [paragraph] Secondary Actors or Systems: Versioned prevention-rule service
+[final-deliverable:P1117] [paragraph] Description: Provide non-diagnostic guidance from a short questionnaire.
+[final-deliverable:P1119] [paragraph] Preconditions: The user understands the informational scope and can review their responses.
+[final-deliverable:P1121] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P1122] [paragraph] 1. Open Foot Support
+2. Answer fit, comfort and mobility questions
+3. Review reported concerns
+4. System matches the active rule set
+5. Safety rules determine whether guidance or referral is appropriate
+6. Display the reason and scope
+7. Save the session only under the selected retention choice.
+[final-deliverable:P1124] [paragraph] Alternative Paths: A1 Incomplete answers: request required information. A2 No applicable rule: explain that no reliable recommendation is available.
+[final-deliverable:P1125] [paragraph] Postconditions: The user receives a rule-linked general response or professional-assessment direction.
+[final-deliverable:P1127] [paragraph] Extensions: E1 Reported urgent concern: stop routine suggestions and show an escalation message. E2 User seeks diagnosis: explain the boundary. E3 Rule service fails: do not substitute free-form clinical advice.
+[final-deliverable:P1130] [4] 3.2.14  UC-14  Dashboard and Personal History
+[final-deliverable:P1131] [paragraph]  [embedded images: ['rId21']]
+[final-deliverable:P1132] [168] Figure 3.14: UC-14 Dashboard and Personal History
+[final-deliverable:P1134] [paragraph] Use Case Description
+[final-deliverable:P1135] [paragraph] Use Case ID: UC-14
+[final-deliverable:P1136] [paragraph] Functional Requirement No.: FR-23, FR-24
+[final-deliverable:P1137] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P1138] [paragraph] Secondary Actors or Systems: Record and reporting services
+[final-deliverable:P1139] [paragraph] Description: Review progress and correct permitted personal records.
+[final-deliverable:P1141] [paragraph] Preconditions: The user has a valid session; records may be empty.
+[final-deliverable:P1143] [paragraph] Main Success Scenario (MSS):
+[final-deliverable:P1144] [paragraph] 1. Open Dashboard
+2. System retrieves owned summaries
+3. Show meals, logged glucose and plan adherence with dates
+4. Select a summary to open underlying records
+5. Filter the time range
+6. Inspect analysis evidence
+7. Edit a permitted manual record or remove a retained image
+8. Refresh affected summaries.
+[final-deliverable:P1146] [paragraph] Alternative Paths: A1 No records: display an empty state with relevant first action. A2 Mixed units: convert only for a clearly labeled view.
+[final-deliverable:P1147] [paragraph] Postconditions: Summaries agree with persisted records and authorized corrections are audited.
+[final-deliverable:P1149] [paragraph] Extensions: E1 Read failure: mark content unavailable rather than zero. E2 Imported item: preserve source identity. E3 Deleted image: retain only permitted non-image analysis metadata.
+[final-deliverable:P1152] [4] 3.2.15  UC-15  Consent Export and Account Deletion
+[final-deliverable:P1153] [paragraph]  [embedded images: ['rId22']]
+[final-deliverable:P1154] [168] Figure 3.15: UC-15 Consent Export and Account Deletion
+[final-deliverable:P1156] [paragraph] Use Case Description
+[final-deliverable:P1157] [paragraph] Use Case ID: UC-15
+[final-deliverable:P1158] [paragraph] Functional Requirement No.: FR-05
+[final-deliverable:P1159] [paragraph] Primary Actor: Authenticated account holder
+[final-deliverable:P1160] [paragraph] Secondary Actors or Systems: Privacy-job service and storage
+[final-deliverable:P1161] [paragraph] Description: Control optional processing and obtain or remove personal data.
+[final-deliverable:P1163] [paragraph] Preconditions: The account is active; destructive requests require recent authentication.
+[final-deliverable:P1165] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P1166] [paragraph] 1. Open Privacy
+2. Review consent and retention choices
+3. Revoke an optional purpose or request an export
+4. System verifies ownership and creates a tracked job
+5. Retrieve the scoped export through an expiring link
+6. For deletion, reauthenticate and confirm
+7. System schedules data removal and reports completion.
+[final-deliverable:P1168] [paragraph] Alternative Paths: A1 Revoke import only: stop new imports without silently erasing existing readings. A2 Cancel deletion before confirmation: leave the account active.
+[final-deliverable:P1170] [paragraph] Postconditions: Consent changes take effect; completed jobs produce an export or the documented deletion outcome.
+[final-deliverable:P1172] [paragraph] Extensions: E1 Failed reauthentication: deny the request. E2 Job failure: retain status and retry safely. E3 Backup copies: expire through the stated backup lifecycle.
+[final-deliverable:P1175] [4] 3.2.16  UC-16  Catalog and Market Source Curation
+[final-deliverable:P1176] [paragraph]  [embedded images: ['rId23']]
+[final-deliverable:P1177] [168] Figure 3.16: UC-16 Catalog and Market Source Curation
+[final-deliverable:P1181] [paragraph] Use Case Description
+[final-deliverable:P1182] [paragraph] Use Case ID: UC-16
+[final-deliverable:P1183] [paragraph] Functional Requirement No.: FR-25
+[final-deliverable:P1184] [paragraph] Primary Actor: Authorized curator
+[final-deliverable:P1185] [paragraph] Secondary Actors or Systems: Nutrition or market-data publisher
+[final-deliverable:P1186] [paragraph] Description: Publish traceable nutrition and price observations.
+[final-deliverable:P1188] [paragraph] Preconditions: The curator has catalog permissions and a source with permitted reuse.
+[final-deliverable:P1190] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P1191] [paragraph] 1. Open pending catalog entries
+2. Inspect food identity, source and observation date
+3. Validate currency, unit and grade applicability
+4. Correct or reject inconsistent values
+5. Submit the review decision
+6. System stores reviewer and version
+7. Publish the verified record for user queries.
+[final-deliverable:P1193] [paragraph] Alternative Paths: A1 Unverifiable source: keep the item unpublished. A2 Duplicate observation: merge provenance or reject the duplicate.
+[final-deliverable:P1195] [paragraph] Postconditions: Only verified records become queryable; the prior version remains traceable.
+[final-deliverable:P1197] [paragraph] Extensions: E1 Source withdrawn: unpublish affected records. E2 Conflicting market units: require normalization. E3 Unauthorized publication: deny and audit.
+[final-deliverable:P1203] [4] 3.2.17  UC-17  Model and Safety Rule Release
+[final-deliverable:P1204] [paragraph]  [embedded images: ['rId24']]
+[final-deliverable:P1205] [168] Figure 3.17: UC-17 Model and Safety Rule Release
+[final-deliverable:P1207] [paragraph] Use Case Description
+[final-deliverable:P1208] [paragraph] Use Case ID: UC-17
+[final-deliverable:P1209] [paragraph] Functional Requirement No.: FR-26
+[final-deliverable:P1210] [paragraph] Primary Actor: Authorized model administrator
+[final-deliverable:P1211] [paragraph] Secondary Actors or Systems: Evaluation pipeline and model registry
+[final-deliverable:P1212] [paragraph] Description: Activate a reviewed inference and rule package.
+[final-deliverable:P1213] [paragraph] Preconditions: A candidate package has a versioned manifest and held-out evaluation evidence.
+[final-deliverable:P1215] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P1216] [paragraph] 1. Open candidate release
+2. Inspect class list, license, thresholds and metrics
+3. Review safety regression results
+4. Verify checksum and compatibility
+5. Approve activation
+6. System atomically changes the active pointer
+7. Run smoke checks
+8. Retain the prior package for rollback.
+[final-deliverable:P1218] [paragraph] Alternative Paths: A1 Failed acceptance gate: reject release. A2 Rubric differs by produce class: require class-specific evidence.
+[final-deliverable:P1220] [paragraph] Postconditions: The active package and rollback reference are identifiable for every subsequent output.
+[final-deliverable:P1222] [paragraph] Extensions: E1 Post-release failure: restore the prior pointer. E2 Missing artifact: abort activation. E3 Threshold changed: require a new release version.
+[final-deliverable:P1225] [4] 3.2.18  UC-18  Authorized Operations and Audit Review
+[final-deliverable:P1226] [paragraph]  [embedded images: ['rId25']]
+[final-deliverable:P1227] [168] Figure 3.18: UC-18 Authorized Operations and Audit Review
+[final-deliverable:P1229] [paragraph] Use Case Description
+[final-deliverable:P1230] [paragraph] Use Case ID: UC-18
+[final-deliverable:P1231] [paragraph] Functional Requirement No.: FR-27, FR-28
+[final-deliverable:P1232] [paragraph] Primary Actor: Authorized administrator
+[final-deliverable:P1233] [paragraph] Secondary Actors or Systems: Audit store
+[final-deliverable:P1234] [paragraph] Description: Investigate operational events without unrestricted health-data access.
+[final-deliverable:P1236] [paragraph] Preconditions: The administrator is authenticated with the required operational permission.
+[final-deliverable:P1238] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P1239] [paragraph] 1. Open Operations
+2. Select time range and action category
+3. System validates role and scope
+4. Retrieve redacted event metadata
+5. Inspect request IDs and outcomes
+6. Record an investigation note
+7. Export only authorized audit fields when needed.
+[final-deliverable:P1241] [paragraph] Alternative Paths: A1 No matching events: show an empty result. A2 Health payload requested: deny access unless a separate approved purpose authorizes it.
+[final-deliverable:P1242] [paragraph] Postconditions: An auditable investigation exists and private payloads remain protected.
+[final-deliverable:P1244] [paragraph] Extensions: E1 Cross-role action: reject and log. E2 Log-store outage: alert operations. E3 Suspicious event: create a tracked incident without exposing user secrets.
+[final-deliverable:P1247] [4] 3.2.19  UC-19  Reminder Preferences
+[final-deliverable:P1248] [paragraph]  [embedded images: ['rId26']]
+[final-deliverable:P1249] [168] Figure 3.19: UC-19 Reminder Preferences
+[final-deliverable:P1251] [paragraph] Use Case Description
+[final-deliverable:P1252] [paragraph] Use Case ID: UC-19
+[final-deliverable:P1253] [paragraph] Functional Requirement No.: FR-31
+[final-deliverable:P1254] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P1255] [paragraph] Secondary Actors or Systems: Device notification service
+[final-deliverable:P1256] [paragraph] Description: Configure optional private reminders.
+[final-deliverable:P1258] [paragraph] Preconditions: The user can access device settings; notification permission may be absent.
+[final-deliverable:P1260] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P1261] [paragraph] 1. Open Reminders
+2. Select logging or plan reminder
+3. Set time zone, schedule and quiet hours
+4. Request device notification permission
+5. Save the preference
+6. System schedules a non-sensitive preview
+7. User can disable or change the reminder.
+[final-deliverable:P1263] [paragraph] Alternative Paths: A1 Permission declined: save the preference as inactive. A2 Quiet-hour conflict: move or skip the reminder according to the displayed choice.
+[final-deliverable:P1264] [paragraph] Postconditions: Enabled reminders match the saved settings; disabled reminders are cancelled.
+[final-deliverable:P1266] [paragraph] Extensions: E1 Time zone changed: recalculate next trigger. E2 Logout: cancel account-specific local reminders. E3 Delivery failure: do not mark a health action completed.
+[final-deliverable:P1269] [4] 3.2.20  UC-20  Report Incorrect or Unsuitable Output
+[final-deliverable:P1270] [paragraph]  [embedded images: ['rId27']]
+[final-deliverable:P1271] [168] Figure 3.20: UC-20 Report Incorrect or Unsuitable Output
+[final-deliverable:P1273] [paragraph] Use Case Description
+[final-deliverable:P1274] [paragraph] Use Case ID: UC-20
+[final-deliverable:P1275] [paragraph] Functional Requirement No.: FR-32
+[final-deliverable:P1276] [paragraph] Primary Actor: Authenticated user
+[final-deliverable:P1277] [paragraph] Secondary Actors or Systems: Support curator
+[final-deliverable:P1278] [paragraph] Description: Report an output for review and correction.
+[final-deliverable:P1280] [paragraph] Preconditions: The user can identify an owned analysis, plan or assistant response.
+[final-deliverable:P1282] [paragraph] Main Success Scenario (MSS): 
+[final-deliverable:P1283] [paragraph] 1. Open Report from the output
+2. Select a reason
+3. Add an optional explanation
+4. Review what context will be shared
+5. Submit the report
+6. System stores a redacted reference and status
+7. Staff reviews within authorized scope
+8. User views the resolution.
+[final-deliverable:P1285] [paragraph] Alternative Paths: A1 No free-text explanation: accept a valid reason alone. A2 Duplicate report: link it to the existing case.
+[final-deliverable:P1286] [paragraph] Postconditions: The report is traceable and the original output is not silently rewritten.
+[final-deliverable:P1288] [paragraph] Extensions: E1 Safety-related concern: prioritize review. E2 Source cannot be recovered: request safe additional information. E3 Staff correction: version the relevant catalog or rule and record the resolution.
+[final-deliverable:P1290] [3] 3.3 Use Case Diagrams
+[final-deliverable:P1291] [paragraph] Figures 3.1 and 3.2 distinguish consumer interactions from privileged maintenance. Associations indicate participation, not data flow or execution order. The food-assessment use case includes capture validation and recognition. The optional quality/price review extends a completed supported analysis; nutrition confirmation is required before a meal is saved.
+[final-deliverable:P1292] [paragraph] A health source participates only in authorized import. The assistant provider receives the minimum permitted context and cannot grant itself access to a user’s records. Administrative catalog publication and model activation are separate from ordinary user functions; an operational role does not automatically confer access to private glucose histories.
+[final-deliverable:P1295] [3] 3.4 Data Flow Diagrams
+[final-deliverable:P1296] [paragraph] The Level 0 context diagram treats NutriSole as one process with user, staff and external-provider boundaries. Level 1 decomposes that process into identity/profile handling, food assessment, records/synchronization, planning/support and catalog administration. External inputs and outputs remain balanced across the two levels.
+[final-deliverable:P1297] [paragraph] Data stores are passive repositories. External actors do not write to a database directly: every write passes through an authorized process. The distinction is important for imported readings and image jobs, where permission, validation and deduplication must precede persistence. Audit events contain operational metadata rather than complete health payloads.
+[final-deliverable:P1303] [169] Use Case Diagrams of  ( Whole App )
+[final-deliverable:P1305] [paragraph]  [embedded images: ['rId28']]
+[final-deliverable:P1306] [168] Figure 3.21: Consumer use cases
+[final-deliverable:P1309] [paragraph]  [embedded images: ['rId29']]
+[final-deliverable:P1310] [168] Figure 3.22: Privileged use cases
+[final-deliverable:P1321] [paragraph] Data Flow Diagram 
+[final-deliverable:P1323] [paragraph]  [embedded images: ['rId30']]
+[final-deliverable:P1325] [paragraph]  [embedded images: ['rId31']]
+[final-deliverable:P1329] [2] CHAPTER 4
+[final-deliverable:P1330] [172] Design
+[final-deliverable:P1350] [3] 4.1 Introduction
+[final-deliverable:P1351] [paragraph] The design separates mobile interaction, application orchestration and persistence. Python services perform vision and recommendation tasks behind bounded contracts; NestJS owns application authorization and the state transitions that coordinate those tasks. Supabase supplies authentication, PostgreSQL and protected object storage.
+[final-deliverable:P1352] [paragraph] Modules exchange explicit identifiers and versioned records instead of relying on screen state. An analysis job has queued, running, completed, rejected or failed status. Only a completed accepted class can proceed to a definitive grade; a user-confirmed identity and portion are still needed to create a meal.
+[final-deliverable:P1354] [3] 4.2 Software Architecture
+[final-deliverable:P1355] [paragraph] The presentation tier is a React Native client with camera access, protected session storage, records, charts and plan screens. Native adapters read authorized Apple HealthKit or Android Health Connect data on the device; the API backend cannot read an on-device health store by itself [5, 6]. Google Fit is represented as a legacy dependency because support is scheduled to end in 2026.
+[final-deliverable:P1356] [paragraph] The application tier contains the NestJS REST API, authorization guards, job orchestration, catalog queries and record services. A Python vision service hosts preprocessing and model inference. A recommendation service composes constrained candidates, while a deterministic safety service governs planning and assistant outputs. Provider credentials remain on the server.
+[final-deliverable:P1357] [paragraph] The persistence tier contains Supabase PostgreSQL tables and protected objects. RLS and application checks jointly enforce ownership. The backend uses transaction boundaries for related writes and short-lived upload/download URLs for object access. External nutrition and market adapters publish only validated, versioned records.
+[final-deliverable:P1374] [169] Architecture Diagram
+[final-deliverable:P1376] [paragraph]  [embedded images: ['rId32']]
+[final-deliverable:P1377] [168] Figure 4.1: Three-tier NutriSole architecture
+[final-deliverable:P1384] [3] 4.3 Component Design
+[final-deliverable:P1385] [paragraph] Identity Module validates sessions and resolves the caller’s role. Profile Module stores preferences and consent versions. Analysis Module creates idempotent jobs and records model evidence. Catalog Module normalizes nutrition and market observations. Records Module owns meals, glucose and imported activity. Planning Module snapshots inputs and saves versioned plan items. Support Module applies foot rules and guards assistant responses.
+[final-deliverable:P1386] [paragraph] A Python inference request contains an analysis ID, protected object reference and model version. Its response contains status, class scores, visible-feature evidence and rejection reasons. It does not decide database ownership. Timeouts produce a retrievable job state rather than an assumed failure followed by a duplicate submission.
+[final-deliverable:P1387] [paragraph] A plan request contains week start, profile version, selected record window and an idempotency key. Generation first applies hard exclusions, then ranks compatible candidates. Safety checks run before persistence. The language model may phrase an approved explanation, but it must not introduce new clinical instructions or alter hard constraints.
+[final-deliverable:P1389] [3] 4.3.1 External Interfaces
+[final-deliverable:P1390] [paragraph] All API timestamps use ISO 8601 with an offset or UTC; stored instants use time stamptz. IDs are UUIDs, units are enumerated and numeric precision is defined in the schema. Errors return a stable code, safe message, field errors and request ID. A client can act on the code without parsing an English sentence.
+[final-deliverable:P1391] [paragraph] Food Data Central is a candidate source for nutrition search and details [7]. Local produce mappings need explicit review because food form and edible portion matter. A market source must be chosen and licensed before implementation; a generic web result is not a verified price observation. Provider caching must preserve source date, validity and attribution.
+[final-deliverable:P1393] [167] Table 4.1: Representative application API contracts
+[final-deliverable:P1394] [paragraph] Operation
+[final-deliverable:P1395] [paragraph] Request
+[final-deliverable:P1396] [paragraph] Result / failure
+[final-deliverable:P1397] [paragraph] POST /analyses
+[final-deliverable:P1398] [paragraph] Authenticated image upload reference, model context, idempotency key
+[final-deliverable:P1399] [paragraph] Job ID and status; invalid/corrupt image rejected
+[final-deliverable:P1400] [paragraph] GET /analyses/{id}
+[final-deliverable:P1401] [paragraph] Owned analysis ID
+[final-deliverable:P1402] [paragraph] Status, class, confidence, grade evidence and versions
+[final-deliverable:P1403] [paragraph] POST /glucose-records
+[final-deliverable:P1404] [paragraph] Value, unit, time, context, request key
+[final-deliverable:P1405] [paragraph] Committed owned record or field errors
+[final-deliverable:P1406] [paragraph] POST /plans
+[final-deliverable:P1407] [paragraph] Week start and request key
+[final-deliverable:P1408] [paragraph] Versioned plan with input snapshot or constraint failure
+[final-deliverable:P1409] [paragraph] POST /assistant/messages
+[final-deliverable:P1410] [paragraph] Question and consented context selection
+[final-deliverable:P1411] [paragraph] Guarded answer, source references or boundary response
+[final-deliverable:P1412] [paragraph] POST /sync-batches
+[final-deliverable:P1413] [paragraph] Provider IDs, records and checkpoint
+[final-deliverable:P1414] [paragraph] Committed count and checkpoint or retriable failure
+[final-deliverable:P1415] [3] 
+4.4 Class Diagram
+[final-deliverable:P1416] [paragraph] The class model distinguishes controllers, domain services and repositories. Controllers validate request contracts; services enforce domain rules; repositories scope database operations. Analysis Service depends on a Vision Client interface, so tests can return deterministic accepted, uncertain and failed responses without running a GPU model.
+[final-deliverable:P1417] [paragraph] Plan Service depends on Profile Repository, Record Repository, Nutrition Repository and Safety Policy. The same policy interface protects activity, foot support and chat, with separate rule groups for each. Health Adapter has platform implementations and emits normalized import envelopes with provider IDs; it does not bypass RecordService.
+[final-deliverable:P1419] [3] 4.5 Database Diagram and Data Dictionary
+[final-deliverable:P1420] [paragraph] The ERD is split into four readable subject areas with repeated identity anchors. It is one logical schema: repeated Users, Foods or Profiles boxes refer to the same table. PK identifies a primary key, FK a foreign key, UQ a uniqueness constraint, and a question mark denotes a null-able field. Required fields are otherwise NOT NULL.
+[final-deliverable:P1421] [paragraph] Users maps to the managed Supabase authic-users identity; the application does not maintain a second plaintext password table. Profiles has a one-to-one key referencing Users. Personal child rows carry user_id to support owner-scoped queries. Catalog entities are shared read-only to normal users and modified through privileged reviewed operations.
+[final-deliverable:P1422] [paragraph] Foreign-key deletion is CASCADE for owned disposable records and RESTRICT for catalog/model versions referenced by retained evidence. Catalog withdrawal changes publication status rather than breaking historical references. Account deletion removes owned records and objects; retained operational audit entries are minimized and de-identified according to the retention policy.
+[final-deliverable:P1433] [169] Class Diagram
+[final-deliverable:P1434] [paragraph]  [embedded images: ['rId33']]
+[final-deliverable:P1435] [168] Figure 4.2: Application service class diagram
+[final-deliverable:P1442] [3] 4.5.1 Integrity Indexes and Transactions
+[final-deliverable:P1443] [paragraph] Use UNIQUE (user_id, provider, external_id) for imported records with a non-null external ID, and UNIQUE (user_id, idempotency_key) for analysis and plan requests. A NULL external ID is permitted for manual observations. Add composite indexes on glucose_records (user_id, measured_at), meal_logs (user_id, eaten_at), plans (user_id, week_start) and market_prices(food_id, market, observed_at).
+[final-deliverable:P1444] [paragraph] CHECK constraints require positive portion mass and glucose values, confidence between 0 and 1, nonnegative nutrition values, and price_high greater than or equal to price_low. Grades and units use constrained enumerations. The server verifies that a referenced analysis, profile or plan belongs to the same user; a valid foreign key alone is not an authorization check.
+[final-deliverable:P1445] [paragraph] Creation of a plan and its items occurs in one transaction. A sync batch commits valid records and its checkpoint together or leaves the checkpoint unchanged. Object storage and SQL are not one atomic transaction: an upload is first temporary, then attached to a committed job; a cleanup task removes abandoned objects.
+[final-deliverable:P1447] [3] 4.5.2 Data Retention and Provenance
+[final-deliverable:P1448] [paragraph] Every inference stores its model/rubric version, and every plan stores a profile version, input window and rule version. Nutrition and price references retain source identifiers and dates. A user correction changes the confirmed identity without overwriting the original prediction, allowing model errors to be reviewed honestly.
+[final-deliverable:P1449] [paragraph] The proposed default removes transient real time analysis within 24 hours unless the user chooses retention. Health-record retention lasts until user deletion under the disclosed policy. Chat context is minimized; optional history is separate from model-provider retention. Deletion jobs must address SQL rows, objects, exports, caches and eventual backup expiry rather than only hiding an account.
+[final-deliverable:P1464] [169] Entity Relationship Diagram (ERD) 1
+[final-deliverable:P1466] [paragraph]  [embedded images: ['rId34']]
+[final-deliverable:P1467] [168] Figure 4.3: Data model subject area 1 of 6
+[final-deliverable:P1474] [169]   Entity Relationship Diagram (ERD) 2
+[final-deliverable:P1476] [paragraph]  [embedded images: ['rId35']]
+[final-deliverable:P1477] [168] Figure 4.4: Data model subject area 2 of 6
+[final-deliverable:P1484] [169]    Entity Relationship Diagram (ERD) 3
+[final-deliverable:P1486] [paragraph]  [embedded images: ['rId36']]
+[final-deliverable:P1487] [168] Figure 4.5: Data model subject area 3 of 6
+[final-deliverable:P1493] [169] Entity Relationship Diagram (ERD) 4
+[final-deliverable:P1495] [paragraph]  [embedded images: ['rId37']]
+[final-deliverable:P1496] [168] Figure 4.6: Data model subject area 4 of 6
+[final-deliverable:P1503] [169]  Entity Relationship Diagram (ERD) 5
+[final-deliverable:P1505] [paragraph]  [embedded images: ['rId38']]
+[final-deliverable:P1506] [168] Figure 4.7: Data model subject area 5 of 6
+[final-deliverable:P1511] [169] Entity Relationship Diagram (ERD) 6 
+[final-deliverable:P1514] [paragraph]  [embedded images: ['rId39']]
+[final-deliverable:P1515] [168] Figure 4.8: Data model subject area 6 of 6
+[final-deliverable:P1518] [167] Table 4.2: Schema integrity and cardinality
+[final-deliverable:P1519] [paragraph] Relationship
+[final-deliverable:P1520] [paragraph] Cardinality
+[final-deliverable:P1521] [paragraph] Constraint / lifecycle
+[final-deliverable:P1522] [paragraph] Users → Profiles
+[final-deliverable:P1523] [paragraph] 1 : 0..1
+[final-deliverable:P1524] [paragraph] Profile primary key also references auth user.
+[final-deliverable:P1525] [paragraph] Users → owned data
+[final-deliverable:P1526] [paragraph] 1 : 0..*
+[final-deliverable:P1527] [paragraph] Owned analyses, glucose, meals, plans, consent, chat and reminders.
+[final-deliverable:P1528] [paragraph] Foods → Nutrition / MarketPrices
+[final-deliverable:P1529] [paragraph] 1 : 0..*
+[final-deliverable:P1530] [paragraph] Published versions retained for historical references.
+[final-deliverable:P1531] [paragraph] ModelVersions → Analyses
+[final-deliverable:P1532] [paragraph] 1 : 0..*
+[final-deliverable:P1533] [paragraph] Every analysis resolves to a released model version.
+[final-deliverable:P1534] [paragraph] Plans → PlanItems
+[final-deliverable:P1535] [paragraph] 1 : 1..*
+[final-deliverable:P1536] [paragraph] Items committed with plan in one transaction.
+[final-deliverable:P1537] [paragraph] Connections → imported records
+[final-deliverable:P1538] [paragraph] 1 : 0..*
+[final-deliverable:P1539] [paragraph] Provider + external ID unique within each user.
+[final-deliverable:P1540] [paragraph] ChatSessions → ChatMessages
+[final-deliverable:P1541] [paragraph] 1 : 0..*
+[final-deliverable:P1542] [paragraph] Messages inherit owner via parent session.
+[final-deliverable:P1543] [paragraph] Rules → plans / foot / chat
+[final-deliverable:P1544] [paragraph] 1 : 0..*
+[final-deliverable:P1545] [paragraph] Safety decision resolves to reviewed rule set.
+[final-deliverable:P1548] [3] 4.6 Sequence Diagrams
+[final-deliverable:P1549] [paragraph] The sequence diagrams show login, food analysis with an uncertainty branch, idempotent glucose import, weekly planning and guarded chat. Solid arrows represent calls; dashed arrows represent responses. Activation bars mark service execution, and labeled alternative frames separate accepted, rejected and unavailable outcomes.
+[final-deliverable:P1550] [paragraph] The baseline session validates the token before retrieving personal data. In the food sequence, the backend authorizes upload, creates a job and invokes the vision service. A result is stored before the client receives a completed status. Nutrition and price enrichment remain separately labeled sources; they do not turn an uncertain image into a reliable assessment.
+[final-deliverable:P1551] [paragraph] The synchronization sequence begins with OS consent and local reads, followed by authorized server writes. The planning sequence snapshots inputs before constraint and safety checks. The chat sequence performs both input and output screening; a provider response is never displayed simply because generation succeeded.
+[final-deliverable:P1554] [3] 4.6.1 Deployment and Operations
+[final-deliverable:P1555] [paragraph] A containerized deployment separates API and Python workers, with environment-specific credentials and database migrations applied through a controlled release. Use health probes for process liveness and dependency readiness. Resource limits and bounded queues protect the API from large images or expensive model requests.
+[final-deliverable:P1556] [paragraph] The release manifest records source revision, dependency lockfiles, migration version, model checksum, class manifest and safety-rule version. Stage the candidate, run smoke tests, then switch traffic or active model pointers. Rollback restores a known-compatible application/model combination; database rollback must account for already-written data.
+[final-deliverable:P1557] [paragraph] Monitoring records latency, rejected caputers, job failures, provider timeouts and consent/sync failures using redacted request IDs. A model-drift review compares class/confidence distributions and reviewed corrections without treating unverified feedback as ground truth.
+[final-deliverable:P1599] [169] Sequence Diagram 1
+[final-deliverable:P1601] [paragraph]  [embedded images: ['rId40']]
+[final-deliverable:P1602] [168] Figure 4.9: Authenticated session and owned dashboard
+[final-deliverable:P1610] [169] Sequence Diagram 2
+[final-deliverable:P1611] [paragraph]  [embedded images: ['rId41']]
+[final-deliverable:P1612] [168] Figure 4.10: Image capture and visual assessment
+[final-deliverable:P1618] [169] Sequence Diagram 3
+[final-deliverable:P1620] [paragraph]  [embedded images: ['rId42']]
+[final-deliverable:P1621] [168] Figure 4.11: Consented idempotent health sync
+[final-deliverable:P1628] [169] 
+Sequence Diagram 4
+[final-deliverable:P1630] [paragraph]  [embedded images: ['rId43']]
+[final-deliverable:P1631] [168] Figure 4.12: Versioned weekly plan generation
+[final-deliverable:P1640] [169] Sequence Diagram 5
+[final-deliverable:P1642] [paragraph]  [embedded images: ['rId44']]
+[final-deliverable:P1643] [168] Figure 4.13: Guarded conversational response
+[final-deliverable:P1650] [3] References
+[final-deliverable:P1651] [paragraph] [1] Bhargava, A., & Bansal, A. (2021). Fruits and vegetables quality evaluation using computer vision: A review. Journal of King Saud University – Computer and Information Sciences, 33(3), 243–257. https://doi.org/10.1016/j.jksuci.2018.06.002
+[final-deliverable:P1652] [paragraph] [2] Ma, P., Lau, C. P., Yu, N., Li, A., Liu, P., Wang, Q., & Sheng, J. (2021). Image-based nutrient estimation for Chinese dishes using deep learning. Food Research International, 147, 110437. https://doi.org/10.1016/j.foodres.2021.110437
+[final-deliverable:P1653] [paragraph] [3] Xin, M., Yao, Y., Huang, P., & Li, Q. (2026). Application study of an artificial intelligence and big data-based personalized chronic disease management model for diabetes patients. Frontiers in Public Health, 14, 1735295. https://doi.org/10.3389/fpubh.2026.1735295
+[final-deliverable:P1654] [paragraph] [4] Zeevi, D., Korem, T., Zmora, N., Israeli, D., Rothschild, D., Weinberger, A., Ben-Yacov, O., Lador, D., Avnit-Sagi, T., Lotan-Pompan, M., Suez, J., Mahdi, J. A., Matot, E., Malka, G., Kosower, N., Rein, M., Zilberman-Schapira, G., Dohnalová, L., Pevsner-Fischer, M., … Segal, E. (2015). Personalized nutrition by prediction of glycemic responses. Cell, 163(5), 1079–1094. https://doi.org/10.1016/j.cell.2015.11.001
+[final-deliverable:P1655] [paragraph] [5] Google. (n.d.). Fit migration guide. Android Developers. Retrieved September 25, 2026, from https://developer.android.com/health-and-fitness/health-connect/migration/fit
+[final-deliverable:P1656] [paragraph] [6] Apple. (n.d.). HealthKit. Apple Developer Documentation. Retrieved September 25, 2026, from https://developer.apple.com/documentation/healthkit
+[final-deliverable:P1657] [paragraph] [7] U.S. Department of Agriculture, Agricultural Research Service. (n.d.). FoodData Central API guide. Retrieved September 25, 2026, from https://fdc.nal.usda.gov/api-guide/
+
+## word/endnotes.xml
+
+## word/footer1.xml
+[final-deliverable:P0001] 71
+
+## word/footnotes.xml

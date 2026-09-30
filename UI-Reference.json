@@ -1,0 +1,1488 @@
+{
+  "schemaVersion": "1.0",
+  "product": "NutriSole",
+  "scope": "Six reference screens with local frontend interactions",
+  "referenceDirectory": "NutriSole-UI-Concepts",
+  "authority": "Original individual PNGs override estimates in this JSON and differences in the overview poster.",
+  "measurementStatus": {
+    "canvasDimensions": "Read from the PNG files; verified.",
+    "text": "Visually transcribed from supplied screenshots.",
+    "rectangles": "Preliminary visual estimates; must be calibrated from original pixels before implementation.",
+    "colors": "Approximate visual tokens; sample original pixels, gradients and textures before use.",
+    "fonts": "Categories observed; exact font families not established.",
+    "coordinateSystem": "Source PNG pixels, origin at top left; rectangles use [x, y, width, height].",
+    "innerDisplayBounds": "Bounding rectangle of the rounded display, including status and safe areas; not a final content viewport or crop mask."
+  },
+  "visualRules": {
+    "target": "Exact composition at calibrated reference scale, including text baselines and photo crops.",
+    "noRedesign": true,
+    "noWholeScreenImageAsImplementation": true,
+    "individualCropCalibrationRequired": true,
+    "preserveAspectRatio": true,
+    "phoneHardware": "Preview shell only; native runtime uses actual safe areas and system UI.",
+    "responsive": "Preserve mobile hierarchy; center mobile canvas on desktop; do not invent a desktop dashboard.",
+    "unpicturedStates": "Use consistent secondary sheets or views; label these as inferred in docs.",
+    "referenceMode": "Reset synthetic fixtures, fixed labels and dates, loaded fonts/assets, stable animation state.",
+    "verification": [
+      "registered side-by-side capture",
+      "50 percent opacity overlay",
+      "absolute-difference heatmap",
+      "geometry and text-baseline inspection",
+      "separate app, system UI and hardware comparisons"
+    ]
+  },
+  "tokens": {
+    "backgroundApprox": "#FAF8F1",
+    "cardApprox": "#FFFDF8",
+    "textPrimaryApprox": "#080C12",
+    "textSecondaryApprox": "#5D626A",
+    "greenDeepApprox": "#103F2B",
+    "greenSurfaceApprox": "#214D3B",
+    "greenPaleApprox": "#E8F2E4",
+    "lavenderSurfaceApprox": "#E8EBFA",
+    "borderApprox": "#E8E5DD",
+    "caloriesApprox": "#FF8C40",
+    "proteinApprox": "#929BF2",
+    "carbohydrateApprox": "#59CCBA",
+    "fatApprox": "#FBD479",
+    "cameraPhotoSelectedApprox": "#F3CA42",
+    "typography": {
+      "brandAndOnboardingHeading": "High-contrast editorial serif; family unknown.",
+      "homeName": "Bold high-contrast serif.",
+      "ui": "Rounded humanist/system-like sans serif; family unknown.",
+      "requirements": [
+        "measure font size and weight",
+        "measure line height and letter spacing",
+        "preserve pictured line breaks",
+        "bundle justified fonts",
+        "report fallback differences"
+      ]
+    },
+    "surfaces": "Warm off-white texture, softly rounded bordered cards, subtle shadows, green tonal texture/gradients; avoid treating every surface as a flat color."
+  },
+  "screens": [
+    {
+      "id": "onboarding",
+      "route": "/onboarding",
+      "referenceFile": "ChatGPT Image Sep 29, 2026, 01_21_15 AM-1.png",
+      "canvasPx": [
+        863,
+        1822
+      ],
+      "innerDisplayBoundsApproxPx": [
+        38,
+        38,
+        786,
+        1748
+      ],
+      "initialState": {
+        "pageIndex": 0,
+        "pageCount": 4
+      },
+      "regions": [
+        {
+          "id": "status",
+          "rectApproxPx": [
+            118,
+            56,
+            659,
+            72
+          ],
+          "text": "9:41",
+          "style": "black clock and status symbols, black Dynamic Island"
+        },
+        {
+          "id": "brand",
+          "rectApproxPx": [
+            93,
+            174,
+            300,
+            80
+          ],
+          "text": "NutriSole",
+          "asset": "green leaf mark",
+          "typography": "serif wordmark"
+        },
+        {
+          "id": "skip",
+          "rectApproxPx": [
+            709,
+            180,
+            72,
+            41
+          ],
+          "text": "Skip",
+          "action": "navigate:home"
+        },
+        {
+          "id": "headline",
+          "rectApproxPx": [
+            103,
+            291,
+            620,
+            145
+          ],
+          "lines": [
+            "Healthy choices,",
+            "made simple."
+          ],
+          "typography": "large bold serif"
+        },
+        {
+          "id": "description",
+          "rectApproxPx": [
+            105,
+            479,
+            650,
+            126
+          ],
+          "lines": [
+            "Scan your food, get instant insights,",
+            "and build a plan that fits your life,",
+            "with the power of computer vision."
+          ]
+        },
+        {
+          "id": "hero",
+          "rectApproxPx": [
+            39,
+            635,
+            784,
+            570
+          ],
+          "asset": "large chicken, quinoa, avocado, purple cabbage, leafy greens and tomato bowl",
+          "crop": "bowl extends beyond right edge; lower image overlapped by feature panel"
+        },
+        {
+          "id": "featurePanel",
+          "rectApproxPx": [
+            64,
+            1091,
+            733,
+            500
+          ],
+          "style": "large rounded warm-white panel"
+        },
+        {
+          "id": "recognitionRow",
+          "rectApproxPx": [
+            86,
+            1110,
+            690,
+            145
+          ],
+          "title": "Instant food recognition",
+          "subtitle": "Know what you’re eating",
+          "icon": "camera in pale-green circle"
+        },
+        {
+          "id": "nutritionRow",
+          "rectApproxPx": [
+            86,
+            1268,
+            690,
+            145
+          ],
+          "title": "Personalized nutrition",
+          "subtitle": "Get practical, realistic guidance",
+          "icon": "person outline in pale-green circle"
+        },
+        {
+          "id": "supportRow",
+          "rectApproxPx": [
+            86,
+            1427,
+            690,
+            145
+          ],
+          "title": "Long-term health support",
+          "subtitle": "Small steps. Real progress.",
+          "icon": "paired footprint-like outline in pale-green circle"
+        },
+        {
+          "id": "pagination",
+          "rectApproxPx": [
+            130,
+            1688,
+            136,
+            23
+          ],
+          "style": "four dots, first green, remaining gray"
+        },
+        {
+          "id": "next",
+          "rectApproxPx": [
+            650,
+            1615,
+            144,
+            138
+          ],
+          "icon": "white right arrow",
+          "style": "deep-green circle",
+          "action": "navigate:home"
+        }
+      ],
+      "notes": [
+        "Only first onboarding slide supplied; do not invent three additional reference screens.",
+        "No bottom tab bar on this screen."
+      ]
+    },
+    {
+      "id": "home",
+      "route": "/home",
+      "referenceFile": "ChatGPT Image Sep 29, 2026, 01_21_16 AM-2.png",
+      "canvasPx": [
+        863,
+        1822
+      ],
+      "innerDisplayBoundsApproxPx": [
+        42,
+        38,
+        777,
+        1737
+      ],
+      "initialState": {
+        "name": "Alex",
+        "completedMeals": 3,
+        "goalMeals": 5,
+        "calories": 1420,
+        "proteinG": 82,
+        "carbsG": 48,
+        "fatG": 62,
+        "selectedTab": "home"
+      },
+      "regions": [
+        {
+          "id": "greeting",
+          "rectApproxPx": [
+            94,
+            178,
+            404,
+            104
+          ],
+          "lines": [
+            "Good morning,",
+            "Alex"
+          ],
+          "typography": "sans greeting; large bold serif name"
+        },
+        {
+          "id": "avatar",
+          "rectApproxPx": [
+            693,
+            171,
+            88,
+            87
+          ],
+          "asset": "Alex portrait",
+          "style": "circular crop",
+          "action": "navigate:profile"
+        },
+        {
+          "id": "progressCard",
+          "rectApproxPx": [
+            67,
+            311,
+            730,
+            406
+          ],
+          "eyebrow": "KEEP GOING",
+          "lines": [
+            "You’re 2 meals away",
+            "from your goal"
+          ],
+          "style": "thin border, very rounded warm-white card"
+        },
+        {
+          "id": "mealRing",
+          "rectApproxPx": [
+            541,
+            334,
+            214,
+            213
+          ],
+          "lines": [
+            "3/5",
+            "meals"
+          ],
+          "style": "thick segmented green ring with rounded transitions"
+        },
+        {
+          "id": "macros",
+          "rectApproxPx": [
+            111,
+            581,
+            634,
+            112
+          ],
+          "columns": [
+            {
+              "value": "1,420",
+              "label": "calories",
+              "barColor": "orange"
+            },
+            {
+              "value": "82g",
+              "label": "protein",
+              "barColor": "lavender"
+            },
+            {
+              "value": "48g",
+              "label": "carbs",
+              "barColor": "turquoise"
+            },
+            {
+              "value": "62g",
+              "label": "fat",
+              "barColor": "yellow"
+            }
+          ],
+          "style": "four columns, three thin vertical separators, short rounded progress bars"
+        },
+        {
+          "id": "scanAction",
+          "rectApproxPx": [
+            67,
+            740,
+            730,
+            218
+          ],
+          "title": "Scan Food",
+          "subtitle": "Instant nutrition insights",
+          "icon": "large white camera in muted-green disc",
+          "trailingIcon": "chevron",
+          "action": "navigate:scan"
+        },
+        {
+          "id": "planAction",
+          "rectApproxPx": [
+            67,
+            980,
+            360,
+            226
+          ],
+          "title": "View Plan",
+          "subtitle": "Meals for your goals",
+          "icon": "calendar",
+          "trailingIcon": "chevron",
+          "style": "pale-green card",
+          "action": "navigate:weekly-plan"
+        },
+        {
+          "id": "healthAction",
+          "rectApproxPx": [
+            442,
+            980,
+            355,
+            226
+          ],
+          "title": "Health",
+          "subtitle": "Trends & insights",
+          "icon": "ascending bars",
+          "trailingIcon": "chevron",
+          "style": "pale-lavender card",
+          "action": "navigate:health-inferred"
+        },
+        {
+          "id": "recentScans",
+          "rectApproxPx": [
+            67,
+            1228,
+            730,
+            384
+          ],
+          "title": "Recent Scans",
+          "trailingText": "See all",
+          "action": "navigate:history-inferred"
+        },
+        {
+          "id": "appleRow",
+          "rectApproxPx": [
+            96,
+            1321,
+            670,
+            116
+          ],
+          "asset": "apple thumbnail",
+          "title": "Apple",
+          "subtitle": "1 medium (confirmed)",
+          "energy": "95 cal",
+          "time": "12:24 PM",
+          "action": "navigate:log-meal"
+        },
+        {
+          "id": "chickenRow",
+          "rectApproxPx": [
+            96,
+            1471,
+            670,
+            118
+          ],
+          "asset": "grilled chicken bowl thumbnail",
+          "title": "Grilled Chicken Bowl",
+          "subtitle": "Chicken, rice, veggies",
+          "energy": "420 cal",
+          "time": "Yesterday"
+        },
+        {
+          "id": "bottomNav",
+          "rectApproxPx": [
+            43,
+            1627,
+            775,
+            147
+          ],
+          "items": [
+            {
+              "label": "Home",
+              "icon": "filled house",
+              "selected": true
+            },
+            {
+              "label": "Plan",
+              "icon": "rounded document"
+            },
+            {
+              "label": null,
+              "icon": "camera",
+              "raised": true
+            },
+            {
+              "label": "Health",
+              "icon": "heart outline"
+            },
+            {
+              "label": "Profile",
+              "icon": "person outline"
+            }
+          ]
+        },
+        {
+          "id": "raisedScanButton",
+          "rectApproxPx": [
+            363,
+            1592,
+            136,
+            137
+          ],
+          "style": "dark-green circle, warm light outer ring and soft shadow",
+          "action": "navigate:scan"
+        }
+      ]
+    },
+    {
+      "id": "scan",
+      "route": "/scan",
+      "referenceFile": "ChatGPT Image Sep 29, 2026, 01_21_18 AM-3.png",
+      "canvasPx": [
+        863,
+        1822
+      ],
+      "innerDisplayBoundsApproxPx": [
+        41,
+        37,
+        781,
+        1739
+      ],
+      "initialState": {
+        "mode": "photo",
+        "flash": false,
+        "food": "Apple",
+        "confidencePercent": 97,
+        "source": "synthetic fixture"
+      },
+      "regions": [
+        {
+          "id": "cameraScene",
+          "rectApproxPx": [
+            41,
+            37,
+            781,
+            1371
+          ],
+          "asset": "large foreground red apple on wood board, other apples at left, blurred kitchen behind",
+          "crop": "foreground apple below recognition label; preserve perspective and focus"
+        },
+        {
+          "id": "status",
+          "rectApproxPx": [
+            120,
+            56,
+            652,
+            72
+          ],
+          "text": "9:41",
+          "style": "white status icons, black island"
+        },
+        {
+          "id": "close",
+          "rectApproxPx": [
+            80,
+            170,
+            95,
+            95
+          ],
+          "icon": "white X",
+          "style": "translucent dark circle with subtle border",
+          "action": "back"
+        },
+        {
+          "id": "flash",
+          "rectApproxPx": [
+            691,
+            169,
+            96,
+            96
+          ],
+          "icon": "white lightning outline",
+          "style": "translucent dark circle",
+          "action": "toggle local flash state"
+        },
+        {
+          "id": "recognitionBubble",
+          "rectApproxPx": [
+            264,
+            412,
+            484,
+            170
+          ],
+          "title": "Apple",
+          "subtitle": "Confidence 97%",
+          "icon": "dark check in white circle",
+          "style": "dark translucent rounded bubble with downward pointer"
+        },
+        {
+          "id": "targetCorners",
+          "rectApproxPx": [
+            213,
+            634,
+            526,
+            502
+          ],
+          "style": "four white thick rounded L corners; no central rectangle stroke"
+        },
+        {
+          "id": "instruction",
+          "rectApproxPx": [
+            142,
+            1226,
+            583,
+            155
+          ],
+          "title": "Point at your food",
+          "subtitle": "Keep it in frame and well lit",
+          "icon": "white target-like outline",
+          "style": "dark brown translucent rounded panel"
+        },
+        {
+          "id": "bottomControls",
+          "rectApproxPx": [
+            41,
+            1408,
+            781,
+            368
+          ],
+          "style": "very dark gradient surface"
+        },
+        {
+          "id": "gallery",
+          "rectApproxPx": [
+            80,
+            1461,
+            123,
+            113
+          ],
+          "asset": "food bowl thumbnail",
+          "action": "open local fixture chooser or image picker"
+        },
+        {
+          "id": "shutter",
+          "rectApproxPx": [
+            348,
+            1443,
+            164,
+            164
+          ],
+          "style": "white concentric circles with dark gap",
+          "action": "navigate:log-meal"
+        },
+        {
+          "id": "modePhoto",
+          "rectApproxPx": [
+            362,
+            1647,
+            144,
+            43
+          ],
+          "text": "PHOTO",
+          "selected": true,
+          "style": "yellow text",
+          "action": "select photo mode"
+        },
+        {
+          "id": "modeVideo",
+          "rectApproxPx": [
+            555,
+            1647,
+            111,
+            43
+          ],
+          "text": "VIDEO",
+          "selected": false,
+          "style": "light-gray text",
+          "action": "select simulated video mode"
+        }
+      ],
+      "notes": [
+        "No bottom tab bar.",
+        "A clean camera background independent of baked-in controls has not been established.",
+        "97 percent is fixture content, not measured model accuracy."
+      ]
+    },
+    {
+      "id": "log-meal",
+      "route": "/log-meal",
+      "referenceFile": "ChatGPT Image Sep 29, 2026, 01_21_19 AM-4.png",
+      "canvasPx": [
+        863,
+        1822
+      ],
+      "innerDisplayBoundsApproxPx": [
+        55,
+        120,
+        750,
+        1604
+      ],
+      "initialState": {
+        "food": "Apple",
+        "portionMode": "amount",
+        "quantity": 1,
+        "edibleGrams": 182,
+        "energyKcal": 95
+      },
+      "regions": [
+        {
+          "id": "header",
+          "rectApproxPx": [
+            92,
+            253,
+            433,
+            39
+          ],
+          "text": "Log Meal",
+          "leadingIcon": "back chevron",
+          "alignment": "title centered relative to display"
+        },
+        {
+          "id": "foodSummary",
+          "rectApproxPx": [
+            77,
+            333,
+            708,
+            193
+          ],
+          "title": "Apple",
+          "subtitle": "95 cal per medium (182 g)",
+          "assetRectApproxPx": [
+            103,
+            352,
+            175,
+            153
+          ],
+          "asset": "red apple thumbnail",
+          "trailingIcon": "circled information",
+          "style": "warm-white rounded card"
+        },
+        {
+          "id": "portionHeading",
+          "rectApproxPx": [
+            92,
+            571,
+            510,
+            41
+          ],
+          "text": "Confirm portion"
+        },
+        {
+          "id": "explanation",
+          "rectApproxPx": [
+            92,
+            628,
+            640,
+            69
+          ],
+          "lines": [
+            "Adjust the amount you plan to eat.",
+            "This helps us log your meal accurately."
+          ]
+        },
+        {
+          "id": "portionTabs",
+          "rectApproxPx": [
+            91,
+            744,
+            681,
+            87
+          ],
+          "items": [
+            "By amount",
+            "By weight",
+            "By size"
+          ],
+          "selected": "By amount",
+          "style": "gray rounded track and dark-green selected pill"
+        },
+        {
+          "id": "minus",
+          "rectApproxPx": [
+            92,
+            888,
+            76,
+            76
+          ],
+          "icon": "minus",
+          "style": "thin gray circular border",
+          "action": "decrement positive quantity"
+        },
+        {
+          "id": "quantity",
+          "rectApproxPx": [
+            211,
+            900,
+            38,
+            56
+          ],
+          "text": "1"
+        },
+        {
+          "id": "plus",
+          "rectApproxPx": [
+            298,
+            888,
+            76,
+            76
+          ],
+          "icon": "plus",
+          "style": "thin gray circular border",
+          "action": "increment quantity"
+        },
+        {
+          "id": "portionLabel",
+          "rectApproxPx": [
+            418,
+            892,
+            363,
+            71
+          ],
+          "title": "medium apple",
+          "subtitle": "(about 182 g, edible portion)"
+        },
+        {
+          "id": "estimate",
+          "rectApproxPx": [
+            81,
+            1015,
+            699,
+            195
+          ],
+          "title": "≈ 95 calories",
+          "lines": [
+            "Estimated for 1 medium apple",
+            "Values are estimates."
+          ],
+          "icon": "apple outline",
+          "style": "pale-green rounded panel"
+        },
+        {
+          "id": "logAction",
+          "rectApproxPx": [
+            87,
+            1237,
+            688,
+            115
+          ],
+          "text": "Log Meal",
+          "style": "dark-green large rounded button",
+          "action": "save consumed local record then navigate home"
+        },
+        {
+          "id": "saveLater",
+          "rectApproxPx": [
+            313,
+            1410,
+            246,
+            38
+          ],
+          "text": "Save for later",
+          "style": "bold deep-green text",
+          "action": "save local draft without updating consumed totals"
+        }
+      ],
+      "notes": [
+        "No pictured bottom tab bar.",
+        "By weight and By size contents are unpictured secondary states."
+      ]
+    },
+    {
+      "id": "weekly-plan",
+      "route": "/weekly-plan",
+      "referenceFile": "ChatGPT Image Sep 29, 2026, 01_21_21 AM-5.png",
+      "canvasPx": [
+        863,
+        1822
+      ],
+      "innerDisplayBoundsApproxPx": [
+        57,
+        149,
+        749,
+        1537
+      ],
+      "initialState": {
+        "weekLabel": "Mar 18 – Mar 24",
+        "selectedDay": "Mon 18",
+        "selectedTab": "Meals",
+        "calorieGoal": 1650,
+        "completedMeals": 4,
+        "goalMeals": 5,
+        "adherencePercent": 82
+      },
+      "regions": [
+        {
+          "id": "header",
+          "rectApproxPx": [
+            96,
+            275,
+            666,
+            77
+          ],
+          "title": "Weekly Plan",
+          "subtitle": "Mar 18 – Mar 24",
+          "leadingIcon": "back arrow",
+          "trailingIcon": "calendar"
+        },
+        {
+          "id": "dayPicker",
+          "rectApproxPx": [
+            81,
+            400,
+            705,
+            101
+          ],
+          "items": [
+            "Mon\n18",
+            "Tue\n19",
+            "Wed\n20",
+            "Thu\n21",
+            "Fri\n22",
+            "Sat\n23",
+            "Sun\n24"
+          ],
+          "style": "seven rounded vertical pills; Mon selected dark green"
+        },
+        {
+          "id": "summary",
+          "rectApproxPx": [
+            77,
+            523,
+            709,
+            160
+          ],
+          "columns": [
+            {
+              "value": "1,650",
+              "label": "cal goal"
+            },
+            {
+              "value": "4/5",
+              "label": "meals",
+              "icon": "small green ring"
+            },
+            {
+              "value": "82%",
+              "label": "adherence"
+            }
+          ],
+          "style": "rounded light card with two vertical dividers"
+        },
+        {
+          "id": "tabs",
+          "rectApproxPx": [
+            77,
+            706,
+            709,
+            100
+          ],
+          "items": [
+            "Meals",
+            "Nutrition"
+          ],
+          "selected": "Meals",
+          "style": "rounded pale track; green selected text and bottom underline"
+        },
+        {
+          "id": "breakfastCard",
+          "rectApproxPx": [
+            77,
+            831,
+            709,
+            504
+          ],
+          "title": "Breakfast",
+          "time": "7:00 – 9:00 AM",
+          "meal": "Berry Overnight Oats",
+          "description": "Oats, Greek yogurt, berries, chia seeds",
+          "nutrition": [
+            "320 cal",
+            "18g P",
+            "42g C",
+            "10g F"
+          ],
+          "assetRectApproxPx": [
+            104,
+            932,
+            166,
+            168
+          ],
+          "asset": "berry oats in pale ceramic cup"
+        },
+        {
+          "id": "accept",
+          "rectApproxPx": [
+            102,
+            1121,
+            274,
+            90
+          ],
+          "text": "Accept",
+          "icon": "check",
+          "style": "dark-green rounded button",
+          "action": "accept local meal suggestion"
+        },
+        {
+          "id": "substitute",
+          "rectApproxPx": [
+            391,
+            1121,
+            275,
+            90
+          ],
+          "text": "Substitute",
+          "icon": "circular arrows",
+          "style": "light outlined rounded button",
+          "action": "open seeded substitutes"
+        },
+        {
+          "id": "overflow",
+          "rectApproxPx": [
+            680,
+            1121,
+            83,
+            90
+          ],
+          "icon": "three dots",
+          "style": "light outlined rounded square",
+          "action": "open local meal menu"
+        },
+        {
+          "id": "feedback",
+          "rectApproxPx": [
+            102,
+            1229,
+            661,
+            84
+          ],
+          "text": "Not a fan? Tell us why...",
+          "icon": "comment outline",
+          "style": "light-gray outlined rounded field",
+          "action": "edit and save local feedback"
+        },
+        {
+          "id": "lunchCard",
+          "rectApproxPx": [
+            77,
+            1357,
+            709,
+            286
+          ],
+          "title": "Lunch",
+          "time": "12:00 – 2:00 PM",
+          "meal": "Grilled Chicken Quinoa Bowl",
+          "description": "Chicken, quinoa, mixed greens, avocado",
+          "nutrition": [
+            "420 cal",
+            "36g P",
+            "48g C",
+            "14g F"
+          ],
+          "assetRectApproxPx": [
+            104,
+            1453,
+            166,
+            162
+          ],
+          "asset": "chicken quinoa avocado bowl"
+        }
+      ],
+      "notes": [
+        "No bottom tab bar in individual reference.",
+        "March dates are fixed fixture text; year unspecified.",
+        "Nutrition tab and other day details are unpictured."
+      ]
+    },
+    {
+      "id": "profile",
+      "route": "/profile",
+      "referenceFile": "ChatGPT Image Sep 29, 2026, 01_21_23 AM-6.png",
+      "canvasPx": [
+        863,
+        1822
+      ],
+      "innerDisplayBoundsApproxPx": [
+        50,
+        166,
+        760,
+        1564
+      ],
+      "initialState": {
+        "name": "Alex Chen",
+        "email": "alex.chen@email.com",
+        "dietaryPreferences": [
+          "Balanced",
+          "Higher protein"
+        ],
+        "allergens": [
+          "Tree nuts",
+          "Shellfish"
+        ],
+        "activity": "Strength training, 3–4 days/week",
+        "mobility": "None",
+        "glucoseUnit": "mg/dL",
+        "timezoneLabel": "(UTC-8) Pacific Time",
+        "healthSource": "Apple Health",
+        "connected": true,
+        "connectionKind": "synthetic fixture only"
+      },
+      "regions": [
+        {
+          "id": "header",
+          "rectApproxPx": [
+            91,
+            296,
+            591,
+            35
+          ],
+          "text": "Profile & Preferences",
+          "leadingIcon": "back chevron",
+          "alignment": "centered title"
+        },
+        {
+          "id": "account",
+          "rectApproxPx": [
+            74,
+            364,
+            717,
+            178
+          ],
+          "title": "Alex Chen",
+          "subtitle": "alex.chen@email.com",
+          "assetRectApproxPx": [
+            108,
+            386,
+            138,
+            135
+          ],
+          "asset": "same Alex portrait as Home",
+          "trailingIcon": "chevron",
+          "action": "open account edit sheet"
+        },
+        {
+          "id": "preferences",
+          "rectApproxPx": [
+            74,
+            560,
+            717,
+            548
+          ],
+          "style": "single rounded bordered card; six divided rows"
+        },
+        {
+          "id": "dietary",
+          "rectApproxPx": [
+            105,
+            560,
+            655,
+            92
+          ],
+          "label": "Dietary Preferences",
+          "value": "Balanced, Higher protein",
+          "icon": "apple outline",
+          "action": "edit local preferences"
+        },
+        {
+          "id": "allergens",
+          "rectApproxPx": [
+            105,
+            652,
+            655,
+            90
+          ],
+          "label": "Allergens",
+          "value": "Tree nuts, Shellfish",
+          "icon": "flower or scalloped outline with central symbol",
+          "action": "edit local allergens"
+        },
+        {
+          "id": "activity",
+          "rectApproxPx": [
+            105,
+            742,
+            655,
+            94
+          ],
+          "label": "Activity Preferences",
+          "value": "Strength training, 3–4 days/week",
+          "icon": "running person outline",
+          "action": "edit local activity preferences"
+        },
+        {
+          "id": "mobility",
+          "rectApproxPx": [
+            105,
+            836,
+            655,
+            91
+          ],
+          "label": "Mobility Constraints",
+          "value": "None",
+          "icon": "wheelchair outline",
+          "action": "edit local mobility preferences"
+        },
+        {
+          "id": "glucoseUnit",
+          "rectApproxPx": [
+            105,
+            927,
+            655,
+            90
+          ],
+          "label": "Glucose Unit",
+          "value": "mg/dL",
+          "icon": "droplet outline",
+          "action": "edit local display unit"
+        },
+        {
+          "id": "timezone",
+          "rectApproxPx": [
+            105,
+            1017,
+            655,
+            91
+          ],
+          "label": "Timezone",
+          "value": "(UTC-8) Pacific Time",
+          "icon": "clock outline",
+          "action": "edit local timezone preference"
+        },
+        {
+          "id": "healthSource",
+          "rectApproxPx": [
+            74,
+            1123,
+            717,
+            132
+          ],
+          "title": "Connected Health Source",
+          "subtitle": "Apple Health",
+          "icon": "red heart in bordered white rounded square",
+          "badge": "✓ Connected",
+          "style": "pale-green rounded badge",
+          "action": "open simulated connection sheet"
+        },
+        {
+          "id": "privacy",
+          "rectApproxPx": [
+            74,
+            1270,
+            717,
+            142
+          ],
+          "title": "Privacy & Consent",
+          "subtitle": "Manage your data and permissions",
+          "icon": "lock outline",
+          "trailingIcon": "chevron",
+          "action": "open local privacy sheet"
+        },
+        {
+          "id": "lowerBlankSpace",
+          "rectApproxPx": [
+            75,
+            1413,
+            715,
+            270
+          ],
+          "style": "preserve warm background and empty space"
+        },
+        {
+          "id": "homeIndicator",
+          "rectApproxPx": [
+            291,
+            1698,
+            277,
+            12
+          ],
+          "style": "black rounded line; system/preview shell responsibility"
+        }
+      ],
+      "notes": [
+        "No bottom tab bar.",
+        "The pictured timezone remains fixed despite user environment being Asia/Karachi.",
+        "Connected is demonstration content, not real health permission."
+      ]
+    }
+  ],
+  "overview": {
+    "referenceFile": "final ui design.png",
+    "canvasPx": [
+      1448,
+      1086
+    ],
+    "role": "Brand and flow context only where individual references are silent.",
+    "screenLabels": [
+      "Onboarding",
+      "Home",
+      "Scan",
+      "Portion Confirmation",
+      "Weekly Plan Detail",
+      "Profile & Preferences"
+    ],
+    "excludeFromApp": [
+      "surrounding poster slogans",
+      "mountains",
+      "exterior food photograph",
+      "screen numbering and captions",
+      "six-phone poster grid"
+    ]
+  },
+  "assetCandidates": [
+    {
+      "id": "leafLogo",
+      "source": "onboarding",
+      "status": "visible; isolate or trace to matching vector"
+    },
+    {
+      "id": "onboardingBowl",
+      "source": "onboarding",
+      "status": "partially overlapped; inspect crop viability"
+    },
+    {
+      "id": "alexAvatar",
+      "source": "profile and home",
+      "status": "visible within circular crop; standalone original not established"
+    },
+    {
+      "id": "appleThumbnail",
+      "source": "log-meal and home",
+      "status": "visible within rounded crop"
+    },
+    {
+      "id": "scanAppleBackdrop",
+      "source": "scan",
+      "status": "UI overlaid; pristine full source not established"
+    },
+    {
+      "id": "berryOats",
+      "source": "weekly-plan",
+      "status": "visible within rounded crop"
+    },
+    {
+      "id": "chickenBowl",
+      "source": "weekly-plan and home",
+      "status": "inspect separate pictured crops; do not assume all bowl photos are identical"
+    },
+    {
+      "id": "galleryThumbnail",
+      "source": "scan",
+      "status": "visible within rounded crop"
+    }
+  ],
+  "localBehavior": {
+    "primaryFlows": [
+      [
+        "onboarding",
+        "home"
+      ],
+      [
+        "home",
+        "scan",
+        "log-meal",
+        "home"
+      ],
+      [
+        "home",
+        "weekly-plan"
+      ],
+      [
+        "home",
+        "profile"
+      ]
+    ],
+    "back": "Use navigation history; do not hardwire every back action to Home.",
+    "logging": "Validate positive portions; save consumed meal once; update local consumed summaries.",
+    "saveLater": "Save draft without increasing consumed totals.",
+    "weightEnergyFormula": "95 * edibleGrams / 182",
+    "planAccept": "Accept suggestion; do not log consumption automatically.",
+    "profile": "Save/Cancel local edits; simulated health connection only.",
+    "reset": "Restore every pictured default state and clear subsequent synthetic edits.",
+    "inferredViews": [
+      "health",
+      "scan history",
+      "nutrition tab",
+      "other day meal data",
+      "calendar chooser",
+      "substitute sheet",
+      "feedback editor",
+      "account and preference sheets",
+      "privacy sheet",
+      "simulated connection sheet",
+      "weight and size controls"
+    ],
+    "deferred": [
+      "backend",
+      "database",
+      "real authentication",
+      "computer vision inference",
+      "quality grading",
+      "market price service",
+      "real health sync",
+      "exercise engine",
+      "footwear support",
+      "assistant",
+      "admin interfaces",
+      "deployment"
+    ]
+  },
+  "implementation": {
+    "date": "2026-09-30",
+    "appDirectory": "C:\\Users\\DELL\\Downloads\\fvp deliverable 1\\nutrisole-frontend",
+    "previewUrl": "http://localhost:4173/",
+    "stack": {
+      "shared": "React Native + TypeScript",
+      "preview": "React Native Web + Vite + protected Product Design mobile runtime",
+      "native": "Expo SDK 57 + Expo Router"
+    },
+    "sourcePixelDisplayCropsXYWH": {
+      "onboarding": [
+        38,
+        38,
+        786,
+        1748
+      ],
+      "home": [
+        42,
+        38,
+        777,
+        1737
+      ],
+      "scan": [
+        41,
+        37,
+        781,
+        1739
+      ],
+      "log-meal": [
+        55,
+        120,
+        750,
+        1604
+      ],
+      "weekly-plan": [
+        57,
+        149,
+        749,
+        1537
+      ],
+      "profile": [
+        50,
+        166,
+        760,
+        1564
+      ]
+    },
+    "transform": "Uniform min(viewportWidth/cropWidth, viewportHeight/cropHeight); top aligned; horizontally centered. Source coordinates are translated by crop origin.",
+    "previewDeviceViewports": {
+      "iPhone": [
+        393,
+        852
+      ],
+      "Pixel10": [
+        427,
+        952
+      ]
+    },
+    "calibrationAuthority": "src/nutrisole/ui.tsx and individual screen components. Earlier bounding-box estimates elsewhere in this JSON remain advisory.",
+    "fonts": {
+      "sans": "Roboto 400/600",
+      "serif": "Libre Caslon Display 400",
+      "onboardingSerif": "Libre Caslon Text 400, calibrated size/tracking and horizontal scale",
+      "boldSerif": "Libre Caslon Text 700, horizontal scale 0.82",
+      "sourceIdentityVerified": false
+    },
+    "icons": {
+      "referenceArtwork": "44 individual unlabeled source icon/badge/button PNG crops inside semantic controls",
+      "secondaryStates": "Lucide and pinned Tabler 3.48.0 library assets",
+      "originalVectorsAvailable": false
+    },
+    "assetProvenance": [
+      "assets/source/provenance.json",
+      "assets/source/scenes.provenance.json",
+      "assets/source/icon-art.provenance.json",
+      "assets/source/surfaces.provenance.json",
+      "assets/icons/provenance.json",
+      "artifacts/figma/photograph-provenance.json"
+    ],
+    "photoRendering": "ScenePhoto masks all source UI pixels before displaying camera/onboarding photo regions. Never render those region assets directly. Generated recovery only fills unavailable photograph behind excluded controls.",
+    "persistence": {
+      "key": "nutrisole.demo.v1",
+      "web": "localStorage",
+      "native": "AsyncStorage",
+      "data": "Synthetic fixtures and local edits only"
+    },
+    "verification": {
+      "domainTests": 5,
+      "runtimeProtectedFiles": 28,
+      "rootTypecheck": "passed",
+      "webBuild": "passed",
+      "nativeTypecheck": "passed",
+      "nativeLint": "passed",
+      "nativeExports": [
+        "ios",
+        "android"
+      ],
+      "nativeDeviceTested": false,
+      "browserFlowEvidence": "Prior iteration passed; artifacts/qa/browser-final-checks.json",
+      "latestBrowserVisualCheck": "blocked by automatic browser review; no workaround used",
+      "visualGate": "blocked: unverified original fonts, reconstructed surface/photo lighting, and final captures unavailable"
+    },
+    "evidenceDirectory": "artifacts/qa/exact-refinement",
+    "captureFreshness": "Full-page comparisons precede the last onboarding paper/headline and camera-mask/pointer refinements; they do not prove the latest state.",
+    "figma": {
+      "url": "https://www.figma.com/design/UQU8ormOKktMlOTzsZaRko",
+      "fileKey": "UQU8ormOKktMlOTzsZaRko",
+      "mainFrames": 6,
+      "frameSize": [
+        393,
+        852
+      ],
+      "components": 79,
+      "mainFrameLiveTextNodes": 132,
+      "prototypeNavigationLinks": 16,
+      "sceneSpecification": "artifacts/figma/scenes.json",
+      "ledger": "artifacts/figma/design-system-state.json",
+      "editable": "Live text, surfaces, source asset instances, vectors, and semantic action layers; no whole-screen UI raster",
+      "finalVisualCheck": "pending: Starter MCP call limit; native activation recovery failed",
+      "temporaryQACompositionId": "2:2"
+    },
+    "qaReport": "design-qa.md",
+    "buildPrompt": "UI_BUILD_PROMPT.md"
+  }
+}

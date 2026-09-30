@@ -1,0 +1,221 @@
+{
+  "type": "inspection",
+  "pageId": "34:254",
+  "primaryFrames": 32,
+  "stateFrames": 53,
+  "referenceContinuations": 6,
+  "overlayFrames": 80,
+  "textNodes": 1837,
+  "instances": 2254,
+  "prototypeLinks": 716,
+  "originalScreensUnchanged": {
+    "onboarding": true,
+    "home": true,
+    "scan": true,
+    "log-meal": true,
+    "weekly-plan": true,
+    "profile": true
+  },
+  "fontFamilies": [
+    "Roboto",
+    "Roboto",
+    "Libre Caslon Display",
+    "Libre Caslon Text"
+  ],
+  "wholeScreenImages": 0,
+  "frames": [
+    {
+      "route": "sign-in",
+      "title": "sign in",
+      "id": "41:10643"
+    },
+    {
+      "route": "create-account",
+      "title": "create account",
+      "id": "41:10706"
+    },
+    {
+      "route": "verify-email",
+      "title": "verify email",
+      "id": "41:10773"
+    },
+    {
+      "route": "recover-account",
+      "title": "recover account",
+      "id": "41:10824"
+    },
+    {
+      "route": "reset-password",
+      "title": "reset password",
+      "id": "41:10859"
+    },
+    {
+      "route": "analysis-result",
+      "title": "analysis result",
+      "id": "41:10894"
+    },
+    {
+      "route": "market-reference",
+      "title": "market reference",
+      "id": "41:10992"
+    },
+    {
+      "route": "capture-retry",
+      "title": "capture retry",
+      "id": "41:11072"
+    },
+    {
+      "route": "food-selector",
+      "title": "food selector",
+      "id": "41:11108"
+    },
+    {
+      "route": "nutrition-details",
+      "title": "nutrition details",
+      "id": "41:11159"
+    },
+    {
+      "route": "glucose-overview",
+      "title": "glucose overview",
+      "id": "41:11242"
+    },
+    {
+      "route": "add-reading",
+      "title": "add reading",
+      "id": "41:11359"
+    },
+    {
+      "route": "reading-detail",
+      "title": "reading detail",
+      "id": "41:11462"
+    },
+    {
+      "route": "health-connections",
+      "title": "health connections",
+      "id": "41:11537"
+    },
+    {
+      "route": "plan-generation",
+      "title": "plan generation",
+      "id": "41:11609"
+    },
+    {
+      "route": "activity-plan",
+      "title": "activity plan",
+      "id": "41:11732"
+    },
+    {
+      "route": "plan-rationale",
+      "title": "plan rationale",
+      "id": "41:11830"
+    },
+    {
+      "route": "foot-questionnaire",
+      "title": "foot questionnaire",
+      "id": "41:11920"
+    },
+    {
+      "route": "foot-guidance",
+      "title": "foot guidance",
+      "id": "41:11979"
+    },
+    {
+      "route": "assistant",
+      "title": "assistant",
+      "id": "41:12052"
+    },
+    {
+      "route": "privacy-data-rights",
+      "title": "privacy data rights",
+      "id": "41:12122"
+    },
+    {
+      "route": "reminders",
+      "title": "reminders",
+      "id": "41:12206"
+    },
+    {
+      "route": "report-output",
+      "title": "report output",
+      "id": "41:12293"
+    },
+    {
+      "route": "report-status",
+      "title": "report status",
+      "id": "41:12353"
+    },
+    {
+      "route": "personal-history",
+      "title": "personal history",
+      "id": "41:12433"
+    },
+    {
+      "route": "catalog-queue",
+      "title": "catalog queue",
+      "id": "41:12520"
+    },
+    {
+      "route": "catalog-review",
+      "title": "catalog review",
+      "id": "41:12575"
+    },
+    {
+      "route": "model-release",
+      "title": "model release",
+      "id": "41:12678"
+    },
+    {
+      "route": "operations-audit",
+      "title": "operations audit",
+      "id": "41:12783"
+    },
+    {
+      "route": "report-triage",
+      "title": "report triage",
+      "id": "41:12868"
+    },
+    {
+      "route": "flow-directory",
+      "title": "flow directory",
+      "id": "41:12959"
+    },
+    {
+      "route": "portion-confirmation",
+      "title": "portion confirmation",
+      "id": "41:13076"
+    }
+  ],
+  "recoveryArchivePreserved": true,
+  "iconScalingRefined": true,
+  "status": "complete",
+  "brokenLinks": [],
+  "navigationLinks": 566,
+  "nativeTextNodes": 1837,
+  "nativeInstances": 2254,
+  "flowStartingPoints": [
+    {
+      "nodeId": "41:12959",
+      "name": "NutriSole · Consumer flows"
+    },
+    {
+      "nodeId": "41:10643",
+      "name": "Account journey"
+    },
+    {
+      "nodeId": "41:12520",
+      "name": "Catalog curator"
+    },
+    {
+      "nodeId": "41:12678",
+      "name": "Model administrator"
+    },
+    {
+      "nodeId": "41:12783",
+      "name": "Operations administrator"
+    },
+    {
+      "nodeId": "41:12868",
+      "name": "Support curator"
+    }
+  ]
+}

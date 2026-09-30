@@ -1,0 +1,3295 @@
+[
+  {
+    "route": "onboarding",
+    "crop": [
+      38,
+      38,
+      786,
+      1748
+    ],
+    "nodes": [
+      {
+        "kind": "photo",
+        "x": 38,
+        "y": 38,
+        "w": 786,
+        "h": 1748,
+        "asset": "paper-onboarding-calibrated",
+        "children": []
+      },
+      {
+        "kind": "photo",
+        "x": 92,
+        "y": 174,
+        "w": 63,
+        "h": 80,
+        "asset": "leaf-brand-mark",
+        "mode": "contain",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 164,
+        "y": 183,
+        "w": 340,
+        "fs": 65,
+        "serif": true,
+        "text": "NutriSole",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 709,
+        "y": 175,
+        "w": 90,
+        "fs": 40,
+        "text": "Skip",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 690,
+        "y": 150,
+        "w": 111,
+        "h": 90,
+        "label": "Skip onboarding",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 104,
+        "y": 284,
+        "w": 745,
+        "fs": 74,
+        "line": 86,
+        "style": {
+          "fontFamily": "NutriSerifText",
+          "transform": [
+            {
+              "scaleX": 0.946
+            }
+          ],
+          "transformOrigin": "top left",
+          "letterSpacing": -0.65
+        },
+        "text": "Healthy choices,",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 104,
+        "y": 365,
+        "w": 745,
+        "fs": 74,
+        "line": 86,
+        "style": {
+          "fontFamily": "NutriSerifText",
+          "transform": [
+            {
+              "scaleX": 0.973
+            }
+          ],
+          "transformOrigin": "top left",
+          "letterSpacing": -0.65
+        },
+        "text": "made simple.",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 109,
+        "y": 473,
+        "w": 704,
+        "fs": 40,
+        "line": 47,
+        "text": "Scan your food, get instant insights,\nand build a plan that fits your life,\nwith the power of computer vision.",
+        "runs": []
+      },
+      {
+        "kind": "scene",
+        "scene": "onboarding",
+        "children": [],
+        "x": 38,
+        "y": 609,
+        "w": 786,
+        "h": 982,
+        "asset": "onboarding-photo-masked"
+      },
+      {
+        "kind": "surface",
+        "x": 64,
+        "y": 1091,
+        "w": 733,
+        "h": 500,
+        "radius": 51,
+        "fill": "#fffdf8",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 86,
+        "y": 1110,
+        "w": 690,
+        "h": 145,
+        "radius": 44,
+        "texture": "onboarding-card-paper",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "onboarding-recognition",
+        "asset": "icon-onboarding-recognition",
+        "x": 102,
+        "y": 1127,
+        "w": 108,
+        "h": 109,
+        "radius": 55,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 238,
+        "y": 1138,
+        "w": 530,
+        "fs": 36,
+        "bold": true,
+        "line": 43,
+        "text": "Instant food recognition",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 238,
+        "y": 1189,
+        "w": 530,
+        "fs": 32,
+        "color": "#575b59",
+        "line": 38,
+        "text": "Know what you’re eating",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 86,
+        "y": 1268,
+        "w": 690,
+        "h": 145,
+        "radius": 44,
+        "texture": "onboarding-card-paper",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "onboarding-personalized",
+        "asset": "icon-onboarding-personalized",
+        "x": 102,
+        "y": 1285,
+        "w": 108,
+        "h": 109,
+        "radius": 55,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 238,
+        "y": 1296,
+        "w": 530,
+        "fs": 36,
+        "bold": true,
+        "line": 43,
+        "text": "Personalized nutrition",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 238,
+        "y": 1347,
+        "w": 530,
+        "fs": 32,
+        "color": "#575b59",
+        "line": 38,
+        "text": "Get practical, realistic guidance",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 86,
+        "y": 1427,
+        "w": 690,
+        "h": 145,
+        "radius": 44,
+        "texture": "onboarding-card-paper",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "onboarding-support",
+        "asset": "icon-onboarding-support",
+        "x": 102,
+        "y": 1444,
+        "w": 108,
+        "h": 109,
+        "radius": 55,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 238,
+        "y": 1455,
+        "w": 530,
+        "fs": 36,
+        "bold": true,
+        "line": 43,
+        "text": "Long-term health support",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 238,
+        "y": 1506,
+        "w": 530,
+        "fs": 32,
+        "color": "#575b59",
+        "line": 38,
+        "text": "Small steps. Real progress.",
+        "runs": []
+      },
+      {
+        "kind": "box",
+        "x": 130,
+        "y": 1689,
+        "w": 20,
+        "h": 20,
+        "style": {
+          "borderRadius": 20,
+          "backgroundColor": "#123f2c"
+        },
+        "children": []
+      },
+      {
+        "kind": "box",
+        "x": 169,
+        "y": 1689,
+        "w": 20,
+        "h": 20,
+        "style": {
+          "borderRadius": 20,
+          "backgroundColor": "#dcdcd4"
+        },
+        "children": []
+      },
+      {
+        "kind": "box",
+        "x": 208,
+        "y": 1689,
+        "w": 20,
+        "h": 20,
+        "style": {
+          "borderRadius": 20,
+          "backgroundColor": "#dcdcd4"
+        },
+        "children": []
+      },
+      {
+        "kind": "box",
+        "x": 247,
+        "y": 1689,
+        "w": 20,
+        "h": 20,
+        "style": {
+          "borderRadius": 20,
+          "backgroundColor": "#dcdcd4"
+        },
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "onboarding-continue",
+        "asset": "icon-onboarding-continue",
+        "x": 649,
+        "y": 1613,
+        "w": 146,
+        "h": 142,
+        "radius": 74,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 648,
+        "y": 1608,
+        "w": 150,
+        "h": 150,
+        "label": "Continue to home",
+        "children": []
+      }
+    ]
+  },
+  {
+    "route": "home",
+    "crop": [
+      42,
+      38,
+      777,
+      1737
+    ],
+    "nodes": [
+      {
+        "kind": "photo",
+        "x": 42,
+        "y": 38,
+        "w": 777,
+        "h": 1737,
+        "asset": "paper-home",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 94,
+        "y": 176,
+        "w": 570,
+        "fs": 43,
+        "line": 52,
+        "text": "Good morning,",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 94,
+        "y": 218,
+        "w": 580,
+        "fs": 68,
+        "line": 76,
+        "serif": true,
+        "bold": true,
+        "maxLines": 1,
+        "text": "Alex",
+        "runs": []
+      },
+      {
+        "kind": "photo",
+        "x": 693,
+        "y": 171,
+        "w": 88,
+        "h": 87,
+        "radius": 55,
+        "asset": "alex-avatar-home",
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 683,
+        "y": 161,
+        "w": 108,
+        "h": 107,
+        "label": "Open profile",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 67,
+        "y": 311,
+        "w": 730,
+        "h": 406,
+        "radius": 38,
+        "texture": "warm-card-texture-tile",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 111,
+        "y": 351,
+        "w": 430,
+        "fs": 29,
+        "color": "#5d6264",
+        "style": {
+          "letterSpacing": 0.4
+        },
+        "text": "KEEP GOING",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 112,
+        "y": 403,
+        "w": 469,
+        "fs": 43,
+        "bold": true,
+        "line": 45,
+        "text": "You’re 2 meals away\nfrom your goal",
+        "runs": []
+      },
+      {
+        "kind": "photo",
+        "x": 541,
+        "y": 334,
+        "w": 214,
+        "h": 213,
+        "asset": "home-progress-ring",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 577,
+        "y": 402,
+        "w": 144,
+        "fs": 43,
+        "bold": true,
+        "align": "center",
+        "text": "3/5",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 577,
+        "y": 453,
+        "w": 144,
+        "fs": 31,
+        "align": "center",
+        "color": "#5e6263",
+        "text": "meals",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 108,
+        "y": 577,
+        "w": 153,
+        "fs": 45,
+        "bold": true,
+        "text": "1,420",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 114,
+        "y": 633,
+        "w": 153,
+        "fs": 30,
+        "color": "#e75212",
+        "text": "calories",
+        "runs": []
+      },
+      {
+        "kind": "box",
+        "x": 116,
+        "y": 677,
+        "w": 108,
+        "h": 17,
+        "style": {
+          "backgroundColor": "#ff9448",
+          "opacity": 0.25,
+          "borderRadius": 12
+        },
+        "children": []
+      },
+      {
+        "kind": "box",
+        "x": 116,
+        "y": 677,
+        "w": 106,
+        "h": 17,
+        "style": {
+          "backgroundColor": "#ff9448",
+          "borderRadius": 12
+        },
+        "children": []
+      },
+      {
+        "kind": "divider",
+        "x": 265,
+        "y": 583,
+        "w": 1.3,
+        "h": 111,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 298,
+        "y": 577,
+        "w": 135,
+        "fs": 45,
+        "bold": true,
+        "text": "82g",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 304,
+        "y": 633,
+        "w": 135,
+        "fs": 30,
+        "color": "#7780bd",
+        "text": "protein",
+        "runs": []
+      },
+      {
+        "kind": "box",
+        "x": 306,
+        "y": 677,
+        "w": 98,
+        "h": 17,
+        "style": {
+          "backgroundColor": "#98a0ed",
+          "opacity": 0.25,
+          "borderRadius": 12
+        },
+        "children": []
+      },
+      {
+        "kind": "box",
+        "x": 306,
+        "y": 677,
+        "w": 78,
+        "h": 17,
+        "style": {
+          "backgroundColor": "#98a0ed",
+          "borderRadius": 12
+        },
+        "children": []
+      },
+      {
+        "kind": "divider",
+        "x": 441,
+        "y": 583,
+        "w": 1.3,
+        "h": 111,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 474,
+        "y": 577,
+        "w": 132,
+        "fs": 45,
+        "bold": true,
+        "text": "48g",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 480,
+        "y": 633,
+        "w": 132,
+        "fs": 30,
+        "color": "#467f79",
+        "text": "carbs",
+        "runs": []
+      },
+      {
+        "kind": "box",
+        "x": 482,
+        "y": 677,
+        "w": 98,
+        "h": 17,
+        "style": {
+          "backgroundColor": "#5fcbb9",
+          "opacity": 0.25,
+          "borderRadius": 12
+        },
+        "children": []
+      },
+      {
+        "kind": "box",
+        "x": 482,
+        "y": 677,
+        "w": 84,
+        "h": 17,
+        "style": {
+          "backgroundColor": "#5fcbb9",
+          "borderRadius": 12
+        },
+        "children": []
+      },
+      {
+        "kind": "divider",
+        "x": 613,
+        "y": 583,
+        "w": 1.3,
+        "h": 111,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 646,
+        "y": 577,
+        "w": 111,
+        "fs": 45,
+        "bold": true,
+        "text": "62g",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 652,
+        "y": 633,
+        "w": 111,
+        "fs": 30,
+        "color": "#bb882d",
+        "text": "fat",
+        "runs": []
+      },
+      {
+        "kind": "box",
+        "x": 654,
+        "y": 677,
+        "w": 98,
+        "h": 17,
+        "style": {
+          "backgroundColor": "#fbd47d",
+          "opacity": 0.25,
+          "borderRadius": 12
+        },
+        "children": []
+      },
+      {
+        "kind": "box",
+        "x": 654,
+        "y": 677,
+        "w": 62,
+        "h": 17,
+        "style": {
+          "backgroundColor": "#fbd47d",
+          "borderRadius": 12
+        },
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 67,
+        "y": 740,
+        "w": 730,
+        "h": 218,
+        "radius": 41,
+        "texture": "dark-green-scan-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "home-scan-camera",
+        "asset": "icon-home-scan-camera",
+        "x": 119,
+        "y": 766,
+        "w": 169,
+        "h": 168,
+        "radius": 86,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 334,
+        "y": 798,
+        "w": 370,
+        "fs": 46,
+        "bold": true,
+        "color": "#fff",
+        "text": "Scan Food",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 334,
+        "y": 859,
+        "w": 406,
+        "fs": 34,
+        "color": "#f2f5ea",
+        "text": "Instant nutrition insights",
+        "runs": []
+      },
+      {
+        "kind": "art",
+        "name": "home-scan-chevron",
+        "asset": "icon-home-scan-chevron",
+        "x": 736,
+        "y": 833,
+        "w": 22,
+        "h": 35,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 67,
+        "y": 740,
+        "w": 730,
+        "h": 218,
+        "label": "Scan food",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 67,
+        "y": 980,
+        "w": 360,
+        "h": 226,
+        "radius": 39,
+        "texture": "pale-green-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "home-plan-calendar",
+        "asset": "icon-home-plan-calendar",
+        "x": 113,
+        "y": 1015,
+        "w": 54,
+        "h": 58,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 111,
+        "y": 1090,
+        "w": 260,
+        "fs": 35,
+        "bold": true,
+        "text": "View Plan",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 112,
+        "y": 1139,
+        "w": 310,
+        "fs": 30,
+        "color": "#577060",
+        "text": "Meals for your goals",
+        "runs": []
+      },
+      {
+        "kind": "art",
+        "name": "home-plan-chevron",
+        "asset": "icon-home-plan-chevron",
+        "x": 379,
+        "y": 1087,
+        "w": 17,
+        "h": 29,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 67,
+        "y": 980,
+        "w": 360,
+        "h": 226,
+        "label": "View plan",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 442,
+        "y": 980,
+        "w": 355,
+        "h": 226,
+        "radius": 39,
+        "texture": "lavender-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "home-health-bars",
+        "asset": "icon-home-health-bars",
+        "x": 489,
+        "y": 1015,
+        "w": 53,
+        "h": 58,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 487,
+        "y": 1090,
+        "w": 230,
+        "fs": 35,
+        "bold": true,
+        "text": "Health",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 488,
+        "y": 1139,
+        "w": 291,
+        "fs": 30,
+        "color": "#5c6b9f",
+        "text": "Trends & insights",
+        "runs": []
+      },
+      {
+        "kind": "art",
+        "name": "home-health-chevron",
+        "asset": "icon-home-health-chevron",
+        "x": 747,
+        "y": 1087,
+        "w": 18,
+        "h": 29,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 442,
+        "y": 980,
+        "w": 355,
+        "h": 226,
+        "label": "Open health",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 67,
+        "y": 1228,
+        "w": 730,
+        "h": 384,
+        "radius": 37,
+        "texture": "warm-card-texture-tile",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 96,
+        "y": 1250,
+        "w": 510,
+        "fs": 39,
+        "bold": true,
+        "text": "Recent Scans",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 655,
+        "y": 1258,
+        "w": 113,
+        "fs": 30,
+        "color": "#123f2c",
+        "text": "See all",
+        "runs": []
+      },
+      {
+        "kind": "art",
+        "name": "home-see-all-chevron",
+        "asset": "icon-home-see-all-chevron",
+        "x": 750,
+        "y": 1260,
+        "w": 15,
+        "h": 24,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 645,
+        "y": 1238,
+        "w": 139,
+        "h": 67,
+        "label": "See all scans",
+        "children": []
+      },
+      {
+        "kind": "divider",
+        "x": 97,
+        "y": 1306,
+        "w": 666,
+        "h": 1,
+        "children": []
+      },
+      {
+        "kind": "photo",
+        "x": 96,
+        "y": 1321,
+        "w": 122,
+        "h": 116,
+        "radius": 18,
+        "asset": "apple-thumbnail-home",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 244,
+        "y": 1327,
+        "w": 433,
+        "fs": 33,
+        "bold": true,
+        "text": "Apple",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 244,
+        "y": 1370,
+        "w": 460,
+        "fs": 29,
+        "color": "#5c626d",
+        "text": "1 medium (confirmed)",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 244,
+        "y": 1405,
+        "w": 325,
+        "fs": 33,
+        "bold": true,
+        "text": "95 cal",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 626,
+        "y": 1333,
+        "w": 138,
+        "fs": 28,
+        "color": "#777a78",
+        "align": "right",
+        "text": "12:24 PM",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 96,
+        "y": 1319,
+        "w": 667,
+        "h": 130,
+        "label": "Review apple scan",
+        "children": []
+      },
+      {
+        "kind": "divider",
+        "x": 96,
+        "y": 1457,
+        "w": 667,
+        "h": 1.1,
+        "children": []
+      },
+      {
+        "kind": "photo",
+        "x": 96,
+        "y": 1471,
+        "w": 122,
+        "h": 118,
+        "radius": 20,
+        "asset": "chicken-bowl-home",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 244,
+        "y": 1477,
+        "w": 507,
+        "fs": 32,
+        "bold": true,
+        "text": "Grilled Chicken Bowl",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 244,
+        "y": 1519,
+        "w": 485,
+        "fs": 29,
+        "color": "#5c626d",
+        "text": "Chicken, rice, veggies",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 244,
+        "y": 1554,
+        "w": 295,
+        "fs": 33,
+        "bold": true,
+        "text": "420 cal",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 642,
+        "y": 1481,
+        "w": 122,
+        "fs": 27,
+        "color": "#5c626d",
+        "align": "right",
+        "text": "Yesterday",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 96,
+        "y": 1460,
+        "w": 667,
+        "h": 140,
+        "label": "Review chicken bowl",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 43,
+        "y": 1627,
+        "w": 775,
+        "h": 147,
+        "radius": 0,
+        "fill": "#fffdf7",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "home-nav-home",
+        "asset": "icon-home-nav-home",
+        "x": 112,
+        "y": 1649,
+        "w": 44,
+        "h": 47,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 91,
+        "y": 1710,
+        "w": 90,
+        "fs": 26,
+        "align": "center",
+        "color": "#123f2c",
+        "bold": true,
+        "text": "Home",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 85,
+        "y": 1642,
+        "w": 110,
+        "h": 116,
+        "label": "Navigate Home",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "home-nav-plan",
+        "asset": "icon-home-nav-plan",
+        "x": 260,
+        "y": 1650,
+        "w": 41,
+        "h": 47,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 238,
+        "y": 1710,
+        "w": 90,
+        "fs": 26,
+        "align": "center",
+        "color": "#676a6a",
+        "bold": false,
+        "text": "Plan",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 232,
+        "y": 1642,
+        "w": 110,
+        "h": 116,
+        "label": "Navigate Plan",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "home-nav-health",
+        "asset": "icon-home-nav-health",
+        "x": 560,
+        "y": 1650,
+        "w": 51,
+        "h": 49,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 545,
+        "y": 1710,
+        "w": 90,
+        "fs": 26,
+        "align": "center",
+        "color": "#676a6a",
+        "bold": false,
+        "text": "Health",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 539,
+        "y": 1642,
+        "w": 110,
+        "h": 116,
+        "label": "Navigate Health",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "home-nav-profile",
+        "asset": "icon-home-nav-profile",
+        "x": 710,
+        "y": 1650,
+        "w": 43,
+        "h": 49,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 691,
+        "y": 1710,
+        "w": 90,
+        "fs": 26,
+        "align": "center",
+        "color": "#676a6a",
+        "bold": false,
+        "text": "Profile",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 685,
+        "y": 1642,
+        "w": 110,
+        "h": 116,
+        "label": "Navigate Profile",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "home-nav-camera",
+        "asset": "icon-home-nav-camera",
+        "x": 353,
+        "y": 1586,
+        "w": 157,
+        "h": 153,
+        "radius": 80,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 355,
+        "y": 1584,
+        "w": 151,
+        "h": 151,
+        "label": "Open camera",
+        "children": []
+      }
+    ]
+  },
+  {
+    "route": "scan",
+    "crop": [
+      41,
+      37,
+      781,
+      1739
+    ],
+    "nodes": [
+      {
+        "kind": "photo",
+        "x": 41,
+        "y": 37,
+        "w": 781,
+        "h": 1371,
+        "asset": "scan-backdrop-clean",
+        "children": []
+      },
+      {
+        "kind": "photo",
+        "x": 116,
+        "y": 73,
+        "w": 74,
+        "h": 37,
+        "asset": "scan-time-background",
+        "children": []
+      },
+      {
+        "kind": "photo",
+        "x": 620,
+        "y": 71,
+        "w": 160,
+        "h": 40,
+        "asset": "scan-indicators-background",
+        "children": []
+      },
+      {
+        "kind": "scene",
+        "scene": "scan",
+        "children": [],
+        "x": 41,
+        "y": 37,
+        "w": 781,
+        "h": 1371,
+        "asset": "scan-photo-masked"
+      },
+      {
+        "kind": "art",
+        "name": "scan-close",
+        "asset": "icon-scan-close",
+        "x": 79,
+        "y": 169,
+        "w": 98,
+        "h": 98,
+        "radius": 50,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 73,
+        "y": 163,
+        "w": 109,
+        "h": 109,
+        "label": "Close camera",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "scan-flash",
+        "asset": "icon-scan-flash",
+        "x": 690,
+        "y": 168,
+        "w": 98,
+        "h": 99,
+        "radius": 50,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 684,
+        "y": 162,
+        "w": 110,
+        "h": 110,
+        "label": "Toggle flash",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 264,
+        "y": 412,
+        "w": 484,
+        "h": 156,
+        "radius": 49,
+        "fill": "#172017d4",
+        "texture": "scan-detection-surface",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "box",
+        "x": 490,
+        "y": 558,
+        "w": 20,
+        "h": 20,
+        "style": {
+          "backgroundColor": "#33312a",
+          "transform": [
+            {
+              "rotate": "45deg"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "scan-confirmation",
+        "asset": "icon-scan-confirmation",
+        "x": 300,
+        "y": 460,
+        "w": 63,
+        "h": 62,
+        "radius": 32,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 395,
+        "y": 447,
+        "w": 330,
+        "fs": 40,
+        "bold": true,
+        "color": "#fff",
+        "text": "Apple",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 395,
+        "y": 497,
+        "w": 340,
+        "fs": 38,
+        "color": "#fff",
+        "text": "Confidence 97%",
+        "runs": []
+      },
+      {
+        "kind": "camera-frame",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 142,
+        "y": 1226,
+        "w": 583,
+        "h": 155,
+        "radius": 54,
+        "fill": "#352719ca",
+        "texture": "scan-instruction-surface",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "scan-instruction-target",
+        "asset": "icon-scan-instruction-target",
+        "x": 241,
+        "y": 1278,
+        "w": 50,
+        "h": 53,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 328,
+        "y": 1269,
+        "w": 365,
+        "fs": 34,
+        "bold": true,
+        "color": "#fff",
+        "text": "Point at your food",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 328,
+        "y": 1316,
+        "w": 380,
+        "fs": 30,
+        "color": "#ddd8cf",
+        "text": "Keep it in frame and well lit",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 41,
+        "y": 1408,
+        "w": 781,
+        "h": 368,
+        "radius": 0,
+        "fill": "#11110fee",
+        "texture": "scan-controls-surface",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "photo",
+        "x": 80,
+        "y": 1461,
+        "w": 123,
+        "h": 113,
+        "radius": 28,
+        "asset": "gallery-thumbnail",
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 74,
+        "y": 1455,
+        "w": 135,
+        "h": 127,
+        "label": "Choose gallery image",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "scan-shutter",
+        "asset": "icon-scan-shutter",
+        "x": 347,
+        "y": 1442,
+        "w": 166,
+        "h": 165,
+        "radius": 84,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 348,
+        "y": 1443,
+        "w": 164,
+        "h": 164,
+        "label": "Capture food",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 332,
+        "y": 1644,
+        "w": 202,
+        "fs": 40,
+        "bold": true,
+        "align": "center",
+        "color": "#f2c946",
+        "text": "PHOTO",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 535,
+        "y": 1644,
+        "w": 169,
+        "fs": 39,
+        "bold": false,
+        "align": "center",
+        "color": "#ddd",
+        "text": "VIDEO",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 330,
+        "y": 1624,
+        "w": 206,
+        "h": 85,
+        "label": "Photo mode",
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 535,
+        "y": 1624,
+        "w": 174,
+        "h": 85,
+        "label": "Video mode",
+        "children": []
+      }
+    ]
+  },
+  {
+    "route": "log-meal",
+    "crop": [
+      55,
+      120,
+      750,
+      1604
+    ],
+    "nodes": [
+      {
+        "kind": "photo",
+        "x": 55,
+        "y": 120,
+        "w": 750,
+        "h": 1604,
+        "asset": "warm-background-tile",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "log-back",
+        "asset": "icon-log-back",
+        "x": 99,
+        "y": 252,
+        "w": 25,
+        "h": 40,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 75,
+        "y": 237,
+        "w": 95,
+        "h": 85,
+        "label": "Go back",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 248,
+        "y": 248,
+        "w": 367,
+        "fs": 44,
+        "bold": true,
+        "align": "center",
+        "text": "Log Meal",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 77,
+        "y": 333,
+        "w": 708,
+        "h": 193,
+        "radius": 37,
+        "texture": "warm-card-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "photo",
+        "x": 103,
+        "y": 352,
+        "w": 175,
+        "h": 153,
+        "radius": 31,
+        "asset": "apple-thumbnail",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 315,
+        "y": 384,
+        "w": 350,
+        "fs": 37,
+        "bold": true,
+        "text": "Apple",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 315,
+        "y": 433,
+        "w": 411,
+        "fs": 31,
+        "color": "#5c626d",
+        "text": "95 cal per medium (182 g)",
+        "runs": []
+      },
+      {
+        "kind": "art",
+        "name": "log-info",
+        "asset": "icon-log-info",
+        "x": 705,
+        "y": 405,
+        "w": 47,
+        "h": 46,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 686,
+        "y": 383,
+        "w": 83,
+        "h": 90,
+        "label": "Nutrition information",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 92,
+        "y": 566,
+        "w": 625,
+        "fs": 44,
+        "bold": true,
+        "text": "Confirm portion",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 92,
+        "y": 626,
+        "w": 675,
+        "fs": 34,
+        "line": 40,
+        "color": "#5c626d",
+        "text": "Adjust the amount you plan to eat.\nThis helps us log your meal accurately.",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 91,
+        "y": 744,
+        "w": 681,
+        "h": 87,
+        "radius": 47,
+        "texture": "gray-track-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 91,
+        "y": 744,
+        "w": 233,
+        "h": 87,
+        "radius": 47,
+        "texture": "dark-green-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 91,
+        "y": 770,
+        "w": 227,
+        "fs": 32,
+        "align": "center",
+        "color": "#fff",
+        "text": "By amount",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 91,
+        "y": 744,
+        "w": 227,
+        "h": 87,
+        "label": "Portion by amount",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 318,
+        "y": 770,
+        "w": 227,
+        "fs": 32,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "By weight",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 318,
+        "y": 744,
+        "w": 227,
+        "h": 87,
+        "label": "Portion by weight",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 545,
+        "y": 770,
+        "w": 227,
+        "fs": 32,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "By size",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 545,
+        "y": 744,
+        "w": 227,
+        "h": 87,
+        "label": "Portion by size",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "log-minus",
+        "asset": "icon-log-minus",
+        "x": 91,
+        "y": 887,
+        "w": 78,
+        "h": 78,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 82,
+        "y": 878,
+        "w": 96,
+        "h": 96,
+        "label": "Decrease portion",
+        "disabled": true,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 187,
+        "y": 889,
+        "w": 90,
+        "fs": 64,
+        "bold": true,
+        "align": "center",
+        "text": "1",
+        "runs": []
+      },
+      {
+        "kind": "art",
+        "name": "log-plus",
+        "asset": "icon-log-plus",
+        "x": 297,
+        "y": 887,
+        "w": 79,
+        "h": 78,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 288,
+        "y": 878,
+        "w": 96,
+        "h": 96,
+        "label": "Increase portion",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 418,
+        "y": 889,
+        "w": 363,
+        "fs": 37,
+        "bold": true,
+        "text": "medium apple",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 418,
+        "y": 935,
+        "w": 373,
+        "fs": 29,
+        "color": "#5c626d",
+        "text": "(about 182 g, edible portion)",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 404,
+        "y": 880,
+        "w": 370,
+        "h": 100,
+        "label": "Edit portion details",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 81,
+        "y": 1015,
+        "w": 699,
+        "h": 195,
+        "radius": 40,
+        "texture": "pale-green-estimate-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "log-estimate-apple",
+        "asset": "icon-log-estimate-apple",
+        "x": 115,
+        "y": 1052,
+        "w": 38,
+        "h": 42,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 178,
+        "y": 1049,
+        "w": 550,
+        "fs": 40,
+        "bold": true,
+        "color": "#123e35",
+        "text": "≈ 95 calories",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 178,
+        "y": 1102,
+        "w": 574,
+        "fs": 31,
+        "color": "#51646a",
+        "text": "Estimated for 1 medium apple",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 178,
+        "y": 1146,
+        "w": 574,
+        "fs": 31,
+        "color": "#51646a",
+        "text": "Values are estimates.",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 87,
+        "y": 1237,
+        "w": 688,
+        "h": 115,
+        "texture": "dark-green-texture-tile",
+        "fill": "#123f2c",
+        "radius": 35,
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 87,
+        "y": 1270.5,
+        "w": 688,
+        "fs": 42,
+        "bold": true,
+        "align": "center",
+        "color": "#fff",
+        "line": 48,
+        "text": "Log Meal",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 87,
+        "y": 1237,
+        "w": 688,
+        "h": 115,
+        "label": "Confirm log meal",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 230,
+        "y": 1407,
+        "w": 400,
+        "fs": 42,
+        "align": "center",
+        "bold": true,
+        "color": "#103e32",
+        "text": "Save for later",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 230,
+        "y": 1389,
+        "w": 400,
+        "h": 90,
+        "label": "Save for later",
+        "children": []
+      }
+    ]
+  },
+  {
+    "route": "weekly-plan",
+    "crop": [
+      57,
+      149,
+      749,
+      1537
+    ],
+    "nodes": [
+      {
+        "kind": "photo",
+        "x": 57,
+        "y": 149,
+        "w": 749,
+        "h": 1537,
+        "asset": "paper-weekly",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "weekly-back",
+        "asset": "icon-weekly-back",
+        "x": 94,
+        "y": 285,
+        "w": 36,
+        "h": 35,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 70,
+        "y": 270,
+        "w": 95,
+        "h": 85,
+        "label": "Go back",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 231,
+        "y": 270,
+        "w": 400,
+        "fs": 42,
+        "bold": true,
+        "align": "center",
+        "text": "Weekly Plan",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 231,
+        "y": 324,
+        "w": 400,
+        "fs": 31,
+        "color": "#5c626d",
+        "align": "center",
+        "text": "Mar 18 – Mar 24",
+        "runs": []
+      },
+      {
+        "kind": "art",
+        "name": "weekly-calendar",
+        "asset": "icon-weekly-calendar",
+        "x": 717,
+        "y": 281,
+        "w": 47,
+        "h": 48,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 695,
+        "y": 262,
+        "w": 89,
+        "h": 91,
+        "label": "Choose plan week",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 81,
+        "y": 400,
+        "w": 100,
+        "h": 101,
+        "radius": 22,
+        "texture": "dark-green-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 81,
+        "y": 418,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#fff",
+        "text": "Mon",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 81,
+        "y": 458,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#fff",
+        "text": "18",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 81,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "label": "Select Mon",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 183,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "radius": 22,
+        "texture": "warm-card-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 183,
+        "y": 418,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "Tue",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 183,
+        "y": 458,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "19",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 183,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "label": "Select Tue",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 285,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "radius": 22,
+        "texture": "warm-card-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 285,
+        "y": 418,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "Wed",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 285,
+        "y": 458,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "20",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 285,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "label": "Select Wed",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 387,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "radius": 22,
+        "texture": "warm-card-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 387,
+        "y": 418,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "Thu",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 387,
+        "y": 458,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "21",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 387,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "label": "Select Thu",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 489,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "radius": 22,
+        "texture": "warm-card-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 489,
+        "y": 418,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "Fri",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 489,
+        "y": 458,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "22",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 489,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "label": "Select Fri",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 591,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "radius": 22,
+        "texture": "warm-card-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 591,
+        "y": 418,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "Sat",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 591,
+        "y": 458,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "23",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 591,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "label": "Select Sat",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 693,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "radius": 22,
+        "texture": "warm-card-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 693,
+        "y": 418,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "Sun",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 693,
+        "y": 458,
+        "w": 95,
+        "fs": 28,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "24",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 693,
+        "y": 400,
+        "w": 95,
+        "h": 101,
+        "label": "Select Sun",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 77,
+        "y": 523,
+        "w": 709,
+        "h": 160,
+        "radius": 29,
+        "texture": "warm-card-texture-tile",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 114,
+        "y": 560,
+        "w": 178,
+        "fs": 43,
+        "bold": true,
+        "align": "center",
+        "text": "1,650",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 111,
+        "y": 616,
+        "w": 185,
+        "fs": 31,
+        "align": "center",
+        "color": "#5c626d",
+        "text": "cal goal",
+        "runs": []
+      },
+      {
+        "kind": "divider",
+        "x": 297,
+        "y": 557,
+        "w": 1.4,
+        "h": 93,
+        "children": []
+      },
+      {
+        "kind": "photo",
+        "x": 339,
+        "y": 560,
+        "w": 85,
+        "h": 85,
+        "asset": "weekly-progress-ring",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 444,
+        "y": 560,
+        "w": 115,
+        "fs": 44,
+        "bold": true,
+        "text": "4/5",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 443,
+        "y": 616,
+        "w": 113,
+        "fs": 31,
+        "color": "#627176",
+        "text": "meals",
+        "runs": []
+      },
+      {
+        "kind": "divider",
+        "x": 567,
+        "y": 557,
+        "w": 1.4,
+        "h": 93,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 590,
+        "y": 560,
+        "w": 173,
+        "fs": 43,
+        "bold": true,
+        "align": "center",
+        "text": "82%",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 589,
+        "y": 616,
+        "w": 174,
+        "fs": 31,
+        "color": "#5c626d",
+        "align": "center",
+        "text": "adherence",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 77,
+        "y": 706,
+        "w": 709,
+        "h": 100,
+        "radius": 30,
+        "texture": "gray-track-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 88,
+        "y": 735,
+        "w": 341,
+        "fs": 37,
+        "bold": true,
+        "color": "#123f2c",
+        "align": "center",
+        "text": "Meals",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 435,
+        "y": 735,
+        "w": 344,
+        "fs": 37,
+        "bold": false,
+        "color": "#080d16",
+        "align": "center",
+        "text": "Nutrition",
+        "runs": []
+      },
+      {
+        "kind": "box",
+        "x": 89,
+        "y": 796,
+        "w": 339,
+        "h": 9,
+        "style": {
+          "borderRadius": 8,
+          "backgroundColor": "#123f2c"
+        },
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 77,
+        "y": 706,
+        "w": 354,
+        "h": 100,
+        "label": "Show meals",
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 431,
+        "y": 706,
+        "w": 355,
+        "h": 100,
+        "label": "Show nutrition",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 77,
+        "y": 831,
+        "w": 709,
+        "h": 504,
+        "radius": 30,
+        "texture": "warm-card-texture-tile",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 105,
+        "y": 863,
+        "w": 401,
+        "fs": 40,
+        "bold": true,
+        "text": "Breakfast",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 570,
+        "y": 875,
+        "w": 190,
+        "fs": 27,
+        "color": "#5c626d",
+        "align": "right",
+        "text": "7:00 – 9:00 AM",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 103,
+        "y": 932,
+        "w": 660,
+        "h": 170,
+        "radius": 22,
+        "texture": "warm-card-texture-tile",
+        "children": []
+      },
+      {
+        "kind": "photo",
+        "x": 104,
+        "y": 932,
+        "w": 166,
+        "h": 168,
+        "radius": 21,
+        "asset": "berry-oats",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 297,
+        "y": 951,
+        "w": 459,
+        "fs": 34,
+        "bold": true,
+        "text": "Berry Overnight Oats",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 297,
+        "y": 1001,
+        "w": 460,
+        "fs": 27,
+        "color": "#5c626d",
+        "line": 32,
+        "text": "Oats, Greek yogurt, berries, chia seeds",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 297,
+        "y": 1049,
+        "w": 130,
+        "fs": 33,
+        "text": "320 cal",
+        "runs": [
+          {
+            "text": "320",
+            "style": {
+              "fontFamily": "NutriSansBold"
+            }
+          }
+        ]
+      },
+      {
+        "kind": "text",
+        "x": 430,
+        "y": 1049,
+        "w": 325,
+        "fs": 31,
+        "text": "18g P   42g C   10g F",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 102,
+        "y": 1121,
+        "w": 274,
+        "h": 90,
+        "radius": 20,
+        "texture": "dark-green-texture-tile",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "weekly-accept",
+        "asset": "icon-weekly-accept",
+        "x": 163,
+        "y": 1149,
+        "w": 38,
+        "h": 29,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 218,
+        "y": 1147,
+        "w": 150,
+        "fs": 34,
+        "color": "#fff",
+        "text": "Accept",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 102,
+        "y": 1121,
+        "w": 274,
+        "h": 90,
+        "label": "Accept breakfast",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 391,
+        "y": 1121,
+        "w": 275,
+        "h": 90,
+        "radius": 20,
+        "fill": "#faf9f5",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "weekly-substitute",
+        "asset": "icon-weekly-substitute",
+        "x": 439,
+        "y": 1148,
+        "w": 36,
+        "h": 36,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 498,
+        "y": 1147,
+        "w": 168,
+        "fs": 33,
+        "text": "Substitute",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 391,
+        "y": 1121,
+        "w": 275,
+        "h": 90,
+        "label": "Substitute breakfast",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 680,
+        "y": 1121,
+        "w": 83,
+        "h": 90,
+        "radius": 20,
+        "fill": "#fffdf9",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "weekly-more",
+        "asset": "icon-weekly-more",
+        "x": 705,
+        "y": 1157,
+        "w": 35,
+        "h": 17,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 680,
+        "y": 1121,
+        "w": 83,
+        "h": 90,
+        "label": "Breakfast options",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 102,
+        "y": 1229,
+        "w": 661,
+        "h": 84,
+        "radius": 20,
+        "fill": "#f8f7f3",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "weekly-feedback",
+        "asset": "icon-weekly-feedback",
+        "x": 126,
+        "y": 1252,
+        "w": 38,
+        "h": 38,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 184,
+        "y": 1257,
+        "w": 558,
+        "fs": 28,
+        "color": "#82878a",
+        "text": "Not a fan? Tell us why...",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 102,
+        "y": 1229,
+        "w": 661,
+        "h": 84,
+        "label": "Meal feedback",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 77,
+        "y": 1357,
+        "w": 709,
+        "h": 286,
+        "radius": 31,
+        "texture": "warm-card-texture-tile",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 105,
+        "y": 1389,
+        "w": 395,
+        "fs": 40,
+        "bold": true,
+        "text": "Lunch",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 558,
+        "y": 1400,
+        "w": 202,
+        "fs": 27,
+        "color": "#5c626d",
+        "align": "right",
+        "text": "12:00 – 2:00 PM",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 103,
+        "y": 1453,
+        "w": 660,
+        "h": 171,
+        "radius": 22,
+        "texture": "warm-card-texture-tile",
+        "children": []
+      },
+      {
+        "kind": "photo",
+        "x": 104,
+        "y": 1453,
+        "w": 166,
+        "h": 162,
+        "radius": 22,
+        "asset": "chicken-quinoa-bowl",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 297,
+        "y": 1475,
+        "w": 457,
+        "fs": 33,
+        "bold": true,
+        "text": "Grilled Chicken Quinoa Bowl",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 297,
+        "y": 1526,
+        "w": 460,
+        "fs": 27,
+        "color": "#5c626d",
+        "text": "Chicken, quinoa, mixed greens, avocado",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 297,
+        "y": 1574,
+        "w": 130,
+        "fs": 33,
+        "text": "420 cal",
+        "runs": [
+          {
+            "text": "420",
+            "style": {
+              "fontFamily": "NutriSansBold"
+            }
+          }
+        ]
+      },
+      {
+        "kind": "text",
+        "x": 430,
+        "y": 1574,
+        "w": 325,
+        "fs": 31,
+        "text": "36g P   48g C   14g F",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 104,
+        "y": 1453,
+        "w": 660,
+        "h": 171,
+        "label": "Lunch details",
+        "children": []
+      }
+    ]
+  },
+  {
+    "route": "profile",
+    "crop": [
+      50,
+      166,
+      760,
+      1564
+    ],
+    "nodes": [
+      {
+        "kind": "photo",
+        "x": 50,
+        "y": 166,
+        "w": 760,
+        "h": 1564,
+        "asset": "paper-profile",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-back",
+        "asset": "icon-profile-back",
+        "x": 89,
+        "y": 291,
+        "w": 27,
+        "h": 40,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 68,
+        "y": 281,
+        "w": 95,
+        "h": 85,
+        "label": "Go back",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 210,
+        "y": 291,
+        "w": 500,
+        "fs": 38,
+        "bold": true,
+        "align": "center",
+        "text": "Profile & Preferences",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 74,
+        "y": 364,
+        "w": 717,
+        "h": 178,
+        "radius": 28,
+        "texture": "warm-card-texture-tile",
+        "children": []
+      },
+      {
+        "kind": "photo",
+        "x": 108,
+        "y": 386,
+        "w": 138,
+        "h": 135,
+        "radius": 75,
+        "asset": "alex-avatar",
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 280,
+        "y": 412,
+        "w": 435,
+        "fs": 40,
+        "bold": true,
+        "maxLines": 1,
+        "text": "Alex Chen",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 280,
+        "y": 462,
+        "w": 459,
+        "fs": 30,
+        "color": "#5c626d",
+        "maxLines": 1,
+        "text": "alex.chen@email.com",
+        "runs": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-account-chevron",
+        "asset": "icon-profile-account-chevron",
+        "x": 735,
+        "y": 440,
+        "w": 20,
+        "h": 34,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 74,
+        "y": 364,
+        "w": 717,
+        "h": 178,
+        "label": "Edit account",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 74,
+        "y": 560,
+        "w": 717,
+        "h": 548,
+        "radius": 28,
+        "texture": "warm-card-texture-tile",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-dietary",
+        "asset": "icon-profile-dietary",
+        "x": 102,
+        "y": 586,
+        "w": 41,
+        "h": 42,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 172,
+        "y": 591,
+        "w": 340,
+        "fs": 30,
+        "text": "Dietary Preferences",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 430,
+        "y": 593,
+        "w": 330,
+        "fs": 26,
+        "color": "#8a8b92",
+        "align": "right",
+        "maxLines": 1,
+        "text": "Balanced, Higher protein",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 92,
+        "y": 566,
+        "w": 684,
+        "h": 80,
+        "label": "Edit Dietary Preferences",
+        "children": []
+      },
+      {
+        "kind": "divider",
+        "x": 107,
+        "y": 652,
+        "w": 683,
+        "h": 1.1,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-allergens",
+        "asset": "icon-profile-allergens",
+        "x": 102,
+        "y": 676,
+        "w": 41,
+        "h": 42,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 172,
+        "y": 683,
+        "w": 340,
+        "fs": 30,
+        "text": "Allergens",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 430,
+        "y": 685,
+        "w": 330,
+        "fs": 26,
+        "color": "#8a8b92",
+        "align": "right",
+        "maxLines": 1,
+        "text": "Tree nuts, Shellfish",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 92,
+        "y": 658,
+        "w": 684,
+        "h": 80,
+        "label": "Edit Allergens",
+        "children": []
+      },
+      {
+        "kind": "divider",
+        "x": 107,
+        "y": 742,
+        "w": 683,
+        "h": 1.1,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-activity",
+        "asset": "icon-profile-activity",
+        "x": 102,
+        "y": 764,
+        "w": 42,
+        "h": 50,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 172,
+        "y": 773,
+        "w": 340,
+        "fs": 30,
+        "text": "Activity Preferences",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 453,
+        "y": 775,
+        "w": 311,
+        "fs": 21.5,
+        "color": "#8a8b92",
+        "align": "right",
+        "maxLines": 1,
+        "text": "Strength training, 3–4 days/week",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 92,
+        "y": 748,
+        "w": 684,
+        "h": 80,
+        "label": "Edit Activity Preferences",
+        "children": []
+      },
+      {
+        "kind": "divider",
+        "x": 107,
+        "y": 836,
+        "w": 683,
+        "h": 1.1,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-mobility",
+        "asset": "icon-profile-mobility",
+        "x": 103,
+        "y": 858,
+        "w": 41,
+        "h": 47,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 172,
+        "y": 867,
+        "w": 340,
+        "fs": 30,
+        "text": "Mobility Constraints",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 430,
+        "y": 869,
+        "w": 330,
+        "fs": 26,
+        "color": "#8a8b92",
+        "align": "right",
+        "maxLines": 1,
+        "text": "None",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 92,
+        "y": 842,
+        "w": 684,
+        "h": 80,
+        "label": "Edit Mobility Constraints",
+        "children": []
+      },
+      {
+        "kind": "divider",
+        "x": 107,
+        "y": 927,
+        "w": 683,
+        "h": 1.1,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-glucose",
+        "asset": "icon-profile-glucose",
+        "x": 105,
+        "y": 952,
+        "w": 35,
+        "h": 43,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 172,
+        "y": 958,
+        "w": 340,
+        "fs": 30,
+        "text": "Glucose Unit",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 430,
+        "y": 960,
+        "w": 330,
+        "fs": 26,
+        "color": "#8a8b92",
+        "align": "right",
+        "maxLines": 1,
+        "text": "mg/dL",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 92,
+        "y": 933,
+        "w": 684,
+        "h": 80,
+        "label": "Edit Glucose Unit",
+        "children": []
+      },
+      {
+        "kind": "divider",
+        "x": 107,
+        "y": 1017,
+        "w": 683,
+        "h": 1.1,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-timezone",
+        "asset": "icon-profile-timezone",
+        "x": 102,
+        "y": 1040,
+        "w": 42,
+        "h": 42,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 172,
+        "y": 1048,
+        "w": 340,
+        "fs": 30,
+        "text": "Timezone",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 430,
+        "y": 1050,
+        "w": 330,
+        "fs": 26,
+        "color": "#8a8b92",
+        "align": "right",
+        "maxLines": 1,
+        "text": "(UTC-8) Pacific Time",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 92,
+        "y": 1023,
+        "w": 684,
+        "h": 80,
+        "label": "Edit Timezone",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 74,
+        "y": 1123,
+        "w": 717,
+        "h": 132,
+        "radius": 28,
+        "texture": "warm-card-texture-tile",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-health",
+        "asset": "icon-profile-health",
+        "x": 95,
+        "y": 1154,
+        "w": 68,
+        "h": 69,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 185,
+        "y": 1148,
+        "w": 486,
+        "fs": 31,
+        "text": "Connected Health Source",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 185,
+        "y": 1193,
+        "w": 310,
+        "fs": 31,
+        "color": "#5c626d",
+        "text": "Apple Health",
+        "runs": []
+      },
+      {
+        "kind": "surface",
+        "x": 581,
+        "y": 1157,
+        "w": 187,
+        "h": 63,
+        "radius": 40,
+        "fill": "#e9f5e7",
+        "border": false,
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-connected",
+        "asset": "icon-profile-connected",
+        "x": 598,
+        "y": 1175,
+        "w": 22,
+        "h": 21,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 625,
+        "y": 1175,
+        "w": 138,
+        "fs": 26,
+        "bold": true,
+        "color": "#165438",
+        "text": "Connected",
+        "runs": []
+      },
+      {
+        "kind": "hit",
+        "x": 74,
+        "y": 1123,
+        "w": 717,
+        "h": 132,
+        "label": "Manage health connection",
+        "children": []
+      },
+      {
+        "kind": "surface",
+        "x": 74,
+        "y": 1270,
+        "w": 717,
+        "h": 142,
+        "radius": 30,
+        "texture": "warm-card-texture-tile",
+        "children": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-privacy",
+        "asset": "icon-profile-privacy",
+        "x": 105,
+        "y": 1318,
+        "w": 40,
+        "h": 45,
+        "children": []
+      },
+      {
+        "kind": "text",
+        "x": 178,
+        "y": 1305,
+        "w": 546,
+        "fs": 33,
+        "text": "Privacy & Consent",
+        "runs": []
+      },
+      {
+        "kind": "text",
+        "x": 178,
+        "y": 1350,
+        "w": 558,
+        "fs": 28,
+        "color": "#81858a",
+        "text": "Manage your data and permissions",
+        "runs": []
+      },
+      {
+        "kind": "art",
+        "name": "profile-privacy-chevron",
+        "asset": "icon-profile-privacy-chevron",
+        "x": 738,
+        "y": 1325,
+        "w": 19,
+        "h": 31,
+        "children": []
+      },
+      {
+        "kind": "hit",
+        "x": 74,
+        "y": 1270,
+        "w": 717,
+        "h": 142,
+        "label": "Privacy and consent",
+        "children": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,190 @@
+{
+  "mode": "Mock SDK structural simulation; not a live Figma import or screenshot verification",
+  "type": "complete",
+  "pageId": "new:15",
+  "primaryFrames": 32,
+  "stateFrames": 53,
+  "referenceContinuations": 6,
+  "overlayFrames": 80,
+  "textNodes": 1711,
+  "instances": 2017,
+  "prototypeLinks": 716,
+  "originalScreensUnchanged": {
+    "onboarding": true,
+    "home": true,
+    "scan": true,
+    "log-meal": true,
+    "weekly-plan": true,
+    "profile": true
+  },
+  "fontFamilies": [
+    "Roboto",
+    "Roboto",
+    "Libre Caslon Display",
+    "Libre Caslon Text"
+  ],
+  "wholeScreenImages": 0,
+  "frames": [
+    {
+      "route": "sign-in",
+      "title": "sign in",
+      "id": "new:223"
+    },
+    {
+      "route": "create-account",
+      "title": "create account",
+      "id": "new:271"
+    },
+    {
+      "route": "verify-email",
+      "title": "verify email",
+      "id": "new:321"
+    },
+    {
+      "route": "recover-account",
+      "title": "recover account",
+      "id": "new:362"
+    },
+    {
+      "route": "reset-password",
+      "title": "reset password",
+      "id": "new:390"
+    },
+    {
+      "route": "analysis-result",
+      "title": "analysis result",
+      "id": "new:413"
+    },
+    {
+      "route": "market-reference",
+      "title": "market reference",
+      "id": "new:491"
+    },
+    {
+      "route": "capture-retry",
+      "title": "capture retry",
+      "id": "new:548"
+    },
+    {
+      "route": "food-selector",
+      "title": "food selector",
+      "id": "new:576"
+    },
+    {
+      "route": "nutrition-details",
+      "title": "nutrition details",
+      "id": "new:620"
+    },
+    {
+      "route": "glucose-overview",
+      "title": "glucose overview",
+      "id": "new:687"
+    },
+    {
+      "route": "add-reading",
+      "title": "add reading",
+      "id": "new:777"
+    },
+    {
+      "route": "reading-detail",
+      "title": "reading detail",
+      "id": "new:850"
+    },
+    {
+      "route": "health-connections",
+      "title": "health connections",
+      "id": "new:900"
+    },
+    {
+      "route": "plan-generation",
+      "title": "plan generation",
+      "id": "new:957"
+    },
+    {
+      "route": "activity-plan",
+      "title": "activity plan",
+      "id": "new:1040"
+    },
+    {
+      "route": "plan-rationale",
+      "title": "plan rationale",
+      "id": "new:1114"
+    },
+    {
+      "route": "foot-questionnaire",
+      "title": "foot questionnaire",
+      "id": "new:1180"
+    },
+    {
+      "route": "foot-guidance",
+      "title": "foot guidance",
+      "id": "new:1236"
+    },
+    {
+      "route": "assistant",
+      "title": "assistant",
+      "id": "new:1289"
+    },
+    {
+      "route": "privacy-data-rights",
+      "title": "privacy data rights",
+      "id": "new:1342"
+    },
+    {
+      "route": "reminders",
+      "title": "reminders",
+      "id": "new:1407"
+    },
+    {
+      "route": "report-output",
+      "title": "report output",
+      "id": "new:1477"
+    },
+    {
+      "route": "report-status",
+      "title": "report status",
+      "id": "new:1530"
+    },
+    {
+      "route": "personal-history",
+      "title": "personal history",
+      "id": "new:1588"
+    },
+    {
+      "route": "catalog-queue",
+      "title": "catalog queue",
+      "id": "new:1656"
+    },
+    {
+      "route": "catalog-review",
+      "title": "catalog review",
+      "id": "new:1702"
+    },
+    {
+      "route": "model-release",
+      "title": "model release",
+      "id": "new:1784"
+    },
+    {
+      "route": "operations-audit",
+      "title": "operations audit",
+      "id": "new:1869"
+    },
+    {
+      "route": "report-triage",
+      "title": "report triage",
+      "id": "new:1935"
+    },
+    {
+      "route": "flow-directory",
+      "title": "flow directory",
+      "id": "new:1996"
+    },
+    {
+      "route": "portion-confirmation",
+      "title": "portion confirmation",
+      "id": "new:2087"
+    }
+  ],
+  "recoveryArchivePreserved": false
+}
