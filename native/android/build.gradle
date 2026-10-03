@@ -1,0 +1,36 @@
+buildscript {
+    ext {
+        buildToolsVersion = "36.0.0"
+        minSdkVersion = 24
+        compileSdkVersion = 36
+        targetSdkVersion = 36
+        ndkVersion = "27.1.12297006"
+        kotlinVersion = "2.1.20"
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    }
+}
+
+// The project-local Ninja supports Windows long paths; configure before RN evaluates app.
+if (System.getProperty("os.name").toLowerCase(java.util.Locale.ROOT).contains("windows")) {
+  def ninjaExecutable = rootProject.file("../.tools/ninja/1.13.2/ninja.exe")
+  if (ninjaExecutable.exists()) {
+    def ninjaPath = ninjaExecutable.absolutePath.replace('\\', '/')
+    subprojects { nativeProject ->
+      ['com.android.application', 'com.android.library'].each { pluginId ->
+        nativeProject.plugins.withId(pluginId) {
+          nativeProject.android.defaultConfig.externalNativeBuild.cmake.arguments.add("-DCMAKE_MAKE_PROGRAM=" + ninjaPath)
+        }
+      }
+    }
+  }
+}
+
+apply plugin: "com.facebook.react.rootproject"

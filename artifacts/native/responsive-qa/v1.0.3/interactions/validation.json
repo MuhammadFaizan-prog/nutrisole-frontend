@@ -1,0 +1,384 @@
+{
+  "serial": "emulator-5582",
+  "apkSha256": "09955085ecf5d07bde39c3499f66b28291fef38f07ac5293cd36ece831fccb2b",
+  "screens": [
+    {
+      "route": "onboarding",
+      "status": "passed",
+      "nativeNodes": 50
+    },
+    {
+      "route": "home",
+      "status": "passed",
+      "nativeNodes": 115
+    },
+    {
+      "route": "scan",
+      "status": "passed",
+      "nativeNodes": 54
+    },
+    {
+      "route": "log-meal",
+      "status": "passed",
+      "nativeNodes": 59
+    },
+    {
+      "route": "weekly-plan",
+      "status": "passed",
+      "nativeNodes": 101
+    },
+    {
+      "route": "profile",
+      "status": "passed",
+      "nativeNodes": 74
+    },
+    {
+      "route": "sign-in",
+      "status": "passed",
+      "nativeNodes": 57
+    },
+    {
+      "route": "create-account",
+      "status": "passed",
+      "nativeNodes": 60
+    },
+    {
+      "route": "verify-email",
+      "status": "passed",
+      "nativeNodes": 62
+    },
+    {
+      "route": "recover-account",
+      "status": "passed",
+      "nativeNodes": 33
+    },
+    {
+      "route": "reset-password",
+      "status": "passed",
+      "nativeNodes": 36
+    },
+    {
+      "route": "analysis-result",
+      "status": "passed",
+      "nativeNodes": 109
+    },
+    {
+      "route": "market-reference",
+      "status": "passed",
+      "nativeNodes": 90
+    },
+    {
+      "route": "capture-retry",
+      "status": "passed",
+      "nativeNodes": 41
+    },
+    {
+      "route": "food-selector",
+      "status": "passed",
+      "nativeNodes": 57
+    },
+    {
+      "route": "nutrition-details",
+      "status": "passed",
+      "nativeNodes": 99
+    },
+    {
+      "route": "glucose-overview",
+      "status": "passed",
+      "nativeNodes": 91
+    },
+    {
+      "route": "add-reading",
+      "status": "passed",
+      "nativeNodes": 102
+    },
+    {
+      "route": "reading-detail",
+      "status": "passed",
+      "nativeNodes": 82
+    },
+    {
+      "route": "health-connections",
+      "status": "passed",
+      "nativeNodes": 87
+    },
+    {
+      "route": "plan-generation",
+      "status": "passed",
+      "nativeNodes": 139
+    },
+    {
+      "route": "activity-plan",
+      "status": "passed",
+      "nativeNodes": 70
+    },
+    {
+      "route": "plan-rationale",
+      "status": "passed",
+      "nativeNodes": 105
+    },
+    {
+      "route": "foot-questionnaire",
+      "status": "passed",
+      "nativeNodes": 71
+    },
+    {
+      "route": "foot-guidance",
+      "status": "passed",
+      "nativeNodes": 86
+    },
+    {
+      "route": "assistant",
+      "status": "passed",
+      "nativeNodes": 55
+    },
+    {
+      "route": "privacy-data-rights",
+      "status": "passed",
+      "nativeNodes": 101
+    },
+    {
+      "route": "reminders",
+      "status": "passed",
+      "nativeNodes": 105
+    },
+    {
+      "route": "report-output",
+      "status": "passed",
+      "nativeNodes": 66
+    },
+    {
+      "route": "report-status",
+      "status": "passed",
+      "nativeNodes": 97
+    },
+    {
+      "route": "personal-history",
+      "status": "passed",
+      "nativeNodes": 72
+    },
+    {
+      "route": "catalog-queue",
+      "status": "passed",
+      "nativeNodes": 46
+    },
+    {
+      "route": "catalog-review",
+      "status": "passed",
+      "nativeNodes": 106
+    },
+    {
+      "route": "model-release",
+      "status": "passed",
+      "nativeNodes": 100
+    },
+    {
+      "route": "operations-audit",
+      "status": "passed",
+      "nativeNodes": 96
+    },
+    {
+      "route": "report-triage",
+      "status": "passed",
+      "nativeNodes": 84
+    },
+    {
+      "route": "flow-directory",
+      "status": "passed",
+      "nativeNodes": 101
+    },
+    {
+      "route": "portion-confirmation",
+      "status": "passed",
+      "nativeNodes": 48
+    }
+  ],
+  "directoryTaps": [
+    {
+      "route": "onboarding",
+      "status": "passed"
+    },
+    {
+      "route": "home",
+      "status": "passed"
+    },
+    {
+      "route": "scan",
+      "status": "passed"
+    },
+    {
+      "route": "log-meal",
+      "status": "passed"
+    },
+    {
+      "route": "weekly-plan",
+      "status": "passed"
+    },
+    {
+      "route": "profile",
+      "status": "passed"
+    },
+    {
+      "route": "sign-in",
+      "status": "passed"
+    },
+    {
+      "route": "create-account",
+      "status": "passed"
+    },
+    {
+      "route": "verify-email",
+      "status": "passed"
+    },
+    {
+      "route": "recover-account",
+      "status": "passed"
+    },
+    {
+      "route": "reset-password",
+      "status": "passed"
+    },
+    {
+      "route": "analysis-result",
+      "status": "passed"
+    },
+    {
+      "route": "market-reference",
+      "status": "passed"
+    },
+    {
+      "route": "capture-retry",
+      "status": "passed"
+    },
+    {
+      "route": "food-selector",
+      "status": "passed"
+    },
+    {
+      "route": "nutrition-details",
+      "status": "passed"
+    },
+    {
+      "route": "glucose-overview",
+      "status": "passed"
+    },
+    {
+      "route": "add-reading",
+      "status": "passed"
+    },
+    {
+      "route": "reading-detail",
+      "status": "passed"
+    },
+    {
+      "route": "health-connections",
+      "status": "passed"
+    },
+    {
+      "route": "plan-generation",
+      "status": "passed"
+    },
+    {
+      "route": "activity-plan",
+      "status": "passed"
+    },
+    {
+      "route": "plan-rationale",
+      "status": "passed"
+    },
+    {
+      "route": "foot-questionnaire",
+      "status": "passed"
+    },
+    {
+      "route": "foot-guidance",
+      "status": "passed"
+    },
+    {
+      "route": "assistant",
+      "status": "passed"
+    },
+    {
+      "route": "privacy-data-rights",
+      "status": "passed"
+    },
+    {
+      "route": "reminders",
+      "status": "passed"
+    },
+    {
+      "route": "report-output",
+      "status": "passed"
+    },
+    {
+      "route": "report-status",
+      "status": "passed"
+    },
+    {
+      "route": "personal-history",
+      "status": "passed"
+    },
+    {
+      "route": "catalog-queue",
+      "status": "passed"
+    },
+    {
+      "route": "catalog-review",
+      "status": "passed"
+    },
+    {
+      "route": "model-release",
+      "status": "passed"
+    },
+    {
+      "route": "operations-audit",
+      "status": "passed"
+    },
+    {
+      "route": "report-triage",
+      "status": "passed"
+    },
+    {
+      "route": "flow-directory",
+      "status": "passed"
+    },
+    {
+      "route": "portion-confirmation",
+      "status": "passed"
+    }
+  ],
+  "interactions": [
+    "onboarding skip opens home",
+    "portion increase recalculates calories and meal logging opens home",
+    "weight and size sheets, both portion controls and saving a draft work",
+    "native preference sheet updates glucose unit",
+    "all six nested profile preference controls respond to physical taps",
+    "preference input editing and sheet save update the profile",
+    "home navigation, weekday choice, nutrition tab, acceptance, substitution and Android back work",
+    "home scan action and photo capture open portion confirmation",
+    "camera video mode, recording toggle, flash and gallery capture flow work",
+    "in-app directory opens added account screens and validates empty sign-in",
+    "visible Home All screens entry opens the complete 38-screen directory",
+    "all 38 screens are reachable through physical Home directory taps",
+    "Home View Plan and Health cards remain reachable and open their correct screens",
+    "native account inputs retain focus while moving between fields with the keyboard open; password visibility, consent and simulated submission work",
+    "food selection updates nutrition data",
+    "native numeric input, reading validation, review and save work",
+    "assistant prompt updates the scripted frontend response"
+  ],
+  "errors": [],
+  "standalone": true,
+  "iosRuntimeTested": false,
+  "physicalPhoneTested": false,
+  "api": 34,
+  "installedApkSha256": "09955085ecf5d07bde39c3499f66b28291fef38f07ac5293cd36ece831fccb2b",
+  "configuration": {
+    "size": "Physical size: 432x960",
+    "density": "Physical density: 160",
+    "fontScale": "null",
+    "navigation": "android\r\n[x] android.auto_generated_rro_vendor__\r\n[x] com.google.android.overlay.googleconfig\r\n[x] com.google.android.overlay.googlewebview\r\n[x] com.google.android.overlay.largescreenconfig\r\n[x] com.google.android.overlay.pixelconfigcommon\r\n[x] android.auto_generated_rro_product__\r\n[ ] com.android.internal.display.cutout.emulation.corner\r\n[ ] com.android.internal.display.cutout.emulation.double\r\n[ ] com.android.internal.systemui.navbar.gestural_wide_back\r\n[ ] com.android.internal.emulation.pixel_3a_xl\r\n[ ] com.android.internal.emulation.pixel_6_pro\r\n[ ] com.android.internal.emulation.pixel_7_pro\r\n[ ] com.android.internal.emulation.pixel_8_pro\r\n[ ] com.android.internal.emulation.pixel_3a\r\n[ ] com.android.internal.emulation.pixel_4a\r\n[ ] com.android.internal.emulation.pixel_6a\r\n[ ] com.android.internal.emulation.pixel_7a\r\n[ ] com.android.internal.display.cutout.emulation.hole\r\n[ ] com.android.internal.display.cutout.emulation.tall\r\n[ ] com.android.internal.systemui.navbar.threebutton\r\n[ ] com.android.internal.systemui.navbar.twobutton\r\n[ ] com.android.internal.systemui.navbar.gestural_extra_wide_back\r\n[ ] com.android.internal.emulation.pixel_3\r\n[ ] com.android.internal.emulation.pixel_4\r\n[ ] com.android.internal.emulation.pixel_5\r\n[ ] com.android.internal.emulation.pixel_6\r\n[ ] com.android.internal.emulation.pixel_7\r\n[ ] com.android.internal.emulation.pixel_8\r\n[ ] com.android.internal.display.cutout.emulation.emu01\r\n[ ] com.android.theme.font.notoserifsource\r\n[ ] com.android.internal.display.cutout.emulation.waterfall\r\n[ ] com.android.internal.systemui.navbar.transparent\r\n[ ] com.android.role.notes.enabled\r\n[ ] com.android.internal.emulation.pixel_2_xl\r\n[ ] com.android.internal.emulation.pixel_3_xl\r\n[ ] com.android.internal.emulation.pixel_4_xl\r\n[ ] com.android.internal.emulation.pixel_fold\r\n[x] com.android.internal.systemui.navbar.gestural\r\n[ ] com.android.internal.systemui.navbar.gestural_narrow_back\r\n[x] com.android.systemui:neutral\r\n[x] com.android.systemui:accent\r\n[x] com.android.systemui:dynamic"
+  },
+  "coldStart": "passed",
+  "status": "passed",
+  "crashFree": true
+}

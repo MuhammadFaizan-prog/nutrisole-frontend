@@ -11,3 +11,16 @@ Thumbs.db
 *.log
 native/dist-check/
 native/.expo/
+native/.tools/
+artifacts/native/*.apk
+.idea/
+__pycache__/
+*.py[cod]
+
+# Keep generated native captures and machine diagnostics local. Version the
+# verification summaries so source consumers can see tested scope and limits.
+/artifacts/native/**
+!/artifacts/native/**/
+!/artifacts/native/**/README.md
+!/artifacts/native/**/validation.json
+!/artifacts/native/plain-rn-apk-inspection.json

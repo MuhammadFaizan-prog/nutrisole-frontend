@@ -1,0 +1,214 @@
+{
+  "serial": "emulator-5660",
+  "apkSha256": "2ff8d1e66f832ba332181ed864cef0ceac4c468e9dea8476929733e940f4fde5",
+  "screens": [
+    {
+      "route": "onboarding",
+      "status": "passed",
+      "nativeNodes": 56
+    },
+    {
+      "route": "home",
+      "status": "passed",
+      "nativeNodes": 126
+    },
+    {
+      "route": "scan",
+      "status": "passed",
+      "nativeNodes": 66
+    },
+    {
+      "route": "log-meal",
+      "status": "passed",
+      "nativeNodes": 67
+    },
+    {
+      "route": "weekly-plan",
+      "status": "passed",
+      "nativeNodes": 139
+    },
+    {
+      "route": "profile",
+      "status": "passed",
+      "nativeNodes": 91
+    },
+    {
+      "route": "sign-in",
+      "status": "passed",
+      "nativeNodes": 58
+    },
+    {
+      "route": "create-account",
+      "status": "passed",
+      "nativeNodes": 56
+    },
+    {
+      "route": "verify-email",
+      "status": "passed",
+      "nativeNodes": 64
+    },
+    {
+      "route": "recover-account",
+      "status": "passed",
+      "nativeNodes": 32
+    },
+    {
+      "route": "reset-password",
+      "status": "passed",
+      "nativeNodes": 34
+    },
+    {
+      "route": "analysis-result",
+      "status": "passed",
+      "nativeNodes": 114
+    },
+    {
+      "route": "market-reference",
+      "status": "passed",
+      "nativeNodes": 92
+    },
+    {
+      "route": "capture-retry",
+      "status": "passed",
+      "nativeNodes": 40
+    },
+    {
+      "route": "food-selector",
+      "status": "passed",
+      "nativeNodes": 56
+    },
+    {
+      "route": "nutrition-details",
+      "status": "passed",
+      "nativeNodes": 101
+    },
+    {
+      "route": "glucose-overview",
+      "status": "passed",
+      "nativeNodes": 92
+    },
+    {
+      "route": "add-reading",
+      "status": "passed",
+      "nativeNodes": 104
+    },
+    {
+      "route": "reading-detail",
+      "status": "passed",
+      "nativeNodes": 82
+    },
+    {
+      "route": "health-connections",
+      "status": "passed",
+      "nativeNodes": 88
+    },
+    {
+      "route": "plan-generation",
+      "status": "passed",
+      "nativeNodes": 145
+    },
+    {
+      "route": "activity-plan",
+      "status": "passed",
+      "nativeNodes": 68
+    },
+    {
+      "route": "plan-rationale",
+      "status": "passed",
+      "nativeNodes": 108
+    },
+    {
+      "route": "foot-questionnaire",
+      "status": "passed",
+      "nativeNodes": 71
+    },
+    {
+      "route": "foot-guidance",
+      "status": "passed",
+      "nativeNodes": 88
+    },
+    {
+      "route": "assistant",
+      "status": "passed",
+      "nativeNodes": 54
+    },
+    {
+      "route": "privacy-data-rights",
+      "status": "passed",
+      "nativeNodes": 104
+    },
+    {
+      "route": "reminders",
+      "status": "passed",
+      "nativeNodes": 108
+    },
+    {
+      "route": "report-output",
+      "status": "passed",
+      "nativeNodes": 65
+    },
+    {
+      "route": "report-status",
+      "status": "passed",
+      "nativeNodes": 97
+    },
+    {
+      "route": "personal-history",
+      "status": "passed",
+      "nativeNodes": 77
+    },
+    {
+      "route": "catalog-queue",
+      "status": "passed",
+      "nativeNodes": 48
+    },
+    {
+      "route": "catalog-review",
+      "status": "passed",
+      "nativeNodes": 111
+    },
+    {
+      "route": "model-release",
+      "status": "passed",
+      "nativeNodes": 117
+    },
+    {
+      "route": "operations-audit",
+      "status": "passed",
+      "nativeNodes": 101
+    },
+    {
+      "route": "report-triage",
+      "status": "passed",
+      "nativeNodes": 83
+    },
+    {
+      "route": "flow-directory",
+      "status": "passed",
+      "nativeNodes": 141
+    },
+    {
+      "route": "portion-confirmation",
+      "status": "passed",
+      "nativeNodes": 48
+    }
+  ],
+  "interactions": [
+    "onboarding skip opens home",
+    "portion increase recalculates calories and meal logging opens home",
+    "native preference sheet updates glucose unit",
+    "all six nested profile preference controls respond to physical taps",
+    "home navigation, weekday choice, nutrition tab, acceptance, substitution and Android back work",
+    "home scan action and photo capture open portion confirmation",
+    "in-app directory opens added account screens and validates empty sign-in",
+    "native account text inputs, password visibility, consent and simulated submission work",
+    "food selection updates nutrition data",
+    "native numeric input, reading validation, review and save work",
+    "assistant prompt updates the scripted frontend response"
+  ],
+  "errors": [],
+  "standalone": true,
+  "coldStart": "passed",
+  "status": "passed",
+  "crashFree": true
+}

@@ -1,49 +1,64 @@
-import { useEffect, useState, type PropsWithChildren } from 'react';
-import { useRouter, usePathname } from 'expo-router';
-import { SafeAreaView, View, Text, TextInput, Modal, Pressable, KeyboardAvoidingView, ScrollView, Keyboard, Platform, useWindowDimensions, StyleSheet } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-import { useFonts } from 'expo-font';
-import { Roboto_400Regular } from '@expo-google-fonts/roboto/400Regular';
-import { Roboto_600SemiBold } from '@expo-google-fonts/roboto/600SemiBold';
-import { LibreCaslonDisplay_400Regular } from '@expo-google-fonts/libre-caslon-display/400Regular';
-import NutriSole, { routes } from '../src/nutrisole/NutriSole';
+import { useEffect, useState } from 'react';
+import { View, Text, TextInput, Modal, Pressable, ScrollView, Keyboard, Linking, StatusBar, StyleSheet } from 'react-native';
+import { SafeAreaProvider, SafeAreaView, initialWindowMetrics } from 'react-native-safe-area-context';
+import NutriSole, { routes } from './responsive/NutriSole';
+import { FrameProvider } from './responsive/components';
+import KeyboardFrame from './responsive/KeyboardFrame';
 import type { AppRoute as Route, Sheet } from '../src/nutrisole/types';
+import { routeFromURL } from './deepLinks';
+import { withNativeDestinations } from './nativeMenu';
 
-export default function App({ children }: PropsWithChildren) {
-  const router = useRouter();
-  const pathname = usePathname().slice(1);
-  const requestedRoute: Route = routes.includes(pathname as Route) ? pathname as Route : 'onboarding';
-  const { width, height } = useWindowDimensions();
-  const [loaded] = useFonts({ NutriSans: Roboto_400Regular, NutriSansBold: Roboto_600SemiBold, NutriSerif: LibreCaslonDisplay_400Regular, NutriSerifBold: require('../assets/fonts/LibreCaslonText-Bold.ttf'), NutriSerifText: require('../assets/fonts/LibreCaslonText-Regular.ttf') });
+export default function App() {
+  const [requestedRoute, setRequestedRoute] = useState<Route>('onboarding');
+  const [navigationToken, setNavigationToken] = useState(0);
+  const [requestedIntent, setRequestedIntent] = useState<'reset' | 'push'>('reset');
   const [currentRoute, setCurrentRoute] = useState('onboarding');
   const [sheet, setSheet] = useState<Sheet | null>(null);
   const [values, setValues] = useState<Record<string, string>>({});
   const [error, setError] = useState('');
+  useEffect(() => {
+    const openLink = (url: string | null) => {
+      const next = routeFromURL(url, routes);
+      if (next) { Keyboard.dismiss(); setSheet(null); setRequestedIntent('reset'); setRequestedRoute(next); setNavigationToken(token => token + 1); }
+    };
+    Linking.getInitialURL().then(openLink).catch(() => {});
+    const subscription = Linking.addEventListener('url', event => openLink(event.url));
+    return () => subscription.remove();
+  }, []);
   useEffect(() => { setValues(Object.fromEntries((sheet?.fields || []).map(f => [f.key, f.value]))); setError(''); }, [sheet]);
-  if (!loaded) return <View style={{ flex: 1, backgroundColor: '#faf8f1' }} />;
   const close = () => { Keyboard.dismiss(); setSheet(null); };
   const save = () => { const message = sheet?.save?.(values); if (message) setError(message); else close(); };
-  return <View style={{ flex: 1, backgroundColor: '#faf8f1' }}>
-    <View style={{ height: 0, overflow: 'hidden' }}>{children}</View>
-    <StatusBar style={currentRoute === 'scan' ? 'light' : 'dark'} />
-    <NutriSole width={width} height={height} requestedRoute={requestedRoute} navigation={{ go: next => router.push({ pathname: '/[screen]', params: { screen: next } }), back: () => router.canGoBack() ? router.back() : router.replace({ pathname: '/[screen]', params: { screen: 'home' } }), home: () => { router.dismissAll(); router.replace({ pathname: '/[screen]', params: { screen: 'home' } }); } }} open={next => { Keyboard.dismiss(); setSheet(next); }} routeChanged={setCurrentRoute} beforeNavigate={() => Keyboard.dismiss()} />
+  const openScreen = (next: Route) => { close(); setRequestedIntent('push'); setRequestedRoute(next); setNavigationToken(token => token + 1); };
+  return <SafeAreaProvider initialMetrics={initialWindowMetrics}><View style={[styles.app, currentRoute === 'scan' && { backgroundColor: '#111' }]}>
+    <StatusBar barStyle={currentRoute === 'scan' ? 'light-content' : 'dark-content'} />
+    <SafeAreaView style={styles.flex} edges={['top', 'left', 'right', 'bottom']}><KeyboardFrame style={styles.flex}><FrameProvider>
+      <NutriSole requestedRoute={requestedRoute} requestedIntent={requestedIntent} navigationToken={navigationToken} open={next => { Keyboard.dismiss(); setSheet(withNativeDestinations(next, openScreen)); }} routeChanged={setCurrentRoute} />
+    </FrameProvider></KeyboardFrame></SafeAreaView>
     <Modal visible={Boolean(sheet)} animationType="slide" transparent onRequestClose={close}>
-      <KeyboardAvoidingView style={styles.overlay} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardFrame style={styles.overlay}>
         <Pressable style={StyleSheet.absoluteFill} onPress={close} accessibilityLabel="Dismiss sheet" />
-        <SafeAreaView style={styles.sheet}><ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ padding: 24, gap: 14 }}>
+        <SafeAreaView style={styles.sheet} edges={['bottom', 'left', 'right']}><ScrollView keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag" contentContainerStyle={styles.sheetContent}>
           <Text style={styles.title}>{sheet?.title}</Text>
           {sheet?.description && <Text style={styles.description}>{sheet.description}</Text>}
-          {sheet?.fields?.map(f => <View key={f.key} style={{ gap: 8 }}><Text style={styles.label}>{f.label}</Text><TextInput accessibilityLabel={f.label} style={[styles.input, f.multiline && { minHeight: 90 }]} value={values[f.key] || ''} onChangeText={value => setValues(v => ({ ...v, [f.key]: value }))} multiline={f.multiline} keyboardType={f.numeric ? 'decimal-pad' : 'default'} maxLength={f.multiline ? 300 : 100} /></View>)}
+          {sheet?.fields?.map(f => <View key={f.key} style={styles.field}><Text style={styles.label}>{f.label}</Text>{f.key === 'json' ? <Text selectable accessibilityLabel={f.label} style={[styles.input, styles.multiline]}>{values[f.key] || ''}</Text> : <TextInput accessibilityLabel={f.label} style={[styles.input, f.multiline && styles.multiline]} value={values[f.key] || ''} onChangeText={value => setValues(v => ({ ...v, [f.key]: value }))} multiline={f.multiline} keyboardType={f.numeric ? 'decimal-pad' : 'default'} maxLength={f.multiline ? 300 : 100} />}</View>)}
           {sheet?.choices?.map(choice => <Pressable key={choice.label} style={styles.choice} accessibilityRole="button" onPress={() => { close(); choice.action(); }}><Text style={styles.label}>{choice.label}{choice.selected ? ' ✓' : ''}</Text></Pressable>)}
-          {error && <Text accessibilityRole="alert" style={{ color: '#a52d22' }}>{error}</Text>}
+          {error && <Text accessibilityRole="alert" style={styles.error}>{error}</Text>}
           {sheet?.save && <Pressable style={styles.save} accessibilityRole="button" onPress={save}><Text style={styles.saveText}>Save</Text></Pressable>}
-          <Pressable onPress={close} accessibilityRole="button" style={{ padding: 15 }}><Text style={[styles.label, { textAlign: 'center' }]}>{sheet?.save ? 'Cancel' : 'Close'}</Text></Pressable>
+          <Pressable onPress={close} accessibilityRole="button" style={styles.cancel}><Text style={[styles.label, styles.center]}>{sheet?.save ? 'Cancel' : 'Close'}</Text></Pressable>
         </ScrollView></SafeAreaView>
-      </KeyboardAvoidingView>
+      </KeyboardFrame>
     </Modal>
-  </View>;
+  </View></SafeAreaProvider>;
 }
 const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  app: { flex: 1, backgroundColor: '#faf8f1' },
+  sheetContent: { padding: 24, gap: 14 },
+  field: { gap: 8 },
+  multiline: { minHeight: 90 },
+  error: { color: '#a52d22' },
+  cancel: { padding: 15 },
+  center: { textAlign: 'center' },
   overlay: { flex: 1, justifyContent: 'flex-end', backgroundColor: '#0005' },
   sheet: { maxHeight: '82%', backgroundColor: '#fffdf8', borderTopLeftRadius: 28, borderTopRightRadius: 28 },
   title: { fontFamily: 'NutriSansBold', fontSize: 24, color: '#183e2d' },

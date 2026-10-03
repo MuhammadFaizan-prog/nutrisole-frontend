@@ -1,0 +1,56 @@
+{
+  "apkBytes": 41403281,
+  "sha256": "2ff8d1e66f832ba332181ed864cef0ceac4c468e9dea8476929733e940f4fde5",
+  "reactNative": "0.86.3",
+  "expoDependencies": [],
+  "expoDexModules": [],
+  "originalScreenCode": [
+    "Onboarding",
+    "Home",
+    "Scan",
+    "LogMeal",
+    "WeeklyPlan",
+    "Profile"
+  ],
+  "expandedUI": [
+    "C:/Users/DELL/Downloads/fvp deliverable 1/nutrisole-frontend/src/nutrisole/extensions/ExpansionScreen.tsx"
+  ],
+  "bundleBytes": 2671516,
+  "fonts": [
+    "assets/fonts/NutriSans.ttf",
+    "assets/fonts/NutriSansBold.ttf",
+    "assets/fonts/NutriSerif.ttf",
+    "assets/fonts/NutriSerifBold.ttf",
+    "assets/fonts/NutriSerifText.ttf"
+  ],
+  "nativeLibraries": {
+    "arm64-v8a": [
+      "lib/arm64-v8a/libappmodules.so",
+      "lib/arm64-v8a/libc++_shared.so",
+      "lib/arm64-v8a/libfbjni.so",
+      "lib/arm64-v8a/libhermestooling.so",
+      "lib/arm64-v8a/libhermesvm.so",
+      "lib/arm64-v8a/libimagepipeline.so",
+      "lib/arm64-v8a/libjsi.so",
+      "lib/arm64-v8a/libnative-filters.so",
+      "lib/arm64-v8a/libnative-imagetranscoder.so",
+      "lib/arm64-v8a/libreact_codegen_rnsvg.so",
+      "lib/arm64-v8a/libreactnative.so"
+    ],
+    "x86_64": [
+      "lib/x86_64/libappmodules.so",
+      "lib/x86_64/libc++_shared.so",
+      "lib/x86_64/libfbjni.so",
+      "lib/x86_64/libhermestooling.so",
+      "lib/x86_64/libhermesvm.so",
+      "lib/x86_64/libimagepipeline.so",
+      "lib/x86_64/libjsi.so",
+      "lib/x86_64/libnative-filters.so",
+      "lib/x86_64/libnative-imagetranscoder.so",
+      "lib/x86_64/libreact_codegen_rnsvg.so",
+      "lib/x86_64/libreactnative.so"
+    ]
+  },
+  "sourceModules": 2632,
+  "keyboardFocusFixIncluded": true
+}

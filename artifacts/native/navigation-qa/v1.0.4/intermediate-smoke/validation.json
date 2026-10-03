@@ -1,0 +1,20 @@
+{
+  "serial": "emulator-5582",
+  "apkSha256": "1993d68376271e8940a1f56b92c405c2032d18dad914a431ebe6ef8a849797da",
+  "routes": [],
+  "checks": [],
+  "errors": [
+    "Expected onboarding"
+  ],
+  "navigationMethod": "physical taps and Android Back; no route deep links",
+  "iosRuntimeTested": false,
+  "physicalPhoneTested": false,
+  "installedApkSha256": "1993d68376271e8940a1f56b92c405c2032d18dad914a431ebe6ef8a849797da",
+  "configuration": {
+    "size": "Physical size: 432x960\r\nOverride size: 393x852",
+    "density": "Physical density: 160",
+    "fontScale": "1.0",
+    "api": "34"
+  },
+  "appCrashDetected": false
+}

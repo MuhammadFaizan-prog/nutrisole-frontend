@@ -1,0 +1,20 @@
+{
+  "serial": "emulator-5580",
+  "apkSha256": "f321d7eed0da21b1d4567e16452442d64f30bbe7d0fa3b59a2ca11cf405bb64d",
+  "screens": [],
+  "interactions": [],
+  "errors": [
+    "Cold launch did not render onboarding"
+  ],
+  "standalone": true,
+  "iosRuntimeTested": false,
+  "physicalPhoneTested": false,
+  "configuration": {
+    "size": "Physical size: 1344x2992\r\nOverride size: 360x640",
+    "density": "Physical density: 480\r\nOverride density: 160",
+    "fontScale": "1.3",
+    "navigation": "android\r\n[x] android.auto_generated_rro_vendor__\r\n[x] com.google.android.overlay.googleconfig\r\n[x] com.google.android.overlay.googlewebview\r\n--- android.auto_generated_characteristics_rro\r\n[x] com.google.android.overlay.largescreenconfig\r\n[x] com.google.android.overlay.pixelconfigcommon\r\n[x] android.auto_generated_rro_product__\r\n[x] com.android.internal.ranchu.commonoverlay\r\n[ ] com.android.internal.display.cutout.emulation.corner\r\n[ ] com.android.internal.display.cutout.emulation.double\r\n[ ] com.android.internal.emulation.pixel_3a_xl\r\n[ ] com.android.internal.emulation.pixel_6_pro\r\n[ ] com.android.internal.emulation.pixel_7_pro\r\n[ ] com.android.internal.emulation.pixel_8_pro\r\n[ ] com.android.internal.emulation.pixel_9_pro\r\n[ ] com.android.internal.emulation.pixel_3a\r\n[ ] com.android.internal.emulation.pixel_4a\r\n[ ] com.android.internal.emulation.pixel_6a\r\n[ ] com.android.internal.emulation.pixel_7a\r\n[ ] com.android.internal.emulation.pixel_8a\r\n[ ] com.android.internal.emulation.pixel_9a\r\n[ ] com.android.internal.display.cutout.emulation.hole\r\n[ ] com.android.internal.display.cutout.emulation.tall\r\n[x] com.android.internal.systemui.navbar.threebutton\r\n[ ] com.android.internal.systemui.navbar.twobutton\r\n[ ] com.android.internal.emulation.pixel_9_pro_fold\r\n[ ] com.android.internal.emulation.pixel_3\r\n[ ] com.android.internal.emulation.pixel_4\r\n[ ] com.android.internal.emulation.pixel_5\r\n[ ] com.android.internal.emulation.pixel_6\r\n[ ] com.android.internal.emulation.pixel_7\r\n[ ] com.android.internal.emulation.pixel_8\r\n[ ] com.android.internal.emulation.pixel_9\r\n[ ] com.android.internal.display.cutout.emulation.emu01\r\n[ ] com.android.theme.font.notoserifsource\r\n[ ] com.android.internal.display.cutout.emulation.waterfall\r\n[ ] com.android.internal.systemui.navbar.transparent\r\n[ ] com.android.role.notes.enabled\r\n[x] com.android.internal.emulation.pixel_9_pro_xl\r\n[ ] com.android.internal.emulation.pixel_2_xl\r\n[ ] com.android.internal.emulation.pixel_3_xl\r\n[ ] com.android.internal.emulation.pixel_4_xl\r\n[ ] com.android.internal.emulation.pixel_fold\r\n[ ] com.android.internal.systemui.navbar.gestural\r\n[x] com.android.systemui:neutral\r\n[x] com.android.systemui:accent\r\n[x] com.android.systemui:dynamic"
+  },
+  "status": "failed",
+  "crashFree": true
+}

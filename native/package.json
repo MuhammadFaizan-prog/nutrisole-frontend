@@ -1,47 +1,41 @@
 {
-  "name": "native",
-  "version": "1.0.0",
-  "main": "index.ts",
+  "name": "nutrisole-native",
+  "version": "1.0.4",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint App.tsx responsive/ touchPrimitives.tsx deepLinks.ts nativeMenu.ts index.js metro.config.js babel.config.js react-native.config.js tests/*.test.ts",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "export:check": "react-native bundle --entry-file index.js --platform android --dev false --bundle-output dist-check/index.android.bundle --assets-dest dist-check/assets --max-workers 2"
+  },
   "dependencies": {
-    "@expo-google-fonts/inter": "^0.4.2",
-    "@expo-google-fonts/libre-caslon-display": "^0.4.1",
-    "@expo-google-fonts/libre-caslon-text": "^0.4.0",
-    "@expo-google-fonts/roboto": "^0.4.3",
     "@react-native-async-storage/async-storage": "2.2.0",
-    "expo": "~57.0.26",
-    "expo-asset": "~57.0.18",
-    "expo-constants": "~57.0.20",
-    "expo-font": "~57.0.4",
-    "expo-linking": "~57.0.11",
-    "expo-router": "~57.0.24",
-    "expo-splash-screen": "~57.0.9",
-    "expo-status-bar": "~57.0.1",
-    "expo-system-ui": "~57.0.4",
-    "lucide-react-native": "^1.48.0",
+    "lucide-react-native": "1.48.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3",
     "react-native": "0.86.3",
-    "react-native-reanimated": "4.5.1",
-    "react-native-safe-area-context": "~5.7.0",
-    "react-native-screens": "~4.26.0",
-    "react-native-svg": "15.15.4",
-    "react-native-web": "^0.21.2",
-    "react-native-worklets": "0.10.1"
+    "react-native-safe-area-context": "5.10.1",
+    "react-native-svg": "15.15.4"
   },
   "devDependencies": {
-    "@types/react": "~19.2.2",
-    "eslint": "^9.39.5",
-    "eslint-config-expo": "~57.0.2",
-    "typescript": "~6.0.3"
+    "@babel/core": "^7.25.2",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "20.1.0",
+    "@react-native-community/cli-platform-android": "20.1.0",
+    "@react-native-community/cli-platform-ios": "20.1.0",
+    "@react-native/babel-preset": "0.86.3",
+    "@react-native/eslint-config": "0.86.3",
+    "@react-native/metro-config": "0.86.3",
+    "@react-native/typescript-config": "0.86.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "19.2.17",
+    "eslint": "^8.57.1",
+    "typescript": "~5.9.3"
   },
-  "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "typecheck": "node ../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
-    "lint": "expo lint",
-    "export:check": "expo export --platform all --output-dir dist-check"
-  },
-  "private": true
+  "engines": {
+    "node": ">=22.11.0"
+  }
 }

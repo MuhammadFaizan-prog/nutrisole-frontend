@@ -1,0 +1,23 @@
+{
+  "serial": "emulator-5582",
+  "apkSha256": "eb31832e25b6d50125ae6f87578c2d687e8013720ace1940b06c92fcca8b9881",
+  "routes": [
+    "onboarding",
+    "create-account"
+  ],
+  "checks": [],
+  "errors": [
+    "Requested input did not receive focus: field-password"
+  ],
+  "navigationMethod": "physical taps and Android Back; no route deep links",
+  "iosRuntimeTested": false,
+  "physicalPhoneTested": false,
+  "installedApkSha256": "eb31832e25b6d50125ae6f87578c2d687e8013720ace1940b06c92fcca8b9881",
+  "configuration": {
+    "size": "Physical size: 432x960\r\nOverride size: 393x852",
+    "density": "Physical density: 160",
+    "fontScale": "1.0",
+    "api": "34"
+  },
+  "appCrashDetected": false
+}

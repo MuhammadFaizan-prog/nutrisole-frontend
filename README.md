@@ -8,7 +8,7 @@ A frontend prototype for a food and health assistant, built with React, TypeScri
 
 ## Project scope
 
-This repository contains the runnable web frontend, an Expo companion app, individual image/font assets, tests, and the editable Figma importer. Text, forms, navigation, and controls are implemented as components; whole-screen images are used only as reference or QA evidence.
+This repository contains the runnable web frontend, a plain React Native Android/iOS app, individual image/font assets, tests, and the editable Figma importer. Text, forms, navigation, and controls are implemented as components; whole-screen images are used only as reference or QA evidence.
 
 The app is a **frontend demonstration with synthetic data**. Authentication, food recognition, camera capture, health connections, prices, notifications, and staff permissions are simulated. Original demo edits may persist in the current browser; expanded-flow records reset on reload. Deploying the app does not add a backend or synchronize data across users.
 
@@ -36,7 +36,7 @@ Working demo interactions include portion/calorie updates, meal logging and draf
 | --- | --- |
 | Web preview | React 19, TypeScript 7, Vite 8, React Native Web |
 | Shared app UI | React Native components, semantic scene models, local state |
-| Native companion | Expo SDK 57, Expo Router, React Native 0.86 |
+| Native companion | Plain React Native 0.86.3, React Native CLI, native Android/iOS hosts |
 | UI assets | Local food/avatar photos, font files, Lucide/vector icons, source artwork |
 | Verification | Node test runner, Playwright, TypeScript, runtime integrity checks |
 | Design handoff | Native Figma text, components, shapes, variables, and prototype links |
@@ -62,16 +62,33 @@ npx vite preview --host 0.0.0.0 --port 4175
 
 The web build is written to `dist/client`. The existing build also prepares optional Sites worker files under `dist/server` and `dist/.openai`; Vercel serves only `dist/client`.
 
-### Native companion
+### Native app
 
-The Expo app is in `native/` and consumes shared source from `src/nutrisole/`.
+The plain React Native app in `native/` implements all 38 screens through `native/responsive/`, reusing the shared content, stores, actions and assets from `src/nutrisole/`. It has no Expo dependencies. UI elements, forms, navigation and sheets are live components; food/avatar photographs and small artwork are local assets. Flexbox, measured content space, system-scalable text and native safe areas adapt the layouts to phone sizes. Long content scrolls while navigation and submission footers remain reachable.
+
+Use the five primary destinations: **Home, Plan, Scan, Health and Profile**. Open **Menu & Settings** from Home's header or Profile for history, Assistant, foot support, reminders, account/data preferences, reports and staff previews. All 38 screens are connected by tasks: capture → assessment → correction/nutrition → portion → history; Health → readings/connections; Plan → generation/rationale/activity; and account → verification/sign-in or recovery/reset. Detail pages return to their parent, while changing primary tabs starts that section. The native Home cards keep two columns where their labels fit and stack on compact or enlarged-text layouts. Weekly calendars keep all seven days on one horizontal row, with horizontal scrolling for enlarged text.
 
 ```sh
 npm --prefix native ci
 npm run native:start
+npm --prefix native run android
 ```
 
-Use a compatible Expo Go client or a configured simulator. Windows cannot run an iOS simulator. This repository does not include signed app-store binaries.
+Open **`native/android`** directly in Android Studio. Use its bundled JDK and your installed Android SDK. On Windows, prepare the verified project-local Ninja once before building:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File native/scripts/prepare-windows-ninja.ps1
+cd native/android
+./gradlew.bat :app:assembleRelease --max-workers=2 --console=plain
+```
+
+The standalone APK is `native/android/app/build/outputs/apk/release/app-release.apk`. It bundles Hermes JavaScript, all screen assets and native font aliases, and runs without Metro or Expo Go. It includes ARM64 phone and x86_64 emulator libraries. NutriSole's leaf launcher icon and cream launch screen replace the starter artwork. This internal evaluation build uses the standard Android development signing key; store distribution requires a private release signing configuration.
+
+The iOS project is `native/ios/NutriSole.xcodeproj`. On macOS, install the Gemfile/CocoaPods dependencies, run `bundle exec pod install` in `native/ios`, then use `npm --prefix native run ios` or open the generated workspace in Xcode. iOS source shares the same screen functionality, but it cannot be compiled or run on Windows.
+
+App links such as `nutrisole://screens/home` and `nutrisole://screens/flow-directory` open validated routes. Unknown or external links are ignored.
+
+The native app no longer shows a screen catalog on Home. Fresh Apple captures lead to the original Log Meal screen; other foods use the matching portion form. Saved portions retain their food, quantity and identity when reopened from History, and confirmed meals update Home. Staff roles are synthetic previews inside the settings workspace. The native runtime preserves transparent layout groups for accurate touch handling; the original six shared source implementations and assets remain unchanged. Gradle tracks shared source and assets outside `native/` so incremental builds include screen edits.
 
 ## Verification
 
@@ -94,7 +111,9 @@ npm run native:lint
 npm run native:export
 ```
 
-The expansion baseline protects 119 original screen/shared-asset files. The runtime lock protects 28 device-preview files. Existing browser evidence covers the 30 added concepts and key interactions; the native app has export checks but has not been verified on a physical device or emulator. Visual fidelity has been refined against the supplied PNGs, but exact pixel identity is not certified.
+The expansion baseline protects 119 original screen/shared-asset files. The runtime lock protects 28 device-preview files. The latest Android build, version 1.0.4 (`artifacts/native/NutriSole-Journeys-v1.0.4.apk`), adds task navigation and Menu & Settings. APK binaries are generated locally and are not committed to this source repository. Its Gradle build, 34 native tests, typecheck, lint and preservation checks pass. The installed APK hash matches the delivered file. Physical taps reached 31 screens on an intermediate build before finding and fixing a truncated local JSON preview. The final build installed and opened onboarding without Metro, but emulator system/launcher errors interrupted its full interaction sweep. See [the version 1.0.4 verification record](artifacts/native/navigation-qa/v1.0.4/README.md) for exact evidence and limits; final 38-screen runtime and phone-size verification are incomplete. Verification summaries are versioned; raw logs, screenshots and machine diagnostics remain local.
+
+The previous [version 1.0.3 verification](artifacts/native/responsive-qa/v1.0.3/README.md) records 38 route/catalog checks, 17 interaction groups, 106 phone/text layout checks and three targeted tap/scroll checks. Those results belong to that historical APK and do not certify version 1.0.4. Physical Android and iOS runtime verification remain unperformed. Exact pixel identity is not certified.
 
 ## Figma design and prototype
 
@@ -130,7 +149,7 @@ The deployed site uses the same components, fonts, images, and device-preview ru
 src/nutrisole/              Shared original screens and app state
 src/nutrisole/extensions/   Added flow scenes, UI, and demo logic
 src/mobile/                Protected web device/keyboard runtime
-native/                    Expo companion app
+native/                    Plain React Native Android/iOS app
 public/                    Web-served assets and device artwork
 assets/                    Shared source photos, fonts, and icons
 scripts/                   Build, integrity, QA, and Figma utilities

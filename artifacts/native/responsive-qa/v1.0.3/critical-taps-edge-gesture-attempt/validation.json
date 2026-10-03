@@ -1,0 +1,17 @@
+{
+  "apkSha256": "09955085ecf5d07bde39c3499f66b28291fef38f07ac5293cd36ece831fccb2b",
+  "device": "emulator-5582",
+  "configuration": {
+    "width": 320,
+    "height": 568,
+    "density": 160,
+    "fontScale": 2
+  },
+  "checks": [],
+  "errors": [
+    ""
+  ],
+  "installedApkSha256": "09955085ecf5d07bde39c3499f66b28291fef38f07ac5293cd36ece831fccb2b",
+  "status": "failed",
+  "crashFree": true
+}

@@ -1,0 +1,20 @@
+{
+  "serial": "emulator-5582",
+  "apkSha256": "51ae1ec5bd937d80b652c647f0c9f8428ed1f1940d803ffff535cb827d3d2621",
+  "routes": [],
+  "checks": [],
+  "errors": [
+    "Command '['C:\\\\Users\\\\DELL\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe', '-s', 'emulator-5582', 'shell', 'uiautomator', 'dump', '/sdcard/nutri-journeys.xml']' timed out after 50 seconds"
+  ],
+  "navigationMethod": "physical taps and Android Back; no route deep links",
+  "iosRuntimeTested": false,
+  "physicalPhoneTested": false,
+  "installedApkSha256": "51ae1ec5bd937d80b652c647f0c9f8428ed1f1940d803ffff535cb827d3d2621",
+  "configuration": {
+    "size": "Physical size: 432x960\r\nOverride size: 393x852",
+    "density": "Physical density: 160",
+    "fontScale": "1.0",
+    "api": "34"
+  },
+  "appCrashDetected": false
+}

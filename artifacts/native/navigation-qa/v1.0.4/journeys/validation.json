@@ -1,0 +1,26 @@
+{
+  "serial": "emulator-5582",
+  "apkSha256": "61905ab51c02bf69fe768afe8c15da3a3095f17d88c2e79a1ef6265df961999e",
+  "routes": [
+    "onboarding"
+  ],
+  "checks": [],
+  "errors": [
+    "Expected create-account"
+  ],
+  "navigationMethod": "physical taps and Android Back; no route deep links",
+  "iosRuntimeTested": false,
+  "physicalPhoneTested": false,
+  "installedApkSha256": "61905ab51c02bf69fe768afe8c15da3a3095f17d88c2e79a1ef6265df961999e",
+  "configuration": {
+    "size": "Physical size: 432x960\r\nOverride size: 393x852",
+    "density": "Physical density: 160",
+    "fontScale": "1.0",
+    "api": "34"
+  },
+  "harnessInterruptions": [
+    "Pixel Launcher isn't responding",
+    "System UI isn't responding"
+  ],
+  "appCrashDetected": false
+}

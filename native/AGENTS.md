@@ -1,41 +1,23 @@
-This is an Expo/React Native mobile application. Prioritize mobile-first patterns, performance, and cross-platform compatibility.
+# NutriSole plain React Native app
 
-## Expo has changed — do not trust your training data
+The user explicitly requested removal of Expo on October 1, 2026. This is a bare React Native 0.86.3 app. Do not add Expo packages, Expo Router, EAS, prebuild, or starter icons/splash artwork. The Android and iOS projects are authored native source and must remain versioned; exclude build caches and local machine configuration.
 
-Expo ships breaking changes every SDK release. APIs you remember are likely renamed, moved, or removed. Before writing any code that touches an Expo, EAS, or React Native API:
+Use the shared 38 screen implementations in ../src/nutrisole/ through platform-specific native adapters. The original six modules and their shared assets are protected by ../artifacts/expansion/six-screen-baseline.json. Preserve them. NutriSole owns screen history and Android back handling. App.tsx owns native sheets, status-bar appearance and validated app deep links.
 
-1. Read the major version of the `expo` package in `package.json`.
-2. Fetch the matching versioned docs: `https://docs.expo.dev/versions/v<major>.0.0/`
-3. For anything else, fetch https://docs.expo.dev/llms.txt — an index of all Expo docs with corrections to common LLM misconceptions. Follow its links to the specific page you need; never answer from memory.
+The October 2 responsive implementation lives in responsive/. The six native counterparts reuse the existing store/actions/artwork; ExpandedScreen and sceneFlow adapt all 32 extension scene models into growing native cards, rows and fields. Keep these adapters native-only and preserve the protected web Canvas/Viewport runtime. Do not restore whole-screen scaling, fixed text rectangles or font-scaling suppression. App.tsx consumes each real safe-area inset once; FrameProvider measures the remaining content space after safe areas and keyboard avoidance. Keep fixed footers outside bounded scroll bodies. Source-photo exclusion masks must remain in use; the native camera consistently uses its existing clean photo beneath the mask.
 
-## Commands
+October 3 user feedback: Home's View Plan and Health cards must reflow before enlarged labels are cramped. Weekly calendars must keep all seven days on one horizontal row; default phone text fits all seven, and enlarged text uses a horizontally scrollable row rather than wrapping Sun below. The latest UX request supersedes the earlier All screens shortcut: connect all 38 screens through task-specific routes and expose secondary tools in Menu & Settings. The legacy `flow-directory` route is now this menu, accessible from Home's header and Profile, not a catalog of screen states. Keep the five primary destinations and contextual back behavior. Sign-in completes at Home; capture leads to assessment/nutrition/portion; saved meals are shared by Home and History; plans, health, privacy, reports and staff previews have their own entry points. Preserve the six protected shared modules/assets and web runtime.
 
-Use `bunx` instead of `npx` if the project uses bun (`bun.lock` present).
+Home's growing card panels use an automatic flex basis (`flexGrow`, not `flex: 1` on the vertical panel). A zero flex basis previously let the description shrink below one text line even when the two-card row looked wide enough. Verify the full descriptions in screenshots as well as each card's tap behavior.
 
-```bash
-npx expo install <package>  # ALWAYS use instead of npm/yarn/pnpm/bun add — resolves SDK-compatible versions
-npx expo start              # start the dev server
-npx expo lint               # lint
-npx tsc --noEmit            # typecheck
-npx expo-doctor             # diagnose dependency and config issues
-npx expo install --fix      # fix incompatible package versions
-```
+Metro redirects the protected shared primitive adapter to touchPrimitives.tsx in this package. Its box-none View groups disable Fabric layout flattening so overlapping groups preserve physical touch delivery. Do not remove this without testing earlier preference rows and weekday/navigation controls on Android. The Gradle bundle task tracks ../src/nutrisole and ../assets explicitly; preserve those inputs to prevent stale APK bundles after shared-screen edits. Expanded invisible button labels retain accessibility labels but render no duplicate text.
 
-Run lint and typecheck before declaring any task done.
+Native TextInput manages focus changes between fields. Do not unconditionally call Keyboard.dismiss in onBlur: the prior field's blur callback can clear the newly focused field and discard input. App.tsx already dismisses the keyboard before navigation and native sheets. Compact input padding must leave one full text line inside the unchanged source rectangle.
 
-## Navigation & Routing
+Android edge-to-edge mode can leave adjustResize content behind the IME. App.tsx uses responsive/KeyboardFrame.tsx with measured KeyboardAvoidingView height behavior on Android, while iOS retains padding behavior. RN's measured frame.y already includes the safe area's Yoga padding: do not add that top inset again as keyboardVerticalOffset. Both screen and sheet content must resize and scroll above the keyboard; verify focus actually transfers before entering test text.
 
-- Use **Expo Router** for all navigation. Routes live in `src/app/` — every file there is a screen, `_layout.tsx` files define navigators. Keep non-route code (components, hooks, utils) outside `src/app/`.
-- Import `Link`, `router`, and `useLocalSearchParams` from `expo-router`.
-- Docs: https://docs.expo.dev/router/introduction.md
+Commands: npm start; npm run android; npm run ios; npm run typecheck; npm run lint; npm test. Android standalone APK: from android/ run gradlew.bat :app:assembleRelease on Windows or ./gradlew :app:assembleRelease elsewhere. The local test APK uses the standard Android debug signing key with JS/assets bundled and development support disabled. A store release requires the user's production signing setup. Build arm64-v8a and x86_64 so the same APK can run on phones and the emulator. On Windows, run scripts/prepare-windows-ninja.ps1 before the first build to install the verified project-local Ninja for long paths.
 
-## Building with EAS
+The matching iOS Xcode project, CocoaPods configuration, app links, font resources, launcher artwork and launch storyboard are included. iOS compilation requires macOS/Xcode and must not be claimed tested from Windows. Font copies in assets/fonts have native aliases, retain the included licenses and do not modify the protected original fonts.
 
-Use EAS to build, sign, and submit the app in the cloud (`eas build`, `eas submit`) and to ship over-the-air updates (`eas update`) — no local Xcode or Android Studio required. Run EAS CLI as `bunx eas-cli <command>` in Bun projects, or `npx eas-cli@latest <command>` otherwise; substitute that for bare `eas` in docs examples.
-Docs: https://docs.expo.dev/eas/index.md
-
-## Rules
-
-- If `ios/` and `android/` directories do not exist, they are generated (Continuous Native Generation). Never create or edit them by hand — configure native behavior in `app.json` and config plugins.
-- Expo Go only includes its bundled native modules. After adding a library with native code, the app needs a development build: `npx expo run:ios|android` locally, or `eas build --profile development`.
-- Prefer recommended Expo modules over third-party libraries, and check your available skills before adding dependencies. Docs: https://docs.expo.dev/versions/latest/index.md
+Before handoff, run native lint/typecheck/tests plus root check:runtime and test:expansion. Install and launch the actual standalone APK with no Metro server, inspect crash logs, exercise every route and primary interactions. A successful Gradle build alone does not prove runtime correctness. Do not claim 100% pixel identity without evidence.

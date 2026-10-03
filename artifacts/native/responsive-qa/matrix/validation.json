@@ -1,0 +1,2604 @@
+{
+  "apkSha256": "09301daa043fde27e23c96bfcf3c7c72abd8d05843c140a274d8506855dc874e",
+  "device": "emulator-5660",
+  "api": 36,
+  "iosRuntimeTested": false,
+  "physicalPhoneTested": false,
+  "configs": [
+    {
+      "name": "compact-320",
+      "width": 320,
+      "height": 568,
+      "density": 160,
+      "font": 1,
+      "navigation": "gestural",
+      "physicalPixels": [
+        320,
+        568
+      ],
+      "screens": [
+        {
+          "route": "onboarding",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "home",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "scan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "log-meal",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "weekly-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "profile",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "sign-in",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "create-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "verify-email",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "recover-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reset-password",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "analysis-result",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "market-reference",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "capture-retry",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "food-selector",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "nutrition-details",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "glucose-overview",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "add-reading",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reading-detail",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "health-connections",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-generation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "activity-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-rationale",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-questionnaire",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-guidance",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "assistant",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "privacy-data-rights",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reminders",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-output",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-status",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "personal-history",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-queue",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-review",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "model-release",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "operations-audit",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-triage",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "flow-directory",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "portion-confirmation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            320,
+            544
+          ],
+          "scrollGestureExercised": true
+        }
+      ]
+    },
+    {
+      "name": "short-360-large-text",
+      "width": 360,
+      "height": 640,
+      "density": 160,
+      "font": 1.3,
+      "navigation": "threebutton",
+      "physicalPixels": [
+        360,
+        640
+      ],
+      "screens": [
+        {
+          "route": "onboarding",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "home",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "scan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "log-meal",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "weekly-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "profile",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "sign-in",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "create-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "verify-email",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "recover-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reset-password",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "analysis-result",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "market-reference",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "capture-retry",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "food-selector",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "nutrition-details",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "glucose-overview",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "add-reading",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reading-detail",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "health-connections",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-generation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "activity-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-rationale",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-questionnaire",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-guidance",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "assistant",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "privacy-data-rights",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reminders",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-output",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-status",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "personal-history",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-queue",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-review",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "model-release",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "operations-audit",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-triage",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "flow-directory",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "portion-confirmation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            360,
+            592
+          ],
+          "scrollGestureExercised": true
+        }
+      ]
+    },
+    {
+      "name": "reference-393",
+      "width": 393,
+      "height": 852,
+      "density": 160,
+      "font": 1,
+      "navigation": "gestural",
+      "physicalPixels": [
+        393,
+        852
+      ],
+      "screens": [
+        {
+          "route": "onboarding",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "home",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "scan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "log-meal",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "weekly-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "profile",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "sign-in",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "create-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "verify-email",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "recover-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reset-password",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "analysis-result",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "market-reference",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "capture-retry",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "food-selector",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "nutrition-details",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "glucose-overview",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "add-reading",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reading-detail",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "health-connections",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-generation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "activity-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-rationale",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-questionnaire",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-guidance",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "assistant",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "privacy-data-rights",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reminders",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-output",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-status",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "personal-history",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-queue",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-review",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "model-release",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "operations-audit",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-triage",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "flow-directory",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "portion-confirmation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            393,
+            828
+          ],
+          "scrollGestureExercised": true
+        }
+      ]
+    },
+    {
+      "name": "phone-390",
+      "width": 390,
+      "height": 844,
+      "density": 160,
+      "font": 1,
+      "navigation": "gestural",
+      "physicalPixels": [
+        390,
+        844
+      ],
+      "screens": [
+        {
+          "route": "onboarding",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "home",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "scan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "log-meal",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "weekly-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "profile",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "sign-in",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "create-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "verify-email",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "recover-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reset-password",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "analysis-result",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "market-reference",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "capture-retry",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "food-selector",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "nutrition-details",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "glucose-overview",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "add-reading",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reading-detail",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "health-connections",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-generation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "activity-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-rationale",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-questionnaire",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-guidance",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "assistant",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "privacy-data-rights",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reminders",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-output",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-status",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "personal-history",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-queue",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-review",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "model-release",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "operations-audit",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-triage",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "flow-directory",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "portion-confirmation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            52,
+            390,
+            820
+          ],
+          "scrollGestureExercised": true
+        }
+      ]
+    },
+    {
+      "name": "dense-412",
+      "width": 412,
+      "height": 914,
+      "density": 240,
+      "font": 1,
+      "navigation": "threebutton",
+      "physicalPixels": [
+        618,
+        1371
+      ],
+      "screens": [
+        {
+          "route": "onboarding",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "home",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "scan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "log-meal",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "weekly-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "profile",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "sign-in",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "create-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "verify-email",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "recover-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reset-password",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "analysis-result",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "market-reference",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "capture-retry",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "food-selector",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "nutrition-details",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "glucose-overview",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "add-reading",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reading-detail",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "health-connections",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-generation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "activity-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-rationale",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-questionnaire",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-guidance",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "assistant",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "privacy-data-rights",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reminders",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-output",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-status",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "personal-history",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-queue",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-review",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "model-release",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "operations-audit",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-triage",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "flow-directory",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "portion-confirmation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            78,
+            618,
+            1299
+          ],
+          "scrollGestureExercised": true
+        }
+      ]
+    },
+    {
+      "name": "large-430-large-text",
+      "width": 430,
+      "height": 932,
+      "density": 320,
+      "font": 1.5,
+      "navigation": "gestural",
+      "physicalPixels": [
+        860,
+        1864
+      ],
+      "screens": [
+        {
+          "route": "onboarding",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "home",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "scan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "log-meal",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "weekly-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "profile",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "sign-in",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "create-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "verify-email",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "recover-account",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reset-password",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "analysis-result",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "market-reference",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "capture-retry",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "food-selector",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "nutrition-details",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "glucose-overview",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "add-reading",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reading-detail",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "health-connections",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-generation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "activity-plan",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "plan-rationale",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-questionnaire",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "foot-guidance",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "assistant",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "privacy-data-rights",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "reminders",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-output",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-status",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "personal-history",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-queue",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "catalog-review",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "model-release",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "operations-audit",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "report-triage",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "flow-directory",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        },
+        {
+          "route": "portion-confirmation",
+          "status": "passed",
+          "safeViewportBounds": [
+            0,
+            104,
+            860,
+            1816
+          ],
+          "scrollGestureExercised": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "status": "passed",
+  "crashFree": true
+}

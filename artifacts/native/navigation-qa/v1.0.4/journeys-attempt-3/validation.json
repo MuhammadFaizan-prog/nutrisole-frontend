@@ -1,0 +1,43 @@
+{
+  "serial": "emulator-5582",
+  "apkSha256": "17932b6688fe02bd1fa14a7b1666c7f2d493f06d99bfd0b69bfe7e7a55b33fc7",
+  "routes": [
+    "onboarding",
+    "create-account",
+    "verify-email",
+    "sign-in",
+    "home",
+    "log-meal",
+    "nutrition-details",
+    "personal-history",
+    "flow-directory",
+    "scan",
+    "analysis-result",
+    "market-reference",
+    "food-selector",
+    "portion-confirmation",
+    "capture-retry"
+  ],
+  "checks": [
+    "signup, verification and sign-in land on Home",
+    "Apple portion survives the nutrition child screen",
+    "saved recent food enters history with its measured portion",
+    "reopened draft keeps its food and 500 g quantity",
+    "consuming a draft removes the unconsumed duplicate",
+    "retry sample resets a previous Banana correction"
+  ],
+  "errors": [
+    "Expected home"
+  ],
+  "navigationMethod": "physical taps and Android Back; no route deep links",
+  "iosRuntimeTested": false,
+  "physicalPhoneTested": false,
+  "installedApkSha256": "17932b6688fe02bd1fa14a7b1666c7f2d493f06d99bfd0b69bfe7e7a55b33fc7",
+  "configuration": {
+    "size": "Physical size: 432x960\r\nOverride size: 393x852",
+    "density": "Physical density: 160",
+    "fontScale": "1.0",
+    "api": "34"
+  },
+  "appCrashDetected": false
+}

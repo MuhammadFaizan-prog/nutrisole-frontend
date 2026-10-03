@@ -1,0 +1,5 @@
+<resources><style name="LaunchTheme" parent="AppTheme">
+  <item name="android:windowSplashScreenBackground">@color/brand_cream</item>
+  <item name="android:windowSplashScreenAnimatedIcon">@drawable/brand_leaf</item>
+  <item name="android:windowSplashScreenIconBackgroundColor">@color/brand_cream</item>
+</style></resources>
