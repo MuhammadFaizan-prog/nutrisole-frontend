@@ -1,0 +1,34 @@
+{
+ "models": [
+  "G3 control (CHAMPION; historical eval files)"
+ ],
+ "strict": {},
+ "gauntlet": [
+  {
+   "run": "G4 G3champ_msc0 r1 (historical)",
+   "tracker": "iou",
+   "det_seg": 0.6667,
+   "det_frame": 0.4965,
+   "flick_static": 0.0,
+   "id_switches": null,
+   "ids_per_seg": null,
+   "ttfc_p50": 466.6670000000013,
+   "ttfc_p90": 759.9997999999993,
+   "q_acc": 0.9286,
+   "rot_rec": 0.875,
+   "grade_flick": 0.0,
+   "fa_g1neg": 1.25,
+   "fa_negtest": 0.0,
+   "full_p50_ms": 47.210666999944806
+  }
+ ],
+ "dev": [
+  {
+   "run": "IouTracker (G6 dev_iou)",
+   "det_seg": 0.5417,
+   "flick_static": 5.0,
+   "id_switches": 68,
+   "ttfc_p90": 733.3329999999995
+  }
+ ]
+}
