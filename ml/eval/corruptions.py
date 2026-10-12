@@ -47,3 +47,15 @@ def low_light_hard(im):
 
 
 CORRUPTIONS["low_light_hard"] = low_light_hard
+
+
+def tube_light_hard(im):
+    """G3 held-out variant, OUTSIDE the G3 tube-light training family: strong cool-white cast
+    (B 1.15, G 1.25, R 0.68), -0.5 EV, and 100 Hz flicker banding (horizontal sinusoid, 12% depth)."""
+    f = im.astype(np.float32) * np.array([1.15, 1.25, 0.68], np.float32) * 0.72
+    rows = np.arange(im.shape[0], dtype=np.float32)
+    f *= (1.0 + 0.12 * np.sin(rows / max(1.0, im.shape[0] / 9.0) * 2 * np.pi))[:, None, None]
+    return np.clip(f, 0, 255).astype(np.uint8)
+
+
+CORRUPTIONS["tube_light_hard"] = tube_light_hard
