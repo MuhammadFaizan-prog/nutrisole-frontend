@@ -1,0 +1,4994 @@
+{
+ "summary": {
+  "classifier_only": {
+   "n": 270,
+   "graded": 270,
+   "ungradable": 0,
+   "proxy_acc": 0.9889,
+   "rotten_to_C_or_Reject": 0.9916,
+   "fresh_to_A_or_B": 0.9868
+  },
+  "measurements_only": {
+   "n": 270,
+   "graded": 269,
+   "ungradable": 1,
+   "proxy_acc": 0.684,
+   "rotten_to_C_or_Reject": 0.3644,
+   "fresh_to_A_or_B": 0.9338
+  },
+  "classifier_plus_rules": {
+   "n": 270,
+   "graded": 269,
+   "ungradable": 1,
+   "proxy_acc": 0.9851,
+   "rotten_to_C_or_Reject": 0.9915,
+   "fresh_to_A_or_B": 0.9801
+  },
+  "grade_distribution_full": {
+   "fresh->A": 85,
+   "fresh->B": 63,
+   "fresh->C": 1,
+   "fresh->Reject": 2,
+   "rotten->A": 1,
+   "rotten->Reject": 117,
+   "rotten->ungradable": 1
+  },
+  "grade_distribution_measurements_only": {
+   "fresh->B": 141,
+   "fresh->C": 9,
+   "fresh->Reject": 1,
+   "rotten->B": 75,
+   "rotten->C": 18,
+   "rotten->Reject": 25,
+   "rotten->ungradable": 1
+  },
+  "defect_pct_by_label": {
+   "fresh": {
+    "median": 0.21,
+    "p90": 6.73
+   },
+   "rotten": {
+    "median": 6.12,
+    "p90": 45.504000000000005
+   }
+  },
+  "disclaimer": "WEAK PROXY: fresh/rotten dataset labels, not human grades. No kappa possible yet.",
+  "examples_wrong_full": [
+   {
+    "file": "banana__banana_0_00390.jpg",
+    "label": "fresh",
+    "grade": "Reject",
+    "reasons": [
+     "Visible rot likely (92%)"
+    ]
+   },
+   {
+    "file": "citrus__orange_0_01096.jpg",
+    "label": "fresh",
+    "grade": "C",
+    "reasons": [
+     "Dark marks ~12% of visible surface"
+    ]
+   },
+   {
+    "file": "citrus__orange_0_01190.jpg",
+    "label": "fresh",
+    "grade": "Reject",
+    "reasons": [
+     "Visible rot likely (70%)"
+    ]
+   },
+   {
+    "file": "pomegranate__pomegranate_1_02852.jpg",
+    "label": "rotten",
+    "grade": "A",
+    "reasons": [
+     "Looks fresh (78%), dark marks ~2%"
+    ]
+   }
+  ]
+ },
+ "rows": [
+  {
+   "file": "apple__apple_0_00022.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9998069516075689,
+    "rotten": 0.00019304839243108247
+   },
+   "defect": 0.0,
+   "shape": 0.992,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00029.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999082208182148,
+    "rotten": 9.177918178513126e-05
+   },
+   "defect": 0.0,
+   "shape": 0.9911,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00039.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9982860290035779,
+    "rotten": 0.0017139709964221395
+   },
+   "defect": 0.0,
+   "shape": 0.9946,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00040.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9998657606745507,
+    "rotten": 0.0001342393254494248
+   },
+   "defect": 0.0,
+   "shape": 0.9925,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00057.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9992917745724404,
+    "rotten": 0.0007082254275595408
+   },
+   "defect": 0.0,
+   "shape": 0.903,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00083.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999974981970097,
+    "rotten": 2.5018029902356526e-06
+   },
+   "defect": 0.0,
+   "shape": 0.9442,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00086.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999764892237577,
+    "rotten": 2.3510776242252788e-05
+   },
+   "defect": 0.84,
+   "shape": 0.9913,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~1%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00091.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999130776149417,
+    "rotten": 8.692238505819065e-05
+   },
+   "defect": 0.0,
+   "shape": 0.943,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00116.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9998219944447654,
+    "rotten": 0.00017800555523457185
+   },
+   "defect": 0.0,
+   "shape": 0.9889,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00118.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9998901847411883,
+    "rotten": 0.00010981525881162451
+   },
+   "defect": 0.0,
+   "shape": 0.8404,
+   "band": "red",
+   "seg": "otsu",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.84)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00119.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999270181731897,
+    "rotten": 7.298182681029094e-05
+   },
+   "defect": 0.06,
+   "shape": 0.8174,
+   "band": "red",
+   "seg": "otsu",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.82)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00120.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999627020657187,
+    "rotten": 3.729793428145249e-05
+   },
+   "defect": 0.0,
+   "shape": 0.81,
+   "band": "red",
+   "seg": "otsu",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.81)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00121.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9997504906210408,
+    "rotten": 0.0002495093789591913
+   },
+   "defect": 0.06,
+   "shape": 0.6271,
+   "band": "red",
+   "seg": "otsu",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.63)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00130.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999971699673162,
+    "rotten": 2.830032683895351e-06
+   },
+   "defect": 0.09,
+   "shape": 0.8431,
+   "band": "red",
+   "seg": "otsu",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.84)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00151.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999842056361082,
+    "rotten": 1.579436389181377e-05
+   },
+   "defect": 16.94,
+   "shape": 0.681,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~17% of visible surface",
+    "Irregular shape (score 0.68)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "apple__apple_0_00152.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.99971631163316,
+    "rotten": 0.00028368836684004216
+   },
+   "defect": 53.01,
+   "shape": 0.4055,
+   "band": "red",
+   "seg": "otsu",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~53% of visible surface",
+    "Irregular shape (score 0.41)"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "apple__apple_0_00153.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9997439591111462,
+    "rotten": 0.00025604088885385095
+   },
+   "defect": 0.0,
+   "shape": 0.8861,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00166.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999614488479641,
+    "rotten": 3.855115203580688e-05
+   },
+   "defect": 0.0,
+   "shape": 0.9487,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Colour outside the usual ripe range"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00176.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9969245920037765,
+    "rotten": 0.003075407996223396
+   },
+   "defect": 0.18,
+   "shape": 0.8624,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00181.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9997480602944596,
+    "rotten": 0.00025193970554032014
+   },
+   "defect": 0.0,
+   "shape": 0.8311,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.83)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00186.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9997258583607174,
+    "rotten": 0.00027414163928269974
+   },
+   "defect": 0.5,
+   "shape": 0.9935,
+   "band": "green_yellow",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~1%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00191.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9998537871194277,
+    "rotten": 0.00014621288057218508
+   },
+   "defect": 0.0,
+   "shape": 0.9883,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00194.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999834967238219,
+    "rotten": 1.650327617801793e-05
+   },
+   "defect": 0.0,
+   "shape": 0.9877,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_0_00195.jpg",
+   "produce": "apple",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999059844417835,
+    "rotten": 9.401555821647588e-05
+   },
+   "defect": 0.25,
+   "shape": 0.991,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00204.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9995530066919467,
+    "rotten": 0.00044699330805333823
+   },
+   "defect": 5.85,
+   "shape": 0.9285,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~6% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00210.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9985747101471679,
+    "rotten": 0.0014252898528320987
+   },
+   "defect": 8.59,
+   "shape": 0.8408,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~9% of visible surface",
+    "Irregular shape (score 0.84)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00223.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999861989057389,
+    "rotten": 1.3801094261203075e-05
+   },
+   "defect": 0.73,
+   "shape": 0.9128,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~1%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00231.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999405031864615,
+    "rotten": 5.949681353852564e-05
+   },
+   "defect": 1.91,
+   "shape": 0.8481,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.85)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00257.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999958760602466,
+    "rotten": 4.123939753431707e-06
+   },
+   "defect": 1.21,
+   "shape": 0.8806,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~1%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00267.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9983356358828882,
+    "rotten": 0.0016643641171117337
+   },
+   "defect": 8.09,
+   "shape": 0.9314,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~8% of visible surface"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "banana__banana_0_00280.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999534450199881,
+    "rotten": 4.6554980011965725e-05
+   },
+   "defect": 2.04,
+   "shape": 0.8428,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~2% of visible surface",
+    "Irregular shape (score 0.84)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00281.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9975332512823988,
+    "rotten": 0.0024667487176011256
+   },
+   "defect": 4.34,
+   "shape": 0.9062,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~4% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00282.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9978908376022356,
+    "rotten": 0.0021091623977643834
+   },
+   "defect": 0.23,
+   "shape": 0.9006,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00295.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9998917440204623,
+    "rotten": 0.00010825597953771918
+   },
+   "defect": 3.41,
+   "shape": 0.8725,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~3% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00296.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999281642808621,
+    "rotten": 7.183571913803075e-05
+   },
+   "defect": 1.99,
+   "shape": 0.8216,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.82)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00327.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999996764448468,
+    "rotten": 3.2355515326220033e-07
+   },
+   "defect": 0.21,
+   "shape": 0.9346,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00329.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9969185206304488,
+    "rotten": 0.0030814793695512236
+   },
+   "defect": 20.79,
+   "shape": 0.9495,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~21% of visible surface"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "banana__banana_0_00330.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9991308373932154,
+    "rotten": 0.0008691626067845509
+   },
+   "defect": 19.81,
+   "shape": 0.9706,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~20% of visible surface"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "banana__banana_0_00335.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9815057064572761,
+    "rotten": 0.018494293542723802
+   },
+   "defect": 0.0,
+   "shape": 0.7922,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.79)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00347.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999834445117359,
+    "rotten": 1.6555488264102225e-05
+   },
+   "defect": 0.0,
+   "shape": 0.8854,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00349.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999381832747576,
+    "rotten": 6.181672524244633e-05
+   },
+   "defect": 0.0,
+   "shape": 0.8915,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00350.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999850752373547,
+    "rotten": 1.4924762645302358e-05
+   },
+   "defect": 1.85,
+   "shape": 0.9257,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~2%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00352.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9998610165223791,
+    "rotten": 0.00013898347762089395
+   },
+   "defect": 0.0,
+   "shape": 0.8282,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.83)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00353.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999728261803457,
+    "rotten": 2.717381965421845e-05
+   },
+   "defect": 0.0,
+   "shape": 0.8038,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.80)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00354.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999875550396911,
+    "rotten": 1.2444960309060771e-05
+   },
+   "defect": 0.0,
+   "shape": 0.8065,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.81)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00356.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999930470544707,
+    "rotten": 6.952945529395957e-06
+   },
+   "defect": 1.02,
+   "shape": 0.9089,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~1%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00359.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9996702131810294,
+    "rotten": 0.0003297868189705147
+   },
+   "defect": 0.24,
+   "shape": 0.9401,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00360.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999940026791345,
+    "rotten": 5.997320865435518e-06
+   },
+   "defect": 2.0,
+   "shape": 0.8009,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~2% of visible surface",
+    "Irregular shape (score 0.80)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00361.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999937744694436,
+    "rotten": 6.225530556412713e-06
+   },
+   "defect": 0.0,
+   "shape": 0.7744,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.77)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00362.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999984750793657,
+    "rotten": 1.5249206341866809e-06
+   },
+   "defect": 0.0,
+   "shape": 0.7629,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.76)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00372.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999125536006628,
+    "rotten": 8.744639933724933e-05
+   },
+   "defect": 1.21,
+   "shape": 0.954,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~1%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_0_00390.jpg",
+   "produce": "banana",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.07999679885556231,
+    "rotten": 0.9200032011444377
+   },
+   "defect": 0.52,
+   "shape": 0.8838,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (92%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01005.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9977899909277469,
+    "rotten": 0.002210009072253053
+   },
+   "defect": 0.0,
+   "shape": 0.9886,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01022.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.999443135592211,
+    "rotten": 0.0005568644077889989
+   },
+   "defect": 0.0,
+   "shape": 0.9914,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01027.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9975246140756691,
+    "rotten": 0.0024753859243308632
+   },
+   "defect": 0.42,
+   "shape": 0.9667,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01039.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9983460419643181,
+    "rotten": 0.0016539580356819627
+   },
+   "defect": 0.19,
+   "shape": 0.9912,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01040.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9831160763501362,
+    "rotten": 0.016883923649863738
+   },
+   "defect": 0.15,
+   "shape": 0.9907,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (98%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01042.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9983626332130705,
+    "rotten": 0.0016373667869294423
+   },
+   "defect": 3.14,
+   "shape": 0.9854,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~3% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01047.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9998326058199174,
+    "rotten": 0.00016739418008255904
+   },
+   "defect": 0.0,
+   "shape": 0.9842,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01055.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9979541492233738,
+    "rotten": 0.0020458507766261402
+   },
+   "defect": 0.0,
+   "shape": 0.9888,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01057.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9841771808992593,
+    "rotten": 0.015822819100740564
+   },
+   "defect": 0.0,
+   "shape": 0.9834,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (98%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01058.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9378016948824727,
+    "rotten": 0.06219830511752735
+   },
+   "defect": 0.0,
+   "shape": 0.9478,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (94%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01061.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9983124211314893,
+    "rotten": 0.0016875788685107734
+   },
+   "defect": 0.0,
+   "shape": 0.9683,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01064.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999678462902271,
+    "rotten": 3.215370977294447e-05
+   },
+   "defect": 0.0,
+   "shape": 0.9873,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01086.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999999087615276,
+    "rotten": 9.123847254184506e-08
+   },
+   "defect": 0.0,
+   "shape": 0.9031,
+   "band": "orange",
+   "seg": "otsu",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01087.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999999087615276,
+    "rotten": 9.123847254184506e-08
+   },
+   "defect": 0.0,
+   "shape": 0.8283,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.83)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01088.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.7254491564878589,
+    "rotten": 0.27455084351214104
+   },
+   "defect": 4.69,
+   "shape": 0.9088,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~5% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01090.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9695812170744993,
+    "rotten": 0.030418782925500588
+   },
+   "defect": 4.94,
+   "shape": 0.8261,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~5% of visible surface",
+    "Irregular shape (score 0.83)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01091.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9878638208456498,
+    "rotten": 0.012136179154350175
+   },
+   "defect": 9.03,
+   "shape": 0.833,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~9% of visible surface",
+    "Irregular shape (score 0.83)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01092.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9937884562093319,
+    "rotten": 0.006211543790668047
+   },
+   "defect": 3.13,
+   "shape": 0.8303,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~3% of visible surface",
+    "Irregular shape (score 0.83)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01093.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999880185813598,
+    "rotten": 1.1981418640329208e-05
+   },
+   "defect": 0.0,
+   "shape": 0.8901,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Colour outside the usual ripe range"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01095.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9866384279442858,
+    "rotten": 0.013361572055714168
+   },
+   "defect": 2.39,
+   "shape": 0.8707,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~2% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01096.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.8316988269043178,
+    "rotten": 0.16830117309568213
+   },
+   "defect": 11.82,
+   "shape": 0.8412,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "C",
+   "reasons": [
+    "Dark marks ~12% of visible surface"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "citrus__orange_0_01097.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9917486964498006,
+    "rotten": 0.008251303550199506
+   },
+   "defect": 4.43,
+   "shape": 0.8783,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~4% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01098.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9894668135570029,
+    "rotten": 0.010533186442997191
+   },
+   "defect": 2.76,
+   "shape": 0.828,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~3% of visible surface",
+    "Irregular shape (score 0.83)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01099.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9775752878653996,
+    "rotten": 0.02242471213460044
+   },
+   "defect": 2.45,
+   "shape": 0.8339,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~2% of visible surface",
+    "Irregular shape (score 0.83)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01101.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9930587025458155,
+    "rotten": 0.006941297454184481
+   },
+   "defect": 3.68,
+   "shape": 0.8757,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~4% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01102.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9919288644623548,
+    "rotten": 0.00807113553764508
+   },
+   "defect": 2.86,
+   "shape": 0.8335,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~3% of visible surface",
+    "Irregular shape (score 0.83)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01103.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9868353847779261,
+    "rotten": 0.013164615222073921
+   },
+   "defect": 5.95,
+   "shape": 0.862,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~6% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01104.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999945432594537,
+    "rotten": 5.4567405464148735e-06
+   },
+   "defect": 1.26,
+   "shape": 0.889,
+   "band": "orange",
+   "seg": "otsu",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~1%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01105.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999994269329993,
+    "rotten": 5.730670006802486e-07
+   },
+   "defect": 0.0,
+   "shape": 0.9187,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01106.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9979406560971211,
+    "rotten": 0.002059343902878736
+   },
+   "defect": 0.0,
+   "shape": 0.9197,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01107.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9991335190738669,
+    "rotten": 0.0008664809261330174
+   },
+   "defect": 0.0,
+   "shape": 0.9119,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01108.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9984455632464352,
+    "rotten": 0.0015544367535648069
+   },
+   "defect": 0.0,
+   "shape": 0.9918,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01109.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9654714691811581,
+    "rotten": 0.03452853081884193
+   },
+   "defect": 0.0,
+   "shape": 0.8748,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (97%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01110.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999983186757568,
+    "rotten": 1.6813242431915623e-06
+   },
+   "defect": 0.0,
+   "shape": 0.9249,
+   "band": "orange",
+   "seg": "otsu",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01113.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999998974934615,
+    "rotten": 1.0250653862014647e-07
+   },
+   "defect": 0.0,
+   "shape": 0.8673,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01115.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9982234565761666,
+    "rotten": 0.0017765434238334375
+   },
+   "defect": 0.0,
+   "shape": 0.9225,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01116.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9989934915643542,
+    "rotten": 0.0010065084356457098
+   },
+   "defect": 0.0,
+   "shape": 0.9346,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01117.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.99879489275728,
+    "rotten": 0.0012051072427200454
+   },
+   "defect": 0.0,
+   "shape": 0.9918,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01118.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9946558638980795,
+    "rotten": 0.005344136101920541
+   },
+   "defect": 0.0,
+   "shape": 0.8753,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (99%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01119.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9884013934937765,
+    "rotten": 0.011598606506223354
+   },
+   "defect": 0.0,
+   "shape": 0.8747,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (99%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01168.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999584827981074,
+    "rotten": 4.151720189248744e-05
+   },
+   "defect": 0.38,
+   "shape": 0.9892,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01172.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9180945806034062,
+    "rotten": 0.08190541939659382
+   },
+   "defect": 0.0,
+   "shape": 0.9848,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (92%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01173.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9686668653183707,
+    "rotten": 0.0313331346816293
+   },
+   "defect": 0.0,
+   "shape": 0.9853,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (97%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01174.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.871592739818011,
+    "rotten": 0.12840726018198897
+   },
+   "defect": 0.0,
+   "shape": 0.9884,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (87%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01182.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999859463300984,
+    "rotten": 1.4053669901532102e-05
+   },
+   "defect": 0.36,
+   "shape": 0.9913,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01188.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.7783990026278064,
+    "rotten": 0.2216009973721937
+   },
+   "defect": 0.0,
+   "shape": 0.9845,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (78%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01190.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.2983038757329538,
+    "rotten": 0.7016961242670462
+   },
+   "defect": 0.0,
+   "shape": 0.9737,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (70%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01191.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9698048033395194,
+    "rotten": 0.030195196660480754
+   },
+   "defect": 0.0,
+   "shape": 0.9856,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (97%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01192.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.8782052004860257,
+    "rotten": 0.12179479951397433
+   },
+   "defect": 0.18,
+   "shape": 0.9796,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (88%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01193.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9938686246753919,
+    "rotten": 0.006131375324607965
+   },
+   "defect": 0.18,
+   "shape": 0.9879,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (99%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01194.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.978083059607252,
+    "rotten": 0.021916940392747976
+   },
+   "defect": 0.23,
+   "shape": 0.9865,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (98%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01198.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.99649648664515,
+    "rotten": 0.0035035133548499352
+   },
+   "defect": 0.0,
+   "shape": 0.9862,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_0_01199.jpg",
+   "produce": "citrus",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9966265824026735,
+    "rotten": 0.0033734175973265243
+   },
+   "defect": 4.16,
+   "shape": 0.9488,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~4% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00607.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9982643662415683,
+    "rotten": 0.0017356337584316125
+   },
+   "defect": 2.57,
+   "shape": 0.9827,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~3% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00608.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9989010798262064,
+    "rotten": 0.0010989201737937257
+   },
+   "defect": 1.2,
+   "shape": 0.9748,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~1%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00628.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9962429559696291,
+    "rotten": 0.0037570440303709134
+   },
+   "defect": 1.86,
+   "shape": 0.9891,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~2%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00693.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999983122651853,
+    "rotten": 1.6877348146895573e-06
+   },
+   "defect": 16.99,
+   "shape": 0.838,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~17% of visible surface",
+    "Irregular shape (score 0.84)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "guava__guava_0_00700.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999654628587584,
+    "rotten": 3.453714124153334e-05
+   },
+   "defect": 7.01,
+   "shape": 0.9368,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~7% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00701.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999992796436707,
+    "rotten": 7.203563292777863e-07
+   },
+   "defect": 0.13,
+   "shape": 0.8476,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.85)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00709.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999678869917523,
+    "rotten": 3.2113008247738215e-05
+   },
+   "defect": 10.83,
+   "shape": 0.9154,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~11% of visible surface"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "guava__guava_0_00713.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999962685972704,
+    "rotten": 3.7314027295068696e-06
+   },
+   "defect": 5.1,
+   "shape": 0.921,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~5% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00719.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999994016056452,
+    "rotten": 5.983943548332226e-07
+   },
+   "defect": 8.79,
+   "shape": 0.9634,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~9% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00728.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999967916105779,
+    "rotten": 3.208389422088147e-06
+   },
+   "defect": 9.69,
+   "shape": 0.8378,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~10% of visible surface",
+    "Irregular shape (score 0.84)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00732.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999971392787793,
+    "rotten": 2.8607212207279497e-06
+   },
+   "defect": 4.65,
+   "shape": 0.9263,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~5% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00741.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9995469487876137,
+    "rotten": 0.000453051212386248
+   },
+   "defect": 5.66,
+   "shape": 0.7886,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~6% of visible surface",
+    "Irregular shape (score 0.79)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00746.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9993138103855322,
+    "rotten": 0.0006861896144678932
+   },
+   "defect": 1.08,
+   "shape": 0.9798,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~1%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00749.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9998622718768398,
+    "rotten": 0.00013772812316006919
+   },
+   "defect": 5.8,
+   "shape": 0.7941,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~6% of visible surface",
+    "Irregular shape (score 0.79)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00750.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999356865455513,
+    "rotten": 6.431345444863419e-05
+   },
+   "defect": 1.88,
+   "shape": 0.978,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~2%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_0_00758.jpg",
+   "produce": "guava",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9987828577579606,
+    "rotten": 0.0012171422420392982
+   },
+   "defect": 4.28,
+   "shape": 0.9907,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~4% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01200.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.6466632396770675,
+    "rotten": 0.3533367603229325
+   },
+   "defect": 0.0,
+   "shape": 0.9331,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Freshness confidence only 65%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01205.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9998941399901319,
+    "rotten": 0.00010586000986808883
+   },
+   "defect": 0.29,
+   "shape": 0.9546,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01207.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9879826962498215,
+    "rotten": 0.012017303750178532
+   },
+   "defect": 0.0,
+   "shape": 0.9613,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (99%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01216.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9995838356418029,
+    "rotten": 0.0004161643581970132
+   },
+   "defect": 0.0,
+   "shape": 0.9765,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01219.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9989153367627072,
+    "rotten": 0.0010846632372929859
+   },
+   "defect": 0.0,
+   "shape": 0.9735,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01220.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9984691682295787,
+    "rotten": 0.001530831770421316
+   },
+   "defect": 4.62,
+   "shape": 0.9749,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~5% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01221.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9991890078818738,
+    "rotten": 0.0008109921181260741
+   },
+   "defect": 10.87,
+   "shape": 0.9615,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~11% of visible surface"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01222.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9985556017626009,
+    "rotten": 0.0014443982373989889
+   },
+   "defect": 6.01,
+   "shape": 0.9587,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~6% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01224.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9946452337356537,
+    "rotten": 0.005354766264346382
+   },
+   "defect": 1.86,
+   "shape": 0.9711,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (99%), dark marks ~2%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01231.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999951873388108,
+    "rotten": 4.812661189306164e-06
+   },
+   "defect": 0.21,
+   "shape": 0.9552,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01232.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999172131433872,
+    "rotten": 8.278685661276521e-05
+   },
+   "defect": 2.78,
+   "shape": 0.9524,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~3% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01244.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9620760149250324,
+    "rotten": 0.03792398507496759
+   },
+   "defect": 0.0,
+   "shape": 0.9373,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (96%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01252.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999985174147037,
+    "rotten": 1.4825852963574738e-06
+   },
+   "defect": 0.53,
+   "shape": 0.9404,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~1%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01266.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9979248437587416,
+    "rotten": 0.0020751562412584337
+   },
+   "defect": 15.38,
+   "shape": 0.8869,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~15% of visible surface"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01268.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999644049056127,
+    "rotten": 3.5595094387276905e-05
+   },
+   "defect": 6.73,
+   "shape": 0.8582,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~7% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01269.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.999982614992152,
+    "rotten": 1.7385007848117163e-05
+   },
+   "defect": 3.01,
+   "shape": 0.8139,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~3% of visible surface",
+    "Irregular shape (score 0.81)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01291.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9996467599913668,
+    "rotten": 0.00035324000863334686
+   },
+   "defect": 1.76,
+   "shape": 0.8076,
+   "band": "red",
+   "seg": "otsu",
+   "grade_full": "B",
+   "reasons": [
+    "Irregular shape (score 0.81)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01309.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.951407712411334,
+    "rotten": 0.04859228758866598
+   },
+   "defect": 0.0,
+   "shape": 0.9815,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (95%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01312.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9941117746416227,
+    "rotten": 0.005888225358377413
+   },
+   "defect": 0.15,
+   "shape": 0.9633,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (99%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01343.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.999938443961775,
+    "rotten": 6.155603822495555e-05
+   },
+   "defect": 1.55,
+   "shape": 0.9729,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~2%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01347.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9995844784296074,
+    "rotten": 0.0004155215703925975
+   },
+   "defect": 0.0,
+   "shape": 0.9672,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01349.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9993941193925278,
+    "rotten": 0.0006058806074722146
+   },
+   "defect": 0.33,
+   "shape": 0.9782,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01350.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.996611406534764,
+    "rotten": 0.0033885934652360485
+   },
+   "defect": 0.13,
+   "shape": 0.9664,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01367.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9996837431362569,
+    "rotten": 0.0003162568637430916
+   },
+   "defect": 0.0,
+   "shape": 0.9425,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01379.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9906010355110945,
+    "rotten": 0.009398964488905514
+   },
+   "defect": 0.96,
+   "shape": 0.9422,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (99%), dark marks ~1%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01391.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9999953227811171,
+    "rotten": 4.677218882891189e-06
+   },
+   "defect": 1.65,
+   "shape": 0.9903,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~2%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01393.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.997674716431062,
+    "rotten": 0.002325283568938095
+   },
+   "defect": 0.08,
+   "shape": 0.979,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01394.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9985233962584292,
+    "rotten": 0.0014766037415708353
+   },
+   "defect": 2.28,
+   "shape": 0.9826,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "B",
+   "reasons": [
+    "Small dark marks ~2% of visible surface"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01395.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9994462313928354,
+    "rotten": 0.0005537686071645559
+   },
+   "defect": 0.13,
+   "shape": 0.9644,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_0_01399.jpg",
+   "produce": "pomegranate",
+   "label": "fresh",
+   "probs": {
+    "fresh": 0.9997452899411462,
+    "rotten": 0.00025471005885386574
+   },
+   "defect": 0.0,
+   "shape": 0.9668,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (100%), dark marks ~0%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01630.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 4.62,
+   "shape": 0.9159,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01656.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0011355217646924077,
+    "rotten": 0.9988644782353077
+   },
+   "defect": 0.0,
+   "shape": 0.9862,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01667.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 7.777231160935769e-05,
+    "rotten": 0.9999222276883906
+   },
+   "defect": 1.33,
+   "shape": 0.9843,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01678.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.027566463626126747,
+    "rotten": 0.9724335363738732
+   },
+   "defect": 9.54,
+   "shape": 0.9922,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (97%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01685.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 7.6,
+   "shape": 0.9818,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01689.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.006345653345608396,
+    "rotten": 0.9936543466543917
+   },
+   "defect": 7.85,
+   "shape": 0.9858,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (99%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01714.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0008763879062574672,
+    "rotten": 0.9991236120937426
+   },
+   "defect": 6.7,
+   "shape": 0.9815,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01717.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 2.691765426435897e-05,
+    "rotten": 0.9999730823457357
+   },
+   "defect": 0.72,
+   "shape": 0.9859,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01736.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.014805333350246377,
+    "rotten": 0.9851946666497535
+   },
+   "defect": 0.3,
+   "shape": 0.991,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (99%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01741.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 17.14,
+   "shape": 0.9901,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "apple__apple_1_01777.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.01134839397299069,
+    "rotten": 0.9886516060270094
+   },
+   "defect": 0.99,
+   "shape": 0.9842,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (99%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01779.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.002128251147293762,
+    "rotten": 0.9978717488527064
+   },
+   "defect": 0.0,
+   "shape": 0.9825,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "apple__apple_1_01780.jpg",
+   "produce": "apple",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.00863580918079074,
+    "rotten": 0.9913641908192092
+   },
+   "defect": 0.0,
+   "shape": 0.9917,
+   "band": "green_yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (99%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_1_01806.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 33.22,
+   "shape": 0.8378,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~33% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01809.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 2.042648516672104e-05,
+    "rotten": 0.9999795735148334
+   },
+   "defect": 22.84,
+   "shape": 0.8333,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "banana__banana_1_01810.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.000296538553213706,
+    "rotten": 0.9997034614467863
+   },
+   "defect": 12.47,
+   "shape": 0.8438,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "banana__banana_1_01811.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 2.6897992684976195e-05,
+    "rotten": 0.999973102007315
+   },
+   "defect": 10.72,
+   "shape": 0.8235,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "banana__banana_1_01814.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 6.49435369884399e-07,
+    "rotten": 0.9999993505646302
+   },
+   "defect": 10.92,
+   "shape": 0.8349,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "banana__banana_1_01816.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 54.62,
+   "shape": 0.9044,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~55% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01823.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 2.808335943127925e-06,
+    "rotten": 0.9999971916640569
+   },
+   "defect": 32.16,
+   "shape": 0.8983,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~32% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01828.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 3.2626436844297407e-07,
+    "rotten": 0.9999996737356315
+   },
+   "defect": 78.55,
+   "shape": 0.8334,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~79% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01831.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 81.91,
+   "shape": 0.8344,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~82% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01839.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 5.283939491788991e-06,
+    "rotten": 0.999994716060508
+   },
+   "defect": 26.63,
+   "shape": 0.8267,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~27% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01843.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 3.1580758741655157e-05,
+    "rotten": 0.9999684192412585
+   },
+   "defect": 25.45,
+   "shape": 0.8868,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~25% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01845.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.00105768398959225,
+    "rotten": 0.9989423160104077
+   },
+   "defect": 9.27,
+   "shape": 0.9109,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_1_01913.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0027238845869842422,
+    "rotten": 0.9972761154130159
+   },
+   "defect": 1.18,
+   "shape": 0.8607,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "banana__banana_1_01928.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 7.554452606932361e-06,
+    "rotten": 0.9999924455473931
+   },
+   "defect": 29.01,
+   "shape": 0.8764,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~29% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01929.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 1.7289901387738316e-06,
+    "rotten": 0.9999982710098612
+   },
+   "defect": 22.76,
+   "shape": 0.8654,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "banana__banana_1_01930.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 21.99,
+   "shape": 0.881,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "banana__banana_1_01938.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 4.956862943521856e-05,
+    "rotten": 0.9999504313705648
+   },
+   "defect": 11.32,
+   "shape": 0.8006,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "banana__banana_1_01939.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 3.978462038689179e-06,
+    "rotten": 0.9999960215379613
+   },
+   "defect": 40.21,
+   "shape": 0.8032,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~40% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01951.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.004017207935069127,
+    "rotten": 0.9959827920649308
+   },
+   "defect": 32.75,
+   "shape": 0.8792,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~33% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01953.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.04054007828121496,
+    "rotten": 0.9594599217187849
+   },
+   "defect": 51.42,
+   "shape": 0.8745,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (96%)",
+    "Dark marks ~51% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01954.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 33.65,
+   "shape": 0.8096,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~34% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01957.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 49.78,
+   "shape": 0.7463,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~50% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01958.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 49.1,
+   "shape": 0.8092,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~49% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01959.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 72.24,
+   "shape": 0.793,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~72% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01962.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 65.31,
+   "shape": 0.8685,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~65% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01973.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 50.9,
+   "shape": 0.8288,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~51% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01986.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 44.91,
+   "shape": 0.7986,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~45% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01990.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 91.42,
+   "shape": 0.9039,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~91% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01992.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 89.68,
+   "shape": 0.8719,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~90% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "banana__banana_1_01997.jpg",
+   "produce": "banana",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 45.42,
+   "shape": 0.9736,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~45% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "citrus__orange_1_02640.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 0.17,
+   "shape": 0.9847,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02644.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 3.9050979507881116e-05,
+    "rotten": 0.9999609490204922
+   },
+   "defect": 0.24,
+   "shape": 0.9539,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02658.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 1.0291622063927e-06,
+    "rotten": 0.9999989708377937
+   },
+   "defect": 0.0,
+   "shape": 0.9338,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02683.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 2.67624811823807e-06,
+    "rotten": 0.9999973237518818
+   },
+   "defect": 0.29,
+   "shape": 0.9875,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02686.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0002535612368177918,
+    "rotten": 0.9997464387631823
+   },
+   "defect": 6.35,
+   "shape": 0.9733,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02687.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.00032951948132085314,
+    "rotten": 0.9996704805186791
+   },
+   "defect": 7.36,
+   "shape": 0.9761,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02692.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 5.620721174253748e-06,
+    "rotten": 0.9999943792788257
+   },
+   "defect": 3.68,
+   "shape": 0.965,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02694.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.00022995590036395958,
+    "rotten": 0.999770044099636
+   },
+   "defect": 4.15,
+   "shape": 0.9718,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02695.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.00017527788784889965,
+    "rotten": 0.9998247221121511
+   },
+   "defect": 0.0,
+   "shape": 0.9598,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02701.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 5.347561502100854e-05,
+    "rotten": 0.9999465243849789
+   },
+   "defect": 4.26,
+   "shape": 0.9579,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02704.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 7.079242661031874e-06,
+    "rotten": 0.9999929207573389
+   },
+   "defect": 4.68,
+   "shape": 0.9773,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02705.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 1.3285119892720468e-07,
+    "rotten": 0.9999998671488012
+   },
+   "defect": 0.33,
+   "shape": 0.9702,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02707.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 4.964539194833883e-07,
+    "rotten": 0.9999995035460805
+   },
+   "defect": 0.31,
+   "shape": 0.9818,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02713.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 1.256654091971841e-06,
+    "rotten": 0.9999987433459081
+   },
+   "defect": 1.69,
+   "shape": 0.9759,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02715.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.009949578203364902,
+    "rotten": 0.990050421796635
+   },
+   "defect": 0.0,
+   "shape": 0.9889,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (99%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02719.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.004096917084129861,
+    "rotten": 0.9959030829158702
+   },
+   "defect": 0.0,
+   "shape": 0.9904,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02732.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.028266343660762673,
+    "rotten": 0.9717336563392373
+   },
+   "defect": 0.0,
+   "shape": 0.9832,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (97%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02742.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.19389316568905443,
+    "rotten": 0.8061068343109457
+   },
+   "defect": 0.0,
+   "shape": 0.9923,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "ungradable",
+   "reasons": [
+    "Image is blurry: hold the phone steady"
+   ],
+   "grade_meas": "ungradable"
+  },
+  {
+   "file": "citrus__orange_1_02756.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 1.3446128822056054e-07,
+    "rotten": 0.9999998655387118
+   },
+   "defect": 0.0,
+   "shape": 0.979,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02759.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.001607021270521085,
+    "rotten": 0.998392978729479
+   },
+   "defect": 0.33,
+   "shape": 0.9626,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02761.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.001357859256934385,
+    "rotten": 0.9986421407430655
+   },
+   "defect": 0.0,
+   "shape": 0.8901,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02764.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 1.98,
+   "shape": 0.9777,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02783.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.005857054980958227,
+    "rotten": 0.9941429450190418
+   },
+   "defect": 1.11,
+   "shape": 0.9736,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (99%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02788.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.15345151699372997,
+    "rotten": 0.8465484830062701
+   },
+   "defect": 0.0,
+   "shape": 0.9649,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (85%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02789.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 6.363645719135629e-05,
+    "rotten": 0.9999363635428087
+   },
+   "defect": 0.0,
+   "shape": 0.9823,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02793.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.018746378911132355,
+    "rotten": 0.9812536210888676
+   },
+   "defect": 6.99,
+   "shape": 0.9539,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (98%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02797.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.00013448134950765927,
+    "rotten": 0.9998655186504923
+   },
+   "defect": 1.71,
+   "shape": 0.9677,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02798.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.06234327900897187,
+    "rotten": 0.9376567209910281
+   },
+   "defect": 0.0,
+   "shape": 0.9842,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (94%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "citrus__orange_1_02799.jpg",
+   "produce": "citrus",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.04190755514139079,
+    "rotten": 0.9580924448586091
+   },
+   "defect": 0.0,
+   "shape": 0.9917,
+   "band": "orange",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (96%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02206.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 20.67,
+   "shape": 0.9861,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "guava__guava_1_02223.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0006065714108152526,
+    "rotten": 0.9993934285891848
+   },
+   "defect": 7.84,
+   "shape": 0.9817,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02225.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 45.84,
+   "shape": 0.9774,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~46% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "guava__guava_1_02227.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 0.92,
+   "shape": 0.9788,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02230.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 5.109720225348281e-07,
+    "rotten": 0.9999994890279775
+   },
+   "defect": 3.7,
+   "shape": 0.9842,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02235.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.23383138575997886,
+    "rotten": 0.7661686142400211
+   },
+   "defect": 4.08,
+   "shape": 0.9791,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (77%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02238.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.009494223695346046,
+    "rotten": 0.990505776304654
+   },
+   "defect": 6.35,
+   "shape": 0.97,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (99%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02240.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 4.403473861420089e-05,
+    "rotten": 0.9999559652613857
+   },
+   "defect": 12.14,
+   "shape": 0.9806,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "guava__guava_1_02244.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0025579543561666807,
+    "rotten": 0.9974420456438333
+   },
+   "defect": 6.33,
+   "shape": 0.9452,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02248.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.000224665733968026,
+    "rotten": 0.999775334266032
+   },
+   "defect": 8.92,
+   "shape": 0.955,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02255.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 13.37,
+   "shape": 0.9561,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "guava__guava_1_02256.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.023037608153220836,
+    "rotten": 0.9769623918467791
+   },
+   "defect": 10.34,
+   "shape": 0.99,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (98%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "guava__guava_1_02257.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 1.562650480563099e-05,
+    "rotten": 0.9999843734951944
+   },
+   "defect": 11.19,
+   "shape": 0.9321,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "guava__guava_1_02261.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.1704271241897122,
+    "rotten": 0.8295728758102878
+   },
+   "defect": 26.69,
+   "shape": 0.9814,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (83%)",
+    "Dark marks ~27% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "guava__guava_1_02267.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0007777858586310371,
+    "rotten": 0.9992222141413689
+   },
+   "defect": 12.4,
+   "shape": 0.9908,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "guava__guava_1_02275.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.15012357218773648,
+    "rotten": 0.8498764278122635
+   },
+   "defect": 0.0,
+   "shape": 0.9856,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (85%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02276.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.02762441516441838,
+    "rotten": 0.9723755848355815
+   },
+   "defect": 4.3,
+   "shape": 0.9907,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (97%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02277.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.026347690005418027,
+    "rotten": 0.973652309994582
+   },
+   "defect": 0.38,
+   "shape": 0.9893,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (97%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02279.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.08372829120917145,
+    "rotten": 0.9162717087908286
+   },
+   "defect": 0.58,
+   "shape": 0.9881,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (92%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02283.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.00023951517255054515,
+    "rotten": 0.9997604848274495
+   },
+   "defect": 0.08,
+   "shape": 0.9748,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02284.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 8.606300247357768e-05,
+    "rotten": 0.9999139369975264
+   },
+   "defect": 0.24,
+   "shape": 0.9767,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02300.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.778049969172074e-06,
+    "rotten": 0.9999902219500308
+   },
+   "defect": 0.0,
+   "shape": 0.9854,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02343.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 10.51,
+   "shape": 0.9917,
+   "band": "green",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "guava__guava_1_02366.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 30.73,
+   "shape": 0.9896,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~31% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "guava__guava_1_02372.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 3.07,
+   "shape": 0.9825,
+   "band": "yellow",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "guava__guava_1_02392.jpg",
+   "produce": "guava",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 19.6,
+   "shape": 0.9865,
+   "band": "brown",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02818.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.00022899976975975823,
+    "rotten": 0.9997710002302402
+   },
+   "defect": 1.13,
+   "shape": 0.9741,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02836.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 2.1261280428938712e-07,
+    "rotten": 0.9999997873871956
+   },
+   "defect": 5.21,
+   "shape": 0.9572,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02837.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 8.45,
+   "shape": 0.9392,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02838.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 7.83,
+   "shape": 0.9428,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02839.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 7.58,
+   "shape": 0.9533,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02840.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 1.1606934021867736e-05,
+    "rotten": 0.9999883930659781
+   },
+   "defect": 5.88,
+   "shape": 0.9693,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02841.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 3.620853377425892e-07,
+    "rotten": 0.9999996379146622
+   },
+   "defect": 8.13,
+   "shape": 0.9594,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02842.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 22.08,
+   "shape": 0.9517,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02852.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.780475024204,
+    "rotten": 0.219524975796
+   },
+   "defect": 1.89,
+   "shape": 0.9668,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "A",
+   "reasons": [
+    "Looks fresh (78%), dark marks ~2%"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02874.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0056691676687270235,
+    "rotten": 0.9943308323312728
+   },
+   "defect": 6.12,
+   "shape": 0.9703,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (99%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02884.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 22.57,
+   "shape": 0.9785,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "C"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02885.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0021862038917336685,
+    "rotten": 0.9978137961082663
+   },
+   "defect": 2.89,
+   "shape": 0.9515,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02886.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0021975627203165713,
+    "rotten": 0.9978024372796835
+   },
+   "defect": 2.4,
+   "shape": 0.9645,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02887.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.002467913669649346,
+    "rotten": 0.9975320863303507
+   },
+   "defect": 5.91,
+   "shape": 0.9766,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02893.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 28.24,
+   "shape": 0.9744,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)",
+    "Dark marks ~28% of visible surface"
+   ],
+   "grade_meas": "Reject"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02899.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 7.25164723927971e-06,
+    "rotten": 0.9999927483527609
+   },
+   "defect": 4.16,
+   "shape": 0.973,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02906.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.00013307326292338913,
+    "rotten": 0.9998669267370766
+   },
+   "defect": 2.21,
+   "shape": 0.9567,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02909.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0033356084063570685,
+    "rotten": 0.996664391593643
+   },
+   "defect": 0.2,
+   "shape": 0.9695,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02910.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 0.0029105284831621395,
+    "rotten": 0.9970894715168378
+   },
+   "defect": 0.41,
+   "shape": 0.969,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02969.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 2.16,
+   "shape": 0.8764,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  },
+  {
+   "file": "pomegranate__pomegranate_1_02970.jpg",
+   "produce": "pomegranate",
+   "label": "rotten",
+   "probs": {
+    "fresh": 9.123847254184506e-08,
+    "rotten": 0.9999999087615276
+   },
+   "defect": 2.92,
+   "shape": 0.8301,
+   "band": "red",
+   "seg": "grabcut",
+   "grade_full": "Reject",
+   "reasons": [
+    "Visible rot likely (100%)"
+   ],
+   "grade_meas": "B"
+  }
+ ]
+}
