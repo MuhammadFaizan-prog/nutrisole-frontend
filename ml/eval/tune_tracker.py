@@ -30,6 +30,7 @@ sys.path.insert(0, os.path.dirname(HERE))
 from geometry import letterbox, dst_to_src, decode  # noqa: E402
 from tracker import IouTracker, DEFAULT  # noqa: E402
 from video_gauntlet import sess, metrics, RUBRIC  # noqa: E402
+from scene_guard import scene_guard  # noqa: E402
 
 
 def cache_dets(det, kind, imgsz, video, gt):
@@ -53,10 +54,12 @@ def cache_dets(det, kind, imgsz, video, gt):
     return out
 
 
-def replay(gt, dets, params):
+def replay(gt, dets, params, guard=None):
     trk = IouTracker(**params)
     shown = []
     for fr, ds in zip(gt["frames"], dets):
+        if guard is not None:
+            ds = scene_guard(ds, **guard)
         if fr.get("reset"):
             trk.reset()
         tr = trk.update(ds, fr["t_ms"])
@@ -64,10 +67,10 @@ def replay(gt, dets, params):
     return shown
 
 
-def score(gts, dets, params):
+def score(gts, dets, params, guard=None):
     r = {}
     for k in ["det", "quality", "neg"]:
-        r[k] = metrics(gts[k], replay(gts[k], dets[k], params), k)
+        r[k] = metrics(gts[k], replay(gts[k], dets[k], params, guard), k)
     st = sum(x["static_s"] for k in ["det", "quality"] for x in r[k]["segments_detail"])
     ch = sum(x["label_changes_static"] for k in ["det", "quality"] for x in r[k]["segments_detail"])
     segs = [x for k in ["det", "quality"] for x in r[k]["segments_detail"]]
@@ -76,7 +79,7 @@ def score(gts, dets, params):
                 quality_flicker=r["quality"]["label_flicker_per_10s_static"], seg_acc=round(np.mean([x["seg_correct"] for x in segs]), 4),
                 det_seg_acc=r["det"]["segment_acc"], quality_seg_acc=r["quality"]["segment_acc"],
                 ttfc_p90=float(np.percentile(tt, 90)) if tt else None, never_correct=sum(x["ttfc_ms"] is None for x in segs),
-                fa_per_min=r["neg"]["false_alarms_per_min"], no_box_static=round(np.mean([x["no_box_frac_static"] for x in segs]), 3))
+                fa_per_min=r["neg"]["false_alarms_per_min"], fa_episodes_per_min=r["neg"]["fa_episodes_per_min"], no_box_static=round(np.mean([x["no_box_frac_static"] for x in segs]), 3))
 
 
 def main():
@@ -86,6 +89,8 @@ def main():
     ap.add_argument("--imgsz", type=int, default=320)
     ap.add_argument("--clips", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--guard-grid", action="store_true", help="G3: tune the scene guard (default tracker params)")
+    ap.add_argument("--guard", default=None, help="G3: fixed scene guard 'maxSameClass,minAreaFrac' applied during the tracker grid")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     det = sess(a.det)
@@ -98,21 +103,46 @@ def main():
             cache[k] = cache_dets(det, a.det_kind, a.imgsz, f"{a.clips}/{k}_clip.mp4", gts[k])
             pickle.dump(cache, open(cp, "wb"))
         dets[k] = cache[k]
-    base = score(gts, dets, {})
+    if a.guard_grid:
+        return guard_grid(a, gts, dets)
+    G = None
+    if a.guard:
+        msc, maf = a.guard.split(",")
+        G = dict(maxSameClass=int(msc), minAreaFrac=float(maf))
+    base = score(gts, dets, {}, G)
     rows = []
     for sm, sf, sa, mh, mm in itertools.product([0.1, 0.15, 0.25, 0.35], [3, 5, 8], [0.2, 0.35, 0.5], [2, 3], [4, 8]):
         p = dict(switchMargin=sm, switchFrames=sf, scoreAlpha=sa, minHits=mh, maxMissed=mm)
-        rows.append(dict(params=p, **score(gts, dets, p)))
+        rows.append(dict(params=p, **score(gts, dets, p, G)))
     ttfc_cap = base["ttfc_p90"] + 200 if base["ttfc_p90"] is not None else 1e9
     if base["ttfc_p90"] is not None and base["ttfc_p90"] <= 700:
         ttfc_cap = min(ttfc_cap, 700)
     ok = [r for r in rows if r["seg_acc"] >= base["seg_acc"] and r["ttfc_p90"] is not None and r["ttfc_p90"] <= ttfc_cap and r["fa_per_min"] <= base["fa_per_min"]]
     best = min(ok, key=lambda r: (r["flicker_static_10s"], r["params"]["switchFrames"], r["params"]["minHits"])) if ok else None
-    res = dict(det=a.det, clips=a.clips, defaults=DEFAULT, defaults_score=base, ttfc_cap_ms=ttfc_cap, n_grid=len(rows), n_feasible=len(ok),
+    res = dict(det=a.det, clips=a.clips, scene_guard=G, defaults=DEFAULT, defaults_score=base, ttfc_cap_ms=ttfc_cap, n_grid=len(rows), n_feasible=len(ok),
                best=best, top10=sorted(ok, key=lambda r: r["flicker_static_10s"])[:10],
                note="DEV clips from VAL images, detector run on every frame (no drops); final numbers come from the realtime gauntlet on TEST clips.")
     json.dump(res, open(f"{a.out}/tracker_tune.json", "w"), indent=1)
     print(json.dumps(dict(defaults=base, best=best, n_feasible=len(ok)), indent=1))
+
+
+def guard_grid(a, gts, dets):
+    """G3 scene-guard tuning on DEV clips. Rule (stated up front): minimise dev FA episodes/min, then FA
+    tracks/min, subject to dev segment accuracy >= no-guard segment accuracy - 0.02 and ttfc p90 <= no-guard + 200 ms.
+    Ties -> the weaker guard (larger maxSameClass, smaller minAreaFrac)."""
+    base = score(gts, dets, {}, None)
+    rows = []
+    for msc in [0, 3, 4, 6, 8]:
+        for maf in [0.0, 0.002, 0.005, 0.01, 0.02]:
+            g = dict(maxSameClass=msc, minAreaFrac=maf)
+            rows.append(dict(guard=g, **score(gts, dets, {}, g)))
+    cap = (base["ttfc_p90"] or 1e9) + 200
+    ok = [r for r in rows if r["seg_acc"] >= base["seg_acc"] - 0.02 and r["ttfc_p90"] is not None and r["ttfc_p90"] <= cap]
+    key = lambda r: (r["fa_episodes_per_min"], r["fa_per_min"], -(r["guard"]["maxSameClass"] or 99), r["guard"]["minAreaFrac"])
+    best = min(ok, key=key) if ok else None
+    res = dict(det=a.det, clips=a.clips, no_guard=base, rule=guard_grid.__doc__, n_feasible=len(ok), best=best, rows=rows)
+    json.dump(res, open(f"{a.out}/guard_tune.json", "w"), indent=1)
+    print(json.dumps(dict(no_guard=base, best=best, n_feasible=len(ok)), indent=1))
 
 
 if __name__ == "__main__":
