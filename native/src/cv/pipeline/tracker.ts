@@ -20,7 +20,7 @@ export type TrackerParams = {
   minHits: number; maxMissed: number; stableIou: number; stableMs: number;
 };
 export const DEFAULT_TRACKER_PARAMS: TrackerParams = {
-  iouMatch: 0.3, boxAlpha: 0.6, scoreAlpha: 0.35, switchMargin: 0.15, switchFrames: 3,
+  iouMatch: 0.3, boxAlpha: 0.6, scoreAlpha: 0.2, switchMargin: 0.15, switchFrames: 3,
   minHits: 2, maxMissed: 4, stableIou: 0.8, stableMs: 500,
 };
 
