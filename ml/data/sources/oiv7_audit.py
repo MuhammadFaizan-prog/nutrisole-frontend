@@ -67,7 +67,10 @@ def main():
     ap.add_argument("--screen-model", required=True)
     ap.add_argument("--screen-imgsz", type=int, default=480)
     ap.add_argument("--screen-conf", type=float, default=0.5)
+    ap.add_argument("--test-split-name", default="test_oiv7", help="G4: oiv7c uses test_oiv7c (a new split; test_oiv7 stays locked)")
+    ap.add_argument("--prefix", default="oiv7_", help="output file prefix")
     a = ap.parse_args()
+    SPLIT["test"] = a.test_split_name
     lic = {r["ImageID"]: r for r in csv.DictReader(open(f"{a.src}/image_licences.csv"))}
     bidx = collections.defaultdict(list)
     for r in csv.DictReader(open(f"{a.src}/boxes_index.csv")):
@@ -137,7 +140,7 @@ def main():
                 continue
             if all(iou(bb, g) < 0.3 for g in gtb):
                 sus.append((int(cc), bb, round(float(cf), 3)))
-        if sus and sp == "test_oiv7":
+        if sus and sp.startswith("test"):
             drops["test_suspected_missing_label"].append(dict(id=iid, sus=[(NAMES[c], cf) for c, _, cf in sus])); continue
         fill = gmask.copy()
         for c, bb, cf in sus:
@@ -154,13 +157,13 @@ def main():
                 im[max(0, b[1]):b[3], max(0, b[0]):b[2]] = orig[max(0, b[1]):b[3], max(0, b[0]):b[2]]
             audit["images_greyfilled"] += 1
         os.makedirs(f"{a.out}/images/{sp}", exist_ok=True); os.makedirs(f"{a.out}/labels/{sp}", exist_ok=True)
-        cv2.imwrite(f"{a.out}/images/{sp}/oiv7_{iid}.jpg", im, [cv2.IMWRITE_JPEG_QUALITY, 92])
-        with open(f"{a.out}/labels/{sp}/oiv7_{iid}.txt", "w") as f:
+        cv2.imwrite(f"{a.out}/images/{sp}/{a.prefix}{iid}.jpg", im, [cv2.IMWRITE_JPEG_QUALITY, 92])
+        with open(f"{a.out}/labels/{sp}/{a.prefix}{iid}.txt", "w") as f:
             for r in keep:
                 f.write(f"{r[0]} {r[1]:.6f} {r[2]:.6f} {r[3]:.6f} {r[4]:.6f}\n")
                 per_split[sp][NAMES[r[0]]] += 1
         per_split[sp]["_images"] += 1
-        lic_rows.append(dict(file=f"oiv7_{iid}.jpg", split=sp, **{k: lic[iid][k] for k in ["License", "Author", "OriginalURL"]}))
+        lic_rows.append(dict(file=f"{a.prefix}{iid}.jpg", split=sp, **{k: lic[iid][k] for k in ["License", "Author", "OriginalURL"]}))
     with open(f"{a.out}/licences.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["file", "split", "License", "Author", "OriginalURL"]); w.writeheader(); w.writerows(lic_rows)
     out = dict(rules=__doc__.split("Audit rules")[1].split("OIV7's own")[0].strip(), counters=dict(audit),
