@@ -1,0 +1,50 @@
+{
+ "model": "G3 control det_yolo11n_640_raw.onnx",
+ "imgsz": 480,
+ "conf": 0.25,
+ "iou_match": 0.5,
+ "device": "sandbox CPU onnxruntime",
+ "result": {
+  "test_oiv7c": {
+   "citrus": {
+    "missed": 183,
+    "citrus": 380,
+    "apple": 14,
+    "lemon_lime": 3,
+    "mango": 14,
+    "pomegranate": 11,
+    "tomato": 2,
+    "carrot": 2
+   },
+   "lemon_lime": {
+    "lemon_lime": 60,
+    "apple": 25,
+    "missed": 88,
+    "citrus": 114,
+    "banana": 4,
+    "mango": 5,
+    "pomegranate": 2,
+    "capsicum": 1
+   }
+  },
+  "test": {
+   "citrus": {
+    "missed": 1070,
+    "citrus": 715,
+    "banana": 18,
+    "apple": 6,
+    "lemon_lime": 5,
+    "carrot": 9,
+    "tomato": 9,
+    "capsicum": 1
+   },
+   "lemon_lime": {
+    "missed": 257,
+    "apple": 3,
+    "citrus": 19,
+    "lemon_lime": 8,
+    "tomato": 3
+   }
+  }
+ }
+}
