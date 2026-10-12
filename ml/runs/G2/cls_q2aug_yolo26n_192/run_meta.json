@@ -1,0 +1,33 @@
+{
+ "task": "cls",
+ "no_val": false,
+ "freeze": 0,
+ "extra": {},
+ "model": "yolo26n-cls.pt",
+ "data": "/tmp/nsdata2/q2aug",
+ "epochs": 15,
+ "imgsz": 192,
+ "batch": 32,
+ "fraction": 1.0,
+ "seed": 0,
+ "manifest": "/workspace/work/cv/g2data/quality2_aug/manifest.json",
+ "manifest_sha256": "e52e72520a0b75dcaf84e838955e955690e4428f2d16d7d19f1b03b3fe5f636b",
+ "git": {
+  "commit": "0824f0f9740e3ae1758fcd2257952e3076598581",
+  "dirty": true
+ },
+ "versions": {
+  "ultralytics": "8.4.175",
+  "torch": "2.14.1+cpu",
+  "python": "3.12.15"
+ },
+ "hardware": {
+  "device": "cpu",
+  "cores": 2,
+  "machine": "aarch64",
+  "gpu": null
+ },
+ "wall_seconds_this_invocation": 373.5,
+ "finished_at": "2026-10-12T04:20:38Z",
+ "wall_seconds_total": 373.5
+}
