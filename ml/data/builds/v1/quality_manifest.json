@@ -1,0 +1,403 @@
+{
+ "build": "quality-v1",
+ "seed": 0,
+ "params": {
+  "PHASH_T": 8,
+  "COS_T": 0.93,
+  "K_FRUQ": 40,
+  "embed_model": "yolo26n-cls.pt (ImageNet)",
+  "pool_max_side": 384
+ },
+ "n_images": 7175,
+ "exact_duplicates_removed": 472,
+ "duplicate_examples": [
+  [
+   "sultana/orange_0_01159.jpg",
+   "sultana/orange_0_01075.jpg"
+  ],
+  [
+   "sultana/orange_0_01160.jpg",
+   "sultana/orange_0_01076.jpg"
+  ],
+  [
+   "sultana/orange_0_01175.jpg",
+   "sultana/orange_0_01120.jpg"
+  ],
+  [
+   "sultana/orange_0_01176.jpg",
+   "sultana/orange_0_01162.jpg"
+  ],
+  [
+   "sultana/orange_0_01177.jpg",
+   "sultana/orange_0_01163.jpg"
+  ],
+  [
+   "sultana/orange_0_01186.jpg",
+   "sultana/orange_0_01172.jpg"
+  ],
+  [
+   "sultana/orange_0_01187.jpg",
+   "sultana/orange_0_01173.jpg"
+  ],
+  [
+   "fruq/Fresh_Image1_13.jpg",
+   "fruq/Fresh_Image1_11.jpg"
+  ],
+  [
+   "fruq/Fresh_Image1_2.jpg",
+   "fruq/Fresh_Image1_14.jpg"
+  ],
+  [
+   "fruq/Fresh_Image1_3.jpg",
+   "fruq/Fresh_Image1_15.jpg"
+  ]
+ ],
+ "near_dup_pairs": {
+  "cos": 52129,
+  "phash": 569059
+ },
+ "n_groups": 1048,
+ "group_size_max": 641,
+ "counts": [
+  {
+   "src": "fruq_db",
+   "produce": "__unknown_produce__",
+   "level": "fresh",
+   "split": "test",
+   "n": 221
+  },
+  {
+   "src": "fruq_db",
+   "produce": "__unknown_produce__",
+   "level": "fresh",
+   "split": "train",
+   "n": 1357
+  },
+  {
+   "src": "fruq_db",
+   "produce": "__unknown_produce__",
+   "level": "fresh",
+   "split": "val",
+   "n": 139
+  },
+  {
+   "src": "fruq_db",
+   "produce": "__unknown_produce__",
+   "level": "mild",
+   "split": "test",
+   "n": 223
+  },
+  {
+   "src": "fruq_db",
+   "produce": "__unknown_produce__",
+   "level": "mild",
+   "split": "train",
+   "n": 865
+  },
+  {
+   "src": "fruq_db",
+   "produce": "__unknown_produce__",
+   "level": "mild",
+   "split": "val",
+   "n": 276
+  },
+  {
+   "src": "fruq_db",
+   "produce": "__unknown_produce__",
+   "level": "rotten",
+   "split": "test",
+   "n": 223
+  },
+  {
+   "src": "fruq_db",
+   "produce": "__unknown_produce__",
+   "level": "rotten",
+   "split": "train",
+   "n": 1450
+  },
+  {
+   "src": "fruq_db",
+   "produce": "__unknown_produce__",
+   "level": "rotten",
+   "split": "val",
+   "n": 428
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "apple",
+   "level": "fresh",
+   "split": "test",
+   "n": 24
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "apple",
+   "level": "fresh",
+   "split": "train",
+   "n": 154
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "apple",
+   "level": "fresh",
+   "split": "val",
+   "n": 22
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "apple",
+   "level": "rotten",
+   "split": "test",
+   "n": 13
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "apple",
+   "level": "rotten",
+   "split": "train",
+   "n": 153
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "apple",
+   "level": "rotten",
+   "split": "val",
+   "n": 34
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "banana",
+   "level": "fresh",
+   "split": "test",
+   "n": 28
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "banana",
+   "level": "fresh",
+   "split": "train",
+   "n": 140
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "banana",
+   "level": "fresh",
+   "split": "val",
+   "n": 32
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "banana",
+   "level": "rotten",
+   "split": "test",
+   "n": 30
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "banana",
+   "level": "rotten",
+   "split": "train",
+   "n": 141
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "banana",
+   "level": "rotten",
+   "split": "val",
+   "n": 29
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "citrus",
+   "level": "fresh",
+   "split": "test",
+   "n": 53
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "citrus",
+   "level": "fresh",
+   "split": "train",
+   "n": 124
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "citrus",
+   "level": "fresh",
+   "split": "val",
+   "n": 16
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "citrus",
+   "level": "rotten",
+   "split": "test",
+   "n": 29
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "citrus",
+   "level": "rotten",
+   "split": "train",
+   "n": 128
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "citrus",
+   "level": "rotten",
+   "split": "val",
+   "n": 43
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "guava",
+   "level": "fresh",
+   "split": "test",
+   "n": 16
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "guava",
+   "level": "fresh",
+   "split": "train",
+   "n": 166
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "guava",
+   "level": "fresh",
+   "split": "val",
+   "n": 18
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "guava",
+   "level": "rotten",
+   "split": "test",
+   "n": 26
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "guava",
+   "level": "rotten",
+   "split": "train",
+   "n": 145
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "guava",
+   "level": "rotten",
+   "split": "val",
+   "n": 29
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "pomegranate",
+   "level": "fresh",
+   "split": "test",
+   "n": 30
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "pomegranate",
+   "level": "fresh",
+   "split": "train",
+   "n": 139
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "pomegranate",
+   "level": "fresh",
+   "split": "val",
+   "n": 31
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "pomegranate",
+   "level": "rotten",
+   "split": "test",
+   "n": 21
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "pomegranate",
+   "level": "rotten",
+   "split": "train",
+   "n": 158
+  },
+  {
+   "src": "sultana_agml",
+   "produce": "pomegranate",
+   "level": "rotten",
+   "split": "val",
+   "n": 21
+  }
+ ],
+ "groups_per_split": [
+  {
+   "src": "fruq_db",
+   "split": "test",
+   "n_groups": 9
+  },
+  {
+   "src": "fruq_db",
+   "split": "train",
+   "n_groups": 11
+  },
+  {
+   "src": "fruq_db",
+   "split": "val",
+   "n_groups": 6
+  },
+  {
+   "src": "sultana_agml",
+   "split": "test",
+   "n_groups": 164
+  },
+  {
+   "src": "sultana_agml",
+   "split": "train",
+   "n_groups": 690
+  },
+  {
+   "src": "sultana_agml",
+   "split": "val",
+   "n_groups": 168
+  }
+ ],
+ "leakage_audit": {
+  "sultana_agml:train-vs-test": {
+   "max_cos": 0.9294438362121582,
+   "p99_nn_cos": 0.9286253452301025,
+   "mean_nn_cos": 0.8920008540153503,
+   "min_phash": 10,
+   "n_test_with_nn_cos_ge_0_90": 135,
+   "n": 270
+  },
+  "sultana_agml:train-vs-val": {
+   "max_cos": 0.9298675060272217,
+   "p99_nn_cos": 0.9292232990264893,
+   "mean_nn_cos": 0.9018105268478394,
+   "min_phash": 10,
+   "n_test_with_nn_cos_ge_0_90": 170,
+   "n": 275
+  },
+  "fruq_db:train-vs-test": {
+   "max_cos": 0.8964192867279053,
+   "p99_nn_cos": 0.8931398987770081,
+   "mean_nn_cos": 0.7448093295097351,
+   "min_phash": 12,
+   "n_test_with_nn_cos_ge_0_90": 0,
+   "n": 667
+  },
+  "fruq_db:train-vs-val": {
+   "max_cos": 0.9053800106048584,
+   "p99_nn_cos": 0.8995208144187927,
+   "mean_nn_cos": 0.7865038514137268,
+   "min_phash": 10,
+   "n_test_with_nn_cos_ge_0_90": 7,
+   "n": 843
+  }
+ },
+ "listing_sha256": "372c740e038195fb2dd1bd01968483be2615119f3eaa484bc4b88629e37f5c38"
+}
