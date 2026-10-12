@@ -1,0 +1,31 @@
+{
+ "task": "cls",
+ "no_val": false,
+ "model": "yolo26n-cls.pt",
+ "data": "/tmp/nsdata/quality2",
+ "epochs": 15,
+ "imgsz": 192,
+ "batch": 32,
+ "fraction": 1.0,
+ "seed": 0,
+ "manifest": "/workspace/work/nutrisole/ml/data/builds/v1/quality_manifest.json",
+ "manifest_sha256": "38e610e26bf5995c4febc251931de9c4cf20d7895817541a96a49e29c83987e4",
+ "git": {
+  "commit": "2ce053cae9f2f235dba99678d7abb32736b6c8ec",
+  "dirty": true
+ },
+ "versions": {
+  "ultralytics": "8.4.175",
+  "torch": "2.14.1+cpu",
+  "python": "3.12.15"
+ },
+ "hardware": {
+  "device": "cpu",
+  "cores": 2,
+  "machine": "aarch64",
+  "gpu": null
+ },
+ "wall_seconds_this_invocation": 1183.2,
+ "finished_at": "2026-10-11T22:31:35Z",
+ "wall_seconds_total": 1183.2
+}
