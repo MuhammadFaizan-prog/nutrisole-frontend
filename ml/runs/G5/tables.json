@@ -1,0 +1,157 @@
+{
+ "models": [
+  "G1 champion yolo26n (raw-head eval)",
+  "G3 control yolo11n (CHAMPION)",
+  "A1 hygiene off (G4)"
+ ],
+ "deltas": {
+  "G1 champion yolo26n (raw-head eval)": {
+   "G1": {
+    "banana": 0.0,
+    "apple": 0.0,
+    "citrus": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.0,
+    "cucumber": 0.0,
+    "carrot": 0.0,
+    "capsicum": 0.0
+   },
+   "G3": {
+    "banana": -0.0914,
+    "apple": 0.0131,
+    "citrus": 0.1553,
+    "lemon_lime": -0.0065,
+    "tomato": -0.3447,
+    "cucumber": -0.0003,
+    "carrot": -0.0567,
+    "capsicum": 0.0763
+   }
+  },
+  "G3 control yolo11n (CHAMPION)": {
+   "G1": {
+    "banana": 0.0914,
+    "apple": -0.0131,
+    "citrus": -0.1553,
+    "lemon_lime": 0.0065,
+    "tomato": 0.3447,
+    "cucumber": 0.0003,
+    "carrot": 0.0567,
+    "capsicum": -0.0763
+   },
+   "G3": {
+    "banana": 0.0,
+    "apple": 0.0,
+    "citrus": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.0,
+    "cucumber": 0.0,
+    "carrot": 0.0,
+    "capsicum": 0.0
+   }
+  },
+  "A1 hygiene off (G4)": {
+   "G1": {
+    "banana": 0.0698,
+    "apple": 0.1578,
+    "citrus": 0.0043,
+    "lemon_lime": -0.0099,
+    "tomato": 0.2432,
+    "cucumber": 0.046,
+    "carrot": 0.1287,
+    "capsicum": 0.0215
+   },
+   "G3": {
+    "banana": -0.0216,
+    "apple": 0.1709,
+    "citrus": 0.1596,
+    "lemon_lime": -0.0164,
+    "tomato": -0.1015,
+    "cucumber": 0.0457,
+    "carrot": 0.072,
+    "capsicum": 0.0978
+   }
+  }
+ },
+ "gauntlet": [
+  {
+   "run": "G3champ_msc0_r1",
+   "temporal": null,
+   "det_seg": 0.6667,
+   "det_frame": 0.4965,
+   "flick_static": 0.0,
+   "flick_all": 1.791,
+   "ttfc_p90": 759.9997999999993,
+   "q_acc": 0.9286,
+   "rot_rec": 0.875,
+   "grade_flick": 0.0,
+   "fa_g1neg": 1.25,
+   "ep_g1neg": 1.25,
+   "fa_negtest": 0.0,
+   "ep_negtest": 0.0,
+   "det_p50": 46.2758930000291
+  },
+  {
+   "run": "G3champ_msc0_r2",
+   "temporal": null,
+   "det_seg": 0.6667,
+   "det_frame": 0.4965,
+   "flick_static": 0.0,
+   "flick_all": 1.791,
+   "ttfc_p90": 759.9997999999993,
+   "q_acc": 0.9286,
+   "rot_rec": 0.875,
+   "grade_flick": 0.0,
+   "fa_g1neg": 1.25,
+   "ep_g1neg": 1.25,
+   "fa_negtest": 0.0,
+   "ep_negtest": 0.0,
+   "det_p50": 46.40220999999656
+  },
+  {
+   "run": "A1hyg_r1",
+   "temporal": null,
+   "det_seg": 0.4583,
+   "det_frame": 0.3982,
+   "flick_static": 4.792,
+   "flick_all": 4.108,
+   "ttfc_p90": 2000.0,
+   "q_acc": 0.9231,
+   "rot_rec": 0.75,
+   "grade_flick": 0.625,
+   "fa_g1neg": 6.25,
+   "ep_g1neg": 3.75,
+   "fa_negtest": 1.5,
+   "ep_negtest": 1.12,
+   "det_p50": 45.727622999947926
+  },
+  {
+   "run": "A1hyg_r2",
+   "temporal": null,
+   "det_seg": 0.4583,
+   "det_frame": 0.3982,
+   "flick_static": 4.792,
+   "flick_all": 4.108,
+   "ttfc_p90": 2000.0,
+   "q_acc": 0.9231,
+   "rot_rec": 0.75,
+   "grade_flick": 0.625,
+   "fa_g1neg": 6.25,
+   "ep_g1neg": 3.75,
+   "fa_negtest": 1.5,
+   "ep_negtest": 1.12,
+   "det_p50": 45.16945300002817
+  }
+ ],
+ "dev": [
+  {
+   "run": "C_base",
+   "det_seg": 0.5417,
+   "det_frame": 0.4365,
+   "flick_static": 5.0,
+   "flick_all": 4.19,
+   "ttfc_p90": 733.3329999999995,
+   "fa_devneg": 0.75,
+   "fa_devneg2": null
+  }
+ ]
+}
