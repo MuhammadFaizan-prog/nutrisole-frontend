@@ -1,0 +1,17 @@
+{
+ "detector": {
+  "pt": "/workspace/work/nutrisole/ml/runs/G6/kaggle/nutrisole-g6-ft-rp/runs/det_yolo11n_g6_rp/weights/best.pt",
+  "onnx": "/workspace/work/cv/g6models/G6rp/det_yolo11n_g6_rp_raw.onnx",
+  "images": 40,
+  "imgsz": 480,
+  "matched_pairs": 470,
+  "class_disagreements": 0,
+  "min_iou": 0.9999924297536559,
+  "mean_iou": 0.9999989986789533,
+  "max_dconf": 3.874301910400391e-06,
+  "mean_dconf": 4.894555883204683e-07,
+  "unmatched_beyond_tolerance": 0,
+  "unmatched_near_threshold": 0,
+  "pass": true
+ }
+}
