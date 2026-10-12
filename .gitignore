@@ -74,3 +74,6 @@ ml/runs/G5/kaggle/**/*.png
 ml/runs/G5/kaggle/**/*.jpg
 ml/runs/G5/kaggle/**/*.csv
 ml/runs/G5/**/*.pkl
+ml/runs/G6/kaggle/**/*.png
+ml/runs/G6/kaggle/**/*.jpg
+ml/runs/G6/**/*.pkl
