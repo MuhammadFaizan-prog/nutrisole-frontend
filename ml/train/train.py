@@ -32,6 +32,8 @@ def main():
     ap.add_argument("--imgsz", type=int, default=320)
     ap.add_argument("--batch", type=int, default=16)
     ap.add_argument("--fraction", type=float, default=1.0)
+    ap.add_argument("--freeze", type=int, default=0, help="freeze the first N layers (10 = yolo26n/yolo11n backbone)")
+    ap.add_argument("--extra", default="", help="extra Ultralytics train kwargs as k=v,k=v (numbers parsed)")
     ap.add_argument("--no-val", action="store_true", help="skip per-epoch validation (final weights = last.pt; avoids selecting on val)")
     a = ap.parse_args()
     import torch, ultralytics
@@ -43,6 +45,16 @@ def main():
     common = dict(device="cpu", workers=2, seed=0, deterministic=True, plots=True, verbose=False)
     if a.no_val:
         common["val"] = False
+    extra = {}
+    for kv in filter(None, a.extra.split(",")):
+        k, v = kv.split("=", 1)
+        try:
+            v = float(v) if "." in v else int(v)
+        except ValueError:
+            pass
+        extra[k] = v
+    if a.freeze:
+        extra["freeze"] = a.freeze
     if os.path.exists(last):
         print("resuming", last, flush=True)
         YOLO(last).train(resume=True, **common)
@@ -54,12 +66,12 @@ def main():
             # as custom augmentation in G2.
             m.train(data=a.data, imgsz=a.imgsz, epochs=a.epochs, batch=a.batch, project=a.project, name=a.name, exist_ok=True,
                     cos_lr=True, close_mosaic=max(1, a.epochs // 4), hsv_h=0.015, hsv_s=0.6, hsv_v=0.5, degrees=10, fliplr=0.5,
-                    mixup=0.0, cache="ram", save_period=1, patience=100, fraction=a.fraction, **common)
+                    mixup=0.0, cache="ram", save_period=1, patience=100, fraction=a.fraction, **{**common, **extra})
         else:
             m.train(data=a.data, imgsz=a.imgsz, epochs=a.epochs, batch=a.batch, project=a.project, name=a.name, exist_ok=True,
-                    hsv_v=0.5, erasing=0.2, cos_lr=True, cache="ram", save_period=1, patience=100, **common)
+                    **{**dict(hsv_v=0.5, erasing=0.2, cos_lr=True, cache="ram", save_period=1, patience=100), **common, **extra})
     man = a.manifest
-    meta = dict(task=a.task, no_val=a.no_val, model=a.model, data=a.data, epochs=a.epochs, imgsz=a.imgsz, batch=a.batch, fraction=a.fraction, seed=0,
+    meta = dict(task=a.task, no_val=a.no_val, freeze=a.freeze, extra=extra, model=a.model, data=a.data, epochs=a.epochs, imgsz=a.imgsz, batch=a.batch, fraction=a.fraction, seed=0,
                 manifest=man, manifest_sha256=hashlib.sha256(open(man, "rb").read()).hexdigest() if man and os.path.exists(man) else None,
                 git=dict(zip(["commit", "dirty"], git_state())), versions=dict(ultralytics=ultralytics.__version__, torch=torch.__version__, python=sys.version.split()[0]),
                 hardware=dict(device="cpu", cores=os.cpu_count(), machine=platform.machine(), gpu=None), wall_seconds_this_invocation=round(time.time() - t0, 1),
