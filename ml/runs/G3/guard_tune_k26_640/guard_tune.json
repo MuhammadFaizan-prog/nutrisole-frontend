@@ -1,0 +1,463 @@
+{
+ "det": "/workspace/work/cv/g3models/k26_640/det_yolo26n_640_e2e.onnx",
+ "clips": "/workspace/work/cv/g3clips_dev",
+ "no_guard": {
+  "flicker_static_10s": 0.5,
+  "det_flicker": 0.208,
+  "quality_flicker": 0.938,
+  "seg_acc": 0.55,
+  "det_seg_acc": 0.625,
+  "quality_seg_acc": 0.4375,
+  "ttfc_p90": 1440.0000000000005,
+  "never_correct": 17,
+  "fa_per_min": 2.25,
+  "fa_episodes_per_min": 0.75,
+  "no_box_static": 0.461
+ },
+ "rule": "G3 scene-guard tuning on DEV clips. Rule (stated up front): minimise dev FA episodes/min, then FA\n    tracks/min, subject to dev segment accuracy >= no-guard segment accuracy - 0.02 and ttfc p90 <= no-guard + 200 ms.\n    Ties -> the weaker guard (larger maxSameClass, smaller minAreaFrac).",
+ "n_feasible": 6,
+ "best": {
+  "guard": {
+   "maxSameClass": 0,
+   "minAreaFrac": 0.02
+  },
+  "flicker_static_10s": 0.5,
+  "det_flicker": 0.208,
+  "quality_flicker": 0.938,
+  "seg_acc": 0.55,
+  "det_seg_acc": 0.625,
+  "quality_seg_acc": 0.4375,
+  "ttfc_p90": 1440.0000000000005,
+  "never_correct": 17,
+  "fa_per_min": 0.5,
+  "fa_episodes_per_min": 0.5,
+  "no_box_static": 0.461
+ },
+ "rows": [
+  {
+   "guard": {
+    "maxSameClass": 0,
+    "minAreaFrac": 0.0
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 1440.0000000000005,
+   "never_correct": 17,
+   "fa_per_min": 2.25,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.461
+  },
+  {
+   "guard": {
+    "maxSameClass": 0,
+    "minAreaFrac": 0.002
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 1440.0000000000005,
+   "never_correct": 17,
+   "fa_per_min": 2.25,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.461
+  },
+  {
+   "guard": {
+    "maxSameClass": 0,
+    "minAreaFrac": 0.005
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 1440.0000000000005,
+   "never_correct": 17,
+   "fa_per_min": 2.25,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.461
+  },
+  {
+   "guard": {
+    "maxSameClass": 0,
+    "minAreaFrac": 0.01
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 1440.0000000000005,
+   "never_correct": 17,
+   "fa_per_min": 2.25,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.461
+  },
+  {
+   "guard": {
+    "maxSameClass": 0,
+    "minAreaFrac": 0.02
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 1440.0000000000005,
+   "never_correct": 17,
+   "fa_per_min": 0.5,
+   "fa_episodes_per_min": 0.5,
+   "no_box_static": 0.461
+  },
+  {
+   "guard": {
+    "maxSameClass": 3,
+    "minAreaFrac": 0.0
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.475,
+   "det_seg_acc": 0.5,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2880.0003000000015,
+   "never_correct": 20,
+   "fa_per_min": 1.0,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.581
+  },
+  {
+   "guard": {
+    "maxSameClass": 3,
+    "minAreaFrac": 0.002
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.475,
+   "det_seg_acc": 0.5,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2880.0003000000015,
+   "never_correct": 20,
+   "fa_per_min": 1.0,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.581
+  },
+  {
+   "guard": {
+    "maxSameClass": 3,
+    "minAreaFrac": 0.005
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.475,
+   "det_seg_acc": 0.5,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2880.0003000000015,
+   "never_correct": 20,
+   "fa_per_min": 1.0,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.581
+  },
+  {
+   "guard": {
+    "maxSameClass": 3,
+    "minAreaFrac": 0.01
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.475,
+   "det_seg_acc": 0.5,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2880.0003000000015,
+   "never_correct": 20,
+   "fa_per_min": 1.0,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.581
+  },
+  {
+   "guard": {
+    "maxSameClass": 3,
+    "minAreaFrac": 0.02
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.475,
+   "det_seg_acc": 0.5,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2880.0003000000015,
+   "never_correct": 20,
+   "fa_per_min": 0.5,
+   "fa_episodes_per_min": 0.5,
+   "no_box_static": 0.581
+  },
+  {
+   "guard": {
+    "maxSameClass": 4,
+    "minAreaFrac": 0.0
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.5,
+   "det_seg_acc": 0.5417,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2866.6670000000013,
+   "never_correct": 19,
+   "fa_per_min": 1.5,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.555
+  },
+  {
+   "guard": {
+    "maxSameClass": 4,
+    "minAreaFrac": 0.002
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.5,
+   "det_seg_acc": 0.5417,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2866.6670000000013,
+   "never_correct": 19,
+   "fa_per_min": 1.5,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.555
+  },
+  {
+   "guard": {
+    "maxSameClass": 4,
+    "minAreaFrac": 0.005
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.5,
+   "det_seg_acc": 0.5417,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2866.6670000000013,
+   "never_correct": 19,
+   "fa_per_min": 1.5,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.555
+  },
+  {
+   "guard": {
+    "maxSameClass": 4,
+    "minAreaFrac": 0.01
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.5,
+   "det_seg_acc": 0.5417,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2866.6670000000013,
+   "never_correct": 19,
+   "fa_per_min": 1.5,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.555
+  },
+  {
+   "guard": {
+    "maxSameClass": 4,
+    "minAreaFrac": 0.02
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.5,
+   "det_seg_acc": 0.5417,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2866.6670000000013,
+   "never_correct": 19,
+   "fa_per_min": 0.5,
+   "fa_episodes_per_min": 0.5,
+   "no_box_static": 0.555
+  },
+  {
+   "guard": {
+    "maxSameClass": 6,
+    "minAreaFrac": 0.0
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.575,
+   "det_seg_acc": 0.6667,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 3000.0,
+   "never_correct": 16,
+   "fa_per_min": 1.5,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.545
+  },
+  {
+   "guard": {
+    "maxSameClass": 6,
+    "minAreaFrac": 0.002
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.575,
+   "det_seg_acc": 0.6667,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 3000.0,
+   "never_correct": 16,
+   "fa_per_min": 1.5,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.545
+  },
+  {
+   "guard": {
+    "maxSameClass": 6,
+    "minAreaFrac": 0.005
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.575,
+   "det_seg_acc": 0.6667,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 3000.0,
+   "never_correct": 16,
+   "fa_per_min": 1.5,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.545
+  },
+  {
+   "guard": {
+    "maxSameClass": 6,
+    "minAreaFrac": 0.01
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.575,
+   "det_seg_acc": 0.6667,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2960.0001,
+   "never_correct": 16,
+   "fa_per_min": 2.25,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.545
+  },
+  {
+   "guard": {
+    "maxSameClass": 6,
+    "minAreaFrac": 0.02
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.575,
+   "det_seg_acc": 0.6667,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2486.6669,
+   "never_correct": 16,
+   "fa_per_min": 0.5,
+   "fa_episodes_per_min": 0.5,
+   "no_box_static": 0.541
+  },
+  {
+   "guard": {
+    "maxSameClass": 8,
+    "minAreaFrac": 0.0
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2560.000000000001,
+   "never_correct": 17,
+   "fa_per_min": 1.5,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.531
+  },
+  {
+   "guard": {
+    "maxSameClass": 8,
+    "minAreaFrac": 0.002
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2560.000000000001,
+   "never_correct": 17,
+   "fa_per_min": 1.5,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.531
+  },
+  {
+   "guard": {
+    "maxSameClass": 8,
+    "minAreaFrac": 0.005
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2560.000000000001,
+   "never_correct": 17,
+   "fa_per_min": 1.5,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.522
+  },
+  {
+   "guard": {
+    "maxSameClass": 8,
+    "minAreaFrac": 0.01
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2560.000000000001,
+   "never_correct": 17,
+   "fa_per_min": 2.25,
+   "fa_episodes_per_min": 0.75,
+   "no_box_static": 0.522
+  },
+  {
+   "guard": {
+    "maxSameClass": 8,
+    "minAreaFrac": 0.02
+   },
+   "flicker_static_10s": 0.5,
+   "det_flicker": 0.208,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 1440.0000000000005,
+   "never_correct": 17,
+   "fa_per_min": 0.5,
+   "fa_episodes_per_min": 0.5,
+   "no_box_static": 0.52
+  }
+ ]
+}
