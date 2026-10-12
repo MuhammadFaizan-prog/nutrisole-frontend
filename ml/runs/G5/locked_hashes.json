@@ -1,0 +1,48 @@
+{
+ "test": {
+  "n": 557,
+  "list_sha256": "ee56af5ccaabf2223c8fe63a29a63ee744dd38be285129da3129d609b381c2e6",
+  "content_sha256": "9fde8919c777f857954d93862178d0ebc852ae513a1b2b048000d439374b37c5",
+  "g4_content_sha256": "9fde8919c777f857954d93862178d0ebc852ae513a1b2b048000d439374b37c5",
+  "identical_to_g4": true
+ },
+ "test_rf": {
+  "n": 149,
+  "list_sha256": "c93d1d34ffa29ad181f76640819aaee4b5ef2acb741dfbef8aebca272675cbc1",
+  "content_sha256": "d4706161fbfb00f589193fb3ace359190b7f5c6b3c375229655389993d2e8605",
+  "g4_content_sha256": "d4706161fbfb00f589193fb3ace359190b7f5c6b3c375229655389993d2e8605",
+  "identical_to_g4": true
+ },
+ "neg_test": {
+  "n": 80,
+  "list_sha256": "baca1529a007d9bb0cddbe5bc82fe47d3c9897f79cb96e6c83cdfc4c21eb75e2",
+  "content_sha256": "bf70b3afe339445844a5f0418e9ba987240faa3c8c2aea431fa6519874b809ff",
+  "g4_content_sha256": "bf70b3afe339445844a5f0418e9ba987240faa3c8c2aea431fa6519874b809ff",
+  "identical_to_g4": true
+ },
+ "test_oiv7": {
+  "n": 123,
+  "list_sha256": "02e1dea69f9145015a31dbd0c82a84e7663f39d72133c9693cfc379bf9134f3b",
+  "content_sha256": "18cec9dcf2a939aa96056c172daab6e07e438f68697ca13453d8bddd2949fe78",
+  "g4_content_sha256": "18cec9dcf2a939aa96056c172daab6e07e438f68697ca13453d8bddd2949fe78",
+  "identical_to_g4": true
+ },
+ "test_oiv7c": {
+  "n": 181,
+  "list_sha256": "a7e51c6bd756998ffbea6d658dad0794a8fc0838b8a13a7f198b40db82445306",
+  "content_sha256": "513d08d6b997ea28efb70d470d03bbf9954ccb1fe5a2d1e79a81decad6ee10c4",
+  "g4_content_sha256": null,
+  "identical_to_g4": null
+ },
+ "clips_sha256": {
+  "g1clips/det_clip.json": "12d6701b821a34f5b1279a51916e42ecddfa1c2cf1623d53fa95c2e28dfb11c2",
+  "g1clips/det_clip.mp4": "3f329c9ca5092c7eb7ea8c8812c06677c4a9c4f466818b5bdcd08bef0ee0a6fe",
+  "g1clips/neg_clip.json": "e2b326ff4ef54bab45f16353d7252d20aab10bb0620575f80fb627840b5a7e31",
+  "g1clips/neg_clip.mp4": "ea09463a031f516c836fbc9b0ccbfd7848e1ad0969689dedfb23e3d5d4a2fc2b",
+  "g1clips/quality_clip.json": "163607682abed319b2b6668ab229b8c6073d4251286725f0e0bbdbb6877f09c3",
+  "g1clips/quality_clip.mp4": "5dae232ffcbb313a2015398811fa5cb65eaa2a3a1059e43c113dc23dc2c25c03",
+  "g2clips_negtest/neg_clip.json": "56e54d6db441c7a9153fc5cdb6a4996dc4627623ff328082e61a57bee9ea103d",
+  "g2clips_negtest/neg_clip.mp4": "5db4fa0a46507a8bb86ce0151c9e705de09a1c8acaf14a74ec53153e4254a71d"
+ },
+ "clips_identical_to_g4": true
+}
