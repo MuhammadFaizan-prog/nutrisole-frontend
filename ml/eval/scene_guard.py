@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import collections
 
-DEFAULT_GUARD = dict(maxSameClass=6, minAreaFrac=0.01)  # G3: 6 = G2_next plan rule (DEV tune prefers 0 = off, see G3.md); 0.01 = DEV guard-tune optimum for the G1 champion and G3 yolo11n (ml/runs/G3/guard_tune_*)
+DEFAULT_GUARD = dict(maxSameClass=0, minAreaFrac=0.01)  # G4: rule 2 OFF (0). DEV preferred off in G3; the G4 deterministic TEST replay agrees (G3 yolo11n@480: det segments 0.625 -> 0.667, same FA on both neg clips; ml/runs/G4/gauntlet_ff_*). 0.01 = DEV guard-tune optimum (ml/runs/G3/guard_tune_*)
 
 
 def scene_guard(dets: list[dict], maxSameClass: int = DEFAULT_GUARD["maxSameClass"], minAreaFrac: float = DEFAULT_GUARD["minAreaFrac"]) -> list[dict]:
