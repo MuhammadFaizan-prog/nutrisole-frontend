@@ -117,8 +117,40 @@ def colour_bands(rgb: np.ndarray, mask: np.ndarray, produce: str) -> tuple[dict,
     return out, dominant
 
 
+def surface_mask(rgb: np.ndarray, mask: np.ndarray, ring_frac: float | None = None, shadow_chroma: float | None = None,
+                 spec_v: float | None = None, spec_s: float | None = None) -> np.ndarray:
+    """G2: the part of the item mask whose darkness/brightness is meaningful.
+
+    Removes (a) SPECULAR highlights (HSV V >= spec_v and S <= spec_s) and (b) SHADOW pixels:
+    low-chroma (Lab chroma < shadow_chroma) pixels inside the outer ring of the silhouette
+    (distance to the mask edge < ring_frac * max distance). GrabCut often swallows the cast
+    shadow on the table/paper, and the item's own terminator shadow lives on the rim; real
+    rot is either chromatic (brown) or sits away from the rim. Defaults from
+    measure_params.json ("surface"); ring_frac 0 disables the shadow rule."""
+    P = MEASURE_PARAMS.get("surface", {})
+    ring_frac = P.get("ring_frac", 0.0) if ring_frac is None else ring_frac
+    shadow_chroma = P.get("shadow_chroma", 12.0) if shadow_chroma is None else shadow_chroma
+    spec_v = P.get("spec_v", 256) if spec_v is None else spec_v
+    spec_s = P.get("spec_s", 30) if spec_s is None else spec_s
+    m = mask.astype(bool).copy()
+    if m.sum() == 0:
+        return m
+    hsv = cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV)
+    m &= ~((hsv[..., 2] >= spec_v) & (hsv[..., 1] <= spec_s))
+    if ring_frac > 0:
+        dist = cv2.distanceTransform(mask.astype(np.uint8), cv2.DIST_L2, 3)
+        ring = dist < ring_frac * max(1.0, float(dist.max()))
+        lab = cv2.cvtColor(rgb, cv2.COLOR_RGB2LAB).astype(np.float32)
+        chroma = np.sqrt((lab[..., 1] - 128.0) ** 2 + (lab[..., 2] - 128.0) ** 2)
+        m &= ~(ring & (chroma < shadow_chroma))
+    if m.sum() < 0.3 * mask.sum():  # rule removed most of the item: do not trust it
+        return mask.astype(bool)
+    return m
+
+
 def dark_defect_area(rgb: np.ndarray, mask: np.ndarray, rel_drop: float | None = None,
-                     abs_floor: float | None = None, erode_px: int = 2, chroma_max: float | None = -1) -> float:
+                     abs_floor: float | None = None, erode_px: int = 2, chroma_max: float | None = -1,
+                     produce: str | None = None, baseline_weight: float | None = None) -> float:
     """Percent of item pixels that are dark blemishes.
 
     A pixel is a blemish if its Lab L* (0-100) is below
@@ -142,7 +174,16 @@ def dark_defect_area(rgb: np.ndarray, mask: np.ndarray, rel_drop: float | None =
     lab = cv2.cvtColor(rgb, cv2.COLOR_RGB2LAB)
     L = lab[..., 0].astype(np.float32) * (100.0 / 255.0)
     vals = L[m > 0]
-    thr = max(abs_floor, float(np.median(vals)) - rel_drop)
+    ref = float(np.median(vals))
+    # G2 per-class baseline: blend the item's own median L* with the median L* of FRESH
+    # train items of this class (measure_params.json "class_baseline_L"), so a heavily
+    # rotten item cannot drag its own reference down and hide its rot, and dark-skinned
+    # classes keep a low reference.
+    bw = P.get("baseline_weight", 0.0) if baseline_weight is None else baseline_weight
+    base = MEASURE_PARAMS.get("class_baseline_L", {}).get(produce or "", None)
+    if bw > 0 and base is not None:
+        ref = (1 - bw) * ref + bw * float(base)
+    thr = max(abs_floor, ref - rel_drop)
     dark = (L < thr) & (m > 0)
     if chroma_max is not None:
         a = lab[..., 1].astype(np.float32) - 128.0
@@ -174,7 +215,8 @@ def shape_metrics(mask: np.ndarray) -> tuple[float, float]:
 def measure(rgb: np.ndarray, produce: str, use_grabcut: bool = True) -> Measurements:
     mask, method = object_mask(rgb, use_grabcut=use_grabcut)
     bands, dom = colour_bands(rgb, mask, produce)
-    defect = dark_defect_area(rgb, mask)
+    surf = surface_mask(rgb, mask)
+    defect = dark_defect_area(rgb, surf, produce=produce)
     sol, ell = shape_metrics(mask)
     # elongated produce (banana, carrot, cucumber) is not elliptical in silhouette;
     # only solidity is used for them.
