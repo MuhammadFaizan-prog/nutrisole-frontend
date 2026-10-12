@@ -1,0 +1,70 @@
+{
+ "model": "yolo11n-cls",
+ "imgsz": 128,
+ "device": "kaggle-cpu",
+ "names": {
+  "0": "apple",
+  "1": "banana",
+  "2": "capsicum",
+  "3": "carrot",
+  "4": "citrus",
+  "5": "cucumber",
+  "6": "lemon_lime",
+  "7": "mango",
+  "8": "other",
+  "9": "pomegranate",
+  "10": "potato",
+  "11": "tomato"
+ },
+ "val": {
+  "apple": {
+   "n": 177,
+   "recall": 0.678
+  },
+  "banana": {
+   "n": 312,
+   "recall": 0.8558
+  },
+  "capsicum": {
+   "n": 100,
+   "recall": 0.51
+  },
+  "carrot": {
+   "n": 312,
+   "recall": 0.6667
+  },
+  "citrus": {
+   "n": 167,
+   "recall": 0.8024
+  },
+  "cucumber": {
+   "n": 149,
+   "recall": 0.6309
+  },
+  "lemon_lime": {
+   "n": 50,
+   "recall": 0.64
+  },
+  "mango": {
+   "n": 11,
+   "recall": 0.8182
+  },
+  "other": {
+   "n": 312,
+   "recall": 0.8269
+  },
+  "pomegranate": {
+   "n": 16,
+   "recall": 0.875
+  },
+  "potato": {
+   "n": 18,
+   "recall": 0.1667
+  },
+  "tomato": {
+   "n": 248,
+   "recall": 0.7863
+  }
+ },
+ "wall_s": 3975.3
+}
