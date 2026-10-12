@@ -1,0 +1,910 @@
+{
+ "det": "/workspace/work/cv/g5models/ft0/det_yolo11n_ft480_ft0_raw.onnx",
+ "det_kind": "raw",
+ "imgsz": 480,
+ "cls": "/workspace/work/cv/g3models/cls/E_224_e15_b64_sgd01.onnx",
+ "cls_imgsz": 224,
+ "temperature": 0.25,
+ "device": "CPU x2 (sandbox), onnxruntime 1.31.0, 2 intra-op threads",
+ "realtime_drop_frames": false,
+ "mode": "fixed-frame stride 1",
+ "scene_guard": {
+  "maxSameClass": 0,
+  "minAreaFrac": 0.01
+ },
+ "tracker_params": {
+  "iouMatch": 0.3,
+  "boxAlpha": 0.6,
+  "scoreAlpha": 0.2,
+  "switchMargin": 0.15,
+  "switchFrames": 3,
+  "minHits": 2,
+  "maxMissed": 4,
+  "stableIou": 0.8,
+  "stableMs": 500
+ },
+ "temporal": null,
+ "rubric": "rubric-v0.2-g2",
+ "disclaimer": "Synthetic handheld clips from locked TEST images: regression test, not a headline or phone number.",
+ "clips": {
+  "det": {
+   "frames_with_gt": 1424,
+   "frame_acc": 0.4375,
+   "per_class_recall": {
+    "banana": {
+     "n": 351,
+     "recall": 0.627
+    },
+    "apple": {
+     "n": 301,
+     "recall": 0.568
+    },
+    "citrus": {
+     "n": 297,
+     "recall": 0.36
+    },
+    "lemon_lime": {
+     "n": 54,
+     "recall": 0.0
+    },
+    "tomato": {
+     "n": 56,
+     "recall": 0.786
+    },
+    "potato": {
+     "n": 60,
+     "recall": 0.0
+    },
+    "carrot": {
+     "n": 299,
+     "recall": 0.271
+    },
+    "capsicum": {
+     "n": 6,
+     "recall": 0.0
+    }
+   },
+   "segments": 24,
+   "segment_acc": 0.5417,
+   "never_correct_segments": 10,
+   "ttfc_ms": {
+    "p50": 433.33350000000064,
+    "p90": 2373.3331000000017,
+    "max": 3666.6670000000013,
+    "n": 14
+   },
+   "label_flicker_per_10s_static": 0.0,
+   "label_flicker_per_10s_all": 0.632,
+   "grade_flicker_per_10s_static": 0.208,
+   "no_box_frac_static": 0.407,
+   "segments_detail": [
+    {
+     "seg": 0,
+     "cls": "banana",
+     "quality": null,
+     "frame_acc": 0.914,
+     "majority": "banana",
+     "seg_correct": true,
+     "ttfc_ms": 400.0,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "B"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 1,
+     "cls": "apple",
+     "quality": null,
+     "frame_acc": 0.0,
+     "majority": "lemon_lime",
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 1,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "B"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 2,
+     "cls": "citrus",
+     "quality": null,
+     "frame_acc": 0.0,
+     "majority": "apple",
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 2,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "ungradable"
+     ],
+     "no_box_frac_static": 0.767
+    },
+    {
+     "seg": 3,
+     "cls": "lemon_lime",
+     "quality": null,
+     "frame_acc": 0.0,
+     "majority": null,
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [],
+     "no_box_frac_static": 1.0
+    },
+    {
+     "seg": 4,
+     "cls": "tomato",
+     "quality": null,
+     "frame_acc": 0.786,
+     "majority": "tomato",
+     "seg_correct": true,
+     "ttfc_ms": 466.6670000000013,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.73,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.167
+    },
+    {
+     "seg": 5,
+     "cls": "potato",
+     "quality": null,
+     "frame_acc": 0.0,
+     "majority": null,
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [],
+     "no_box_frac_static": 1.0
+    },
+    {
+     "seg": 6,
+     "cls": "carrot",
+     "quality": null,
+     "frame_acc": 0.667,
+     "majority": "carrot",
+     "seg_correct": true,
+     "ttfc_ms": 600.0,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 7,
+     "cls": "banana",
+     "quality": null,
+     "frame_acc": 0.0,
+     "majority": null,
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 0,
+     "static_grades": [],
+     "no_box_frac_static": 1.0
+    },
+    {
+     "seg": 8,
+     "cls": "apple",
+     "quality": null,
+     "frame_acc": 0.9,
+     "majority": "apple",
+     "seg_correct": true,
+     "ttfc_ms": 200.0,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 9,
+     "cls": "citrus",
+     "quality": null,
+     "frame_acc": 0.0,
+     "majority": "carrot",
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [],
+     "no_box_frac_static": 0.933
+    },
+    {
+     "seg": 10,
+     "cls": "carrot",
+     "quality": null,
+     "frame_acc": 0.017,
+     "majority": "carrot",
+     "seg_correct": true,
+     "ttfc_ms": 3666.6670000000013,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [],
+     "no_box_frac_static": 1.0
+    },
+    {
+     "seg": 11,
+     "cls": "banana",
+     "quality": null,
+     "frame_acc": 0.95,
+     "majority": "banana",
+     "seg_correct": true,
+     "ttfc_ms": 200.0,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "B"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 12,
+     "cls": "apple",
+     "quality": null,
+     "frame_acc": 0.912,
+     "majority": "apple",
+     "seg_correct": true,
+     "ttfc_ms": 533.3329999999987,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.8,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 13,
+     "cls": "citrus",
+     "quality": null,
+     "frame_acc": 0.0,
+     "majority": null,
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [],
+     "no_box_frac_static": 1.0
+    },
+    {
+     "seg": 14,
+     "cls": "carrot",
+     "quality": null,
+     "frame_acc": 0.0,
+     "majority": null,
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [],
+     "no_box_frac_static": 1.0
+    },
+    {
+     "seg": 15,
+     "cls": "banana",
+     "quality": null,
+     "frame_acc": 0.946,
+     "majority": "banana",
+     "seg_correct": true,
+     "ttfc_ms": 466.6670000000013,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.73,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "B"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 16,
+     "cls": "apple",
+     "quality": null,
+     "frame_acc": 0.15,
+     "majority": "citrus",
+     "seg_correct": false,
+     "ttfc_ms": 3133.3329999999987,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 1,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "B"
+     ],
+     "no_box_frac_static": 0.1
+    },
+    {
+     "seg": 17,
+     "cls": "citrus",
+     "quality": null,
+     "frame_acc": 0.883,
+     "majority": "citrus",
+     "seg_correct": true,
+     "ttfc_ms": 466.6670000000013,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "A"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 18,
+     "cls": "carrot",
+     "quality": null,
+     "frame_acc": 0.678,
+     "majority": "carrot",
+     "seg_correct": true,
+     "ttfc_ms": 400.0,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.93,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "B"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 19,
+     "cls": "banana",
+     "quality": null,
+     "frame_acc": 0.95,
+     "majority": "banana",
+     "seg_correct": true,
+     "ttfc_ms": 200.0,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "B"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 20,
+     "cls": "apple",
+     "quality": null,
+     "frame_acc": 0.933,
+     "majority": "apple",
+     "seg_correct": true,
+     "ttfc_ms": 266.6670000000013,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 21,
+     "cls": "citrus",
+     "quality": null,
+     "frame_acc": 0.9,
+     "majority": "citrus",
+     "seg_correct": true,
+     "ttfc_ms": 400.0,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 1,
+     "all_s": 4.0,
+     "grade_changes_static": 1,
+     "static_grades": [
+      "A",
+      "Reject"
+     ],
+     "no_box_frac_static": 0.0
+    },
+    {
+     "seg": 22,
+     "cls": "carrot",
+     "quality": null,
+     "frame_acc": 0.0,
+     "majority": "capsicum",
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.8
+    },
+    {
+     "seg": 23,
+     "cls": "banana",
+     "quality": null,
+     "frame_acc": 0.0,
+     "majority": "apple",
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 1,
+     "all_s": 4.0,
+     "grade_changes_static": 0,
+     "static_grades": [],
+     "no_box_frac_static": 1.0
+    }
+   ],
+   "n_frames": 1737,
+   "processed_frames": 1737,
+   "dropped_frames": 0,
+   "wall_s": 161.1,
+   "latency_det_ms": {
+    "p50": 49.048420999994846,
+    "p90": 156.33549279999676,
+    "p95": 170.6265175999987
+   },
+   "latency_full_ms": {
+    "p50": 52.01759100000913,
+    "p90": 165.54207280000242,
+    "p95": 205.24371660001174
+   },
+   "effective_fps": 10.9
+  },
+  "quality": {
+   "frames_with_gt": 923,
+   "frame_acc": 0.5807,
+   "per_class_recall": {
+    "banana": {
+     "n": 116,
+     "recall": 0.948
+    },
+    "apple": {
+     "n": 57,
+     "recall": 0.298
+    },
+    "citrus": {
+     "n": 287,
+     "recall": 0.704
+    },
+    "guava": {
+     "n": 116,
+     "recall": 0.0
+    },
+    "pomegranate": {
+     "n": 347,
+     "recall": 0.597
+    }
+   },
+   "segments": 16,
+   "segment_acc": 0.6875,
+   "never_correct_segments": 4,
+   "ttfc_ms": {
+    "p50": 333.3329999999987,
+    "p90": 333.33300000000054,
+    "max": 533.3329999999987,
+    "n": 12
+   },
+   "label_flicker_per_10s_static": 4.062,
+   "label_flicker_per_10s_all": 3.411,
+   "grade_flicker_per_10s_static": 0.625,
+   "no_box_frac_static": 0.19,
+   "segments_detail": [
+    {
+     "seg": 0,
+     "cls": "pomegranate",
+     "quality": "fresh",
+     "frame_acc": 0.966,
+     "majority": "pomegranate",
+     "seg_correct": true,
+     "ttfc_ms": 266.66700000000003,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 1,
+     "static_grades": [
+      "A",
+      "ungradable"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "fresh"
+    },
+    {
+     "seg": 1,
+     "cls": "pomegranate",
+     "quality": "rotten",
+     "frame_acc": 0.966,
+     "majority": "pomegranate",
+     "seg_correct": true,
+     "ttfc_ms": 266.66700000000037,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "rotten"
+    },
+    {
+     "seg": 2,
+     "cls": "banana",
+     "quality": "fresh",
+     "frame_acc": 0.948,
+     "majority": "banana",
+     "seg_correct": true,
+     "ttfc_ms": 333.33300000000054,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "A"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "fresh"
+    },
+    {
+     "seg": 3,
+     "cls": "pomegranate",
+     "quality": "rotten",
+     "frame_acc": 0.707,
+     "majority": "pomegranate",
+     "seg_correct": true,
+     "ttfc_ms": 333.33300000000054,
+     "label_changes_static": 12,
+     "static_s": 2.0,
+     "label_changes_all": 15,
+     "all_s": 3.87,
+     "grade_changes_static": 1,
+     "static_grades": [
+      "A",
+      "B"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "fresh"
+    },
+    {
+     "seg": 4,
+     "cls": "pomegranate",
+     "quality": "fresh",
+     "frame_acc": 0.0,
+     "majority": null,
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 0,
+     "static_grades": [],
+     "no_box_frac_static": 1.0
+    },
+    {
+     "seg": 5,
+     "cls": "citrus",
+     "quality": "rotten",
+     "frame_acc": 0.965,
+     "majority": "citrus",
+     "seg_correct": true,
+     "ttfc_ms": 333.3329999999987,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.8,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "rotten"
+    },
+    {
+     "seg": 6,
+     "cls": "apple",
+     "quality": "fresh",
+     "frame_acc": 0.298,
+     "majority": "mango",
+     "seg_correct": false,
+     "ttfc_ms": 533.3329999999987,
+     "label_changes_static": 1,
+     "static_s": 2.0,
+     "label_changes_all": 4,
+     "all_s": 3.8,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "A"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "fresh"
+    },
+    {
+     "seg": 7,
+     "cls": "pomegranate",
+     "quality": "rotten",
+     "frame_acc": 0.947,
+     "majority": "pomegranate",
+     "seg_correct": true,
+     "ttfc_ms": 333.3329999999987,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.8,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.033,
+     "quality_majority": "rotten"
+    },
+    {
+     "seg": 8,
+     "cls": "guava",
+     "quality": "fresh",
+     "frame_acc": 0.0,
+     "majority": "apple",
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "B"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "fresh"
+    },
+    {
+     "seg": 9,
+     "cls": "citrus",
+     "quality": "rotten",
+     "frame_acc": 0.965,
+     "majority": "citrus",
+     "seg_correct": true,
+     "ttfc_ms": 266.6670000000013,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 2,
+     "all_s": 3.8,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "rotten"
+    },
+    {
+     "seg": 10,
+     "cls": "citrus",
+     "quality": "fresh",
+     "frame_acc": 0.596,
+     "majority": "citrus",
+     "seg_correct": true,
+     "ttfc_ms": 333.3329999999987,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.8,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "A"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "fresh"
+    },
+    {
+     "seg": 11,
+     "cls": "pomegranate",
+     "quality": "rotten",
+     "frame_acc": 0.0,
+     "majority": "tomato",
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "rotten"
+    },
+    {
+     "seg": 12,
+     "cls": "guava",
+     "quality": "fresh",
+     "frame_acc": 0.0,
+     "majority": null,
+     "seg_correct": false,
+     "ttfc_ms": null,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 0,
+     "static_grades": [],
+     "no_box_frac_static": 1.0
+    },
+    {
+     "seg": 13,
+     "cls": "citrus",
+     "quality": "rotten",
+     "frame_acc": 0.034,
+     "majority": "citrus",
+     "seg_correct": true,
+     "ttfc_ms": 333.3329999999987,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 0,
+     "static_grades": [],
+     "no_box_frac_static": 1.0
+    },
+    {
+     "seg": 14,
+     "cls": "citrus",
+     "quality": "fresh",
+     "frame_acc": 0.966,
+     "majority": "citrus",
+     "seg_correct": true,
+     "ttfc_ms": 266.6670000000013,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "A"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "fresh"
+    },
+    {
+     "seg": 15,
+     "cls": "banana",
+     "quality": "rotten",
+     "frame_acc": 0.948,
+     "majority": "banana",
+     "seg_correct": true,
+     "ttfc_ms": 333.3329999999987,
+     "label_changes_static": 0,
+     "static_s": 2.0,
+     "label_changes_all": 0,
+     "all_s": 3.87,
+     "grade_changes_static": 0,
+     "static_grades": [
+      "Reject"
+     ],
+     "no_box_frac_static": 0.0,
+     "quality_majority": "rotten"
+    }
+   ],
+   "quality_segments_graded": 13,
+   "quality_segment_acc": 0.9231,
+   "rotten_segment_recall": 0.75,
+   "rotten_segments": 8,
+   "n_frames": 1161,
+   "processed_frames": 1161,
+   "dropped_frames": 0,
+   "wall_s": 69.2,
+   "latency_det_ms": {
+    "p50": 44.836661999994476,
+    "p90": 85.90646299995797,
+    "p95": 141.8058639999913
+   },
+   "latency_full_ms": {
+    "p50": 45.17115100000524,
+    "p90": 96.56849300000658,
+    "p95": 144.9120209999819
+   },
+   "effective_fps": 17.0
+  },
+  "neg": {
+   "false_alarm_tracks": 14,
+   "minutes": 0.8,
+   "false_alarms_per_min": 17.5,
+   "fa_episodes": 4,
+   "fa_episodes_per_min": 5.0,
+   "frames_with_any_box": 69,
+   "frames": 720,
+   "n_frames": 720,
+   "processed_frames": 720,
+   "dropped_frames": 0,
+   "wall_s": 56.7,
+   "latency_det_ms": {
+    "p50": 51.59182350001856,
+    "p90": 148.88706409998917,
+    "p95": 163.0071534000279
+   },
+   "latency_full_ms": {
+    "p50": 51.9070235000072,
+    "p90": 151.45681249999825,
+    "p95": 166.96323924999774
+   },
+   "effective_fps": 12.9
+  }
+ },
+ "latency_overall": {
+  "det_ms": {
+   "p50": 47.469179499998404,
+   "p90": 148.44619610000794,
+   "p95": 162.15139995000666
+  },
+  "full_ms": {
+   "p50": 48.248091000033355,
+   "p90": 153.85750460000054,
+   "p95": 176.39935490000232
+  },
+  "det_fps": 13.9
+ }
+}
