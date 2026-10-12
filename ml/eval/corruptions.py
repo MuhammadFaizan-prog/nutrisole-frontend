@@ -59,3 +59,20 @@ def tube_light_hard(im):
 
 
 CORRUPTIONS["tube_light_hard"] = tube_light_hard
+
+
+def night_sodium_hard(im):
+    """G4 held-out variant, OUTSIDE the G4 night training family: sodium-vapour cast (B .55, G .9, R 1.3),
+    gain .18, gamma 2.2, chroma noise sigma 9, horizontal motion blur (hand shake), JPEG 60."""
+    f = np.clip(im.astype(np.float32) * np.array([0.55, 0.9, 1.3], np.float32), 0, 255)
+    f = (f / 255.0) ** 2.2 * 0.18 * 255.0
+    f += np.random.default_rng(2).normal(0, 9, im.shape)
+    f = np.clip(f, 0, 255).astype(np.uint8)
+    k = max(5, int(round(min(im.shape[:2]) * 0.02)) | 1)
+    kern = np.zeros((k, k), np.float32)
+    kern[k // 2, :] = 1.0 / k
+    ok, b = cv2.imencode(".jpg", cv2.filter2D(f, -1, kern), [cv2.IMWRITE_JPEG_QUALITY, 60])
+    return cv2.imdecode(b, cv2.IMREAD_COLOR)
+
+
+CORRUPTIONS["night_sodium_hard"] = night_sodium_hard
