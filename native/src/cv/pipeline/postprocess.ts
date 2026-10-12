@@ -49,7 +49,7 @@ export function nms(dets: Detection[], iouThr: number, maxDet = 300): Detection[
 //  2. the app grades ONE item: more than maxSameClass boxes of one class = a scene/pile/texture
 //     (stadium seats -> 'tomato' x30), so every box of that class is dropped for this frame (<= 0 disables).
 export type SceneGuardParams = { maxSameClass: number; minAreaFrac: number };
-export const DEFAULT_SCENE_GUARD: SceneGuardParams = { maxSameClass: 6, minAreaFrac: 0.01 }; // G3 defaults, tuned on DEV clips (see ml/eval/scene_guard.py)
+export const DEFAULT_SCENE_GUARD: SceneGuardParams = { maxSameClass: 0, minAreaFrac: 0.01 }; // G4: rule 2 off (0) after the deterministic TEST replay; see ml/eval/scene_guard.py
 
 export function sceneGuard(dets: Detection[], params: Partial<SceneGuardParams> = {}): Detection[] {
   const P = { ...DEFAULT_SCENE_GUARD, ...params };
