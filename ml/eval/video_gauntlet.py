@@ -61,12 +61,18 @@ def pct(a, q):
 
 
 def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, annotate_path=None, realtime=True, guard=None,
-             tracker_params=None, stride=1, temporal=None):
+             tracker_params=None, stride=1, temporal=None, tracker_kind="iou"):
     cap = cv2.VideoCapture(video)
     fps, W, H = gt["fps"], gt["w"], gt["h"]
-    trk = IouTracker(**(tracker_params or {}))
+    if tracker_kind == "bytetrack":  # G6.4 research option; app default stays IouTracker
+        from bytetrack_adapter import ByteTrackTracker
+        trk = ByteTrackTracker(**(tracker_params or {}))
+    else:
+        trk = IouTracker(**(tracker_params or {}))
     tmp = TemporalRescorer(**temporal) if temporal is not None else None  # G5 Seq-NMS-style causal rescoring
     dec_thr = min(RUBRIC["detectorMinScore"], tmp.p["preScore"]) if tmp else RUBRIC["detectorMinScore"]
+    if tracker_kind == "bytetrack":
+        dec_thr = min(dec_thr, trk.p["track_low_thresh"])  # ByteTrack's second association needs low-score boxes
     di = det.get_inputs()[0].name
     ci = cls.get_inputs()[0].name if cls else None
     vw = cv2.VideoWriter(annotate_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (W, H)) if annotate_path else None
@@ -212,6 +218,7 @@ def metrics(gt, shown, kind):
     seg_rows = []
     for seg in gt["segments"]:
         labels_all, labels_static, ttfc, grades_static = [], [], None, collections.defaultdict(list)
+        ids_seq = []  # G6: matched track id per frame (ID switches / fragmentation)
         seg_corr = seg_n = 0
         for fi in range(seg["start"], seg["end"] + 1):
             fr = gt["frames"][fi]
@@ -220,6 +227,8 @@ def metrics(gt, shown, kind):
                 continue
             m = match(shown[fi], p["box_norm"])
             lab = m["label"] if m else None
+            if m:
+                ids_seq.append(m["id"])
             ok = lab == p["cls"]
             n += 1
             correct += ok
@@ -247,7 +256,8 @@ def metrics(gt, shown, kind):
                              majority=NAMES[maj] if maj is not None else None, seg_correct=maj == seg["cls"], ttfc_ms=ttfc,
                              label_changes_static=changes(labels_static), static_s=round(static_s, 2), label_changes_all=changes(labels_all), all_s=round(all_s, 2),
                              grade_changes_static=g_changes, static_grades=sorted({g for v in grades_static.values() for g in v}),
-                             no_box_frac_static=round(sum(1 for l in labels_static if l is None) / max(1, len(labels_static)), 3)))
+                             no_box_frac_static=round(sum(1 for l in labels_static if l is None) / max(1, len(labels_static)), 3),
+                             id_switches=sum(1 for a_, b_ in zip(ids_seq, ids_seq[1:]) if a_ != b_), distinct_ids=len(set(ids_seq))))
     ttfcs = [r["ttfc_ms"] for r in seg_rows if r["ttfc_ms"] is not None]
     st = sum(r["static_s"] for r in seg_rows)
     al = sum(r["all_s"] for r in seg_rows)
@@ -260,6 +270,7 @@ def metrics(gt, shown, kind):
                label_flicker_per_10s_all=round(10 * sum(r["label_changes_all"] for r in seg_rows) / max(1e-9, al), 3),
                grade_flicker_per_10s_static=round(10 * sum(r["grade_changes_static"] for r in seg_rows) / max(1e-9, st), 3),
                no_box_frac_static=round(float(np.mean([r["no_box_frac_static"] for r in seg_rows])), 3),
+               id_switches=sum(r["id_switches"] for r in seg_rows), mean_ids_per_segment=round(float(np.mean([r["distinct_ids"] for r in seg_rows])), 3) if seg_rows else None,
                segments_detail=seg_rows)
     if kind == "quality":
         # quality level on segments where a grade was produced (majority of graded frames)
@@ -306,6 +317,7 @@ def main():
     ap.add_argument("--min-area-frac", type=float, default=DEFAULT_GUARD["minAreaFrac"])
     ap.add_argument("--no-guard", action="store_true", help="G1/G2 behaviour (no scene guard)")
     ap.add_argument("--kinds", default="det,quality,neg")
+    ap.add_argument("--tracker-kind", choices=["iou", "bytetrack"], default="iou", help="G6.4: association backend (bytetrack = research option, Python only)")
     ap.add_argument("--temporal", default=None, help="G5: JSON TemporalRescorer params, e.g. '{\"window\":5}' (off by default)")
     a = ap.parse_args()
     tp = json.loads(a.tracker) if a.tracker else {}
@@ -316,7 +328,7 @@ def main():
     cls = sess(a.cls) if a.cls else None
     report = dict(det=a.det, det_kind=a.det_kind, imgsz=a.imgsz, cls=a.cls, cls_imgsz=a.cls_imgsz, temperature=a.temp,
                   device=f"CPU x{os.cpu_count()} (sandbox), onnxruntime {ort.__version__}, 2 intra-op threads",
-                  realtime_drop_frames=not a.no_realtime, mode=("realtime" if not a.no_realtime else f"fixed-frame stride {a.stride}"), scene_guard=guard, tracker_params=IouTracker(**tp).p, temporal=(TemporalRescorer(**temporal).p if temporal is not None else None), rubric=RUBRIC["rubricVersion"],
+                  realtime_drop_frames=not a.no_realtime, mode=("realtime" if not a.no_realtime else f"fixed-frame stride {a.stride}"), scene_guard=guard, tracker_kind=a.tracker_kind, tracker_params=(IouTracker(**tp).p if a.tracker_kind == "iou" else __import__("bytetrack_adapter").ByteTrackTracker(**tp).p), temporal=(TemporalRescorer(**temporal).p if temporal is not None else None), rubric=RUBRIC["rubricVersion"],
                   disclaimer="Synthetic handheld clips from locked TEST images: regression test, not a headline or phone number.", clips={})
     all_det, all_full = [], []
     for kind in a.kinds.split(","):
@@ -326,7 +338,7 @@ def main():
         gt = json.load(open(gp))
         ann = f"{a.out}/{kind}_annotated.mp4" if a.annotate else None
         t0 = time.time()
-        shown, ld, lf, dropped = run_clip(vp, gt, det, a.det_kind, a.imgsz, cls, a.cls_names.split(","), a.cls_imgsz, a.temp, ann, not a.no_realtime, guard, tp, a.stride, temporal)
+        shown, ld, lf, dropped = run_clip(vp, gt, det, a.det_kind, a.imgsz, cls, a.cls_names.split(","), a.cls_imgsz, a.temp, ann, not a.no_realtime, guard, tp, a.stride, temporal, a.tracker_kind)
         m = metrics(gt, shown, kind)
         m.update(n_frames=len(shown), processed_frames=len(ld), dropped_frames=dropped, wall_s=round(time.time() - t0, 1),
                  latency_det_ms=dict(p50=pct(ld, 50), p90=pct(ld, 90), p95=pct(ld, 95)),
