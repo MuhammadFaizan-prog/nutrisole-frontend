@@ -1,0 +1,17 @@
+{
+ "detector": {
+  "pt": "/workspace/work/nutrisole/ml/runs/G5/kaggle/nutrisole-g5-ft-fthnc/runs/det_yolo11n_ft480_fthnc/weights/best.pt",
+  "onnx": "/workspace/work/cv/g5models/fthnc/det_yolo11n_ft480_fthnc_raw.onnx",
+  "images": 40,
+  "imgsz": 480,
+  "matched_pairs": 663,
+  "class_disagreements": 0,
+  "min_iou": 0.9999907324337151,
+  "mean_iou": 0.9999989098889772,
+  "max_dconf": 7.748603820800781e-06,
+  "mean_dconf": 4.227614510652706e-07,
+  "unmatched_beyond_tolerance": 0,
+  "unmatched_near_threshold": 0,
+  "pass": true
+ }
+}
