@@ -17,7 +17,7 @@ def neg(p):
 
 def kag(tag):  # Kaggle T4 metrics for the new external splits (eval device T4, imgsz 480)
     out = {}
-    for f in glob.glob(f"{R5}/kaggle/*/*{tag}*_metrics.json"):
+    for f in glob.glob(f"{R5}/kaggle/*-{tag}/*{tag}*_metrics.json")+glob.glob(f"{R5}/kaggle/*-{tag}/**/*{tag}_metrics.json", recursive=True):
         for e in json.load(open(f)).get("evals", []):
             if e["imgsz"] == 480 and e["split"] in ("test_guava", "test_capsicum_whole", "val"): out[e["split"] + "_T4"] = e
     return out
@@ -26,9 +26,10 @@ def kag(tag):  # Kaggle T4 metrics for the new external splits (eval device T4, 
 M = {"G1 champion yolo26n (raw-head eval)": dict(imgsz=320, **load(f"{RR}/G1/eval_det_yolo26n_320/eval_det.json", 320), **load(f"{R3}/eval_det_G1champ_oiv7/eval_det.json"), **load(f"{R3}/eval_pooled_G1/eval_det.json")),
      "G3 control yolo11n (CHAMPION)": dict(imgsz=480, **load(f"{R3}/eval_det_k11_480/eval_det.json"), **load(f"{R4}/eval_det_G3champ_oiv7c/eval_det.json"), **load(f"{R3}/eval_pooled_k11_480/eval_det.json"), **load(f"{R5}/eval_nostrips_G3champ/eval_det.json"), neg=neg(f"{R3}/neg_fa_k11_480.json")),
      "A1 hygiene off (G4)": dict(imgsz=480, **load(f"{R4}/eval_det_A1hyg/eval_det.json"), **load(f"{R4}/eval_pooled_A1hyg/eval_det.json"), **load(f"{R5}/eval_nostrips_A1hyg/eval_det.json"), neg=neg(f"{R4}/neg_fa_A1hyg.json"))}
-for tag, nm in [("det4", "det-v4 (G4 kernel, OIV7 citrus + lemon_lime x2)"), ("det4h", "det-v4hyg (G4 kernel; TEST-INFORMED)"), ("g5hn", "G5 g5hn = A1 + video hard negatives"), ("g5hnc", "G5 g5hnc = g5hn + guava + whole capsicum")]:
+for tag, nm in [("det4", "det-v4 (G4 kernel, OIV7 citrus + lemon_lime x2)"), ("det4h", "det-v4hyg (G4 kernel; TEST-INFORMED)"), ("g5hn", "G5 g5hn = A1 + video hard negatives"), ("g5hnc", "G5 g5hnc = g5hn + guava + whole capsicum"), ("ft0", "G5 ft0 = A1 fine-tune @480 (1500-img subset, Kaggle CPU)"), ("fthn", "G5 fthn = ft0 recipe + video hard negatives"), ("fthnc", "G5 fthnc = fthn + guava + whole capsicum")]:
     e = load(f"{R5}/eval_det_{tag}/eval_det.json")
-    if e: M[f"{nm} [{tag}]"] = dict(imgsz=480, **e, **load(f"{R5}/eval_pooled_{tag}/eval_det.json"), **load(f"{R5}/eval_nostrips_{tag}/eval_det.json"), **kag(tag), neg=neg(f"{R5}/neg_fa_{tag}.json"))
+    e = e or load(f"{R5}/eval_pooled_{tag}/eval_det.json")
+    if e: M[f"{nm} [{tag}]"] = {"imgsz": 480, **e, **load(f"{R5}/eval_pooled_{tag}/eval_det.json"), **load(f"{R5}/eval_nostrips_{tag}/eval_det.json"), **kag(tag), "neg": neg(f"{R5}/neg_fa_{tag}.json")}
 SP = [("test", 557), ("test_rf", 149), ("test_oiv7", 123), ("test_oiv7c", 181), ("pooled", 829), ("test_rf_nostrips", 149)]
 o = ["Device: sandbox CPU (2-core aarch64), PyTorch .pt eval, conf 0.001, iou 0.7. `test_rf_nostrips` is a G5 VIEW (test_rf with the 110 sliced capsicum-strip boxes removed); the locked test_rf is unchanged.", "",
      "| model | imgsz | " + " | ".join(f"{s} (n={n}) mAP50 / 50-95" for s, n in SP) + " | neg_test img FA (n=80, conf 0.35) |", "|---|---|" + "---|" * (len(SP) + 1)]
