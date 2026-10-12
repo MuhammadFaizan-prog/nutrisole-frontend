@@ -1,0 +1,20 @@
+# NutriSole detection dataset v1 (built by ml/data/build_det_v1.py; manifest ml/data/builds/v1/det_manifest.json)
+# `path` is machine-specific: point it at $NUTRISOLE_DATA/builds/v1/det.
+path: /workspace/work/cv/g1data/builds/v1/det
+train: images/train
+val: images/val
+test: images/test
+# class order is the contract with native/src/cv/models/labels.ts (tested)
+names:
+  0: banana
+  1: apple
+  2: mango
+  3: citrus
+  4: guava
+  5: pomegranate
+  6: lemon_lime
+  7: tomato
+  8: potato
+  9: cucumber
+  10: carrot
+  11: capsicum
