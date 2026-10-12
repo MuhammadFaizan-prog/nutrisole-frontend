@@ -56,7 +56,8 @@ def main():
     # temp yaml exposing test_rf as a split
     tmp_yaml = os.path.join(a.out, "_data.yaml")
     c2 = dict(cfg)
-    c2["test_rf"] = os.path.join(root, "images/test_rf")  # Ultralytics resolves only train/val/test against `path`
+    if not (isinstance(cfg.get("test_rf"), str) and os.path.isabs(cfg["test_rf"])):  # det-v3 yamls give absolute split lists
+        c2["test_rf"] = os.path.join(root, "images/test_rf")  # Ultralytics resolves only train/val/test against `path`
     yaml.safe_dump(c2, open(tmp_yaml, "w"))
     model = YOLO(a.model)
     rep = dict(model=a.model, device="cpu", head="one2one (NMS-free, nms=False)" if a.e2e else "default (one2many + NMS iou 0.7)", results=[])
