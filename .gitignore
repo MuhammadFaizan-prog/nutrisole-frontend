@@ -66,3 +66,6 @@ ml/runs/**/eval_det_*/**/*.jpg
 ml/runs/**/kaggle_*/runs/**/*.png
 ml/runs/**/kaggle_*/runs/**/*.jpg
 ml/runs/**/kaggle_*/*.pt
+ml/runs/G3/**/*.pkl
+ml/runs/G3/kaggle/**/*.png
+ml/runs/G3/kaggle/**/*.jpg
