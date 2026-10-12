@@ -1,0 +1,1 @@
+{"id": "mfaizannnn/nutrisole-g4-det-v4hyg", "title": "nutrisole-g4-det-v4hyg", "code_file": "run.py", "language": "python", "kernel_type": "script", "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["mfaizannnn/nutrisole-cv-g3", "mfaizannnn/nutrisole-cv-g4-abl", "mfaizannnn/nutrisole-cv-g4-v4"], "competition_sources": [], "kernel_sources": []}
