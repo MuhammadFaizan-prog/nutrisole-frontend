@@ -1,0 +1,200 @@
+{
+ "summary": {
+  "total": {
+   "cells_kept": 254,
+   "cells_correct": 254,
+   "rows_gt": 146,
+   "rows_kept": 127,
+   "rows_dropped": 21,
+   "gt_rows_with_price": 132,
+   "priced_rows_recovered": 117
+  },
+  "kept_cell_accuracy": 1.0,
+  "priced_row_recall": 0.8864,
+  "note": "Lexicon built from the 2026-10-12 lists, so 2026-10-12 is in-sample for name matching; 2026-10-10 is held out (same item set, different prices)."
+ },
+ "per_list": {
+  "fruit_2026-10-12": {
+   "counts": {
+    "cells_kept": 70,
+    "cells_correct": 70,
+    "rows_gt": 37,
+    "rows_kept": 35,
+    "rows_dropped": 3,
+    "gt_rows_with_price": 34,
+    "priced_rows_recovered": 32
+   },
+   "errors": [],
+   "dropped": [
+    [
+     "0811.",
+     "name_unmatched",
+     null,
+     null
+    ],
+    [
+     "ریئو",
+     "name_unmatched",
+     165,
+     157
+    ],
+    [
+     "ہو",
+     "name_unmatched",
+     180,
+     167
+    ]
+   ]
+  },
+  "fruit_2026-10-10": {
+   "counts": {
+    "cells_kept": 68,
+    "cells_correct": 68,
+    "rows_gt": 37,
+    "rows_kept": 34,
+    "rows_dropped": 4,
+    "gt_rows_with_price": 34,
+    "priced_rows_recovered": 31
+   },
+   "errors": [],
+   "dropped": [
+    [
+     "020,",
+     "name_unmatched",
+     30,
+     29
+    ],
+    [
+     "0981",
+     "name_unmatched",
+     null,
+     null
+    ],
+    [
+     "ا‫ .تج",
+     "name_unmatched",
+     160,
+     152
+    ],
+    [
+     "پھو۔",
+     "name_unmatched",
+     170,
+     159
+    ]
+   ]
+  },
+  "vegetable_2026-10-12": {
+   "counts": {
+    "cells_kept": 58,
+    "cells_correct": 58,
+    "rows_gt": 36,
+    "rows_kept": 29,
+    "rows_dropped": 7,
+    "gt_rows_with_price": 32,
+    "priced_rows_recovered": 27
+   },
+   "errors": [],
+   "dropped": [
+    [
+     "0.3",
+     "name_unmatched",
+     null,
+     null
+    ],
+    [
+     "ہے ساس ات",
+     "name_unmatched",
+     335,
+     320
+    ],
+    [
+     "گی رت",
+     "name_unmatched",
+     80,
+     76
+    ],
+    [
+     "09 0",
+     "name_unmatched",
+     170,
+     162
+    ],
+    [
+     "٤‏ زی",
+     "name_unmatched",
+     110,
+     105
+    ],
+    [
+     "ری",
+     "name_unmatched",
+     220,
+     210
+    ],
+    [
+     "ہے کہوہ ات",
+     "name_unmatched",
+     null,
+     null
+    ]
+   ]
+  },
+  "vegetable_2026-10-10": {
+   "counts": {
+    "cells_kept": 58,
+    "cells_correct": 58,
+    "rows_gt": 36,
+    "rows_kept": 29,
+    "rows_dropped": 7,
+    "gt_rows_with_price": 32,
+    "priced_rows_recovered": 27
+   },
+   "errors": [],
+   "dropped": [
+    [
+     "0.3",
+     "name_unmatched",
+     null,
+     null
+    ],
+    [
+     "ہے ساس ات",
+     "name_unmatched",
+     340,
+     325
+    ],
+    [
+     "گی رت",
+     "name_unmatched",
+     70,
+     66
+    ],
+    [
+     "09 0",
+     "name_unmatched",
+     170,
+     162
+    ],
+    [
+     "٤‏ زی",
+     "name_unmatched",
+     120,
+     114
+    ],
+    [
+     "ری",
+     "name_unmatched",
+     220,
+     210
+    ],
+    [
+     "ہے کہوہ ات",
+     "name_unmatched",
+     null,
+     null
+    ]
+   ]
+  }
+ }
+}
