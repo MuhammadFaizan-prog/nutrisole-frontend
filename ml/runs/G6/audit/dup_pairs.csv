@@ -1,0 +1,2 @@
+eval_split,eval_path,other_split,other_path,phash_ham,dhash_ham,exact_md5
+test,/workspace/work/cv/g3data/det_v3/det/images/test/000000069340.jpg,val,/workspace/work/cv/g3data/det_v3/det/images/val/000000369594.jpg,4,7,False
