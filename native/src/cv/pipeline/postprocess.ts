@@ -42,3 +42,33 @@ export function nms(dets: Detection[], iouThr: number, maxDet = 300): Detection[
   }
   return keep;
 }
+
+// G3 app-side detection guard. EXACT mirror of ml/eval/scene_guard.py (parity: tests/cvSceneGuard.test.ts).
+// Applied per frame after decode + score threshold + mapping to normalised frame coords, before the tracker:
+//  1. drop boxes smaller than minAreaFrac of the frame;
+//  2. the app grades ONE item: more than maxSameClass boxes of one class = a scene/pile/texture
+//     (stadium seats -> 'tomato' x30), so every box of that class is dropped for this frame (<= 0 disables).
+export type SceneGuardParams = { maxSameClass: number; minAreaFrac: number };
+export const DEFAULT_SCENE_GUARD: SceneGuardParams = { maxSameClass: 6, minAreaFrac: 0.01 }; // G3 defaults, tuned on DEV clips (see ml/eval/scene_guard.py)
+
+export function sceneGuard(dets: Detection[], params: Partial<SceneGuardParams> = {}): Detection[] {
+  const P = { ...DEFAULT_SCENE_GUARD, ...params };
+  const keep = dets.filter((d) => (d.box[2] - d.box[0]) * (d.box[3] - d.box[1]) >= P.minAreaFrac);
+  if (P.maxSameClass <= 0) return keep;
+  const n = new Map<number, number>();
+  for (const d of keep) n.set(d.classId, (n.get(d.classId) ?? 0) + 1);
+  return keep.filter((d) => (n.get(d.classId) ?? 0) <= P.maxSameClass);
+}
+
+/** False-alarm episodes: runs of frames with >= 1 displayed box; runs separated by <= mergeGapS are merged. */
+export function faEpisodes(shownFlags: boolean[], fps: number, mergeGapS = 0.5): number {
+  let eps = 0;
+  let lastOn: number | null = null;
+  const gap = Math.round(mergeGapS * fps);
+  shownFlags.forEach((on, i) => {
+    if (!on) return;
+    if (lastOn === null || i - lastOn > gap + 1) eps += 1;
+    lastOn = i;
+  });
+  return eps;
+}
