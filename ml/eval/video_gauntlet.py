@@ -42,6 +42,7 @@ sys.path.insert(0, os.path.dirname(HERE))
 from geometry import letterbox, dst_to_src, cls_preprocess, decode  # noqa: E402
 from tracker import IouTracker, iou  # noqa: E402
 from scene_guard import scene_guard, fa_episodes, DEFAULT_GUARD  # noqa: E402
+from temporal import TemporalRescorer  # noqa: E402
 from grading.measure import measure  # noqa: E402
 from grading.rules import grade, RUBRIC  # noqa: E402
 
@@ -60,10 +61,12 @@ def pct(a, q):
 
 
 def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, annotate_path=None, realtime=True, guard=None,
-             tracker_params=None, stride=1):
+             tracker_params=None, stride=1, temporal=None):
     cap = cv2.VideoCapture(video)
     fps, W, H = gt["fps"], gt["w"], gt["h"]
     trk = IouTracker(**(tracker_params or {}))
+    tmp = TemporalRescorer(**temporal) if temporal is not None else None  # G5 Seq-NMS-style causal rescoring
+    dec_thr = min(RUBRIC["detectorMinScore"], tmp.p["preScore"]) if tmp else RUBRIC["detectorMinScore"]
     di = det.get_inputs()[0].name
     ci = cls.get_inputs()[0].name if cls else None
     vw = cv2.VideoWriter(annotate_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (W, H)) if annotate_path else None
@@ -92,7 +95,7 @@ def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, a
             out = det.run(None, {di: x})[0]
             t1 = time.perf_counter()
             dets = []
-            for d in decode(out, det_kind, RUBRIC["detectorMinScore"]):
+            for d in decode(out, det_kind, dec_thr):
                 b = dst_to_src(d["box"], tf)
                 if b[2] - b[0] < 2 or b[3] - b[1] < 2:
                     continue
@@ -101,6 +104,10 @@ def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, a
                 dets = scene_guard(dets, **guard)
             if fr.get("reset"):
                 trk.reset()
+                if tmp:
+                    tmp.reset()
+            if tmp:
+                dets = tmp.update(dets)
             tracks = trk.update(dets, t)
             n_graded = 0
             alive = {tr.id for tr in trk.tracks}  # internal Track dataclasses (update() returns dicts)
@@ -299,15 +306,17 @@ def main():
     ap.add_argument("--min-area-frac", type=float, default=DEFAULT_GUARD["minAreaFrac"])
     ap.add_argument("--no-guard", action="store_true", help="G1/G2 behaviour (no scene guard)")
     ap.add_argument("--kinds", default="det,quality,neg")
+    ap.add_argument("--temporal", default=None, help="G5: JSON TemporalRescorer params, e.g. '{\"window\":5}' (off by default)")
     a = ap.parse_args()
     tp = json.loads(a.tracker) if a.tracker else {}
+    temporal = json.loads(a.temporal) if a.temporal else None
     guard = None if a.no_guard else dict(maxSameClass=a.max_same_class, minAreaFrac=a.min_area_frac)
     os.makedirs(a.out, exist_ok=True)
     det = sess(a.det)
     cls = sess(a.cls) if a.cls else None
     report = dict(det=a.det, det_kind=a.det_kind, imgsz=a.imgsz, cls=a.cls, cls_imgsz=a.cls_imgsz, temperature=a.temp,
                   device=f"CPU x{os.cpu_count()} (sandbox), onnxruntime {ort.__version__}, 2 intra-op threads",
-                  realtime_drop_frames=not a.no_realtime, mode=("realtime" if not a.no_realtime else f"fixed-frame stride {a.stride}"), scene_guard=guard, tracker_params=IouTracker(**tp).p, rubric=RUBRIC["rubricVersion"],
+                  realtime_drop_frames=not a.no_realtime, mode=("realtime" if not a.no_realtime else f"fixed-frame stride {a.stride}"), scene_guard=guard, tracker_params=IouTracker(**tp).p, temporal=(TemporalRescorer(**temporal).p if temporal is not None else None), rubric=RUBRIC["rubricVersion"],
                   disclaimer="Synthetic handheld clips from locked TEST images: regression test, not a headline or phone number.", clips={})
     all_det, all_full = [], []
     for kind in a.kinds.split(","):
@@ -317,7 +326,7 @@ def main():
         gt = json.load(open(gp))
         ann = f"{a.out}/{kind}_annotated.mp4" if a.annotate else None
         t0 = time.time()
-        shown, ld, lf, dropped = run_clip(vp, gt, det, a.det_kind, a.imgsz, cls, a.cls_names.split(","), a.cls_imgsz, a.temp, ann, not a.no_realtime, guard, tp, a.stride)
+        shown, ld, lf, dropped = run_clip(vp, gt, det, a.det_kind, a.imgsz, cls, a.cls_names.split(","), a.cls_imgsz, a.temp, ann, not a.no_realtime, guard, tp, a.stride, temporal)
         m = metrics(gt, shown, kind)
         m.update(n_frames=len(shown), processed_frames=len(ld), dropped_frames=dropped, wall_s=round(time.time() - t0, 1),
                  latency_det_ms=dict(p50=pct(ld, 50), p90=pct(ld, 90), p95=pct(ld, 95)),
