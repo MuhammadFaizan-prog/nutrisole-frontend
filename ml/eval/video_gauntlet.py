@@ -59,10 +59,11 @@ def pct(a, q):
     return float(np.percentile(a, q)) if len(a) else None
 
 
-def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, annotate_path=None, realtime=True, guard=None):
+def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, annotate_path=None, realtime=True, guard=None,
+             tracker_params=None, stride=1):
     cap = cv2.VideoCapture(video)
     fps, W, H = gt["fps"], gt["w"], gt["h"]
-    trk = IouTracker()
+    trk = IouTracker(**(tracker_params or {}))
     di = det.get_inputs()[0].name
     ci = cls.get_inputs()[0].name if cls else None
     vw = cv2.VideoWriter(annotate_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (W, H)) if annotate_path else None
@@ -83,6 +84,8 @@ def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, a
             pending = None
         if realtime and t < busy_until:
             dropped += 1
+        elif not realtime and stride > 1 and fi % stride:
+            dropped += 1  # fixed-frame mode: deterministic schedule, every stride-th frame processed
         else:
             t0 = time.perf_counter()
             x, tf = letterbox(frame, imgsz)
@@ -289,19 +292,22 @@ def main():
     ap.add_argument("--clips", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--annotate", action="store_true")
-    ap.add_argument("--no-realtime", action="store_true")
+    ap.add_argument("--no-realtime", action="store_true", help="G4 fixed-frame mode: deterministic, frames processed on a fixed schedule (see --stride)")
+    ap.add_argument("--stride", type=int, default=1, help="fixed-frame mode only: process every Nth frame (UI holds the last result)")
+    ap.add_argument("--tracker", default=None, help="JSON dict of IouTracker overrides, e.g. '{\"scoreAlpha\":0.5}'")
     ap.add_argument("--max-same-class", type=int, default=DEFAULT_GUARD["maxSameClass"], help="G3 scene guard; <=0 disables rule 2")
     ap.add_argument("--min-area-frac", type=float, default=DEFAULT_GUARD["minAreaFrac"])
     ap.add_argument("--no-guard", action="store_true", help="G1/G2 behaviour (no scene guard)")
     ap.add_argument("--kinds", default="det,quality,neg")
     a = ap.parse_args()
+    tp = json.loads(a.tracker) if a.tracker else {}
     guard = None if a.no_guard else dict(maxSameClass=a.max_same_class, minAreaFrac=a.min_area_frac)
     os.makedirs(a.out, exist_ok=True)
     det = sess(a.det)
     cls = sess(a.cls) if a.cls else None
     report = dict(det=a.det, det_kind=a.det_kind, imgsz=a.imgsz, cls=a.cls, cls_imgsz=a.cls_imgsz, temperature=a.temp,
                   device=f"CPU x{os.cpu_count()} (sandbox), onnxruntime {ort.__version__}, 2 intra-op threads",
-                  realtime_drop_frames=not a.no_realtime, scene_guard=guard, tracker_params=IouTracker().p, rubric=RUBRIC["rubricVersion"],
+                  realtime_drop_frames=not a.no_realtime, mode=("realtime" if not a.no_realtime else f"fixed-frame stride {a.stride}"), scene_guard=guard, tracker_params=IouTracker(**tp).p, rubric=RUBRIC["rubricVersion"],
                   disclaimer="Synthetic handheld clips from locked TEST images: regression test, not a headline or phone number.", clips={})
     all_det, all_full = [], []
     for kind in a.kinds.split(","):
@@ -311,7 +317,7 @@ def main():
         gt = json.load(open(gp))
         ann = f"{a.out}/{kind}_annotated.mp4" if a.annotate else None
         t0 = time.time()
-        shown, ld, lf, dropped = run_clip(vp, gt, det, a.det_kind, a.imgsz, cls, a.cls_names.split(","), a.cls_imgsz, a.temp, ann, not a.no_realtime, guard)
+        shown, ld, lf, dropped = run_clip(vp, gt, det, a.det_kind, a.imgsz, cls, a.cls_names.split(","), a.cls_imgsz, a.temp, ann, not a.no_realtime, guard, tp, a.stride)
         m = metrics(gt, shown, kind)
         m.update(n_frames=len(shown), processed_frames=len(ld), dropped_frames=dropped, wall_s=round(time.time() - t0, 1),
                  latency_det_ms=dict(p50=pct(ld, 50), p90=pct(ld, 90), p95=pct(ld, 95)),
