@@ -67,11 +67,17 @@ def grade(produce: str, det_score: float, probs: Optional[dict], m: Optional[dic
     def out(g, reasons):
         return {"grade": g, "status": "supported", "reasons": reasons[:2], "numbers": nums}
 
+    # G2: a measurement-only Reject/C (dark marks, overripe colour) needs the classifier to
+    # agree that something is wrong (p_rotten or p_mild >= measurementAgreement.pRottenMin);
+    # otherwise the marks are reported at B level. Stops shadows/dark skin alone from
+    # producing C/Reject on fresh items (G1 failure mode #2). 0 disables (G1 behaviour).
+    gate = R.get("measurementAgreement", {}).get("pRottenMin", 0.0)
+    agree = gate <= 0 or p_r >= gate or (p_m is not None and p_m >= gate)
     # --- Reject
     rs = []
     if p_r >= R["reject"]["pRotten"]:
         rs.append(f"Visible rot likely ({_r(100 * p_r)}%)")
-    if defect is not None and defect >= R["reject"]["defectPct"]:
+    if agree and defect is not None and defect >= R["reject"]["defectPct"]:
         rs.append(f"Dark marks ~{_r(defect)}% of visible surface")
     if rs:
         return out("Reject", rs)
@@ -79,9 +85,9 @@ def grade(produce: str, det_score: float, probs: Optional[dict], m: Optional[dic
     rs = []
     if p_m is not None and p_m >= R["c"]["pMild"]:
         rs.append(f"Mild visible deterioration ({_r(100 * p_m)}%)")
-    if defect is not None and defect >= R["c"]["defectPct"]:
+    if agree and defect is not None and defect >= R["c"]["defectPct"]:
         rs.append(f"Dark marks ~{_r(defect)}% of visible surface")
-    if roles and has_table and roles["overripe"] >= R["c"]["overripeBandPct"]:
+    if agree and roles and has_table and roles["overripe"] >= R["c"]["overripeBandPct"]:
         rs.append(f"Overripe colour on ~{_r(roles['overripe'])}% of surface")
     if rs:
         return out("C", rs)
