@@ -1,0 +1,17 @@
+{
+ "detector": {
+  "pt": "/workspace/work/nutrisole/ml/runs/G3/kaggle/nutrisole-g3-det-yolo11n-640/runs/det_yolo11n_640/weights/best.pt",
+  "onnx": "/workspace/work/cv/g3models/k11_480/det_yolo11n_640_raw.onnx",
+  "images": 40,
+  "imgsz": 480,
+  "matched_pairs": 548,
+  "class_disagreements": 0,
+  "min_iou": 0.999993632838465,
+  "mean_iou": 0.9999988586902764,
+  "max_dconf": 6.4373016357421875e-06,
+  "mean_dconf": 4.781423694025861e-07,
+  "unmatched_beyond_tolerance": 0,
+  "unmatched_near_threshold": 0,
+  "pass": true
+ }
+}
