@@ -35,3 +35,15 @@ def jpeg40(im):
 
 
 CORRUPTIONS = {"tube_light_wb": tube_light, "sodium_wb": sodium_lamp, "low_light": low_light, "motion_blur": motion_blur, "jpeg40": jpeg40}
+
+
+def low_light_hard(im):
+    """G2 held-out variant, OUTSIDE the G2 training augmentation family: ~-2 EV (gain .25),
+    gamma 1.6, per-channel (chroma) sensor noise sigma 7, then JPEG 70 (night stall bulb)."""
+    f = (im.astype(np.float32) / 255.0) ** 1.6 * 0.25 * 255.0
+    f += np.random.default_rng(1).normal(0, 7, im.shape)
+    ok, b = cv2.imencode(".jpg", np.clip(f, 0, 255).astype(np.uint8), [cv2.IMWRITE_JPEG_QUALITY, 70])
+    return cv2.imdecode(b, cv2.IMREAD_COLOR)
+
+
+CORRUPTIONS["low_light_hard"] = low_light_hard
