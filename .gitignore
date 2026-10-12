@@ -24,3 +24,25 @@ __pycache__/
 !/artifacts/native/**/README.md
 !/artifacts/native/**/validation.json
 !/artifacts/native/plain-rn-apk-inspection.json
+
+# NutriSole CV (G1): raw data, dataset builds and weights stay out of Git.
+# Manifests, configs, metrics JSON/CSV and small plots ARE versioned.
+ml/data/raw/
+ml/data/builds/*/det/
+ml/data/builds/*/quality*/
+ml/data/builds/*/_pool/
+ml/runs/**/weights/
+ml/runs/**/*.pt
+ml/runs/**/*.onnx
+ml/runs/**/*.pte
+ml/runs/**/*.tflite
+ml/runs/**/*_saved_model/
+ml/runs/**/*.mp4
+ml/runs/**/*.cache
+ml/models/**/*.pt
+ml/models/**/*.onnx
+ml/models/**/*.pte
+ml/models/**/*.tflite
+ml/models/**/*_saved_model/
+*.pt
+.pytest_cache/
