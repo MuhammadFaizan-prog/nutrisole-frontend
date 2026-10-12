@@ -70,3 +70,7 @@ ml/runs/G3/**/*.pkl
 ml/runs/G3/kaggle/**/*.png
 ml/runs/G3/kaggle/**/*.jpg
 ml/runs/G4/kaggle/nutrisole-g4-owlv2/owlv2_proposals.json
+ml/runs/G5/kaggle/**/*.png
+ml/runs/G5/kaggle/**/*.jpg
+ml/runs/G5/kaggle/**/*.csv
+ml/runs/G5/**/*.pkl
