@@ -1,0 +1,50 @@
+{
+ "yolo26n_e2e_320": {
+  "onnx": "/workspace/work/cv/g2models/sz320/det_yolo26n_640_e2e.onnx",
+  "imgsz": 320,
+  "p50_ms": 26.34,
+  "p95_ms": 35.09
+ },
+ "yolo11n_raw_320": {
+  "onnx": "/workspace/work/cv/g2models/sz320/det_yolo11n_640_raw.onnx",
+  "imgsz": 320,
+  "p50_ms": 36.57,
+  "p95_ms": 46.27
+ },
+ "yolo26n_e2e_384": {
+  "onnx": "/workspace/work/cv/g2models/sz384/det_yolo26n_640_e2e.onnx",
+  "imgsz": 384,
+  "p50_ms": 42.83,
+  "p95_ms": 63.22
+ },
+ "yolo11n_raw_384": {
+  "onnx": "/workspace/work/cv/g2models/sz384/det_yolo11n_640_raw.onnx",
+  "imgsz": 384,
+  "p50_ms": 28.1,
+  "p95_ms": 52.07
+ },
+ "yolo26n_e2e_480": {
+  "onnx": "/workspace/work/cv/g2models/sz480/det_yolo26n_640_e2e.onnx",
+  "imgsz": 480,
+  "p50_ms": 40.98,
+  "p95_ms": 77.71
+ },
+ "yolo11n_raw_480": {
+  "onnx": "/workspace/work/cv/g2models/sz480/det_yolo11n_640_raw.onnx",
+  "imgsz": 480,
+  "p50_ms": 71.88,
+  "p95_ms": 88.85
+ },
+ "yolo26n_e2e_640": {
+  "onnx": "/workspace/work/cv/g2models/sz640/det_yolo26n_640_e2e.onnx",
+  "imgsz": 640,
+  "p50_ms": 119.72,
+  "p95_ms": 186.18
+ },
+ "yolo11n_raw_640": {
+  "onnx": "/workspace/work/cv/g2models/sz640/det_yolo11n_640_raw.onnx",
+  "imgsz": 640,
+  "p50_ms": 74.99,
+  "p95_ms": 141.63
+ }
+}
