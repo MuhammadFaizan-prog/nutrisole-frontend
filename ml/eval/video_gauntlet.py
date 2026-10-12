@@ -41,6 +41,7 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.dirname(HERE))
 from geometry import letterbox, dst_to_src, cls_preprocess, decode  # noqa: E402
 from tracker import IouTracker, iou  # noqa: E402
+from scene_guard import scene_guard, fa_episodes, DEFAULT_GUARD  # noqa: E402
 from grading.measure import measure  # noqa: E402
 from grading.rules import grade, RUBRIC  # noqa: E402
 
@@ -58,7 +59,7 @@ def pct(a, q):
     return float(np.percentile(a, q)) if len(a) else None
 
 
-def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, annotate_path=None, realtime=True):
+def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, annotate_path=None, realtime=True, guard=None):
     cap = cv2.VideoCapture(video)
     fps, W, H = gt["fps"], gt["w"], gt["h"]
     trk = IouTracker()
@@ -93,6 +94,8 @@ def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, a
                 if b[2] - b[0] < 2 or b[3] - b[1] < 2:
                     continue
                 dets.append(dict(box=[b[0] / W, b[1] / H, b[2] / W, b[3] / H], classId=d["classId"], score=d["score"]))
+            if guard is not None:
+                dets = scene_guard(dets, **guard)
             if fr.get("reset"):
                 trk.reset()
             tracks = trk.update(dets, t)
@@ -189,7 +192,9 @@ def metrics(gt, shown, kind):
                 ids.add(s["id"])
         minutes = len(shown) / fps / 60
         fa_frames = sum(1 for st in shown if st)
+        eps = fa_episodes(shown, fps)
         res.update(false_alarm_tracks=len(ids), minutes=round(minutes, 3), false_alarms_per_min=round(len(ids) / minutes, 2),
+                   fa_episodes=eps, fa_episodes_per_min=round(eps / minutes, 2),
                    frames_with_any_box=fa_frames, frames=len(shown))
         return res
     n, correct = 0, 0
@@ -285,23 +290,28 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--annotate", action="store_true")
     ap.add_argument("--no-realtime", action="store_true")
+    ap.add_argument("--max-same-class", type=int, default=DEFAULT_GUARD["maxSameClass"], help="G3 scene guard; <=0 disables rule 2")
+    ap.add_argument("--min-area-frac", type=float, default=DEFAULT_GUARD["minAreaFrac"])
+    ap.add_argument("--no-guard", action="store_true", help="G1/G2 behaviour (no scene guard)")
+    ap.add_argument("--kinds", default="det,quality,neg")
     a = ap.parse_args()
+    guard = None if a.no_guard else dict(maxSameClass=a.max_same_class, minAreaFrac=a.min_area_frac)
     os.makedirs(a.out, exist_ok=True)
     det = sess(a.det)
     cls = sess(a.cls) if a.cls else None
     report = dict(det=a.det, det_kind=a.det_kind, imgsz=a.imgsz, cls=a.cls, cls_imgsz=a.cls_imgsz, temperature=a.temp,
                   device=f"CPU x{os.cpu_count()} (sandbox), onnxruntime {ort.__version__}, 2 intra-op threads",
-                  realtime_drop_frames=not a.no_realtime, tracker_params=IouTracker().p, rubric=RUBRIC["rubricVersion"],
+                  realtime_drop_frames=not a.no_realtime, scene_guard=guard, tracker_params=IouTracker().p, rubric=RUBRIC["rubricVersion"],
                   disclaimer="Synthetic handheld clips from locked TEST images: regression test, not a headline or phone number.", clips={})
     all_det, all_full = [], []
-    for kind in ["det", "quality", "neg"]:
+    for kind in a.kinds.split(","):
         vp, gp = f"{a.clips}/{kind}_clip.mp4", f"{a.clips}/{kind}_clip.json"
         if not os.path.exists(vp):
             continue
         gt = json.load(open(gp))
         ann = f"{a.out}/{kind}_annotated.mp4" if a.annotate else None
         t0 = time.time()
-        shown, ld, lf, dropped = run_clip(vp, gt, det, a.det_kind, a.imgsz, cls, a.cls_names.split(","), a.cls_imgsz, a.temp, ann, not a.no_realtime)
+        shown, ld, lf, dropped = run_clip(vp, gt, det, a.det_kind, a.imgsz, cls, a.cls_names.split(","), a.cls_imgsz, a.temp, ann, not a.no_realtime, guard)
         m = metrics(gt, shown, kind)
         m.update(n_frames=len(shown), processed_frames=len(ld), dropped_frames=dropped, wall_s=round(time.time() - t0, 1),
                  latency_det_ms=dict(p50=pct(ld, 50), p90=pct(ld, 90), p95=pct(ld, 95)),
