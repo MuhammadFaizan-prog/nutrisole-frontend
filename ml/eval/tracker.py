@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-DEFAULT = dict(iouMatch=0.3, boxAlpha=0.6, scoreAlpha=0.35, switchMargin=0.15, switchFrames=3,
+DEFAULT = dict(iouMatch=0.3, boxAlpha=0.6, scoreAlpha=0.2, switchMargin=0.15, switchFrames=3,
                minHits=2, maxMissed=4, stableIou=0.8, stableMs=500)
 
 
