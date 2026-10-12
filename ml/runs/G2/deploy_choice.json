@@ -1,0 +1,28 @@
+{
+ "rule": "per model: smallest size with test_rf mAP50 >= best size - 0.03; candidate = higher test_rf mAP50",
+ "cands": {
+  "yolo26n": {
+   "kind": "e2e",
+   "size": 384,
+   "test_rf_mAP50": 0.3243,
+   "by_size": {
+    "320": 0.298,
+    "384": 0.3243,
+    "480": 0.3279,
+    "640": 0.3532
+   }
+  },
+  "yolo11n": {
+   "kind": "raw",
+   "size": 480,
+   "test_rf_mAP50": 0.3748,
+   "by_size": {
+    "320": 0.2834,
+    "384": 0.3371,
+    "480": 0.3748,
+    "640": 0.3747
+   }
+  }
+ },
+ "winner": "yolo11n"
+}
