@@ -1,0 +1,5 @@
+{
+  "version": "measure-v0.1-g1",
+  "_comment": "Untuned G1 proposal: dark = L* < max(abs_floor, median_L - rel_drop), no chroma gate. A VAL-only grid search (ml/grading/tune_defect.py, ml/runs/G1/grading_tune/grid.json) found no setting that separates fresh from rotten better (best balanced accuracy 0.638 on val, identical to v0.1), so v0.1 is kept.",
+  "dark_defect": {"rel_drop": 38.0, "abs_floor": 35.0, "chroma_max": null}
+}
