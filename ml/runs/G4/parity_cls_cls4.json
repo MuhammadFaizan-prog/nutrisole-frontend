@@ -1,0 +1,13 @@
+{
+ "classifier": {
+  "pt": "/workspace/work/nutrisole/ml/runs/G4/kaggle/nutrisole-g4-cls/runs/G4_E224_e25_b64_sgd01/weights/best.pt",
+  "onnx": "/workspace/work/cv/g4models/cls_cls4/G4_E224_e25_b64_sgd01.onnx",
+  "images": 39,
+  "imgsz": 224,
+  "max_abs_prob_diff": 1.7657876014709473e-06,
+  "mean_abs_prob_diff": 6.851571914730241e-08,
+  "top1_disagreements": 0,
+  "note": "same tensor fed to PyTorch module and ONNX (cls_preprocess = app crop preprocessing)",
+  "pass": true
+ }
+}
