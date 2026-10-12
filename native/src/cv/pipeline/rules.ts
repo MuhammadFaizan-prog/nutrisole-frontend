@@ -6,7 +6,7 @@
 import type { CvStatus, VisualGradeValue } from '../contracts.ts';
 
 export const RUBRIC = {
-  rubricVersion: 'rubric-v0.1-g1',
+  rubricVersion: 'rubric-v0.2-g2',
   detectorMinScore: 0.35,
   qualityMinMaxProb: 0.5,
   minMaskFraction: 0.08,
@@ -17,6 +17,7 @@ export const RUBRIC = {
   c: { pMild: 0.4, defectPct: 10.0, overripeBandPct: 30.0 },
   b: { defectPct: 2.0, unripeBandPct: 40.0, shapeScore: 0.85 },
   a: { pFresh: 0.7, targetBandPct: 50.0 },
+  measurementAgreement: { pRottenMin: 0.05 },
 } as const;
 
 export type BandRole = 'target' | 'unripe' | 'overripe';
@@ -72,15 +73,18 @@ export function grade(produce: string, detScore: number, probs: QualityProbs | n
   const numbers = { pFresh: pF, pRotten: pR, pMild: pM ?? null, defectPct: defect, shapeScore: shape, bandRoles: roles };
   const out = (g: VisualGradeValue, reasons: string[]): GradeResult => ({ grade: g, status: 'supported', reasons: reasons.slice(0, 2), numbers });
 
+  // G2: measurement-only Reject/C needs classifier agreement (see rules.py).
+  const gate = R.measurementAgreement.pRottenMin;
+  const agree = gate <= 0 || pR >= gate || (pM !== undefined && pM >= gate);
   let rs: string[] = [];
   if (pR >= R.reject.pRotten) rs.push(`Visible rot likely (${pct(pR)}%)`);
-  if (defect !== null && defect >= R.reject.defectPct) rs.push(`Dark marks ~${Math.round(defect)}% of visible surface`);
+  if (agree && defect !== null && defect >= R.reject.defectPct) rs.push(`Dark marks ~${Math.round(defect)}% of visible surface`);
   if (rs.length) return out('Reject', rs);
 
   rs = [];
   if (pM !== undefined && pM >= R.c.pMild) rs.push(`Mild visible deterioration (${pct(pM)}%)`);
-  if (defect !== null && defect >= R.c.defectPct) rs.push(`Dark marks ~${Math.round(defect)}% of visible surface`);
-  if (roles && hasTable && roles.overripe >= R.c.overripeBandPct) rs.push(`Overripe colour on ~${Math.round(roles.overripe)}% of surface`);
+  if (agree && defect !== null && defect >= R.c.defectPct) rs.push(`Dark marks ~${Math.round(defect)}% of visible surface`);
+  if (agree && roles && hasTable && roles.overripe >= R.c.overripeBandPct) rs.push(`Overripe colour on ~${Math.round(roles.overripe)}% of surface`);
   if (rs.length) return out('C', rs);
 
   rs = [];
