@@ -1,0 +1,242 @@
+{
+ "det": "/workspace/work/cv/g1models/det_yolo26n_320_e2e.onnx",
+ "clips": "/workspace/work/cv/g2clips_dev",
+ "defaults": {
+  "iouMatch": 0.3,
+  "boxAlpha": 0.6,
+  "scoreAlpha": 0.35,
+  "switchMargin": 0.15,
+  "switchFrames": 3,
+  "minHits": 2,
+  "maxMissed": 4,
+  "stableIou": 0.8,
+  "stableMs": 500
+ },
+ "defaults_score": {
+  "flicker_static_10s": 2.375,
+  "det_flicker": 1.25,
+  "quality_flicker": 4.062,
+  "seg_acc": 0.525,
+  "det_seg_acc": 0.5833,
+  "quality_seg_acc": 0.4375,
+  "ttfc_p90": 3160.0000999999997,
+  "never_correct": 16,
+  "fa_per_min": 1.25,
+  "no_box_static": 0.487
+ },
+ "ttfc_cap_ms": 3360.0000999999997,
+ "n_grid": 144,
+ "n_feasible": 123,
+ "best": {
+  "params": {
+   "switchMargin": 0.15,
+   "switchFrames": 3,
+   "scoreAlpha": 0.2,
+   "minHits": 2,
+   "maxMissed": 4
+  },
+  "flicker_static_10s": 1.125,
+  "det_flicker": 1.25,
+  "quality_flicker": 0.938,
+  "seg_acc": 0.525,
+  "det_seg_acc": 0.5833,
+  "quality_seg_acc": 0.4375,
+  "ttfc_p90": 3160.0000999999997,
+  "never_correct": 16,
+  "fa_per_min": 1.25,
+  "no_box_static": 0.487
+ },
+ "top10": [
+  {
+   "params": {
+    "switchMargin": 0.1,
+    "switchFrames": 5,
+    "scoreAlpha": 0.2,
+    "minHits": 2,
+    "maxMissed": 4
+   },
+   "flicker_static_10s": 1.125,
+   "det_flicker": 1.25,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 3160.0000999999997,
+   "never_correct": 16,
+   "fa_per_min": 1.25,
+   "no_box_static": 0.487
+  },
+  {
+   "params": {
+    "switchMargin": 0.1,
+    "switchFrames": 5,
+    "scoreAlpha": 0.2,
+    "minHits": 2,
+    "maxMissed": 8
+   },
+   "flicker_static_10s": 1.125,
+   "det_flicker": 1.25,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.525,
+   "det_seg_acc": 0.5833,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2666.666600000001,
+   "never_correct": 17,
+   "fa_per_min": 1.25,
+   "no_box_static": 0.483
+  },
+  {
+   "params": {
+    "switchMargin": 0.1,
+    "switchFrames": 5,
+    "scoreAlpha": 0.35,
+    "minHits": 2,
+    "maxMissed": 4
+   },
+   "flicker_static_10s": 1.125,
+   "det_flicker": 1.25,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.525,
+   "det_seg_acc": 0.5833,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 3160.0000999999997,
+   "never_correct": 16,
+   "fa_per_min": 1.25,
+   "no_box_static": 0.487
+  },
+  {
+   "params": {
+    "switchMargin": 0.1,
+    "switchFrames": 5,
+    "scoreAlpha": 0.35,
+    "minHits": 2,
+    "maxMissed": 8
+   },
+   "flicker_static_10s": 1.125,
+   "det_flicker": 1.25,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.525,
+   "det_seg_acc": 0.5833,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2666.666600000001,
+   "never_correct": 17,
+   "fa_per_min": 1.25,
+   "no_box_static": 0.483
+  },
+  {
+   "params": {
+    "switchMargin": 0.1,
+    "switchFrames": 8,
+    "scoreAlpha": 0.2,
+    "minHits": 2,
+    "maxMissed": 4
+   },
+   "flicker_static_10s": 1.125,
+   "det_flicker": 1.25,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 3160.0000999999997,
+   "never_correct": 16,
+   "fa_per_min": 1.25,
+   "no_box_static": 0.487
+  },
+  {
+   "params": {
+    "switchMargin": 0.1,
+    "switchFrames": 8,
+    "scoreAlpha": 0.2,
+    "minHits": 2,
+    "maxMissed": 8
+   },
+   "flicker_static_10s": 1.125,
+   "det_flicker": 1.25,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.525,
+   "det_seg_acc": 0.5833,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2666.666600000001,
+   "never_correct": 17,
+   "fa_per_min": 1.25,
+   "no_box_static": 0.483
+  },
+  {
+   "params": {
+    "switchMargin": 0.1,
+    "switchFrames": 8,
+    "scoreAlpha": 0.35,
+    "minHits": 2,
+    "maxMissed": 4
+   },
+   "flicker_static_10s": 1.125,
+   "det_flicker": 1.25,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 3160.0000999999997,
+   "never_correct": 16,
+   "fa_per_min": 1.25,
+   "no_box_static": 0.487
+  },
+  {
+   "params": {
+    "switchMargin": 0.1,
+    "switchFrames": 8,
+    "scoreAlpha": 0.35,
+    "minHits": 2,
+    "maxMissed": 8
+   },
+   "flicker_static_10s": 1.125,
+   "det_flicker": 1.25,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.525,
+   "det_seg_acc": 0.5833,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2666.666600000001,
+   "never_correct": 17,
+   "fa_per_min": 1.25,
+   "no_box_static": 0.483
+  },
+  {
+   "params": {
+    "switchMargin": 0.1,
+    "switchFrames": 8,
+    "scoreAlpha": 0.5,
+    "minHits": 2,
+    "maxMissed": 4
+   },
+   "flicker_static_10s": 1.125,
+   "det_flicker": 1.25,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.55,
+   "det_seg_acc": 0.625,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 3160.0000999999997,
+   "never_correct": 16,
+   "fa_per_min": 1.25,
+   "no_box_static": 0.487
+  },
+  {
+   "params": {
+    "switchMargin": 0.1,
+    "switchFrames": 8,
+    "scoreAlpha": 0.5,
+    "minHits": 2,
+    "maxMissed": 8
+   },
+   "flicker_static_10s": 1.125,
+   "det_flicker": 1.25,
+   "quality_flicker": 0.938,
+   "seg_acc": 0.525,
+   "det_seg_acc": 0.5833,
+   "quality_seg_acc": 0.4375,
+   "ttfc_p90": 2666.666600000001,
+   "never_correct": 17,
+   "fa_per_min": 1.25,
+   "no_box_static": 0.483
+  }
+ ],
+ "note": "DEV clips from VAL images, detector run on every frame (no drops); final numbers come from the realtime gauntlet on TEST clips."
+}
