@@ -1,0 +1,34 @@
+{
+  "_comment": "G1 PROPOSAL colour bands (OpenCV HSV: H 0-179, S/V 0-255). Not calibrated on Lahore data. role: target | unripe | overripe. Red/green apple and other multi-colour varieties: both colours are 'target' so one colour rule is not applied to naturally green and red varieties (rule 8.3).",
+  "banana": {"elongated": true, "bands": {
+    "green": {"h": [36, 85], "s": [60, 255], "v": [50, 255], "role": "unripe"},
+    "yellow": {"h": [18, 35], "s": [80, 255], "v": [120, 255], "role": "target"},
+    "brown": {"h": [5, 30], "s": [40, 255], "v": [30, 119], "role": "overripe"}}},
+  "apple": {"elongated": false, "bands": {
+    "red": {"h": [165, 12], "s": [70, 255], "v": [50, 255], "role": "target"},
+    "green_yellow": {"h": [20, 60], "s": [60, 255], "v": [80, 255], "role": "target"},
+    "brown": {"h": [5, 25], "s": [40, 255], "v": [20, 110], "role": "overripe"}}},
+  "citrus": {"elongated": false, "bands": {
+    "orange": {"h": [8, 24], "s": [100, 255], "v": [100, 255], "role": "target"},
+    "green": {"h": [30, 85], "s": [60, 255], "v": [50, 255], "role": "unripe"},
+    "brown": {"h": [5, 30], "s": [30, 255], "v": [20, 99], "role": "overripe"}}},
+  "guava": {"elongated": false, "bands": {
+    "green": {"h": [30, 85], "s": [50, 255], "v": [60, 255], "role": "target"},
+    "yellow": {"h": [18, 29], "s": [60, 255], "v": [100, 255], "role": "target"},
+    "brown": {"h": [5, 30], "s": [30, 255], "v": [20, 99], "role": "overripe"}}},
+  "pomegranate": {"elongated": false, "bands": {
+    "red": {"h": [160, 15], "s": [70, 255], "v": [50, 255], "role": "target"},
+    "brown": {"h": [5, 30], "s": [30, 255], "v": [20, 90], "role": "overripe"}}},
+  "tomato": {"elongated": false, "bands": {
+    "red": {"h": [165, 12], "s": [90, 255], "v": [60, 255], "role": "target"},
+    "orange": {"h": [13, 24], "s": [90, 255], "v": [80, 255], "role": "unripe"},
+    "green": {"h": [30, 85], "s": [60, 255], "v": [50, 255], "role": "unripe"}}},
+  "mango": {"elongated": false, "bands": {
+    "green": {"h": [30, 85], "s": [50, 255], "v": [50, 255], "role": "target"},
+    "yellow_orange": {"h": [10, 29], "s": [80, 255], "v": [100, 255], "role": "target"},
+    "brown": {"h": [5, 30], "s": [30, 255], "v": [20, 90], "role": "overripe"}}},
+  "lemon_lime": {"elongated": false, "bands": {
+    "yellow": {"h": [20, 35], "s": [80, 255], "v": [100, 255], "role": "target"},
+    "green": {"h": [36, 85], "s": [60, 255], "v": [50, 255], "role": "target"},
+    "brown": {"h": [5, 30], "s": [30, 255], "v": [20, 90], "role": "overripe"}}}
+}
