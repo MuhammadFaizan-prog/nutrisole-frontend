@@ -1,0 +1,30 @@
+{
+ "model": "/kaggle/input/datasets/mfaizannnn/nutrisole-cv-g5-w/A1_best.pt",
+ "name": "det_yolo11n_ft480_fthn",
+ "variant": "fthn",
+ "imgsz": 480,
+ "data_counts": {
+  "train": 1712,
+  "val": 400,
+  "train_instances": {
+   "carrot": 1474,
+   "tomato": 1636,
+   "capsicum": 561,
+   "lemon_lime": 161,
+   "cucumber": 456,
+   "banana": 1740,
+   "citrus": 658,
+   "apple": 1494,
+   "potato": 342,
+   "pomegranate": 194,
+   "mango": 96
+  },
+  "train_backgrounds": 642
+ },
+ "train_wall_s": 9182.3,
+ "torch": "2.11.0+cpu",
+ "ultralytics": "8.4.175",
+ "gpu": "kaggle-cpu",
+ "evals": [],
+ "total_wall_s": 9182.4
+}
