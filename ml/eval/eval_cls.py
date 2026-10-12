@@ -104,12 +104,13 @@ def main():
     ap.add_argument("--imgsz", type=int, default=192)
     ap.add_argument("--out", required=True)
     ap.add_argument("--robust", action="store_true")
+    ap.add_argument("--val-split", default="val", help="G4: split used to fit the temperature (val_hard = harder held-out crop VAL)")
     a = ap.parse_args()
     from ultralytics import YOLO
     os.makedirs(a.out, exist_ok=True)
     model = YOLO(a.model)
     names = [model.names[i] for i in range(len(model.names))]
-    val = load_split(a.data, "val", names)
+    val = load_split(a.data, a.val_split, names)
     test = load_split(a.data, "test", names)
     pv = predict(model, [f for f, _, _ in val], a.imgsz)
     yv = np.array([c for _, c, _ in val])
@@ -138,7 +139,7 @@ def main():
         n = max(1, int(round(cov * len(order))))
         cov_rows.append(dict(coverage=cov, risk=round(1 - float(correct[:n].mean()), 4), min_conf=round(float(conf[order][n - 1]), 4)))
     abst = dict(threshold=0.5, abstain_frac=float((conf < 0.5).mean()))
-    rep = dict(model=a.model, data=a.data, imgsz=a.imgsz, device="cpu", names=names, n_val=len(yv), n_test=len(yt),
+    rep = dict(model=a.model, data=a.data, imgsz=a.imgsz, device="cpu", names=names, temp_fit_split=a.val_split, n_val=len(yv), n_test=len(yt),
                test=m, per_produce=per_prod, temperature=T, nll_test_before=nll(pt, yt), nll_test_after=nll(pt_cal, yt),
                ece_test_before=e0, ece_test_after=e1, brier_before=brier(pt, yt), brier_after=brier(pt_cal, yt),
                reliability_before=rel0, reliability_after=rel1, selective=cov_rows, abstain_at_0_5=abst)
