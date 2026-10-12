@@ -122,8 +122,13 @@ def main():
     ap.add_argument("--n-det", type=int, default=24)
     ap.add_argument("--n-quality", type=int, default=16)
     ap.add_argument("--n-neg", type=int, default=12)
+    ap.add_argument("--split", default="test", help="G2: 'val' builds the DEV (tuning) clips; 'test' = locked regression clips")
+    ap.add_argument("--neg-glob", default=None, help="G2: background images for the negative clip (default coco128 filtered)")
+    ap.add_argument("--kinds", default="det,quality,neg")
+    ap.add_argument("--seed", type=int, default=0)
     a = ap.parse_args()
-    rnd = random.Random(0)
+    kinds = set(a.kinds.split(","))
+    rnd = random.Random(a.seed)
     np.random.seed(0)
     os.makedirs(a.out, exist_ok=True)
     W, H, fps = a.w, a.h, a.fps
@@ -132,7 +137,7 @@ def main():
     # ---- detector clip: single-dominant-object test images (largest box >= 15% of image)
     det_root = f"{a.data}/builds/v1/det"
     cands = []
-    for lp in sorted(glob.glob(f"{det_root}/labels/test/*.txt")):
+    for lp in (sorted(glob.glob(f"{det_root}/labels/{a.split}/*.txt")) if "det" in kinds else []):
         rows = [l.split() for l in open(lp).read().strip().splitlines() if l.strip()]
         if not rows:
             continue
@@ -150,7 +155,7 @@ def main():
             if by_cls[c] and len(picked) < a.n_det:
                 picked.append(by_cls[c].pop(rnd.randrange(len(by_cls[c]))))
     frames, segs = [], []
-    vw = cv2.VideoWriter(f"{a.out}/det_clip.mp4", four, fps, (W, H))
+    vw = cv2.VideoWriter(f"{a.out}/det_clip.mp4" if "det" in kinds else "/tmp/_unused_det.mp4", four, fps, (W, H))
     bg = make_bg(W, H, rnd)
     render_gap(bg, fps, frames, vw, 0.6)
     for lp, rows in picked:
@@ -171,17 +176,18 @@ def main():
         segs.append(dict(start=start, end=len(frames) - 1, cls=int(prim), quality=None, src=os.path.basename(ip)))
         render_gap(bg, fps, frames, vw)
     vw.release()
-    json.dump(dict(fps=fps, w=W, h=H, n_frames=len(frames), frames=frames, segments=segs, kind="det"), open(f"{a.out}/det_clip.json", "w"))
+    if "det" in kinds:
+        json.dump(dict(fps=fps, w=W, h=H, n_frames=len(frames), frames=frames, segments=segs, kind="det", split=a.split), open(f"{a.out}/det_clip.json", "w"))
 
     # ---- quality clip: Sultana test split, one fruit per segment, box = whole item (approx)
-    qroot = f"{a.data}/builds/v1/quality2/test"
+    qroot = f"{a.data}/builds/v1/quality2/{a.split}"
     files = {lvl: sorted(glob.glob(f"{qroot}/{lvl}/*.jpg")) for lvl in ["fresh", "rotten"]}
     frames, segs = [], []
-    vw = cv2.VideoWriter(f"{a.out}/quality_clip.mp4", four, fps, (W, H))
+    vw = cv2.VideoWriter(f"{a.out}/quality_clip.mp4" if "quality" in kinds else "/tmp/_unused_q.mp4", four, fps, (W, H))
     bg = make_bg(W, H, rnd)
     render_gap(bg, fps, frames, vw, 0.6)
     produce_to_id = {n: i for i, n in enumerate(NAMES)}
-    for k in range(a.n_quality):
+    for k in range(a.n_quality if "quality" in kinds else 0):
         lvl = ["fresh", "rotten"][k % 2]
         f = files[lvl].pop(rnd.randrange(len(files[lvl])))
         produce = os.path.basename(f).split("__")[0]
@@ -207,7 +213,8 @@ def main():
         segs.append(dict(start=start, end=len(frames) - 1, cls=produce_to_id[produce], quality=lvl, src=os.path.basename(f)))
         render_gap(bg, fps, frames, vw)
     vw.release()
-    json.dump(dict(fps=fps, w=W, h=H, n_frames=len(frames), frames=frames, segments=segs, kind="quality",
+    if "quality" in kinds:
+      json.dump(dict(fps=fps, w=W, h=H, n_frames=len(frames), frames=frames, segments=segs, kind="quality", split=a.split,
                    note="GT box for quality clips is a saturation-threshold box on white paper (approximate)"), open(f"{a.out}/quality_clip.json", "w"))
 
     # ---- negative clip
@@ -216,10 +223,12 @@ def main():
         cl = {int(l.split()[0]) for l in open(lp).read().strip().splitlines() if l.strip()}
         if not (cl & COCO_FOOD) and 60 not in cl and 41 not in cl:  # no food, no dining table, no cup
             neg.append(lp.replace("/labels/", "/images/").replace(".txt", ".jpg"))
+    if a.neg_glob:
+        neg = sorted(glob.glob(a.neg_glob))
     rnd.shuffle(neg)
     frames, segs = [], []
-    vw = cv2.VideoWriter(f"{a.out}/neg_clip.mp4", four, fps, (W, H))
-    for k in range(a.n_neg):
+    vw = cv2.VideoWriter(f"{a.out}/neg_clip.mp4" if "neg" in kinds else "/tmp/_unused_n.mp4", four, fps, (W, H))
+    for k in range(a.n_neg if "neg" in kinds else 0):
         if k % 4 == 3:
             canvas, src = make_bg(W, H, rnd), "plain_background"
         else:
@@ -229,8 +238,10 @@ def main():
         render_segment(canvas, [], [], None, len(segs), fps, W, H, rnd, frames, vw, make_bg(W, H, rnd))
         segs.append(dict(start=start, end=len(frames) - 1, cls=None, quality=None, src=src))
     vw.release()
-    json.dump(dict(fps=fps, w=W, h=H, n_frames=len(frames), frames=frames, segments=segs, kind="neg",
-                   note="coco128 images without COCO food classes/dining table/cup + plain backgrounds"), open(f"{a.out}/neg_clip.json", "w"))
+    if "neg" in kinds:
+        json.dump(dict(fps=fps, w=W, h=H, n_frames=len(frames), frames=frames, segments=segs, kind="neg",
+                       note=("images from " + a.neg_glob) if a.neg_glob else "coco128 images without COCO food classes/dining table/cup + plain backgrounds"),
+                  open(f"{a.out}/neg_clip.json", "w"))
     print("clips written", a.out)
 
 
