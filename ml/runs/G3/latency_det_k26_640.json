@@ -1,0 +1,8 @@
+{
+ "k26_640_640": {
+  "onnx": "/workspace/work/cv/g3models/k26_640/det_yolo26n_640_e2e.onnx",
+  "imgsz": 640,
+  "p50_ms": 70.62,
+  "p95_ms": 308.54
+ }
+}
