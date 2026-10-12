@@ -1,0 +1,101 @@
+{
+ "model": "ml/runs/G3/kaggle/nutrisole-g3-det-yolo26n-640/runs/det_yolo26n_640/weights/best.pt",
+ "device": "cpu",
+ "head": "one2one (NMS-free, nms=False)",
+ "results": [
+  {
+   "split": "pooled",
+   "imgsz": 640,
+   "mAP50": 0.2866,
+   "mAP50_95": 0.1986,
+   "P": 0.4625,
+   "R": 0.3057,
+   "per_class": {
+    "banana": {
+     "P": 0.4013,
+     "R": 0.4448,
+     "mAP50": 0.3709,
+     "mAP50_95": 0.1885,
+     "instances": 5123
+    },
+    "apple": {
+     "P": 0.6027,
+     "R": 0.2886,
+     "mAP50": 0.2951,
+     "mAP50_95": 0.2075,
+     "instances": 2148
+    },
+    "mango": {
+     "P": 0.5264,
+     "R": 0.2273,
+     "mAP50": 0.2239,
+     "mAP50_95": 0.2056,
+     "instances": 22
+    },
+    "citrus": {
+     "P": 0.5778,
+     "R": 0.4995,
+     "mAP50": 0.4804,
+     "mAP50_95": 0.347,
+     "instances": 1868
+    },
+    "pomegranate": {
+     "P": 0.4048,
+     "R": 0.4959,
+     "mAP50": 0.4739,
+     "mAP50_95": 0.3689,
+     "instances": 48
+    },
+    "lemon_lime": {
+     "P": 0.2252,
+     "R": 0.051,
+     "mAP50": 0.026,
+     "mAP50_95": 0.0205,
+     "instances": 294
+    },
+    "tomato": {
+     "P": 0.3592,
+     "R": 0.3832,
+     "mAP50": 0.3344,
+     "mAP50_95": 0.2316,
+     "instances": 822
+    },
+    "potato": {
+     "P": 0.3831,
+     "R": 0.071,
+     "mAP50": 0.072,
+     "mAP50_95": 0.0579,
+     "instances": 366
+    },
+    "cucumber": {
+     "P": 0.566,
+     "R": 0.2913,
+     "mAP50": 0.3077,
+     "mAP50_95": 0.2057,
+     "instances": 357
+    },
+    "carrot": {
+     "P": 0.4437,
+     "R": 0.4019,
+     "mAP50": 0.3384,
+     "mAP50_95": 0.1832,
+     "instances": 1645
+    },
+    "capsicum": {
+     "P": 0.5975,
+     "R": 0.2078,
+     "mAP50": 0.2301,
+     "mAP50_95": 0.1682,
+     "instances": 510
+    }
+   },
+   "speed_ms": {
+    "preprocess": 1.1651563317240456,
+    "inference": 137.64442403980598,
+    "loss": 0.00010158504170222887,
+    "postprocess": 0.09005662484844969
+   },
+   "save_dir": "/workspace/work/nutrisole/runs/detect/ml/runs/G3/eval_pooled_k26_640/pooled_640"
+  }
+ ]
+}
