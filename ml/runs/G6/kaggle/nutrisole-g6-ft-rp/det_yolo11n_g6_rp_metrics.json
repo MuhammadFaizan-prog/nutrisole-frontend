@@ -1,0 +1,108 @@
+{
+ "model": "/kaggle/input/datasets/mfaizannnn/nutrisole-cv-g6-w/G3_best.pt",
+ "name": "det_yolo11n_g6_rp",
+ "variant": "rp",
+ "imgsz": 640,
+ "epochs": 40,
+ "data_counts": {
+  "audit_removed_from_train": 0,
+  "train": 3562,
+  "val": 402,
+  "train_instances": {
+   "potato": 696,
+   "carrot": 3290,
+   "tomato": 3192,
+   "lemon_lime": 452,
+   "apple": 2849,
+   "banana": 3825,
+   "citrus": 1543,
+   "capsicum": 1177,
+   "cucumber": 1074,
+   "pomegranate": 540,
+   "mango": 276
+  },
+  "train_backgrounds": 1005
+ },
+ "train_wall_s": 1229.9,
+ "torch": "2.11.0+cu128",
+ "ultralytics": "8.4.175",
+ "gpu": "Tesla T4",
+ "evals": [
+  {
+   "split": "val",
+   "n": 402,
+   "imgsz": 480,
+   "device": "Tesla T4",
+   "mAP50": 0.4256,
+   "mAP50_95": 0.3219,
+   "per_class": {
+    "banana": {
+     "P": 0.6065,
+     "R": 0.5458,
+     "mAP50": 0.5598,
+     "mAP50_95": 0.3127
+    },
+    "apple": {
+     "P": 0.6892,
+     "R": 0.624,
+     "mAP50": 0.6413,
+     "mAP50_95": 0.5036
+    },
+    "mango": {
+     "P": 0.5631,
+     "R": 0.6364,
+     "mAP50": 0.6214,
+     "mAP50_95": 0.5778
+    },
+    "citrus": {
+     "P": 0.8109,
+     "R": 0.7012,
+     "mAP50": 0.7463,
+     "mAP50_95": 0.6079
+    },
+    "pomegranate": {
+     "P": 0.4841,
+     "R": 0.5625,
+     "mAP50": 0.5522,
+     "mAP50_95": 0.469
+    },
+    "lemon_lime": {
+     "P": 0.2713,
+     "R": 0.0779,
+     "mAP50": 0.0548,
+     "mAP50_95": 0.0396
+    },
+    "tomato": {
+     "P": 0.4515,
+     "R": 0.4921,
+     "mAP50": 0.4503,
+     "mAP50_95": 0.3148
+    },
+    "potato": {
+     "P": 0.0,
+     "R": 0.0,
+     "mAP50": 0.0253,
+     "mAP50_95": 0.0213
+    },
+    "cucumber": {
+     "P": 0.6184,
+     "R": 0.2532,
+     "mAP50": 0.3196,
+     "mAP50_95": 0.2094
+    },
+    "carrot": {
+     "P": 0.6198,
+     "R": 0.3586,
+     "mAP50": 0.4192,
+     "mAP50_95": 0.2697
+    },
+    "capsicum": {
+     "P": 0.6681,
+     "R": 0.2155,
+     "mAP50": 0.2912,
+     "mAP50_95": 0.2155
+    }
+   }
+  }
+ ]
+}
