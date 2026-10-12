@@ -1,0 +1,155 @@
+{
+ "build": "det-v3",
+ "base": "det-v2",
+ "hygiene": "dropped 834 LVIS train/val images with not-exhaustive labelled classes",
+ "locked_lists_identical_to_v2": {
+  "test": true,
+  "test_rf": true,
+  "neg_test": true
+ },
+ "oiv7_audit": {
+  "counters": {
+   "group_boxes_removed": 911,
+   "images_greyfilled": 410,
+   "suspected_missing_carrot_filled": 154,
+   "suspected_missing_tomato_filled": 518,
+   "suspected_missing_apple_filled": 309,
+   "suspected_missing_citrus_filled": 96,
+   "suspected_missing_banana_filled": 92,
+   "suspected_missing_lemon_lime_filled": 94,
+   "suspected_missing_potato_filled": 9,
+   "suspected_missing_capsicum_filled": 31,
+   "suspected_missing_cucumber_filled": 7
+  },
+  "drops": {
+   "group_cover_gt50": 428,
+   "no_single_boxes_left": 63,
+   "test_suspected_missing_label": 50
+  },
+  "licences": {
+   "https://creativecommons.org/licenses/by/2.0/": 1028
+  }
+ },
+ "hardneg": {
+  "pool": 2380,
+  "selected": {
+   "train": 475,
+   "val": 0
+  },
+  "selected_textures": {
+   "train": 55,
+   "val": 0
+  },
+  "rule": "max over models of (max conf + 0.02*#boxes>=0.25)"
+ },
+ "missing_classes": [
+  "guava (not an OIV7 boxable class; needs Lahore photos or a licensed set)"
+ ],
+ "counts": {
+  "train": {
+   "images": 3562,
+   "background_images": 1005,
+   "by_source": {
+    "det": 1949,
+    "hardneg": 475,
+    "neg": 290,
+    "oiv7": 848
+   },
+   "instances": {
+    "apple": 2849,
+    "banana": 3825,
+    "capsicum": 1177,
+    "carrot": 3290,
+    "citrus": 1543,
+    "cucumber": 1074,
+    "lemon_lime": 452,
+    "mango": 276,
+    "pomegranate": 540,
+    "potato": 696,
+    "tomato": 3192
+   }
+  },
+  "val": {
+   "images": 402,
+   "background_images": 90,
+   "by_source": {
+    "det": 295,
+    "neg": 50,
+    "oiv7": 57
+   },
+   "instances": {
+    "apple": 199,
+    "banana": 469,
+    "capsicum": 116,
+    "carrot": 435,
+    "citrus": 208,
+    "cucumber": 154,
+    "lemon_lime": 77,
+    "mango": 11,
+    "pomegranate": 16,
+    "potato": 20,
+    "tomato": 317
+   }
+  },
+  "test": {
+   "images": 557,
+   "background_images": 50,
+   "by_source": {
+    "det": 557
+   },
+   "instances": {
+    "apple": 2122,
+    "banana": 5048,
+    "capsicum": 280,
+    "carrot": 1558,
+    "citrus": 1833,
+    "cucumber": 111,
+    "lemon_lime": 290,
+    "potato": 366,
+    "tomato": 659
+   }
+  },
+  "test_rf": {
+   "images": 149,
+   "background_images": 60,
+   "by_source": {
+    "det": 149
+   },
+   "instances": {
+    "apple": 25,
+    "banana": 75,
+    "capsicum": 110,
+    "carrot": 84,
+    "citrus": 34,
+    "cucumber": 73,
+    "lemon_lime": 4,
+    "tomato": 122
+   }
+  },
+  "test_oiv7": {
+   "images": 123,
+   "background_images": 0,
+   "by_source": {
+    "oiv7": 123
+   },
+   "instances": {
+    "apple": 1,
+    "capsicum": 120,
+    "carrot": 3,
+    "citrus": 1,
+    "cucumber": 173,
+    "mango": 22,
+    "pomegranate": 48,
+    "tomato": 41
+   }
+  },
+  "neg_test": {
+   "images": 80,
+   "background_images": 80,
+   "by_source": {
+    "neg": 80
+   },
+   "instances": {}
+  }
+ }
+}
