@@ -1,0 +1,403 @@
+{
+ "n_images": {
+  "g5hn_train": 212,
+  "neg_test": 80,
+  "oiv7c_train": 967,
+  "oiv7c_val": 71,
+  "test": 557,
+  "test_oiv7": 123,
+  "test_oiv7c": 181,
+  "test_rf": 149,
+  "train": 3562,
+  "val": 402
+ },
+ "errors": [],
+ "exact_dup_groups": 53,
+ "exact_dup_groups_by_splits": {
+  "g5hn_train": 53
+ },
+ "near_dup_rule": "pHash Hamming <= 6 AND dHash Hamming <= 8 (64-bit each)",
+ "near_dup_pairs_by_splits": {
+  "test<->val": 1
+ },
+ "eval_images_with_trainlike_near_dup": {
+  "test": 1,
+  "test_rf": 0,
+  "test_oiv7": 0,
+  "test_oiv7c": 0,
+  "neg_test": 0
+ },
+ "test_rf_capture_groups": {
+  "n_groups": 70,
+  "n_images": 149,
+  "largest": [
+   [
+    "20240326_d2e6cc91-5c10-4f25-9a29-924f7c25a5ad",
+    6
+   ],
+   [
+    "20240326_3c8f4813-06ae-4d71-8dd3-d6f5d2e41c9a",
+    5
+   ],
+   [
+    "20240328_cf3f38d0-7783-4ced-9409-1619c54978f2",
+    5
+   ],
+   [
+    "20240328_d2e6cc91-5c10-4f25-9a29-924f7c25a5ad",
+    5
+   ],
+   [
+    "20240403_cf3f38d0-7783-4ced-9409-1619c54978f2",
+    5
+   ]
+  ]
+ },
+ "class_instances": {
+  "oiv7c_train": {
+   "banana": 21,
+   "apple": 86,
+   "mango": 0,
+   "citrus": 3918,
+   "guava": 0,
+   "pomegranate": 0,
+   "lemon_lime": 1514,
+   "tomato": 39,
+   "potato": 2,
+   "cucumber": 0,
+   "carrot": 3,
+   "capsicum": 0
+  },
+  "oiv7c_val": {
+   "banana": 0,
+   "apple": 0,
+   "mango": 0,
+   "citrus": 102,
+   "guava": 0,
+   "pomegranate": 0,
+   "lemon_lime": 138,
+   "tomato": 0,
+   "potato": 5,
+   "cucumber": 0,
+   "carrot": 0,
+   "capsicum": 0
+  },
+  "test": {
+   "banana": 5048,
+   "apple": 2122,
+   "mango": 0,
+   "citrus": 1833,
+   "guava": 0,
+   "pomegranate": 0,
+   "lemon_lime": 290,
+   "tomato": 659,
+   "potato": 366,
+   "cucumber": 111,
+   "carrot": 1558,
+   "capsicum": 280
+  },
+  "test_oiv7": {
+   "banana": 0,
+   "apple": 1,
+   "mango": 22,
+   "citrus": 1,
+   "guava": 0,
+   "pomegranate": 48,
+   "lemon_lime": 0,
+   "tomato": 41,
+   "potato": 0,
+   "cucumber": 173,
+   "carrot": 3,
+   "capsicum": 120
+  },
+  "test_oiv7c": {
+   "banana": 0,
+   "apple": 6,
+   "mango": 0,
+   "citrus": 609,
+   "guava": 0,
+   "pomegranate": 0,
+   "lemon_lime": 299,
+   "tomato": 4,
+   "potato": 0,
+   "cucumber": 0,
+   "carrot": 4,
+   "capsicum": 0
+  },
+  "test_rf": {
+   "banana": 75,
+   "apple": 25,
+   "mango": 0,
+   "citrus": 34,
+   "guava": 0,
+   "pomegranate": 0,
+   "lemon_lime": 4,
+   "tomato": 122,
+   "potato": 0,
+   "cucumber": 73,
+   "carrot": 84,
+   "capsicum": 110
+  },
+  "train": {
+   "banana": 3825,
+   "apple": 2849,
+   "mango": 276,
+   "citrus": 1543,
+   "guava": 0,
+   "pomegranate": 540,
+   "lemon_lime": 452,
+   "tomato": 3192,
+   "potato": 696,
+   "cucumber": 1074,
+   "carrot": 3290,
+   "capsicum": 1177
+  },
+  "val": {
+   "banana": 469,
+   "apple": 199,
+   "mango": 11,
+   "citrus": 208,
+   "guava": 0,
+   "pomegranate": 16,
+   "lemon_lime": 77,
+   "tomato": 317,
+   "potato": 20,
+   "cucumber": 154,
+   "carrot": 435,
+   "capsicum": 116
+  }
+ },
+ "empty_label_images": {
+  "train": 1005,
+  "val": 90,
+  "test": 50,
+  "test_rf": 60,
+  "neg_test": 80,
+  "g5hn_train": 212
+ },
+ "degenerate_boxes": 0,
+ "degenerate_examples": [],
+ "tiny_boxes_lt6px_at480": {
+  "train": 576,
+  "val": 32,
+  "test": 1666,
+  "test_rf": 1,
+  "test_oiv7c": 2,
+  "oiv7c_train": 107
+ },
+ "tiny_boxes_by_class": {
+  "train": {
+   "carrot": 92,
+   "tomato": 91,
+   "apple": 223,
+   "capsicum": 26,
+   "potato": 3,
+   "banana": 107,
+   "citrus": 22,
+   "lemon_lime": 8,
+   "mango": 1,
+   "cucumber": 3
+  },
+  "test": {
+   "citrus": 189,
+   "banana": 1017,
+   "apple": 210,
+   "carrot": 151,
+   "capsicum": 8,
+   "tomato": 30,
+   "cucumber": 9,
+   "potato": 35,
+   "lemon_lime": 17
+  },
+  "test_oiv7c": {
+   "citrus": 2
+  },
+  "test_rf": {
+   "cucumber": 1
+  },
+  "val": {
+   "citrus": 8,
+   "lemon_lime": 6,
+   "tomato": 7,
+   "apple": 1,
+   "banana": 8,
+   "carrot": 2
+  },
+  "oiv7c_train": {
+   "citrus": 101,
+   "lemon_lime": 6
+  }
+ },
+ "instances_by_split_source": {
+  "oiv7c_train/oiv7c": {
+   "banana": 21,
+   "apple": 86,
+   "citrus": 3918,
+   "lemon_lime": 1514,
+   "tomato": 39,
+   "potato": 2,
+   "carrot": 3
+  },
+  "oiv7c_val/oiv7c": {
+   "citrus": 102,
+   "lemon_lime": 138,
+   "potato": 5
+  },
+  "test/det": {
+   "banana": 5048,
+   "apple": 2122,
+   "citrus": 1833,
+   "lemon_lime": 290,
+   "tomato": 659,
+   "potato": 366,
+   "cucumber": 111,
+   "carrot": 1558,
+   "capsicum": 280
+  },
+  "test_oiv7/oiv7": {
+   "apple": 1,
+   "mango": 22,
+   "citrus": 1,
+   "pomegranate": 48,
+   "tomato": 41,
+   "cucumber": 173,
+   "carrot": 3,
+   "capsicum": 120
+  },
+  "test_oiv7c/oiv7c": {
+   "apple": 6,
+   "citrus": 609,
+   "lemon_lime": 299,
+   "tomato": 4,
+   "carrot": 4
+  },
+  "test_rf/det": {
+   "banana": 75,
+   "apple": 25,
+   "citrus": 34,
+   "lemon_lime": 4,
+   "tomato": 122,
+   "cucumber": 73,
+   "carrot": 84,
+   "capsicum": 110
+  },
+  "train/det": {
+   "banana": 3820,
+   "apple": 2828,
+   "citrus": 1537,
+   "lemon_lime": 452,
+   "tomato": 2913,
+   "potato": 695,
+   "cucumber": 277,
+   "carrot": 3254,
+   "capsicum": 629
+  },
+  "train/oiv7": {
+   "banana": 5,
+   "apple": 21,
+   "mango": 276,
+   "citrus": 6,
+   "pomegranate": 540,
+   "tomato": 279,
+   "potato": 1,
+   "cucumber": 797,
+   "carrot": 36,
+   "capsicum": 548
+  },
+  "val/det": {
+   "banana": 469,
+   "apple": 199,
+   "citrus": 207,
+   "lemon_lime": 77,
+   "tomato": 316,
+   "potato": 20,
+   "cucumber": 44,
+   "carrot": 423,
+   "capsicum": 49
+  },
+  "val/oiv7": {
+   "mango": 11,
+   "citrus": 1,
+   "pomegranate": 16,
+   "tomato": 1,
+   "cucumber": 110,
+   "carrot": 12,
+   "capsicum": 67
+  }
+ },
+ "low_light_share_mean_lt60": {
+  "g5hn_train": 0.038,
+  "neg_test": 0.087,
+  "oiv7c_train": 0.033,
+  "oiv7c_val": 0.028,
+  "test": 0.02,
+  "test_oiv7": 0.041,
+  "test_oiv7c": 0.017,
+  "test_rf": 0.0,
+  "train": 0.028,
+  "val": 0.025
+ },
+ "corrected_train": {
+  "n_in": 3562,
+  "n_out": 3562,
+  "removed_eval_leak": 0,
+  "removed_within_train_dup": 0
+ },
+ "oiv7c_train_removed_eval_leak": 0,
+ "duplicate_label_rows": {
+  "rows": {
+   "train": 1,
+   "test_oiv7c": 3,
+   "oiv7c_train": 3,
+   "oiv7c_val": 1
+  },
+  "files": {
+   "train": 1,
+   "test_oiv7c": 3,
+   "oiv7c_train": 3,
+   "oiv7c_val": 1
+  },
+  "examples": [
+   [
+    "train",
+    "oiv7_adc1a4d5e2ce4c8d.jpg",
+    1
+   ],
+   [
+    "test_oiv7c",
+    "oiv7c_04fda7c9d8971ec0.jpg",
+    1
+   ],
+   [
+    "test_oiv7c",
+    "oiv7c_1dfc784c3efb9ea8.jpg",
+    1
+   ],
+   [
+    "test_oiv7c",
+    "oiv7c_f4a5dd9c39530b7e.jpg",
+    1
+   ],
+   [
+    "oiv7c_train",
+    "oiv7c_0e6227547e820ae2.jpg",
+    1
+   ],
+   [
+    "oiv7c_train",
+    "oiv7c_1a6bac43aad58ca1.jpg",
+    1
+   ],
+   [
+    "oiv7c_train",
+    "oiv7c_1bcc580ad0df7e92.jpg",
+    1
+   ],
+   [
+    "oiv7c_val",
+    "oiv7c_c9ebd63bc789073a.jpg",
+    1
+   ]
+  ]
+ }
+}
