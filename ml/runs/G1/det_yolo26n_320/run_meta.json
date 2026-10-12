@@ -1,0 +1,31 @@
+{
+ "task": "det",
+ "no_val": true,
+ "model": "yolo26n.pt",
+ "data": "/tmp/nsdata/det_v1_local.yaml",
+ "epochs": 8,
+ "imgsz": 320,
+ "batch": 16,
+ "fraction": 1.0,
+ "seed": 0,
+ "manifest": "/workspace/work/nutrisole/ml/data/builds/v1/det_manifest.json",
+ "manifest_sha256": "acfb3967ea3e9f341a2b6d6f9f9f2986d8e63aa46d2e80df695d07d9f02859b5",
+ "git": {
+  "commit": "2ce053cae9f2f235dba99678d7abb32736b6c8ec",
+  "dirty": true
+ },
+ "versions": {
+  "ultralytics": "8.4.175",
+  "torch": "2.14.1+cpu",
+  "python": "3.12.15"
+ },
+ "hardware": {
+  "device": "cpu",
+  "cores": 2,
+  "machine": "aarch64",
+  "gpu": null
+ },
+ "wall_seconds_this_invocation": 1415.6,
+ "finished_at": "2026-10-11T23:48:34Z",
+ "wall_seconds_total": 1415.6
+}
