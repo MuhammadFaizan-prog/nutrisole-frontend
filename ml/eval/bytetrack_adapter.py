@@ -104,3 +104,49 @@ class ByteTrackTracker:
                 t.label, t.pendingLabel, t.pendingCount = best, -1, 0
         else:
             t.pendingLabel, t.pendingCount = -1, 0
+
+
+def make_parity_fixture(path: str, n_frames: int = 160, seed: int = 0):
+    """G7.3: detection stream for the TS port parity test (native/tests/cvByteTrack.test.ts): three objects, one moving
+    across another, low-score frames (second association), multi-frame dropouts (lost -> refind within the buffer and
+    removal beyond it), class noise, a duplicate box, spurious single-frame boxes, and a reset."""
+    import json
+    import random
+    rnd = random.Random(seed)
+    frames = []
+    for f in range(n_frames):
+        dets = []
+        if (f < 50 or 58 <= f < 120) and rnd.random() > 0.08:  # A: static, 8-frame gap (lost then refound)
+            cls = 1 if rnd.random() > 0.2 else rnd.choice([0, 3, 6])
+            j = [rnd.uniform(-0.008, 0.008) for _ in range(4)]
+            s = round(rnd.uniform(0.15, 0.34), 4) if 30 <= f < 36 else round(rnd.uniform(0.4, 0.95), 4)
+            dets.append(dict(box=[0.30 + j[0], 0.30 + j[1], 0.60 + j[2], 0.65 + j[3]], classId=cls, score=s))
+            if f % 17 == 3:  # near-duplicate box
+                dets.append(dict(box=[0.31 + j[0], 0.31 + j[1], 0.61 + j[2], 0.66 + j[3]], classId=cls, score=round(rnd.uniform(0.36, 0.6), 4)))
+        if 10 <= f < 130:  # B: moves right, crosses A
+            x = 0.02 + 0.006 * (f - 10)
+            if rnd.random() > 0.1:
+                dets.append(dict(box=[x, 0.40, x + 0.18, 0.62], classId=10 if rnd.random() > 0.15 else 9, score=round(rnd.uniform(0.2, 0.9), 4)))
+        if 70 <= f < 150 and not (90 <= f < 110):  # C: appears, 20-frame gap (> buffer 15 -> new id)
+            dets.append(dict(box=[0.70, 0.70, 0.90, 0.95], classId=7, score=round(rnd.uniform(0.35, 0.9), 4)))
+        if rnd.random() < 0.05:  # spurious
+            x, y = rnd.uniform(0, 0.8), rnd.uniform(0, 0.8)
+            dets.append(dict(box=[x, y, x + 0.1, y + 0.1], classId=rnd.randrange(12), score=round(rnd.uniform(0.1, 0.6), 4)))
+        rnd.shuffle(dets)
+        frames.append(dict(tMs=round(f * 33.333, 3), dets=dets, reset=(f == 140)))
+    trk = ByteTrackTracker()
+    outs = []
+    for fr in frames:
+        if fr["reset"]:
+            trk.reset()
+        outs.append([dict(id=o["id"], box=[float(v) for v in o["box"]], label=int(o["label"]), score=float(o["score"]), stable=bool(o["stable"]), ageMs=float(o["ageMs"]))
+                     for o in trk.update(fr["dets"], fr["tMs"])])
+    p = {k: (bool(v) if isinstance(v, bool) else v) for k, v in trk.p.items()}
+    json.dump(dict(params=p, frames=frames, expected=outs), open(path, "w"))
+
+
+if __name__ == "__main__":
+    import os
+    here = os.path.dirname(os.path.abspath(__file__))
+    make_parity_fixture(os.path.join(here, "fixtures", "bytetrack_parity.json"))
+    print("wrote fixture")
