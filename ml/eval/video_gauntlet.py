@@ -47,6 +47,8 @@ from grading.measure import measure  # noqa: E402
 from grading.rules import grade, RUBRIC  # noqa: E402
 
 NAMES = ["banana", "apple", "mango", "citrus", "guava", "pomegranate", "lemon_lime", "tomato", "potato", "cucumber", "carrot", "capsicum"]
+# G9 hook: dump raw decoded detections per processed frame when the env var is set or the run writes under ml/runs/G9/existing.
+RAW_DUMP, RAW_DUMP_CONF = None, float(os.environ.get("G9_RAW_DUMP_CONF", "0.1"))
 GRADE_COL = {"A": (60, 180, 60), "B": (60, 200, 200), "C": (0, 140, 255), "Reject": (40, 40, 220), "ungradable": (160, 160, 160)}
 
 
@@ -101,10 +103,12 @@ def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, a
         else:
             t0 = time.perf_counter()
             x, tf = letterbox(frame, imgsz)
+            if hasattr(det, "set_frame"):  # G9 roboflow adapter: builds its own native input from the original frame
+                det.set_frame(frame, tf)
             out = det.run(None, {di: x})[0]
             t1 = time.perf_counter()
             dets = []
-            for d in decode(out, det_kind, dec_thr):
+            for d in decode(out, "raw" if det_kind == "roboflow" else det_kind, dec_thr):
                 b = dst_to_src(d["box"], tf)
                 if b[2] - b[0] < 2 or b[3] - b[1] < 2:
                     continue
@@ -150,6 +154,9 @@ def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, a
                 grades[tr["id"]] = dict(grade=gr["grade"], reasons=gr["reasons"], level=level, probs=probs, last_ms=t)
                 n_graded += 1
             t2 = time.perf_counter()
+            if RAW_DUMP is not None:  # G9: raw decoded boxes (no guard/tracker) at a low conf, OUTSIDE the timed region
+                RAW_DUMP.setdefault(id(gt), {})[fi] = [[d["classId"], round(d["score"], 4)] + [round(v, 5) for v in (lambda bb: [bb[0] / W, bb[1] / H, bb[2] / W, bb[3] / H])(dst_to_src(d["box"], tf))]
+                                                       for d in decode(out, "raw" if det_kind == "roboflow" else det_kind, RAW_DUMP_CONF)[:100]]
             lat_det.append(1000 * (t1 - t0))
             lat_full.append(1000 * (t2 - t0))
             state = [dict(id=tr["id"], box=tr["box"], label=tr["label"], score=tr["score"],
@@ -328,7 +335,7 @@ def metrics(gt, shown, kind):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--det", required=True)
-    ap.add_argument("--det-kind", choices=["e2e", "raw"], required=True)
+    ap.add_argument("--det-kind", choices=["e2e", "raw", "roboflow"], required=True, help="roboflow (G9): --det is a model name in roboflow_adapter.MODELS; classes mapped into our 12 per CLASS_MAPS")
     ap.add_argument("--imgsz", type=int, default=320)
     ap.add_argument("--cls", default=None)
     ap.add_argument("--cls-names", default="fresh,rotten")
@@ -351,7 +358,14 @@ def main():
     temporal = json.loads(a.temporal) if a.temporal else None
     guard = None if a.no_guard else dict(maxSameClass=a.max_same_class, minAreaFrac=a.min_area_frac)
     os.makedirs(a.out, exist_ok=True)
-    det = sess(a.det)
+    global RAW_DUMP
+    if os.environ.get("G9_RAW_DUMP") or "ml/runs/G9/existing" in os.path.abspath(a.out):
+        RAW_DUMP = {}
+    if a.det_kind == "roboflow":
+        from roboflow_adapter import RoboflowDet
+        det = RoboflowDet(a.det)
+    else:
+        det = sess(a.det)
     cls = sess(a.cls) if a.cls else None
     report = dict(det=a.det, det_kind=a.det_kind, imgsz=a.imgsz, cls=a.cls, cls_imgsz=a.cls_imgsz, temperature=a.temp,
                   device=f"CPU x{os.cpu_count()} (sandbox), onnxruntime {ort.__version__}, 2 intra-op threads",
@@ -366,6 +380,10 @@ def main():
         ann = f"{a.out}/{kind}_annotated.mp4" if a.annotate else None
         t0 = time.time()
         shown, ld, lf, dropped = run_clip(vp, gt, det, a.det_kind, a.imgsz, cls, a.cls_names.split(","), a.cls_imgsz, a.temp, ann, not a.no_realtime, guard, tp, a.stride, temporal, a.tracker_kind)
+        if RAW_DUMP is not None:
+            import gzip
+            with gzip.open(f"{a.out}/raw_dets_{kind}.json.gz", "wt") as fh:
+                json.dump(dict(conf=RAW_DUMP_CONF, stride=a.stride, frames={str(k): v for k, v in RAW_DUMP.pop(id(gt), {}).items()}), fh)
         m = metrics(gt, shown, kind)
         m.update(n_frames=len(shown), processed_frames=len(ld), dropped_frames=dropped, wall_s=round(time.time() - t0, 1),
                  latency_det_ms=dict(p50=pct(ld, 50), p90=pct(ld, 90), p95=pct(ld, 95)),
