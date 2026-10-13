@@ -1,0 +1,10 @@
+{
+ "model": "G7 ripeness yolo11n-cls per-fruit 224 best.pt vs best.onnx (Kaggle export, opset 17)",
+ "n_images": 40,
+ "input": "identical preprocessed tensor (resize short side 224 + centre crop)",
+ "images": "det test images: parity check only, not a ripeness accuracy",
+ "max_abs_prob_diff": 1.4901161193847656e-06,
+ "top1_agree": "40/40",
+ "device": "sandbox CPU (PyTorch vs onnxruntime)",
+ "parity_pass": true
+}
