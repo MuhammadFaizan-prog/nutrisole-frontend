@@ -168,5 +168,201 @@
    "frag": 11,
    "fa": 0.5
   }
+ },
+ "holdout": {
+  "all12": {
+   "G3": {
+    "recall": 0.5,
+    "pairs": 22,
+    "fa": 2.859,
+    "ttfc": {
+     "p50": 2.24,
+     "p90": 28.11,
+     "n": 11,
+     "missed_pairs": 11
+    },
+    "births": 34.63,
+    "frag": 43.18,
+    "lab": 3.873
+   },
+   "G3_bt_pick": {
+    "recall": 0.455,
+    "pairs": 22,
+    "fa": 1.677,
+    "ttfc": {
+     "p50": 7.41,
+     "p90": 37.59,
+     "n": 10,
+     "missed_pairs": 12
+    },
+    "births": 24.68,
+    "frag": 35.0,
+    "lab": 3.674
+   },
+   "G3r5": {
+    "recall": 0.318,
+    "pairs": 22,
+    "fa": 2.612,
+    "ttfc": {
+     "p50": 2.24,
+     "p90": 43.8,
+     "n": 7,
+     "missed_pairs": 15
+    },
+    "births": 31.43,
+    "frag": 59.29,
+    "lab": 1.092
+   },
+   "show_s0": {
+    "recall": 0.318,
+    "pairs": 22,
+    "fa": 2.474,
+    "ttfc": {
+     "p50": 1.28,
+     "p90": 22.94,
+     "n": 7,
+     "missed_pairs": 15
+    },
+    "births": 29.63,
+    "frag": 53.14,
+    "lab": 0.695
+   },
+   "show_s1": {
+    "recall": 0.364,
+    "pairs": 22,
+    "fa": 2.612,
+    "ttfc": {
+     "p50": 7.68,
+     "p90": 56.41,
+     "n": 8,
+     "missed_pairs": 14
+    },
+    "births": 32.59,
+    "frag": 42.0,
+    "lab": 1.867
+   }
+  },
+  "show5": {
+   "G3": {
+    "recall": 0.5,
+    "pairs": 14,
+    "fa": 2.612,
+    "ttfc": {
+     "p50": 2.24,
+     "p90": 43.8,
+     "n": 7,
+     "missed_pairs": 7
+    },
+    "births": 31.61,
+    "frag": 59.57,
+    "lab": 1.207
+   },
+   "G3_bt_pick": {
+    "recall": 0.429,
+    "pairs": 14,
+    "fa": 1.54,
+    "ttfc": {
+     "p50": 12.13,
+     "p90": 72.56,
+     "n": 6,
+     "missed_pairs": 8
+    },
+    "births": 23.11,
+    "frag": 52.83,
+    "lab": 1.81
+   },
+   "G3r5": {
+    "recall": 0.5,
+    "pairs": 14,
+    "fa": 2.612,
+    "ttfc": {
+     "p50": 2.24,
+     "p90": 43.8,
+     "n": 7,
+     "missed_pairs": 7
+    },
+    "births": 31.43,
+    "frag": 59.29,
+    "lab": 1.092
+   },
+   "show_s0": {
+    "recall": 0.5,
+    "pairs": 14,
+    "fa": 2.474,
+    "ttfc": {
+     "p50": 1.28,
+     "p90": 22.94,
+     "n": 7,
+     "missed_pairs": 7
+    },
+    "births": 29.63,
+    "frag": 53.14,
+    "lab": 0.695
+   },
+   "show_s1": {
+    "recall": 0.571,
+    "pairs": 14,
+    "fa": 2.612,
+    "ttfc": {
+     "p50": 7.68,
+     "p90": 56.41,
+     "n": 8,
+     "missed_pairs": 6
+    },
+    "births": 32.59,
+    "frag": 42.0,
+    "lab": 1.867
+   }
+  }
+ },
+ "holdout_boot": {
+  "G3_bt_pick_vs_G3 (all12)": {
+   "n_uploaders": 25,
+   "recall_diff_ci95": [
+    -0.182,
+    0.0
+   ],
+   "fa_per_min_diff_ci95": [
+    -2.144,
+    -0.669
+   ],
+   "resamples": 1000
+  },
+  "show_s0_vs_G3r5 (show5)": {
+   "n_uploaders": 24,
+   "recall_diff_ci95": [
+    -0.182,
+    0.222
+   ],
+   "fa_per_min_diff_ci95": [
+    -1.624,
+    0.448
+   ],
+   "resamples": 1000
+  },
+  "show_s1_vs_G3r5 (show5)": {
+   "n_uploaders": 24,
+   "recall_diff_ci95": [
+    0.0,
+    0.231
+   ],
+   "fa_per_min_diff_ci95": [
+    -1.178,
+    1.744
+   ],
+   "resamples": 1000
+  },
+  "show_s0_vs_G3 (show5, G3 12-class restricted to 5 at display)": {
+   "n_uploaders": 24,
+   "recall_diff_ci95": [
+    -0.182,
+    0.222
+   ],
+   "fa_per_min_diff_ci95": [
+    -1.624,
+    0.448
+   ],
+   "resamples": 1000
+  }
  }
 }
