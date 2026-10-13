@@ -1,0 +1,57 @@
+{
+ "g3_thr": 0.25,
+ "owl_thr": 0.3,
+ "gap_s": 1.0,
+ "max_per_clip": 4,
+ "none_clips": 24,
+ "zero_hit_clips": [
+  "c94ab39f5",
+  "cc5585ebc"
+ ],
+ "clips_with_hits": [
+  "c9030be18",
+  "c97bdc431",
+  "c8b2d2f36",
+  "c0a13587f",
+  "c32085ee7",
+  "c3cc14a1f",
+  "c59f957c2",
+  "c87e3900a",
+  "c973b3f44",
+  "c97e354bf",
+  "cb05e346c",
+  "cd1a3f857",
+  "cf0b25e3b",
+  "cfe0b39f1",
+  "c6473db48",
+  "c0a08d565",
+  "c3d854faf",
+  "c4e9a7195",
+  "c6f5ac9b4",
+  "c82e63d5a",
+  "cd17ce723",
+  "ce9f2fe34"
+ ],
+ "tiles": 74,
+ "sheets": [
+  "absence_sheet_1.jpg",
+  "absence_sheet_2.jpg",
+  "absence_sheet_3.jpg",
+  "absence_sheet_4.jpg",
+  "absence_sheet_5.jpg",
+  "absence_sheet_6.jpg",
+  "absence_sheet_7.jpg"
+ ],
+ "excluded": [
+  [
+   "8",
+   "c20a12a9c",
+   "UNCERTAIN in presence review"
+  ],
+  [
+   "28",
+   "c4a35a451",
+   "UNCERTAIN in presence review"
+  ]
+ ]
+}
