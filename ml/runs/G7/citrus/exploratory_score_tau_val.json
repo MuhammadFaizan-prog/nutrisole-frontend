@@ -1,0 +1,29 @@
+{
+ "note": "EXPLORATORY, post-hoc, OIV7c val only (n=71 images), G3 control ONNX 480 conf 0.35 CPU: score-threshold ambiguity (citrus-family box with top score < tau). Not pre-registered; candidate for G8 pre-registration.",
+ "grid": {
+  "0.4": {
+   "wrong": 43,
+   "baseline_wrong": 44,
+   "wrong_reduction": 0.023,
+   "amb_on_correct": 0.01
+  },
+  "0.5": {
+   "wrong": 39,
+   "baseline_wrong": 44,
+   "wrong_reduction": 0.114,
+   "amb_on_correct": 0.072
+  },
+  "0.6": {
+   "wrong": 33,
+   "baseline_wrong": 44,
+   "wrong_reduction": 0.25,
+   "amb_on_correct": 0.196
+  },
+  "0.7": {
+   "wrong": 31,
+   "baseline_wrong": 44,
+   "wrong_reduction": 0.295,
+   "amb_on_correct": 0.258
+  }
+ }
+}
