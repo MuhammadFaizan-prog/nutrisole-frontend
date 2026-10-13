@@ -10,6 +10,7 @@ from types import SimpleNamespace
 
 import numpy as np
 from ultralytics.trackers.byte_tracker import BYTETracker
+from ultralytics.trackers.bot_sort import BOTSORT
 
 from tracker import DEFAULT as IOU_DEFAULT
 from tracker import iou
@@ -45,10 +46,16 @@ class ByteTrackTracker:
         self.p = {**DEFAULT, **params}
         self._new()
 
+    kind = "bytetrack"
+
     def _new(self):
         a = SimpleNamespace(**{k: self.p[k] for k in ["track_high_thresh", "track_low_thresh", "new_track_thresh",
                                                         "track_buffer", "match_thresh", "fuse_score"]})
-        self.bt = BYTETracker(a)
+        if self.kind == "botsort":  # G7 (GPT review): BoT-SORT without ReID and without camera-motion compensation
+            a.gmc_method, a.proximity_thresh, a.appearance_thresh, a.with_reid, a.model = "none", 0.5, 0.8, False, "auto"
+            self.bt = BOTSORT(a)
+        else:
+            self.bt = BYTETracker(a)
         self.state: dict[int, _T] = {}
         self.tracks: list[_T] = []
         self.frame = 0
@@ -104,6 +111,12 @@ class ByteTrackTracker:
                 t.label, t.pendingLabel, t.pendingCount = best, -1, 0
         else:
             t.pendingLabel, t.pendingCount = -1, 0
+
+
+class BotSortTracker(ByteTrackTracker):
+    """G7 DEV-only research option: Ultralytics BOTSORT association (KalmanFilterXYWH), with_reid=False, gmc_method='none';
+    same label layer as ByteTrackTracker. Not ported to native/."""
+    kind = "botsort"
 
 
 def make_parity_fixture(path: str, n_frames: int = 160, seed: int = 0):
