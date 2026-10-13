@@ -3,6 +3,7 @@
 # Arms: sA (seed 0), sB (seed 1), rfs (seed 0 + repeat-factor sampling t=0.15, G3-part apple/tomato images repeat >= N_rpx/N_g3).
 # Locked splits are NOT in this kernel's train/val; they are evaluated on sandbox CPU.
 import glob, json, os, subprocess, sys, time, shutil, random
+sys.stdout.reconfigure(line_buffering=True)
 ARM = "__ARM__"; SEED = int("__SEED__"); RFS = ARM.startswith("rfs"); VARIANT = "rpx"; IMGSZ = 640; NAME = f"det_yolo11n_g7_{ARM}"; EPOCHS = 150
 t0 = time.time()
 subprocess.run([sys.executable, "-m", "pip", "install", "-q", "ultralytics==8.4.175"], check=True)
@@ -94,7 +95,8 @@ from ultralytics import YOLO
 dev = "0" if torch.cuda.is_available() else "cpu"
 P = "/kaggle/working/runs"
 YOLO(MODEL).train(data=f"{D}/det.yaml", imgsz=IMGSZ, multi_scale=0.0, epochs=EPOCHS, patience=30, batch=(-1 if dev == "0" else 16), cos_lr=True, close_mosaic=15,
-        hsv_h=0.015, hsv_s=0.6, hsv_v=0.5, degrees=10, fliplr=0.5, mixup=0.1, cache="ram", seed=SEED, deterministic=True,
+        hsv_h=0.015, hsv_s=0.6, hsv_v=0.5, degrees=10, fliplr=0.5, mixup=0.1, cache=("disk" if RFS else "ram"),  # rfs v3 fix: RFS duplicates x RAM cache -> container OOM (empty-log ERROR x2)
+        seed=SEED, deterministic=True,
         save_period=-1, device=dev, workers=4, project=P, name=NAME, exist_ok=True, plots=True, verbose=False)
 res = dict(model=MODEL, name=NAME, arm=ARM, seed=SEED, rfs=RFS, recipe="G3 det_run_g3.py", variant=VARIANT, imgsz=IMGSZ, epochs=EPOCHS, data_counts=n, train_wall_s=round(time.time() - t0, 1), torch=torch.__version__,
            ultralytics=ultralytics.__version__, gpu=(torch.cuda.get_device_name(0) if torch.cuda.is_available() else "kaggle-cpu"), evals=[])
