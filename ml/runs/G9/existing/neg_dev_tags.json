@@ -1,0 +1,65 @@
+{
+ "note": "DEV neg clip (g3clips_dev/neg_clip) segment sources, tags assigned by the agent from a contact sheet (not human-verified); one source may carry several tags. plain_background segments untagged.",
+ "tags": {
+  "people_clothing": [
+   "000000575220.jpg",
+   "000000522233.jpg",
+   "000000178682.jpg",
+   "000000007394.jpg",
+   "000000232460.jpg",
+   "000000240049.jpg",
+   "000000578792.jpg",
+   "000000249519.jpg",
+   "000000276673.jpg",
+   "000000568981.jpg",
+   "000000107428.jpg",
+   "000000061747.jpg",
+   "000000407348.jpg",
+   "000000107226.jpg",
+   "000000184377.jpg",
+   "000000423944.jpg",
+   "000000098205.jpg"
+  ],
+  "signs_text": [
+   "000000184999.jpg",
+   "000000232460.jpg",
+   "000000249519.jpg",
+   "000000553339.jpg",
+   "000000344614.jpg"
+  ],
+  "packaging_indoor_objects": [
+   "000000557501.jpg",
+   "000000165257.jpg"
+  ],
+  "synthetic_texture": [
+   "devtex_14.jpg",
+   "devtex_11.jpg",
+   "devtex_05.jpg",
+   "devtex_09.jpg",
+   "devtex_00.jpg",
+   "devtex_06.jpg",
+   "devtex_02.jpg",
+   "devtex_13.jpg",
+   "devtex_07.jpg",
+   "devtex_01.jpg",
+   "devtex_08.jpg",
+   "devtex_12.jpg"
+  ],
+  "outdoor_scene_animal_vehicle": [
+   "000000428562.jpg",
+   "000000009769.jpg",
+   "000000156372.jpg",
+   "000000292908.jpg",
+   "000000573626.jpg",
+   "000000361518.jpg",
+   "000000129135.jpg",
+   "000000537066.jpg",
+   "000000082821.jpg",
+   "000000338242.jpg",
+   "000000126216.jpg"
+  ],
+  "low_light": [
+   "devtex_06.jpg"
+  ]
+ }
+}
