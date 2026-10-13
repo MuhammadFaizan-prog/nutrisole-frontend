@@ -1,0 +1,36 @@
+{
+ "clips": 69,
+ "keyframes": 1528,
+ "keyframes_with_owl": 1528,
+ "boxes": 26132,
+ "status": {
+  "class_dispute": 2738,
+  "owl_only": 17657,
+  "g3_only": 844,
+  "agree": 4893
+ },
+ "flags": {
+  "low_conf": 14756,
+  "small_box_6_12": 4168,
+  "unsupported_overlap": 384,
+  "small_box_lt6": 385,
+  "temporal": 273,
+  "id_change": 393
+ },
+ "verified_boxes": 0,
+ "review_queue": 60,
+ "negatives_frames_needing_absence_check": {
+  "c0a08d565": 0,
+  "c0be28daa": 12,
+  "c3d854faf": 4,
+  "c4a35a451": 7,
+  "c4e9a7195": 1,
+  "c6f5ac9b4": 1,
+  "c82e63d5a": 8,
+  "c8b2d2f36": 6,
+  "cc5585ebc": 0,
+  "cd17ce723": 4,
+  "ce9f2fe34": 1
+ },
+ "note": "PROPOSED labels only; verified_boxes counts human-verified boxes (0 unless review_queue.csv verdicts are filled by a person)."
+}
