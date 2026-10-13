@@ -1,0 +1,79 @@
+n,clip_id,t_s,claimed_class,score,source,tile,verdict,split,n_raw_hits,n_moments
+3,c9030be18,24.77,citrus,0.9597,G3,001@absence_sheet_1.jpg,,holdout (LOCKED),1503,57
+3,c9030be18,22.02,apple,0.9037,G3,002@absence_sheet_1.jpg,,holdout (LOCKED),1503,57
+3,c9030be18,33.03,banana,0.9015,G3,003@absence_sheet_1.jpg,,holdout (LOCKED),1503,57
+3,c9030be18,28.53,capsicum,0.8801,G3,004@absence_sheet_1.jpg,,holdout (LOCKED),1503,57
+4,c97bdc431,12.53,lemon_lime,0.7251,G3,005@absence_sheet_1.jpg,,holdout_v7_pending,193,15
+4,c97bdc431,9.6,carrot,0.6126,OWLv2,006@absence_sheet_1.jpg,,holdout_v7_pending,193,15
+4,c97bdc431,4.27,banana,0.5635,OWLv2,007@absence_sheet_1.jpg,,holdout_v7_pending,193,15
+4,c97bdc431,24.8,citrus,0.3217,G3,008@absence_sheet_1.jpg,,holdout_v7_pending,193,15
+6,c8b2d2f36,5.6,apple,0.7293,G3,009@absence_sheet_1.jpg,,negatives_v7,159,9
+6,c8b2d2f36,9.6,banana,0.3219,OWLv2,010@absence_sheet_1.jpg,,negatives_v7,159,9
+6,c8b2d2f36,6.93,apple,0.72,G3,011@absence_sheet_1.jpg,,negatives_v7,159,9
+6,c8b2d2f36,13.6,apple,0.5589,G3,012@absence_sheet_1.jpg,,negatives_v7,159,9
+7,c0a13587f,177.68,banana,0.7833,G3,013@absence_sheet_2.jpg,,holdout (LOCKED),40,19
+7,c0a13587f,138.64,apple,0.4023,G3,014@absence_sheet_2.jpg,,holdout (LOCKED),40,19
+7,c0a13587f,162.16,capsicum,0.3327,OWLv2,015@absence_sheet_2.jpg,,holdout (LOCKED),40,19
+7,c0a13587f,140.39,citrus,0.2764,G3,016@absence_sheet_2.jpg,,holdout (LOCKED),40,19
+9,c32085ee7,112.86,banana,0.5963,G3,017@absence_sheet_2.jpg,,holdout (LOCKED),1060,27
+9,c32085ee7,42.29,mango,0.5262,OWLv2,018@absence_sheet_2.jpg,,holdout (LOCKED),1060,27
+9,c32085ee7,55.81,lemon_lime,0.3994,OWLv2,019@absence_sheet_2.jpg,,holdout (LOCKED),1060,27
+9,c32085ee7,88.59,carrot,0.2864,G3,020@absence_sheet_2.jpg,,holdout (LOCKED),1060,27
+10,c3cc14a1f,18.68,potato,0.5499,OWLv2,021@absence_sheet_2.jpg,,holdout (LOCKED),17,7
+10,c3cc14a1f,15.65,apple,0.5217,G3,022@absence_sheet_2.jpg,,holdout (LOCKED),17,7
+10,c3cc14a1f,8.18,carrot,0.3241,OWLv2,023@absence_sheet_2.jpg,,holdout (LOCKED),17,7
+10,c3cc14a1f,0.0,cucumber,0.3197,OWLv2,024@absence_sheet_2.jpg,,holdout (LOCKED),17,7
+11,c59f957c2,15.12,banana,0.9108,G3,025@absence_sheet_3.jpg,,holdout (LOCKED),268,22
+11,c59f957c2,5.04,carrot,0.7065,OWLv2,026@absence_sheet_3.jpg,,holdout (LOCKED),268,22
+11,c59f957c2,29.28,potato,0.6401,OWLv2,027@absence_sheet_3.jpg,,holdout (LOCKED),268,22
+11,c59f957c2,10.8,cucumber,0.4222,OWLv2,028@absence_sheet_3.jpg,,holdout (LOCKED),268,22
+12,c87e3900a,6.01,potato,0.3006,OWLv2,029@absence_sheet_3.jpg,,holdout (LOCKED),1,1
+13,c94ab39f5,,,,no detector hits,,,holdout (LOCKED),0,0
+14,c973b3f44,4.67,apple,0.3048,OWLv2,030@absence_sheet_3.jpg,,holdout (LOCKED),1,1
+15,c97e354bf,40.08,banana,0.6611,G3,031@absence_sheet_3.jpg,,holdout (LOCKED),52,16
+15,c97e354bf,74.88,apple,0.5591,G3,032@absence_sheet_3.jpg,,holdout (LOCKED),52,16
+15,c97e354bf,30.72,pomegranate,0.5558,G3,033@absence_sheet_3.jpg,,holdout (LOCKED),52,16
+15,c97e354bf,34.32,citrus,0.3748,G3,034@absence_sheet_3.jpg,,holdout (LOCKED),52,16
+17,cb05e346c,0.0,apple,0.4476,OWLv2,035@absence_sheet_3.jpg,,holdout (LOCKED),13,1
+18,cd1a3f857,130.25,banana,0.8203,G3,036@absence_sheet_3.jpg,,holdout (LOCKED),1978,26
+18,cd1a3f857,115.5,apple,0.7756,G3,037@absence_sheet_4.jpg,,holdout (LOCKED),1978,26
+18,cd1a3f857,17.25,capsicum,0.5287,G3,038@absence_sheet_4.jpg,,holdout (LOCKED),1978,26
+18,cd1a3f857,139.75,tomato,0.5067,G3,039@absence_sheet_4.jpg,,holdout (LOCKED),1978,26
+19,cf0b25e3b,6.13,potato,0.4662,OWLv2,040@absence_sheet_4.jpg,,holdout (LOCKED),145,7
+19,cf0b25e3b,4.8,citrus,0.4547,OWLv2,041@absence_sheet_4.jpg,,holdout (LOCKED),145,7
+19,cf0b25e3b,3.2,mango,0.4512,OWLv2,042@absence_sheet_4.jpg,,holdout (LOCKED),145,7
+19,cf0b25e3b,2.13,lemon_lime,0.4478,OWLv2,043@absence_sheet_4.jpg,,holdout (LOCKED),145,7
+20,cfe0b39f1,118.56,banana,0.8726,G3,044@absence_sheet_4.jpg,,holdout (LOCKED),134,28
+20,cfe0b39f1,14.4,tomato,0.493,G3,045@absence_sheet_4.jpg,,holdout (LOCKED),134,28
+20,cfe0b39f1,131.76,apple,0.45,G3,046@absence_sheet_4.jpg,,holdout (LOCKED),134,28
+20,cfe0b39f1,133.44,carrot,0.3702,OWLv2,047@absence_sheet_4.jpg,,holdout (LOCKED),134,28
+23,c6473db48,28.5,banana,0.5764,G3,048@absence_sheet_4.jpg,,holdout_v7_pending,150,14
+23,c6473db48,21.02,potato,0.401,OWLv2,049@absence_sheet_5.jpg,,holdout_v7_pending,150,14
+23,c6473db48,27.09,tomato,0.3938,OWLv2,050@absence_sheet_5.jpg,,holdout_v7_pending,150,14
+23,c6473db48,2.1,apple,0.2923,G3,051@absence_sheet_5.jpg,,holdout_v7_pending,150,14
+26,c0a08d565,11.52,lemon_lime,0.4172,G3,052@absence_sheet_5.jpg,,negatives_v7,4,2
+26,c0a08d565,7.44,tomato,0.338,G3,053@absence_sheet_5.jpg,,negatives_v7,4,2
+27,c3d854faf,77.33,apple,0.6621,G3,054@absence_sheet_5.jpg,,negatives_v7,32,20
+27,c3d854faf,33.07,banana,0.5041,G3,055@absence_sheet_5.jpg,,negatives_v7,32,20
+27,c3d854faf,58.13,carrot,0.4299,G3,056@absence_sheet_5.jpg,,negatives_v7,32,20
+27,c3d854faf,19.2,lemon_lime,0.3351,OWLv2,057@absence_sheet_5.jpg,,negatives_v7,32,20
+29,c4e9a7195,17.28,mango,0.7802,G3,058@absence_sheet_5.jpg,,negatives_v7,9,5
+29,c4e9a7195,27.79,apple,0.5718,G3,059@absence_sheet_5.jpg,,negatives_v7,9,5
+29,c4e9a7195,3.27,banana,0.4208,G3,060@absence_sheet_5.jpg,,negatives_v7,9,5
+29,c4e9a7195,11.68,mango,0.4148,G3,061@absence_sheet_6.jpg,,negatives_v7,9,5
+30,c6f5ac9b4,5.84,mango,0.8292,G3,062@absence_sheet_6.jpg,,negatives_v7,4,3
+30,c6f5ac9b4,18.22,potato,0.2791,G3,063@absence_sheet_6.jpg,,negatives_v7,4,3
+30,c6f5ac9b4,7.94,mango,0.6134,G3,064@absence_sheet_6.jpg,,negatives_v7,4,3
+31,c82e63d5a,32.7,tomato,0.8313,G3,065@absence_sheet_6.jpg,,negatives_v7,168,38
+31,c82e63d5a,4.67,carrot,0.6517,G3,066@absence_sheet_6.jpg,,negatives_v7,168,38
+31,c82e63d5a,84.08,banana,0.3776,OWLv2,067@absence_sheet_6.jpg,,negatives_v7,168,38
+31,c82e63d5a,131.03,citrus,0.2519,G3,068@absence_sheet_6.jpg,,negatives_v7,168,38
+32,cc5585ebc,,,,no detector hits,,,negatives_v7,0,0
+33,cd17ce723,110.4,banana,0.8397,G3,069@absence_sheet_6.jpg,,negatives_v7,93,21
+33,cd17ce723,5.04,citrus,0.6524,G3,070@absence_sheet_6.jpg,,negatives_v7,93,21
+33,cd17ce723,50.16,potato,0.5304,OWLv2,071@absence_sheet_6.jpg,,negatives_v7,93,21
+33,cd17ce723,2.64,apple,0.4279,G3,072@absence_sheet_6.jpg,,negatives_v7,93,21
+34,ce9f2fe34,14.4,pomegranate,0.3729,OWLv2,073@absence_sheet_7.jpg,,negatives_v7,4,2
+34,ce9f2fe34,8.4,apple,0.2977,G3,074@absence_sheet_7.jpg,,negatives_v7,4,2
+8,c20a12a9c,,,,EXCLUDED: UNCERTAIN in presence review,,,,,
+28,c4a35a451,,,,EXCLUDED: UNCERTAIN in presence review,,,,,
