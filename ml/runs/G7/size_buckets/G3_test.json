@@ -107,6 +107,40 @@
    "n_pred": 10261,
    "latency_ms_p50": 198.2,
    "latency_ms_p90": 290.4
+  },
+  "tile480": {
+   "buckets": {
+    "<6": {
+     "n_gt": 1666,
+     "recall_cls": 0.032,
+     "recall_any": 0.035
+    },
+    "6-12": {
+     "n_gt": 3109,
+     "recall_cls": 0.233,
+     "recall_any": 0.248
+    },
+    "12-24": {
+     "n_gt": 3423,
+     "recall_cls": 0.5,
+     "recall_any": 0.528
+    },
+    "24-48": {
+     "n_gt": 2795,
+     "recall_cls": 0.677,
+     "recall_any": 0.719
+    },
+    ">=48": {
+     "n_gt": 1274,
+     "recall_cls": 0.749,
+     "recall_any": 0.811
+    }
+   },
+   "recall_cls_all": 0.435,
+   "precision_cls": 0.376,
+   "n_pred": 14200,
+   "latency_ms_p50": 356.9,
+   "latency_ms_p90": 486.2
   }
  }
 }
