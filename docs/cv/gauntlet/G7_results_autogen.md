@@ -9,7 +9,7 @@ Device: sandbox CPU (2-core aarch64, shared), PyTorch .pt eval via ml/eval/eval_
 | model | test (n=557) mAP50 / 50-95 | test_rf (n=149) mAP50 / 50-95 | test_oiv7 (n=123) mAP50 / 50-95 | test_oiv7c (n=181) mAP50 / 50-95 | pooled (n=829) mAP50 / 50-95 | test_rf_nostrips (n=149) mAP50 / 50-95 | test_small6 (n=557) mAP50 / 50-95 | neg_test img FA (n=80) |
 |---|---|---|---|---|---|---|---|---|
 | G3 control (CHAMPION; historical eval files) | 0.224 / 0.139 | 0.355 / 0.231 | 0.381 / 0.282 | 0.634 / 0.448 | 0.314 / 0.218 | 0.404 / 0.263 | 0.249 / 0.154 | 0.025 |
-| G6 rpx (G3-init fine-tune; reference, single seed) [G6rpx] | 0.218 / 0.139 | 0.359 / 0.239 | 0.429 / 0.314 | 0.784 / 0.579 | 0.310 / 0.217 | 0.409 / 0.273 | - | 0.0125 |
+| G6 rpx (G3-init fine-tune; reference, single seed) [G6rpx] | 0.218 / 0.139 | 0.359 / 0.239 | 0.429 / 0.314 | 0.784 / 0.579 | 0.310 / 0.217 | 0.409 / 0.273 | 0.242 / 0.153 | 0.0125 |
 
 Kaggle-side evals (inside the training kernel, imgsz 480, device as listed; not CPU):
 
@@ -84,6 +84,21 @@ pending
 | 480 | 0.001 (n=1666) | 0.053 (n=3109) | 0.311 (n=3423) | 0.565 (n=2795) | 0.692 (n=1274) | 0.301 | 0.544 | 67.9 / 84.8 |
 | 640 | 0.007 (n=1666) | 0.137 (n=3109) | 0.387 (n=3423) | 0.579 (n=2795) | 0.681 (n=1274) | 0.346 | 0.507 | 107.6 / 143.3 |
 | 800 | 0.036 (n=1666) | 0.212 (n=3109) | 0.464 (n=3423) | 0.625 (n=2795) | 0.683 (n=1274) | 0.401 | 0.48 | 198.2 / 290.4 |
+| tile480 | 0.032 (n=1666) | 0.233 (n=3109) | 0.5 (n=3423) | 0.677 (n=2795) | 0.749 (n=1274) | 0.435 | 0.376 | 356.9 / 486.2 |
+
+**G7sA_test** (runs)
+
+| mode | <6 px | 6-12 | 12-24 | 24-48 | >=48 | recall all (cls) | precision | latency p50 / p90 ms |
+|---|---|---|---|---|---|---|---|---|
+| 480 | 0.0 (n=1666) | 0.031 (n=3109) | 0.209 (n=3423) | 0.442 (n=2795) | 0.651 (n=1274) | 0.235 | 0.553 | 66.0 / 80.9 |
+| 640 | 0.002 (n=1666) | 0.102 (n=3109) | 0.315 (n=3423) | 0.55 (n=2795) | 0.678 (n=1274) | 0.31 | 0.533 | 104.0 / 135.5 |
+
+**G7sB_test** (runs)
+
+| mode | <6 px | 6-12 | 12-24 | 24-48 | >=48 | recall all (cls) | precision | latency p50 / p90 ms |
+|---|---|---|---|---|---|---|---|---|
+| 480 | 0.001 (n=1666) | 0.023 (n=3109) | 0.199 (n=3423) | 0.449 (n=2795) | 0.651 (n=1274) | 0.231 | 0.601 | 66.2 / 80.1 |
+| 640 | 0.001 (n=1666) | 0.074 (n=3109) | 0.295 (n=3423) | 0.557 (n=2795) | 0.696 (n=1274) | 0.3 | 0.574 | 103.9 / 138.0 |
 
 ## E. Citrus: hierarchical (generic 'citrus' unless subtype confident) vs flat, test_oiv7c (n=181 img), ONNX 480 CPU, conf 0.35; tau picked on OIV7c val
 
@@ -97,12 +112,43 @@ pending
 | run | det seg acc (n seg) | frame acc | TTFC p50/p90 ms | ID sw | fragmentations | missed s (frac) | longest gap s | static flicker /10s | neg FA/min | wall s |
 |---|---|---|---|---|---|---|---|---|---|---|
 | devdet_botsort | 0.625 (24) | 0.4595 | 433.33350000000064/600.0 | 16 | 10 | 42.934 (0.4497) | 4.0 | 0.208 | - | 120.5 |
+| negtest_botsort_r1 | - | - | - | - | - | - | - | - | 0.0 | 141.0 |
+| negtest_bt_r1 | - | - | - | - | - | - | - | - | 0.0 | 143.4 |
+| negtest_iou_r1 | - | - | - | - | - | - | - | - | 0.0 | 174.0 |
+| test_botsort_r1 | 0.6667 (24) | 0.5323 | 533.3329999999987/933.3331999999996 | 27 | 11 | 36.935 (0.389) | 4.0 | 0.0 | 1.25 | 112.2 |
 | test_bt_r1 | 0.6667 (24) | 0.5316 | 533.3329999999987/933.3331999999996 | 30 | 13 | 36.935 (0.389) | 4.0 | 0.0 | 1.25 | 212.5 |
 | test_iou_r1 | 0.6667 (24) | 0.4965 | 466.6670000000013/759.9997999999993 | 43 | 34 | 40.269 (0.4242) | 4.0 | 0.0 | 1.25 | 266.4 |
+| tune/nt0.25_mt0.8_mh1 | 0.625 (24) | 0.4616 | 433.33349999999996/600.0 | 24 | 11 | 42.933 (0.4497) | 4.0 | 0.625 | 0.5 | 227.6 |
+| tune/nt0.25_mt0.8_mh2 | 0.625 (24) | 0.4546 | 433.33350000000064/600.0 | 20 | 9 | 43.733 (0.4581) | 4.0 | 0.625 | 0.5 | 207.8 |
+| tune/nt0.25_mt0.9_mh1 | 0.625 (24) | 0.4602 | 466.66700000000014/866.6664999999994 | 21 | 8 | 42.267 (0.4427) | 4.0 | 0.625 | 0.5 | 165.7 |
 
 DEV tuning pick (prereg addendum C): pending
 
 ## G. Hue-shift sensitivity (OpenCV HSV hue rotation, S/V untouched; argmax decision)
+
+**quality_G3E224_test** (n=270, sandbox/Kaggle CPU, ONNX Runtime)
+
+| hue shift deg | acc | pos_recall | n_pos |
+|---|---|---|---|
+| 0 | 0.9889 | 0.9832 | 119 |
+| -5 | 0.9815 | 0.9832 | 119 |
+| 5 | 0.9926 | 0.9832 | 119 |
+| -10 | 0.9741 | 0.9832 | 119 |
+| 10 | 0.9778 | 0.9496 | 119 |
+| -20 | 0.9111 | 0.9328 | 119 |
+| 20 | 0.9 | 0.7815 | 119 |
+
+**quality_G3E224_test_night_sodium_hard** (n=270, sandbox/Kaggle CPU, ONNX Runtime)
+
+| hue shift deg | acc | pos_recall | n_pos |
+|---|---|---|---|
+| 0 | 0.7333 | 0.9832 | 119 |
+| -5 | 0.7111 | 1.0 | 119 |
+| 5 | 0.7556 | 0.9916 | 119 |
+| -10 | 0.6519 | 1.0 | 119 |
+| 10 | 0.7889 | 0.9916 | 119 |
+| -20 | 0.6074 | 0.9916 | 119 |
+| 20 | 0.8815 | 0.9328 | 119 |
 
 ## H. Auto-labelling (Phase 3) - PROPOSED labels only
 
@@ -166,5 +212,77 @@ pending
 
 ## J. train_pool_v7
 
-pending
+{
+ "banana_56c75hvm7r": {
+  "images": 673,
+  "groups": 580,
+  "largest_group": 6,
+  "by_split_label": {
+   "test_reserved/overripe": 25,
+   "test_reserved/ripe": 14,
+   "test_reserved/unripe": 29,
+   "train/overripe": 204,
+   "train/ripe": 164,
+   "train/unripe": 170,
+   "val/overripe": 23,
+   "val/ripe": 23,
+   "val/unripe": 21
+  }
+ },
+ "guava_pk_w3fg8jjmzr": {
+  "images": 2309,
+  "groups": 202,
+  "largest_group": 1343,
+  "by_split_label": {
+   "eval_only/green": 232,
+   "eval_only/mature_green": 829,
+   "eval_only/ripe": 1248
+  }
+ },
+ "mangodhds_b4nrw5hyyc": {
+  "images": 1500,
+  "groups": 866,
+  "largest_group": 455,
+  "by_split_label": {
+   "test/anthracnose": 24,
+   "test/bacterial_canker": 27,
+   "test/healthy": 16,
+   "test/scab": 19,
+   "test/stem_end_rot": 20,
+   "train/anthracnose": 252,
+   "train/bacterial_canker": 256,
+   "train/healthy": 259,
+   "train/scab": 264,
+   "train/stem_end_rot": 255,
+   "val/anthracnose": 24,
+   "val/bacterial_canker": 17,
+   "val/healthy": 25,
+   "val/scab": 17,
+   "val/stem_end_rot": 25
+  }
+ },
+ "tomato_eg_x4s2jz55dx": {
+  "images": 2400,
+  "groups": 1,
+  "largest_group": 2400,
+  "by_split_label": {
+   "train/reject": 800,
+   "train/ripe": 800,
+   "train/unripe": 800
+  }
+ },
+ "zenodo17609211": {
+  "images": 6654,
+  "groups": 1556,
+  "largest_group": 2656,
+  "by_split_label": {
+   "test/bad": 1875,
+   "test/good": 1187,
+   "train/bad": 1381,
+   "train/good": 1963,
+   "val/bad": 57,
+   "val/good": 191
+  }
+ }
+}
 
