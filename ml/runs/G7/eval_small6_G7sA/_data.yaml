@@ -1,0 +1,18 @@
+names:
+  0: banana
+  1: apple
+  2: mango
+  3: citrus
+  4: guava
+  5: pomegranate
+  6: lemon_lime
+  7: tomato
+  8: potato
+  9: cucumber
+  10: carrot
+  11: capsicum
+path: /workspace/work/cv/g7data/test_small6
+test_rf: /workspace/work/cv/g7data/test_small6/images/test_rf
+test_small6: /workspace/work/cv/g7data/test_small6/test_small6.txt
+train: /workspace/work/cv/g7data/test_small6/test_small6.txt
+val: /workspace/work/cv/g7data/test_small6/test_small6.txt
