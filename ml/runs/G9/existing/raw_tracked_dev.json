@@ -1,0 +1,4709 @@
+{
+ "rule": "(written before any candidate synthetic result was looked at):\n  * Raw, per processed frame with a GT primary object (harness primary(): largest GT box of the segment class):\n      correct    = some box IoU>=0.5 with the primary object and the right class\n      wrong      = no correct box, but some box IoU>=0.5 with it carrying another class   (wrong-class prediction)\n      missing    = no box IoU>=0.5 at all                                                   (missed object)\n      uncovered  = GT class not in the model's class map (counted as missing-by-design, reported separately)\n    wrong-class DETECTIONS = every box (any frame) that overlaps a GT object (IoU>=0.5) with a different class, and no same-class GT.\n    background boxes = boxes overlapping no GT object (IoU<0.5 to all) on the det clip.\n    neg clip: raw false boxes per minute (all boxes are false), frames with any box.\n  * DEV threshold rule (per model, G3 included): the conf in {0.10,0.15,...,0.90} maximising raw correct-frame rate on the det clip\n    subject to raw neg false boxes/min <= G3's raw neg false boxes/min at its production threshold 0.35. Ties -> higher conf.\n    If no threshold meets the constraint, the model is reported at its lowest-FA threshold and flagged.\n  * Tracked = same raw boxes >= conf -> scene_guard(minArea 0.01, rule 2 off) -> IouTracker (default params) -> harness metrics().\n    Promotion needs recall to hold: lower FA alone never wins.",
+ "models": {
+  "g3": {
+   "dump_det": "gauntlet_dev/raw_g3_det/raw_dets_det.json.gz",
+   "dump_neg": "gauntlet_dev/raw_g3_neg/raw_dets_neg.json.gz",
+   "coverage": [
+    "banana",
+    "apple",
+    "mango",
+    "citrus",
+    "guava",
+    "pomegranate",
+    "lemon_lime",
+    "tomato",
+    "potato",
+    "cucumber",
+    "carrot",
+    "capsicum"
+   ],
+   "sweep": [
+    {
+     "det": {
+      "thr": 0.1,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 400,
+      "wrong": 60,
+      "missing": 257,
+      "uncovered": 0,
+      "correct_rate": 0.5579,
+      "correct_rate_covered": 0.5579,
+      "wrong_rate": 0.0837,
+      "wrong_class_detections": 506,
+      "wrong_pairs": {
+       "carrot->tomato": 110,
+       "citrus->apple": 75,
+       "citrus->lemon_lime": 56,
+       "citrus->banana": 49,
+       "apple->citrus": 44,
+       "banana->citrus": 33,
+       "lemon_lime->apple": 31,
+       "apple->tomato": 25,
+       "lemon_lime->citrus": 14,
+       "banana->apple": 10,
+       "apple->banana": 9,
+       "citrus->pomegranate": 8
+      },
+      "background_boxes": 2223,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 40,
+        "correct": 153,
+        "wrong": 14
+       },
+       "apple": {
+        "wrong": 3,
+        "correct": 93,
+        "missing": 24
+       },
+       "citrus": {
+        "missing": 5,
+        "correct": 104,
+        "wrong": 41
+       },
+       "tomato": {
+        "missing": 18,
+        "correct": 12
+       },
+       "potato": {
+        "missing": 29,
+        "wrong": 1
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 82,
+        "correct": 38
+       },
+       "capsicum": {
+        "missing": 29,
+        "wrong": 1
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.1,
+      "false_boxes": 144,
+      "false_boxes_per_min": 36.0,
+      "frames_with_box": 103,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0572,
+      "per_class": {
+       "citrus": 31,
+       "banana": 28,
+       "apple": 47,
+       "lemon_lime": 2,
+       "capsicum": 33,
+       "tomato": 3
+      },
+      "by_source": {
+       "000000184999.jpg": 2,
+       "000000575220.jpg": 1,
+       "000000232460.jpg": 23,
+       "000000240049.jpg": 6,
+       "000000578792.jpg": 4,
+       "000000249519.jpg": 10,
+       "000000276673.jpg": 33,
+       "000000407348.jpg": 16,
+       "devtex_13.jpg": 25,
+       "000000344614.jpg": 1,
+       "000000165257.jpg": 1,
+       "000000184377.jpg": 22
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.15,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 384,
+      "wrong": 56,
+      "missing": 277,
+      "uncovered": 0,
+      "correct_rate": 0.5356,
+      "correct_rate_covered": 0.5356,
+      "wrong_rate": 0.0781,
+      "wrong_class_detections": 385,
+      "wrong_pairs": {
+       "citrus->apple": 68,
+       "carrot->tomato": 67,
+       "citrus->lemon_lime": 55,
+       "apple->citrus": 42,
+       "citrus->banana": 31,
+       "banana->citrus": 28,
+       "apple->tomato": 24,
+       "lemon_lime->apple": 22,
+       "banana->apple": 10,
+       "lemon_lime->citrus": 7,
+       "banana->lemon_lime": 7,
+       "citrus->pomegranate": 5
+      },
+      "background_boxes": 1519,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 40,
+        "correct": 152,
+        "wrong": 15
+       },
+       "apple": {
+        "wrong": 1,
+        "correct": 92,
+        "missing": 27
+       },
+       "citrus": {
+        "missing": 8,
+        "correct": 103,
+        "wrong": 39
+       },
+       "tomato": {
+        "missing": 22,
+        "correct": 8
+       },
+       "potato": {
+        "missing": 29,
+        "wrong": 1
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 91,
+        "correct": 29
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.15,
+      "false_boxes": 77,
+      "false_boxes_per_min": 19.25,
+      "frames_with_box": 59,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0328,
+      "per_class": {
+       "banana": 16,
+       "apple": 25,
+       "lemon_lime": 1,
+       "citrus": 10,
+       "capsicum": 22,
+       "tomato": 3
+      },
+      "by_source": {
+       "000000232460.jpg": 15,
+       "000000240049.jpg": 3,
+       "000000578792.jpg": 1,
+       "000000249519.jpg": 5,
+       "000000276673.jpg": 22,
+       "000000407348.jpg": 10,
+       "devtex_13.jpg": 9,
+       "000000165257.jpg": 1,
+       "000000184377.jpg": 11
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.2,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 373,
+      "wrong": 52,
+      "missing": 292,
+      "uncovered": 0,
+      "correct_rate": 0.5202,
+      "correct_rate_covered": 0.5202,
+      "wrong_rate": 0.0725,
+      "wrong_class_detections": 313,
+      "wrong_pairs": {
+       "citrus->apple": 65,
+       "citrus->lemon_lime": 52,
+       "carrot->tomato": 42,
+       "apple->citrus": 36,
+       "banana->citrus": 28,
+       "apple->tomato": 23,
+       "lemon_lime->apple": 20,
+       "citrus->banana": 17,
+       "banana->apple": 10,
+       "banana->lemon_lime": 7,
+       "lemon_lime->citrus": 3,
+       "apple->pomegranate": 2
+      },
+      "background_boxes": 1196,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 40,
+        "correct": 152,
+        "wrong": 15
+       },
+       "apple": {
+        "wrong": 1,
+        "missing": 31,
+        "correct": 88
+       },
+       "citrus": {
+        "missing": 12,
+        "correct": 102,
+        "wrong": 36
+       },
+       "tomato": {
+        "missing": 25,
+        "correct": 5
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 94,
+        "correct": 26
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.2,
+      "false_boxes": 43,
+      "false_boxes_per_min": 10.75,
+      "frames_with_box": 37,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0206,
+      "per_class": {
+       "banana": 13,
+       "apple": 11,
+       "citrus": 3,
+       "capsicum": 14,
+       "tomato": 2
+      },
+      "by_source": {
+       "000000232460.jpg": 12,
+       "000000240049.jpg": 2,
+       "000000249519.jpg": 3,
+       "000000276673.jpg": 14,
+       "000000407348.jpg": 4,
+       "devtex_13.jpg": 2,
+       "000000184377.jpg": 6
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.25,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 364,
+      "wrong": 55,
+      "missing": 298,
+      "uncovered": 0,
+      "correct_rate": 0.5077,
+      "correct_rate_covered": 0.5077,
+      "wrong_rate": 0.0767,
+      "wrong_class_detections": 274,
+      "wrong_pairs": {
+       "citrus->apple": 58,
+       "citrus->lemon_lime": 52,
+       "carrot->tomato": 32,
+       "banana->citrus": 28,
+       "apple->citrus": 26,
+       "apple->tomato": 23,
+       "lemon_lime->apple": 19,
+       "banana->apple": 10,
+       "citrus->banana": 9,
+       "banana->lemon_lime": 7,
+       "lemon_lime->citrus": 3,
+       "apple->pomegranate": 2
+      },
+      "background_boxes": 969,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 41,
+        "correct": 150,
+        "wrong": 16
+       },
+       "apple": {
+        "wrong": 1,
+        "missing": 31,
+        "correct": 88
+       },
+       "citrus": {
+        "missing": 13,
+        "correct": 99,
+        "wrong": 38
+       },
+       "tomato": {
+        "missing": 28,
+        "correct": 2
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 95,
+        "correct": 25
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.25,
+      "false_boxes": 26,
+      "false_boxes_per_min": 6.5,
+      "frames_with_box": 23,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0128,
+      "per_class": {
+       "banana": 7,
+       "apple": 7,
+       "capsicum": 9,
+       "tomato": 1,
+       "citrus": 2
+      },
+      "by_source": {
+       "000000232460.jpg": 6,
+       "000000240049.jpg": 1,
+       "000000249519.jpg": 2,
+       "000000276673.jpg": 9,
+       "000000407348.jpg": 2,
+       "devtex_13.jpg": 2,
+       "000000184377.jpg": 4
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.3,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 352,
+      "wrong": 56,
+      "missing": 309,
+      "uncovered": 0,
+      "correct_rate": 0.4909,
+      "correct_rate_covered": 0.4909,
+      "wrong_rate": 0.0781,
+      "wrong_class_detections": 245,
+      "wrong_pairs": {
+       "citrus->apple": 57,
+       "citrus->lemon_lime": 49,
+       "banana->citrus": 28,
+       "carrot->tomato": 25,
+       "apple->tomato": 23,
+       "lemon_lime->apple": 19,
+       "apple->citrus": 16,
+       "banana->apple": 10,
+       "banana->lemon_lime": 7,
+       "citrus->banana": 4,
+       "apple->pomegranate": 2,
+       "lemon_lime->citrus": 2
+      },
+      "background_boxes": 843,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 44,
+        "correct": 147,
+        "wrong": 16
+       },
+       "apple": {
+        "wrong": 3,
+        "missing": 31,
+        "correct": 86
+       },
+       "citrus": {
+        "missing": 17,
+        "correct": 96,
+        "wrong": 37
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 97,
+        "correct": 23
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.3,
+      "false_boxes": 16,
+      "false_boxes_per_min": 4.0,
+      "frames_with_box": 14,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0078,
+      "per_class": {
+       "banana": 6,
+       "apple": 4,
+       "capsicum": 5,
+       "citrus": 1
+      },
+      "by_source": {
+       "000000232460.jpg": 5,
+       "000000240049.jpg": 1,
+       "000000249519.jpg": 2,
+       "000000276673.jpg": 5,
+       "000000407348.jpg": 1,
+       "devtex_13.jpg": 1,
+       "000000184377.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.35,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 335,
+      "wrong": 62,
+      "missing": 320,
+      "uncovered": 0,
+      "correct_rate": 0.4672,
+      "correct_rate_covered": 0.4672,
+      "wrong_rate": 0.0865,
+      "wrong_class_detections": 215,
+      "wrong_pairs": {
+       "citrus->apple": 52,
+       "citrus->lemon_lime": 42,
+       "banana->citrus": 28,
+       "apple->tomato": 22,
+       "carrot->tomato": 21,
+       "lemon_lime->apple": 19,
+       "apple->citrus": 10,
+       "banana->apple": 9,
+       "banana->lemon_lime": 5,
+       "apple->pomegranate": 2,
+       "citrus->banana": 2,
+       "citrus->pomegranate": 1
+      },
+      "background_boxes": 759,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 51,
+        "correct": 137,
+        "wrong": 19
+       },
+       "apple": {
+        "wrong": 3,
+        "missing": 33,
+        "correct": 84
+       },
+       "citrus": {
+        "missing": 18,
+        "correct": 92,
+        "wrong": 40
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 98,
+        "correct": 22
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.35,
+      "false_boxes": 13,
+      "false_boxes_per_min": 3.25,
+      "frames_with_box": 12,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0067,
+      "per_class": {
+       "banana": 5,
+       "apple": 3,
+       "capsicum": 4,
+       "citrus": 1
+      },
+      "by_source": {
+       "000000232460.jpg": 4,
+       "000000240049.jpg": 1,
+       "000000249519.jpg": 2,
+       "000000276673.jpg": 4,
+       "devtex_13.jpg": 1,
+       "000000184377.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.4,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 312,
+      "wrong": 69,
+      "missing": 336,
+      "uncovered": 0,
+      "correct_rate": 0.4351,
+      "correct_rate_covered": 0.4351,
+      "wrong_rate": 0.0962,
+      "wrong_class_detections": 188,
+      "wrong_pairs": {
+       "citrus->apple": 48,
+       "citrus->lemon_lime": 32,
+       "banana->citrus": 28,
+       "apple->tomato": 21,
+       "lemon_lime->apple": 18,
+       "carrot->tomato": 15,
+       "banana->apple": 8,
+       "apple->citrus": 8,
+       "banana->lemon_lime": 4,
+       "apple->pomegranate": 2,
+       "citrus->pomegranate": 1,
+       "citrus->banana": 1
+      },
+      "background_boxes": 690,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 60,
+        "correct": 121,
+        "wrong": 26
+       },
+       "apple": {
+        "wrong": 3,
+        "missing": 34,
+        "correct": 83
+       },
+       "citrus": {
+        "missing": 20,
+        "correct": 90,
+        "wrong": 40
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 102,
+        "correct": 18
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.4,
+      "false_boxes": 7,
+      "false_boxes_per_min": 1.75,
+      "frames_with_box": 7,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0039,
+      "per_class": {
+       "banana": 3,
+       "apple": 2,
+       "capsicum": 2
+      },
+      "by_source": {
+       "000000232460.jpg": 3,
+       "000000249519.jpg": 1,
+       "000000276673.jpg": 2,
+       "000000184377.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.45,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 303,
+      "wrong": 74,
+      "missing": 340,
+      "uncovered": 0,
+      "correct_rate": 0.4226,
+      "correct_rate_covered": 0.4226,
+      "wrong_rate": 0.1032,
+      "wrong_class_detections": 162,
+      "wrong_pairs": {
+       "citrus->apple": 48,
+       "citrus->lemon_lime": 25,
+       "banana->citrus": 25,
+       "apple->tomato": 21,
+       "lemon_lime->apple": 17,
+       "carrot->tomato": 7,
+       "apple->citrus": 6,
+       "banana->apple": 5,
+       "banana->lemon_lime": 3,
+       "apple->pomegranate": 2,
+       "citrus->pomegranate": 1,
+       "lemon_lime->citrus": 1
+      },
+      "background_boxes": 611,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 62,
+        "correct": 117,
+        "wrong": 28
+       },
+       "apple": {
+        "wrong": 3,
+        "missing": 34,
+        "correct": 83
+       },
+       "citrus": {
+        "missing": 20,
+        "correct": 87,
+        "wrong": 43
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 104,
+        "correct": 16
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.45,
+      "false_boxes": 3,
+      "false_boxes_per_min": 0.75,
+      "frames_with_box": 3,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0017,
+      "per_class": {
+       "banana": 2,
+       "capsicum": 1
+      },
+      "by_source": {
+       "000000232460.jpg": 2,
+       "000000276673.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.5,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 297,
+      "wrong": 69,
+      "missing": 351,
+      "uncovered": 0,
+      "correct_rate": 0.4142,
+      "correct_rate_covered": 0.4142,
+      "wrong_rate": 0.0962,
+      "wrong_class_detections": 131,
+      "wrong_pairs": {
+       "citrus->apple": 43,
+       "banana->citrus": 25,
+       "citrus->lemon_lime": 19,
+       "lemon_lime->apple": 16,
+       "apple->tomato": 13,
+       "apple->citrus": 5,
+       "banana->apple": 4,
+       "apple->pomegranate": 2,
+       "banana->lemon_lime": 2,
+       "citrus->pomegranate": 1,
+       "lemon_lime->citrus": 1
+      },
+      "background_boxes": 510,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 64,
+        "correct": 116,
+        "wrong": 27
+       },
+       "apple": {
+        "missing": 35,
+        "correct": 83,
+        "wrong": 2
+       },
+       "citrus": {
+        "missing": 24,
+        "correct": 86,
+        "wrong": 40
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 108,
+        "correct": 12
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.5,
+      "false_boxes": 3,
+      "false_boxes_per_min": 0.75,
+      "frames_with_box": 3,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0017,
+      "per_class": {
+       "banana": 2,
+       "capsicum": 1
+      },
+      "by_source": {
+       "000000232460.jpg": 2,
+       "000000276673.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.55,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 282,
+      "wrong": 66,
+      "missing": 369,
+      "uncovered": 0,
+      "correct_rate": 0.3933,
+      "correct_rate_covered": 0.3933,
+      "wrong_rate": 0.0921,
+      "wrong_class_detections": 103,
+      "wrong_pairs": {
+       "citrus->apple": 37,
+       "banana->citrus": 25,
+       "lemon_lime->apple": 12,
+       "apple->tomato": 11,
+       "citrus->lemon_lime": 8,
+       "apple->citrus": 4,
+       "apple->pomegranate": 2,
+       "banana->lemon_lime": 2,
+       "lemon_lime->citrus": 1,
+       "banana->apple": 1
+      },
+      "background_boxes": 410,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 71,
+        "correct": 108,
+        "wrong": 28
+       },
+       "apple": {
+        "missing": 35,
+        "correct": 83,
+        "wrong": 2
+       },
+       "citrus": {
+        "missing": 32,
+        "correct": 82,
+        "wrong": 36
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 111,
+        "correct": 9
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.55,
+      "false_boxes": 1,
+      "false_boxes_per_min": 0.25,
+      "frames_with_box": 1,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0006,
+      "per_class": {
+       "banana": 1
+      },
+      "by_source": {
+       "000000232460.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.6,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 269,
+      "wrong": 55,
+      "missing": 393,
+      "uncovered": 0,
+      "correct_rate": 0.3752,
+      "correct_rate_covered": 0.3752,
+      "wrong_rate": 0.0767,
+      "wrong_class_detections": 85,
+      "wrong_pairs": {
+       "citrus->apple": 26,
+       "banana->citrus": 25,
+       "lemon_lime->apple": 12,
+       "apple->tomato": 10,
+       "citrus->lemon_lime": 5,
+       "apple->pomegranate": 2,
+       "banana->lemon_lime": 2,
+       "apple->citrus": 1,
+       "lemon_lime->citrus": 1,
+       "banana->apple": 1
+      },
+      "background_boxes": 348,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 76,
+        "correct": 103,
+        "wrong": 28
+       },
+       "apple": {
+        "missing": 37,
+        "correct": 81,
+        "wrong": 2
+       },
+       "citrus": {
+        "missing": 43,
+        "correct": 82,
+        "wrong": 25
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 117,
+        "correct": 3
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.6,
+      "false_boxes": 1,
+      "false_boxes_per_min": 0.25,
+      "frames_with_box": 1,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0006,
+      "per_class": {
+       "banana": 1
+      },
+      "by_source": {
+       "000000232460.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.65,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 263,
+      "wrong": 47,
+      "missing": 407,
+      "uncovered": 0,
+      "correct_rate": 0.3668,
+      "correct_rate_covered": 0.3668,
+      "wrong_rate": 0.0656,
+      "wrong_class_detections": 65,
+      "wrong_pairs": {
+       "banana->citrus": 24,
+       "citrus->apple": 20,
+       "lemon_lime->apple": 9,
+       "citrus->lemon_lime": 4,
+       "apple->tomato": 3,
+       "banana->lemon_lime": 2,
+       "apple->pomegranate": 1,
+       "lemon_lime->citrus": 1,
+       "banana->apple": 1
+      },
+      "background_boxes": 284,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 81,
+        "correct": 99,
+        "wrong": 27
+       },
+       "apple": {
+        "missing": 39,
+        "correct": 80,
+        "wrong": 1
+       },
+       "citrus": {
+        "missing": 49,
+        "correct": 82,
+        "wrong": 19
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 118,
+        "correct": 2
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.65,
+      "false_boxes": 1,
+      "false_boxes_per_min": 0.25,
+      "frames_with_box": 1,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0006,
+      "per_class": {
+       "banana": 1
+      },
+      "by_source": {
+       "000000232460.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.7,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 243,
+      "wrong": 38,
+      "missing": 436,
+      "uncovered": 0,
+      "correct_rate": 0.3389,
+      "correct_rate_covered": 0.3389,
+      "wrong_rate": 0.053,
+      "wrong_class_detections": 52,
+      "wrong_pairs": {
+       "banana->citrus": 23,
+       "citrus->apple": 15,
+       "lemon_lime->apple": 6,
+       "citrus->lemon_lime": 4,
+       "apple->tomato": 2,
+       "apple->pomegranate": 1,
+       "lemon_lime->citrus": 1
+      },
+      "background_boxes": 207,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 90,
+        "correct": 94,
+        "wrong": 23
+       },
+       "apple": {
+        "missing": 51,
+        "correct": 68,
+        "wrong": 1
+       },
+       "citrus": {
+        "missing": 56,
+        "correct": 80,
+        "wrong": 14
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 119,
+        "correct": 1
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.7,
+      "false_boxes": 0,
+      "false_boxes_per_min": 0.0,
+      "frames_with_box": 0,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0,
+      "per_class": {},
+      "by_source": {}
+     }
+    },
+    {
+     "det": {
+      "thr": 0.75,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 225,
+      "wrong": 33,
+      "missing": 459,
+      "uncovered": 0,
+      "correct_rate": 0.3138,
+      "correct_rate_covered": 0.3138,
+      "wrong_rate": 0.046,
+      "wrong_class_detections": 41,
+      "wrong_pairs": {
+       "banana->citrus": 22,
+       "citrus->apple": 11,
+       "lemon_lime->apple": 4,
+       "citrus->lemon_lime": 3,
+       "lemon_lime->citrus": 1
+      },
+      "background_boxes": 144,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 100,
+        "correct": 85,
+        "wrong": 22
+       },
+       "apple": {
+        "missing": 59,
+        "correct": 61
+       },
+       "citrus": {
+        "missing": 60,
+        "correct": 79,
+        "wrong": 11
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.75,
+      "false_boxes": 0,
+      "false_boxes_per_min": 0.0,
+      "frames_with_box": 0,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0,
+      "per_class": {},
+      "by_source": {}
+     }
+    },
+    {
+     "det": {
+      "thr": 0.8,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 185,
+      "wrong": 29,
+      "missing": 503,
+      "uncovered": 0,
+      "correct_rate": 0.258,
+      "correct_rate_covered": 0.258,
+      "wrong_rate": 0.0404,
+      "wrong_class_detections": 33,
+      "wrong_pairs": {
+       "banana->citrus": 22,
+       "citrus->apple": 7,
+       "citrus->lemon_lime": 2,
+       "lemon_lime->apple": 2
+      },
+      "background_boxes": 90,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 130,
+        "correct": 55,
+        "wrong": 22
+       },
+       "apple": {
+        "missing": 63,
+        "correct": 57
+       },
+       "citrus": {
+        "missing": 70,
+        "correct": 73,
+        "wrong": 7
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.8,
+      "false_boxes": 0,
+      "false_boxes_per_min": 0.0,
+      "frames_with_box": 0,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0,
+      "per_class": {},
+      "by_source": {}
+     }
+    },
+    {
+     "det": {
+      "thr": 0.85,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 137,
+      "wrong": 4,
+      "missing": 576,
+      "uncovered": 0,
+      "correct_rate": 0.1911,
+      "correct_rate_covered": 0.1911,
+      "wrong_rate": 0.0056,
+      "wrong_class_detections": 6,
+      "wrong_pairs": {
+       "citrus->apple": 4,
+       "citrus->lemon_lime": 1,
+       "lemon_lime->apple": 1
+      },
+      "background_boxes": 38,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 161,
+        "correct": 46
+       },
+       "apple": {
+        "missing": 64,
+        "correct": 56
+       },
+       "citrus": {
+        "missing": 111,
+        "correct": 35,
+        "wrong": 4
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.85,
+      "false_boxes": 0,
+      "false_boxes_per_min": 0.0,
+      "frames_with_box": 0,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0,
+      "per_class": {},
+      "by_source": {}
+     }
+    },
+    {
+     "det": {
+      "thr": 0.9,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 46,
+      "wrong": 0,
+      "missing": 671,
+      "uncovered": 0,
+      "correct_rate": 0.0642,
+      "correct_rate_covered": 0.0642,
+      "wrong_rate": 0.0,
+      "wrong_class_detections": 0,
+      "wrong_pairs": {},
+      "background_boxes": 16,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 181,
+        "correct": 26
+       },
+       "apple": {
+        "missing": 100,
+        "correct": 20
+       },
+       "citrus": {
+        "missing": 150
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.9,
+      "false_boxes": 0,
+      "false_boxes_per_min": 0.0,
+      "frames_with_box": 0,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0,
+      "per_class": {},
+      "by_source": {}
+     }
+    }
+   ],
+   "tuned_thr": 0.35,
+   "tuned_flag": null,
+   "raw_at_035": {
+    "det": {
+     "thr": 0.35,
+     "frames_scored": 717,
+     "processed": 869,
+     "correct": 335,
+     "wrong": 62,
+     "missing": 320,
+     "uncovered": 0,
+     "correct_rate": 0.4672,
+     "correct_rate_covered": 0.4672,
+     "wrong_rate": 0.0865,
+     "wrong_class_detections": 215,
+     "wrong_pairs": {
+      "citrus->apple": 52,
+      "citrus->lemon_lime": 42,
+      "banana->citrus": 28,
+      "apple->tomato": 22,
+      "carrot->tomato": 21,
+      "lemon_lime->apple": 19,
+      "apple->citrus": 10,
+      "banana->apple": 9,
+      "banana->lemon_lime": 5,
+      "apple->pomegranate": 2,
+      "citrus->banana": 2,
+      "citrus->pomegranate": 1
+     },
+     "background_boxes": 759,
+     "small_objects": {},
+     "per_class": {
+      "banana": {
+       "missing": 51,
+       "correct": 137,
+       "wrong": 19
+      },
+      "apple": {
+       "wrong": 3,
+       "missing": 33,
+       "correct": 84
+      },
+      "citrus": {
+       "missing": 18,
+       "correct": 92,
+       "wrong": 40
+      },
+      "tomato": {
+       "missing": 30
+      },
+      "potato": {
+       "missing": 30
+      },
+      "cucumber": {
+       "missing": 30
+      },
+      "carrot": {
+       "missing": 98,
+       "correct": 22
+      },
+      "capsicum": {
+       "missing": 30
+      }
+     }
+    },
+    "neg": {
+     "thr": 0.35,
+     "false_boxes": 13,
+     "false_boxes_per_min": 3.25,
+     "frames_with_box": 12,
+     "processed": 1800,
+     "frac_frames_with_box": 0.0067,
+     "per_class": {
+      "banana": 5,
+      "apple": 3,
+      "capsicum": 4,
+      "citrus": 1
+     },
+     "by_source": {
+      "000000232460.jpg": 4,
+      "000000240049.jpg": 1,
+      "000000249519.jpg": 2,
+      "000000276673.jpg": 4,
+      "devtex_13.jpg": 1,
+      "000000184377.jpg": 1
+     }
+    }
+   },
+   "raw_at_tuned": {
+    "det": {
+     "thr": 0.35,
+     "frames_scored": 717,
+     "processed": 869,
+     "correct": 335,
+     "wrong": 62,
+     "missing": 320,
+     "uncovered": 0,
+     "correct_rate": 0.4672,
+     "correct_rate_covered": 0.4672,
+     "wrong_rate": 0.0865,
+     "wrong_class_detections": 215,
+     "wrong_pairs": {
+      "citrus->apple": 52,
+      "citrus->lemon_lime": 42,
+      "banana->citrus": 28,
+      "apple->tomato": 22,
+      "carrot->tomato": 21,
+      "lemon_lime->apple": 19,
+      "apple->citrus": 10,
+      "banana->apple": 9,
+      "banana->lemon_lime": 5,
+      "apple->pomegranate": 2,
+      "citrus->banana": 2,
+      "citrus->pomegranate": 1
+     },
+     "background_boxes": 759,
+     "small_objects": {},
+     "per_class": {
+      "banana": {
+       "missing": 51,
+       "correct": 137,
+       "wrong": 19
+      },
+      "apple": {
+       "wrong": 3,
+       "missing": 33,
+       "correct": 84
+      },
+      "citrus": {
+       "missing": 18,
+       "correct": 92,
+       "wrong": 40
+      },
+      "tomato": {
+       "missing": 30
+      },
+      "potato": {
+       "missing": 30
+      },
+      "cucumber": {
+       "missing": 30
+      },
+      "carrot": {
+       "missing": 98,
+       "correct": 22
+      },
+      "capsicum": {
+       "missing": 30
+      }
+     }
+    },
+    "neg": {
+     "thr": 0.35,
+     "false_boxes": 13,
+     "false_boxes_per_min": 3.25,
+     "frames_with_box": 12,
+     "processed": 1800,
+     "frac_frames_with_box": 0.0067,
+     "per_class": {
+      "banana": 5,
+      "apple": 3,
+      "capsicum": 4,
+      "citrus": 1
+     },
+     "by_source": {
+      "000000232460.jpg": 4,
+      "000000240049.jpg": 1,
+      "000000249519.jpg": 2,
+      "000000276673.jpg": 4,
+      "devtex_13.jpg": 1,
+      "000000184377.jpg": 1
+     }
+    }
+   },
+   "tracked_at_035": {
+    "det": {
+     "frames_with_gt": 1432,
+     "frame_acc": 0.4092,
+     "per_class_recall": {
+      "banana": {
+       "n": 413,
+       "recall": 0.564
+      },
+      "apple": {
+       "n": 240,
+       "recall": 0.629
+      },
+      "citrus": {
+       "n": 299,
+       "recall": 0.559
+      },
+      "tomato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "potato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "cucumber": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "carrot": {
+       "n": 240,
+       "recall": 0.146
+      },
+      "capsicum": {
+       "n": 60,
+       "recall": 0.0
+      }
+     },
+     "segments": 24,
+     "segment_acc": 0.5417,
+     "never_correct_segments": 9,
+     "ttfc_ms": {
+      "p50": 600.0,
+      "p90": 1453.3334,
+      "max": 2400.0,
+      "n": 15
+     },
+     "label_flicker_per_10s_static": 1.042,
+     "label_flicker_per_10s_all": 1.99,
+     "grade_flicker_per_10s_static": 0.0,
+     "no_box_frac_static": 0.396,
+     "missed_s_total": 46.666,
+     "missed_frac": 0.4888,
+     "longest_missed_gap_s": 4.0,
+     "fragmentations": 13,
+     "mean_fragments_per_segment": 1.208,
+     "id_switches": 34,
+     "mean_ids_per_segment": 1.208
+    },
+    "neg": {
+     "false_alarm_tracks": 3,
+     "minutes": 4.0,
+     "false_alarms_per_min": 0.75,
+     "fa_episodes": 3,
+     "fa_episodes_per_min": 0.75,
+     "frames_with_any_box": 8,
+     "frames": 3600
+    }
+   },
+   "tracked_at_tuned": {
+    "det": {
+     "frames_with_gt": 1432,
+     "frame_acc": 0.4092,
+     "per_class_recall": {
+      "banana": {
+       "n": 413,
+       "recall": 0.564
+      },
+      "apple": {
+       "n": 240,
+       "recall": 0.629
+      },
+      "citrus": {
+       "n": 299,
+       "recall": 0.559
+      },
+      "tomato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "potato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "cucumber": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "carrot": {
+       "n": 240,
+       "recall": 0.146
+      },
+      "capsicum": {
+       "n": 60,
+       "recall": 0.0
+      }
+     },
+     "segments": 24,
+     "segment_acc": 0.5417,
+     "never_correct_segments": 9,
+     "ttfc_ms": {
+      "p50": 600.0,
+      "p90": 1453.3334,
+      "max": 2400.0,
+      "n": 15
+     },
+     "label_flicker_per_10s_static": 1.042,
+     "label_flicker_per_10s_all": 1.99,
+     "grade_flicker_per_10s_static": 0.0,
+     "no_box_frac_static": 0.396,
+     "missed_s_total": 46.666,
+     "missed_frac": 0.4888,
+     "longest_missed_gap_s": 4.0,
+     "fragmentations": 13,
+     "mean_fragments_per_segment": 1.208,
+     "id_switches": 34,
+     "mean_ids_per_segment": 1.208
+    },
+    "neg": {
+     "false_alarm_tracks": 3,
+     "minutes": 4.0,
+     "false_alarms_per_min": 0.75,
+     "fa_episodes": 3,
+     "fa_episodes_per_min": 0.75,
+     "frames_with_any_box": 8,
+     "frames": 3600
+    }
+   }
+  },
+  "snapml": {
+   "dump_det": "gauntlet_dev/raw_snapml_det/raw_dets_det.json.gz",
+   "dump_neg": "gauntlet_dev/raw_snapml_neg/raw_dets_neg.json.gz",
+   "coverage": [
+    "banana",
+    "apple",
+    "mango",
+    "citrus",
+    "pomegranate",
+    "lemon_lime",
+    "tomato",
+    "potato",
+    "cucumber",
+    "carrot",
+    "capsicum"
+   ],
+   "sweep": [
+    {
+     "det": {
+      "thr": 0.1,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 287,
+      "wrong": 78,
+      "missing": 352,
+      "uncovered": 0,
+      "correct_rate": 0.4003,
+      "correct_rate_covered": 0.4003,
+      "wrong_rate": 0.1088,
+      "wrong_class_detections": 215,
+      "wrong_pairs": {
+       "lemon_lime->citrus": 54,
+       "citrus->apple": 38,
+       "banana->citrus": 35,
+       "citrus->tomato": 23,
+       "apple->capsicum": 17,
+       "apple->tomato": 14,
+       "apple->pomegranate": 13,
+       "apple->mango": 7,
+       "lemon_lime->banana": 5,
+       "banana->mango": 4,
+       "lemon_lime->potato": 2,
+       "banana->lemon_lime": 2
+      },
+      "background_boxes": 415,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 99,
+        "correct": 72,
+        "wrong": 36
+       },
+       "apple": {
+        "missing": 31,
+        "correct": 77,
+        "wrong": 12
+       },
+       "citrus": {
+        "missing": 41,
+        "correct": 79,
+        "wrong": 30
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 61,
+        "correct": 59
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.1,
+      "false_boxes": 3176,
+      "false_boxes_per_min": 794.0,
+      "frames_with_box": 134,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0744,
+      "per_class": {
+       "citrus": 2974,
+       "lemon_lime": 5,
+       "banana": 48,
+       "carrot": 33,
+       "apple": 115,
+       "cucumber": 1
+      },
+      "by_source": {
+       "devtex_14.jpg": 2,
+       "devtex_11.jpg": 4,
+       "000000178682.jpg": 1,
+       "000000007394.jpg": 3,
+       "000000249519.jpg": 2,
+       "000000276673.jpg": 1,
+       "devtex_05.jpg": 2142,
+       "000000107428.jpg": 7,
+       "devtex_09.jpg": 3,
+       "devtex_06.jpg": 13,
+       "plain_background": 1,
+       "devtex_13.jpg": 826,
+       "devtex_07.jpg": 2,
+       "000000129135.jpg": 2,
+       "devtex_01.jpg": 100,
+       "000000537066.jpg": 1,
+       "000000338242.jpg": 20,
+       "000000184377.jpg": 1,
+       "000000423944.jpg": 45
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.15,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 258,
+      "wrong": 73,
+      "missing": 386,
+      "uncovered": 0,
+      "correct_rate": 0.3598,
+      "correct_rate_covered": 0.3598,
+      "wrong_rate": 0.1018,
+      "wrong_class_detections": 170,
+      "wrong_pairs": {
+       "lemon_lime->citrus": 41,
+       "citrus->apple": 34,
+       "banana->citrus": 30,
+       "citrus->tomato": 23,
+       "apple->capsicum": 16,
+       "apple->tomato": 14,
+       "apple->mango": 5,
+       "banana->mango": 3,
+       "apple->pomegranate": 3,
+       "lemon_lime->potato": 1
+      },
+      "background_boxes": 298,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 110,
+        "correct": 64,
+        "wrong": 33
+       },
+       "apple": {
+        "missing": 38,
+        "correct": 71,
+        "wrong": 11
+       },
+       "citrus": {
+        "missing": 53,
+        "correct": 68,
+        "wrong": 29
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 65,
+        "correct": 55
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.15,
+      "false_boxes": 2299,
+      "false_boxes_per_min": 574.75,
+      "frames_with_box": 109,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0606,
+      "per_class": {
+       "lemon_lime": 3,
+       "citrus": 2219,
+       "banana": 36,
+       "carrot": 16,
+       "apple": 24,
+       "cucumber": 1
+      },
+      "by_source": {
+       "devtex_11.jpg": 4,
+       "000000178682.jpg": 1,
+       "000000007394.jpg": 1,
+       "devtex_05.jpg": 1848,
+       "000000107428.jpg": 4,
+       "devtex_06.jpg": 4,
+       "devtex_13.jpg": 370,
+       "000000129135.jpg": 2,
+       "devtex_01.jpg": 20,
+       "000000537066.jpg": 1,
+       "000000338242.jpg": 11,
+       "000000423944.jpg": 33
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.2,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 224,
+      "wrong": 76,
+      "missing": 417,
+      "uncovered": 0,
+      "correct_rate": 0.3124,
+      "correct_rate_covered": 0.3124,
+      "wrong_rate": 0.106,
+      "wrong_class_detections": 153,
+      "wrong_pairs": {
+       "lemon_lime->citrus": 34,
+       "citrus->apple": 33,
+       "banana->citrus": 30,
+       "citrus->tomato": 22,
+       "apple->capsicum": 14,
+       "apple->tomato": 13,
+       "banana->mango": 3,
+       "apple->mango": 3,
+       "apple->pomegranate": 1
+      },
+      "background_boxes": 237,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 123,
+        "correct": 51,
+        "wrong": 33
+       },
+       "apple": {
+        "missing": 49,
+        "correct": 57,
+        "wrong": 14
+       },
+       "citrus": {
+        "missing": 58,
+        "correct": 63,
+        "wrong": 29
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 67,
+        "correct": 53
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.2,
+      "false_boxes": 1749,
+      "false_boxes_per_min": 437.25,
+      "frames_with_box": 91,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0506,
+      "per_class": {
+       "lemon_lime": 3,
+       "citrus": 1706,
+       "carrot": 8,
+       "apple": 4,
+       "banana": 28
+      },
+      "by_source": {
+       "devtex_11.jpg": 4,
+       "devtex_05.jpg": 1567,
+       "000000107428.jpg": 2,
+       "devtex_06.jpg": 1,
+       "devtex_13.jpg": 138,
+       "devtex_01.jpg": 3,
+       "000000338242.jpg": 6,
+       "000000423944.jpg": 28
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.25,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 191,
+      "wrong": 71,
+      "missing": 455,
+      "uncovered": 0,
+      "correct_rate": 0.2664,
+      "correct_rate_covered": 0.2664,
+      "wrong_rate": 0.099,
+      "wrong_class_detections": 135,
+      "wrong_pairs": {
+       "citrus->apple": 31,
+       "banana->citrus": 30,
+       "lemon_lime->citrus": 28,
+       "citrus->tomato": 22,
+       "apple->tomato": 13,
+       "apple->capsicum": 8,
+       "banana->mango": 3
+      },
+      "background_boxes": 197,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 147,
+        "correct": 27,
+        "wrong": 33
+       },
+       "apple": {
+        "missing": 58,
+        "correct": 52,
+        "wrong": 10
+       },
+       "citrus": {
+        "missing": 61,
+        "correct": 61,
+        "wrong": 28
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 69,
+        "correct": 51
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.25,
+      "false_boxes": 1434,
+      "false_boxes_per_min": 358.5,
+      "frames_with_box": 75,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0417,
+      "per_class": {
+       "lemon_lime": 2,
+       "citrus": 1400,
+       "carrot": 8,
+       "apple": 1,
+       "banana": 23
+      },
+      "by_source": {
+       "devtex_11.jpg": 2,
+       "devtex_05.jpg": 1372,
+       "000000107428.jpg": 2,
+       "devtex_06.jpg": 1,
+       "devtex_13.jpg": 28,
+       "000000338242.jpg": 6,
+       "000000423944.jpg": 23
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.3,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 156,
+      "wrong": 73,
+      "missing": 488,
+      "uncovered": 0,
+      "correct_rate": 0.2176,
+      "correct_rate_covered": 0.2176,
+      "wrong_rate": 0.1018,
+      "wrong_class_detections": 121,
+      "wrong_pairs": {
+       "banana->citrus": 29,
+       "citrus->apple": 28,
+       "lemon_lime->citrus": 24,
+       "citrus->tomato": 22,
+       "apple->tomato": 10,
+       "apple->capsicum": 6,
+       "banana->mango": 2
+      },
+      "background_boxes": 155,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 166,
+        "wrong": 31,
+        "correct": 10
+       },
+       "apple": {
+        "missing": 61,
+        "correct": 45,
+        "wrong": 14
+       },
+       "citrus": {
+        "missing": 64,
+        "correct": 58,
+        "wrong": 28
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 77,
+        "correct": 43
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.3,
+      "false_boxes": 1172,
+      "false_boxes_per_min": 293.0,
+      "frames_with_box": 61,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0339,
+      "per_class": {
+       "lemon_lime": 1,
+       "citrus": 1142,
+       "carrot": 6,
+       "apple": 1,
+       "banana": 22
+      },
+      "by_source": {
+       "devtex_11.jpg": 1,
+       "devtex_05.jpg": 1139,
+       "000000107428.jpg": 1,
+       "devtex_06.jpg": 1,
+       "devtex_13.jpg": 3,
+       "000000338242.jpg": 5,
+       "000000423944.jpg": 22
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.35,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 135,
+      "wrong": 68,
+      "missing": 514,
+      "uncovered": 0,
+      "correct_rate": 0.1883,
+      "correct_rate_covered": 0.1883,
+      "wrong_rate": 0.0948,
+      "wrong_class_detections": 93,
+      "wrong_pairs": {
+       "banana->citrus": 29,
+       "citrus->apple": 26,
+       "citrus->tomato": 20,
+       "apple->tomato": 10,
+       "apple->capsicum": 4,
+       "lemon_lime->citrus": 3,
+       "banana->mango": 1
+      },
+      "background_boxes": 129,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 172,
+        "wrong": 30,
+        "correct": 5
+       },
+       "apple": {
+        "missing": 67,
+        "correct": 41,
+        "wrong": 12
+       },
+       "citrus": {
+        "missing": 69,
+        "correct": 55,
+        "wrong": 26
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 86,
+        "correct": 34
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.35,
+      "false_boxes": 962,
+      "false_boxes_per_min": 240.5,
+      "frames_with_box": 52,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0289,
+      "per_class": {
+       "lemon_lime": 1,
+       "citrus": 939,
+       "carrot": 3,
+       "banana": 19
+      },
+      "by_source": {
+       "devtex_11.jpg": 1,
+       "devtex_05.jpg": 939,
+       "000000338242.jpg": 3,
+       "000000423944.jpg": 19
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.4,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 114,
+      "wrong": 61,
+      "missing": 542,
+      "uncovered": 0,
+      "correct_rate": 0.159,
+      "correct_rate_covered": 0.159,
+      "wrong_rate": 0.0851,
+      "wrong_class_detections": 82,
+      "wrong_pairs": {
+       "banana->citrus": 29,
+       "citrus->apple": 23,
+       "citrus->tomato": 16,
+       "apple->tomato": 9,
+       "apple->capsicum": 3,
+       "banana->mango": 1,
+       "lemon_lime->citrus": 1
+      },
+      "background_boxes": 119,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 173,
+        "wrong": 30,
+        "correct": 4
+       },
+       "apple": {
+        "missing": 74,
+        "correct": 36,
+        "wrong": 10
+       },
+       "citrus": {
+        "missing": 85,
+        "correct": 44,
+        "wrong": 21
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 90,
+        "correct": 30
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.4,
+      "false_boxes": 721,
+      "false_boxes_per_min": 180.25,
+      "frames_with_box": 50,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0278,
+      "per_class": {
+       "lemon_lime": 1,
+       "citrus": 701,
+       "carrot": 2,
+       "banana": 17
+      },
+      "by_source": {
+       "devtex_11.jpg": 1,
+       "devtex_05.jpg": 701,
+       "000000338242.jpg": 2,
+       "000000423944.jpg": 17
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.45,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 96,
+      "wrong": 52,
+      "missing": 569,
+      "uncovered": 0,
+      "correct_rate": 0.1339,
+      "correct_rate_covered": 0.1339,
+      "wrong_rate": 0.0725,
+      "wrong_class_detections": 70,
+      "wrong_pairs": {
+       "banana->citrus": 27,
+       "citrus->apple": 23,
+       "citrus->tomato": 12,
+       "apple->tomato": 7,
+       "apple->capsicum": 1
+      },
+      "background_boxes": 107,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 177,
+        "wrong": 27,
+        "correct": 3
+       },
+       "apple": {
+        "missing": 78,
+        "correct": 34,
+        "wrong": 8
+       },
+       "citrus": {
+        "missing": 104,
+        "correct": 29,
+        "wrong": 17
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 90,
+        "correct": 30
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.45,
+      "false_boxes": 490,
+      "false_boxes_per_min": 122.5,
+      "frames_with_box": 45,
+      "processed": 1800,
+      "frac_frames_with_box": 0.025,
+      "per_class": {
+       "citrus": 475,
+       "carrot": 2,
+       "banana": 13
+      },
+      "by_source": {
+       "devtex_05.jpg": 475,
+       "000000338242.jpg": 2,
+       "000000423944.jpg": 13
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.5,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 84,
+      "wrong": 38,
+      "missing": 595,
+      "uncovered": 0,
+      "correct_rate": 0.1172,
+      "correct_rate_covered": 0.1172,
+      "wrong_rate": 0.053,
+      "wrong_class_detections": 56,
+      "wrong_pairs": {
+       "banana->citrus": 21,
+       "citrus->apple": 20,
+       "apple->tomato": 7,
+       "citrus->tomato": 7,
+       "apple->capsicum": 1
+      },
+      "background_boxes": 97,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 183,
+        "wrong": 21,
+        "correct": 3
+       },
+       "apple": {
+        "missing": 80,
+        "correct": 32,
+        "wrong": 8
+       },
+       "citrus": {
+        "missing": 120,
+        "correct": 21,
+        "wrong": 9
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 92,
+        "correct": 28
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.5,
+      "false_boxes": 269,
+      "false_boxes_per_min": 67.25,
+      "frames_with_box": 37,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0206,
+      "per_class": {
+       "citrus": 260,
+       "carrot": 1,
+       "banana": 8
+      },
+      "by_source": {
+       "devtex_05.jpg": 260,
+       "000000338242.jpg": 1,
+       "000000423944.jpg": 8
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.55,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 50,
+      "wrong": 10,
+      "missing": 657,
+      "uncovered": 0,
+      "correct_rate": 0.0697,
+      "correct_rate_covered": 0.0697,
+      "wrong_rate": 0.0139,
+      "wrong_class_detections": 28,
+      "wrong_pairs": {
+       "citrus->apple": 19,
+       "citrus->tomato": 5,
+       "apple->tomato": 2,
+       "apple->capsicum": 1,
+       "banana->citrus": 1
+      },
+      "background_boxes": 91,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 203,
+        "wrong": 1,
+        "correct": 3
+       },
+       "apple": {
+        "missing": 89,
+        "correct": 28,
+        "wrong": 3
+       },
+       "citrus": {
+        "missing": 140,
+        "correct": 4,
+        "wrong": 6
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 105,
+        "correct": 15
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.55,
+      "false_boxes": 91,
+      "false_boxes_per_min": 22.75,
+      "frames_with_box": 25,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0139,
+      "per_class": {
+       "citrus": 89,
+       "carrot": 1,
+       "banana": 1
+      },
+      "by_source": {
+       "devtex_05.jpg": 89,
+       "000000338242.jpg": 1,
+       "000000423944.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.6,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 37,
+      "wrong": 5,
+      "missing": 675,
+      "uncovered": 0,
+      "correct_rate": 0.0516,
+      "correct_rate_covered": 0.0516,
+      "wrong_rate": 0.007,
+      "wrong_class_detections": 22,
+      "wrong_pairs": {
+       "citrus->apple": 18,
+       "citrus->tomato": 2,
+       "apple->capsicum": 1,
+       "apple->tomato": 1
+      },
+      "background_boxes": 87,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 204,
+        "correct": 3
+       },
+       "apple": {
+        "missing": 94,
+        "correct": 24,
+        "wrong": 2
+       },
+       "citrus": {
+        "missing": 147,
+        "wrong": 3
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 110,
+        "correct": 10
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.6,
+      "false_boxes": 21,
+      "false_boxes_per_min": 5.25,
+      "frames_with_box": 7,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0039,
+      "per_class": {
+       "citrus": 21
+      },
+      "by_source": {
+       "devtex_05.jpg": 21
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.65,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 29,
+      "wrong": 0,
+      "missing": 688,
+      "uncovered": 0,
+      "correct_rate": 0.0404,
+      "correct_rate_covered": 0.0404,
+      "wrong_rate": 0.0,
+      "wrong_class_detections": 16,
+      "wrong_pairs": {
+       "citrus->apple": 16
+      },
+      "background_boxes": 63,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 204,
+        "correct": 3
+       },
+       "apple": {
+        "missing": 101,
+        "correct": 19
+       },
+       "citrus": {
+        "missing": 150
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 113,
+        "correct": 7
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.65,
+      "false_boxes": 2,
+      "false_boxes_per_min": 0.5,
+      "frames_with_box": 2,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0011,
+      "per_class": {
+       "citrus": 2
+      },
+      "by_source": {
+       "devtex_05.jpg": 2
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.7,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 13,
+      "wrong": 0,
+      "missing": 704,
+      "uncovered": 0,
+      "correct_rate": 0.0181,
+      "correct_rate_covered": 0.0181,
+      "wrong_rate": 0.0,
+      "wrong_class_detections": 7,
+      "wrong_pairs": {
+       "citrus->apple": 7
+      },
+      "background_boxes": 42,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 204,
+        "correct": 3
+       },
+       "apple": {
+        "missing": 110,
+        "correct": 10
+       },
+       "citrus": {
+        "missing": 150
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.7,
+      "false_boxes": 0,
+      "false_boxes_per_min": 0.0,
+      "frames_with_box": 0,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0,
+      "per_class": {},
+      "by_source": {}
+     }
+    },
+    {
+     "det": {
+      "thr": 0.75,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 4,
+      "wrong": 0,
+      "missing": 713,
+      "uncovered": 0,
+      "correct_rate": 0.0056,
+      "correct_rate_covered": 0.0056,
+      "wrong_rate": 0.0,
+      "wrong_class_detections": 0,
+      "wrong_pairs": {},
+      "background_boxes": 28,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 204,
+        "correct": 3
+       },
+       "apple": {
+        "missing": 119,
+        "correct": 1
+       },
+       "citrus": {
+        "missing": 150
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.75,
+      "false_boxes": 0,
+      "false_boxes_per_min": 0.0,
+      "frames_with_box": 0,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0,
+      "per_class": {},
+      "by_source": {}
+     }
+    },
+    {
+     "det": {
+      "thr": 0.8,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 2,
+      "wrong": 0,
+      "missing": 715,
+      "uncovered": 0,
+      "correct_rate": 0.0028,
+      "correct_rate_covered": 0.0028,
+      "wrong_rate": 0.0,
+      "wrong_class_detections": 0,
+      "wrong_pairs": {},
+      "background_boxes": 25,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 205,
+        "correct": 2
+       },
+       "apple": {
+        "missing": 120
+       },
+       "citrus": {
+        "missing": 150
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.8,
+      "false_boxes": 0,
+      "false_boxes_per_min": 0.0,
+      "frames_with_box": 0,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0,
+      "per_class": {},
+      "by_source": {}
+     }
+    },
+    {
+     "det": {
+      "thr": 0.85,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 0,
+      "wrong": 0,
+      "missing": 717,
+      "uncovered": 0,
+      "correct_rate": 0.0,
+      "correct_rate_covered": 0.0,
+      "wrong_rate": 0.0,
+      "wrong_class_detections": 0,
+      "wrong_pairs": {},
+      "background_boxes": 1,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 207
+       },
+       "apple": {
+        "missing": 120
+       },
+       "citrus": {
+        "missing": 150
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.85,
+      "false_boxes": 0,
+      "false_boxes_per_min": 0.0,
+      "frames_with_box": 0,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0,
+      "per_class": {},
+      "by_source": {}
+     }
+    },
+    {
+     "det": {
+      "thr": 0.9,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 0,
+      "wrong": 0,
+      "missing": 717,
+      "uncovered": 0,
+      "correct_rate": 0.0,
+      "correct_rate_covered": 0.0,
+      "wrong_rate": 0.0,
+      "wrong_class_detections": 0,
+      "wrong_pairs": {},
+      "background_boxes": 0,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 207
+       },
+       "apple": {
+        "missing": 120
+       },
+       "citrus": {
+        "missing": 150
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "missing": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.9,
+      "false_boxes": 0,
+      "false_boxes_per_min": 0.0,
+      "frames_with_box": 0,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0,
+      "per_class": {},
+      "by_source": {}
+     }
+    }
+   ],
+   "tuned_thr": 0.65,
+   "tuned_flag": null,
+   "raw_at_035": {
+    "det": {
+     "thr": 0.35,
+     "frames_scored": 717,
+     "processed": 869,
+     "correct": 135,
+     "wrong": 68,
+     "missing": 514,
+     "uncovered": 0,
+     "correct_rate": 0.1883,
+     "correct_rate_covered": 0.1883,
+     "wrong_rate": 0.0948,
+     "wrong_class_detections": 93,
+     "wrong_pairs": {
+      "banana->citrus": 29,
+      "citrus->apple": 26,
+      "citrus->tomato": 20,
+      "apple->tomato": 10,
+      "apple->capsicum": 4,
+      "lemon_lime->citrus": 3,
+      "banana->mango": 1
+     },
+     "background_boxes": 129,
+     "small_objects": {},
+     "per_class": {
+      "banana": {
+       "missing": 172,
+       "wrong": 30,
+       "correct": 5
+      },
+      "apple": {
+       "missing": 67,
+       "correct": 41,
+       "wrong": 12
+      },
+      "citrus": {
+       "missing": 69,
+       "correct": 55,
+       "wrong": 26
+      },
+      "tomato": {
+       "missing": 30
+      },
+      "potato": {
+       "missing": 30
+      },
+      "cucumber": {
+       "missing": 30
+      },
+      "carrot": {
+       "missing": 86,
+       "correct": 34
+      },
+      "capsicum": {
+       "missing": 30
+      }
+     }
+    },
+    "neg": {
+     "thr": 0.35,
+     "false_boxes": 962,
+     "false_boxes_per_min": 240.5,
+     "frames_with_box": 52,
+     "processed": 1800,
+     "frac_frames_with_box": 0.0289,
+     "per_class": {
+      "lemon_lime": 1,
+      "citrus": 939,
+      "carrot": 3,
+      "banana": 19
+     },
+     "by_source": {
+      "devtex_11.jpg": 1,
+      "devtex_05.jpg": 939,
+      "000000338242.jpg": 3,
+      "000000423944.jpg": 19
+     }
+    }
+   },
+   "raw_at_tuned": {
+    "det": {
+     "thr": 0.65,
+     "frames_scored": 717,
+     "processed": 869,
+     "correct": 29,
+     "wrong": 0,
+     "missing": 688,
+     "uncovered": 0,
+     "correct_rate": 0.0404,
+     "correct_rate_covered": 0.0404,
+     "wrong_rate": 0.0,
+     "wrong_class_detections": 16,
+     "wrong_pairs": {
+      "citrus->apple": 16
+     },
+     "background_boxes": 63,
+     "small_objects": {},
+     "per_class": {
+      "banana": {
+       "missing": 204,
+       "correct": 3
+      },
+      "apple": {
+       "missing": 101,
+       "correct": 19
+      },
+      "citrus": {
+       "missing": 150
+      },
+      "tomato": {
+       "missing": 30
+      },
+      "potato": {
+       "missing": 30
+      },
+      "cucumber": {
+       "missing": 30
+      },
+      "carrot": {
+       "missing": 113,
+       "correct": 7
+      },
+      "capsicum": {
+       "missing": 30
+      }
+     }
+    },
+    "neg": {
+     "thr": 0.65,
+     "false_boxes": 2,
+     "false_boxes_per_min": 0.5,
+     "frames_with_box": 2,
+     "processed": 1800,
+     "frac_frames_with_box": 0.0011,
+     "per_class": {
+      "citrus": 2
+     },
+     "by_source": {
+      "devtex_05.jpg": 2
+     }
+    }
+   },
+   "tracked_at_035": {
+    "det": {
+     "frames_with_gt": 1432,
+     "frame_acc": 0.1753,
+     "per_class_recall": {
+      "banana": {
+       "n": 413,
+       "recall": 0.017
+      },
+      "apple": {
+       "n": 240,
+       "recall": 0.333
+      },
+      "citrus": {
+       "n": 299,
+       "recall": 0.338
+      },
+      "tomato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "potato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "cucumber": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "carrot": {
+       "n": 240,
+       "recall": 0.263
+      },
+      "capsicum": {
+       "n": 60,
+       "recall": 0.0
+      }
+     },
+     "segments": 24,
+     "segment_acc": 0.375,
+     "never_correct_segments": 15,
+     "ttfc_ms": {
+      "p50": 1133.3329999999987,
+      "p90": 3133.3336000000013,
+      "max": 3400.0,
+      "n": 9
+     },
+     "label_flicker_per_10s_static": 0.208,
+     "label_flicker_per_10s_all": 0.209,
+     "grade_flicker_per_10s_static": 0.0,
+     "no_box_frac_static": 0.728,
+     "missed_s_total": 70.535,
+     "missed_frac": 0.7388,
+     "longest_missed_gap_s": 4.0,
+     "fragmentations": 9,
+     "mean_fragments_per_segment": 0.833,
+     "id_switches": 1,
+     "mean_ids_per_segment": 0.5
+    },
+    "neg": {
+     "false_alarm_tracks": 57,
+     "minutes": 4.0,
+     "false_alarms_per_min": 14.25,
+     "fa_episodes": 3,
+     "fa_episodes_per_min": 0.75,
+     "frames_with_any_box": 50,
+     "frames": 3600
+    }
+   },
+   "tracked_at_tuned": {
+    "det": {
+     "frames_with_gt": 1432,
+     "frame_acc": 0.0356,
+     "per_class_recall": {
+      "banana": {
+       "n": 413,
+       "recall": 0.017
+      },
+      "apple": {
+       "n": 240,
+       "recall": 0.138
+      },
+      "citrus": {
+       "n": 299,
+       "recall": 0.0
+      },
+      "tomato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "potato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "cucumber": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "carrot": {
+       "n": 240,
+       "recall": 0.046
+      },
+      "capsicum": {
+       "n": 60,
+       "recall": 0.0
+      }
+     },
+     "segments": 24,
+     "segment_acc": 0.2083,
+     "never_correct_segments": 19,
+     "ttfc_ms": {
+      "p50": 3266.6670000000013,
+      "p90": 3440.000200000001,
+      "max": 3466.6670000000013,
+      "n": 5
+     },
+     "label_flicker_per_10s_static": 0.0,
+     "label_flicker_per_10s_all": 0.0,
+     "grade_flicker_per_10s_static": 0.0,
+     "no_box_frac_static": 0.961,
+     "missed_s_total": 92.066,
+     "missed_frac": 0.9644,
+     "longest_missed_gap_s": 4.0,
+     "fragmentations": 5,
+     "mean_fragments_per_segment": 0.417,
+     "id_switches": 0,
+     "mean_ids_per_segment": 0.208
+    },
+    "neg": {
+     "false_alarm_tracks": 0,
+     "minutes": 4.0,
+     "false_alarms_per_min": 0.0,
+     "fa_episodes": 0,
+     "fa_episodes_per_min": 0.0,
+     "frames_with_any_box": 0,
+     "frames": 3600
+    }
+   }
+  },
+  "calories": {
+   "dump_det": "gauntlet_dev/calories_det/raw_dets_det.json.gz",
+   "dump_neg": "gauntlet_dev/calories_neg/raw_dets_neg.json.gz",
+   "coverage": [
+    "banana",
+    "apple",
+    "mango",
+    "citrus",
+    "guava",
+    "tomato",
+    "potato",
+    "cucumber",
+    "capsicum"
+   ],
+   "sweep": [
+    {
+     "det": {
+      "thr": 0.1,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 168,
+      "wrong": 36,
+      "missing": 398,
+      "uncovered": 115,
+      "correct_rate": 0.2343,
+      "correct_rate_covered": 0.2791,
+      "wrong_rate": 0.0502,
+      "wrong_class_detections": 197,
+      "wrong_pairs": {
+       "carrot->banana": 68,
+       "banana->mango": 31,
+       "citrus->apple": 25,
+       "lemon_lime->mango": 24,
+       "apple->citrus": 20,
+       "lemon_lime->citrus": 19,
+       "apple->mango": 5,
+       "banana->citrus": 3,
+       "lemon_lime->apple": 2
+      },
+      "background_boxes": 267,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 137,
+        "correct": 67,
+        "wrong": 3
+       },
+       "apple": {
+        "missing": 60,
+        "correct": 56,
+        "wrong": 4
+       },
+       "citrus": {
+        "missing": 81,
+        "correct": 45,
+        "wrong": 24
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 115,
+        "wrong": 5
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.1,
+      "false_boxes": 409,
+      "false_boxes_per_min": 102.25,
+      "frames_with_box": 34,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0189,
+      "per_class": {
+       "banana": 4,
+       "apple": 403,
+       "citrus": 2
+      },
+      "by_source": {
+       "000000232460.jpg": 2,
+       "devtex_05.jpg": 404,
+       "devtex_13.jpg": 2,
+       "000000537066.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.15,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 161,
+      "wrong": 33,
+      "missing": 408,
+      "uncovered": 115,
+      "correct_rate": 0.2245,
+      "correct_rate_covered": 0.2674,
+      "wrong_rate": 0.046,
+      "wrong_class_detections": 184,
+      "wrong_pairs": {
+       "carrot->banana": 65,
+       "banana->mango": 26,
+       "citrus->apple": 24,
+       "lemon_lime->mango": 23,
+       "lemon_lime->citrus": 19,
+       "apple->citrus": 19,
+       "apple->mango": 5,
+       "banana->citrus": 2,
+       "lemon_lime->apple": 1
+      },
+      "background_boxes": 191,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 145,
+        "correct": 61,
+        "wrong": 1
+       },
+       "apple": {
+        "missing": 61,
+        "correct": 55,
+        "wrong": 4
+       },
+       "citrus": {
+        "missing": 82,
+        "correct": 45,
+        "wrong": 23
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 115,
+        "wrong": 5
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.15,
+      "false_boxes": 344,
+      "false_boxes_per_min": 86.0,
+      "frames_with_box": 29,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0161,
+      "per_class": {
+       "apple": 342,
+       "citrus": 1,
+       "banana": 1
+      },
+      "by_source": {
+       "devtex_05.jpg": 342,
+       "devtex_13.jpg": 1,
+       "000000537066.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.2,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 147,
+      "wrong": 32,
+      "missing": 423,
+      "uncovered": 115,
+      "correct_rate": 0.205,
+      "correct_rate_covered": 0.2442,
+      "wrong_rate": 0.0446,
+      "wrong_class_detections": 174,
+      "wrong_pairs": {
+       "carrot->banana": 63,
+       "banana->mango": 25,
+       "citrus->apple": 24,
+       "lemon_lime->mango": 22,
+       "lemon_lime->citrus": 18,
+       "apple->citrus": 17,
+       "apple->mango": 3,
+       "banana->citrus": 2
+      },
+      "background_boxes": 150,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 155,
+        "correct": 51,
+        "wrong": 1
+       },
+       "apple": {
+        "missing": 65,
+        "correct": 53,
+        "wrong": 2
+       },
+       "citrus": {
+        "missing": 83,
+        "correct": 43,
+        "wrong": 24
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 115,
+        "wrong": 5
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.2,
+      "false_boxes": 304,
+      "false_boxes_per_min": 76.0,
+      "frames_with_box": 26,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0144,
+      "per_class": {
+       "apple": 303,
+       "citrus": 1
+      },
+      "by_source": {
+       "devtex_05.jpg": 303,
+       "devtex_13.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.25,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 140,
+      "wrong": 28,
+      "missing": 432,
+      "uncovered": 117,
+      "correct_rate": 0.1953,
+      "correct_rate_covered": 0.2333,
+      "wrong_rate": 0.0391,
+      "wrong_class_detections": 166,
+      "wrong_pairs": {
+       "carrot->banana": 60,
+       "citrus->apple": 24,
+       "banana->mango": 23,
+       "lemon_lime->mango": 21,
+       "lemon_lime->citrus": 18,
+       "apple->citrus": 17,
+       "banana->citrus": 2,
+       "apple->mango": 1
+      },
+      "background_boxes": 126,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 160,
+        "correct": 46,
+        "wrong": 1
+       },
+       "apple": {
+        "missing": 67,
+        "correct": 53
+       },
+       "citrus": {
+        "missing": 85,
+        "correct": 41,
+        "wrong": 24
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 117,
+        "wrong": 3
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.25,
+      "false_boxes": 261,
+      "false_boxes_per_min": 65.25,
+      "frames_with_box": 23,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0128,
+      "per_class": {
+       "apple": 260,
+       "citrus": 1
+      },
+      "by_source": {
+       "devtex_05.jpg": 260,
+       "devtex_13.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.3,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 132,
+      "wrong": 27,
+      "missing": 441,
+      "uncovered": 117,
+      "correct_rate": 0.1841,
+      "correct_rate_covered": 0.22,
+      "wrong_rate": 0.0377,
+      "wrong_class_detections": 158,
+      "wrong_pairs": {
+       "carrot->banana": 57,
+       "citrus->apple": 24,
+       "banana->mango": 22,
+       "lemon_lime->mango": 20,
+       "lemon_lime->citrus": 17,
+       "apple->citrus": 17,
+       "apple->mango": 1
+      },
+      "background_boxes": 105,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 166,
+        "correct": 41
+       },
+       "apple": {
+        "missing": 67,
+        "correct": 53
+       },
+       "citrus": {
+        "missing": 88,
+        "correct": 38,
+        "wrong": 24
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 117,
+        "wrong": 3
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.3,
+      "false_boxes": 239,
+      "false_boxes_per_min": 59.75,
+      "frames_with_box": 21,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0117,
+      "per_class": {
+       "apple": 238,
+       "citrus": 1
+      },
+      "by_source": {
+       "devtex_05.jpg": 238,
+       "devtex_13.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.35,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 127,
+      "wrong": 26,
+      "missing": 446,
+      "uncovered": 118,
+      "correct_rate": 0.1771,
+      "correct_rate_covered": 0.212,
+      "wrong_rate": 0.0363,
+      "wrong_class_detections": 144,
+      "wrong_pairs": {
+       "carrot->banana": 51,
+       "citrus->apple": 24,
+       "banana->mango": 21,
+       "lemon_lime->mango": 19,
+       "lemon_lime->citrus": 16,
+       "apple->citrus": 13
+      },
+      "background_boxes": 81,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 170,
+        "correct": 37
+       },
+       "apple": {
+        "missing": 67,
+        "correct": 53
+       },
+       "citrus": {
+        "missing": 89,
+        "correct": 37,
+        "wrong": 24
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 118,
+        "wrong": 2
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.35,
+      "false_boxes": 211,
+      "false_boxes_per_min": 52.75,
+      "frames_with_box": 20,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0111,
+      "per_class": {
+       "apple": 210,
+       "citrus": 1
+      },
+      "by_source": {
+       "devtex_05.jpg": 210,
+       "devtex_13.jpg": 1
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.4,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 126,
+      "wrong": 26,
+      "missing": 447,
+      "uncovered": 118,
+      "correct_rate": 0.1757,
+      "correct_rate_covered": 0.2104,
+      "wrong_rate": 0.0363,
+      "wrong_class_detections": 138,
+      "wrong_pairs": {
+       "carrot->banana": 50,
+       "citrus->apple": 24,
+       "banana->mango": 20,
+       "lemon_lime->mango": 19,
+       "lemon_lime->citrus": 14,
+       "apple->citrus": 11
+      },
+      "background_boxes": 66,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 171,
+        "correct": 36
+       },
+       "apple": {
+        "missing": 67,
+        "correct": 53
+       },
+       "citrus": {
+        "missing": 89,
+        "correct": 37,
+        "wrong": 24
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 118,
+        "wrong": 2
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.4,
+      "false_boxes": 183,
+      "false_boxes_per_min": 45.75,
+      "frames_with_box": 19,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0106,
+      "per_class": {
+       "apple": 183
+      },
+      "by_source": {
+       "devtex_05.jpg": 183
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.45,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 120,
+      "wrong": 25,
+      "missing": 454,
+      "uncovered": 118,
+      "correct_rate": 0.1674,
+      "correct_rate_covered": 0.2003,
+      "wrong_rate": 0.0349,
+      "wrong_class_detections": 131,
+      "wrong_pairs": {
+       "carrot->banana": 50,
+       "citrus->apple": 23,
+       "banana->mango": 18,
+       "lemon_lime->mango": 16,
+       "lemon_lime->citrus": 14,
+       "apple->citrus": 10
+      },
+      "background_boxes": 59,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 175,
+        "correct": 32
+       },
+       "apple": {
+        "missing": 69,
+        "correct": 51
+       },
+       "citrus": {
+        "missing": 90,
+        "correct": 37,
+        "wrong": 23
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 118,
+        "wrong": 2
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.45,
+      "false_boxes": 162,
+      "false_boxes_per_min": 40.5,
+      "frames_with_box": 17,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0094,
+      "per_class": {
+       "apple": 162
+      },
+      "by_source": {
+       "devtex_05.jpg": 162
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.5,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 112,
+      "wrong": 24,
+      "missing": 463,
+      "uncovered": 118,
+      "correct_rate": 0.1562,
+      "correct_rate_covered": 0.187,
+      "wrong_rate": 0.0335,
+      "wrong_class_detections": 119,
+      "wrong_pairs": {
+       "carrot->banana": 49,
+       "citrus->apple": 22,
+       "banana->mango": 17,
+       "lemon_lime->citrus": 13,
+       "lemon_lime->mango": 13,
+       "apple->citrus": 5
+      },
+      "background_boxes": 43,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 180,
+        "correct": 27
+       },
+       "apple": {
+        "missing": 71,
+        "correct": 49
+       },
+       "citrus": {
+        "missing": 92,
+        "correct": 36,
+        "wrong": 22
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 118,
+        "wrong": 2
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.5,
+      "false_boxes": 141,
+      "false_boxes_per_min": 35.25,
+      "frames_with_box": 16,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0089,
+      "per_class": {
+       "apple": 141
+      },
+      "by_source": {
+       "devtex_05.jpg": 141
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.55,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 107,
+      "wrong": 24,
+      "missing": 468,
+      "uncovered": 118,
+      "correct_rate": 0.1492,
+      "correct_rate_covered": 0.1786,
+      "wrong_rate": 0.0335,
+      "wrong_class_detections": 109,
+      "wrong_pairs": {
+       "carrot->banana": 47,
+       "citrus->apple": 22,
+       "banana->mango": 16,
+       "lemon_lime->mango": 11,
+       "lemon_lime->citrus": 9,
+       "apple->citrus": 4
+      },
+      "background_boxes": 29,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 181,
+        "correct": 26
+       },
+       "apple": {
+        "missing": 73,
+        "correct": 47
+       },
+       "citrus": {
+        "missing": 94,
+        "correct": 34,
+        "wrong": 22
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 118,
+        "wrong": 2
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.55,
+      "false_boxes": 127,
+      "false_boxes_per_min": 31.75,
+      "frames_with_box": 16,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0089,
+      "per_class": {
+       "apple": 127
+      },
+      "by_source": {
+       "devtex_05.jpg": 127
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.6,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 100,
+      "wrong": 23,
+      "missing": 476,
+      "uncovered": 118,
+      "correct_rate": 0.1395,
+      "correct_rate_covered": 0.1669,
+      "wrong_rate": 0.0321,
+      "wrong_class_detections": 99,
+      "wrong_pairs": {
+       "carrot->banana": 46,
+       "citrus->apple": 21,
+       "banana->mango": 15,
+       "lemon_lime->mango": 11,
+       "lemon_lime->citrus": 4,
+       "apple->citrus": 2
+      },
+      "background_boxes": 27,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 181,
+        "correct": 26
+       },
+       "apple": {
+        "missing": 75,
+        "correct": 45
+       },
+       "citrus": {
+        "missing": 100,
+        "correct": 29,
+        "wrong": 21
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 118,
+        "wrong": 2
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.6,
+      "false_boxes": 103,
+      "false_boxes_per_min": 25.75,
+      "frames_with_box": 13,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0072,
+      "per_class": {
+       "apple": 103
+      },
+      "by_source": {
+       "devtex_05.jpg": 103
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.65,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 94,
+      "wrong": 23,
+      "missing": 482,
+      "uncovered": 118,
+      "correct_rate": 0.1311,
+      "correct_rate_covered": 0.1569,
+      "wrong_rate": 0.0321,
+      "wrong_class_detections": 89,
+      "wrong_pairs": {
+       "carrot->banana": 41,
+       "citrus->apple": 21,
+       "banana->mango": 13,
+       "lemon_lime->mango": 10,
+       "lemon_lime->citrus": 3,
+       "apple->citrus": 1
+      },
+      "background_boxes": 26,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 182,
+        "correct": 25
+       },
+       "apple": {
+        "missing": 78,
+        "correct": 42
+       },
+       "citrus": {
+        "missing": 102,
+        "correct": 27,
+        "wrong": 21
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 118,
+        "wrong": 2
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.65,
+      "false_boxes": 88,
+      "false_boxes_per_min": 22.0,
+      "frames_with_box": 13,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0072,
+      "per_class": {
+       "apple": 88
+      },
+      "by_source": {
+       "devtex_05.jpg": 88
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.7,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 90,
+      "wrong": 20,
+      "missing": 488,
+      "uncovered": 119,
+      "correct_rate": 0.1255,
+      "correct_rate_covered": 0.1505,
+      "wrong_rate": 0.0279,
+      "wrong_class_detections": 67,
+      "wrong_pairs": {
+       "carrot->banana": 30,
+       "citrus->apple": 19,
+       "banana->mango": 12,
+       "lemon_lime->citrus": 3,
+       "lemon_lime->mango": 3
+      },
+      "background_boxes": 23,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 182,
+        "correct": 25
+       },
+       "apple": {
+        "missing": 78,
+        "correct": 42
+       },
+       "citrus": {
+        "missing": 108,
+        "correct": 23,
+        "wrong": 19
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 119,
+        "wrong": 1
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.7,
+      "false_boxes": 64,
+      "false_boxes_per_min": 16.0,
+      "frames_with_box": 12,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0067,
+      "per_class": {
+       "apple": 64
+      },
+      "by_source": {
+       "devtex_05.jpg": 64
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.75,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 85,
+      "wrong": 17,
+      "missing": 495,
+      "uncovered": 120,
+      "correct_rate": 0.1185,
+      "correct_rate_covered": 0.1424,
+      "wrong_rate": 0.0237,
+      "wrong_class_detections": 45,
+      "wrong_pairs": {
+       "citrus->apple": 17,
+       "carrot->banana": 15,
+       "banana->mango": 8,
+       "lemon_lime->citrus": 3,
+       "lemon_lime->mango": 2
+      },
+      "background_boxes": 22,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 182,
+        "correct": 25
+       },
+       "apple": {
+        "missing": 79,
+        "correct": 41
+       },
+       "citrus": {
+        "missing": 114,
+        "correct": 19,
+        "wrong": 17
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.75,
+      "false_boxes": 47,
+      "false_boxes_per_min": 11.75,
+      "frames_with_box": 10,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0056,
+      "per_class": {
+       "apple": 47
+      },
+      "by_source": {
+       "devtex_05.jpg": 47
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.8,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 79,
+      "wrong": 9,
+      "missing": 509,
+      "uncovered": 120,
+      "correct_rate": 0.1102,
+      "correct_rate_covered": 0.1323,
+      "wrong_rate": 0.0126,
+      "wrong_class_detections": 23,
+      "wrong_pairs": {
+       "citrus->apple": 9,
+       "carrot->banana": 6,
+       "banana->mango": 4,
+       "lemon_lime->citrus": 2,
+       "lemon_lime->mango": 2
+      },
+      "background_boxes": 20,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 182,
+        "correct": 25
+       },
+       "apple": {
+        "missing": 80,
+        "correct": 40
+       },
+       "citrus": {
+        "missing": 127,
+        "correct": 14,
+        "wrong": 9
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.8,
+      "false_boxes": 32,
+      "false_boxes_per_min": 8.0,
+      "frames_with_box": 9,
+      "processed": 1800,
+      "frac_frames_with_box": 0.005,
+      "per_class": {
+       "apple": 32
+      },
+      "by_source": {
+       "devtex_05.jpg": 32
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.85,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 71,
+      "wrong": 3,
+      "missing": 523,
+      "uncovered": 120,
+      "correct_rate": 0.099,
+      "correct_rate_covered": 0.1189,
+      "wrong_rate": 0.0042,
+      "wrong_class_detections": 10,
+      "wrong_pairs": {
+       "citrus->apple": 3,
+       "banana->mango": 3,
+       "lemon_lime->mango": 2,
+       "carrot->banana": 1,
+       "lemon_lime->citrus": 1
+      },
+      "background_boxes": 18,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 183,
+        "correct": 24
+       },
+       "apple": {
+        "missing": 84,
+        "correct": 36
+       },
+       "citrus": {
+        "missing": 136,
+        "correct": 11,
+        "wrong": 3
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.85,
+      "false_boxes": 11,
+      "false_boxes_per_min": 2.75,
+      "frames_with_box": 6,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0033,
+      "per_class": {
+       "apple": 11
+      },
+      "by_source": {
+       "devtex_05.jpg": 11
+      }
+     }
+    },
+    {
+     "det": {
+      "thr": 0.9,
+      "frames_scored": 717,
+      "processed": 869,
+      "correct": 23,
+      "wrong": 0,
+      "missing": 574,
+      "uncovered": 120,
+      "correct_rate": 0.0321,
+      "correct_rate_covered": 0.0385,
+      "wrong_rate": 0.0,
+      "wrong_class_detections": 1,
+      "wrong_pairs": {
+       "lemon_lime->mango": 1
+      },
+      "background_boxes": 6,
+      "small_objects": {},
+      "per_class": {
+       "banana": {
+        "missing": 205,
+        "correct": 2
+       },
+       "apple": {
+        "missing": 100,
+        "correct": 20
+       },
+       "citrus": {
+        "missing": 149,
+        "correct": 1
+       },
+       "tomato": {
+        "missing": 30
+       },
+       "potato": {
+        "missing": 30
+       },
+       "cucumber": {
+        "missing": 30
+       },
+       "carrot": {
+        "uncovered": 120
+       },
+       "capsicum": {
+        "missing": 30
+       }
+      }
+     },
+     "neg": {
+      "thr": 0.9,
+      "false_boxes": 3,
+      "false_boxes_per_min": 0.75,
+      "frames_with_box": 2,
+      "processed": 1800,
+      "frac_frames_with_box": 0.0011,
+      "per_class": {
+       "apple": 3
+      },
+      "by_source": {
+       "devtex_05.jpg": 3
+      }
+     }
+    }
+   ],
+   "tuned_thr": 0.85,
+   "tuned_flag": null,
+   "raw_at_035": {
+    "det": {
+     "thr": 0.35,
+     "frames_scored": 717,
+     "processed": 869,
+     "correct": 127,
+     "wrong": 26,
+     "missing": 446,
+     "uncovered": 118,
+     "correct_rate": 0.1771,
+     "correct_rate_covered": 0.212,
+     "wrong_rate": 0.0363,
+     "wrong_class_detections": 144,
+     "wrong_pairs": {
+      "carrot->banana": 51,
+      "citrus->apple": 24,
+      "banana->mango": 21,
+      "lemon_lime->mango": 19,
+      "lemon_lime->citrus": 16,
+      "apple->citrus": 13
+     },
+     "background_boxes": 81,
+     "small_objects": {},
+     "per_class": {
+      "banana": {
+       "missing": 170,
+       "correct": 37
+      },
+      "apple": {
+       "missing": 67,
+       "correct": 53
+      },
+      "citrus": {
+       "missing": 89,
+       "correct": 37,
+       "wrong": 24
+      },
+      "tomato": {
+       "missing": 30
+      },
+      "potato": {
+       "missing": 30
+      },
+      "cucumber": {
+       "missing": 30
+      },
+      "carrot": {
+       "uncovered": 118,
+       "wrong": 2
+      },
+      "capsicum": {
+       "missing": 30
+      }
+     }
+    },
+    "neg": {
+     "thr": 0.35,
+     "false_boxes": 211,
+     "false_boxes_per_min": 52.75,
+     "frames_with_box": 20,
+     "processed": 1800,
+     "frac_frames_with_box": 0.0111,
+     "per_class": {
+      "apple": 210,
+      "citrus": 1
+     },
+     "by_source": {
+      "devtex_05.jpg": 210,
+      "devtex_13.jpg": 1
+     }
+    }
+   },
+   "raw_at_tuned": {
+    "det": {
+     "thr": 0.85,
+     "frames_scored": 717,
+     "processed": 869,
+     "correct": 71,
+     "wrong": 3,
+     "missing": 523,
+     "uncovered": 120,
+     "correct_rate": 0.099,
+     "correct_rate_covered": 0.1189,
+     "wrong_rate": 0.0042,
+     "wrong_class_detections": 10,
+     "wrong_pairs": {
+      "citrus->apple": 3,
+      "banana->mango": 3,
+      "lemon_lime->mango": 2,
+      "carrot->banana": 1,
+      "lemon_lime->citrus": 1
+     },
+     "background_boxes": 18,
+     "small_objects": {},
+     "per_class": {
+      "banana": {
+       "missing": 183,
+       "correct": 24
+      },
+      "apple": {
+       "missing": 84,
+       "correct": 36
+      },
+      "citrus": {
+       "missing": 136,
+       "correct": 11,
+       "wrong": 3
+      },
+      "tomato": {
+       "missing": 30
+      },
+      "potato": {
+       "missing": 30
+      },
+      "cucumber": {
+       "missing": 30
+      },
+      "carrot": {
+       "uncovered": 120
+      },
+      "capsicum": {
+       "missing": 30
+      }
+     }
+    },
+    "neg": {
+     "thr": 0.85,
+     "false_boxes": 11,
+     "false_boxes_per_min": 2.75,
+     "frames_with_box": 6,
+     "processed": 1800,
+     "frac_frames_with_box": 0.0033,
+     "per_class": {
+      "apple": 11
+     },
+     "by_source": {
+      "devtex_05.jpg": 11
+     }
+    }
+   },
+   "tracked_at_035": {
+    "det": {
+     "frames_with_gt": 1432,
+     "frame_acc": 0.162,
+     "per_class_recall": {
+      "banana": {
+       "n": 413,
+       "recall": 0.199
+      },
+      "apple": {
+       "n": 240,
+       "recall": 0.333
+      },
+      "citrus": {
+       "n": 299,
+       "recall": 0.234
+      },
+      "tomato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "potato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "cucumber": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "carrot": {
+       "n": 240,
+       "recall": 0.0
+      },
+      "capsicum": {
+       "n": 60,
+       "recall": 0.0
+      }
+     },
+     "segments": 24,
+     "segment_acc": 0.2917,
+     "never_correct_segments": 16,
+     "ttfc_ms": {
+      "p50": 666.6664999999994,
+      "p90": 1413.3331999999994,
+      "max": 2066.6670000000013,
+      "n": 8
+     },
+     "label_flicker_per_10s_static": 0.417,
+     "label_flicker_per_10s_all": 0.209,
+     "grade_flicker_per_10s_static": 0.0,
+     "no_box_frac_static": 0.693,
+     "missed_s_total": 75.201,
+     "missed_frac": 0.7877,
+     "longest_missed_gap_s": 4.0,
+     "fragmentations": 13,
+     "mean_fragments_per_segment": 0.958,
+     "id_switches": 0,
+     "mean_ids_per_segment": 0.417
+    },
+    "neg": {
+     "false_alarm_tracks": 25,
+     "minutes": 4.0,
+     "false_alarms_per_min": 6.25,
+     "fa_episodes": 1,
+     "fa_episodes_per_min": 0.25,
+     "frames_with_any_box": 16,
+     "frames": 3600
+    }
+   },
+   "tracked_at_tuned": {
+    "det": {
+     "frames_with_gt": 1432,
+     "frame_acc": 0.0873,
+     "per_class_recall": {
+      "banana": {
+       "n": 413,
+       "recall": 0.109
+      },
+      "apple": {
+       "n": 240,
+       "recall": 0.25
+      },
+      "citrus": {
+       "n": 299,
+       "recall": 0.067
+      },
+      "tomato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "potato": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "cucumber": {
+       "n": 60,
+       "recall": 0.0
+      },
+      "carrot": {
+       "n": 240,
+       "recall": 0.0
+      },
+      "capsicum": {
+       "n": 60,
+       "recall": 0.0
+      }
+     },
+     "segments": 24,
+     "segment_acc": 0.1667,
+     "never_correct_segments": 20,
+     "ttfc_ms": {
+      "p50": 333.3329999999987,
+      "p90": 893.3329999999988,
+      "max": 1133.3329999999987,
+      "n": 4
+     },
+     "label_flicker_per_10s_static": 0.208,
+     "label_flicker_per_10s_all": 0.105,
+     "grade_flicker_per_10s_static": 0.0,
+     "no_box_frac_static": 0.847,
+     "missed_s_total": 86.335,
+     "missed_frac": 0.9043,
+     "longest_missed_gap_s": 4.0,
+     "fragmentations": 8,
+     "mean_fragments_per_segment": 0.542,
+     "id_switches": 0,
+     "mean_ids_per_segment": 0.208
+    },
+    "neg": {
+     "false_alarm_tracks": 0,
+     "minutes": 4.0,
+     "false_alarms_per_min": 0.0,
+     "fa_episodes": 0,
+     "fa_episodes_per_min": 0.0,
+     "frames_with_any_box": 0,
+     "frames": 3600
+    }
+   }
+  }
+ },
+ "fa_cap_boxes_per_min": 3.25
+}
