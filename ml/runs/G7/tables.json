@@ -1,7 +1,8 @@
 {
  "models": [
   "G3 control (CHAMPION; historical eval files)",
-  "G6 rpx (G3-init fine-tune; reference, single seed) [G6rpx]"
+  "G6 rpx (G3-init fine-tune; reference, single seed) [G6rpx]",
+  "G7 sB (rpx mix, from scratch, G3 recipe, seed 1) [G7sB]"
  ],
  "strict": {
   "G6 rpx (G3-init fine-tune; reference, single seed) [G6rpx]": {
@@ -10,6 +11,16 @@
     "test_rf/tomato": -0.023
    },
    "pooled": 0.3097,
+   "pooled_gt_g3": false,
+   "image_pass": false
+  },
+  "G7 sB (rpx mix, from scratch, G3 recipe, seed 1) [G7sB]": {
+   "per_class_fails": {
+    "test_rf/banana": -0.099,
+    "test_rf/apple": -0.072,
+    "test_rf/tomato": -0.096
+   },
+   "pooled": 0.2859,
    "pooled_gt_g3": false,
    "image_pass": false
   }
