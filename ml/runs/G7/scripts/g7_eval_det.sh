@@ -2,7 +2,7 @@
 # G7 copy of g6_eval_det.sh (+ test_small6 VIEW). Run under flock /workspace/work/cv/g7logs/cpu.lock
 # usage: g5_eval_det.sh TAG PT IMGSZ -- local CPU eval of a raw+NMS yolo11n: export ONNX, parity, eval test/test_rf/test_oiv7/test_oiv7c, pooled, neg FA. Idempotent.
 source /workspace/work/cvenv/bin/activate; cd /workspace/work/nutrisole
-TAG=$1; PT=$2; S=$3; K=raw; R=ml/runs/G7; L=/workspace/work/cv/g7logs; MD=/workspace/work/cv/g7models/$TAG; mkdir -p $MD
+TAG=$1; PT=$(cd /workspace/work/cv && readlink -f $2); [ -f "$PT" ] || { echo "- $(date -u +%TZ) [eval] $1 best.pt not found: $2" >> /workspace/work/cv/g7logs/progress.md; exit 1; }; S=$3; K=raw; R=ml/runs/G7; L=/workspace/work/cv/g7logs; MD=/workspace/work/cv/g7models/$TAG; mkdir -p $MD
 st(){ [ -f $L/E_${TAG}_$1 ]; }; done_(){ touch $L/E_${TAG}_$1; }
 D3=/workspace/work/cv/g3data/det_v3
 st export || { python ml/export/export_models.py --det $PT:$K:$S --out $MD > $L/export_$TAG.log 2>&1 && done_ export; }
@@ -13,4 +13,5 @@ st pooled || { python ml/eval/eval_det.py --model $PT --data $D3/det_v3_pooled.y
 st negfa || { python ml/eval/neg_fa.py --model $PT --imgsz $S --images $D3/neg/images/neg_test --out $R/neg_fa_$TAG.json > $L/negfa_$TAG.log 2>&1 && done_ negfa; }
 st nostrips || { python ml/eval/eval_det.py --model $PT --data /workspace/work/cv/g5data/test_rf_nostrips.yaml --imgsz $S --splits test_rf_nostrips --out $R/eval_nostrips_$TAG > $L/nostrips_$TAG.log 2>&1 && done_ nostrips; }
 st small6 || { python ml/eval/eval_det.py --model $PT --data /workspace/work/cv/g7data/test_small6.yaml --imgsz $S --splits test_small6 --out $R/eval_small6_$TAG > $L/small6_$TAG.log 2>&1 && done_ small6; }
-touch $L/E_${TAG}_ALL
+ok=1; for s_ in export parity eval pooled negfa nostrips small6; do st $s_ || { ok=0; echo "- $(date -u +%TZ) [eval] $TAG step $s_ FAILED" >> $L/progress.md; }; done
+[ $ok = 1 ] && touch $L/E_${TAG}_ALL
