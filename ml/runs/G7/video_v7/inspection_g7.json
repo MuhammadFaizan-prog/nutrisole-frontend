@@ -1,0 +1,448 @@
+{
+ "_note": "Agent inspection (not human) of 6 evenly spaced frames per downloaded G7 Commons clip (sheets: /workspace/work/cv/g7insp/sheet_*.jpg, not in git). role: produce = shows supported produce at usable size; negative = market/street scene without supported produce in sampled frames (absence still to be confirmed on all keyframes); reject = does not qualify for the count. counts_toward_60 only for qualified independent recordings. Frame-dHash vs the 38 G6 clips: min Hamming >= 12 for all (no duplicate recording found).",
+ "c19ae062b": {
+  "role": "produce",
+  "classes_seen": [
+   "potato"
+  ],
+  "env": "outdoor sorting line, USA (USDA)",
+  "counts": true,
+  "flags": [
+   "USDA title card at start"
+  ]
+ },
+ "c237ace91": {
+  "role": "produce",
+  "classes_seen": [
+   "citrus",
+   "banana",
+   "papaya*",
+   "pineapple*",
+   "coconut*"
+  ],
+  "env": "market stall, Peru (title)",
+  "counts": true,
+  "flags": [
+   "short 8.7 s"
+  ]
+ },
+ "c3d854faf": {
+  "role": "negative",
+  "classes_seen": [],
+  "env": "night market walk (Taiwan, title), food stalls",
+  "counts": true,
+  "flags": [
+   "night",
+   "hard negative: cooked food, signage"
+  ]
+ },
+ "c4e9a7195": {
+  "role": "negative",
+  "classes_seen": [],
+  "env": "Maasai market Nairobi, textiles/crafts",
+  "counts": true,
+  "flags": []
+ },
+ "c61cbc2a6": {
+  "role": "produce",
+  "classes_seen": [
+   "apple"
+  ],
+  "env": "apple grading/packing line, indoor",
+  "counts": true,
+  "flags": [
+   "dense small apples"
+  ]
+ },
+ "c6473db48": {
+  "role": "produce",
+  "classes_seen": [
+   "cabbage*",
+   "asparagus*",
+   "leafy greens*"
+  ],
+  "env": "night wholesale vegetable market (China), artificial light",
+  "counts": true,
+  "flags": [
+   "low light",
+   "mostly unsupported vegetables -> mainly a hard-negative/low-light clip"
+  ]
+ },
+ "c6e08132a": {
+  "role": "produce",
+  "classes_seen": [
+   "mango",
+   "citrus",
+   "apple",
+   "lemon_lime",
+   "kiwi*",
+   "squash*"
+  ],
+  "env": "greengrocer display, USA",
+  "counts": true,
+  "flags": [
+   "406 px wide (low res)"
+  ]
+ },
+ "c6f5ac9b4": {
+  "role": "negative",
+  "classes_seen": [
+   "leafy greens*"
+  ],
+  "env": "USDA farmers market opening, outdoor",
+  "counts": true,
+  "flags": [
+   "USDA end card",
+   "greens unsupported -> hard negative"
+  ]
+ },
+ "c7bf0608b": {
+  "role": "produce",
+  "classes_seen": [
+   "tomato",
+   "carrot"
+  ],
+  "env": "street market Oujda (Morocco), filmed from a car",
+  "counts": true,
+  "flags": [
+   "produce only in first ~8 s"
+  ]
+ },
+ "c7e7795ef": {
+  "role": "produce",
+  "classes_seen": [
+   "tomato"
+  ],
+  "env": "Bakin Dogo market (Nigeria), close-up",
+  "counts": true,
+  "flags": [
+   "CapCut end card (trimmed/edited, content not altered)"
+  ]
+ },
+ "c90447971": {
+  "role": "produce",
+  "classes_seen": [
+   "carrot",
+   "cabbage*",
+   "pineapple*"
+  ],
+  "env": "Roseau farmers market (Dominica)",
+  "counts": true,
+  "flags": [
+   "same uploader as a G6 clip -> same split family"
+  ]
+ },
+ "cb24e4c46": {
+  "role": "reject",
+  "classes_seen": [],
+  "env": "aerial top-down market",
+  "counts": false,
+  "flags": [
+   "objects a few px; not the app's viewpoint"
+  ]
+ },
+ "cc44ad5c9": {
+  "role": "produce",
+  "classes_seen": [
+   "mango"
+  ],
+  "env": "heap of green mangoes, outdoor",
+  "counts": true,
+  "flags": [
+   "single class, dense"
+  ]
+ },
+ "cc5585ebc": {
+  "role": "negative",
+  "classes_seen": [],
+  "env": "Main Bazar Delhi from a cafe, elevated street",
+  "counts": true,
+  "flags": [
+   "distant; possible tiny produce carts -> verify absence"
+  ]
+ },
+ "cd17ce723": {
+  "role": "negative",
+  "classes_seen": [],
+  "env": "Tajrish bazaar walk (Tehran), indoor/outdoor",
+  "counts": true,
+  "flags": [
+   "same uploader as a G6 clip",
+   "209 s, produce stalls possible off-sample -> verify"
+  ]
+ },
+ "cd61265f9": {
+  "role": "reject",
+  "classes_seen": [
+   "apple (tiny, distant)"
+  ],
+  "env": "orchard harvest, distant static shot",
+  "counts": false,
+  "flags": [
+   "fruit not resolvable; neither produce nor clean negative"
+  ]
+ },
+ "cd80902de": {
+  "role": "weak_exploratory",
+  "classes_seen": [
+   "mixed fruit (some segments)"
+  ],
+  "env": "edited documentary with burned-in subtitles and a talking head",
+  "counts": false,
+  "flags": [
+   "overlays alter frames; multi-shot edit"
+  ]
+ },
+ "ce3fc202a": {
+  "role": "produce",
+  "classes_seen": [
+   "mixed fruit display (apple, citrus, others)"
+  ],
+  "env": "fruit stand Kitasenju Tokyo, elevated view",
+  "counts": true,
+  "flags": [
+   "medium-distance"
+  ]
+ },
+ "ce9f2fe34": {
+  "role": "negative",
+  "classes_seen": [],
+  "env": "Pike Place Market crowd, flowers",
+  "counts": true,
+  "flags": [
+   "hard negative: colourful flowers"
+  ]
+ },
+ "cea174b05": {
+  "role": "produce",
+  "classes_seen": [
+   "leafy/ground produce (weak)"
+  ],
+  "env": "open market Okigwe (Nigeria), shaky",
+  "counts": true,
+  "flags": [
+   "270 px wide (very low res)",
+   "produce small"
+  ]
+ },
+ "cec084f0c": {
+  "role": "produce",
+  "classes_seen": [
+   "cabbage*",
+   "carrot"
+  ],
+  "env": "food market (Nigeria), handheld close",
+  "counts": true,
+  "flags": []
+ },
+ "cf14f0db2": {
+  "role": "produce",
+  "classes_seen": [
+   "mango",
+   "citrus",
+   "tomato",
+   "onion*",
+   "cucumber"
+  ],
+  "env": "Grand marche de Marcory (Abidjan), cinematic edit",
+  "counts": true,
+  "flags": [
+   "strong colour grading -> excluded from ripeness/quality evaluation",
+   "multi-shot edit of one shoot"
+  ]
+ },
+ "c0a08d565": {
+  "role": "negative",
+  "classes_seen": [],
+  "env": "Iran bazaar (carpets, sacks of dried goods/spices), indoor",
+  "counts": true,
+  "flags": [
+   "hard negative: dried goods"
+  ]
+ },
+ "c31b80875": {
+  "role": "produce",
+  "classes_seen": [
+   "tomato",
+   "cucumber",
+   "banana",
+   "potato",
+   "eggplant*"
+  ],
+  "env": "covered vegetable market, Amman (named candidate)",
+  "counts": true,
+  "flags": [
+   "interlaced/old camcorder"
+  ]
+ },
+ "c376d058d": {
+  "role": "produce",
+  "classes_seen": [
+   "lemon_lime"
+  ],
+  "env": "crate of lemons, close-up",
+  "counts": true,
+  "flags": [
+   "single class; citrus-family test"
+  ]
+ },
+ "c3d1561b2": {
+  "role": "produce",
+  "classes_seen": [
+   "capsicum",
+   "tomato",
+   "squash*"
+  ],
+  "env": "Mercado de abastos stall (Spanish title)",
+  "counts": true,
+  "flags": []
+ },
+ "c4880a292": {
+  "role": "produce",
+  "classes_seen": [
+   "cucumber",
+   "eggplant*",
+   "brussels sprouts*",
+   "beans*"
+  ],
+  "env": "supermarket b-roll, shallow depth of field",
+  "counts": true,
+  "flags": [
+   "cinematic b-roll",
+   "bulk bins later"
+  ]
+ },
+ "c4a35a451": {
+  "role": "negative",
+  "classes_seen": [
+   "long red peppers (shombo, not bell capsicum)"
+  ],
+  "env": "market floor basins, top-down",
+  "counts": true,
+  "flags": [
+   "hard negative for capsicum (pepper type is not bell)"
+  ]
+ },
+ "c5ed7eb90": {
+  "role": "produce",
+  "classes_seen": [
+   "tomato",
+   "cucumber",
+   "cabbage*"
+  ],
+  "env": "street market Oujda (Morocco)",
+  "counts": true,
+  "flags": [
+   "likely same uploader as c7bf0608b (same split group)"
+  ]
+ },
+ "c61f2d4b9": {
+  "role": "produce",
+  "classes_seen": [
+   "tomato"
+  ],
+  "env": "tomatoes in a colander, close-up, indoor",
+  "counts": true,
+  "flags": [
+   "non-Latin title"
+  ]
+ },
+ "c72da5fa1": {
+  "role": "weak_exploratory",
+  "classes_seen": [
+   "apple (cut half)"
+  ],
+  "env": "browning time-lapse, studio",
+  "counts": false,
+  "flags": [
+   "time-lapse, cut fruit: spoilage-cue reference only"
+  ]
+ },
+ "c82e63d5a": {
+  "role": "negative",
+  "classes_seen": [],
+  "env": "grain/pulse sellers, photowalk",
+  "counts": true,
+  "flags": [
+   "hard negative: grains/pulses",
+   "low res"
+  ]
+ },
+ "c84cdc183": {
+  "role": "weak_exploratory",
+  "classes_seen": [
+   "banana"
+  ],
+  "env": "banana ripening time-lapse, studio",
+  "counts": false,
+  "flags": [
+   "time-lapse: ripeness-sequence reference only, never a detector benchmark"
+  ]
+ },
+ "c8b2d2f36": {
+  "role": "negative",
+  "classes_seen": [
+   "onion*"
+  ],
+  "env": "onions on the ground, outdoor market",
+  "counts": true,
+  "flags": [
+   "same uploader as a G6 clip",
+   "hard negative: onions"
+  ]
+ },
+ "c8e6ccd85": {
+  "role": "weak_exploratory",
+  "classes_seen": [
+   "mixed (small)"
+  ],
+  "env": "Oshodi Lagos, vertical phone video edited with burned-in captions",
+  "counts": false,
+  "flags": [
+   "caption overlays alter frames; pillarboxed"
+  ]
+ },
+ "c97bdc431": {
+  "role": "produce",
+  "classes_seen": [
+   "citrus? (small)",
+   "mixed (small)"
+  ],
+  "env": "Tamale market (Ghana), outdoor",
+  "counts": true,
+  "flags": [
+   "produce small/distant"
+  ]
+ },
+ "c9a897fb2": {
+  "role": "reject",
+  "classes_seen": [],
+  "env": "archival black-and-white street film (Paris), restored",
+  "counts": false,
+  "flags": [
+   "greyscale archival; restoration/upscaling unknown"
+  ]
+ },
+ "cd4211720": {
+  "role": "produce",
+  "classes_seen": [
+   "mango"
+  ],
+  "env": "hand cutting a mango on a board, top-down, indoor",
+  "counts": true,
+  "flags": [
+   "handheld single fruit (app-like viewpoint), not a market"
+  ]
+ },
+ "cff999d3b": {
+  "role": "weak_exploratory",
+  "classes_seen": [
+   "carrot (rotting)"
+  ],
+  "env": "rotting carrot time-lapse in a glass",
+  "counts": false,
+  "flags": [
+   "time-lapse: spoilage-cue reference only"
+  ]
+ }
+}
