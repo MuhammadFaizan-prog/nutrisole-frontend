@@ -1,0 +1,88 @@
+{
+ "models": [
+  "G3 control (CHAMPION; historical eval files)",
+  "G6 rpx (G3-init fine-tune; reference, single seed) [G6rpx]"
+ ],
+ "strict": {
+  "G6 rpx (G3-init fine-tune; reference, single seed) [G6rpx]": {
+   "per_class_fails": {
+    "test_rf/apple": -0.0701,
+    "test_rf/tomato": -0.023
+   },
+   "pooled": 0.3097,
+   "pooled_gt_g3": false,
+   "image_pass": false
+  }
+ },
+ "gauntlet": [
+  {
+   "run": "G4 G3champ_msc0 r1 (historical)",
+   "tracker": "iou",
+   "det_seg": 0.6667,
+   "det_frame": 0.4965,
+   "flick_static": 0.0,
+   "id_switches": null,
+   "ids_per_seg": null,
+   "ttfc_p50": 466.6670000000013,
+   "ttfc_p90": 759.9997999999993,
+   "q_acc": 0.9286,
+   "rot_rec": 0.875,
+   "grade_flick": 0.0,
+   "fa_g1neg": 1.25,
+   "fa_negtest": 0.0,
+   "full_p50_ms": 47.210666999944806
+  },
+  {
+   "run": "G6 G3 control + IouTracker r1",
+   "tracker": "iou",
+   "det_seg": 0.6667,
+   "det_frame": 0.4965,
+   "flick_static": 0.0,
+   "id_switches": 43,
+   "ids_per_seg": 1.458,
+   "ttfc_p50": 466.6670000000013,
+   "ttfc_p90": 759.9997999999993,
+   "q_acc": 0.9286,
+   "rot_rec": 0.875,
+   "grade_flick": 0.0,
+   "fa_g1neg": 1.25,
+   "fa_negtest": 0.0,
+   "full_p50_ms": 45.84022700009882
+  },
+  {
+   "run": "G6 G3 control + ByteTrack r1",
+   "tracker": "bytetrack",
+   "det_seg": 0.6667,
+   "det_frame": 0.5316,
+   "flick_static": 0.0,
+   "id_switches": 30,
+   "ids_per_seg": 1.208,
+   "ttfc_p50": 533.3329999999987,
+   "ttfc_p90": 933.3331999999996,
+   "q_acc": 0.9286,
+   "rot_rec": 0.875,
+   "grade_flick": 0.0,
+   "fa_g1neg": 1.25,
+   "fa_negtest": 0.0,
+   "full_p50_ms": 46.35066499986351
+  },
+  {
+   "run": "G6 G3 control + ByteTrack r2",
+   "tracker": "bytetrack",
+   "det_seg": 0.6667,
+   "det_frame": 0.5316,
+   "flick_static": 0.0,
+   "id_switches": 30,
+   "ids_per_seg": 1.208,
+   "ttfc_p50": 533.3329999999987,
+   "ttfc_p90": 933.3331999999996,
+   "q_acc": 0.9286,
+   "rot_rec": 0.875,
+   "grade_flick": 0.0,
+   "fa_g1neg": 1.25,
+   "fa_negtest": 0.0,
+   "full_p50_ms": 63.63215199999672
+  }
+ ],
+ "dev": []
+}
