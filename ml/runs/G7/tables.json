@@ -2,7 +2,9 @@
  "models": [
   "G3 control (CHAMPION; historical eval files)",
   "G6 rpx (G3-init fine-tune; reference, single seed) [G6rpx]",
-  "G7 sB (rpx mix, from scratch, G3 recipe, seed 1) [G7sB]"
+  "G7 sA (rpx mix, from scratch, G3 recipe, seed 0) [G7sA]",
+  "G7 sB (rpx mix, from scratch, G3 recipe, seed 1) [G7sB]",
+  "G7 rfs (rpx mix, from scratch, G3 recipe, seed 0, repeat-factor sampling) [G7rfs]"
  ],
  "strict": {
   "G6 rpx (G3-init fine-tune; reference, single seed) [G6rpx]": {
@@ -14,6 +16,17 @@
    "pooled_gt_g3": false,
    "image_pass": false
   },
+  "G7 sA (rpx mix, from scratch, G3 recipe, seed 0) [G7sA]": {
+   "per_class_fails": {
+    "test_rf/banana": -0.1312,
+    "test_rf/apple": -0.0583,
+    "test_rf/tomato": -0.0864,
+    "test_oiv7/tomato": -0.0561
+   },
+   "pooled": 0.2819,
+   "pooled_gt_g3": false,
+   "image_pass": false
+  },
   "G7 sB (rpx mix, from scratch, G3 recipe, seed 1) [G7sB]": {
    "per_class_fails": {
     "test_rf/banana": -0.099,
@@ -21,6 +34,16 @@
     "test_rf/tomato": -0.096
    },
    "pooled": 0.2859,
+   "pooled_gt_g3": false,
+   "image_pass": false
+  },
+  "G7 rfs (rpx mix, from scratch, G3 recipe, seed 0, repeat-factor sampling) [G7rfs]": {
+   "per_class_fails": {
+    "test_rf/banana": -0.1221,
+    "test_rf/tomato": -0.1035,
+    "test_oiv7/tomato": -0.0641
+   },
+   "pooled": 0.3107,
    "pooled_gt_g3": false,
    "image_pass": false
   }
