@@ -12,7 +12,20 @@ export type CvObject = {
   ripeness?: { stage: string; confidence?: number; status: 'assessed' | 'unknown' };
   visibleDefects?: Array<{ type: string; areaPercent?: number; severity?: string; confidence?: number }>;
   visualGrade?: { grade: VisualGradeValue; reasons: string[]; confidence?: number };
+  // G7 (GPT review item 6): three SEPARATE heads, each with an explicit "unable to assess" state. Optional for
+  // backward compatibility; when present all three keys are required. The A/B/C grade never reads these silently.
+  assessments?: ObjectAssessments;
 };
+
+export type AssessmentStatus = 'assessed' | 'unable_to_assess' | 'not_applicable';
+export type RipenessAssessment = { status: AssessmentStatus; stage?: 'unripe' | 'ripe' | 'overripe'; confidence?: number; reason?: string };
+export type FreshnessAssessment = { status: AssessmentStatus; level?: 'fresh' | 'rotten'; confidence?: number; reason?: string };
+export type DefectsAssessment = {
+  status: AssessmentStatus; reason?: string;
+  defects?: Array<{ type: string; areaPercent?: number; severity?: string; confidence?: number }>;
+};
+export type ObjectAssessments = { ripeness: RipenessAssessment; visibleDefects: DefectsAssessment; freshness: FreshnessAssessment };
+export const ASSESSMENT_STATUSES: readonly AssessmentStatus[] = ['assessed', 'unable_to_assess', 'not_applicable'];
 
 export type CvAssessment = {
   assessmentId: string;
@@ -83,6 +96,7 @@ export function validateCvAssessment(input: unknown): ValidationResult {
           }
         });
       }
+      if (o.assessments !== undefined) e.push(...validateAssessments(o.assessments, `${p}.assessments`));
       if (o.visualGrade !== undefined) {
         const g = o.visualGrade;
         if (!isObj(g) || !GRADES.includes(g.grade as VisualGradeValue) || !isStrArr(g.reasons)) e.push(`${p}.visualGrade invalid`);
@@ -96,4 +110,56 @@ export function validateCvAssessment(input: unknown): ValidationResult {
   }
   if (a.status === 'supported' && Array.isArray(a.objects) && a.objects.length === 0) e.push("status 'supported' requires at least one object");
   return e.length ? { ok: false, errors: e } : { ok: true, value: a as unknown as CvAssessment };
+}
+
+/** G7: validate the separated ripeness / visibleDefects / freshness heads. Rules: every head present; status in
+ *  ASSESSMENT_STATUSES; 'assessed' carries its value (stage / level / defects array, possibly empty); 'unable_to_assess'
+ *  and 'not_applicable' carry a non-empty reason and no value; confidences in [0,1]; reasons make no non-visual claim. */
+export function validateAssessments(x: unknown, p = 'assessments'): string[] {
+  const e: string[] = [];
+  if (!isObj(x)) return [`${p} must be an object`];
+  const heads: Array<['ripeness' | 'visibleDefects' | 'freshness', string]> = [['ripeness', 'stage'], ['visibleDefects', 'defects'], ['freshness', 'level']];
+  for (const [k, valueKey] of heads) {
+    const h = x[k];
+    const q = `${p}.${k}`;
+    if (!isObj(h)) { e.push(`${q} required`); continue; }
+    if (!ASSESSMENT_STATUSES.includes(h.status as AssessmentStatus)) { e.push(`${q}.status must be one of ${ASSESSMENT_STATUSES.join(', ')}`); continue; }
+    if (h.confidence !== undefined && !isProb(h.confidence)) e.push(`${q}.confidence must be in [0,1]`);
+    if (h.status === 'assessed') {
+      if (k === 'ripeness' && !['unripe', 'ripe', 'overripe'].includes(h.stage as string)) e.push(`${q}.stage required when assessed`);
+      if (k === 'freshness' && !['fresh', 'rotten'].includes(h.level as string)) e.push(`${q}.level required when assessed`);
+      if (k === 'visibleDefects') {
+        if (!Array.isArray(h.defects)) e.push(`${q}.defects array required when assessed`);
+        else h.defects.forEach((d, j) => {
+          if (!isObj(d) || typeof d.type !== 'string') e.push(`${q}.defects[${j}].type required`);
+          else if (d.areaPercent !== undefined && !(isNum(d.areaPercent) && d.areaPercent >= 0 && d.areaPercent <= 100)) e.push(`${q}.defects[${j}].areaPercent must be 0-100`);
+        });
+      }
+    } else {
+      if (typeof h.reason !== 'string' || h.reason.length === 0) e.push(`${q}.reason required when ${h.status}`);
+      if (h[valueKey] !== undefined) e.push(`${q}.${valueKey} must be absent when ${h.status}`);
+    }
+    if (typeof h.reason === 'string' && BANNED_CLAIMS.some((re) => re.test(h.reason as string))) e.push(`${q}.reason makes a non-visual claim`);
+  }
+  return e;
+}
+
+/** Placeholder-aware builder: a head that is not available returns unable_to_assess with a reason, never a guess. */
+export function buildAssessments(inp: {
+  ripeness?: { stage: string; status: 'assessed' | 'unknown'; confidence?: number } | null; ripenessEnabled?: boolean; ripenessApplicable?: boolean;
+  freshness?: { level: 'fresh' | 'rotten'; confidence?: number } | null; freshnessReason?: string;
+  defects?: DefectsAssessment['defects'] | null;
+}): ObjectAssessments {
+  let ripeness: RipenessAssessment;
+  if (inp.ripenessApplicable === false) ripeness = { status: 'not_applicable', reason: 'no ripeness model for this produce class' };
+  else if (!inp.ripenessEnabled) ripeness = { status: 'unable_to_assess', reason: 'ripeness head disabled in config' };
+  else if (!inp.ripeness || inp.ripeness.status !== 'assessed') ripeness = { status: 'unable_to_assess', reason: 'low confidence or classifier disagrees on the fruit', ...(inp.ripeness?.confidence !== undefined ? { confidence: inp.ripeness.confidence } : {}) };
+  else ripeness = { status: 'assessed', stage: inp.ripeness.stage as RipenessAssessment['stage'], ...(inp.ripeness.confidence !== undefined ? { confidence: inp.ripeness.confidence } : {}) };
+  const freshness: FreshnessAssessment = inp.freshness
+    ? { status: 'assessed', level: inp.freshness.level, ...(inp.freshness.confidence !== undefined ? { confidence: inp.freshness.confidence } : {}) }
+    : { status: 'unable_to_assess', reason: inp.freshnessReason ?? 'item not stable or quality classifier abstained' };
+  const visibleDefects: DefectsAssessment = inp.defects
+    ? { status: 'assessed', defects: inp.defects }
+    : { status: 'unable_to_assess', reason: 'no localised defect model yet (placeholder head)' };
+  return { ripeness, visibleDefects, freshness };
 }
