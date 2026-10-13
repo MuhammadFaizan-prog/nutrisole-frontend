@@ -1,0 +1,290 @@
+{
+ "gauntlet_g3": {
+  "frame_acc": 0.4092,
+  "segment_acc": 0.5417,
+  "never_correct": 9,
+  "ttfc": {
+   "p50": 600.0,
+   "p90": 1453.3334,
+   "max": 2400.0,
+   "n": 15
+  },
+  "fa_min": 0.75,
+  "fa_ep_min": 0.75,
+  "det_ms": {
+   "p50": 44.74427000002379,
+   "p90": 52.52085620001026,
+   "p95": 56.090067199988816
+  },
+  "per_class": {
+   "banana": {
+    "n": 413,
+    "recall": 0.564
+   },
+   "apple": {
+    "n": 240,
+    "recall": 0.629
+   },
+   "citrus": {
+    "n": 299,
+    "recall": 0.559
+   },
+   "tomato": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "potato": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "cucumber": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "carrot": {
+    "n": 240,
+    "recall": 0.146
+   },
+   "capsicum": {
+    "n": 60,
+    "recall": 0.0
+   }
+  }
+ },
+ "gauntlet_snapml": {
+  "frame_acc": 0.1753,
+  "segment_acc": 0.375,
+  "never_correct": 15,
+  "ttfc": {
+   "p50": 1133.3329999999987,
+   "p90": 3133.3336000000013,
+   "max": 3400.0,
+   "n": 9
+  },
+  "fa_min": 14.25,
+  "fa_ep_min": 0.75,
+  "det_ms": {
+   "p50": 26.008398999920246,
+   "p90": 27.24422140001934,
+   "p95": 75.59091859998252
+  },
+  "per_class": {
+   "banana": {
+    "n": 413,
+    "recall": 0.017
+   },
+   "apple": {
+    "n": 240,
+    "recall": 0.333
+   },
+   "citrus": {
+    "n": 299,
+    "recall": 0.338
+   },
+   "tomato": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "potato": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "cucumber": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "carrot": {
+    "n": 240,
+    "recall": 0.263
+   },
+   "capsicum": {
+    "n": 60,
+    "recall": 0.0
+   }
+  }
+ },
+ "gauntlet_calories": {
+  "frame_acc": 0.162,
+  "segment_acc": 0.2917,
+  "never_correct": 16,
+  "ttfc": {
+   "p50": 666.6664999999994,
+   "p90": 1413.3331999999994,
+   "max": 2066.6670000000013,
+   "n": 8
+  },
+  "fa_min": 6.25,
+  "fa_ep_min": 0.25,
+  "det_ms": {
+   "p50": 301.772675000052,
+   "p90": 322.22096640002746,
+   "p95": 351.93474619998096
+  },
+  "per_class": {
+   "banana": {
+    "n": 413,
+    "recall": 0.199
+   },
+   "apple": {
+    "n": 240,
+    "recall": 0.333
+   },
+   "citrus": {
+    "n": 299,
+    "recall": 0.234
+   },
+   "tomato": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "potato": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "cucumber": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "carrot": {
+    "n": 240,
+    "recall": 0.0
+   },
+   "capsicum": {
+    "n": 60,
+    "recall": 0.0
+   }
+  }
+ },
+ "vb8dev_g3": {
+  "sampled": 1280,
+  "frames_any": 480,
+  "title_hit_mean": 0.3506,
+  "off_title_frames": 113,
+  "chilli_capsicum_frames": 62,
+  "chilli_frames": 246,
+  "latency": {
+   "p50": 57.47934700002588,
+   "p90": 72.39149630013344,
+   "p95": 141.81598915004082,
+   "n": 1280
+  }
+ },
+ "vb8dev_snapml": {
+  "sampled": 1280,
+  "frames_any": 475,
+  "title_hit_mean": 0.1881,
+  "off_title_frames": 34,
+  "chilli_capsicum_frames": 127,
+  "chilli_frames": 246,
+  "latency": {
+   "p50": 30.17767799997273,
+   "p90": 37.58411869996509,
+   "p95": 78.82050229997047,
+   "n": 1280
+  }
+ },
+ "vb8dev_calories": {
+  "sampled": 1280,
+  "frames_any": 60,
+  "title_hit_mean": 0.0052,
+  "off_title_frames": 6,
+  "chilli_capsicum_frames": 0,
+  "chilli_frames": 246,
+  "latency": {
+   "p50": 287.6740045001043,
+   "p90": 346.7418960997293,
+   "p95": 578.9044741497943,
+   "n": 1280
+  }
+ },
+ "still_g3": {
+  "all": {
+   "banana": 0.5592,
+   "apple": 0.5988,
+   "mango": 0.6958,
+   "citrus": 0.7524,
+   "guava": null,
+   "pomegranate": 0.4548,
+   "lemon_lime": 0.1165,
+   "tomato": 0.4468,
+   "potato": 0.0017,
+   "cucumber": 0.261,
+   "carrot": 0.4112,
+   "capsicum": 0.252
+  },
+  "non_oiv7": {
+   "banana": 0.5655,
+   "apple": 0.6022,
+   "mango": null,
+   "citrus": 0.7521,
+   "guava": null,
+   "pomegranate": null,
+   "lemon_lime": 0.1171,
+   "tomato": 0.4535,
+   "potato": 0.0018,
+   "cucumber": 0.026,
+   "carrot": 0.4107,
+   "capsicum": 0.0156
+  }
+ },
+ "still_snapml": {
+  "all": {
+   "banana": 0.1436,
+   "apple": 0.2171,
+   "mango": 0.6153,
+   "citrus": 0.6082,
+   "guava": null,
+   "pomegranate": 0.2436,
+   "lemon_lime": 0.1186,
+   "tomato": 0.1676,
+   "potato": 0.0186,
+   "cucumber": 0.2236,
+   "carrot": 0.1397,
+   "capsicum": 0.2648
+  },
+  "non_oiv7": {
+   "banana": 0.1456,
+   "apple": 0.2215,
+   "mango": null,
+   "citrus": 0.6088,
+   "guava": null,
+   "pomegranate": null,
+   "lemon_lime": 0.1267,
+   "tomato": 0.175,
+   "potato": 0.0187,
+   "cucumber": 0.005,
+   "carrot": 0.1435,
+   "capsicum": 0.0
+  }
+ },
+ "still_calories": {
+  "all": {
+   "banana": 0.0742,
+   "apple": 0.1476,
+   "mango": 0.0019,
+   "citrus": 0.3162,
+   "guava": null,
+   "pomegranate": 0.0,
+   "lemon_lime": 0.0,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.0,
+   "capsicum": 0.0
+  },
+  "non_oiv7": {
+   "banana": 0.0792,
+   "apple": 0.1954,
+   "mango": null,
+   "citrus": 0.326,
+   "guava": null,
+   "pomegranate": null,
+   "lemon_lime": 0.0,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.0,
+   "capsicum": 0.0
+  }
+ }
+}
