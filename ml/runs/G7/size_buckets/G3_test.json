@@ -1,0 +1,112 @@
+{
+ "model": "ml/runs/G3/kaggle/nutrisole-g3-det-yolo11n-640/runs/det_yolo11n_640/weights/best.pt",
+ "split": "/workspace/work/cv/g3data/det_v3/test.txt",
+ "n_images": 557,
+ "conf": 0.25,
+ "iou_match": 0.5,
+ "device": "sandbox CPU (2 threads), PyTorch",
+ "modes": {
+  "480": {
+   "buckets": {
+    "<6": {
+     "n_gt": 1666,
+     "recall_cls": 0.001,
+     "recall_any": 0.002
+    },
+    "6-12": {
+     "n_gt": 3109,
+     "recall_cls": 0.053,
+     "recall_any": 0.055
+    },
+    "12-24": {
+     "n_gt": 3423,
+     "recall_cls": 0.311,
+     "recall_any": 0.326
+    },
+    "24-48": {
+     "n_gt": 2795,
+     "recall_cls": 0.565,
+     "recall_any": 0.587
+    },
+    ">=48": {
+     "n_gt": 1274,
+     "recall_cls": 0.692,
+     "recall_any": 0.735
+    }
+   },
+   "recall_cls_all": 0.301,
+   "precision_cls": 0.544,
+   "n_pred": 6784,
+   "latency_ms_p50": 67.9,
+   "latency_ms_p90": 84.8
+  },
+  "640": {
+   "buckets": {
+    "<6": {
+     "n_gt": 1666,
+     "recall_cls": 0.007,
+     "recall_any": 0.008
+    },
+    "6-12": {
+     "n_gt": 3109,
+     "recall_cls": 0.137,
+     "recall_any": 0.144
+    },
+    "12-24": {
+     "n_gt": 3423,
+     "recall_cls": 0.387,
+     "recall_any": 0.403
+    },
+    "24-48": {
+     "n_gt": 2795,
+     "recall_cls": 0.579,
+     "recall_any": 0.611
+    },
+    ">=48": {
+     "n_gt": 1274,
+     "recall_cls": 0.681,
+     "recall_any": 0.734
+    }
+   },
+   "recall_cls_all": 0.346,
+   "precision_cls": 0.507,
+   "n_pred": 8388,
+   "latency_ms_p50": 107.6,
+   "latency_ms_p90": 143.3
+  },
+  "800": {
+   "buckets": {
+    "<6": {
+     "n_gt": 1666,
+     "recall_cls": 0.036,
+     "recall_any": 0.037
+    },
+    "6-12": {
+     "n_gt": 3109,
+     "recall_cls": 0.212,
+     "recall_any": 0.223
+    },
+    "12-24": {
+     "n_gt": 3423,
+     "recall_cls": 0.464,
+     "recall_any": 0.478
+    },
+    "24-48": {
+     "n_gt": 2795,
+     "recall_cls": 0.625,
+     "recall_any": 0.661
+    },
+    ">=48": {
+     "n_gt": 1274,
+     "recall_cls": 0.683,
+     "recall_any": 0.735
+    }
+   },
+   "recall_cls_all": 0.401,
+   "precision_cls": 0.48,
+   "n_pred": 10261,
+   "latency_ms_p50": 198.2,
+   "latency_ms_p90": 290.4
+  }
+ }
+}
