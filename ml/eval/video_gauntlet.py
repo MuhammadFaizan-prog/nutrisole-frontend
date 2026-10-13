@@ -67,11 +67,14 @@ def run_clip(video, gt, det, det_kind, imgsz, cls, cls_names, cls_imgsz, temp, a
     if tracker_kind == "bytetrack":  # G6.4 research option; app default stays IouTracker
         from bytetrack_adapter import ByteTrackTracker
         trk = ByteTrackTracker(**(tracker_params or {}))
+    elif tracker_kind == "botsort":  # G7 DEV-only research option (no ReID, no GMC)
+        from bytetrack_adapter import BotSortTracker
+        trk = BotSortTracker(**(tracker_params or {}))
     else:
         trk = IouTracker(**(tracker_params or {}))
     tmp = TemporalRescorer(**temporal) if temporal is not None else None  # G5 Seq-NMS-style causal rescoring
     dec_thr = min(RUBRIC["detectorMinScore"], tmp.p["preScore"]) if tmp else RUBRIC["detectorMinScore"]
-    if tracker_kind == "bytetrack":
+    if tracker_kind in ("bytetrack", "botsort"):
         dec_thr = min(dec_thr, trk.p["track_low_thresh"])  # ByteTrack's second association needs low-score boxes
     di = det.get_inputs()[0].name
     ci = cls.get_inputs()[0].name if cls else None
@@ -198,6 +201,24 @@ def match(state, gtbox):
     return best
 
 
+def missed_and_frag(hit_seq, fps):
+    """G7 (GPT review): missed duration = GT-present frames with no matched shown box; fragmentation = times the object is
+    re-acquired after a miss (covered -> missed -> covered), i.e. coverage runs - 1. Independent of track ids (ID switches /
+    distinct ids report identity changes separately)."""
+    missed = sum(1 for h in hit_seq if not h)
+    runs, gaps, longest, cur, prev = 0, 0, 0, 0, None
+    for h in hit_seq:
+        if h and prev is not True:
+            runs += 1
+        if not h:
+            cur += 1; longest = max(longest, cur)
+        else:
+            cur = 0
+        prev = h
+    return dict(missed_frames=missed, missed_s=round(missed / fps, 3), longest_missed_gap_s=round(longest / fps, 3),
+                covered_frames=len(hit_seq) - missed, fragmentations=max(0, runs - 1))
+
+
 def metrics(gt, shown, kind):
     fps = gt["fps"]
     res = {}
@@ -219,6 +240,7 @@ def metrics(gt, shown, kind):
     for seg in gt["segments"]:
         labels_all, labels_static, ttfc, grades_static = [], [], None, collections.defaultdict(list)
         ids_seq = []  # G6: matched track id per frame (ID switches / fragmentation)
+        hit_seq = []  # G7: per GT-present frame, was the object covered by a shown (matched) box
         seg_corr = seg_n = 0
         for fi in range(seg["start"], seg["end"] + 1):
             fr = gt["frames"][fi]
@@ -227,6 +249,7 @@ def metrics(gt, shown, kind):
                 continue
             m = match(shown[fi], p["box_norm"])
             lab = m["label"] if m else None
+            hit_seq.append(m is not None)
             if m:
                 ids_seq.append(m["id"])
             ok = lab == p["cls"]
@@ -257,7 +280,8 @@ def metrics(gt, shown, kind):
                              label_changes_static=changes(labels_static), static_s=round(static_s, 2), label_changes_all=changes(labels_all), all_s=round(all_s, 2),
                              grade_changes_static=g_changes, static_grades=sorted({g for v in grades_static.values() for g in v}),
                              no_box_frac_static=round(sum(1 for l in labels_static if l is None) / max(1, len(labels_static)), 3),
-                             id_switches=sum(1 for a_, b_ in zip(ids_seq, ids_seq[1:]) if a_ != b_), distinct_ids=len(set(ids_seq))))
+                             id_switches=sum(1 for a_, b_ in zip(ids_seq, ids_seq[1:]) if a_ != b_), distinct_ids=len(set(ids_seq)),
+                             **missed_and_frag(hit_seq, fps)))
     ttfcs = [r["ttfc_ms"] for r in seg_rows if r["ttfc_ms"] is not None]
     st = sum(r["static_s"] for r in seg_rows)
     al = sum(r["all_s"] for r in seg_rows)
@@ -270,6 +294,9 @@ def metrics(gt, shown, kind):
                label_flicker_per_10s_all=round(10 * sum(r["label_changes_all"] for r in seg_rows) / max(1e-9, al), 3),
                grade_flicker_per_10s_static=round(10 * sum(r["grade_changes_static"] for r in seg_rows) / max(1e-9, st), 3),
                no_box_frac_static=round(float(np.mean([r["no_box_frac_static"] for r in seg_rows])), 3),
+               missed_s_total=round(sum(r["missed_s"] for r in seg_rows), 3), missed_frac=round(sum(r["missed_frames"] for r in seg_rows) / max(1, n), 4),
+               longest_missed_gap_s=max((r["longest_missed_gap_s"] for r in seg_rows), default=0.0),
+               fragmentations=sum(r["fragmentations"] for r in seg_rows), mean_fragments_per_segment=round(float(np.mean([r["fragmentations"] + (1 if r["covered_frames"] else 0) for r in seg_rows])), 3) if seg_rows else None,
                id_switches=sum(r["id_switches"] for r in seg_rows), mean_ids_per_segment=round(float(np.mean([r["distinct_ids"] for r in seg_rows])), 3) if seg_rows else None,
                segments_detail=seg_rows)
     if kind == "quality":
@@ -317,7 +344,7 @@ def main():
     ap.add_argument("--min-area-frac", type=float, default=DEFAULT_GUARD["minAreaFrac"])
     ap.add_argument("--no-guard", action="store_true", help="G1/G2 behaviour (no scene guard)")
     ap.add_argument("--kinds", default="det,quality,neg")
-    ap.add_argument("--tracker-kind", choices=["iou", "bytetrack"], default="iou", help="G6.4: association backend (bytetrack = research option, Python only)")
+    ap.add_argument("--tracker-kind", choices=["iou", "bytetrack", "botsort"], default="iou", help="G6.4: association backend (bytetrack = research option, Python only)")
     ap.add_argument("--temporal", default=None, help="G5: JSON TemporalRescorer params, e.g. '{\"window\":5}' (off by default)")
     a = ap.parse_args()
     tp = json.loads(a.tracker) if a.tracker else {}
@@ -328,7 +355,7 @@ def main():
     cls = sess(a.cls) if a.cls else None
     report = dict(det=a.det, det_kind=a.det_kind, imgsz=a.imgsz, cls=a.cls, cls_imgsz=a.cls_imgsz, temperature=a.temp,
                   device=f"CPU x{os.cpu_count()} (sandbox), onnxruntime {ort.__version__}, 2 intra-op threads",
-                  realtime_drop_frames=not a.no_realtime, mode=("realtime" if not a.no_realtime else f"fixed-frame stride {a.stride}"), scene_guard=guard, tracker_kind=a.tracker_kind, tracker_params=(IouTracker(**tp).p if a.tracker_kind == "iou" else __import__("bytetrack_adapter").ByteTrackTracker(**tp).p), temporal=(TemporalRescorer(**temporal).p if temporal is not None else None), rubric=RUBRIC["rubricVersion"],
+                  realtime_drop_frames=not a.no_realtime, mode=("realtime" if not a.no_realtime else f"fixed-frame stride {a.stride}"), scene_guard=guard, tracker_kind=a.tracker_kind, tracker_params=(IouTracker(**tp).p if a.tracker_kind == "iou" else getattr(__import__("bytetrack_adapter"), "BotSortTracker" if a.tracker_kind == "botsort" else "ByteTrackTracker")(**tp).p), temporal=(TemporalRescorer(**temporal).p if temporal is not None else None), rubric=RUBRIC["rubricVersion"],
                   disclaimer="Synthetic handheld clips from locked TEST images: regression test, not a headline or phone number.", clips={})
     all_det, all_full = [], []
     for kind in a.kinds.split(","):
