@@ -1,0 +1,153 @@
+{
+ "model": "yolo11n.pt",
+ "name": "det_yolo11n_g7_sB",
+ "arm": "sB",
+ "seed": 1,
+ "rfs": false,
+ "recipe": "G3 det_run_g3.py",
+ "variant": "rpx",
+ "imgsz": 640,
+ "epochs": 150,
+ "data_counts": {
+  "audit_removed_from_train": 0,
+  "train": 4927,
+  "val": 727,
+  "test_guava": 121,
+  "test_capsicum_whole": 12,
+  "train_instances": {
+   "capsicum": 1760,
+   "potato": 698,
+   "carrot": 3293,
+   "tomato": 3231,
+   "lemon_lime": 1966,
+   "apple": 2935,
+   "banana": 3846,
+   "citrus": 5461,
+   "cucumber": 1074,
+   "guava": 324,
+   "pomegranate": 540,
+   "mango": 276
+  },
+  "train_backgrounds": 1005
+ },
+ "train_wall_s": 6179.8,
+ "torch": "2.11.0+cu128",
+ "ultralytics": "8.4.175",
+ "gpu": "Tesla T4",
+ "evals": [
+  {
+   "split": "val",
+   "n": 727,
+   "imgsz": 480,
+   "device": "Tesla T4",
+   "mAP50": 0.4874,
+   "mAP50_95": 0.3641,
+   "per_class": {
+    "banana": {
+     "P": 0.6357,
+     "R": 0.4989,
+     "mAP50": 0.523,
+     "mAP50_95": 0.2816
+    },
+    "apple": {
+     "P": 0.6945,
+     "R": 0.5482,
+     "mAP50": 0.6301,
+     "mAP50_95": 0.5043
+    },
+    "mango": {
+     "P": 0.4922,
+     "R": 0.4545,
+     "mAP50": 0.492,
+     "mAP50_95": 0.4072
+    },
+    "citrus": {
+     "P": 0.7035,
+     "R": 0.6214,
+     "mAP50": 0.6591,
+     "mAP50_95": 0.5482
+    },
+    "guava": {
+     "P": 0.9644,
+     "R": 0.928,
+     "mAP50": 0.9721,
+     "mAP50_95": 0.8072
+    },
+    "pomegranate": {
+     "P": 0.3264,
+     "R": 0.375,
+     "mAP50": 0.3825,
+     "mAP50_95": 0.3068
+    },
+    "lemon_lime": {
+     "P": 0.697,
+     "R": 0.5242,
+     "mAP50": 0.6049,
+     "mAP50_95": 0.4844
+    },
+    "tomato": {
+     "P": 0.5234,
+     "R": 0.4164,
+     "mAP50": 0.4204,
+     "mAP50_95": 0.2845
+    },
+    "potato": {
+     "P": 0.0654,
+     "R": 0.04,
+     "mAP50": 0.0093,
+     "mAP50_95": 0.008
+    },
+    "cucumber": {
+     "P": 0.5432,
+     "R": 0.2532,
+     "mAP50": 0.3006,
+     "mAP50_95": 0.2136
+    },
+    "carrot": {
+     "P": 0.5779,
+     "R": 0.3808,
+     "mAP50": 0.4001,
+     "mAP50_95": 0.2494
+    },
+    "capsicum": {
+     "P": 0.6806,
+     "R": 0.412,
+     "mAP50": 0.4547,
+     "mAP50_95": 0.2742
+    }
+   }
+  },
+  {
+   "split": "test_guava",
+   "n": 121,
+   "imgsz": 480,
+   "device": "Tesla T4",
+   "mAP50": 0.9488,
+   "mAP50_95": 0.7707,
+   "per_class": {
+    "guava": {
+     "P": 0.9837,
+     "R": 0.9227,
+     "mAP50": 0.9488,
+     "mAP50_95": 0.7707
+    }
+   }
+  },
+  {
+   "split": "test_capsicum_whole",
+   "n": 12,
+   "imgsz": 480,
+   "device": "Tesla T4",
+   "mAP50": 0.8187,
+   "mAP50_95": 0.3775,
+   "per_class": {
+    "capsicum": {
+     "P": 0.8542,
+     "R": 0.6936,
+     "mAP50": 0.8187,
+     "mAP50_95": 0.3775
+    }
+   }
+  }
+ ]
+}
