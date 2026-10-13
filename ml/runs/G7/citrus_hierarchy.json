@@ -165,6 +165,86 @@
      "wrong": 62
     }
    }
+  },
+  "G7sB": {
+   "model": "/workspace/work/cv/g7models/G7sB/det_yolo11n_g7_sB_raw.onnx",
+   "val_grid": {
+    "0.4": {
+     "coverage": 0.9563,
+     "subtype_precision": 0.8686,
+     "wrong": 23
+    },
+    "0.5": {
+     "coverage": 0.9016,
+     "subtype_precision": 0.8667,
+     "wrong": 22
+    },
+    "0.6": {
+     "coverage": 0.8525,
+     "subtype_precision": 0.8782,
+     "wrong": 19
+    },
+    "0.7": {
+     "coverage": 0.765,
+     "subtype_precision": 0.8786,
+     "wrong": 17
+    }
+   },
+   "picked_tau": 0.7,
+   "flat": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.806,
+     "committed": 241,
+     "correct": 193,
+     "wrong": 48,
+     "generic": 0,
+     "subtype_precision": 0.8008,
+     "wrong_rate_of_family": 0.1992
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.6798,
+     "committed": 414,
+     "correct": 326,
+     "wrong": 88,
+     "generic": 0,
+     "subtype_precision": 0.7874,
+     "wrong_rate_of_family": 0.2126
+    },
+    "pooled": {
+     "coverage": 1.0,
+     "subtype_precision": 0.7924,
+     "wrong": 136
+    }
+   },
+   "hierarchical": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.806,
+     "committed": 164,
+     "correct": 139,
+     "wrong": 25,
+     "generic": 77,
+     "subtype_precision": 0.8476,
+     "wrong_rate_of_family": 0.1037
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.6798,
+     "committed": 245,
+     "correct": 202,
+     "wrong": 43,
+     "generic": 169,
+     "subtype_precision": 0.8245,
+     "wrong_rate_of_family": 0.1039
+    },
+    "pooled": {
+     "coverage": 0.6244,
+     "subtype_precision": 0.8337,
+     "wrong": 68
+    }
+   }
   }
  }
 }
