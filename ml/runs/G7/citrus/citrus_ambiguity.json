@@ -1,0 +1,543 @@
+{
+ "model": "det_yolo11n_640_raw.onnx",
+ "imgsz": 480,
+ "nms_iou": 0.7,
+ "iou_match": 0.5,
+ "device": "sandbox CPU, onnxruntime",
+ "ratios": [
+  0.3,
+  0.4,
+  0.5,
+  0.6,
+  0.7
+ ],
+ "note": "val = OIV7c val (selection only); test_oiv7c measured once with the selected ratio",
+ "conf_0.35": {
+  "val": {
+   "n_images": 71,
+   "grid": {
+    "0.3": {
+     "lemon_lime": {
+      "n_gt": 138,
+      "missed": 54,
+      "other_class": 7,
+      "family_matched": 77,
+      "correct": 31,
+      "ambiguous": 5,
+      "wrong": 41,
+      "baseline_correct": 34,
+      "baseline_wrong": 43,
+      "wrong_rate": 0.5325,
+      "baseline_wrong_rate": 0.5584,
+      "ambiguous_rate_on_correct": 0.0882
+     },
+     "citrus": {
+      "n_gt": 102,
+      "missed": 28,
+      "other_class": 10,
+      "family_matched": 64,
+      "correct": 63,
+      "ambiguous": 0,
+      "wrong": 1,
+      "baseline_correct": 63,
+      "baseline_wrong": 1,
+      "wrong_rate": 0.0156,
+      "baseline_wrong_rate": 0.0156,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "pooled": {
+      "wrong": 42,
+      "baseline_wrong": 44,
+      "wrong_reduction": 0.0455,
+      "ambiguous_rate_on_correct": 0.0309
+     }
+    },
+    "0.4": {
+     "lemon_lime": {
+      "n_gt": 138,
+      "missed": 54,
+      "other_class": 7,
+      "family_matched": 77,
+      "correct": 34,
+      "ambiguous": 2,
+      "wrong": 41,
+      "baseline_correct": 34,
+      "baseline_wrong": 43,
+      "wrong_rate": 0.5325,
+      "baseline_wrong_rate": 0.5584,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "citrus": {
+      "n_gt": 102,
+      "missed": 28,
+      "other_class": 10,
+      "family_matched": 64,
+      "correct": 63,
+      "ambiguous": 0,
+      "wrong": 1,
+      "baseline_correct": 63,
+      "baseline_wrong": 1,
+      "wrong_rate": 0.0156,
+      "baseline_wrong_rate": 0.0156,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "pooled": {
+      "wrong": 42,
+      "baseline_wrong": 44,
+      "wrong_reduction": 0.0455,
+      "ambiguous_rate_on_correct": 0.0
+     }
+    },
+    "0.5": {
+     "lemon_lime": {
+      "n_gt": 138,
+      "missed": 54,
+      "other_class": 7,
+      "family_matched": 77,
+      "correct": 34,
+      "ambiguous": 2,
+      "wrong": 41,
+      "baseline_correct": 34,
+      "baseline_wrong": 43,
+      "wrong_rate": 0.5325,
+      "baseline_wrong_rate": 0.5584,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "citrus": {
+      "n_gt": 102,
+      "missed": 28,
+      "other_class": 10,
+      "family_matched": 64,
+      "correct": 63,
+      "ambiguous": 0,
+      "wrong": 1,
+      "baseline_correct": 63,
+      "baseline_wrong": 1,
+      "wrong_rate": 0.0156,
+      "baseline_wrong_rate": 0.0156,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "pooled": {
+      "wrong": 42,
+      "baseline_wrong": 44,
+      "wrong_reduction": 0.0455,
+      "ambiguous_rate_on_correct": 0.0
+     }
+    },
+    "0.6": {
+     "lemon_lime": {
+      "n_gt": 138,
+      "missed": 54,
+      "other_class": 7,
+      "family_matched": 77,
+      "correct": 34,
+      "ambiguous": 0,
+      "wrong": 43,
+      "baseline_correct": 34,
+      "baseline_wrong": 43,
+      "wrong_rate": 0.5584,
+      "baseline_wrong_rate": 0.5584,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "citrus": {
+      "n_gt": 102,
+      "missed": 28,
+      "other_class": 10,
+      "family_matched": 64,
+      "correct": 63,
+      "ambiguous": 0,
+      "wrong": 1,
+      "baseline_correct": 63,
+      "baseline_wrong": 1,
+      "wrong_rate": 0.0156,
+      "baseline_wrong_rate": 0.0156,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "pooled": {
+      "wrong": 44,
+      "baseline_wrong": 44,
+      "wrong_reduction": 0.0,
+      "ambiguous_rate_on_correct": 0.0
+     }
+    },
+    "0.7": {
+     "lemon_lime": {
+      "n_gt": 138,
+      "missed": 54,
+      "other_class": 7,
+      "family_matched": 77,
+      "correct": 34,
+      "ambiguous": 0,
+      "wrong": 43,
+      "baseline_correct": 34,
+      "baseline_wrong": 43,
+      "wrong_rate": 0.5584,
+      "baseline_wrong_rate": 0.5584,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "citrus": {
+      "n_gt": 102,
+      "missed": 28,
+      "other_class": 10,
+      "family_matched": 64,
+      "correct": 63,
+      "ambiguous": 0,
+      "wrong": 1,
+      "baseline_correct": 63,
+      "baseline_wrong": 1,
+      "wrong_rate": 0.0156,
+      "baseline_wrong_rate": 0.0156,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "pooled": {
+      "wrong": 44,
+      "baseline_wrong": 44,
+      "wrong_reduction": 0.0,
+      "ambiguous_rate_on_correct": 0.0
+     }
+    }
+   },
+   "picked_ratio": 0.4
+  },
+  "test_oiv7c": {
+   "n_images": 181,
+   "off": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "missed": 107,
+     "other_class": 31,
+     "family_matched": 161,
+     "correct": 55,
+     "ambiguous": 0,
+     "wrong": 106,
+     "baseline_correct": 55,
+     "baseline_wrong": 106,
+     "wrong_rate": 0.6584,
+     "baseline_wrong_rate": 0.6584,
+     "ambiguous_rate_on_correct": 0.0
+    },
+    "citrus": {
+     "n_gt": 609,
+     "missed": 216,
+     "other_class": 37,
+     "family_matched": 356,
+     "correct": 354,
+     "ambiguous": 0,
+     "wrong": 2,
+     "baseline_correct": 354,
+     "baseline_wrong": 2,
+     "wrong_rate": 0.0056,
+     "baseline_wrong_rate": 0.0056,
+     "ambiguous_rate_on_correct": 0.0
+    },
+    "pooled": {
+     "wrong": 108,
+     "baseline_wrong": 108,
+     "wrong_reduction": 0.0,
+     "ambiguous_rate_on_correct": 0.0
+    }
+   },
+   "on": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "missed": 107,
+     "other_class": 31,
+     "family_matched": 161,
+     "correct": 54,
+     "ambiguous": 6,
+     "wrong": 101,
+     "baseline_correct": 55,
+     "baseline_wrong": 106,
+     "wrong_rate": 0.6273,
+     "baseline_wrong_rate": 0.6584,
+     "ambiguous_rate_on_correct": 0.0182
+    },
+    "citrus": {
+     "n_gt": 609,
+     "missed": 216,
+     "other_class": 37,
+     "family_matched": 356,
+     "correct": 352,
+     "ambiguous": 2,
+     "wrong": 2,
+     "baseline_correct": 354,
+     "baseline_wrong": 2,
+     "wrong_rate": 0.0056,
+     "baseline_wrong_rate": 0.0056,
+     "ambiguous_rate_on_correct": 0.0056
+    },
+    "pooled": {
+     "wrong": 103,
+     "baseline_wrong": 108,
+     "wrong_reduction": 0.0463,
+     "ambiguous_rate_on_correct": 0.0073
+    }
+   }
+  },
+  "recommend_enable": false
+ },
+ "conf_0.25": {
+  "val": {
+   "n_images": 71,
+   "grid": {
+    "0.3": {
+     "lemon_lime": {
+      "n_gt": 138,
+      "missed": 41,
+      "other_class": 12,
+      "family_matched": 85,
+      "correct": 33,
+      "ambiguous": 9,
+      "wrong": 43,
+      "baseline_correct": 38,
+      "baseline_wrong": 47,
+      "wrong_rate": 0.5059,
+      "baseline_wrong_rate": 0.5529,
+      "ambiguous_rate_on_correct": 0.1316
+     },
+     "citrus": {
+      "n_gt": 102,
+      "missed": 25,
+      "other_class": 12,
+      "family_matched": 65,
+      "correct": 64,
+      "ambiguous": 0,
+      "wrong": 1,
+      "baseline_correct": 64,
+      "baseline_wrong": 1,
+      "wrong_rate": 0.0154,
+      "baseline_wrong_rate": 0.0154,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "pooled": {
+      "wrong": 44,
+      "baseline_wrong": 48,
+      "wrong_reduction": 0.0833,
+      "ambiguous_rate_on_correct": 0.049
+     }
+    },
+    "0.4": {
+     "lemon_lime": {
+      "n_gt": 138,
+      "missed": 41,
+      "other_class": 12,
+      "family_matched": 85,
+      "correct": 37,
+      "ambiguous": 5,
+      "wrong": 43,
+      "baseline_correct": 38,
+      "baseline_wrong": 47,
+      "wrong_rate": 0.5059,
+      "baseline_wrong_rate": 0.5529,
+      "ambiguous_rate_on_correct": 0.0263
+     },
+     "citrus": {
+      "n_gt": 102,
+      "missed": 25,
+      "other_class": 12,
+      "family_matched": 65,
+      "correct": 64,
+      "ambiguous": 0,
+      "wrong": 1,
+      "baseline_correct": 64,
+      "baseline_wrong": 1,
+      "wrong_rate": 0.0154,
+      "baseline_wrong_rate": 0.0154,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "pooled": {
+      "wrong": 44,
+      "baseline_wrong": 48,
+      "wrong_reduction": 0.0833,
+      "ambiguous_rate_on_correct": 0.0098
+     }
+    },
+    "0.5": {
+     "lemon_lime": {
+      "n_gt": 138,
+      "missed": 41,
+      "other_class": 12,
+      "family_matched": 85,
+      "correct": 37,
+      "ambiguous": 5,
+      "wrong": 43,
+      "baseline_correct": 38,
+      "baseline_wrong": 47,
+      "wrong_rate": 0.5059,
+      "baseline_wrong_rate": 0.5529,
+      "ambiguous_rate_on_correct": 0.0263
+     },
+     "citrus": {
+      "n_gt": 102,
+      "missed": 25,
+      "other_class": 12,
+      "family_matched": 65,
+      "correct": 64,
+      "ambiguous": 0,
+      "wrong": 1,
+      "baseline_correct": 64,
+      "baseline_wrong": 1,
+      "wrong_rate": 0.0154,
+      "baseline_wrong_rate": 0.0154,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "pooled": {
+      "wrong": 44,
+      "baseline_wrong": 48,
+      "wrong_reduction": 0.0833,
+      "ambiguous_rate_on_correct": 0.0098
+     }
+    },
+    "0.6": {
+     "lemon_lime": {
+      "n_gt": 138,
+      "missed": 41,
+      "other_class": 12,
+      "family_matched": 85,
+      "correct": 37,
+      "ambiguous": 1,
+      "wrong": 47,
+      "baseline_correct": 38,
+      "baseline_wrong": 47,
+      "wrong_rate": 0.5529,
+      "baseline_wrong_rate": 0.5529,
+      "ambiguous_rate_on_correct": 0.0263
+     },
+     "citrus": {
+      "n_gt": 102,
+      "missed": 25,
+      "other_class": 12,
+      "family_matched": 65,
+      "correct": 64,
+      "ambiguous": 0,
+      "wrong": 1,
+      "baseline_correct": 64,
+      "baseline_wrong": 1,
+      "wrong_rate": 0.0154,
+      "baseline_wrong_rate": 0.0154,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "pooled": {
+      "wrong": 48,
+      "baseline_wrong": 48,
+      "wrong_reduction": 0.0,
+      "ambiguous_rate_on_correct": 0.0098
+     }
+    },
+    "0.7": {
+     "lemon_lime": {
+      "n_gt": 138,
+      "missed": 41,
+      "other_class": 12,
+      "family_matched": 85,
+      "correct": 37,
+      "ambiguous": 1,
+      "wrong": 47,
+      "baseline_correct": 38,
+      "baseline_wrong": 47,
+      "wrong_rate": 0.5529,
+      "baseline_wrong_rate": 0.5529,
+      "ambiguous_rate_on_correct": 0.0263
+     },
+     "citrus": {
+      "n_gt": 102,
+      "missed": 25,
+      "other_class": 12,
+      "family_matched": 65,
+      "correct": 64,
+      "ambiguous": 0,
+      "wrong": 1,
+      "baseline_correct": 64,
+      "baseline_wrong": 1,
+      "wrong_rate": 0.0154,
+      "baseline_wrong_rate": 0.0154,
+      "ambiguous_rate_on_correct": 0.0
+     },
+     "pooled": {
+      "wrong": 48,
+      "baseline_wrong": 48,
+      "wrong_reduction": 0.0,
+      "ambiguous_rate_on_correct": 0.0098
+     }
+    }
+   },
+   "picked_ratio": 0.4
+  },
+  "test_oiv7c": {
+   "n_images": 181,
+   "off": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "missed": 88,
+     "other_class": 37,
+     "family_matched": 174,
+     "correct": 60,
+     "ambiguous": 0,
+     "wrong": 114,
+     "baseline_correct": 60,
+     "baseline_wrong": 114,
+     "wrong_rate": 0.6552,
+     "baseline_wrong_rate": 0.6552,
+     "ambiguous_rate_on_correct": 0.0
+    },
+    "citrus": {
+     "n_gt": 609,
+     "missed": 183,
+     "other_class": 43,
+     "family_matched": 383,
+     "correct": 380,
+     "ambiguous": 0,
+     "wrong": 3,
+     "baseline_correct": 380,
+     "baseline_wrong": 3,
+     "wrong_rate": 0.0078,
+     "baseline_wrong_rate": 0.0078,
+     "ambiguous_rate_on_correct": 0.0
+    },
+    "pooled": {
+     "wrong": 117,
+     "baseline_wrong": 117,
+     "wrong_reduction": 0.0,
+     "ambiguous_rate_on_correct": 0.0
+    }
+   },
+   "on": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "missed": 88,
+     "other_class": 37,
+     "family_matched": 174,
+     "correct": 57,
+     "ambiguous": 8,
+     "wrong": 109,
+     "baseline_correct": 60,
+     "baseline_wrong": 114,
+     "wrong_rate": 0.6264,
+     "baseline_wrong_rate": 0.6552,
+     "ambiguous_rate_on_correct": 0.05
+    },
+    "citrus": {
+     "n_gt": 609,
+     "missed": 183,
+     "other_class": 43,
+     "family_matched": 383,
+     "correct": 378,
+     "ambiguous": 3,
+     "wrong": 2,
+     "baseline_correct": 380,
+     "baseline_wrong": 3,
+     "wrong_rate": 0.0052,
+     "baseline_wrong_rate": 0.0078,
+     "ambiguous_rate_on_correct": 0.0053
+    },
+    "pooled": {
+     "wrong": 111,
+     "baseline_wrong": 117,
+     "wrong_reduction": 0.0513,
+     "ambiguous_rate_on_correct": 0.0114
+    }
+   }
+  },
+  "recommend_enable": false
+ }
+}
