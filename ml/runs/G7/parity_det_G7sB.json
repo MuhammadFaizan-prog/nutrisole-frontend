@@ -1,0 +1,17 @@
+{
+ "detector": {
+  "pt": "/workspace/work/cv/g7models/k_sB/runs/det_yolo11n_g7_sB/weights/best.pt",
+  "onnx": "/workspace/work/cv/g7models/G7sB/det_yolo11n_g7_sB_raw.onnx",
+  "images": 40,
+  "imgsz": 480,
+  "matched_pairs": 475,
+  "class_disagreements": 0,
+  "min_iou": 0.9999944656666373,
+  "mean_iou": 0.9999989207576958,
+  "max_dconf": 4.678964614868164e-06,
+  "mean_dconf": 4.067546442935341e-07,
+  "unmatched_beyond_tolerance": 0,
+  "unmatched_near_threshold": 0,
+  "pass": true
+ }
+}
