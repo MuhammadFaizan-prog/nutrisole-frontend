@@ -104,15 +104,25 @@ percentile bootstrap, B=1000, seed 0; units: images (test, test_oiv7, test_oiv7c
 | split | n img | units | model | mAP50 [95% CI] | diff vs G3 [95% CI] |
 |---|---|---|---|---|---|
 | test | 557 | {'test': 557} | G3 | 0.2244 [0.1975, 0.2673] | - |
+| test | 557 | {'test': 557} | G7sA | 0.1991 [0.1762, 0.2382] | -0.0253 [-0.0479, -0.0024] |
 | test | 557 | {'test': 557} | G7sB | 0.209 [0.1838, 0.2474] | -0.0153 [-0.042, 0.0114] |
+| test | 557 | {'test': 557} | G7rfs | 0.2242 [0.1975, 0.2686] | -0.0002 [-0.0209, 0.0244] |
 | test_rf | 149 | {'test_rf': 22} | G3 | 0.3552 [0.3063, 0.4275] | - |
+| test_rf | 149 | {'test_rf': 22} | G7sA | 0.3801 [0.3407, 0.4763] | 0.0249 [-0.0123, 0.1027] |
 | test_rf | 149 | {'test_rf': 22} | G7sB | 0.3851 [0.3491, 0.4622] | 0.0299 [-0.0027, 0.0826] |
+| test_rf | 149 | {'test_rf': 22} | G7rfs | 0.3761 [0.3213, 0.4813] | 0.0209 [-0.0237, 0.1043] |
 | test_oiv7 | 123 | {'test': 123} | G3 | 0.3814 [0.3326, 0.5776] | - |
+| test_oiv7 | 123 | {'test': 123} | G7sA | 0.485 [0.4008, 0.667] | 0.1036 [-0.0071, 0.191] |
 | test_oiv7 | 123 | {'test': 123} | G7sB | 0.5234 [0.4228, 0.6961] | 0.142 [-0.0036, 0.2275] |
+| test_oiv7 | 123 | {'test': 123} | G7rfs | 0.3802 [0.3551, 0.6007] | -0.0012 [-0.0545, 0.1262] |
 | test_oiv7c | 181 | {'test': 181} | G3 | 0.6343 [0.4447, 0.7188] | - |
+| test_oiv7c | 181 | {'test': 181} | G7sA | 0.6712 [0.5805, 0.7934] | 0.0369 [-0.0336, 0.2414] |
 | test_oiv7c | 181 | {'test': 181} | G7sB | 0.6751 [0.61, 0.8035] | 0.0408 [-0.0011, 0.22] |
+| test_oiv7c | 181 | {'test': 181} | G7rfs | 0.773 [0.6675, 0.8292] | 0.1387 [0.0639, 0.2511] |
 | pooled | 829 | {'test': 680, 'test_rf': 22} | G3 | 0.3141 [0.2685, 0.3744] | - |
+| pooled | 829 | {'test': 680, 'test_rf': 22} | G7sA | 0.2819 [0.2544, 0.3447] | -0.0322 [-0.0605, 0.0276] |
 | pooled | 829 | {'test': 680, 'test_rf': 22} | G7sB | 0.2859 [0.2541, 0.3422] | -0.0282 [-0.054, 0.0023] |
+| pooled | 829 | {'test': 680, 'test_rf': 22} | G7rfs | 0.3107 [0.2755, 0.366] | -0.0034 [-0.0332, 0.0411] |
 
 ## C. Independent guava eval (Mendeley w3fg8jjmzr, Larkana PK, studio single-fruit, 270 images = 30 per variety x maturity; image level; ONNX 480 CPU; conf 0.35)
 
@@ -120,6 +130,8 @@ percentile bootstrap, B=1000, seed 0; units: images (test, test_oiv7, test_oiv7c
 |---|---|---|---|---|
 | G3 | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.059 | {'mango': 182, 'pomegranate': 49, 'apple': 17, 'banana': 4, 'cucumber': 1, 'citrus': 1} |
 | G6rpx | 0.993 [0.981, 1.0] | 0.978 [0.959, 0.993] | 0.0 | {'mango': 4, 'apple': 2} |
+| G7rfs | 0.615 [0.552, 0.67] | 0.596 [0.533, 0.652] | 0.056 | {'mango': 89, 'banana': 5} |
+| G7sA | 0.337 [0.285, 0.393] | 0.315 [0.263, 0.37] | 0.041 | {'mango': 169, 'lemon_lime': 4, 'banana': 1} |
 | G7sB | 0.541 [0.478, 0.596] | 0.511 [0.452, 0.57] | 0.007 | {'mango': 124, 'lemon_lime': 6} |
 
 ## D. Tiny objects: size-bucketed recall on locked test (n=557), conf 0.25, IoU 0.5, sandbox CPU PyTorch, batch 1
@@ -132,6 +144,13 @@ percentile bootstrap, B=1000, seed 0; units: images (test, test_oiv7, test_oiv7c
 | 640 | 0.007 (n=1666) | 0.137 (n=3109) | 0.387 (n=3423) | 0.579 (n=2795) | 0.681 (n=1274) | 0.346 | 0.507 | 107.6 / 143.3 |
 | 800 | 0.036 (n=1666) | 0.212 (n=3109) | 0.464 (n=3423) | 0.625 (n=2795) | 0.683 (n=1274) | 0.401 | 0.48 | 198.2 / 290.4 |
 | tile480 | 0.032 (n=1666) | 0.233 (n=3109) | 0.5 (n=3423) | 0.677 (n=2795) | 0.749 (n=1274) | 0.435 | 0.376 | 356.9 / 486.2 |
+
+**G7rfs_test** (runs)
+
+| mode | <6 px | 6-12 | 12-24 | 24-48 | >=48 | recall all (cls) | precision | latency p50 / p90 ms |
+|---|---|---|---|---|---|---|---|---|
+| 480 | 0.0 (n=1666) | 0.021 (n=3109) | 0.212 (n=3423) | 0.461 (n=2795) | 0.648 (n=1274) | 0.237 | 0.583 | 71.4 / 95.3 |
+| 640 | 0.002 (n=1666) | 0.093 (n=3109) | 0.31 (n=3423) | 0.542 (n=2795) | 0.674 (n=1274) | 0.304 | 0.592 | 112.4 / 151.1 |
 
 **G7sA_test** (runs)
 
@@ -154,6 +173,8 @@ percentile bootstrap, B=1000, seed 0; units: images (test, test_oiv7, test_oiv7c
 | G3 | 0.6 | 0.6584 / 0.0056 / 0.7911 | 0.7872 / 0.801 / 81 (108) | 0.5385 |
 | G6rpx | 0.7 | 0.1937 / 0.2206 / 0.7887 | 0.6228 / 0.8442 / 62 (135) | 0.7425 |
 | G7sB | 0.7 | 0.1992 / 0.2126 / 0.7924 | 0.6244 / 0.8337 / 68 (136) | 0.806 |
+| G7sA | 0.5 | 0.2146 / 0.1384 / 0.8344 | 0.816 / 0.8515 / 79 (108) | 0.7793 |
+| G7rfs | 0.5 | 0.1299 / 0.2261 / 0.8092 | 0.8585 / 0.813 / 101 (120) | 0.7726 |
 
 ## F. Tracking (G1 TEST synthetic clips, G3 det ONNX raw 480 + E224 T=0.25, sandbox CPU, fixed-frame)
 
@@ -200,7 +221,7 @@ DEV tuning pick (prereg addendum C): pending
 
 ## H. Auto-labelling (Phase 3) - PROPOSED labels only
 
-pending
+Stage 1 stopped at 12 / 69 clips (2 676 sampled frames, 298 keyframes, 13 362 G3 boxes, all proposed; machine output in `/workspace/work/cv/g7al/stage1/`, outside git). Stage 2 (OWLv2) and merge not run. Human-verified: 0. (Summary file was not written by the stopped job; counts from G7.md section 5.)
 
 ## I. Web-video counts and splits v7
 
