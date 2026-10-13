@@ -64,7 +64,10 @@ def make_perfruit_fixture(path: str, model_classes: list[str]):
     rnd = random.Random(0); cases = []
     names = ["banana", "mango", "tomato", "apple", "citrus", "potato", "guava"]
     for _ in range(300):
-        raw = [rnd.random() ** 3 for _ in model_classes]; s = sum(raw); pr = [round(v / s, 6) for v in raw]
+        raw = [rnd.random() ** 3 for _ in model_classes]
+        if rnd.random() < 0.6:  # peaked case: one class dominant (assessed / margin / fruit-mass paths)
+            raw[rnd.randrange(len(raw))] += rnd.uniform(1.0, 30.0)
+        s = sum(raw); pr = [round(v / s, 6) for v in raw]
         cls = rnd.choice(names); prm = dict(enabled=True) if rnd.random() > 0.1 else {}
         cases.append(dict(cls=cls, probs=pr, params=prm, expected=ripeness_per_fruit(cls, model_classes, pr, prm)))
     json.dump(dict(model_classes=model_classes, cases=cases), open(path, "w"))
