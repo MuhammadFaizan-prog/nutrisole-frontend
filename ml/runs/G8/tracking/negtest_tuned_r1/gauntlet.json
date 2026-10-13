@@ -1,0 +1,73 @@
+{
+ "det": "/workspace/work/cv/g3models/k11_480/det_yolo11n_640_raw.onnx",
+ "det_kind": "raw",
+ "imgsz": 480,
+ "cls": "/workspace/work/cv/g3models/cls/E_224_e15_b64_sgd01.onnx",
+ "cls_imgsz": 224,
+ "temperature": 0.25,
+ "device": "CPU x2 (sandbox), onnxruntime 1.31.0, 2 intra-op threads",
+ "realtime_drop_frames": false,
+ "mode": "fixed-frame stride 1",
+ "scene_guard": {
+  "maxSameClass": 0,
+  "minAreaFrac": 0.01
+ },
+ "tracker_kind": "bytetrack",
+ "tracker_params": {
+  "track_high_thresh": 0.35,
+  "track_low_thresh": 0.1,
+  "new_track_thresh": 0.25,
+  "track_buffer": 15,
+  "match_thresh": 0.8,
+  "fuse_score": true,
+  "scoreAlpha": 0.2,
+  "switchMargin": 0.15,
+  "switchFrames": 3,
+  "minHits": 1,
+  "stableIou": 0.8,
+  "stableMs": 500,
+  "boxAlpha": 0.6
+ },
+ "temporal": null,
+ "rubric": "rubric-v0.2-g2",
+ "disclaimer": "Synthetic handheld clips from locked TEST images: regression test, not a headline or phone number.",
+ "clips": {
+  "neg": {
+   "false_alarm_tracks": 0,
+   "minutes": 2.667,
+   "false_alarms_per_min": 0.0,
+   "fa_episodes": 0,
+   "fa_episodes_per_min": 0.0,
+   "frames_with_any_box": 0,
+   "frames": 2400,
+   "n_frames": 2400,
+   "processed_frames": 2400,
+   "dropped_frames": 0,
+   "wall_s": 250.1,
+   "latency_det_ms": {
+    "p50": 50.40296299989677,
+    "p90": 211.2366862998897,
+    "p95": 323.52911649993484
+   },
+   "latency_full_ms": {
+    "p50": 50.7807659998889,
+    "p90": 211.66997779982916,
+    "p95": 326.5015850001418
+   },
+   "effective_fps": 9.8
+  }
+ },
+ "latency_overall": {
+  "det_ms": {
+   "p50": 50.40296299989677,
+   "p90": 211.2366862998897,
+   "p95": 323.52911649993484
+  },
+  "full_ms": {
+   "p50": 50.7807659998889,
+   "p90": 211.66997779982916,
+   "p95": 326.5015850001418
+  },
+  "det_fps": 9.8
+ }
+}
