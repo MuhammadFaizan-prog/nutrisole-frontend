@@ -34,3 +34,13 @@ def test_label_hysteresis_needs_consecutive_evidence():
         t.update([A], f * 100.0)
     out = t.update([dict(A, classId=7, score=0.9)], 400.0)  # one frame of a different class does not flip the label
     assert out[0]["label"] == 1
+
+
+def test_bytetrack_parity_fixture_is_current(tmp_path):
+    """G7.3: the committed TS parity fixture must equal a fresh regeneration from the adapter."""
+    import json, os
+    import bytetrack_adapter as b
+    p = tmp_path / "bt.json"
+    b.make_parity_fixture(str(p))
+    here = os.path.dirname(os.path.abspath(__file__))
+    assert json.load(open(p)) == json.load(open(os.path.join(here, "fixtures", "bytetrack_parity.json")))
