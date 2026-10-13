@@ -67,3 +67,25 @@ class FA, TTFC proxy, births/min, tracks per pair, label changes).
 
 ## 7. Loop limit
 If any step needs more than two attempts, it stops, the reason is recorded in `G9_fp_stageA.md`, and the next step proceeds.
+
+## Addendum A (Wed 2026-10-14 ~02:25 PKT): user additions, written after the DEV freeze and BEFORE any holdout replay of A0/A1/A2
+Frozen DEV choices at this point (unchanged by this addendum): A1 thresholds `ml/runs/G9/fp/thresholds_A1.json`, A2 policy
+`ml/runs/G9/fp/policy_A2.json` (minHits 3, delta 0). These additions change only what is reported, not any arm.
+1. **Holdout negatives are verified only at reviewed moments.** Holdout false alarms are reported two ways, each with its evaluated
+   negative minutes: (a) **whole clip** (G8 definition, labelled *provisional*); (b) **verified-negative windows only**: the union per
+   negative clip of [t - 1 s, t + 1 s] around every reviewed absence-check tile moment (`absence_check.csv` t_s) and around each of the
+   6 clean presence-review frames (t = D (k + 0.5) / 6, k = 0..5, D = clip duration, as in `g8_holdout_presence_sheets.py`; the
+   +-1 s around these instants is our assumption, stated). A displayed track counts as a window false alarm if it is displayed at any
+   processed frame inside a window; window FA/min = such tracks / window minutes; displayed track-seconds inside windows also reported.
+   The goal test (section 5) is reported on both; (b) is the verified one, (a) stays provisional.
+2. **Candidates for a full-video human check**: every whole-clip negative track (any arm) displayed >= 0.5 s with max displayed
+   score >= 0.70 outside the verified windows is listed (clip, time span, class, max score) - these may be real produce in
+   un-reviewed parts of the recording.
+3. **TTFC audit**: holdout TTFC proxy is time from clip start to first display of the class (G8 definition); per-pair values are
+   listed and the high p90 is explained per clip. On the DEV det clip (box-level object truth) TTFC is also measured from the
+   first frame the GT object is visible (first frame of the segment with a GT box of the segment class), next to the scorer's
+   segment-start TTFC.
+4. **Raw detector vs post-tracking** metrics are reported separately: raw = boxes after the per-class threshold and area guard,
+   before the tracker (boxes/min, frames with >= 1 box, per class); post-tracking = displayed tracks (FA/min, births, lifetime).
+   The holdout kernel additionally records per processed frame the raw G3 boxes (class, score) at the 0.35 floor after the area guard
+   so raw metrics for every arm's thresholds are computed from the same replay.
