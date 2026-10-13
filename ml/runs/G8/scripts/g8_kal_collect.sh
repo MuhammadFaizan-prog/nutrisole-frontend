@@ -3,7 +3,7 @@
 # g8models/k_al, unpacks stage1_new.tar into g7al/stage1, then runs the g8_alk.sh merge step (merge.py -> ml/runs/G8/autolabel).
 # Idempotent markers KC_* in g8logs. Outputs are PROPOSALS, never ground truth.
 cd /workspace/work/cv; source /workspace/work/cvenv/bin/activate; export KAGGLE_USERNAME_OVERRIDE=mfaizannnn KAGGLE_API_TOKEN=proxy-managed
-L=g8logs; KS=mfaizannnn/nutrisole-g8-autolabel; O=g8models/k_al; mkdir -p $O; log(){ echo "- $(date -u +%TZ) [kal-collect] $*" >> $L/progress.md; }
+L=g8logs; KS=mfaizannnn/nutrisole-g8-autolabel; O=g8models/k_al; mkdir -p $O; log(){ echo "- $(date -u +%TZ) [kal-collect] $*" >> /workspace/work/cv/g8logs/progress.md; }
 until [ -f $L/K_push ]; do [ -f $L/STOP_KAL ] && exit 0; sleep 120; done
 last=""
 until [ -f $L/KC_dl ]; do
