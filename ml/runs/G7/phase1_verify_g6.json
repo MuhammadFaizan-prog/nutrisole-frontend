@@ -1,0 +1,27 @@
+{
+ "check": "G6 tables regenerated from stored eval/gauntlet JSON artifacts with /workspace/work/cv/g6_tables.py and diffed against ml/runs/G6/tables.md at commit 88e6753",
+ "result": "byte-identical",
+ "key_values": {
+  "G3_pooled": 0.314,
+  "rp_pooled": 0.2994,
+  "rpx_pooled": 0.3097,
+  "rpx_strict_fails": {
+   "test_rf/apple": -0.0701,
+   "test_rf/tomato": -0.023
+  },
+  "iou_test_det_seg": 0.6667,
+  "bt_test_det_seg": 0.6667,
+  "id_switches_iou_bt": [
+   43,
+   30
+  ],
+  "ttfc_p90_iou_bt_ms": [
+   760,
+   933
+  ],
+  "fa_g1neg": 1.25,
+  "fa_negtest": 0.0
+ },
+ "locked_hashes": "G7 start check identical to ml/runs/G6/locked_hashes.json (ml/runs/G7/locked_hashes_start.json)",
+ "device": "sandbox CPU artifacts (no recomputation of model outputs)"
+}
