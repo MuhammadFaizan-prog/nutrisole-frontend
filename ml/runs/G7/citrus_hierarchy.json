@@ -1,0 +1,170 @@
+{
+ "conf": 0.35,
+ "imgsz": 480,
+ "iou_match": 0.5,
+ "device": "sandbox CPU, onnxruntime",
+ "val": "OIV7c val (selection)",
+ "test": "test_oiv7c (n=181 images)",
+ "models": {
+  "G3": {
+   "model": "/workspace/work/cv/g3models/k11_480/det_yolo11n_640_raw.onnx",
+   "val_grid": {
+    "0.4": {
+     "coverage": 0.9716,
+     "subtype_precision": 0.7007,
+     "wrong": 41
+    },
+    "0.5": {
+     "coverage": 0.9078,
+     "subtype_precision": 0.7031,
+     "wrong": 38
+    },
+    "0.6": {
+     "coverage": 0.7801,
+     "subtype_precision": 0.7091,
+     "wrong": 32
+    },
+    "0.7": {
+     "coverage": 0.7305,
+     "subtype_precision": 0.699,
+     "wrong": 31
+    }
+   },
+   "picked_tau": 0.6,
+   "flat": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.5385,
+     "committed": 161,
+     "correct": 55,
+     "wrong": 106,
+     "generic": 0,
+     "subtype_precision": 0.3416,
+     "wrong_rate_of_family": 0.6584
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.5846,
+     "committed": 356,
+     "correct": 354,
+     "wrong": 2,
+     "generic": 0,
+     "subtype_precision": 0.9944,
+     "wrong_rate_of_family": 0.0056
+    },
+    "pooled": {
+     "coverage": 1.0,
+     "subtype_precision": 0.7911,
+     "wrong": 108
+    }
+   },
+   "hierarchical": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.5385,
+     "committed": 124,
+     "correct": 44,
+     "wrong": 80,
+     "generic": 37,
+     "subtype_precision": 0.3548,
+     "wrong_rate_of_family": 0.4969
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.5846,
+     "committed": 283,
+     "correct": 282,
+     "wrong": 1,
+     "generic": 73,
+     "subtype_precision": 0.9965,
+     "wrong_rate_of_family": 0.0028
+    },
+    "pooled": {
+     "coverage": 0.7872,
+     "subtype_precision": 0.801,
+     "wrong": 81
+    }
+   }
+  },
+  "G6rpx": {
+   "model": "/workspace/work/cv/g6models/G6rpx/det_yolo11n_g6_rpx_raw.onnx",
+   "val_grid": {
+    "0.4": {
+     "coverage": 0.9624,
+     "subtype_precision": 0.8771,
+     "wrong": 22
+    },
+    "0.5": {
+     "coverage": 0.8978,
+     "subtype_precision": 0.8743,
+     "wrong": 21
+    },
+    "0.6": {
+     "coverage": 0.8495,
+     "subtype_precision": 0.8861,
+     "wrong": 18
+    },
+    "0.7": {
+     "coverage": 0.7312,
+     "subtype_precision": 0.9044,
+     "wrong": 13
+    }
+   },
+   "picked_tau": 0.7,
+   "flat": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.7425,
+     "committed": 222,
+     "correct": 179,
+     "wrong": 43,
+     "generic": 0,
+     "subtype_precision": 0.8063,
+     "wrong_rate_of_family": 0.1937
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.6847,
+     "committed": 417,
+     "correct": 325,
+     "wrong": 92,
+     "generic": 0,
+     "subtype_precision": 0.7794,
+     "wrong_rate_of_family": 0.2206
+    },
+    "pooled": {
+     "coverage": 1.0,
+     "subtype_precision": 0.7887,
+     "wrong": 135
+    }
+   },
+   "hierarchical": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.7425,
+     "committed": 151,
+     "correct": 134,
+     "wrong": 17,
+     "generic": 71,
+     "subtype_precision": 0.8874,
+     "wrong_rate_of_family": 0.0766
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.6847,
+     "committed": 247,
+     "correct": 202,
+     "wrong": 45,
+     "generic": 170,
+     "subtype_precision": 0.8178,
+     "wrong_rate_of_family": 0.1079
+    },
+    "pooled": {
+     "coverage": 0.6228,
+     "subtype_precision": 0.8442,
+     "wrong": 62
+    }
+   }
+  }
+ }
+}
