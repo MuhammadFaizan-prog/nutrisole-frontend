@@ -32,7 +32,7 @@ Device for every number: sandbox CPU (2 cores aarch64, onnxruntime / PyTorch CPU
 | Grading proxy TEST (cls+rules, n=270) | 0.669 | 0.978 | 0.981 | 0.985 (cls4) | 0.996 (cls5) | - | - | weak proxy, no kappa |
 | OWLv2 zero-shot mAP50 test_rf / test_oiv7 | - | - | - | 0.685 / 0.542 (teacher only) | - | - | - | |
 | Export parity (ONNX) | PASS | PASS | PASS | PASS | PASS (fthn, fthnc, cls5); ft0 1 box/681 beyond tol | PASS (rp, rpx) | PASS (sA, sB, rfs, ripeness) | |
-| Repo checks | all EXIT 0 | all EXIT 0 | all EXIT 0 | all EXIT 0 | all EXIT 0 | all EXIT 0 | TESTS_DASH | |
+| Repo checks | all EXIT 0 | all EXIT 0 | all EXIT 0 | all EXIT 0 | all EXIT 0 | all EXIT 0 | all EXIT 0 (9/9) | |
 
 ## Open gates
 G7: 69 independent Commons recordings (44 uploaders) registered, 0 human-verified, auto-label proposals for 12 / 69 clips only - still no real-video accuracy. G7 night/lighting classifier (Kaggle) pending at close.
