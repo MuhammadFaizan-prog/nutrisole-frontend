@@ -1,0 +1,4 @@
+n,clip,track,cls,t_start_s,t_end_s,displayed_s,max_score,also_A1,also_A2,also_A3
+20,cfe0b39f1,8,banana,112.9,116.1,2.64,0.752,True,True,True
+20,cfe0b39f1,12,banana,116.2,123.5,5.52,0.734,True,True,True
+20,cfe0b39f1,18,banana,122.0,125.3,2.8,0.739,True,True,True
