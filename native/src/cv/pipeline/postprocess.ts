@@ -72,3 +72,46 @@ export function faEpisodes(shownFlags: boolean[], fps: number, mergeGapS = 0.5):
   });
   return eps;
 }
+
+// G7.4 citrus-family ambiguity ("citrus (lemon/orange?)"). EXACT mirror of ml/eval/citrus_ambiguity.py `mark`
+// (parity: tests/cvCitrus.test.ts replays ml/eval/fixtures/citrus_parity.json). Behind config, DEFAULT OFF.
+// A kept box whose top class is citrus or lemon_lime is ambiguous when the OTHER family class's score at the SAME
+// anchor is >= ratio * top score. The box keeps its classId (tracking/grading unchanged); only the label text changes.
+export type CitrusAmbiguityParams = { enabled: boolean; ratio: number; citrusId: number; lemonId: number };
+export const DEFAULT_CITRUS_AMBIGUITY: CitrusAmbiguityParams = { enabled: false, ratio: 0.5, citrusId: 3, lemonId: 6 };
+export type AmbiguousDetection = Detection & { citrusAmbiguous?: boolean };
+
+export function isCitrusAmbiguous(topClass: number, scores: ArrayLike<number>, params: Partial<CitrusAmbiguityParams> = {}): boolean {
+  const P = { ...DEFAULT_CITRUS_AMBIGUITY, ...params };
+  if (topClass !== P.citrusId && topClass !== P.lemonId) return false;
+  const other = topClass === P.citrusId ? P.lemonId : P.citrusId;
+  return scores[other] >= P.ratio * scores[topClass];
+}
+
+/** decodeRawWithNms + citrus ambiguity flag. With enabled=false the boxes are identical to decodeRawWithNms. */
+export function decodeRawWithNmsCitrus(out: Float32Array, nc: number, n: number, scoreThr: number, params: Partial<CitrusAmbiguityParams> = {},
+  iouThr = 0.7, maxDet = 300): AmbiguousDetection[] {
+  const P = { ...DEFAULT_CITRUS_AMBIGUITY, ...params };
+  const cands: Array<AmbiguousDetection & { anchor: number }> = [];
+  for (let j = 0; j < n; j++) {
+    let best = -1;
+    let bestS = scoreThr;
+    for (let c = 0; c < nc; c++) {
+      const s = out[(4 + c) * n + j];
+      if (s > bestS) { bestS = s; best = c; }
+    }
+    if (best < 0) continue;
+    const cx = out[j], cy = out[n + j], w = out[2 * n + j], h = out[3 * n + j];
+    cands.push({ box: [cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2] as Box, score: bestS, classId: best, anchor: j });
+  }
+  return (nms(cands, iouThr, maxDet) as Array<AmbiguousDetection & { anchor: number }>).map(({ anchor, ...d }) => {
+    if (!P.enabled) return d;
+    const scores = Array.from({ length: nc }, (_, c) => out[(4 + c) * n + anchor]);
+    return isCitrusAmbiguous(d.classId, scores, P) ? { ...d, citrusAmbiguous: true } : d;
+  });
+}
+
+/** Display text for a (possibly ambiguous) citrus-family label. */
+export function citrusDisplayLabel(baseLabel: string, ambiguous: boolean | undefined): string {
+  return ambiguous ? 'citrus (lemon/orange?)' : baseLabel;
+}
