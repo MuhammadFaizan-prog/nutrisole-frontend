@@ -1,0 +1,1 @@
+{"id": "mfaizannnn/nutrisole-g8-autolabel", "title": "nutrisole-g8-autolabel", "code_file": "run.py", "language": "python", "kernel_type": "script", "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["mfaizannnn/nutrisole-cv-g8-kal", "asadullahprl/fruits-ripeness-classification-dataset"], "competition_sources": [], "kernel_sources": []}
