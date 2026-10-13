@@ -1,0 +1,285 @@
+{
+ "model": "/workspace/work/cv/g7models/k_sA/runs/det_yolo11n_g7_sA/weights/best.pt",
+ "device": "cpu",
+ "head": "default (one2many + NMS iou 0.7)",
+ "results": [
+  {
+   "split": "test",
+   "imgsz": 480,
+   "mAP50": 0.1991,
+   "mAP50_95": 0.1241,
+   "P": 0.3381,
+   "R": 0.2162,
+   "per_class": {
+    "banana": {
+     "P": 0.371,
+     "R": 0.3605,
+     "mAP50": 0.2988,
+     "mAP50_95": 0.1438,
+     "instances": 5048
+    },
+    "apple": {
+     "P": 0.4645,
+     "R": 0.147,
+     "mAP50": 0.1852,
+     "mAP50_95": 0.1211,
+     "instances": 2122
+    },
+    "citrus": {
+     "P": 0.6089,
+     "R": 0.383,
+     "mAP50": 0.4322,
+     "mAP50_95": 0.2896,
+     "instances": 1833
+    },
+    "lemon_lime": {
+     "P": 0.2322,
+     "R": 0.1103,
+     "mAP50": 0.0872,
+     "mAP50_95": 0.0703,
+     "instances": 290
+    },
+    "tomato": {
+     "P": 0.3192,
+     "R": 0.3642,
+     "mAP50": 0.3194,
+     "mAP50_95": 0.2186,
+     "instances": 659
+    },
+    "potato": {
+     "P": 0.2833,
+     "R": 0.1066,
+     "mAP50": 0.0702,
+     "mAP50_95": 0.0506,
+     "instances": 366
+    },
+    "cucumber": {
+     "P": 0.1385,
+     "R": 0.0721,
+     "mAP50": 0.05,
+     "mAP50_95": 0.0347,
+     "instances": 111
+    },
+    "carrot": {
+     "P": 0.3818,
+     "R": 0.3594,
+     "mAP50": 0.3063,
+     "mAP50_95": 0.1623,
+     "instances": 1558
+    },
+    "capsicum": {
+     "P": 0.2433,
+     "R": 0.0425,
+     "mAP50": 0.0423,
+     "mAP50_95": 0.0256,
+     "instances": 280
+    }
+   },
+   "speed_ms": {
+    "preprocess": 0.8134619694806011,
+    "inference": 92.38668743447,
+    "loss": 9.818850834811102e-05,
+    "postprocess": 0.8444018258535768
+   },
+   "save_dir": "/workspace/work/nutrisole/runs/detect/ml/runs/G7/eval_det_G7sA/test_480"
+  },
+  {
+   "split": "test_rf",
+   "imgsz": 480,
+   "mAP50": 0.3801,
+   "mAP50_95": 0.2545,
+   "P": 0.4308,
+   "R": 0.3834,
+   "per_class": {
+    "banana": {
+     "P": 0.6131,
+     "R": 0.7733,
+     "mAP50": 0.7044,
+     "mAP50_95": 0.406,
+     "instances": 75
+    },
+    "apple": {
+     "P": 0.3113,
+     "R": 0.2,
+     "mAP50": 0.2105,
+     "mAP50_95": 0.1713,
+     "instances": 25
+    },
+    "citrus": {
+     "P": 0.5475,
+     "R": 0.8899,
+     "mAP50": 0.8589,
+     "mAP50_95": 0.7129,
+     "instances": 34
+    },
+    "lemon_lime": {
+     "P": 0.2743,
+     "R": 0.25,
+     "mAP50": 0.1356,
+     "mAP50_95": 0.1326,
+     "instances": 4
+    },
+    "tomato": {
+     "P": 0.8683,
+     "R": 0.4863,
+     "mAP50": 0.5892,
+     "mAP50_95": 0.3284,
+     "instances": 122
+    },
+    "cucumber": {
+     "P": 0.285,
+     "R": 0.0274,
+     "mAP50": 0.0465,
+     "mAP50_95": 0.0234,
+     "instances": 73
+    },
+    "carrot": {
+     "P": 0.5468,
+     "R": 0.4405,
+     "mAP50": 0.4236,
+     "mAP50_95": 0.2294,
+     "instances": 84
+    },
+    "capsicum": {
+     "P": 0.0,
+     "R": 0.0,
+     "mAP50": 0.0723,
+     "mAP50_95": 0.0317,
+     "instances": 110
+    }
+   },
+   "speed_ms": {
+    "preprocess": 1.0341475167738494,
+    "inference": 75.04085730201554,
+    "loss": 0.00011346308676500167,
+    "postprocess": 0.49844719463382237
+   },
+   "save_dir": "/workspace/work/nutrisole/runs/detect/ml/runs/G7/eval_det_G7sA/test_rf_480"
+  },
+  {
+   "split": "test_oiv7",
+   "imgsz": 480,
+   "mAP50": 0.485,
+   "mAP50_95": 0.2979,
+   "P": 0.5643,
+   "R": 0.3615,
+   "per_class": {
+    "apple": {
+     "P": 0.0,
+     "R": 0.0,
+     "mAP50": 0.0553,
+     "mAP50_95": 0.0553,
+     "instances": 1
+    },
+    "mango": {
+     "P": 1.0,
+     "R": 0.2344,
+     "mAP50": 0.4327,
+     "mAP50_95": 0.3326,
+     "instances": 22
+    },
+    "citrus": {
+     "P": 0.8328,
+     "R": 1.0,
+     "mAP50": 0.995,
+     "mAP50_95": 0.199,
+     "instances": 1
+    },
+    "pomegranate": {
+     "P": 0.7605,
+     "R": 0.5294,
+     "mAP50": 0.8008,
+     "mAP50_95": 0.6275,
+     "instances": 48
+    },
+    "tomato": {
+     "P": 0.2486,
+     "R": 0.122,
+     "mAP50": 0.1586,
+     "mAP50_95": 0.1219,
+     "instances": 41
+    },
+    "cucumber": {
+     "P": 0.7836,
+     "R": 0.4046,
+     "mAP50": 0.5761,
+     "mAP50_95": 0.4069,
+     "instances": 173
+    },
+    "carrot": {
+     "P": 0.0,
+     "R": 0.0,
+     "mAP50": 0.0578,
+     "mAP50_95": 0.026,
+     "instances": 3
+    },
+    "capsicum": {
+     "P": 0.8891,
+     "R": 0.6015,
+     "mAP50": 0.8037,
+     "mAP50_95": 0.6137,
+     "instances": 120
+    }
+   },
+   "speed_ms": {
+    "preprocess": 1.5072954878063667,
+    "inference": 108.8502232601613,
+    "loss": 0.00010356910660618262,
+    "postprocess": 0.44803383739568614
+   },
+   "save_dir": "/workspace/work/nutrisole/runs/detect/ml/runs/G7/eval_det_G7sA/test_oiv7_480"
+  },
+  {
+   "split": "test_oiv7c",
+   "imgsz": 480,
+   "mAP50": 0.6712,
+   "mAP50_95": 0.5102,
+   "P": 0.7112,
+   "R": 0.6773,
+   "per_class": {
+    "apple": {
+     "P": 0.6524,
+     "R": 0.6667,
+     "mAP50": 0.7369,
+     "mAP50_95": 0.5115,
+     "instances": 6
+    },
+    "citrus": {
+     "P": 0.8649,
+     "R": 0.3746,
+     "mAP50": 0.5596,
+     "mAP50_95": 0.4328,
+     "instances": 606
+    },
+    "lemon_lime": {
+     "P": 0.8504,
+     "R": 0.5953,
+     "mAP50": 0.7899,
+     "mAP50_95": 0.6395,
+     "instances": 299
+    },
+    "tomato": {
+     "P": 0.4092,
+     "R": 0.75,
+     "mAP50": 0.3748,
+     "mAP50_95": 0.3165,
+     "instances": 4
+    },
+    "carrot": {
+     "P": 0.7791,
+     "R": 1.0,
+     "mAP50": 0.895,
+     "mAP50_95": 0.6507,
+     "instances": 4
+    }
+   },
+   "speed_ms": {
+    "preprocess": 1.4129439778995994,
+    "inference": 105.42079371270526,
+    "loss": 0.00010043646468464491,
+    "postprocess": 0.4813114364640177
+   },
+   "save_dir": "/workspace/work/nutrisole/runs/detect/ml/runs/G7/eval_det_G7sA/test_oiv7c_480"
+  }
+ ]
+}
