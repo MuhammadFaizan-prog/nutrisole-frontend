@@ -3,7 +3,8 @@ per-pair TTFC audit, raw-detector vs post-tracking. Usage: python g9fp_holdout_e
 import csv, glob, json, os, sys, collections
 import numpy as np
 NAMES = ["banana", "apple", "mango", "citrus", "guava", "pomegranate", "lemon_lime", "tomato", "potato", "cucumber", "carrot", "capsicum"]
-R = "/workspace/work/nutrisole"; src, scj, out = sys.argv[1:4]; os.makedirs(out, exist_ok=True)
+R = "/workspace/work/nutrisole"; src, scj, out = sys.argv[1:4]; MODE = sys.argv[4] if len(sys.argv) > 4 else "all"; os.makedirs(out, exist_ok=True)
+# MODE all = tiles + presence frames (prereg Addendum A); tiles = absence-check tile moments only (selected BECAUSE a detector fired: biased toward FA); samples = 6 evenly spaced presence-review frames only (unbiased)
 rep = {os.path.basename(p)[:-5]: json.load(open(p)) for p in glob.glob(f"{src}/*.json")}
 S = json.load(open(scj)); T = list(csv.DictReader(open(f"{R}/ml/runs/G8/review/holdout/clip_level_truth.csv")))
 AB = list(csv.DictReader(open(f"{R}/ml/runs/G8/review/absence/absence_check.csv")))
@@ -35,7 +36,8 @@ for row in T:
     if row["status"] != "positive_verified":
         tiles = [float(x["t_s"]) for x in AB if x["clip_id"] == c and x["t_s"]]
         samp = [D * (k + 0.5) / 6 for k in range(6)]
-        W = merge([[max(0, t - HALF), min(D, t + HALF)] for t in tiles + samp]); wmin = sum(b - a for a, b in W) / 60
+        pts = {"all": tiles + samp, "tiles": tiles, "samples": samp}[MODE]
+        W = merge([[max(0, t - HALF), min(D, t + HALF)] for t in pts]); wmin = sum(b - a for a, b in W) / 60
         nr = dict(n=row["n"], clip=c, uploader=row["uploader"], whole_min=round(D / 60, 3), window_min=round(wmin, 3), n_tile_moments=len(tiles))
         for a in ARMS:
             thr = CFG["configs"][a]["thr"]; tr = tracks(r, a)
@@ -70,15 +72,15 @@ for a in ARMS:
     wm = sum(x["window_min"] for x in neg_rows); hm = sum(x["whole_min"] for x in neg_rows); t = tot[a]
     summ[a] = dict(whole_clip_provisional=dict(minutes=round(hm, 2), fa_tracks=t["fa_whole"], fa_per_min=round(t["fa_whole"] / hm, 3),
                                                raw_boxes_per_min=round(t["raw_whole"] / hm, 2)),
-                   verified_windows=dict(minutes=round(wm, 2), fa_tracks=t["fa_window"], fa_per_min=round(t["fa_window"] / wm, 3),
-                                         displayed_track_s=round(t["wsec"], 1), raw_boxes_per_min=round(t["raw_win"] / wm, 2),
+                   verified_windows=dict(minutes=round(wm, 2), fa_tracks=t["fa_window"], fa_per_min=round(t["fa_window"] / wm, 3) if wm else None,
+                                         displayed_track_s=round(t["wsec"], 1), raw_boxes_per_min=round(t["raw_win"] / wm, 2) if wm else None,
                                          clips_with_window_fa=sum(1 for x in neg_rows if x[f"{a}_fa_window"])))
     tt = [x["ttfc_from_clip_start_s"] for x in ttfc_rows if x["arm"] == a and x["detected"]]
     summ[a]["ttfc_from_clip_start_s"] = dict(p50=round(float(np.percentile(tt, 50)), 2), p90=round(float(np.percentile(tt, 90)), 2), n=len(tt)) if tt else None
 json.dump(dict(summary=summ, negatives=neg_rows, full_video_check_candidates=cand, ttfc_pairs=ttfc_rows,
                defs=f"windows = union of +-{HALF}s around absence-check tile moments and the 6 presence-review frames; candidate = A0 track displayed >= {MIN_S}s outside windows with max score >= {HI}"),
-          open(f"{out}/holdout_extra.json", "w"), indent=1)
-for fn, rows in (("holdout_neg_windows.csv", neg_rows), ("full_video_check_candidates.csv", cand), ("holdout_ttfc_pairs.csv", ttfc_rows)):
+          open(f"{out}/holdout_extra{"" if MODE == "all" else "_" + MODE}.json", "w"), indent=1)
+for fn, rows in ((("holdout_neg_windows.csv" if MODE == "all" else f"holdout_neg_windows_{MODE}.csv"), neg_rows),) + ((("full_video_check_candidates.csv", cand), ("holdout_ttfc_pairs.csv", ttfc_rows)) if MODE == "all" else ()):
     if rows:
         with open(f"{out}/{fn}", "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
