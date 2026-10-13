@@ -44,3 +44,16 @@ def test_bytetrack_parity_fixture_is_current(tmp_path):
     b.make_parity_fixture(str(p))
     here = os.path.dirname(os.path.abspath(__file__))
     assert json.load(open(p)) == json.load(open(os.path.join(here, "fixtures", "bytetrack_parity.json")))
+
+
+def test_botsort_option_runs_and_missed_frag_metric():
+    """G7: BoT-SORT (no ReID, no GMC) research option keeps the same interface; missed/fragmentation helper."""
+    from bytetrack_adapter import BotSortTracker
+    import video_gauntlet as vg
+    t = BotSortTracker(track_buffer=15)
+    out = []
+    for f in range(6):
+        out = t.update([dict(box=[0.3, 0.3, 0.6, 0.6], classId=1, score=0.8)], f * 33.0)
+    assert len(out) == 1 and out[0]["label"] == 1
+    m = vg.missed_and_frag([False, True, True, False, True], 10)
+    assert m["missed_frames"] == 2 and m["fragmentations"] == 1 and m["longest_missed_gap_s"] == 0.1
