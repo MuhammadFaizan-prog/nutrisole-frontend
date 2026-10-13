@@ -7,5 +7,9 @@ st(){ pgrep -f "$1" >/dev/null || (setsid nohup bash $1 ${2:-} > $L/$(basename $
 [ -f g7logs/NIGHT_DONE ] || st g7_night_post.sh
 [ -f $L/TUNE_DONE ] || st g8_tune.sh
 [ -f g8_alk.sh ] && { [ -f $L/ALK_DONE ] || st g8_alk.sh; }
+# G8 auto-label on Kaggle (replaces sandbox stage1 + g8_alk.sh once pushed; they exit on STOP_AL/STOP_ALK)
+[ -f $L/K_push ] || st g8_kal_push.sh
+[ -f $L/KAL_DONE ] || st g8_kal_collect.sh
+[ -f $L/STOP_WD ] || st g8_watchdog.sh
 [ -f g8_jobs_extra.sh ] && st g8_jobs_extra.sh
 up=$(cut -d. -f1 /proc/uptime); [ $up -lt 1800 ] && echo "- $(date -u +%TZ) RELAUNCH (uptime ${up}s)" >> $L/progress.md
