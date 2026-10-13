@@ -1,0 +1,8 @@
+#!/bin/bash
+# G8: side-by-side (G3 champion left, showcase s0 right) on the DEV det clip (g3clips_dev, synthetic from G3 dev images), fixed-frame, H.264.
+source /workspace/work/cvenv/bin/activate; cd /workspace/work/nutrisole; O=/workspace/work/cv/g8video; mkdir -p $O; L=/workspace/work/cv/g8logs; LK=/workspace/work/cv/g7logs/cpu.lock
+[ -f $L/CL_VIDEO ] && exit 0
+C=/workspace/work/cv/g3models/k11_480/det_yolo11n_640_raw.onnx; C3=/workspace/work/cv/g3models/cls/E_224_e15_b64_sgd01.onnx; S0=/workspace/work/cv/g8show/show5_s0_12row_raw.onnx
+[ -f $O/champ/det_annotated.mp4 ] || flock $LK python ml/eval/video_gauntlet.py --det $C --det-kind raw --imgsz 480 --clips /workspace/work/cv/g3clips_dev --kinds det --cls $C3 --temp 0.25 --cls-imgsz 224 --no-realtime --max-same-class 0 --annotate --out $O/champ > $O/champ.log 2>&1
+[ -f $O/show_s0/det_annotated.mp4 ] || flock $LK python ml/eval/video_gauntlet.py --det $S0 --det-kind raw --imgsz 480 --clips /workspace/work/cv/g3clips_dev --kinds det --cls $C3 --temp 0.25 --cls-imgsz 224 --no-realtime --max-same-class 0 --annotate --out $O/show_s0 > $O/show_s0.log 2>&1
+ffmpeg -y -loglevel error -i $O/champ/det_annotated.mp4 -i $O/show_s0/det_annotated.mp4 -filter_complex "[0:v]drawtext=text='CHAMPION G3 (12 classes)':x=4:y=24:fontcolor=yellow:fontsize=14[a];[1:v]drawtext=text='CANDIDATE showcase s0 (5 classes, FAILED prereg)':x=4:y=24:fontcolor=yellow:fontsize=14[b];[a][b]hstack" -c:v libx264 -crf 30 -preset veryfast -pix_fmt yuv420p $O/G8_dev_det_clip_G3_vs_showcase_s0.mp4 && touch $L/CL_VIDEO && echo "- $(date -u +%TZ) [close] side-by-side video done ($(du -h $O/G8_dev_det_clip_G3_vs_showcase_s0.mp4 | cut -f1))" >> $L/progress.md
