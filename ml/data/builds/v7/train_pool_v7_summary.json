@@ -1,0 +1,76 @@
+{
+ "rule": "G7 Phase 5 / Addendum B: build train_pool_v7 manifest from the ACCEPTED external sources, group-split.\n\nNothing here touches a locked split. Every row: source, file (relative to the extracted source root), task, fruit, label,\ngroup, split, sha256 (first 16), dhash. Groups = union of (a) near-duplicate dHash (64-bit, Hamming <= 6) within a source and\n(b) for camera-named files (IMG<yyyymmdd><hhmmss>), shots taken <= 30 s apart (same fruit photographed in a burst).\nSplits by GROUP, seed 0, 80/10/10 (train/val/test). Exceptions (fixed before looking at any model result):\n  * 56c75hvm7r banana: the dataset's own train/val/test kept; its test was the G4 external ripeness test -> never train.\n  * w3fg8jjmzr Pakistan guava: whole source = 'eval_only' (independent guava detector eval + guava maturity eval).\n  * x4s2jz55dx Egyptian tomato: only 'Three Classes' used (the 'Two Classes' folders re-sort the same photos; verified by sha).",
+ "sources": {
+  "banana_56c75hvm7r": {
+   "images": 673,
+   "groups": 580,
+   "largest_group": 6,
+   "by_split_label": {
+    "test_reserved/overripe": 25,
+    "test_reserved/ripe": 14,
+    "test_reserved/unripe": 29,
+    "train/overripe": 204,
+    "train/ripe": 164,
+    "train/unripe": 170,
+    "val/overripe": 23,
+    "val/ripe": 23,
+    "val/unripe": 21
+   }
+  },
+  "guava_pk_w3fg8jjmzr": {
+   "images": 2309,
+   "groups": 202,
+   "largest_group": 1343,
+   "by_split_label": {
+    "eval_only/green": 232,
+    "eval_only/mature_green": 829,
+    "eval_only/ripe": 1248
+   }
+  },
+  "mangodhds_b4nrw5hyyc": {
+   "images": 1500,
+   "groups": 866,
+   "largest_group": 455,
+   "by_split_label": {
+    "test/anthracnose": 24,
+    "test/bacterial_canker": 27,
+    "test/healthy": 16,
+    "test/scab": 19,
+    "test/stem_end_rot": 20,
+    "train/anthracnose": 252,
+    "train/bacterial_canker": 256,
+    "train/healthy": 259,
+    "train/scab": 264,
+    "train/stem_end_rot": 255,
+    "val/anthracnose": 24,
+    "val/bacterial_canker": 17,
+    "val/healthy": 25,
+    "val/scab": 17,
+    "val/stem_end_rot": 25
+   }
+  },
+  "tomato_eg_x4s2jz55dx": {
+   "images": 2400,
+   "groups": 1,
+   "largest_group": 2400,
+   "by_split_label": {
+    "train/reject": 800,
+    "train/ripe": 800,
+    "train/unripe": 800
+   }
+  },
+  "zenodo17609211": {
+   "images": 6654,
+   "groups": 1556,
+   "largest_group": 2656,
+   "by_split_label": {
+    "test/bad": 1875,
+    "test/good": 1187,
+    "train/bad": 1381,
+    "train/good": 1963,
+    "val/bad": 57,
+    "val/good": 191
+   }
+  }
+ }
+}
