@@ -9,10 +9,15 @@ from __future__ import annotations
 import math
 
 INPUT = 480
+ANALYSIS_MAX_SIDE = 256  # the full-res crop is analysed at <= 256 px side (INTER_AREA): the 224-px models lose nothing, GrabCut stays bounded
 DEFAULT_ID = dict(idMinScore=0.5, idMinHits=3)
 # Candidate values from the Stage F proposal; Stage G picks the frozen values on CU-tune (see G9_stageG.md).
 DEFAULT_GATE = dict(minSidePx=96, minFrames=3, mode="count", scoreTol=0.15, minBlurVar=15.0, minMeanV=40.0, maxMeanV=245.0,
                     edgeMarginFrac=0.01, minVisibleFrac=0.25, minMaxProb=0.7, minMargin=0.3, maxBlockiness=1.5)
+
+# Stage G frozen pick (CU-tune, DEV only; docs/cv/gauntlet/G9_stageG.md): 96 px on full-res frame pixels, 3 consecutive agreeing
+# assessments (count mode), checks minMeanV 80 and maxBlockiness 1.4 tuned; other checks as the candidate.
+FROZEN_GATE = {**DEFAULT_GATE, "minMeanV": 80.0, "maxBlockiness": 1.4}
 
 
 def letterbox_transform(src_w: int, src_h: int, dst: int = INPUT) -> dict:
