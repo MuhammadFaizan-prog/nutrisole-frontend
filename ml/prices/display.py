@@ -35,3 +35,16 @@ def graded_price(identified, app_class, grade, sources, today):
     loc = PRICE_LOCATION.get(r["source"])
     if not loc: return dict(show=False, reason="unknown_location")
     return dict(show=True, line=_fmt(r, "list_grade_reference", loc, r["min_rs"], r["max_rs"], r["list_grade"]))
+
+
+# ---- G9 Stage H display contract (P6). EXACT mirror of display.ts closeupDisplay. No A/B/C and no grade-specific price while
+# GRADE_DISPLAY_ENABLED is False; category reference price only for a verified (or user-confirmed, labelled) identity with a current source.
+GRADE_DISPLAY_ENABLED = False
+
+
+def closeup_display(identity, app_class, label, outcome, sources, today):
+    if identity == "unable" or not app_class:
+        return dict(title="Unable to identify", gradeText=None, gradeShown=False, price=dict(show=False, reason="not_identified"), identityNote=None)
+    price = category_price(True, app_class, sources, today)
+    grade_text = "Not graded" if outcome == "not_graded" else "Quality not checked" if outcome == "category_confirmed_by_user" else "Quality grading is not available yet"
+    return dict(title=label or app_class, gradeText=grade_text, gradeShown=False, price=price, identityNote="Category confirmed by you" if identity == "user_confirmed" else None)
