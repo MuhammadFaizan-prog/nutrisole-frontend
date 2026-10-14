@@ -1,0 +1,584 @@
+{
+"sd0055": {
+"ok": 1,
+"drop_cells": [
+"E7",
+"F5",
+"E5"
+],
+"grey_cells": []
+},
+"sd0125": {
+"ok": 1,
+"drop_cells": [
+"D5",
+"H7",
+"H8",
+"H9",
+"I2",
+"C3!10",
+"B3!10"
+],
+"grey_cells": []
+},
+"sd0126": {
+"ok": 1,
+"drop_cells": [],
+"grey_cells": []
+},
+"sd0128": {
+"ok": 1,
+"drop_cells": [
+"A8",
+"A9",
+"B8"
+],
+"grey_cells": []
+},
+"sd0130": {
+"ok": 1,
+"drop_cells": [],
+"grey_cells": []
+},
+"sd0136": {
+"ok": 1,
+"drop_cells": [
+"D4!10",
+"D5!10",
+"E0",
+"F0",
+"F1!10",
+"F2!10",
+"F3!10"
+],
+"grey_cells": [
+"A1",
+"A2",
+"A3",
+"B8",
+"B9",
+"C8",
+"C9",
+"D8",
+"D9",
+"E0",
+"F0"
+]
+},
+"sd0352": {
+"ok": 1,
+"drop_cells": [],
+"grey_cells": []
+},
+"sd0442": {
+"ok": 1,
+"drop_cells": [
+"A0",
+"B0",
+"E5!10",
+"E6!10",
+"F8!10",
+"F9!10",
+"G8!10",
+"G9!10"
+],
+"grey_cells": []
+},
+"sd0504": {
+"ok": 1,
+"drop_cells": [
+"C4",
+"D9",
+"E9",
+"F9",
+"G9",
+"H9",
+"I9",
+"J9"
+],
+"grey_cells": [
+"C4",
+"D9",
+"C9",
+"D9",
+"E9",
+"F9",
+"G9",
+"H9",
+"I9",
+"J9"
+]
+},
+"sd0054": {
+"ok": 0,
+"why": "orange items in baskets may be marigolds, class uncertain"
+},
+"sd0151": {
+"ok": 1,
+"drop_cells": [
+"F4"
+],
+"relabel_cells": [
+"D*=3",
+"C*=3"
+],
+"grey_cells": []
+},
+"sd0298": {
+"ok": 0,
+"why": "final check: oranges in crates only sparsely boxed"
+},
+"sd0336": {
+"ok": 1,
+"drop_cells": [
+"C2",
+"C3",
+"D2",
+"D3",
+"C4",
+"D4",
+"C5",
+"D5",
+"C6",
+"D6",
+"C7",
+"D7"
+],
+"grey_cells": [
+"C0",
+"D0",
+"E0",
+"F0",
+"G0",
+"H0"
+]
+},
+"sd0380": {
+"ok": 1,
+"drop_cells": [
+"G4",
+"G5",
+"G6"
+],
+"grey_cells": []
+},
+"sd0384": {
+"ok": 1,
+"drop_cells": [
+"*!3",
+"B0",
+"C0"
+],
+"grey_cells": [
+"H3",
+"I3",
+"I4",
+"J3",
+"J4",
+"H2",
+"I2"
+]
+},
+"sd0424": {
+"ok": 0,
+"why": "many unboxed oranges/red fruit, classes ambiguous"
+},
+"sd0501": {
+"ok": 0,
+"why": "crated fruit mostly persimmon-like, unboxed, class uncertain"
+},
+"sd0513": {
+"ok": 0,
+"why": "tiny row of fruit, class ambiguous (tomato vs orange); cassava boxed as banana"
+},
+"sd0013": {
+"ok": 1,
+"relabel_all": 7,
+"drop_cells": [
+"A1",
+"A2",
+"D2",
+"D3"
+],
+"grey_cells": [
+"A1",
+"A2",
+"B1",
+"D2",
+"D3"
+]
+},
+"sd0024": {
+"ok": 1,
+"relabel_all": 7,
+"drop_cells": [
+"D5",
+"D6",
+"D7",
+"E5"
+],
+"grey_cells": []
+},
+"sd0029": {
+"ok": 1,
+"drop_cells": [
+"D0",
+"D1",
+"D2",
+"E0",
+"E1",
+"D2",
+"D3"
+],
+"grey_cells": [
+"A4",
+"A5",
+"A6",
+"A7",
+"A8",
+"B5",
+"B6",
+"B7",
+"B8",
+"C6",
+"C7",
+"C8",
+"D6",
+"D7",
+"A0",
+"A1",
+"A2",
+"A3"
+],
+"relabel_cells": [
+"F*=7",
+"G*=7",
+"H*=7",
+"I*=7",
+"J*=7",
+"B*=7"
+]
+},
+"sd0038": {
+"ok": 1,
+"relabel_all": 1,
+"drop_cells": [
+"C7!1",
+"C8!1",
+"D8!1",
+"A8"
+],
+"grey_cells": []
+},
+"sd0039": {
+"ok": 1,
+"relabel_all": 1,
+"drop_cells": [],
+"grey_cells": []
+},
+"sd0347": {
+"ok": 1,
+"drop_cells": [
+"F6",
+"F7",
+"F8",
+"F9",
+"G6",
+"G7",
+"G8",
+"G9",
+"H6",
+"H7",
+"H8",
+"H9",
+"I6",
+"I7",
+"I8",
+"I9",
+"J6",
+"J7",
+"J8",
+"J9",
+"E6",
+"E7",
+"E8",
+"E9"
+],
+"relabel_cells": [
+"E0=7",
+"E1=7",
+"E2=7",
+"E3=7",
+"E4=7",
+"E5=7",
+"F0=7",
+"F1=7",
+"F2=7",
+"F3=7",
+"F4=7",
+"F5=7",
+"G0=7",
+"G1=7",
+"G2=7",
+"G3=7",
+"G4=7",
+"G5=7",
+"H0=7",
+"H1=7",
+"H2=7",
+"H3=7",
+"H4=7",
+"H5=7",
+"I0=7",
+"I1=7",
+"I2=7",
+"I3=7",
+"I4=7",
+"I5=7",
+"J0=7",
+"J1=7",
+"J2=7",
+"J3=7",
+"J4=7",
+"J5=7",
+"A0=7",
+"B0=7",
+"B1=7",
+"A1=7"
+],
+"grey_cells": [
+"A1",
+"A2",
+"A3",
+"F6",
+"G6"
+]
+},
+"sd0381": {
+"ok": 1,
+"drop_cells": [
+"A0",
+"A1",
+"A2",
+"A3",
+"A4",
+"A5",
+"A6",
+"A7",
+"A8",
+"A9",
+"B0",
+"B1",
+"B2",
+"B3",
+"B4",
+"B5",
+"B6",
+"B7",
+"B8",
+"B9",
+"C0",
+"C1",
+"C2",
+"C3",
+"C4",
+"C5",
+"C6",
+"C7",
+"C8",
+"C9",
+"D0",
+"D1",
+"D2",
+"D3",
+"D4",
+"D5",
+"D6",
+"D7",
+"D8",
+"D9",
+"E0",
+"E1",
+"E2",
+"E3",
+"E4",
+"E5",
+"E6",
+"E7",
+"E8",
+"E9",
+"F7",
+"F8",
+"F9",
+"G7",
+"G8",
+"G9"
+],
+"relabel_cells": [
+"F*=7",
+"G*=7",
+"H*=7",
+"I*=7"
+],
+"grey_cells": [
+"E7",
+"E8"
+]
+},
+"sd0394": {
+"ok": 0,
+"why": "mixed scene: cucumbers boxed as banana, capsicum unboxed"
+},
+"sd0535": {
+"ok": 1,
+"relabel_all": 7,
+"drop_cells": [
+"C0",
+"D0"
+],
+"grey_cells": []
+},
+"sd0538": {
+"ok": 1,
+"relabel_all": 7,
+"drop_cells": [],
+"grey_cells": []
+},
+"sd0548": {
+"ok": 1,
+"relabel_all": 7,
+"drop_cells": [
+"J7",
+"J6"
+],
+"grey_cells": []
+},
+"sd0484": {
+"ok": 0,
+"why": "produce tiny and ambiguous on the mat"
+},
+"sd0040": {
+"ok": 1,
+"drop_cells": [
+"G0",
+"G1",
+"G2",
+"G3",
+"H0",
+"H1",
+"H2",
+"H3",
+"I0",
+"I1",
+"I2",
+"I3",
+"A0",
+"B0"
+],
+"relabel_cells": [
+"A0=1",
+"A1=1",
+"A2=1",
+"A3=1",
+"A4=1",
+"A5=1",
+"A6=1",
+"A7=1",
+"B0=1",
+"B1=1",
+"B2=1",
+"B3=1",
+"B4=1",
+"B5=1",
+"B6=1",
+"B7=1",
+"C0=1",
+"C1=1",
+"C2=1",
+"C3=1",
+"C4=1",
+"C5=1",
+"C6=1",
+"C7=1",
+"D0=1",
+"D1=1",
+"D2=1",
+"D3=1",
+"D4=1",
+"D5=1",
+"D6=1",
+"D7=1",
+"E0=1",
+"E1=1",
+"E2=1",
+"E3=1",
+"E4=1",
+"E5=1",
+"E6=1",
+"E7=1",
+"F0=1",
+"F1=1",
+"F2=1",
+"F3=1",
+"F4=1",
+"F5=1",
+"F6=1",
+"F7=1",
+"G4=1",
+"G5=1",
+"G6=1",
+"G7=1",
+"G8=1",
+"G9=1",
+"H4=1",
+"H5=1",
+"H6=1",
+"H7=1",
+"H8=1",
+"H9=1",
+"I4=1",
+"I5=1",
+"I6=1",
+"I7=1",
+"I8=1",
+"I9=1",
+"J4=1",
+"J5=1",
+"J6=1",
+"J7=1",
+"J8=1",
+"J9=1"
+],
+"grey_cells": []
+},
+"sd0041": {
+"ok": 1,
+"relabel_all": 1,
+"drop_cells": [
+"A2",
+"A1"
+],
+"grey_cells": [
+"B3",
+"B4",
+"C3",
+"C4"
+]
+},
+"sd0042": {
+"ok": 0,
+"why": "large apples, cut halves, box on empty tray"
+},
+"sd0043": {
+"ok": 0,
+"why": "bagged mixed fruit, ambiguous classes"
+},
+"sd0383": {
+"ok": 0,
+"why": "wholesale cartons with printed fruit"
+},
+"sd0555": {
+"ok": 0,
+"why": "coconuts/limes boxed as apple"
+}
+}
