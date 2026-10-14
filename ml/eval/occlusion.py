@@ -81,4 +81,4 @@ def occlusion_reasons(c: dict, p: dict | None = None) -> list[str]:
     if c.get("partAgree") is not None and c["partAgree"] < P["minPartAgree"]: r.append("parts_disagree")
     return r
 
-FROZEN_OCC = dict(DEFAULT_OCC)  # replaced by the Stage H frozen pick (see G9_stageH.md); mirror native/src/cv/pipeline/verify.ts FROZEN_OCC
+FROZEN_OCC = dict(DEFAULT_OCC, minSolidity=0.8, minEllipseIoU=0.7, maxStraightFrac=0.4, maxBorderFrac=0.7)  # Stage H frozen pick on CU-tune only (see G9_stageH.md); mirror native/src/cv/pipeline/verify.ts FROZEN_OCC
