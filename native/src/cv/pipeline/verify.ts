@@ -15,7 +15,7 @@ export type VerifyPolicy = 'H0' | 'P-a' | 'P-b' | 'P-c' | 'H2-only';
 export type VerifyParams = { policy: VerifyPolicy; tau: number; margin: number; maxUnknown: number; h1VetoScore: number; suggestMinP: number };
 export const DEFAULT_VERIFY: VerifyParams = { policy: 'P-a', tau: 0.6, margin: 0.2, maxUnknown: 0.3, h1VetoScore: 0.5, suggestMinP: 0.15 };
 // Stage H frozen pick (tune splits only; docs/cv/gauntlet/G9_stageH.md). Kept equal to ml/eval/verify.py FROZEN_VERIFY.
-export const FROZEN_VERIFY: VerifyParams = { ...DEFAULT_VERIFY };
+export const FROZEN_VERIFY: VerifyParams = { policy: 'P-a', tau: 0.4, margin: 0.0, maxUnknown: 0.5, h1VetoScore: 0.5, suggestMinP: 0.15 };
 
 export type H2Decision = { accept: true; classId: number; p: number; suggestions: number[] } | { accept: false; reason: string; top: number; suggestions: number[] };
 
@@ -89,7 +89,7 @@ export type OcclusionCues = { solidity: number; ellipseIoU: number; straightFrac
 export type OcclusionParams = { minSolidity: number; minEllipseIoU: number; maxStraightFrac: number; maxBorderFrac: number; minSegAgree: number; maxFlatFrac: number; maxColourSplit: number; minPartAgree: number };
 export const DEFAULT_OCC: OcclusionParams = { minSolidity: 0, minEllipseIoU: 0, maxStraightFrac: 1, maxBorderFrac: 1, minSegAgree: 0, maxFlatFrac: 1, maxColourSplit: 1e9, minPartAgree: 0 };
 // Stage H frozen pick (CU-tune occluder suite). Kept equal to ml/eval/occlusion.py FROZEN_OCC.
-export const FROZEN_OCC: OcclusionParams = { ...DEFAULT_OCC };
+export const FROZEN_OCC: OcclusionParams = { ...DEFAULT_OCC, minSolidity: 0.8, minEllipseIoU: 0.7, maxStraightFrac: 0.4, maxBorderFrac: 0.7 };
 
 export function occlusionReasons(c: OcclusionCues, p: Partial<OcclusionParams> = {}): string[] {
   const P = { ...DEFAULT_OCC, ...p }; const r: string[] = [];
