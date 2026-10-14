@@ -1,0 +1,1 @@
+{"mode": "base480", "onnx": "det_yolo11n_640_raw.onnx", "frames": 84, "p50_ms": 112.7, "p95_ms": 221.1, "peak_rss_mb": 164.3, "threads": 2, "note": "sandbox CPU (2 vCPU), ONNX Runtime; same session for all modes"}
