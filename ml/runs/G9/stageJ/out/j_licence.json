@@ -1,0 +1,30 @@
+{
+ "n": 742,
+ "compliant": 736,
+ "non_compliant": 6,
+ "excluded_keys": [
+  "c0031",
+  "c0119",
+  "c0187",
+  "c0222",
+  "c0326",
+  "c0350"
+ ],
+ "issues": {
+  "stock-photo-site origin (Unsplash etc.)": 5,
+  "banned source (Pexels/Pixabay/Mixkit) in credit/author/description": 1
+ },
+ "licences": {
+  "CC BY-SA 4.0": 130,
+  "CC BY 2.0": 67,
+  "Public domain": 138,
+  "CC BY-SA 2.0": 18,
+  "CC BY-SA 3.0": 35,
+  "CC0": 45,
+  "CC BY 2.5": 11,
+  "CC BY 4.0": 283,
+  "CC BY-SA 3.0 it": 3,
+  "CC BY 3.0 us": 12
+ },
+ "commons_refetched": 468
+}
