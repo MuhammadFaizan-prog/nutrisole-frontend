@@ -73,5 +73,26 @@ for k in keys:
     if not pick or pick[k] == base[k]: continue
     p1 = dict(base); p1[k] = pick[k]; abl[k] = summary(check, p1)
 out["check_single_cue_ablation"] = abl
+# full pipeline on the occluded crops: identity re-verified on the occluded crop (wide = the item's class, frozen identity pick), then the
+# occlusion rule, then the Stage G checks. This is the leakage a user would see.
+if H2 and os.path.exists(f"{B}/identity.json"):
+    from ml.eval.verify import verify_identity
+    PV = json.load(open(f"{B}/identity.json"))["pick"]; NC = ["banana", "apple", "mango", "citrus", "guava", "pomegranate", "lemon_lime", "tomato", "potato", "cucumber", "carrot", "capsicum"]
+    def full(rs, p):
+        res = {}
+        for c in ["clean"] + OCC + OTHER:
+            x = [r for r in rs if r["cond"] == c]
+            if not x: continue
+            ver = [verify_identity(dict(status="identified", classId=NC.index(r["cls"])), None, H2[f"{r['id']}_{r['size']}_{r['cond']}"]["probs"], PV)["status"] == "verified" for r in x]
+            g = sum(v and r["g_ok"] and not occlusion_reasons(r["cues"], p) for v, r in zip(ver, x))
+            res[c] = dict(n=len(x), identity_verified=sum(ver), graded=g, rate=round(g / len(x), 3))
+        occ_n = sum(res[c]["n"] for c in OCC if c in res); occ_g = sum(res[c]["graded"] for c in OCC if c in res)
+        oth_n = sum(res[c]["n"] for c in OTHER if c in res); oth_g = sum(res[c]["graded"] for c in OTHER if c in res)
+        return dict(per_condition=res, occluder_leak=occ_g, n_occluder=occ_n, occluder_leak_rate=round(occ_g / occ_n, 4), other_degraded_leak=oth_g, n_other=oth_n,
+                    max_per_type=max(res[c]["rate"] for c in OCC if c in res), clean_graded=res["clean"]["graded"], clean_rate=res["clean"]["rate"])
+    out["full_pipeline_check"] = full(check, pick); out["full_pipeline_tune"] = full(tune, pick)
+    out["full_pipeline_check_identity_only"] = full(check, base)
+    print("FULL check", {k: v for k, v in out["full_pipeline_check"].items() if k != "per_condition"})
+    print("FULL check identity only (no occlusion rule)", {k: v for k, v in out["full_pipeline_check_identity_only"].items() if k != "per_condition"})
 json.dump(out, open(f"{B}/occlusion.json" if H2 else f"{B}/occlusion_noh2.json", "w"), indent=1)
 print(json.dumps({k: out[k] for k in ("pick", "tune", "check")}, indent=0)); print(json.dumps(out["check_per_condition"]))
