@@ -1,0 +1,1 @@
+{"mode": "tile480", "onnx": "det_yolo11n_640_raw.onnx", "frames": 84, "p50_ms": 347.2, "p95_ms": 1044.4, "peak_rss_mb": 169.8, "threads": 2, "note": "sandbox CPU (2 vCPU), ONNX Runtime; same session for all modes"}
