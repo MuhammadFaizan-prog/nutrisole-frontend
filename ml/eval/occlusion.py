@@ -82,3 +82,42 @@ def occlusion_reasons(c: dict, p: dict | None = None) -> list[str]:
     return r
 
 FROZEN_OCC = dict(DEFAULT_OCC, minSolidity=0.8, minEllipseIoU=0.7, maxStraightFrac=0.4, maxBorderFrac=0.7)  # Stage H frozen pick on CU-tune only (see G9_stageH.md); mirror native/src/cv/pipeline/verify.ts FROZEN_OCC
+
+
+# ---- G9 Stage I targeted cues (I3). Additive only: occlusion_reasons() and FROZEN_OCC above are unchanged. Mirror: verify.ts targetedOcclusionReasons.
+def targeted_cues(bgr, mask) -> dict:
+    """sideTouch: max over the 4 crop sides of the fraction of that side's length where the mask reaches the GrabCut inset band
+    (6% + 2 px) - an item cut by the tap box (inner truncation) runs along one whole side. skinFrac: YCrCb skin pixels (Cr 135-180,
+    Cb 85-135) in a 3-7% ring just outside the mask - a hand next to / over the outline. specFrac: low-saturation, bright pixels
+    (S < 40, V > 215) inside the mask - plastic film / bag glare. hullGap: deepest convexity defect / sqrt(mask area) - a bite taken out
+    of the outline by overlapping produce."""
+    h, w = mask.shape; m = mask.astype(bool); area = int(m.sum())
+    if area < 30: return dict(sideTouch=1.0, skinFrac=0.0, specFrac=0.0, hullGap=1.0)
+    bx, by = int(0.06 * w) + 2, int(0.06 * h) + 2
+    st = max(m[:by + 1].any(0).mean(), m[h - by - 1:].any(0).mean(), m[:, :bx + 1].any(1).mean(), m[:, w - bx - 1:].any(1).mean())
+    k = max(3, int(0.05 * min(h, w)))
+    ring = cv2.dilate(m.astype(np.uint8), np.ones((k, k), np.uint8)).astype(bool) & ~m
+    ycc = cv2.cvtColor(bgr, cv2.COLOR_BGR2YCrCb); skin = (ycc[..., 1] >= 135) & (ycc[..., 1] <= 180) & (ycc[..., 2] >= 85) & (ycc[..., 2] <= 135)
+    sk = float((skin & ring).sum() / max(ring.sum(), 1))
+    hsv = cv2.cvtColor(bgr, cv2.COLOR_BGR2HSV); sp = float(((hsv[..., 1] < 40) & (hsv[..., 2] > 215) & m).sum() / area)
+    cnt = _contour(m); hg = 0.0
+    if cnt is not None and len(cnt) >= 5:
+        hull = cv2.convexHull(cnt, returnPoints=False)
+        try:
+            d = cv2.convexityDefects(cnt, hull)
+            if d is not None and len(d): hg = float(d.reshape(-1, 4)[:, 3].max() / 256.0 / max(area ** 0.5, 1e-6))
+        except cv2.error: pass
+    return dict(sideTouch=round(float(st), 4), skinFrac=round(sk, 4), specFrac=round(sp, 4), hullGap=round(hg, 4))
+
+
+DEFAULT_TARGETED = dict(maxSideTouch=1.01, maxSkinFrac=1.01, maxSpecFrac=1.01, maxHullGap=1e9)
+
+
+def targeted_reasons(t: dict, p: dict | None = None) -> list[str]:
+    """Extra 'Not graded' reasons from targeted_cues (only ever ADDS rejections on top of occlusion_reasons)."""
+    P = {**DEFAULT_TARGETED, **(p or {})}; r = []
+    if t["sideTouch"] > P["maxSideTouch"]: r.append("cut_by_box")
+    if t["skinFrac"] > P["maxSkinFrac"]: r.append("hand_near_item")
+    if t["specFrac"] > P["maxSpecFrac"]: r.append("packaging_glare")
+    if t["hullGap"] > P["maxHullGap"]: r.append("outline_bite")
+    return r
