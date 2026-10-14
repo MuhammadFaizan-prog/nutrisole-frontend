@@ -1,0 +1,892 @@
+{
+ "fps": 30.0,
+ "stride": 3,
+ "frames": [
+  {
+   "t_s": 0.0,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [],
+   "shown": []
+  },
+  {
+   "t_s": 0.1,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [],
+   "shown": []
+  },
+  {
+   "t_s": 0.2,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [],
+   "shown": []
+  },
+  {
+   "t_s": 0.3,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [],
+   "shown": []
+  },
+  {
+   "t_s": 0.4,
+   "n_raw_ge035": 1,
+   "n_raw_removed_by_area_guard": 1,
+   "dets": [],
+   "live_tracks": [],
+   "shown": []
+  },
+  {
+   "t_s": 0.5,
+   "n_raw_ge035": 1,
+   "n_raw_removed_by_area_guard": 1,
+   "dets": [],
+   "live_tracks": [],
+   "shown": []
+  },
+  {
+   "t_s": 0.6,
+   "n_raw_ge035": 3,
+   "n_raw_removed_by_area_guard": 2,
+   "dets": [
+    {
+     "cls": "carrot",
+     "score": 0.398,
+     "box": [
+      0.259,
+      0.815,
+      0.333,
+      0.997
+     ],
+     "area": 0.0133,
+     "best_iou_prev_track": 0,
+     "prev_track": null
+    }
+   ],
+   "live_tracks": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 0
+    }
+   ],
+   "shown": []
+  },
+  {
+   "t_s": 0.7,
+   "n_raw_ge035": 15,
+   "n_raw_removed_by_area_guard": 14,
+   "dets": [
+    {
+     "cls": "carrot",
+     "score": 0.439,
+     "box": [
+      0.212,
+      0.888,
+      0.307,
+      1.0
+     ],
+     "area": 0.0106,
+     "best_iou_prev_track": 0.277,
+     "prev_track": 1
+    }
+   ],
+   "live_tracks": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 1
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 0
+    }
+   ],
+   "shown": []
+  },
+  {
+   "t_s": 0.8,
+   "n_raw_ge035": 14,
+   "n_raw_removed_by_area_guard": 11,
+   "dets": [
+    {
+     "cls": "carrot",
+     "score": 0.578,
+     "box": [
+      0.189,
+      0.893,
+      0.299,
+      0.994
+     ],
+     "area": 0.0111,
+     "best_iou_prev_track": 0.684,
+     "prev_track": 2
+    },
+    {
+     "cls": "carrot",
+     "score": 0.575,
+     "box": [
+      0.615,
+      0.935,
+      0.77,
+      1.0
+     ],
+     "area": 0.0101,
+     "best_iou_prev_track": 0.0,
+     "prev_track": 2
+    },
+    {
+     "cls": "carrot",
+     "score": 0.494,
+     "box": [
+      0.543,
+      0.863,
+      0.648,
+      0.999
+     ],
+     "area": 0.0142,
+     "best_iou_prev_track": 0.0,
+     "prev_track": 2
+    }
+   ],
+   "live_tracks": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 2
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 0
+    },
+    {
+     "id": 3,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 0
+    },
+    {
+     "id": 4,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 0
+    }
+   ],
+   "shown": [
+    {
+     "id": 2,
+     "label": "carrot",
+     "score": 0.467
+    }
+   ]
+  },
+  {
+   "t_s": 0.9,
+   "n_raw_ge035": 13,
+   "n_raw_removed_by_area_guard": 9,
+   "dets": [
+    {
+     "cls": "carrot",
+     "score": 0.495,
+     "box": [
+      0.239,
+      0.851,
+      0.377,
+      0.994
+     ],
+     "area": 0.0197,
+     "best_iou_prev_track": 0.466,
+     "prev_track": 1
+    },
+    {
+     "cls": "carrot",
+     "score": 0.489,
+     "box": [
+      0.138,
+      0.85,
+      0.294,
+      0.989
+     ],
+     "area": 0.0216,
+     "best_iou_prev_track": 0.406,
+     "prev_track": 2
+    },
+    {
+     "cls": "carrot",
+     "score": 0.452,
+     "box": [
+      0.53,
+      0.898,
+      0.632,
+      1.0
+     ],
+     "area": 0.0103,
+     "best_iou_prev_track": 0.57,
+     "prev_track": 4
+    },
+    {
+     "cls": "carrot",
+     "score": 0.436,
+     "box": [
+      0.128,
+      0.869,
+      0.23,
+      0.985
+     ],
+     "area": 0.0118,
+     "best_iou_prev_track": 0.149,
+     "prev_track": 2
+    }
+   ],
+   "live_tracks": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 0
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "hits": 3,
+     "missed": 0
+    },
+    {
+     "id": 3,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 1
+    },
+    {
+     "id": 4,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 0
+    },
+    {
+     "id": 5,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 0
+    }
+   ],
+   "shown": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "score": 0.418
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "score": 0.471
+    },
+    {
+     "id": 4,
+     "label": "carrot",
+     "score": 0.485
+    }
+   ]
+  },
+  {
+   "t_s": 1.0,
+   "n_raw_ge035": 13,
+   "n_raw_removed_by_area_guard": 11,
+   "dets": [
+    {
+     "cls": "carrot",
+     "score": 0.51,
+     "box": [
+      0.138,
+      0.866,
+      0.323,
+      1.0
+     ],
+     "area": 0.0247,
+     "best_iou_prev_track": 0.685,
+     "prev_track": 2
+    },
+    {
+     "cls": "carrot",
+     "score": 0.459,
+     "box": [
+      0.256,
+      0.873,
+      0.409,
+      1.0
+     ],
+     "area": 0.0194,
+     "best_iou_prev_track": 0.515,
+     "prev_track": 1
+    }
+   ],
+   "live_tracks": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "hits": 3,
+     "missed": 0
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "hits": 4,
+     "missed": 0
+    },
+    {
+     "id": 3,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 2
+    },
+    {
+     "id": 4,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 1
+    },
+    {
+     "id": 5,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 1
+    }
+   ],
+   "shown": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "score": 0.426
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "score": 0.479
+    }
+   ]
+  },
+  {
+   "t_s": 1.1,
+   "n_raw_ge035": 21,
+   "n_raw_removed_by_area_guard": 17,
+   "dets": [
+    {
+     "cls": "carrot",
+     "score": 0.63,
+     "box": [
+      0.28,
+      0.854,
+      0.42,
+      0.996
+     ],
+     "area": 0.0198,
+     "best_iou_prev_track": 0.631,
+     "prev_track": 1
+    },
+    {
+     "cls": "carrot",
+     "score": 0.586,
+     "box": [
+      0.187,
+      0.884,
+      0.338,
+      0.992
+     ],
+     "area": 0.0162,
+     "best_iou_prev_track": 0.559,
+     "prev_track": 2
+    },
+    {
+     "cls": "carrot",
+     "score": 0.412,
+     "box": [
+      0.147,
+      0.868,
+      0.261,
+      0.99
+     ],
+     "area": 0.0139,
+     "best_iou_prev_track": 0.634,
+     "prev_track": 2
+    },
+    {
+     "cls": "carrot",
+     "score": 0.356,
+     "box": [
+      0.168,
+      0.841,
+      0.336,
+      0.998
+     ],
+     "area": 0.0264,
+     "best_iou_prev_track": 0.654,
+     "prev_track": 2
+    }
+   ],
+   "live_tracks": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "hits": 4,
+     "missed": 0
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "hits": 5,
+     "missed": 0
+    },
+    {
+     "id": 3,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 3
+    },
+    {
+     "id": 4,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 2
+    },
+    {
+     "id": 5,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 0
+    },
+    {
+     "id": 6,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 0
+    }
+   ],
+   "shown": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "score": 0.467
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "score": 0.454
+    },
+    {
+     "id": 5,
+     "label": "carrot",
+     "score": 0.431
+    }
+   ]
+  },
+  {
+   "t_s": 1.2,
+   "n_raw_ge035": 9,
+   "n_raw_removed_by_area_guard": 6,
+   "dets": [
+    {
+     "cls": "carrot",
+     "score": 0.666,
+     "box": [
+      0.612,
+      0.886,
+      0.711,
+      1.0
+     ],
+     "area": 0.0114,
+     "best_iou_prev_track": 0.411,
+     "prev_track": 3
+    },
+    {
+     "cls": "carrot",
+     "score": 0.489,
+     "box": [
+      0.228,
+      0.899,
+      0.353,
+      1.0
+     ],
+     "area": 0.0126,
+     "best_iou_prev_track": 0.545,
+     "prev_track": 6
+    },
+    {
+     "cls": "carrot",
+     "score": 0.384,
+     "box": [
+      0.327,
+      0.787,
+      0.456,
+      0.965
+     ],
+     "area": 0.0229,
+     "best_iou_prev_track": 0.258,
+     "prev_track": 1
+    }
+   ],
+   "live_tracks": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "hits": 4,
+     "missed": 1
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "hits": 5,
+     "missed": 1
+    },
+    {
+     "id": 3,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 0
+    },
+    {
+     "id": 4,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 3
+    },
+    {
+     "id": 5,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 1
+    },
+    {
+     "id": 6,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 0
+    },
+    {
+     "id": 7,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 0
+    }
+   ],
+   "shown": [
+    {
+     "id": 3,
+     "label": "carrot",
+     "score": 0.594
+    },
+    {
+     "id": 6,
+     "label": "carrot",
+     "score": 0.567
+    }
+   ]
+  },
+  {
+   "t_s": 1.3,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "hits": 4,
+     "missed": 2
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "hits": 5,
+     "missed": 2
+    },
+    {
+     "id": 3,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 1
+    },
+    {
+     "id": 4,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 4
+    },
+    {
+     "id": 5,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 2
+    },
+    {
+     "id": 6,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 1
+    },
+    {
+     "id": 7,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 1
+    }
+   ],
+   "shown": []
+  },
+  {
+   "t_s": 1.4,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "hits": 4,
+     "missed": 3
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "hits": 5,
+     "missed": 3
+    },
+    {
+     "id": 3,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 2
+    },
+    {
+     "id": 5,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 3
+    },
+    {
+     "id": 6,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 2
+    },
+    {
+     "id": 7,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 2
+    }
+   ],
+   "shown": []
+  },
+  {
+   "t_s": 1.5,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [
+    {
+     "id": 1,
+     "label": "carrot",
+     "hits": 4,
+     "missed": 4
+    },
+    {
+     "id": 2,
+     "label": "carrot",
+     "hits": 5,
+     "missed": 4
+    },
+    {
+     "id": 3,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 3
+    },
+    {
+     "id": 5,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 4
+    },
+    {
+     "id": 6,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 3
+    },
+    {
+     "id": 7,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 3
+    }
+   ],
+   "shown": []
+  },
+  {
+   "t_s": 1.6,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [
+    {
+     "id": 3,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 4
+    },
+    {
+     "id": 6,
+     "label": "carrot",
+     "hits": 2,
+     "missed": 4
+    },
+    {
+     "id": 7,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 4
+    }
+   ],
+   "shown": []
+  },
+  {
+   "t_s": 1.7,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [],
+   "shown": []
+  },
+  {
+   "t_s": 1.8,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [],
+   "shown": []
+  },
+  {
+   "t_s": 1.9,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [],
+   "shown": []
+  },
+  {
+   "t_s": 2.0,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [],
+   "shown": []
+  },
+  {
+   "t_s": 2.1,
+   "n_raw_ge035": 0,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [],
+   "live_tracks": [],
+   "shown": []
+  },
+  {
+   "t_s": 2.2,
+   "n_raw_ge035": 4,
+   "n_raw_removed_by_area_guard": 0,
+   "dets": [
+    {
+     "cls": "carrot",
+     "score": 0.413,
+     "box": [
+      0.409,
+      0.831,
+      0.646,
+      0.99
+     ],
+     "area": 0.0376,
+     "best_iou_prev_track": 0,
+     "prev_track": null
+    },
+    {
+     "cls": "carrot",
+     "score": 0.406,
+     "box": [
+      0.246,
+      0.891,
+      0.354,
+      0.999
+     ],
+     "area": 0.0116,
+     "best_iou_prev_track": 0,
+     "prev_track": null
+    },
+    {
+     "cls": "carrot",
+     "score": 0.395,
+     "box": [
+      0.658,
+      0.676,
+      0.754,
+      0.867
+     ],
+     "area": 0.0183,
+     "best_iou_prev_track": 0,
+     "prev_track": null
+    },
+    {
+     "cls": "carrot",
+     "score": 0.384,
+     "box": [
+      0.81,
+      0.75,
+      0.914,
+      0.967
+     ],
+     "area": 0.0225,
+     "best_iou_prev_track": 0,
+     "prev_track": null
+    }
+   ],
+   "live_tracks": [
+    {
+     "id": 8,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 0
+    },
+    {
+     "id": 9,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 0
+    },
+    {
+     "id": 10,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 0
+    },
+    {
+     "id": 11,
+     "label": "carrot",
+     "hits": 1,
+     "missed": 0
+    }
+   ],
+   "shown": []
+  }
+ ]
+}
