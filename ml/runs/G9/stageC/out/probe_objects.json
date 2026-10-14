@@ -1,0 +1,90 @@
+{
+ "apple": {
+  "objects": 75,
+  "raw_hit": 15,
+  "hit_kept_0.01": 3,
+  "hit_kept_0.005": 5,
+  "hit_kept_0.0025": 11,
+  "hit_kept_0.0": 15
+ },
+ "banana": {
+  "objects": 42,
+  "raw_hit": 15,
+  "hit_kept_0.01": 15,
+  "hit_kept_0.005": 15,
+  "hit_kept_0.0025": 15,
+  "hit_kept_0.0": 15
+ },
+ "capsicum": {
+  "objects": 96,
+  "raw_hit": 20,
+  "hit_kept_0.01": 12,
+  "hit_kept_0.005": 15,
+  "hit_kept_0.0025": 18,
+  "hit_kept_0.0": 20
+ },
+ "carrot": {
+  "objects": 132,
+  "raw_hit": 8,
+  "hit_kept_0.01": 4,
+  "hit_kept_0.005": 6,
+  "hit_kept_0.0025": 7,
+  "hit_kept_0.0": 8
+ },
+ "citrus": {
+  "objects": 57,
+  "raw_hit": 10,
+  "hit_kept_0.01": 3,
+  "hit_kept_0.005": 6,
+  "hit_kept_0.0025": 7,
+  "hit_kept_0.0": 10
+ },
+ "cucumber": {
+  "objects": 36,
+  "raw_hit": 11,
+  "hit_kept_0.01": 11,
+  "hit_kept_0.005": 11,
+  "hit_kept_0.0025": 11,
+  "hit_kept_0.0": 11
+ },
+ "lemon_lime": {
+  "objects": 129,
+  "raw_hit": 0,
+  "hit_kept_0.01": 0,
+  "hit_kept_0.005": 0,
+  "hit_kept_0.0025": 0,
+  "hit_kept_0.0": 0
+ },
+ "mango": {
+  "objects": 33,
+  "raw_hit": 10,
+  "hit_kept_0.01": 2,
+  "hit_kept_0.005": 3,
+  "hit_kept_0.0025": 8,
+  "hit_kept_0.0": 10
+ },
+ "pomegranate": {
+  "objects": 24,
+  "raw_hit": 6,
+  "hit_kept_0.01": 6,
+  "hit_kept_0.005": 6,
+  "hit_kept_0.0025": 6,
+  "hit_kept_0.0": 6
+ },
+ "potato": {
+  "objects": 6,
+  "raw_hit": 0,
+  "hit_kept_0.01": 0,
+  "hit_kept_0.005": 0,
+  "hit_kept_0.0025": 0,
+  "hit_kept_0.0": 0
+ },
+ "tomato": {
+  "objects": 81,
+  "raw_hit": 8,
+  "hit_kept_0.01": 1,
+  "hit_kept_0.005": 3,
+  "hit_kept_0.0025": 7,
+  "hit_kept_0.0": 8
+ }
+}
