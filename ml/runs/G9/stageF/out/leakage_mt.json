@@ -1,0 +1,2420 @@
+{
+"ref_hashes": 6913,
+"pool": 401,
+"leak": [],
+"dup": [
+"File:Pieter Aertsen - Marktfrau am Gem\u00fcsestand, 1567, 61.3.jpg",
+"File:Pieter Aertsen Pieter Aertsen The vegetable seller 1567 9885.jpg",
+"File:Carrots, Green Pepper and Cucumber at Barkin Dogo Market, Kaduna North 02.jpg",
+"File:Pomegranate for sale at Lake Market, Kolkata 2.jpg"
+],
+"kept": 397,
+"per_image": {
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 01.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d0938b4d25feea24"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 02.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "97d191ab3f1542c6"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 03.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "a74fc18e9eb06c19"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 04.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0458.jpg",
+"dup_of": null,
+"phash": "e1f2501cf99dec90"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 05.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cec084f0c",
+"dup_of": null,
+"phash": "99a9b13e4a1e2d27"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 06.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "dc8b1fc2b97034c5"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 07.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c59f957c2",
+"dup_of": null,
+"phash": "c08a7d1773e42ec9"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 08.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "c18f3c4f347c7324"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 09.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "af4fcf8f2a985420"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 10.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "dcc052a784f7e135"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 11.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c3d854faf",
+"dup_of": null,
+"phash": "e5899c163e3586e3"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 12.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "b494bde6c81eb341"
+},
+"File:Fresh Vegetables display in Iloilo Terminal Public Market 13.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c7bf0608b",
+"dup_of": null,
+"phash": "e878c0bf588c63a7"
+},
+"File:Fresh fruits and vegetables at a local market in Kilimanjaro Region, Tanzania.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c0a13587f",
+"dup_of": null,
+"phash": "fa253a550bd78389"
+},
+"File:Fried oyster and carrot cake stall at Jonker Street Night Market in Melaka, Malaysia.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c0a13587f",
+"dup_of": null,
+"phash": "97b5a49924b23dd2"
+},
+"File:Gemuese-auswahl-quer.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cc5585ebc",
+"dup_of": null,
+"phash": "98f96c94c4c69d0f"
+},
+"File:InSeason Farmer's Market, North Melbourne Australia (4570521176).jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c0be28daa",
+"dup_of": null,
+"phash": "c8c4c595b671dc78"
+},
+"File:Market vendor with fresh vegetables.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a58e96899d2d2d63"
+},
+"File:Carrots \u2013 loose pile.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "eeb4c864f22d8c2d"
+},
+"File:Diced Carrots and Green Beans.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "abf34d28605fa6a1"
+},
+"File:\u041e\u0432\u043e\u0449\u0438 \u043d\u0430 \u0440\u044b\u043d\u043a\u0435.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d492c3dc925ab569"
+},
+"File:A lady cutting carrot for sale.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c7bf0608b",
+"dup_of": null,
+"phash": "8ab190cc7dcc559e"
+},
+"File:Carrot fruit on display.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c3cc14a1f",
+"dup_of": null,
+"phash": "80fdcbafa1d074c8"
+},
+"File:Carrots, Green Pepper and Cucumber at Barkin Dogo Market, Kaduna North 03.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "e55e43e83eab2432"
+},
+"File:Carrots at Barkin Dogo Market, Kaduna North 03.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c9030be18",
+"dup_of": null,
+"phash": "a6d9702539fb0e23"
+},
+"File:Carrots displayed for sale.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "g7_clip_keyframe:c4880a292",
+"dup_of": null,
+"phash": "c285bf3d1eea2984"
+},
+"File:Carrots for sale 20181004.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cc44ad5c9",
+"dup_of": null,
+"phash": "8b5235cbb29cf2b0"
+},
+"File:Carrots in Carbon Public Market.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "9d4d584a7c6a7c61"
+},
+"File:Daucus carota Carrots, Brassica oleracea Kale & Cucurbita pepo Delicata Squash.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c6c0d485a",
+"dup_of": null,
+"phash": "a24f84750d53f173"
+},
+"File:BoroughMarketTomatoes.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cf14f0db2",
+"dup_of": null,
+"phash": "c1a24b3b3bd45978"
+},
+"File:Canterbury market stall 2026.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c4880a292",
+"dup_of": null,
+"phash": "accaa5c8f29f51b0"
+},
+"File:HK STT Shek Tong Tsui \u5c48\u5730\u8857 Whitty Street food vegetable stall shop red Tomato July 2015 DSC.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "f98797ba0188cbe2"
+},
+"File:Market stall.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "c0d6316e2c38f796"
+},
+"File:Onions and tomatoes on a market stall.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "8f4380beffe71048"
+},
+"File:Street Stall, Ifaty, Madagascar (21112265816).jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c20a12a9c",
+"dup_of": null,
+"phash": "9d6e91a346a4cdb2"
+},
+"File:Woman prepares fresh fruits at a market stall during a festival in a historical setting with woven baskets.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "c0cf9e37c87838c9"
+},
+"File:A pile of tomatoes, onions, avocados, garlic, ginger, lemons.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "8cf18e2f3d8cb0f0"
+},
+"File:Argentine hamburgers made with Paty Cl\u00e1sicas patties served with a side of french fries.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c6473db48",
+"dup_of": null,
+"phash": "ea71a53c95dd04e4"
+},
+"File:Aubergine violette.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_quality_clip",
+"dup_of": null,
+"phash": "b5c0463ef0d1926f"
+},
+"File:Indian Chat Center.JPG": {
+"min_dist_ref": 14,
+"nearest_ref": "g7_clip_keyframe:c19ae062b",
+"dup_of": null,
+"phash": "f8ad4eeb41324593"
+},
+"File:Platter of fried pork in Busia, Kenya.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:ce3fc202a",
+"dup_of": null,
+"phash": "afc5d50d0c2b696c"
+},
+"File:Platter of fried pork in Busia, Kenya - 02.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c9048d7da",
+"dup_of": null,
+"phash": "969293c9e967f510"
+},
+"File:Platter of fried pork in Busia, Kenya - 03.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "ac14a601b917f73e"
+},
+"File:Platter of fried pork in Busia, Kenya - 04.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "ff8d850f0b6a6a60"
+},
+"File:Tomaten Abfallentsorgung-Feldhygine-DLR-NW-jk.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "8595f8419f5d4857"
+},
+"File:Fresh Tomato in the market for sale 01.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "stageE_M_candidate:m0236.jpg",
+"dup_of": null,
+"phash": "ab0ab2cd3ecec183"
+},
+"File:Fresh Tomato in the market for sale 03.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c8b2d2f36",
+"dup_of": null,
+"phash": "bc79d9125293da51"
+},
+"File:Fresh Tomato in the market for sale 04.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageD_S:sd0136.jpg",
+"dup_of": null,
+"phash": "f27569aca8d19651"
+},
+"File:Fresh Tomatoes for sale in creek market, Port-Harcourt.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "806f477f6a22285f"
+},
+"File:The Beauty of Fresh Tomatoes in Nigeria.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:ccd5949e0",
+"dup_of": null,
+"phash": "95968fc64561f711"
+},
+"File:Tomatoes at Hope Farmers Market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "f8f8c81f220bb1e3"
+},
+"File:MIN Rungis pommes.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "a1de5cb5a5c01c1f"
+},
+"File:Bill-Gates-Jose-ignacio-galindo.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c19ae062b",
+"dup_of": null,
+"phash": "83782cb478cf9987"
+},
+"File:Bill Gates - 2023 - P062021-967902 (cropped).jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "dee10638eb3017cd"
+},
+"File:Bill Gates - Nov. 8, 2019.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c90447971",
+"dup_of": null,
+"phash": "dff4030e3031175f"
+},
+"File:Bill Gates 2013.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c9030be18",
+"dup_of": null,
+"phash": "d9e576083f924e1a"
+},
+"File:Bill Gates July 2014.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "faa41ff28138c28f"
+},
+"File:Bill Gates June 2015.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cfda01e90",
+"dup_of": null,
+"phash": "8bbc66e974a1a2d2"
+},
+"File:Bill Gates in 2010.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c3cc14a1f",
+"dup_of": null,
+"phash": "c8b539c536c6895b"
+},
+"File:Bill Gates with Manish Maheshwari.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_det_clip",
+"dup_of": null,
+"phash": "fdb99b94a5285246"
+},
+"File:Bob-Rosenschein-Bill-Gates-2005a.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c97e354bf",
+"dup_of": null,
+"phash": "8717fc2c43c9a157"
+},
+"File:Paul Allen and Bill Gates at Lakeside School in 1970.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cb045e06b",
+"dup_of": null,
+"phash": "d29ce244d6e738c6"
+},
+"File:Quote of Bill Gates at the Cafeteria of IIIT - Hyderabad.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a1f89e9be019b964"
+},
+"File:Secretary Azar and Bill Gates (2).jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a69637190913e7e6"
+},
+"File:3292Foods displayed for sale in Bulacan 05.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "85a4d2739b68c6ce"
+},
+"File:3292Foods displayed for sale in Bulacan 06.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "9042b16cb5331aff"
+},
+"File:3292Foods displayed for sale in Bulacan 07.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c4e9a7195",
+"dup_of": null,
+"phash": "c0d0b2e6b97c127b"
+},
+"File:3292Foods displayed for sale in Bulacan 08.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c42c27498",
+"dup_of": null,
+"phash": "91a178be26395dd2"
+},
+"File:Cosmic Crisp apples for sale.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0003.jpg",
+"dup_of": null,
+"phash": "947c44363d69c9cd"
+},
+"File:Illuminated wooden shelf with many glass jars containing cookies for sale in Tokyo.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c973b3f44",
+"dup_of": null,
+"phash": "df6f20117b7cc424"
+},
+"File:Oweston sting fish for sale at Tsukiji Fishmarket, Tokyo-30.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "89e97a9e73143706"
+},
+"File:Vintage Apple Computers For Sale 1.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "847dd2b2e15cb85a"
+},
+"File:Fruit and vegetable stall at Southside Farmers Market November 2025.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "f827c9e08b5743ac"
+},
+"File:HK Shatin City One Wet Market interior fruit stall display on sale Orange.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c018de016",
+"dup_of": null,
+"phash": "c8b86f530d6c7619"
+},
+"File:Orange stall in Southall.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:ccd5949e0",
+"dup_of": null,
+"phash": "d96c3590eab58d4a"
+},
+"File:2018 at Exeter TMD (41) piling.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0241.jpg",
+"dup_of": null,
+"phash": "90ef5a650a1df1ca"
+},
+"File:Children playing in the rice mill (edited).jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c6473db48",
+"dup_of": null,
+"phash": "9ae11dce24def20a"
+},
+"File:Estradiol valerate in pile.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "ef64c0616c5a7875"
+},
+"File:Gobstopper-pile.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c6e08132a",
+"dup_of": null,
+"phash": "ccd50cf753499362"
+},
+"File:Pile of mandarin oranges on red cloth, Indonesia.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c19ae062b",
+"dup_of": null,
+"phash": "cfa75084243cdb9b"
+},
+"File:Pile of shavings with thicknesser.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c97e354bf",
+"dup_of": null,
+"phash": "ff7f60c81c326183"
+},
+"File:Plain-M&Ms-Pile.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c90447971",
+"dup_of": null,
+"phash": "e3f0757e24d2c1d0"
+},
+"File:Skittles-Candies-Pile.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c9048d7da",
+"dup_of": null,
+"phash": "aef2a585d23a926a"
+},
+"File:Sunset in Saxon Switzerland.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_det_clip",
+"dup_of": null,
+"phash": "8dd28d71602e1ecf"
+},
+"File:Toy Guns in Pile.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c6c0d485a",
+"dup_of": null,
+"phash": "c25bdcab375c0aa1"
+},
+"File:Stack of green malta citrus fruits at Sadarghat market Dhaka.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c0a13587f",
+"dup_of": null,
+"phash": "9d8d66a2abd93905"
+},
+"File:Stack of green malta citrus fruits at Sadarghat market Dhaka 02.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cf14f0db2",
+"dup_of": null,
+"phash": "fa8c626375992c35"
+},
+"File:Au march\u00e9 - Mandarines.JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "949f3cc13bbc42ac"
+},
+"File:Bhutan's Mandarin Export Success at Samdrup Jongkhar.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0644.jpg",
+"dup_of": null,
+"phash": "839e4cbcbcb9252c"
+},
+"File:Citrus fruits for sale in a New Zealand supermarket.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cfb66f6d2",
+"dup_of": null,
+"phash": "92302d7f5464c67e"
+},
+"File:Fruits os Mediterranean mandarin .jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a86a7e78833dd0c6"
+},
+"File:HK CWB \u9285\u947c\u7063 Causeway Bay \u7dad\u591a\u5229\u4e9e\u516c\u5712 Victoria Park \u5e74\u5bb5\u82b1\u5e02 Lunar New Year Fair Market February 2019 SSG 53.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c6f5ac9b4",
+"dup_of": null,
+"phash": "c5ca4e71318fe0ba"
+},
+"File:HK CWB \u9285\u947c\u7063 Causeway Bay \u7dad\u591a\u5229\u4e9e\u516c\u5712 Victoria Park \u5e74\u5bb5\u82b1\u5e02 Lunar New Year Fair Market February 2019 SSG 54.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c6e08132a",
+"dup_of": null,
+"phash": "ff80b676007be20b"
+},
+"File:HK SYP \u897f\u74b0 Sai Ying Pun \u5e72\u8afe\u9053\u897f 146 Connaught Road West \u6210\u57fa\u5546\u696d\u4e2d\u5fc3 Singga Commercial Centre shop \u7f8e\u5473\u68e7 Yummy House Intl food April 2020 SS2 02.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "e6020db56acfb8b1"
+},
+"File:HK Wan Chai North \u7063\u4ed4\u5317 Grand Hyatt Hotel \u4fdd\u5229\u96c6\u5718 Poly Auction preview exhibits \u62cd\u8ce3 Moutai \u8cb4\u5dde\u8305\u53f0\u9152 Maotai \u5927\u9eaf\u767d\u9152 Sept 2017 IX1 sign 02.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "8468179778d71ed1"
+},
+"File:HK \u6771\u6d8c Tung Chung \u8fce\u79a7\u8def Ying Hei Road \u6607\u8588 The Visionary \u5546\u5834 mall shop Market Place by Jasons Supermarket March 2022 Px3 03.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "830a6fa1a8aa7a6f"
+},
+"File:It\u014d Jakuch\u016b - Mandarin ducks in the snow (Colorful Realm of Living Beings).jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "952f5ab54a4a659c"
+},
+"File:Mandarines ripe and ready to eat! (6236138544).jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cfe0b39f1",
+"dup_of": null,
+"phash": "e7e62bb502814f53"
+},
+"File:Banana stall.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0233.jpg",
+"dup_of": null,
+"phash": "a2adc3152651f6ba"
+},
+"File:Bananas in plastic pot.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "8a47857eb230d1b7"
+},
+"File:Fruit stall at Yabelo market, Ethiopia, 2011.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "e8726119b3ba3636"
+},
+"File:Fruit stall in Det Udom.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d91d28cc74a8de66"
+},
+"File:Fruits at a market stall in Kigali.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c7bf0608b",
+"dup_of": null,
+"phash": "d77e2e3b2c60c294"
+},
+"File:HK \u7063\u4ed4 Wan Chai \u99f1\u514b\u9053\u5e02\u653f\u5927\u5ec8 Lockhart Road MSB Market \u99f1\u514b\u9053\u8857\u5e02 December 2018 SSG fruit stall banana.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c3d1561b2",
+"dup_of": null,
+"phash": "fec60295685af932"
+},
+"File:Pisang tanduk fruit stall.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d5ad4a6b623a1791"
+},
+"File:The Market (238088745).jpeg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c19ae062b",
+"dup_of": null,
+"phash": "d201bcbe7679c80b"
+},
+"File:Australian and Pan-Asian crafts 1 - Carrara Market (2569634479).jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "8d2f04a2bfb533d0"
+},
+"File:Australian and Pan-Asian crafts 2 - Carrara Market (2570461610).jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "bd67906fc3906a8a"
+},
+"File:Banana Bunch For Sale in RA Market , Bonny Island , Rivers State.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c20a12a9c",
+"dup_of": null,
+"phash": "d16c422b2ef5bc1a"
+},
+"File:Banana transport 1.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0537.jpg",
+"dup_of": null,
+"phash": "ab58826cfde331c2"
+},
+"File:Banana transport 2.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0075.jpg",
+"dup_of": null,
+"phash": "f569a1c1a7d3830e"
+},
+"File:Banana transport 3.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cf14f0db2",
+"dup_of": null,
+"phash": "bf3e84004acb6b6b"
+},
+"File:Banana transport 4.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "b0719e0e0fe9f1d0"
+},
+"File:Banana transport 5.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c0a13587f",
+"dup_of": null,
+"phash": "b2ba1f43c876dc50"
+},
+"File:Banana transport 6.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "98588c0f2567e7f2"
+},
+"File:Banana transport 7.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "95f6c20aa30d35d7"
+},
+"File:Bananas by the bunch - Carrara Market (2569636765).jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "af2501fd68cb6496"
+},
+"File:Belly Dancing School demonstration - Carrara Market (2569637885).jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:ccd5949e0",
+"dup_of": null,
+"phash": "820ececfd9d87039"
+},
+"File:Bunch of Bananas at Poorna market vizag.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "ec7cfce8b2914183"
+},
+"File:Bunches of matooke on market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "95868bbc6c1a9bd4"
+},
+"File:Strawberry bananas for sale (26433268693).jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cfe0b39f1",
+"dup_of": null,
+"phash": "d0b07f8f3f8168c4"
+},
+"File:\u05d0\u05e9\u05db\u05d5\u05dc\u05d5\u05ea \u05d1\u05e0\u05e0\u05d4 \u05d1\u05e9\u05d5\u05e7.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "9bab6fc03d24d08d"
+},
+"File:ARE - Fruit stall at San Camilo Market in Arequipa, Peru, 2013.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "96c0d1be88667e27"
+},
+"File:Fruit Stall in Barcelona Market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c20a12a9c",
+"dup_of": null,
+"phash": "c07715be63563453"
+},
+"File:Fruit stall at Bangalore City Market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "c72b1026aa45e7fa"
+},
+"File:Havana - Fruit stall in Market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "cc37f25ca508d077"
+},
+"File:John Frederick Tayler - A Fruit Stall in a Market - B1975.4.952 - Yale Center for British Art.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "efb1da489760682d"
+},
+"File:1567 Aertsen Marktfrau am Gemuesestand anagoria.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c42c27498",
+"dup_of": null,
+"phash": "a7c4cf8b108783cf"
+},
+"File:1567 Aertsen Marktfrau am Gemuesestand anagoria (cropped).JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "ee8ef35188b600eb"
+},
+"File:A vegetable stall of Trung K\u00ednh H\u1ea1 Village 10-12-2025.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c4880a292",
+"dup_of": null,
+"phash": "b07534dccba07cb4"
+},
+"File:Legazpi Village Sunday Market vegetable stall.jpg": {
+"min_dist_ref": 12,
+"nearest_ref": "stageE_M_candidate:m0389.jpg",
+"dup_of": null,
+"phash": "c08bbef89414bd6a"
+},
+"File:Pieter Aertsen - Marktfrau am Gem\u00fcsestand, 1567, 61.3.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_neg_clip",
+"dup_of": "File:1567 Aertsen Marktfrau am Gemuesestand anagoria.JPG",
+"phash": "ef4c4fab1087034f"
+},
+"File:Pieter Aertsen Pieter Aertsen The vegetable seller 1567 9885.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c32085ee7",
+"dup_of": "File:1567 Aertsen Marktfrau am Gemuesestand anagoria.JPG",
+"phash": "a3848fa3909787cf"
+},
+"File:Pieter aertsen, venditrice di verdura al mercato, 1567, 01.JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "a7e8cf05135e8578"
+},
+"File:Pieter aertsen, venditrice di verdura al mercato, 1567, 02.JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c6f5ac9b4",
+"dup_of": null,
+"phash": "899f5ed2aa5a06b4"
+},
+"File:Pieter aertsen, venditrice di verdura al mercato, 1567, 03.JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c0a13587f",
+"dup_of": null,
+"phash": "d6b44c293695e396"
+},
+"File:Sulmona Market Vegetable Stall Abruzzo Italy 9502.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d8bf644a48de6a91"
+},
+"File:Vegetable stall at wet market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "95d6a9ccd9086e63"
+},
+"File:A greengrocer displays vegetables in Morocco.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "b0bdd9bab00f3213"
+},
+"File:This is how A greengrocer organzises vegetables in Morocco.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c9048d7da",
+"dup_of": null,
+"phash": "9c1fcbb385f71440"
+},
+"File:Whistler - The Greengrocer's Shop, Paris, c.1887\u20131890, GLAHA 46353.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "bd2f7296c6841963"
+},
+"File:9766 Cambridge Farmers Market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c59f957c2",
+"dup_of": null,
+"phash": "eaf8ea8d61871cc1"
+},
+"File:Back side of Cambridge Farmers Market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c61f2d4b9",
+"dup_of": null,
+"phash": "aea49456da9273e1"
+},
+"File:Cambridge, ON farmers market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a48ad7299971a766"
+},
+"File:Cambridge Farmers' Market- Front.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c61f2d4b9",
+"dup_of": null,
+"phash": "a68d9a10e167cb5e"
+},
+"File:Cambridge Farmers' Market- west elevation.jpg": {
+"min_dist_ref": 12,
+"nearest_ref": "stageE_M_candidate:m0340.jpg",
+"dup_of": null,
+"phash": "bcdcc04b0da734da"
+},
+"File:Cambridge Farmers Market 1.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "af86c258f978c0a7"
+},
+"File:Cambridge Farmers Market 2.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c4880a292",
+"dup_of": null,
+"phash": "bfbec048213472db"
+},
+"File:Cambridge Farmers Market 9766.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "stageE_M_candidate:m0170.jpg",
+"dup_of": null,
+"phash": "abbfd5109051995b"
+},
+"File:Farmers Market Hertford.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "b0d0b5b6f3a448f8"
+},
+"File:Fresh vegetables and fruits at the market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c59f957c2",
+"dup_of": null,
+"phash": "85646a33b5f4c5c3"
+},
+"File:Organic - Vegetables at Farmers Market (30297519628).jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c5e5004e3",
+"dup_of": null,
+"phash": "cc43d34a3754ab4d"
+},
+"File:Richfield Farmers Market-03.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "bf8255a56135aad2"
+},
+"File:Richfield Farmers Market-05.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "9a1a1b3b799466a5"
+},
+"File:Vegetables Farmers Market Cubao.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c3d854faf",
+"dup_of": null,
+"phash": "aec31d7573782813"
+},
+"File:Citrons au march\u00e9 Adjam\u00e9.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a9cc46a636ad325b"
+},
+"File:Junar nepali indiginuous fruit.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "8cd33d33cc944667"
+},
+"File:Lemons, limes and pomelos at the market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "b01b494b5a4353fe"
+},
+"File:Lime and Lemon.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c6c0d485a",
+"dup_of": null,
+"phash": "be7ab3b8cc01d4c2"
+},
+"File:Indianapolis Farmers' Market, 1901.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a8c7d093b1357f0a"
+},
+"File:Papalisa.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "d49b67f480a42d97"
+},
+"File:Potato bourekas.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "80055f14575db5b7"
+},
+"File:Vendor in Puno market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d499cde2e4065adc"
+},
+"File:Woman Selling Irish Potatoes at Outdoor Market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c97e354bf",
+"dup_of": null,
+"phash": "b39bc5e1868f838c"
+},
+"File:Carrots, Green Pepper and Cucumber at Barkin Dogo Market, Kaduna North 01.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c9030be18",
+"dup_of": null,
+"phash": "d38c2c436789c55f"
+},
+"File:Carrots, Green Pepper and Cucumber at Barkin Dogo Market, Kaduna North 02.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": "File:Carrots, Green Pepper and Cucumber at Barkin Dogo Market, Kaduna North 03.jpg",
+"phash": "e55e42e9fc23ac30"
+},
+"File:Cucumber at Bakin Dogo market Kaduna 01.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "af045d23f81e972c"
+},
+"File:Cucumber at Bakin Dogo market Kaduna 02.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "stageE_M_candidate:m0345.jpg",
+"dup_of": null,
+"phash": "ae980f73f8362c1c"
+},
+"File:Cucumber at Bakin Dogo market Kaduna 03.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "fec2e925b2894556"
+},
+"File:Cucumber at Bakin Dogo market Kaduna 04.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "fedaf28484213b33"
+},
+"File:Cucumber in Carbon Public Market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c5ed7eb90",
+"dup_of": null,
+"phash": "88a40eabb9deeb28"
+},
+"File:Cucumber in Monday Market Kaduna South.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cfe0b39f1",
+"dup_of": null,
+"phash": "aed2858b3a366d49"
+},
+"File:Cucumber in market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0262.jpg",
+"dup_of": null,
+"phash": "ad214f2b273c225f"
+},
+"File:Cucumbers (Onitsha).jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0745.jpg",
+"dup_of": null,
+"phash": "f08bf9721f10495b"
+},
+"File:Cucumis - Snake cucumbers 01.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c0a13587f",
+"dup_of": null,
+"phash": "fb260d89379ed023"
+},
+"File:Exotic cucumbers (27237814101).jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c9030be18",
+"dup_of": null,
+"phash": "b0360f6228fcfc93"
+},
+"File:Fresh Cucumbers at Wadi Kaam Market in Al Khums.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "b938fb4ca3a69628"
+},
+"File:HK SYP Best of Best Vegetable green Cucumbers Aug-2012.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "b269bc2f9570882f"
+},
+"File:HK SYP Best of Best Vegetable yellow Cucumbers Aug-2012.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cd17ce723",
+"dup_of": null,
+"phash": "aa2d952e7a72c2d1"
+},
+"File:Market-at-Amazonas-shore.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "ee35056959ab4726"
+},
+"File:Outside Riga Market Hall 03.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c0a13587f",
+"dup_of": null,
+"phash": "c1a573b55d2752e0"
+},
+"File:Persian cucumbers at Campbell farmer's market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c20a12a9c",
+"dup_of": null,
+"phash": "dce47f8863c73902"
+},
+"File:Ryerson Market cucumbers on sale.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c59f957c2",
+"dup_of": null,
+"phash": "b68c6064fce38dc9"
+},
+"File:Vegitables at Kottappuram Market, Kerala, India IMG 20190121 092004.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c59f957c2",
+"dup_of": null,
+"phash": "ddcea4ea62890e66"
+},
+"File:A Mushrooms and Bell peppers.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "cd073b9dbacc8087"
+},
+"File:Bell Pepper at Bakin Dogo Market, Kaduna North 01.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a2a91eaa27ea9b54"
+},
+"File:Bell Pepper at Bakin Dogo Market, Kaduna North 02.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "86d47cdc633d7490"
+},
+"File:Bell Pepper at Bakin Dogo Market, Kaduna North 03.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "92842ca23df3b5b3"
+},
+"File:Bell Pepper at Bakin Dogo Market, Kaduna North 04.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0324.jpg",
+"dup_of": null,
+"phash": "92aca6b138b33f62"
+},
+"File:Bell pepper ina a sack at Bakin Dogo market Kaduna 01.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d08ed27e9b7019e2"
+},
+"File:Bell pepper ina a sack at Bakin Dogo market Kaduna 02.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "c76bf08d6aa38946"
+},
+"File:Bell pepper ina a sack at Bakin Dogo market Kaduna 03.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "c429bf8da88b355a"
+},
+"File:Bell pepper ina a sack at Bakin Dogo market Kaduna 04.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "cfa15969355aed02"
+},
+"File:Bell pepper ina a sack at Bakin Dogo market Kaduna 05.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c8b2d2f36",
+"dup_of": null,
+"phash": "93cc7391644396fc"
+},
+"File:Bell peppers, Mercado de Arroios, Lisbon, Portugal julesvernex2-2.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "99b690a7e79868a9"
+},
+"File:Bell peppers, Mercado de Arroios, Lisbon, Portugal julesvernex2.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "ed35234a79c2e4cc"
+},
+"File:Bell peppers at Bakin Dogo market Kaduna 01.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "e19be58aee24d1a2"
+},
+"File:Bell peppers at Bakin Dogo market Kaduna 02.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "e61cce9ae40cd0fc"
+},
+"File:Bell peppers at Bakin Dogo market Kaduna 03.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d104cef5875bb40b"
+},
+"File:Farmer's Market Peppers.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "b6df10786e23293c"
+},
+"File:Green Bell Pepper in Carbon Public Market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cf3d00ee1",
+"dup_of": null,
+"phash": "9571fa46b29ba924"
+},
+"File:Green bell pepper at ayegbaju market, osogbo.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c6c0d485a",
+"dup_of": null,
+"phash": "ea0d83e71cc739c4"
+},
+"File:Liat Portal for Foodie Disorder - Orange bell peppers from San Francisco farmers market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0667.jpg",
+"dup_of": null,
+"phash": "d1976ec291953a6c"
+},
+"File:Market Place for different varieties of Pepper at Bakin Dogo Market, Kaduna North.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "a1efa6220ede29d1"
+},
+"File:Orange bell-peppers Rouffignac.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d625ac78dd2a684e"
+},
+"File:Red bell peppers at Ljubljana Central Market.JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cf3d00ee1",
+"dup_of": null,
+"phash": "900bbc155ea8ffe0"
+},
+"File:Yellow red and orange bell peppers display.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cc44ad5c9",
+"dup_of": null,
+"phash": "fe442e239f0c934b"
+},
+"File:Liat Portal for Foodie Disorder - Pomegranate.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c4880a292",
+"dup_of": null,
+"phash": "90c93e32e4b0cfd3"
+},
+"File:Liat Portal for Foodie Disorder - Pomegranates.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c6e08132a",
+"dup_of": null,
+"phash": "93c76c9993e6422d"
+},
+"File:Pomegranate for sale at Lake Market, Kolkata.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d04935bb5bc625cc"
+},
+"File:Pomegranate for sale at Lake Market, Kolkata 2.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": "File:Pomegranate for sale at Lake Market, Kolkata.jpg",
+"phash": "d04934bb6bc625dc"
+},
+"File:Pomegranate stand at the Lido Beach market, Ashdod, 2013.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "stageE_M_candidate:m0663.jpg",
+"dup_of": null,
+"phash": "bf39296b696c4898"
+},
+"File:Pomegranates, from Israel.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "bd68d271508e1f99"
+},
+"File:Pomegranates at farmers market (43134440935).jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "ca4633a3914fae39"
+},
+"File:Pomegranates in a Serbian market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cf3d00ee1",
+"dup_of": null,
+"phash": "c29616632bbd6cd4"
+},
+"File:Mangga gedong gincu mangoes.JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c7bf0608b",
+"dup_of": null,
+"phash": "852eaea5a451734f"
+},
+"File:Mango stall at City Market, Bangalore in May 2008 (1).jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "806c623ff1cc8cb7"
+},
+"File:Mango stall at City Market, Bangalore in May 2008 (2).jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "87594df0169392eb"
+},
+"File:Melons and mangos sold at a market stall in Kigali.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a081434b556bacff"
+},
+"File:Puesto de jugos dentro del Mercado San Pedro cusco 01.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "c1b17d83a666e670"
+},
+"File:Puesto de jugos dentro del Mercado San Pedro cusco 02.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c4e9a7195",
+"dup_of": null,
+"phash": "c1a17939d3d1f911"
+},
+"File:SZ \u6df1\u5733 Shenzhen \u798f\u7530 Futian \u6c34\u570d\u6751\u591c\u5e02 Shuiwei Cun Night food Market fruit mango stall May 2017 IX1.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "c02c3fd664093f9e"
+},
+"File:2009-03-20 guavas vendor at Raohe Street Night Market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0305.jpg",
+"dup_of": null,
+"phash": "97b53d961aa099c3"
+},
+"File:Bhimruli Floating Guava Market, Jhalokathi, Barisal.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c3d854faf",
+"dup_of": null,
+"phash": "9080a7e8783b1ff6"
+},
+"File:Bhimruli Floating Guava Market, Jhalokathi, Barisal (2).jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "919da5c7e170331b"
+},
+"File:Bhimruli Floating Guava Market, Jhalokathi, Barisal (cropped).jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "d864b550b21f6abc"
+},
+"File:Bhimruli Floating Guava Market, Jhalokathi (2).jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c20a12a9c",
+"dup_of": null,
+"phash": "9180e6783e9ccda7"
+},
+"File:Fruits Market - Sc\u00e8ne de rue \u00e0 Pune, Inde.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c973b3f44",
+"dup_of": null,
+"phash": "956037df095873e2"
+},
+"File:Guava fruit in alagar koil.JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c3d854faf",
+"dup_of": null,
+"phash": "ba6ae8af7a031519"
+},
+"File:Licorice guava vendors at Raohe Street night market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cec084f0c",
+"dup_of": null,
+"phash": "84a67b5bd44d98a6"
+},
+"File:Pineapple guavas for sale at farmer's market in Campbell, California.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c3d854faf",
+"dup_of": null,
+"phash": "c689e0074fd7c8b9"
+},
+"File:Armours from Sabzi Mandi.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cf14f0db2",
+"dup_of": null,
+"phash": "ab008d6b547d5f98"
+},
+"File:Chickpet Sabzi Mandi.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c7bf0608b",
+"dup_of": null,
+"phash": "c8c8c230fef4f507"
+},
+"File:Enterance to Temple near Sabzi Mabdi Sangla Hill 16032015.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "e6b1db649a594325"
+},
+"File:Firearms captured from Sabzi Mandi 1947.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "a238e5533d46da87"
+},
+"File:Firearms in Sabzi Mandi 25.09.1947.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c0a13587f",
+"dup_of": null,
+"phash": "cc3233cec4b13e27"
+},
+"File:Makbara of Nawab Bahadur khan.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "stageE_M_candidate:m0650.jpg",
+"dup_of": null,
+"phash": "abecf515826a1393"
+},
+"File:SP Sabzi Mandi inspecting captured firearms.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c87e3900a",
+"dup_of": null,
+"phash": "d623ed29cb34c534"
+},
+"File:SabziMandiHasilpur.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "85a59ade5a29a5a5"
+},
+"File:Sabzi Mandi.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "d291ccbe0bbd5a42"
+},
+"File:Street vegetable vendor in India.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "85ad324a237bacce"
+},
+"File:Fruit Handcart.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "aa9fdf2f1f142050"
+},
+"File:Fruit stand 116 St off 2d Av jeh.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "e9cb83a47c71c41b"
+},
+"File:Fruits cart.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cf3d00ee1",
+"dup_of": null,
+"phash": "b9aa92b3ac11366e"
+},
+"File:Rujak Vendor.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c8ddc4768",
+"dup_of": null,
+"phash": "ac8b138f83aec31b"
+},
+"File:Street vendor slicing fresh jackfruit.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "94aa2df036ce270f"
+},
+"File:A Vegetable Vendor at Chengalpet Market - Happy Madras Week!!! (14801208708).jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c6e08132a",
+"dup_of": null,
+"phash": "8bb933bb6b289c05"
+},
+"File:Cauliflower vendor in Goa, India.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "893dcb9979e68d02"
+},
+"File:Cycle-vegetable-vendor-Sathyamagnalam.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_det_clip",
+"dup_of": null,
+"phash": "e7a7e544c0cb99c8"
+},
+"File:Fruit and vegetable vendor in Jaipur.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cea174b05",
+"dup_of": null,
+"phash": "99dc88c69766a1a7"
+},
+"File:Goa, India. A vegetable vendor in the market 01.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "939f9899647181e7"
+},
+"File:Goa, India. A vegetable vendor in the market 10.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c90447971",
+"dup_of": null,
+"phash": "b099989d6e4a6676"
+},
+"File:Vegetable vendor at the Mapusa market in Goa, India.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "dcc470075b1d79ac"
+},
+"File:Vegetable vendor in Jaipur.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "be333b345b3044da"
+},
+"File:Vegetable vendor in Pune India.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "9e1d19592b0d9c6d"
+},
+"File:Vegetable vendor in the streets of Hyderabad.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cd1a3f857",
+"dup_of": null,
+"phash": "fad09a649a19b339"
+},
+"File:Vegetables Vendor in Kakinada Market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "9ac37b74c8c24b33"
+},
+"File:Kakis 2kg x 100.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "936d4a392b93625b"
+},
+"File:Persimmon (Diospyros kaki) in Thailand.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c9048d7da",
+"dup_of": null,
+"phash": "915d55c1d5e4f0c5"
+},
+"File:Persimmons for sale at HEB Central Market Southlake - Forsythe 0.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "c0ee3be8e0095ebc"
+},
+"File:SZ \u6df1\u5733 Shenzhen \u7f85\u6e56 Luohu Guowei Road \u57ce\u4e2d\u6751 \u5773\u4e0b\u6751 Aoxia Cun Village \u805a\u5bf6\u8def Jubao Road \u8857\u5e02 food market \u4f73\u5bb6\u751f\u6d3b\u8d85\u5e02 Kai Jia Supermarket fruit \u5927\u7d05\u67ff\u679c night November 2023 R12S 02.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "df01caedd1307a34"
+},
+"File:\u0425\u0443\u0440\u043c\u0430-\u0431\u044b\u0447\u044c\u0435\u0441\u0435\u0440\u0434\u0446\u0435 (bull heart persimmons) \u043d\u043e\u044f\u0431\u0440\u044c 2025 02.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "fa9c857097cb5825"
+},
+"File:\u0425\u0443\u0440\u043c\u0430-\u0431\u044b\u0447\u044c\u0435\u0441\u0435\u0440\u0434\u0446\u0435 (bull heart persimmons) \u043d\u043e\u044f\u0431\u0440\u044c 2025 04.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "fa9ea17895619623"
+},
+"File:\u0425\u0443\u0440\u043c\u0430-\u0431\u044b\u0447\u044c\u0435\u0441\u0435\u0440\u0434\u0446\u0435 (bull heart persimmons) \u043d\u043e\u044f\u0431\u0440\u044c 2025 05.jpg": {
+"min_dist_ref": 12,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "fa95e17097d28e42"
+},
+"File:\u0425\u0443\u0440\u043c\u0430-\u0431\u044b\u0447\u044c\u0435\u0441\u0435\u0440\u0434\u0446\u0435 (bull heart persimmons) \u043d\u043e\u044f\u0431\u0440\u044c 2025 07.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "fb86887d8758874a"
+},
+"File:\u0425\u0443\u0440\u043c\u0430-\u0431\u044b\u0447\u044c\u0435\u0441\u0435\u0440\u0434\u0446\u0435 (bull heart persimmons) \u043d\u043e\u044f\u0431\u0440\u044c 2025 11.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "f895a5469638d569"
+},
+"File:\u0425\u0443\u0440\u043c\u0430-\u0431\u044b\u0447\u044c\u0435\u0441\u0435\u0440\u0434\u0446\u0435 (bull heart persimmons) \u043d\u043e\u044f\u0431\u0440\u044c 2025 13.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "fa95a1ca94c996c5"
+},
+"File:\u0425\u0443\u0440\u043c\u0430-\u0431\u044b\u0447\u044c\u0435\u0441\u0435\u0440\u0434\u0446\u0435 (bull heart persimmons) \u043d\u043e\u044f\u0431\u0440\u044c 2025 14.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "fb85a87394d19638"
+},
+"File:Fruit stalls at Ljubljana Central Market 03.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "dc3fd02583c11fc5"
+},
+"File:Schooten Fruit stall.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "908d7b9d0fe098b3"
+},
+"File:Papaya banana pineapple.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "a1c0dcb0fae0f467"
+},
+"File:Dragon fruit.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "fdc505c52b8aa43b"
+},
+"File:Dragon fruits from local fruit market in yuen long.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a5b64e037c9bb843"
+},
+"File:Fruit du dragon.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c32085ee7",
+"dup_of": null,
+"phash": "e3d3d6411b2738d4"
+},
+"File:HK SKD TKO \u5c07\u8ecd\u6fb3 Tseung Kwan O Po Hong Road Beverly Garden market shop fruit August 2022 Px3 red dragon fruit n grape.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "8c3626846d893dfb"
+},
+"File:Le Pitaya, Le Fruit du Dragon.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c19ae062b",
+"dup_of": null,
+"phash": "8cde2e7829cfd241"
+},
+"File:Pitaya at a market stall in Shenzhen.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d41e5e4b127f3898"
+},
+"File:31st October The Giant Pumpkin, Chorley Market, U.K.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c9048d7da",
+"dup_of": null,
+"phash": "851873a28fd75a27"
+},
+"File:Comida Prehisp\u00e1nica Artesanal.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "cfc5c9dab40326ca"
+},
+"File:Philippine pumpkin pile in Iloilo Terminal Public Market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0134.jpg",
+"dup_of": null,
+"phash": "bfbfc5920ec20266"
+},
+"File:Watermelon and pumpkins stall in the market.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "dev_quality_clip",
+"dup_of": null,
+"phash": "b933ccccb0b1e358"
+},
+"File:Watermelon Vendor at a local market in Tanzania.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c5ed7eb90",
+"dup_of": null,
+"phash": "efe4a68a15323497"
+},
+"File:Chintz palampore India 18th century.jpg": {
+"min_dist_ref": 12,
+"nearest_ref": "stageE_M_candidate:m0061.jpg",
+"dup_of": null,
+"phash": "bde0c24fc2cac71a"
+},
+"File:Royal enthronement scene from the frontispiece of a gospel commissioned by Gagik-Abbas, ruler of Kars circa 1060.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "ba95c4c3c97086db"
+},
+"File:Hemdchentuete.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "9ae0b06a956d9d2d"
+},
+"File:The Young Israelites (print by Alexis Fran\u00e7ois Girard after Emma Soyer) 1.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "ea69853e95dad085"
+},
+"File:The Young Israelites (print by Alexis Fran\u00e7ois Girard after Emma Soyer) 2.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0350.jpg",
+"dup_of": null,
+"phash": "dee98c241a7fca11"
+},
+"File:2009-07-04 (shoes or bags?) repair shop at Taichung.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c0a13587f",
+"dup_of": null,
+"phash": "e44384628e71e9fe"
+},
+"File:A market man selling grocery bags.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c3d854faf",
+"dup_of": null,
+"phash": "86fff1810c3a22f3"
+},
+"File:Deptford Market stalls.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c4880a292",
+"dup_of": null,
+"phash": "dad3cc32408db17e"
+},
+"File:HK MK \u65fa\u89d2 Mongkok \u5f3c\u8857 Bute Street aquarium shop \u901a\u83dc\u8857 Tung Choi Street plastic bags goldenfish market September 2021 SS2 27.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c8b2d2f36",
+"dup_of": null,
+"phash": "87af55fc50f419a0"
+},
+"File:HK TWD \u8343\u6e7e Tsuen Wan \u5ddd\u9f8d\u8857 Chuen Lung Street market shop Tak Hing Lung plastic bags April 2025 R12S 01.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c3cc14a1f",
+"dup_of": null,
+"phash": "bc80fa4be4f1e1c4"
+},
+"File:HK WC Wan Chai Road outdoor food market pillow bags night October 2021 SS2.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c59f957c2",
+"dup_of": null,
+"phash": "c07bf3966d8838d1"
+},
+"File:HK WC Wan Chai \u7063\u4ed4\u9053 Wan Chai Road market shop goods plastic bags \u4e94\u82b1\u8336 Five-flowers Tea Wu Hua Cha November 2021 SS2.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c8ddc4768",
+"dup_of": null,
+"phash": "8f967243b432666d"
+},
+"File:HK WC Wan Chai \u7063\u4ed4\u9053 Wan Chai Road market shop goods \u4e94\u82b1\u8336 Five-flowers Tea Wu Hua Cha plastic bags November 2021 SS2 01.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_quality_clip",
+"dup_of": null,
+"phash": "ffb802e53b90c24d"
+},
+"File:HK WC Wan Chai \u7063\u4ed4\u9053 Wan Chai Road market shop goods \u4e94\u82b1\u8336 Five-flowers Tea Wu Hua Cha plastic bags November 2021 SS2 02.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c9048d7da",
+"dup_of": null,
+"phash": "a62b5e1469a7acb4"
+},
+"File:HK WC Wan Chai \u7063\u4ed4\u9053 Wan Chai Road market shop goods \u83ca\u82b1\u8336 tea plastic bags November 2021 SS2.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c0be28daa",
+"dup_of": null,
+"phash": "bd08d48a31b76aba"
+},
+"File:JP \u65e5\u672c Japan \u6c96\u7e69 OKINAWA \u90a3\u9738 Naha \u7267\u5fd7\u516c\u8a2d\u5e02\u5834 Makishi First Public Market \u6d77\u9bae\u9910\u5ef3 restaurant at \u570b\u969b\u901a KokusaiDori \u5927\u5e73\u901a\u5546\u5e97\u8857 TaiHeiDori Street January 2025 R12S \u6fd5\u7d19\u5dfe tissue bags n little plate.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "dev_quality_clip",
+"dup_of": null,
+"phash": "99c992b6667969a4"
+},
+"File:Matsukiyo Taipei Station Store and Chiikawa Night Market shopping bag 20260718.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c7e7795ef",
+"dup_of": null,
+"phash": "f90e8033acd15a6f"
+},
+"File:Paharganj Market Bags Shop.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0143.jpg",
+"dup_of": null,
+"phash": "98316d6ae86b31b5"
+},
+"File:Platform 2 and Chiikawa Night Market shopping bags, Zhongxiao Xinsheng Station 20260801.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "95177e2f2778049a"
+},
+"File:Saud Pagudpud Cooperative crafts bags shellsB.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "e6bdd6ea20d3910a"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 01.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "f2d60f0df0be44a8"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 02.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "c0bf6e42ba9b4856"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 03.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d21667bcc56da511"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 04.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c20a12a9c",
+"dup_of": null,
+"phash": "88ac6d485bd6b5a5"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 05.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c0a13587f",
+"dup_of": null,
+"phash": "887373b24e709c6d"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 06.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "c1251b6e72c5b789"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 07.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "8e724ca56c9da74c"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 08.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c59f957c2",
+"dup_of": null,
+"phash": "867630b24ea7d3cc"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 09.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c0a13587f",
+"dup_of": null,
+"phash": "9779318dce353886"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 10.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "g7_clip_keyframe:c20a12a9c",
+"dup_of": null,
+"phash": "995a76a42c5d25ab"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 11.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c8b2d2f36",
+"dup_of": null,
+"phash": "92667696b65859a5"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 12.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c973b3f44",
+"dup_of": null,
+"phash": "9645317dac4ca979"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 13.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:ca5207d1f",
+"dup_of": null,
+"phash": "c25f2fc43865cc3a"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 14.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "c28f6e2631729e71"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 15.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "cfc722143870bbd5"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 16.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cfe0b39f1",
+"dup_of": null,
+"phash": "c2c34f25387a393d"
+},
+"File:2554Fish vendors weighing, cleaning and scaling fish in public markets in the Philippines 17.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "c84da764b3729e70"
+},
+"File:Weighing scale for dry fruits, Sprouts Farmers Market Westwood (Los Angeles).JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "cc9678916e836d2b"
+},
+"File:Weighing scale for fresh fruits, Sprouts Farmers Market Westwood (Los Angeles).JPG": {
+"min_dist_ref": 14,
+"nearest_ref": "g7_clip_keyframe:cec084f0c",
+"dup_of": null,
+"phash": "96da1c3935c9616b"
+},
+"File:HK ALC \u9d28\u8137\u6d32 Ap Lei Chau \u5229\u6771\u90a8 Lei Tung Estate \u8857\u5e02 Market restaurant \u5927\u56cd January 2021 SS2 10.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "dc4ecf34eab9d008"
+},
+"File:HK NP North Point Tong Shui Road Chun Yeung Street market butchers February 2022 Px3 02.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_quality_clip",
+"dup_of": null,
+"phash": "c343c29df4468dd3"
+},
+"File:At a corner of Shueinan Market in evening.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c3d1561b2",
+"dup_of": null,
+"phash": "bdf5611a4ac0cf52"
+},
+"File:Erbsen-Frischmarkt-Poolkiste-Josef Schlaghecken.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c19ae062b",
+"dup_of": null,
+"phash": "80d07f2fbeb08372"
+},
+"File:Khariar market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c32085ee7",
+"dup_of": null,
+"phash": "d3cff4a532490ba2"
+},
+"File:Kulei weekly Market.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "d6c9d0e86933781d"
+},
+"File:Stangenbohnen in Poolkiste-Josef Schlaghecken.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "g7_clip_keyframe:c9030be18",
+"dup_of": null,
+"phash": "815d7fb626a21987"
+},
+"File:Vitamin Bar.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c7e7795ef",
+"dup_of": null,
+"phash": "fe4f2f5f1020f0a4"
+},
+"File:A wheelbarrow filled with dried pepper at Owode Market, Offa, Ilorin.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c97e354bf",
+"dup_of": null,
+"phash": "b694d28ad7858a7c"
+},
+"File:A wheelbarrow full of Watermelons.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "stageE_M_candidate:m0215.jpg",
+"dup_of": null,
+"phash": "bc8c2df3bb8f8220"
+},
+"File:Gabriel Metsu - Le march\u00e9 aux herbes (detail market woman seated on her wheelbarrow with turnips carrots and cabbage).jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "9b89a97c8e0f055d"
+},
+"File:Gamo food market 31.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "ad96d1b64b63511c"
+},
+"File:Gamo food market 32.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "e4a5ea954c13b9cc"
+},
+"File:Market porter.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cec084f0c",
+"dup_of": null,
+"phash": "a76c1c1e67831de4"
+},
+"File:Mobile Market 01.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a00edbf3f1d92318"
+},
+"File:Tiger Nut display in a wheelbarrow ready for sale.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c9030be18",
+"dup_of": null,
+"phash": "bfa86b2ee860d870"
+},
+"File:Wheelbarrow guy.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cd1a3f857",
+"dup_of": null,
+"phash": "e0c4dadc3f288daa"
+},
+"File:Adolphe Millot fruits B.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "abf3d40aa569c64c"
+},
+"File:Olde Walkerville Theatre, Windsor, Ontario, 2025-08-29 01.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c3d1561b2",
+"dup_of": null,
+"phash": "be8005fdd83e3343"
+},
+"File:Kili warning signs px1000.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0675.jpg",
+"dup_of": null,
+"phash": "c7c7e93939381e05"
+},
+"File:Amazing Race Slot Machine, June 2010.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "g7_clip_keyframe:cfe0b39f1",
+"dup_of": null,
+"phash": "d08b0f9c3ddc3cc1"
+},
+"File:Automaty do gry (ubt).JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c4880a292",
+"dup_of": null,
+"phash": "c0a72199898fe7e6"
+},
+"File:Pokie machines.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "g7_clip_keyframe:c4e9a7195",
+"dup_of": null,
+"phash": "c0e4e33f079964d9"
+},
+"File:Slot Machine.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cd17ce723",
+"dup_of": null,
+"phash": "acf0738c58fcc478"
+},
+"File:Slot machine.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c90447971",
+"dup_of": null,
+"phash": "9587c368327a78b6"
+},
+"File:Slot machines.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0342.jpg",
+"dup_of": null,
+"phash": "91ad36487879e5ca"
+},
+"File:Slot machines 3.jpg": {
+"min_dist_ref": 20,
+"nearest_ref": "g7_clip_keyframe:c19ae062b",
+"dup_of": null,
+"phash": "d66926803419ebbf"
+},
+"File:Slot machines 6.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "g7_clip_keyframe:cfe0b39f1",
+"dup_of": null,
+"phash": "8d857278763e3272"
+},
+"File:Slot machines at McCarran International Airport.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d8d0525bfffc0184"
+},
+"File:Slot machines at McCarran International Airport 2.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c6e08132a",
+"dup_of": null,
+"phash": "bfab30346a909f92"
+},
+"File:Slot machines at Monte Carlo hotel, Las Vegas.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "adb7b013d2f9221a"
+},
+"File:Slot machines at Reno-Tahoe International Airport.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cc44ad5c9",
+"dup_of": null,
+"phash": "a7d92d40de86272e"
+},
+"File:Artificial produce at the Big E, West Springfield MA.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "8dc152b270ad2d7d"
+},
+"File:A Great Day in New York, New York (3605437356).jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cea174b05",
+"dup_of": null,
+"phash": "9ffc806987e17b01"
+},
+"File:HK ALC \u9d28\u8137\u6d32 Ap Lei Chau \u5229\u6771\u90a8 Lei Tung Estate \u8857\u5e02 Market January 2021 SS2 02.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "d63614d79e31a519"
+},
+"File:HK ALC \u9d28\u8137\u6d32 Ap Lei Chau \u5229\u6771\u90a8 Lei Tung Estate \u8857\u5e02 Market January 2021 SS2 12.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c9048d7da",
+"dup_of": null,
+"phash": "ced93dcd01034bf1"
+},
+"File:HK WC \u7063\u4ed4 Wan Chai \u5821\u9748\u9813\u9053 Bowrington Road \u83dc\u8089\u98df\u8857\u5e02\u5834 street market February 2021 SS2 24.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "fa1fccd0113b7468"
+},
+"File:Vegetable stalls at Valencia Public Market 01.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a7523ca952c5993d"
+},
+"File:Vegetable stalls at Valencia Public Market 02.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c42c27498",
+"dup_of": null,
+"phash": "bfe90056da59292e"
+},
+"File:Vegetable stalls at Valencia Public Market 03.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c4880a292",
+"dup_of": null,
+"phash": "d2eb7bf564d08094"
+},
+"File:Vegetable stalls at Valencia Public Market 04.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "ae2b2a11134effc2"
+},
+"File:Bunch of Banana at Badagry Market.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "989622a1b76be0de"
+},
+"File:BigBunchOfBananas Sawtell.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "accc539225ca936f"
+},
+"File:Flowers and leaves of Kinnow.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "dc842748cb73e26d"
+},
+"File:Flowers of Kinnow.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c19ae062b",
+"dup_of": null,
+"phash": "8d813e483d3f0773"
+},
+"File:Kinnow Flowers.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cfb66f6d2",
+"dup_of": null,
+"phash": "96116a65ed8d0d7a"
+},
+"File:Kinnow fruits.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_neg_clip",
+"dup_of": null,
+"phash": "c57e3469142b543f"
+},
+"File:Kinnow products.JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_det_clip",
+"dup_of": null,
+"phash": "de43abd499ea9448"
+},
+"File:Kinnow tree.JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c0a08d565",
+"dup_of": null,
+"phash": "faa888dd941acfa2"
+},
+"File:Narau landscape.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "a6c6dd782486d1f8"
+},
+"File:(Citrus limetta) Mosambi at a market in Seethammadhara.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:cfda01e90",
+"dup_of": null,
+"phash": "8626e7f8e6989929"
+},
+"File:Citrus limetta.jpeg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c1ee7d682",
+"dup_of": null,
+"phash": "f8ca52cf8ac3a932"
+},
+"File:Ferrari Lima Romana.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "b26ee1c1ca338f8c"
+},
+"File:Lima dolce Volkamer.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "bbb110d2c928f6d6"
+},
+"File:Lima portugese.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cd1a3f857",
+"dup_of": null,
+"phash": "aa856de89b2bf403"
+},
+"File:Lime douce Bresil.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "9b83674f90b393d0"
+},
+"File:Limette de Marrakech.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c19ae062b",
+"dup_of": null,
+"phash": "99e5184cab1a4ebd"
+},
+"File:Limette portugaise 1.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "g7_clip_keyframe:c59f957c2",
+"dup_of": null,
+"phash": "ee94914ad22db674"
+},
+"File:Limettier fleur blanche.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "stageE_M_candidate:m0403.jpg",
+"dup_of": null,
+"phash": "bb72b652c894c2b9"
+},
+"File:Limettier petit fruit Risso 1818.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "ec68da66c5942d99"
+},
+"File:Limonette de Marrakech 1.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c19ae062b",
+"dup_of": null,
+"phash": "9dde7861f20b250e"
+},
+"File:Limonette de Marrakech 2.jpg": {
+"min_dist_ref": 12,
+"nearest_ref": "dev_quality_clip",
+"dup_of": null,
+"phash": "b8c3c53c5af12387"
+},
+"File:Pursha.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "g7_clip_keyframe:c4e9a7195",
+"dup_of": null,
+"phash": "8d8fe66209d84b4f"
+},
+"File:Heap of chilli peppers and a cucumber.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "fc94c269870bced4"
+},
+"File:Accra market Capsicum diversity 01.JPG": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "8160dacf5952e9b5"
+},
+"File:Capsicum diversity at market, Accra.JPG": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "888649db1be83bdc"
+},
+"File:Capsicum in a market, Bangalore (2026) 01.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "bfbd999ab20d1054"
+},
+"File:Capsicum in a market, Bangalore (2026) 02.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "stageE_M_candidate:m0286.jpg",
+"dup_of": null,
+"phash": "aefde7408007eb1c"
+},
+"File:Grand Market Hall, interior, capsicum and garlic, 20130612 Budapest 103.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c82e63d5a",
+"dup_of": null,
+"phash": "aae2193df3d6a842"
+},
+"File:Solanales - Capsicum annuum - 44.jpg": {
+"min_dist_ref": 12,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "ffd5d58a090b0bb0"
+},
+"File:Solanales - Capsicum annuum - 45.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "beeff8cc42424a0b"
+},
+"File:Solanales - Capsicum annuum - 46.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "8bc3abc18f468f0b"
+},
+"File:Solanales - Capsicum annuum - 47.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:c0be28daa",
+"dup_of": null,
+"phash": "a30053f9d86fac93"
+},
+"File:Solanales - Capsicum annuum - 48.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "b23f6946140f8fb2"
+},
+"File:Solanales - Capsicum annuum - 49.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "aca3c493125f38fc"
+},
+"File:Solanales - Capsicum annuum - 50.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "c264a4e6bdae8785"
+},
+"File:Solanales - Capsicum annuum - 51.jpg": {
+"min_dist_ref": 14,
+"nearest_ref": "dev_val",
+"dup_of": null,
+"phash": "87c8a44735f7e2b0"
+},
+"File:Solanales - Capsicum annuum - 52.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "f817fd1297b114c1"
+},
+"File:Solanales - Capsicum annuum - 53.jpg": {
+"min_dist_ref": 16,
+"nearest_ref": "det_v3_train(G3 train)",
+"dup_of": null,
+"phash": "98b901ab8a9e9b57"
+},
+"File:Solanales - Capsicum annuum - 54.jpg": {
+"min_dist_ref": 18,
+"nearest_ref": "g7_clip_keyframe:cfda01e90",
+"dup_of": null,
+"phash": "bb8c818ee3c49c9d"
+}
+}
+}
