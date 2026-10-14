@@ -1,0 +1,808 @@
+{
+ "cache": "/workspace/work/cv/g9f/cache_F1s1",
+ "guard": "g1",
+ "minAreaFrac": 0.01,
+ "small_score_floor": null,
+ "tracker": "iou0.3",
+ "val": {
+  "banana": {
+   "n": 469,
+   "tp": 94,
+   "fp": 34,
+   "R": 0.2004
+  },
+  "apple": {
+   "n": 199,
+   "tp": 89,
+   "fp": 31,
+   "R": 0.4472
+  },
+  "mango": {
+   "n": 11,
+   "tp": 7,
+   "fp": 1,
+   "R": 0.6364
+  },
+  "citrus": {
+   "n": 208,
+   "tp": 114,
+   "fp": 19,
+   "R": 0.5481
+  },
+  "pomegranate": {
+   "n": 16,
+   "tp": 8,
+   "fp": 6,
+   "R": 0.5
+  },
+  "lemon_lime": {
+   "n": 77,
+   "tp": 1,
+   "fp": 9,
+   "R": 0.013
+  },
+  "tomato": {
+   "n": 317,
+   "tp": 84,
+   "fp": 57,
+   "R": 0.265
+  },
+  "potato": {
+   "n": 20,
+   "tp": 0,
+   "fp": 3,
+   "R": 0.0
+  },
+  "cucumber": {
+   "n": 154,
+   "tp": 25,
+   "fp": 13,
+   "R": 0.1623
+  },
+  "carrot": {
+   "n": 435,
+   "tp": 97,
+   "fp": 40,
+   "R": 0.223
+  },
+  "capsicum": {
+   "n": 116,
+   "tp": 25,
+   "fp": 9,
+   "R": 0.2155
+  }
+ },
+ "val_recall_by_bin": {
+  "apple|0.25-0.5%": {
+   "n": 20,
+   "tp": 0
+  },
+  "apple|0.5-1%": {
+   "n": 43,
+   "tp": 3
+  },
+  "apple|1-2.5%": {
+   "n": 35,
+   "tp": 14
+  },
+  "apple|<0.25%": {
+   "n": 23,
+   "tp": 0
+  },
+  "apple|>=2.5%": {
+   "n": 78,
+   "tp": 72
+  },
+  "banana|0.25-0.5%": {
+   "n": 121,
+   "tp": 0
+  },
+  "banana|0.5-1%": {
+   "n": 95,
+   "tp": 5
+  },
+  "banana|1-2.5%": {
+   "n": 75,
+   "tp": 22
+  },
+  "banana|<0.25%": {
+   "n": 79,
+   "tp": 0
+  },
+  "banana|>=2.5%": {
+   "n": 99,
+   "tp": 67
+  },
+  "capsicum|0.25-0.5%": {
+   "n": 12,
+   "tp": 0
+  },
+  "capsicum|0.5-1%": {
+   "n": 12,
+   "tp": 0
+  },
+  "capsicum|1-2.5%": {
+   "n": 17,
+   "tp": 0
+  },
+  "capsicum|<0.25%": {
+   "n": 23,
+   "tp": 0
+  },
+  "capsicum|>=2.5%": {
+   "n": 52,
+   "tp": 25
+  },
+  "carrot|0.25-0.5%": {
+   "n": 72,
+   "tp": 0
+  },
+  "carrot|0.5-1%": {
+   "n": 109,
+   "tp": 2
+  },
+  "carrot|1-2.5%": {
+   "n": 126,
+   "tp": 52
+  },
+  "carrot|<0.25%": {
+   "n": 47,
+   "tp": 0
+  },
+  "carrot|>=2.5%": {
+   "n": 81,
+   "tp": 43
+  },
+  "citrus|0.25-0.5%": {
+   "n": 10,
+   "tp": 0
+  },
+  "citrus|0.5-1%": {
+   "n": 23,
+   "tp": 1
+  },
+  "citrus|1-2.5%": {
+   "n": 39,
+   "tp": 27
+  },
+  "citrus|<0.25%": {
+   "n": 38,
+   "tp": 0
+  },
+  "citrus|>=2.5%": {
+   "n": 98,
+   "tp": 86
+  },
+  "cucumber|0.25-0.5%": {
+   "n": 19,
+   "tp": 0
+  },
+  "cucumber|0.5-1%": {
+   "n": 23,
+   "tp": 0
+  },
+  "cucumber|1-2.5%": {
+   "n": 35,
+   "tp": 3
+  },
+  "cucumber|<0.25%": {
+   "n": 7,
+   "tp": 0
+  },
+  "cucumber|>=2.5%": {
+   "n": 70,
+   "tp": 22
+  },
+  "lemon_lime|0.25-0.5%": {
+   "n": 8,
+   "tp": 0
+  },
+  "lemon_lime|0.5-1%": {
+   "n": 13,
+   "tp": 0
+  },
+  "lemon_lime|1-2.5%": {
+   "n": 15,
+   "tp": 1
+  },
+  "lemon_lime|<0.25%": {
+   "n": 24,
+   "tp": 0
+  },
+  "lemon_lime|>=2.5%": {
+   "n": 17,
+   "tp": 0
+  },
+  "mango|0.25-0.5%": {
+   "n": 1,
+   "tp": 0
+  },
+  "mango|1-2.5%": {
+   "n": 3,
+   "tp": 3
+  },
+  "mango|>=2.5%": {
+   "n": 7,
+   "tp": 4
+  },
+  "pomegranate|0.5-1%": {
+   "n": 1,
+   "tp": 0
+  },
+  "pomegranate|1-2.5%": {
+   "n": 5,
+   "tp": 0
+  },
+  "pomegranate|>=2.5%": {
+   "n": 10,
+   "tp": 8
+  },
+  "potato|0.25-0.5%": {
+   "n": 1,
+   "tp": 0
+  },
+  "potato|0.5-1%": {
+   "n": 2,
+   "tp": 0
+  },
+  "potato|1-2.5%": {
+   "n": 5,
+   "tp": 0
+  },
+  "potato|<0.25%": {
+   "n": 6,
+   "tp": 0
+  },
+  "potato|>=2.5%": {
+   "n": 6,
+   "tp": 0
+  },
+  "tomato|0.25-0.5%": {
+   "n": 51,
+   "tp": 0
+  },
+  "tomato|0.5-1%": {
+   "n": 54,
+   "tp": 2
+  },
+  "tomato|1-2.5%": {
+   "n": 84,
+   "tp": 43
+  },
+  "tomato|<0.25%": {
+   "n": 72,
+   "tp": 0
+  },
+  "tomato|>=2.5%": {
+   "n": 56,
+   "tp": 39
+  }
+ },
+ "val_false_boxes": {
+  "total": 222,
+  "by_bin": {
+   ">=2.5%": 119,
+   "1-2.5%": 103
+  },
+  "boxfree_images": 31
+ },
+ "dev_det": {
+  "frames_with_gt": 1432,
+  "frame_acc": 0.4462,
+  "per_class_recall": {
+   "banana": {
+    "n": 413,
+    "recall": 0.627
+   },
+   "apple": {
+    "n": 240,
+    "recall": 0.508
+   },
+   "citrus": {
+    "n": 299,
+    "recall": 0.535
+   },
+   "tomato": {
+    "n": 60,
+    "recall": 0.6
+   },
+   "potato": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "cucumber": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "carrot": {
+    "n": 240,
+    "recall": 0.258
+   },
+   "capsicum": {
+    "n": 60,
+    "recall": 0.0
+   }
+  },
+  "segments": 24,
+  "segment_acc": 0.625,
+  "never_correct_segments": 6,
+  "ttfc_ms": {
+   "p50": 400.0,
+   "p90": 620.0001000000004,
+   "max": 2533.3329999999987,
+   "n": 18
+  },
+  "label_flicker_per_10s_static": 2.292,
+  "label_flicker_per_10s_all": 3.352,
+  "grade_flicker_per_10s_static": 0.0,
+  "no_box_frac_static": 0.361,
+  "missed_s_total": 42.333,
+  "missed_frac": 0.4434,
+  "longest_missed_gap_s": 4.0,
+  "fragmentations": 25,
+  "mean_fragments_per_segment": 1.792,
+  "id_switches": 44,
+  "mean_ids_per_segment": 1.625,
+  "post_ms": {
+   "p50": 0.0081,
+   "p95": 0.2104
+  },
+  "ttfc_from_visibility_ms": {
+   "p50": 367,
+   "p90": 620,
+   "n": 18
+  },
+  "object_frame_recall_by_bin": {
+   "apple|0.25-0.5%": {
+    "n": 7,
+    "tp": 0
+   },
+   "apple|0.5-1%": {
+    "n": 92,
+    "tp": 0
+   },
+   "apple|1-2.5%": {
+    "n": 115,
+    "tp": 31
+   },
+   "apple|<0.25%": {
+    "n": 48,
+    "tp": 0
+   },
+   "apple|>=2.5%": {
+    "n": 1094,
+    "tp": 618
+   },
+   "banana|0.25-0.5%": {
+    "n": 79,
+    "tp": 0
+   },
+   "banana|0.5-1%": {
+    "n": 87,
+    "tp": 15
+   },
+   "banana|1-2.5%": {
+    "n": 289,
+    "tp": 131
+   },
+   "banana|<0.25%": {
+    "n": 28,
+    "tp": 0
+   },
+   "banana|>=2.5%": {
+    "n": 1693,
+    "tp": 1047
+   },
+   "capsicum|1-2.5%": {
+    "n": 4,
+    "tp": 0
+   },
+   "capsicum|>=2.5%": {
+    "n": 184,
+    "tp": 0
+   },
+   "carrot|0.25-0.5%": {
+    "n": 419,
+    "tp": 0
+   },
+   "carrot|0.5-1%": {
+    "n": 556,
+    "tp": 0
+   },
+   "carrot|1-2.5%": {
+    "n": 500,
+    "tp": 6
+   },
+   "carrot|<0.25%": {
+    "n": 565,
+    "tp": 0
+   },
+   "carrot|>=2.5%": {
+    "n": 1355,
+    "tp": 535
+   },
+   "citrus|0.25-0.5%": {
+    "n": 1,
+    "tp": 0
+   },
+   "citrus|0.5-1%": {
+    "n": 4,
+    "tp": 0
+   },
+   "citrus|1-2.5%": {
+    "n": 18,
+    "tp": 1
+   },
+   "citrus|<0.25%": {
+    "n": 1,
+    "tp": 0
+   },
+   "citrus|>=2.5%": {
+    "n": 1637,
+    "tp": 1046
+   },
+   "cucumber|0.25-0.5%": {
+    "n": 5,
+    "tp": 0
+   },
+   "cucumber|0.5-1%": {
+    "n": 6,
+    "tp": 0
+   },
+   "cucumber|1-2.5%": {
+    "n": 10,
+    "tp": 0
+   },
+   "cucumber|<0.25%": {
+    "n": 4,
+    "tp": 0
+   },
+   "cucumber|>=2.5%": {
+    "n": 531,
+    "tp": 0
+   },
+   "lemon_lime|1-2.5%": {
+    "n": 3,
+    "tp": 0
+   },
+   "lemon_lime|>=2.5%": {
+    "n": 277,
+    "tp": 0
+   },
+   "potato|0.25-0.5%": {
+    "n": 1,
+    "tp": 0
+   },
+   "potato|0.5-1%": {
+    "n": 34,
+    "tp": 0
+   },
+   "potato|1-2.5%": {
+    "n": 5,
+    "tp": 0
+   },
+   "potato|<0.25%": {
+    "n": 2,
+    "tp": 0
+   },
+   "potato|>=2.5%": {
+    "n": 60,
+    "tp": 0
+   },
+   "tomato|>=2.5%": {
+    "n": 60,
+    "tp": 36
+   }
+  },
+  "ids_per_gt_object": {
+   "objects_matched": 123,
+   "mean_distinct_ids": 2.667,
+   "objects_with_gt1_id": 77,
+   "id_switches_all_objects": 313
+  },
+  "mixed_false_tracks": {
+   "n": 55,
+   "per_min": 28.497,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  }
+ },
+ "dev_neg": {
+  "false_alarm_tracks": 5,
+  "minutes": 4.0,
+  "false_alarms_per_min": 1.25,
+  "fa_episodes": 3,
+  "fa_episodes_per_min": 0.75,
+  "frames_with_any_box": 53,
+  "frames": 3600,
+  "post_ms": {
+   "p50": 0.0011,
+   "p95": 0.0012
+  }
+ },
+ "probe_SYNTHETIC": {
+  "frames_with_gt": 3186,
+  "frame_acc": 0.1638,
+  "per_class_recall": {
+   "banana": {
+    "n": 324,
+    "recall": 0.42
+   },
+   "apple": {
+    "n": 324,
+    "recall": 0.052
+   },
+   "mango": {
+    "n": 162,
+    "recall": 0.179
+   },
+   "citrus": {
+    "n": 324,
+    "recall": 0.052
+   },
+   "pomegranate": {
+    "n": 324,
+    "recall": 0.343
+   },
+   "lemon_lime": {
+    "n": 324,
+    "recall": 0.0
+   },
+   "tomato": {
+    "n": 324,
+    "recall": 0.031
+   },
+   "potato": {
+    "n": 108,
+    "recall": 0.0
+   },
+   "cucumber": {
+    "n": 324,
+    "recall": 0.346
+   },
+   "carrot": {
+    "n": 324,
+    "recall": 0.006
+   },
+   "capsicum": {
+    "n": 324,
+    "recall": 0.272
+   }
+  },
+  "segments": 177,
+  "segment_acc": 0.209,
+  "never_correct_segments": 138,
+  "ttfc_ms": {
+   "p50": 66.66700000000128,
+   "p90": 346.66639999999916,
+   "max": 933.3329999999987,
+   "n": 39
+  },
+  "label_flicker_per_10s_static": 0.169,
+  "label_flicker_per_10s_all": 0.188,
+  "grade_flicker_per_10s_static": 0.0,
+  "no_box_frac_static": 0.817,
+  "missed_s_total": 175.94,
+  "missed_frac": 0.8283,
+  "longest_missed_gap_s": 1.2,
+  "fragmentations": 22,
+  "mean_fragments_per_segment": 0.35,
+  "id_switches": 15,
+  "mean_ids_per_segment": 0.288,
+  "post_ms": {
+   "p50": 0.0011,
+   "p95": 0.0112
+  },
+  "ttfc_from_visibility_ms": {
+   "p50": 67,
+   "p90": 347,
+   "n": 39
+  },
+  "object_frame_recall_by_bin": {
+   "apple|0.25-0.5%": {
+    "n": 126,
+    "tp": 0
+   },
+   "apple|0.5-1%": {
+    "n": 54,
+    "tp": 0
+   },
+   "apple|1-2.5%": {
+    "n": 36,
+    "tp": 34
+   },
+   "apple|<0.25%": {
+    "n": 1134,
+    "tp": 0
+   },
+   "banana|0.25-0.5%": {
+    "n": 54,
+    "tp": 0
+   },
+   "banana|0.5-1%": {
+    "n": 72,
+    "tp": 0
+   },
+   "banana|1-2.5%": {
+    "n": 144,
+    "tp": 82
+   },
+   "banana|<0.25%": {
+    "n": 324,
+    "tp": 0
+   },
+   "banana|>=2.5%": {
+    "n": 162,
+    "tp": 135
+   },
+   "capsicum|0.25-0.5%": {
+    "n": 306,
+    "tp": 0
+   },
+   "capsicum|0.5-1%": {
+    "n": 198,
+    "tp": 5
+   },
+   "capsicum|1-2.5%": {
+    "n": 162,
+    "tp": 69
+   },
+   "capsicum|<0.25%": {
+    "n": 936,
+    "tp": 0
+   },
+   "capsicum|>=2.5%": {
+    "n": 126,
+    "tp": 71
+   },
+   "carrot|0.25-0.5%": {
+    "n": 288,
+    "tp": 0
+   },
+   "carrot|0.5-1%": {
+    "n": 162,
+    "tp": 0
+   },
+   "carrot|1-2.5%": {
+    "n": 126,
+    "tp": 34
+   },
+   "carrot|<0.25%": {
+    "n": 1728,
+    "tp": 0
+   },
+   "carrot|>=2.5%": {
+    "n": 72,
+    "tp": 19
+   },
+   "citrus|0.25-0.5%": {
+    "n": 108,
+    "tp": 0
+   },
+   "citrus|0.5-1%": {
+    "n": 90,
+    "tp": 0
+   },
+   "citrus|1-2.5%": {
+    "n": 18,
+    "tp": 17
+   },
+   "citrus|<0.25%": {
+    "n": 810,
+    "tp": 0
+   },
+   "cucumber|0.25-0.5%": {
+    "n": 54,
+    "tp": 0
+   },
+   "cucumber|0.5-1%": {
+    "n": 126,
+    "tp": 0
+   },
+   "cucumber|1-2.5%": {
+    "n": 234,
+    "tp": 6
+   },
+   "cucumber|<0.25%": {
+    "n": 36,
+    "tp": 0
+   },
+   "cucumber|>=2.5%": {
+    "n": 198,
+    "tp": 146
+   },
+   "lemon_lime|0.25-0.5%": {
+    "n": 144,
+    "tp": 0
+   },
+   "lemon_lime|0.5-1%": {
+    "n": 54,
+    "tp": 0
+   },
+   "lemon_lime|1-2.5%": {
+    "n": 18,
+    "tp": 0
+   },
+   "lemon_lime|<0.25%": {
+    "n": 2106,
+    "tp": 0
+   },
+   "mango|0.25-0.5%": {
+    "n": 108,
+    "tp": 0
+   },
+   "mango|0.5-1%": {
+    "n": 72,
+    "tp": 0
+   },
+   "mango|1-2.5%": {
+    "n": 108,
+    "tp": 14
+   },
+   "mango|<0.25%": {
+    "n": 234,
+    "tp": 0
+   },
+   "mango|>=2.5%": {
+    "n": 72,
+    "tp": 15
+   },
+   "pomegranate|0.25-0.5%": {
+    "n": 18,
+    "tp": 0
+   },
+   "pomegranate|0.5-1%": {
+    "n": 36,
+    "tp": 0
+   },
+   "pomegranate|1-2.5%": {
+    "n": 72,
+    "tp": 20
+   },
+   "pomegranate|<0.25%": {
+    "n": 36,
+    "tp": 0
+   },
+   "pomegranate|>=2.5%": {
+    "n": 270,
+    "tp": 101
+   },
+   "potato|0.25-0.5%": {
+    "n": 36,
+    "tp": 0
+   },
+   "potato|0.5-1%": {
+    "n": 36,
+    "tp": 0
+   },
+   "potato|<0.25%": {
+    "n": 36,
+    "tp": 0
+   },
+   "tomato|0.25-0.5%": {
+    "n": 144,
+    "tp": 0
+   },
+   "tomato|0.5-1%": {
+    "n": 90,
+    "tp": 10
+   },
+   "tomato|<0.25%": {
+    "n": 1224,
+    "tp": 0
+   }
+  },
+  "ids_per_gt_object": {
+   "objects_matched": 59,
+   "mean_distinct_ids": 1.339,
+   "objects_with_gt1_id": 16,
+   "id_switches_all_objects": 31
+  },
+  "mixed_false_tracks": {
+   "n": 24,
+   "per_min": 5.078,
+   "gap_frame_tracks": 12,
+   "minutes": 4.727
+  }
+ }
+}
