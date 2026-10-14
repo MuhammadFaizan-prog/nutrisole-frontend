@@ -53,3 +53,23 @@ export function gradedPrice(identified: boolean, appClass: string, grade: string
   if (!loc) return { show: false, reason: 'unknown_location' };
   return { show: true, line: fmt(r, 'list_grade_reference', loc, r.min_rs, r.max_rs, r.list_grade) };
 }
+
+// ---- G9 Stage H display contract (P6). The app-facing close-up display goes through closeupDisplay ONLY.
+// - No A/B/C grade and no grade-specific price is ever shown while GRADE_DISPLAY_ENABLED is false (Stage H: criteria for grades not met,
+//   no human-labelled ground truth). gradedPrice above is kept for the Stage G parity fixture and must not be called by the app.
+// - A category reference price is shown only when identity is verified (wide + close-up verification) and the official source is current
+//   and known (categoryPrice). A user-confirmed category may show the same category line, labelled as confirmed by the user.
+// - Unable to identify -> no name, no price.
+export const GRADE_DISPLAY_ENABLED = false;
+export type CloseupIdentity = 'verified' | 'user_confirmed' | 'unable';
+export type CloseupDisplay = {
+  title: string; gradeText: string | null; gradeShown: false; price: PriceDisplay; identityNote: string | null;
+};
+export function closeupDisplay(identity: CloseupIdentity, appClass: string | null, label: string | null, outcome: string, sources: PriceSource[], today: string): CloseupDisplay {
+  if (identity === 'unable' || !appClass) {
+    return { title: 'Unable to identify', gradeText: null, gradeShown: false, price: { show: false, reason: 'not_identified' }, identityNote: null };
+  }
+  const price = categoryPrice(true, appClass, sources, today);
+  const gradeText = outcome === 'not_graded' ? 'Not graded' : outcome === 'category_confirmed_by_user' ? 'Quality not checked' : 'Quality grading is not available yet';
+  return { title: label ?? appClass, gradeText, gradeShown: false, price, identityNote: identity === 'user_confirmed' ? 'Category confirmed by you' : null };
+}
