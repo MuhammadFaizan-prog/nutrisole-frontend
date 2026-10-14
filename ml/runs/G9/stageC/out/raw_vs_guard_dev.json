@@ -1,0 +1,1900 @@
+{
+ "val": [
+  {
+   "cls": "apple",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 7,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 7,
+   "kept_0.0": 7
+  },
+  {
+   "cls": "apple",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 5,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 5,
+   "kept_0.0": 5
+  },
+  {
+   "cls": "apple",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 15,
+   "kept_0.01": 0,
+   "kept_0.005": 15,
+   "kept_0.0025": 15,
+   "kept_0.0": 15
+  },
+  {
+   "cls": "apple",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 18,
+   "kept_0.01": 0,
+   "kept_0.005": 18,
+   "kept_0.0025": 18,
+   "kept_0.0": 18
+  },
+  {
+   "cls": "apple",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 27,
+   "kept_0.01": 27,
+   "kept_0.005": 27,
+   "kept_0.0025": 27,
+   "kept_0.0": 27
+  },
+  {
+   "cls": "apple",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 20,
+   "kept_0.01": 20,
+   "kept_0.005": 20,
+   "kept_0.0025": 20,
+   "kept_0.0": 20
+  },
+  {
+   "cls": "apple",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "apple",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 4,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 4
+  },
+  {
+   "cls": "apple",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 14,
+   "kept_0.01": 14,
+   "kept_0.005": 14,
+   "kept_0.0025": 14,
+   "kept_0.0": 14
+  },
+  {
+   "cls": "apple",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 72,
+   "kept_0.01": 72,
+   "kept_0.005": 72,
+   "kept_0.0025": 72,
+   "kept_0.0": 72
+  },
+  {
+   "cls": "banana",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 17,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 17,
+   "kept_0.0": 17
+  },
+  {
+   "cls": "banana",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 61,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 61,
+   "kept_0.0": 61
+  },
+  {
+   "cls": "banana",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 26,
+   "kept_0.01": 0,
+   "kept_0.005": 26,
+   "kept_0.0025": 26,
+   "kept_0.0": 26
+  },
+  {
+   "cls": "banana",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 95,
+   "kept_0.01": 0,
+   "kept_0.005": 95,
+   "kept_0.0025": 95,
+   "kept_0.0": 95
+  },
+  {
+   "cls": "banana",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 18,
+   "kept_0.01": 18,
+   "kept_0.005": 18,
+   "kept_0.0025": 18,
+   "kept_0.0": 18
+  },
+  {
+   "cls": "banana",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 45,
+   "kept_0.01": 45,
+   "kept_0.005": 45,
+   "kept_0.0025": 45,
+   "kept_0.0": 45
+  },
+  {
+   "cls": "banana",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 14,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 14
+  },
+  {
+   "cls": "banana",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 9,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 9
+  },
+  {
+   "cls": "banana",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 21,
+   "kept_0.01": 21,
+   "kept_0.005": 21,
+   "kept_0.0025": 21,
+   "kept_0.0": 21
+  },
+  {
+   "cls": "banana",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 75,
+   "kept_0.01": 75,
+   "kept_0.005": 75,
+   "kept_0.0025": 75,
+   "kept_0.0": 75
+  },
+  {
+   "cls": "capsicum",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "capsicum",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 9,
+   "kept_0.01": 9,
+   "kept_0.005": 9,
+   "kept_0.0025": 9,
+   "kept_0.0": 9
+  },
+  {
+   "cls": "capsicum",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 26,
+   "kept_0.01": 26,
+   "kept_0.005": 26,
+   "kept_0.0025": 26,
+   "kept_0.0": 26
+  },
+  {
+   "cls": "carrot",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 7,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 7,
+   "kept_0.0": 7
+  },
+  {
+   "cls": "carrot",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 14,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 14,
+   "kept_0.0": 14
+  },
+  {
+   "cls": "carrot",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 16,
+   "kept_0.01": 0,
+   "kept_0.005": 16,
+   "kept_0.0025": 16,
+   "kept_0.0": 16
+  },
+  {
+   "cls": "carrot",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 24,
+   "kept_0.01": 0,
+   "kept_0.005": 24,
+   "kept_0.0025": 24,
+   "kept_0.0": 24
+  },
+  {
+   "cls": "carrot",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 10,
+   "kept_0.01": 10,
+   "kept_0.005": 10,
+   "kept_0.0025": 10,
+   "kept_0.0": 10
+  },
+  {
+   "cls": "carrot",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 53,
+   "kept_0.01": 53,
+   "kept_0.005": 53,
+   "kept_0.0025": 53,
+   "kept_0.0": 53
+  },
+  {
+   "cls": "carrot",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "carrot",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "carrot",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 11,
+   "kept_0.01": 11,
+   "kept_0.005": 11,
+   "kept_0.0025": 11,
+   "kept_0.0": 11
+  },
+  {
+   "cls": "carrot",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 45,
+   "kept_0.01": 45,
+   "kept_0.005": 45,
+   "kept_0.0025": 45,
+   "kept_0.0": 45
+  },
+  {
+   "cls": "citrus",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "citrus",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 6,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 6,
+   "kept_0.0": 6
+  },
+  {
+   "cls": "citrus",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 5,
+   "kept_0.01": 0,
+   "kept_0.005": 5,
+   "kept_0.0025": 5,
+   "kept_0.0": 5
+  },
+  {
+   "cls": "citrus",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 14,
+   "kept_0.01": 0,
+   "kept_0.005": 14,
+   "kept_0.0025": 14,
+   "kept_0.0": 14
+  },
+  {
+   "cls": "citrus",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 11,
+   "kept_0.01": 11,
+   "kept_0.005": 11,
+   "kept_0.0025": 11,
+   "kept_0.0": 11
+  },
+  {
+   "cls": "citrus",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 30,
+   "kept_0.01": 30,
+   "kept_0.005": 30,
+   "kept_0.0025": 30,
+   "kept_0.0": 30
+  },
+  {
+   "cls": "citrus",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "citrus",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 2,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 2
+  },
+  {
+   "cls": "citrus",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 14,
+   "kept_0.01": 14,
+   "kept_0.005": 14,
+   "kept_0.0025": 14,
+   "kept_0.0": 14
+  },
+  {
+   "cls": "citrus",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 89,
+   "kept_0.01": 89,
+   "kept_0.005": 89,
+   "kept_0.0025": 89,
+   "kept_0.0": 89
+  },
+  {
+   "cls": "cucumber",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "cucumber",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "cucumber",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 1,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "cucumber",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 15,
+   "kept_0.01": 15,
+   "kept_0.005": 15,
+   "kept_0.0025": 15,
+   "kept_0.0": 15
+  },
+  {
+   "cls": "cucumber",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 26,
+   "kept_0.01": 26,
+   "kept_0.005": 26,
+   "kept_0.0025": 26,
+   "kept_0.0": 26
+  },
+  {
+   "cls": "lemon_lime",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "lemon_lime",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 4,
+   "kept_0.01": 4,
+   "kept_0.005": 4,
+   "kept_0.0025": 4,
+   "kept_0.0": 4
+  },
+  {
+   "cls": "lemon_lime",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 1,
+   "kept_0.01": 1,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "lemon_lime",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 2,
+   "kept_0.01": 2,
+   "kept_0.005": 2,
+   "kept_0.0025": 2,
+   "kept_0.0": 2
+  },
+  {
+   "cls": "mango",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "mango",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 3,
+   "kept_0.01": 3,
+   "kept_0.005": 3,
+   "kept_0.0025": 3,
+   "kept_0.0": 3
+  },
+  {
+   "cls": "mango",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 1,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "mango",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 4,
+   "kept_0.01": 4,
+   "kept_0.005": 4,
+   "kept_0.0025": 4,
+   "kept_0.0": 4
+  },
+  {
+   "cls": "pomegranate",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 8,
+   "kept_0.01": 8,
+   "kept_0.005": 8,
+   "kept_0.0025": 8,
+   "kept_0.0": 8
+  },
+  {
+   "cls": "pomegranate",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 10,
+   "kept_0.01": 10,
+   "kept_0.005": 10,
+   "kept_0.0025": 10,
+   "kept_0.0": 10
+  },
+  {
+   "cls": "potato",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 2,
+   "kept_0.01": 0,
+   "kept_0.005": 2,
+   "kept_0.0025": 2,
+   "kept_0.0": 2
+  },
+  {
+   "cls": "potato",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 1,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "tomato",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 19,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 19,
+   "kept_0.0": 19
+  },
+  {
+   "cls": "tomato",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 20,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 20,
+   "kept_0.0": 20
+  },
+  {
+   "cls": "tomato",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 25,
+   "kept_0.01": 0,
+   "kept_0.005": 25,
+   "kept_0.0025": 25,
+   "kept_0.0": 25
+  },
+  {
+   "cls": "tomato",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 26,
+   "kept_0.01": 0,
+   "kept_0.005": 26,
+   "kept_0.0025": 26,
+   "kept_0.0": 26
+  },
+  {
+   "cls": "tomato",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 18,
+   "kept_0.01": 18,
+   "kept_0.005": 18,
+   "kept_0.0025": 18,
+   "kept_0.0": 18
+  },
+  {
+   "cls": "tomato",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 48,
+   "kept_0.01": 48,
+   "kept_0.005": 48,
+   "kept_0.0025": 48,
+   "kept_0.0": 48
+  },
+  {
+   "cls": "tomato",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 17,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 17
+  },
+  {
+   "cls": "tomato",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 9,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 9
+  },
+  {
+   "cls": "tomato",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 18,
+   "kept_0.01": 18,
+   "kept_0.005": 18,
+   "kept_0.0025": 18,
+   "kept_0.0": 18
+  },
+  {
+   "cls": "tomato",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 40,
+   "kept_0.01": 40,
+   "kept_0.005": 40,
+   "kept_0.0025": 40,
+   "kept_0.0": 40
+  }
+ ],
+ "dev_det": [
+  {
+   "cls": "apple",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "apple",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 5,
+   "kept_0.01": 0,
+   "kept_0.005": 5,
+   "kept_0.0025": 5,
+   "kept_0.0": 5
+  },
+  {
+   "cls": "apple",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 22,
+   "kept_0.01": 0,
+   "kept_0.005": 22,
+   "kept_0.0025": 22,
+   "kept_0.0": 22
+  },
+  {
+   "cls": "apple",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 5,
+   "kept_0.01": 5,
+   "kept_0.005": 5,
+   "kept_0.0025": 5,
+   "kept_0.0": 5
+  },
+  {
+   "cls": "apple",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 38,
+   "kept_0.01": 38,
+   "kept_0.005": 38,
+   "kept_0.0025": 38,
+   "kept_0.0": 38
+  },
+  {
+   "cls": "apple",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 289,
+   "kept_0.01": 289,
+   "kept_0.005": 289,
+   "kept_0.0025": 289,
+   "kept_0.0": 289
+  },
+  {
+   "cls": "apple",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 767,
+   "kept_0.01": 767,
+   "kept_0.005": 767,
+   "kept_0.0025": 767,
+   "kept_0.0": 767
+  },
+  {
+   "cls": "banana",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 7,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 7,
+   "kept_0.0": 7
+  },
+  {
+   "cls": "banana",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 41,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 41,
+   "kept_0.0": 41
+  },
+  {
+   "cls": "banana",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 79,
+   "kept_0.01": 0,
+   "kept_0.005": 79,
+   "kept_0.0025": 79,
+   "kept_0.0": 79
+  },
+  {
+   "cls": "banana",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 16,
+   "kept_0.01": 0,
+   "kept_0.005": 16,
+   "kept_0.0025": 16,
+   "kept_0.0": 16
+  },
+  {
+   "cls": "banana",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 196,
+   "kept_0.01": 196,
+   "kept_0.005": 196,
+   "kept_0.0025": 196,
+   "kept_0.0": 196
+  },
+  {
+   "cls": "banana",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 275,
+   "kept_0.01": 275,
+   "kept_0.005": 275,
+   "kept_0.0025": 275,
+   "kept_0.0": 275
+  },
+  {
+   "cls": "banana",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "banana",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 319,
+   "kept_0.01": 319,
+   "kept_0.005": 319,
+   "kept_0.0025": 319,
+   "kept_0.0": 319
+  },
+  {
+   "cls": "banana",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 1014,
+   "kept_0.01": 1014,
+   "kept_0.005": 1014,
+   "kept_0.0025": 1014,
+   "kept_0.0": 1014
+  },
+  {
+   "cls": "carrot",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 2,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 2,
+   "kept_0.0": 2
+  },
+  {
+   "cls": "carrot",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 2,
+   "kept_0.01": 0,
+   "kept_0.005": 2,
+   "kept_0.0025": 2,
+   "kept_0.0": 2
+  },
+  {
+   "cls": "carrot",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "carrot",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 8,
+   "kept_0.01": 8,
+   "kept_0.005": 8,
+   "kept_0.0025": 8,
+   "kept_0.0": 8
+  },
+  {
+   "cls": "carrot",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 5,
+   "kept_0.01": 5,
+   "kept_0.005": 5,
+   "kept_0.0025": 5,
+   "kept_0.0": 5
+  },
+  {
+   "cls": "carrot",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 402,
+   "kept_0.01": 402,
+   "kept_0.005": 402,
+   "kept_0.0025": 402,
+   "kept_0.0": 402
+  },
+  {
+   "cls": "carrot",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 379,
+   "kept_0.01": 379,
+   "kept_0.005": 379,
+   "kept_0.0025": 379,
+   "kept_0.0": 379
+  },
+  {
+   "cls": "citrus",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 20,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 20,
+   "kept_0.0": 20
+  },
+  {
+   "cls": "citrus",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 44,
+   "kept_0.01": 0,
+   "kept_0.005": 44,
+   "kept_0.0025": 44,
+   "kept_0.0": 44
+  },
+  {
+   "cls": "citrus",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 29,
+   "kept_0.01": 29,
+   "kept_0.005": 29,
+   "kept_0.0025": 29,
+   "kept_0.0": 29
+  },
+  {
+   "cls": "citrus",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 12,
+   "kept_0.01": 12,
+   "kept_0.005": 12,
+   "kept_0.0025": 12,
+   "kept_0.0": 12
+  },
+  {
+   "cls": "citrus",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 249,
+   "kept_0.01": 249,
+   "kept_0.005": 249,
+   "kept_0.0025": 249,
+   "kept_0.0": 249
+  },
+  {
+   "cls": "citrus",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 1195,
+   "kept_0.01": 1195,
+   "kept_0.005": 1195,
+   "kept_0.0025": 1195,
+   "kept_0.0": 1195
+  },
+  {
+   "cls": "lemon_lime",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 93,
+   "kept_0.01": 93,
+   "kept_0.005": 93,
+   "kept_0.0025": 93,
+   "kept_0.0": 93
+  },
+  {
+   "cls": "lemon_lime",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 39,
+   "kept_0.01": 39,
+   "kept_0.005": 39,
+   "kept_0.0025": 39,
+   "kept_0.0": 39
+  },
+  {
+   "cls": "pomegranate",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 9,
+   "kept_0.01": 9,
+   "kept_0.005": 9,
+   "kept_0.0025": 9,
+   "kept_0.0": 9
+  },
+  {
+   "cls": "potato",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 2,
+   "kept_0.01": 2,
+   "kept_0.005": 2,
+   "kept_0.0025": 2,
+   "kept_0.0": 2
+  },
+  {
+   "cls": "tomato",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 9,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 9,
+   "kept_0.0": 9
+  },
+  {
+   "cls": "tomato",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 41,
+   "kept_0.01": 0,
+   "kept_0.005": 41,
+   "kept_0.0025": 41,
+   "kept_0.0": 41
+  },
+  {
+   "cls": "tomato",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 86,
+   "kept_0.01": 86,
+   "kept_0.005": 86,
+   "kept_0.0025": 86,
+   "kept_0.0": 86
+  }
+ ],
+ "dev_neg": [
+  {
+   "cls": "apple",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 2,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 2,
+   "kept_0.0": 2
+  },
+  {
+   "cls": "apple",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 4,
+   "kept_0.01": 0,
+   "kept_0.005": 4,
+   "kept_0.0025": 4,
+   "kept_0.0": 4
+  },
+  {
+   "cls": "banana",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "banana",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 10,
+   "kept_0.01": 10,
+   "kept_0.005": 10,
+   "kept_0.0025": 10,
+   "kept_0.0": 10
+  },
+  {
+   "cls": "capsicum",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 5,
+   "kept_0.01": 5,
+   "kept_0.005": 5,
+   "kept_0.0025": 5,
+   "kept_0.0": 5
+  },
+  {
+   "cls": "citrus",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  }
+ ],
+ "probe_SYNTHETIC": [
+  {
+   "cls": "apple",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 9,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 9,
+   "kept_0.0": 9
+  },
+  {
+   "cls": "apple",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 103,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 103,
+   "kept_0.0": 103
+  },
+  {
+   "cls": "apple",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 14,
+   "kept_0.01": 0,
+   "kept_0.005": 14,
+   "kept_0.0025": 14,
+   "kept_0.0": 14
+  },
+  {
+   "cls": "apple",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 35,
+   "kept_0.01": 0,
+   "kept_0.005": 35,
+   "kept_0.0025": 35,
+   "kept_0.0": 35
+  },
+  {
+   "cls": "apple",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 17,
+   "kept_0.01": 17,
+   "kept_0.005": 17,
+   "kept_0.0025": 17,
+   "kept_0.0": 17
+  },
+  {
+   "cls": "apple",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 44,
+   "kept_0.01": 44,
+   "kept_0.005": 44,
+   "kept_0.0025": 44,
+   "kept_0.0": 44
+  },
+  {
+   "cls": "apple",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 10,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 10
+  },
+  {
+   "cls": "apple",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 37,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 37
+  },
+  {
+   "cls": "apple",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 24,
+   "kept_0.01": 24,
+   "kept_0.005": 24,
+   "kept_0.0025": 24,
+   "kept_0.0": 24
+  },
+  {
+   "cls": "banana",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 15,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 15,
+   "kept_0.0": 15
+  },
+  {
+   "cls": "banana",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 50,
+   "kept_0.01": 0,
+   "kept_0.005": 50,
+   "kept_0.0025": 50,
+   "kept_0.0": 50
+  },
+  {
+   "cls": "banana",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 30,
+   "kept_0.01": 0,
+   "kept_0.005": 30,
+   "kept_0.0025": 30,
+   "kept_0.0": 30
+  },
+  {
+   "cls": "banana",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 9,
+   "kept_0.01": 9,
+   "kept_0.005": 9,
+   "kept_0.0025": 9,
+   "kept_0.0": 9
+  },
+  {
+   "cls": "banana",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 97,
+   "kept_0.01": 97,
+   "kept_0.005": 97,
+   "kept_0.0025": 97,
+   "kept_0.0": 97
+  },
+  {
+   "cls": "banana",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "banana",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 20,
+   "kept_0.01": 20,
+   "kept_0.005": 20,
+   "kept_0.0025": 20,
+   "kept_0.0": 20
+  },
+  {
+   "cls": "banana",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 130,
+   "kept_0.01": 130,
+   "kept_0.005": 130,
+   "kept_0.0025": 130,
+   "kept_0.0": 130
+  },
+  {
+   "cls": "capsicum",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 6,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 6,
+   "kept_0.0": 6
+  },
+  {
+   "cls": "capsicum",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 18,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 18,
+   "kept_0.0": 18
+  },
+  {
+   "cls": "capsicum",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 17,
+   "kept_0.01": 0,
+   "kept_0.005": 17,
+   "kept_0.0025": 17,
+   "kept_0.0": 17
+  },
+  {
+   "cls": "capsicum",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 36,
+   "kept_0.01": 0,
+   "kept_0.005": 36,
+   "kept_0.0025": 36,
+   "kept_0.0": 36
+  },
+  {
+   "cls": "capsicum",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 20,
+   "kept_0.01": 20,
+   "kept_0.005": 20,
+   "kept_0.0025": 20,
+   "kept_0.0": 20
+  },
+  {
+   "cls": "capsicum",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 90,
+   "kept_0.01": 90,
+   "kept_0.005": 90,
+   "kept_0.0025": 90,
+   "kept_0.0": 90
+  },
+  {
+   "cls": "capsicum",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "capsicum",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 5,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 5
+  },
+  {
+   "cls": "capsicum",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 5,
+   "kept_0.01": 5,
+   "kept_0.005": 5,
+   "kept_0.0025": 5,
+   "kept_0.0": 5
+  },
+  {
+   "cls": "capsicum",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 86,
+   "kept_0.01": 86,
+   "kept_0.005": 86,
+   "kept_0.0025": 86,
+   "kept_0.0": 86
+  },
+  {
+   "cls": "carrot",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 4,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 4,
+   "kept_0.0": 4
+  },
+  {
+   "cls": "carrot",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "carrot",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 25,
+   "kept_0.01": 0,
+   "kept_0.005": 25,
+   "kept_0.0025": 25,
+   "kept_0.0": 25
+  },
+  {
+   "cls": "carrot",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 19,
+   "kept_0.01": 0,
+   "kept_0.005": 19,
+   "kept_0.0025": 19,
+   "kept_0.0": 19
+  },
+  {
+   "cls": "carrot",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 14,
+   "kept_0.01": 14,
+   "kept_0.005": 14,
+   "kept_0.0025": 14,
+   "kept_0.0": 14
+  },
+  {
+   "cls": "carrot",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 12,
+   "kept_0.01": 12,
+   "kept_0.005": 12,
+   "kept_0.0025": 12,
+   "kept_0.0": 12
+  },
+  {
+   "cls": "carrot",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "carrot",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "carrot",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 3,
+   "kept_0.01": 3,
+   "kept_0.005": 3,
+   "kept_0.0025": 3,
+   "kept_0.0": 3
+  },
+  {
+   "cls": "citrus",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 20,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 20,
+   "kept_0.0": 20
+  },
+  {
+   "cls": "citrus",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 9,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 9,
+   "kept_0.0": 9
+  },
+  {
+   "cls": "citrus",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 43,
+   "kept_0.01": 0,
+   "kept_0.005": 43,
+   "kept_0.0025": 43,
+   "kept_0.0": 43
+  },
+  {
+   "cls": "citrus",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 31,
+   "kept_0.01": 0,
+   "kept_0.005": 31,
+   "kept_0.0025": 31,
+   "kept_0.0": 31
+  },
+  {
+   "cls": "citrus",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 39,
+   "kept_0.01": 39,
+   "kept_0.005": 39,
+   "kept_0.0025": 39,
+   "kept_0.0": 39
+  },
+  {
+   "cls": "citrus",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 28,
+   "kept_0.01": 28,
+   "kept_0.005": 28,
+   "kept_0.0025": 28,
+   "kept_0.0": 28
+  },
+  {
+   "cls": "citrus",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 8,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 8
+  },
+  {
+   "cls": "citrus",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 33,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 33
+  },
+  {
+   "cls": "citrus",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 54,
+   "kept_0.01": 54,
+   "kept_0.005": 54,
+   "kept_0.0025": 54,
+   "kept_0.0": 54
+  },
+  {
+   "cls": "cucumber",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 3,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 3,
+   "kept_0.0": 3
+  },
+  {
+   "cls": "cucumber",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 2,
+   "kept_0.01": 2,
+   "kept_0.005": 2,
+   "kept_0.0025": 2,
+   "kept_0.0": 2
+  },
+  {
+   "cls": "cucumber",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 1,
+   "kept_0.01": 1,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "cucumber",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 126,
+   "kept_0.01": 126,
+   "kept_0.005": 126,
+   "kept_0.0025": 126,
+   "kept_0.0": 126
+  },
+  {
+   "cls": "lemon_lime",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 2,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 2,
+   "kept_0.0": 2
+  },
+  {
+   "cls": "lemon_lime",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "lemon_lime",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 2,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 2
+  },
+  {
+   "cls": "mango",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 6,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 6,
+   "kept_0.0": 6
+  },
+  {
+   "cls": "mango",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 60,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 60,
+   "kept_0.0": 60
+  },
+  {
+   "cls": "mango",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 4,
+   "kept_0.01": 0,
+   "kept_0.005": 4,
+   "kept_0.0025": 4,
+   "kept_0.0": 4
+  },
+  {
+   "cls": "mango",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 18,
+   "kept_0.01": 0,
+   "kept_0.005": 18,
+   "kept_0.0025": 18,
+   "kept_0.0": 18
+  },
+  {
+   "cls": "mango",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 2,
+   "kept_0.01": 2,
+   "kept_0.005": 2,
+   "kept_0.0025": 2,
+   "kept_0.0": 2
+  },
+  {
+   "cls": "mango",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 18,
+   "kept_0.01": 18,
+   "kept_0.005": 18,
+   "kept_0.0025": 18,
+   "kept_0.0": 18
+  },
+  {
+   "cls": "mango",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 5,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 5
+  },
+  {
+   "cls": "mango",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 47,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 47
+  },
+  {
+   "cls": "mango",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 16,
+   "kept_0.01": 16,
+   "kept_0.005": 16,
+   "kept_0.0025": 16,
+   "kept_0.0": 16
+  },
+  {
+   "cls": "pomegranate",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 12,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 12,
+   "kept_0.0": 12
+  },
+  {
+   "cls": "pomegranate",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 1,
+   "kept_0.01": 0,
+   "kept_0.005": 1,
+   "kept_0.0025": 1,
+   "kept_0.0": 1
+  },
+  {
+   "cls": "pomegranate",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 37,
+   "kept_0.01": 37,
+   "kept_0.005": 37,
+   "kept_0.0025": 37,
+   "kept_0.0": 37
+  },
+  {
+   "cls": "pomegranate",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 7,
+   "kept_0.01": 7,
+   "kept_0.005": 7,
+   "kept_0.0025": 7,
+   "kept_0.0": 7
+  },
+  {
+   "cls": "pomegranate",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 4,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 4
+  },
+  {
+   "cls": "pomegranate",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 15,
+   "kept_0.01": 15,
+   "kept_0.005": 15,
+   "kept_0.0025": 15,
+   "kept_0.0": 15
+  },
+  {
+   "cls": "pomegranate",
+   "bin": ">=2.5%",
+   "match": "tp",
+   "raw": 72,
+   "kept_0.01": 72,
+   "kept_0.005": 72,
+   "kept_0.0025": 72,
+   "kept_0.0": 72
+  },
+  {
+   "cls": "tomato",
+   "bin": "0.25-0.5%",
+   "match": "fp",
+   "raw": 10,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 10,
+   "kept_0.0": 10
+  },
+  {
+   "cls": "tomato",
+   "bin": "0.25-0.5%",
+   "match": "tp",
+   "raw": 26,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 26,
+   "kept_0.0": 26
+  },
+  {
+   "cls": "tomato",
+   "bin": "0.5-1%",
+   "match": "fp",
+   "raw": 11,
+   "kept_0.01": 0,
+   "kept_0.005": 11,
+   "kept_0.0025": 11,
+   "kept_0.0": 11
+  },
+  {
+   "cls": "tomato",
+   "bin": "0.5-1%",
+   "match": "tp",
+   "raw": 27,
+   "kept_0.01": 0,
+   "kept_0.005": 27,
+   "kept_0.0025": 27,
+   "kept_0.0": 27
+  },
+  {
+   "cls": "tomato",
+   "bin": "1-2.5%",
+   "match": "fp",
+   "raw": 4,
+   "kept_0.01": 4,
+   "kept_0.005": 4,
+   "kept_0.0025": 4,
+   "kept_0.0": 4
+  },
+  {
+   "cls": "tomato",
+   "bin": "1-2.5%",
+   "match": "tp",
+   "raw": 6,
+   "kept_0.01": 6,
+   "kept_0.005": 6,
+   "kept_0.0025": 6,
+   "kept_0.0": 6
+  },
+  {
+   "cls": "tomato",
+   "bin": "<0.25%",
+   "match": "fp",
+   "raw": 14,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 14
+  },
+  {
+   "cls": "tomato",
+   "bin": "<0.25%",
+   "match": "tp",
+   "raw": 8,
+   "kept_0.01": 0,
+   "kept_0.005": 0,
+   "kept_0.0025": 0,
+   "kept_0.0": 8
+  },
+  {
+   "cls": "tomato",
+   "bin": ">=2.5%",
+   "match": "fp",
+   "raw": 18,
+   "kept_0.01": 18,
+   "kept_0.005": 18,
+   "kept_0.0025": 18,
+   "kept_0.0": 18
+  }
+ ]
+}
