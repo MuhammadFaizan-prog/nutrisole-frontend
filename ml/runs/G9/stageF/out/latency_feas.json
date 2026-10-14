@@ -1,0 +1,18 @@
+{
+ "base480": {
+  "p50": 46.8,
+  "p95": 126.7,
+  "n": 30
+ },
+ "full640": {
+  "p50": 94.7,
+  "p95": 249.1,
+  "n": 30
+ },
+ "tile480": {
+  "p50": 253.9,
+  "p95": 773.7,
+  "n": 30
+ },
+ "note": "second pass over the frames only (first pass = warm-up); sandbox 2 vCPU ONNX Runtime"
+}
