@@ -1,0 +1,17 @@
+n,clip,uploader,whole_min,window_min,n_tile_moments,B1_fa_whole,B1_fa_window,B1_window_track_s,B1_raw_boxes_whole,B1_raw_boxes_window,B1_raw_frames_with_box_frac
+6,c8b2d2f36,Muktee1494,0.281,0.231,4,0,0,0,0,0,0.0
+7,c0a13587f,Hanooz,22.289,0.329,4,100,2,0.3,553,10,0.0316
+10,c3cc14a1f,Obihoja,0.381,0.288,4,0,0,0,0,0,0.0
+12,c87e3900a,Victorgrigas,0.152,0.152,1,0,0,0,0,0,0.0
+13,c94ab39f5,Mx. Granger,0.284,0.2,0,5,5,2.81,45,33,0.2353
+14,c973b3f44,Thamizhpparithi Maari,0.3,0.203,1,0,0,0,0,0,0.0
+15,c97e354bf,Shanze1,1.355,0.28,4,10,2,0.4,40,9,0.0305
+17,cb05e346c,GrantHillebrand,0.687,0.217,1,0,0,0,0,0,0.0
+20,cfe0b39f1,DarwIn,3.133,0.316,4,11,2,0.4,47,8,0.0196
+26,c0a08d565,Rafic.Mufid,0.299,0.217,2,3,3,0.32,14,13,0.0578
+27,c3d854faf,Saimmx,1.522,0.333,4,1,0,0,8,0,0.0088
+29,c4e9a7195,NairobiPapel,0.533,0.286,4,1,1,0.1,8,7,0.0187
+30,c6f5ac9b4,OptimusPrimeBot,0.582,0.28,3,1,1,0.5,8,7,0.0229
+32,cc5585ebc,Yann,0.709,0.2,0,0,0,0,0,0,0.0
+33,cd17ce723,Hanooz,3.486,0.333,4,14,4,3.04,90,44,0.0176
+34,ce9f2fe34,Chris Light,0.381,0.237,2,2,0,0,13,2,0.0245
