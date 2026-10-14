@@ -1,0 +1,71 @@
+{
+ "H_A1": {
+  "eval_single_still": {
+   "graded": 8,
+   "wrong": 0
+  },
+  "cu_check_approach": {
+   "graded": 2,
+   "wrong": 1,
+   "items": [
+    "0014",
+    "0100"
+   ],
+   "note": "cu0100 true guava, wide lemon_lime, H2 agrees lemon_lime -> verified; occlusion cues pass (solidity 0.97, ellipseIoU 0.94); Stage G gate graded it"
+  },
+  "threshold": "0 on CU-check and <=1% pooled",
+  "pass_": false
+ },
+ "H_A2": {
+  "eval_wrong": 0,
+  "eval_sup": 99,
+  "approach_wrong": 1,
+  "approach_n": 29,
+  "threshold": "<=3%",
+  "pass_": true
+ },
+ "H_A3": {
+  "false_accept": 0,
+  "neg": 77,
+  "graded": 0,
+  "threshold": "<=2% and 0 graded",
+  "pass_": true
+ },
+ "H_A4": {
+  "full_pipeline_occluder_leak": 23,
+  "n": 990,
+  "rate": 0.0232,
+  "max_per_type": 0.109,
+  "occlusion_rule_only_leak_rate": 0.2758,
+  "stageG_leak_rate": 0.603,
+  "threshold": "<=3% overall, <=5% per type",
+  "pass_": false
+ },
+ "H_A5": {
+  "correct_item_rate": 0.1406,
+  "correct_item": 9,
+  "sup_item": 64,
+  "clean_false_reject_rate": 0.3488,
+  "clean_gated_grade_rate_occ_suite": 0.127,
+  "supported_graded_rate_e2e": 0.0808,
+  "threshold": ">=0.60 / <=0.20 / >=0.40",
+  "pass_": false
+ },
+ "H_A6": {
+  "h2_p95": 14.4,
+  "closeup_p95": 1135.7,
+  "threshold": "H2 p95<=60 ms; close-up p95<=700 ms",
+  "pass_": false
+ },
+ "H_A7": {
+  "ts": "114/114 (cvVerify 10/10)",
+  "python": "9/9",
+  "parity": "fixture regenerated with frozen values",
+  "pass_": true
+ },
+ "H_A8": {
+  "note": "closeupDisplay/stageh_decision: no A/B/C (grade_display_enabled False), no grade-specific price, category reference only when verified or user-confirmed",
+  "pass_": true
+ },
+ "decision": "NOT ACCEPTED"
+}
