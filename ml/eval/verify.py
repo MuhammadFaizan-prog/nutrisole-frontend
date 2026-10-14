@@ -11,7 +11,7 @@ H2_CLASSES = ["banana", "apple", "mango", "citrus", "guava", "pomegranate", "lem
 UNKNOWN = 12
 CITRUS_PAIR = {3, 6}
 DEFAULT_VERIFY = dict(policy="P-a", tau=0.6, margin=0.2, maxUnknown=0.3, h1VetoScore=0.5, suggestMinP=0.15)
-FROZEN_VERIFY = dict(DEFAULT_VERIFY)  # replaced by the Stage H frozen pick (see G9_stageH.md)
+FROZEN_VERIFY = dict(policy="P-a", tau=0.4, margin=0.0, maxUnknown=0.5, h1VetoScore=0.5, suggestMinP=0.15)  # Stage H frozen pick on TUNE only (H2 v2; selection INFEASIBLE -> fallback rule; see G9_stageH.md)
 
 
 def h2_decision(probs, p=None):
