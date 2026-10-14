@@ -7,6 +7,8 @@
 import type { Box } from './preprocess.ts';
 
 export const DETECTOR_INPUT = 480;
+/** The full-res crop is analysed at <= 256 px side (area resample); the gate size stays in native frame pixels. */
+export const ANALYSIS_MAX_SIDE = 256;
 export type IdParams = { idMinScore: number; idMinHits: number };
 export const DEFAULT_ID: IdParams = { idMinScore: 0.5, idMinHits: 3 };
 export type GateParams = {
@@ -18,6 +20,8 @@ export const DEFAULT_GATE: GateParams = {
   minSidePx: 96, minFrames: 3, mode: 'count', scoreTol: 0.15, minBlurVar: 15.0, minMeanV: 40.0, maxMeanV: 245.0,
   edgeMarginFrac: 0.01, minVisibleFrac: 0.25, minMaxProb: 0.7, minMargin: 0.3, maxBlockiness: 1.5,
 };
+// Stage G frozen pick (CU-tune, DEV only): 96 px full-res, 3 agreeing assessments, minMeanV 80, maxBlockiness 1.4.
+export const FROZEN_GATE: GateParams = { ...DEFAULT_GATE, minMeanV: 80.0, maxBlockiness: 1.4 };
 
 const pyRound = (v: number): number => {
   // Python round(): banker's rounding on exact .5
@@ -141,4 +145,36 @@ export function blockiness(gray: ArrayLike<number>, w: number, h: number): numbe
   const px = prof(dx); const py = prof(dy);
   const v = Math.max(Math.max(...px) / Math.max(med(px), 1e-6), Math.max(...py) / Math.max(med(py), 1e-6));
   return Math.round(v * 10000) / 10000;
+}
+
+/** Map one close-up result onto the existing CvAssessment contract (contracts.ts), the only CV API/DB interface in the repo.
+ *  Not graded -> visualGrade 'ungradable' with the gate reasons as imageQuality.reasons; no price ever enters the assessment. */
+export function toCvAssessment(inp: {
+  assessmentId: string; frameTimestampMs: number; modelVersion: string; rubricVersion: string; frameW: number; frameH: number;
+  box: Box; trackingId?: string; id: IdResult; classIds: readonly string[]; labels: readonly string[]; decision: GateDecision;
+  freshness?: { level: 'fresh' | 'rotten'; confidence?: number }; blurVar?: number;
+}) {
+  const [x1, y1, x2, y2] = inp.box;
+  const c = (v: number) => Math.min(1, Math.max(0, v));
+  const bboxNormalized: [number, number, number, number] = [c(x1 / inp.frameW), c(y1 / inp.frameH), c(x2 / inp.frameW), c(y2 / inp.frameH)];
+  if (inp.id.status !== 'identified') {
+    return { assessmentId: inp.assessmentId, frameTimestampMs: inp.frameTimestampMs, modelVersion: inp.modelVersion, rubricVersion: inp.rubricVersion,
+      status: 'unsupported' as const, objects: [], limitations: ['Unable to identify'] };
+  }
+  const graded = inp.decision.status === 'graded';
+  const reasons: string[] = inp.decision.status === 'graded' ? [] : inp.decision.reasons;
+  const tooSmall = reasons.some((r) => r.startsWith('too_small'));
+  return {
+    assessmentId: inp.assessmentId, frameTimestampMs: inp.frameTimestampMs, modelVersion: inp.modelVersion, rubricVersion: inp.rubricVersion,
+    status: graded ? ('supported' as const) : tooSmall ? ('uncertain' as const) : ('poor_capture' as const),
+    imageQuality: { ...(inp.blurVar !== undefined ? { blur: inp.blurVar } : {}), reasons },
+    objects: [{
+      ...(inp.trackingId ? { trackingId: inp.trackingId } : {}), bboxNormalized,
+      produce: { classId: inp.classIds[inp.id.classId], label: inp.labels[inp.id.classId] },
+      visualGrade: graded
+        ? { grade: (inp.decision as { grade: string }).grade as 'A' | 'B' | 'C' | 'Reject', reasons: ['Consistent over 3 close-up assessments (appearance only)'] }
+        : { grade: 'ungradable' as const, reasons: [tooSmall ? 'Move closer to check quality' : 'Could not be graded reliably'] },
+    }],
+    limitations: ['Visual appearance only; agent-verified evaluation labels; not a certified grade'],
+  };
 }
