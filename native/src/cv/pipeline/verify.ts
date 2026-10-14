@@ -132,3 +132,17 @@ export function stageHMessage(o: StageHOutcome, label?: string): string {
     default: return `${label ?? 'Item'}`;
   }
 }
+
+// ---- G9 Stage I targeted occlusion cues (additive only; FROZEN_OCC / occlusionReasons above unchanged). Mirror of
+// ml/eval/occlusion.py targeted_reasons. No threshold is frozen in Stage I (none lowered tune leakage within the clean-reject limit).
+export type TargetedCues = { sideTouch: number; skinFrac: number; specFrac: number; hullGap: number };
+export type TargetedParams = { maxSideTouch: number; maxSkinFrac: number; maxSpecFrac: number; maxHullGap: number };
+export const DEFAULT_TARGETED: TargetedParams = { maxSideTouch: 1.01, maxSkinFrac: 1.01, maxSpecFrac: 1.01, maxHullGap: 1e9 };
+export function targetedReasons(t: TargetedCues, p: Partial<TargetedParams> = {}): string[] {
+  const P = { ...DEFAULT_TARGETED, ...p }; const r: string[] = [];
+  if (t.sideTouch > P.maxSideTouch) r.push('cut_by_box');
+  if (t.skinFrac > P.maxSkinFrac) r.push('hand_near_item');
+  if (t.specFrac > P.maxSpecFrac) r.push('packaging_glare');
+  if (t.hullGap > P.maxHullGap) r.push('outline_bite');
+  return r;
+}
