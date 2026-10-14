@@ -1,0 +1,808 @@
+{
+ "cache": "/workspace/work/cv/g9d/cache_D1",
+ "guard": "g1",
+ "minAreaFrac": 0.01,
+ "small_score_floor": null,
+ "tracker": "iou0.3",
+ "val": {
+  "banana": {
+   "n": 469,
+   "tp": 104,
+   "fp": 42,
+   "R": 0.2217
+  },
+  "apple": {
+   "n": 199,
+   "tp": 91,
+   "fp": 24,
+   "R": 0.4573
+  },
+  "mango": {
+   "n": 11,
+   "tp": 7,
+   "fp": 0,
+   "R": 0.6364
+  },
+  "citrus": {
+   "n": 208,
+   "tp": 116,
+   "fp": 30,
+   "R": 0.5577
+  },
+  "pomegranate": {
+   "n": 16,
+   "tp": 9,
+   "fp": 7,
+   "R": 0.5625
+  },
+  "lemon_lime": {
+   "n": 77,
+   "tp": 1,
+   "fp": 8,
+   "R": 0.013
+  },
+  "tomato": {
+   "n": 317,
+   "tp": 81,
+   "fp": 45,
+   "R": 0.2555
+  },
+  "potato": {
+   "n": 20,
+   "tp": 1,
+   "fp": 0,
+   "R": 0.05
+  },
+  "cucumber": {
+   "n": 154,
+   "tp": 26,
+   "fp": 17,
+   "R": 0.1688
+  },
+  "carrot": {
+   "n": 435,
+   "tp": 88,
+   "fp": 30,
+   "R": 0.2023
+  },
+  "capsicum": {
+   "n": 116,
+   "tp": 25,
+   "fp": 7,
+   "R": 0.2155
+  }
+ },
+ "val_recall_by_bin": {
+  "apple|0.25-0.5%": {
+   "n": 20,
+   "tp": 0
+  },
+  "apple|0.5-1%": {
+   "n": 43,
+   "tp": 6
+  },
+  "apple|1-2.5%": {
+   "n": 35,
+   "tp": 16
+  },
+  "apple|<0.25%": {
+   "n": 23,
+   "tp": 0
+  },
+  "apple|>=2.5%": {
+   "n": 78,
+   "tp": 69
+  },
+  "banana|0.25-0.5%": {
+   "n": 121,
+   "tp": 0
+  },
+  "banana|0.5-1%": {
+   "n": 95,
+   "tp": 7
+  },
+  "banana|1-2.5%": {
+   "n": 75,
+   "tp": 31
+  },
+  "banana|<0.25%": {
+   "n": 79,
+   "tp": 0
+  },
+  "banana|>=2.5%": {
+   "n": 99,
+   "tp": 66
+  },
+  "capsicum|0.25-0.5%": {
+   "n": 12,
+   "tp": 0
+  },
+  "capsicum|0.5-1%": {
+   "n": 12,
+   "tp": 0
+  },
+  "capsicum|1-2.5%": {
+   "n": 17,
+   "tp": 0
+  },
+  "capsicum|<0.25%": {
+   "n": 23,
+   "tp": 0
+  },
+  "capsicum|>=2.5%": {
+   "n": 52,
+   "tp": 25
+  },
+  "carrot|0.25-0.5%": {
+   "n": 72,
+   "tp": 0
+  },
+  "carrot|0.5-1%": {
+   "n": 109,
+   "tp": 2
+  },
+  "carrot|1-2.5%": {
+   "n": 126,
+   "tp": 45
+  },
+  "carrot|<0.25%": {
+   "n": 47,
+   "tp": 0
+  },
+  "carrot|>=2.5%": {
+   "n": 81,
+   "tp": 41
+  },
+  "citrus|0.25-0.5%": {
+   "n": 10,
+   "tp": 0
+  },
+  "citrus|0.5-1%": {
+   "n": 23,
+   "tp": 3
+  },
+  "citrus|1-2.5%": {
+   "n": 39,
+   "tp": 25
+  },
+  "citrus|<0.25%": {
+   "n": 38,
+   "tp": 0
+  },
+  "citrus|>=2.5%": {
+   "n": 98,
+   "tp": 88
+  },
+  "cucumber|0.25-0.5%": {
+   "n": 19,
+   "tp": 0
+  },
+  "cucumber|0.5-1%": {
+   "n": 23,
+   "tp": 0
+  },
+  "cucumber|1-2.5%": {
+   "n": 35,
+   "tp": 4
+  },
+  "cucumber|<0.25%": {
+   "n": 7,
+   "tp": 0
+  },
+  "cucumber|>=2.5%": {
+   "n": 70,
+   "tp": 22
+  },
+  "lemon_lime|0.25-0.5%": {
+   "n": 8,
+   "tp": 0
+  },
+  "lemon_lime|0.5-1%": {
+   "n": 13,
+   "tp": 0
+  },
+  "lemon_lime|1-2.5%": {
+   "n": 15,
+   "tp": 0
+  },
+  "lemon_lime|<0.25%": {
+   "n": 24,
+   "tp": 0
+  },
+  "lemon_lime|>=2.5%": {
+   "n": 17,
+   "tp": 1
+  },
+  "mango|0.25-0.5%": {
+   "n": 1,
+   "tp": 0
+  },
+  "mango|1-2.5%": {
+   "n": 3,
+   "tp": 3
+  },
+  "mango|>=2.5%": {
+   "n": 7,
+   "tp": 4
+  },
+  "pomegranate|0.5-1%": {
+   "n": 1,
+   "tp": 0
+  },
+  "pomegranate|1-2.5%": {
+   "n": 5,
+   "tp": 0
+  },
+  "pomegranate|>=2.5%": {
+   "n": 10,
+   "tp": 9
+  },
+  "potato|0.25-0.5%": {
+   "n": 1,
+   "tp": 0
+  },
+  "potato|0.5-1%": {
+   "n": 2,
+   "tp": 0
+  },
+  "potato|1-2.5%": {
+   "n": 5,
+   "tp": 0
+  },
+  "potato|<0.25%": {
+   "n": 6,
+   "tp": 0
+  },
+  "potato|>=2.5%": {
+   "n": 6,
+   "tp": 1
+  },
+  "tomato|0.25-0.5%": {
+   "n": 51,
+   "tp": 0
+  },
+  "tomato|0.5-1%": {
+   "n": 54,
+   "tp": 2
+  },
+  "tomato|1-2.5%": {
+   "n": 84,
+   "tp": 38
+  },
+  "tomato|<0.25%": {
+   "n": 72,
+   "tp": 0
+  },
+  "tomato|>=2.5%": {
+   "n": 56,
+   "tp": 41
+  }
+ },
+ "val_false_boxes": {
+  "total": 210,
+  "by_bin": {
+   "1-2.5%": 102,
+   ">=2.5%": 108
+  },
+  "boxfree_images": 24
+ },
+ "dev_det": {
+  "frames_with_gt": 1432,
+  "frame_acc": 0.4958,
+  "per_class_recall": {
+   "banana": {
+    "n": 413,
+    "recall": 0.622
+   },
+   "apple": {
+    "n": 240,
+    "recall": 0.8
+   },
+   "citrus": {
+    "n": 299,
+    "recall": 0.645
+   },
+   "tomato": {
+    "n": 60,
+    "recall": 0.517
+   },
+   "potato": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "cucumber": {
+    "n": 60,
+    "recall": 0.0
+   },
+   "carrot": {
+    "n": 240,
+    "recall": 0.154
+   },
+   "capsicum": {
+    "n": 60,
+    "recall": 0.0
+   }
+  },
+  "segments": 24,
+  "segment_acc": 0.625,
+  "never_correct_segments": 6,
+  "ttfc_ms": {
+   "p50": 466.6670000000008,
+   "p90": 846.6670000000017,
+   "max": 1466.6670000000013,
+   "n": 18
+  },
+  "label_flicker_per_10s_static": 2.5,
+  "label_flicker_per_10s_all": 2.304,
+  "grade_flicker_per_10s_static": 0.0,
+  "no_box_frac_static": 0.319,
+  "missed_s_total": 41.266,
+  "missed_frac": 0.4323,
+  "longest_missed_gap_s": 4.0,
+  "fragmentations": 17,
+  "mean_fragments_per_segment": 1.458,
+  "id_switches": 45,
+  "mean_ids_per_segment": 1.5,
+  "post_ms": {
+   "p50": 0.011,
+   "p95": 0.1869
+  },
+  "ttfc_from_visibility_ms": {
+   "p50": 467,
+   "p90": 847,
+   "n": 18
+  },
+  "object_frame_recall_by_bin": {
+   "apple|0.25-0.5%": {
+    "n": 7,
+    "tp": 0
+   },
+   "apple|0.5-1%": {
+    "n": 92,
+    "tp": 0
+   },
+   "apple|1-2.5%": {
+    "n": 115,
+    "tp": 32
+   },
+   "apple|<0.25%": {
+    "n": 48,
+    "tp": 0
+   },
+   "apple|>=2.5%": {
+    "n": 1094,
+    "tp": 754
+   },
+   "banana|0.25-0.5%": {
+    "n": 79,
+    "tp": 0
+   },
+   "banana|0.5-1%": {
+    "n": 87,
+    "tp": 28
+   },
+   "banana|1-2.5%": {
+    "n": 289,
+    "tp": 119
+   },
+   "banana|<0.25%": {
+    "n": 28,
+    "tp": 0
+   },
+   "banana|>=2.5%": {
+    "n": 1693,
+    "tp": 999
+   },
+   "capsicum|1-2.5%": {
+    "n": 4,
+    "tp": 0
+   },
+   "capsicum|>=2.5%": {
+    "n": 184,
+    "tp": 0
+   },
+   "carrot|0.25-0.5%": {
+    "n": 419,
+    "tp": 0
+   },
+   "carrot|0.5-1%": {
+    "n": 556,
+    "tp": 0
+   },
+   "carrot|1-2.5%": {
+    "n": 500,
+    "tp": 7
+   },
+   "carrot|<0.25%": {
+    "n": 565,
+    "tp": 0
+   },
+   "carrot|>=2.5%": {
+    "n": 1355,
+    "tp": 466
+   },
+   "citrus|0.25-0.5%": {
+    "n": 1,
+    "tp": 0
+   },
+   "citrus|0.5-1%": {
+    "n": 4,
+    "tp": 0
+   },
+   "citrus|1-2.5%": {
+    "n": 18,
+    "tp": 2
+   },
+   "citrus|<0.25%": {
+    "n": 1,
+    "tp": 0
+   },
+   "citrus|>=2.5%": {
+    "n": 1637,
+    "tp": 1123
+   },
+   "cucumber|0.25-0.5%": {
+    "n": 5,
+    "tp": 0
+   },
+   "cucumber|0.5-1%": {
+    "n": 6,
+    "tp": 0
+   },
+   "cucumber|1-2.5%": {
+    "n": 10,
+    "tp": 0
+   },
+   "cucumber|<0.25%": {
+    "n": 4,
+    "tp": 0
+   },
+   "cucumber|>=2.5%": {
+    "n": 531,
+    "tp": 0
+   },
+   "lemon_lime|1-2.5%": {
+    "n": 3,
+    "tp": 0
+   },
+   "lemon_lime|>=2.5%": {
+    "n": 277,
+    "tp": 41
+   },
+   "potato|0.25-0.5%": {
+    "n": 1,
+    "tp": 0
+   },
+   "potato|0.5-1%": {
+    "n": 34,
+    "tp": 0
+   },
+   "potato|1-2.5%": {
+    "n": 5,
+    "tp": 0
+   },
+   "potato|<0.25%": {
+    "n": 2,
+    "tp": 0
+   },
+   "potato|>=2.5%": {
+    "n": 60,
+    "tp": 0
+   },
+   "tomato|>=2.5%": {
+    "n": 60,
+    "tp": 31
+   }
+  },
+  "ids_per_gt_object": {
+   "objects_matched": 119,
+   "mean_distinct_ids": 2.882,
+   "objects_with_gt1_id": 89,
+   "id_switches_all_objects": 356
+  },
+  "mixed_false_tracks": {
+   "n": 56,
+   "per_min": 29.016,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  }
+ },
+ "dev_neg": {
+  "false_alarm_tracks": 6,
+  "minutes": 4.0,
+  "false_alarms_per_min": 1.5,
+  "fa_episodes": 3,
+  "fa_episodes_per_min": 0.75,
+  "frames_with_any_box": 19,
+  "frames": 3600,
+  "post_ms": {
+   "p50": 0.0011,
+   "p95": 0.0012
+  }
+ },
+ "probe_SYNTHETIC": {
+  "frames_with_gt": 3186,
+  "frame_acc": 0.1573,
+  "per_class_recall": {
+   "banana": {
+    "n": 324,
+    "recall": 0.395
+   },
+   "apple": {
+    "n": 324,
+    "recall": 0.012
+   },
+   "mango": {
+    "n": 162,
+    "recall": 0.21
+   },
+   "citrus": {
+    "n": 324,
+    "recall": 0.031
+   },
+   "pomegranate": {
+    "n": 324,
+    "recall": 0.355
+   },
+   "lemon_lime": {
+    "n": 324,
+    "recall": 0.0
+   },
+   "tomato": {
+    "n": 324,
+    "recall": 0.025
+   },
+   "potato": {
+    "n": 108,
+    "recall": 0.0
+   },
+   "cucumber": {
+    "n": 324,
+    "recall": 0.33
+   },
+   "carrot": {
+    "n": 324,
+    "recall": 0.0
+   },
+   "capsicum": {
+    "n": 324,
+    "recall": 0.293
+   }
+  },
+  "segments": 177,
+  "segment_acc": 0.2034,
+  "never_correct_segments": 140,
+  "ttfc_ms": {
+   "p50": 66.66700000000128,
+   "p90": 493.33339999999725,
+   "max": 1066.6670000000013,
+   "n": 37
+  },
+  "label_flicker_per_10s_static": 0.226,
+  "label_flicker_per_10s_all": 0.235,
+  "grade_flicker_per_10s_static": 0.0,
+  "no_box_frac_static": 0.819,
+  "missed_s_total": 176.208,
+  "missed_frac": 0.8296,
+  "longest_missed_gap_s": 1.2,
+  "fragmentations": 19,
+  "mean_fragments_per_segment": 0.333,
+  "id_switches": 20,
+  "mean_ids_per_segment": 0.294,
+  "post_ms": {
+   "p50": 0.0012,
+   "p95": 0.014
+  },
+  "ttfc_from_visibility_ms": {
+   "p50": 67,
+   "p90": 493,
+   "n": 37
+  },
+  "object_frame_recall_by_bin": {
+   "apple|0.25-0.5%": {
+    "n": 126,
+    "tp": 0
+   },
+   "apple|0.5-1%": {
+    "n": 54,
+    "tp": 0
+   },
+   "apple|1-2.5%": {
+    "n": 36,
+    "tp": 23
+   },
+   "apple|<0.25%": {
+    "n": 1134,
+    "tp": 0
+   },
+   "banana|0.25-0.5%": {
+    "n": 54,
+    "tp": 0
+   },
+   "banana|0.5-1%": {
+    "n": 72,
+    "tp": 1
+   },
+   "banana|1-2.5%": {
+    "n": 144,
+    "tp": 84
+   },
+   "banana|<0.25%": {
+    "n": 324,
+    "tp": 0
+   },
+   "banana|>=2.5%": {
+    "n": 162,
+    "tp": 128
+   },
+   "capsicum|0.25-0.5%": {
+    "n": 306,
+    "tp": 0
+   },
+   "capsicum|0.5-1%": {
+    "n": 198,
+    "tp": 8
+   },
+   "capsicum|1-2.5%": {
+    "n": 162,
+    "tp": 65
+   },
+   "capsicum|<0.25%": {
+    "n": 936,
+    "tp": 0
+   },
+   "capsicum|>=2.5%": {
+    "n": 126,
+    "tp": 85
+   },
+   "carrot|0.25-0.5%": {
+    "n": 288,
+    "tp": 0
+   },
+   "carrot|0.5-1%": {
+    "n": 162,
+    "tp": 2
+   },
+   "carrot|1-2.5%": {
+    "n": 126,
+    "tp": 47
+   },
+   "carrot|<0.25%": {
+    "n": 1728,
+    "tp": 0
+   },
+   "carrot|>=2.5%": {
+    "n": 72,
+    "tp": 16
+   },
+   "citrus|0.25-0.5%": {
+    "n": 108,
+    "tp": 0
+   },
+   "citrus|0.5-1%": {
+    "n": 90,
+    "tp": 0
+   },
+   "citrus|1-2.5%": {
+    "n": 18,
+    "tp": 10
+   },
+   "citrus|<0.25%": {
+    "n": 810,
+    "tp": 0
+   },
+   "cucumber|0.25-0.5%": {
+    "n": 54,
+    "tp": 0
+   },
+   "cucumber|0.5-1%": {
+    "n": 126,
+    "tp": 0
+   },
+   "cucumber|1-2.5%": {
+    "n": 234,
+    "tp": 1
+   },
+   "cucumber|<0.25%": {
+    "n": 36,
+    "tp": 0
+   },
+   "cucumber|>=2.5%": {
+    "n": 198,
+    "tp": 154
+   },
+   "lemon_lime|0.25-0.5%": {
+    "n": 144,
+    "tp": 0
+   },
+   "lemon_lime|0.5-1%": {
+    "n": 54,
+    "tp": 0
+   },
+   "lemon_lime|1-2.5%": {
+    "n": 18,
+    "tp": 0
+   },
+   "lemon_lime|<0.25%": {
+    "n": 2106,
+    "tp": 0
+   },
+   "mango|0.25-0.5%": {
+    "n": 108,
+    "tp": 0
+   },
+   "mango|0.5-1%": {
+    "n": 72,
+    "tp": 0
+   },
+   "mango|1-2.5%": {
+    "n": 108,
+    "tp": 17
+   },
+   "mango|<0.25%": {
+    "n": 234,
+    "tp": 0
+   },
+   "mango|>=2.5%": {
+    "n": 72,
+    "tp": 17
+   },
+   "pomegranate|0.25-0.5%": {
+    "n": 18,
+    "tp": 0
+   },
+   "pomegranate|0.5-1%": {
+    "n": 36,
+    "tp": 0
+   },
+   "pomegranate|1-2.5%": {
+    "n": 72,
+    "tp": 2
+   },
+   "pomegranate|<0.25%": {
+    "n": 36,
+    "tp": 0
+   },
+   "pomegranate|>=2.5%": {
+    "n": 270,
+    "tp": 113
+   },
+   "potato|0.25-0.5%": {
+    "n": 36,
+    "tp": 0
+   },
+   "potato|0.5-1%": {
+    "n": 36,
+    "tp": 0
+   },
+   "potato|<0.25%": {
+    "n": 36,
+    "tp": 0
+   },
+   "tomato|0.25-0.5%": {
+    "n": 144,
+    "tp": 0
+   },
+   "tomato|0.5-1%": {
+    "n": 90,
+    "tp": 8
+   },
+   "tomato|<0.25%": {
+    "n": 1224,
+    "tp": 0
+   }
+  },
+  "ids_per_gt_object": {
+   "objects_matched": 57,
+   "mean_distinct_ids": 1.456,
+   "objects_with_gt1_id": 17,
+   "id_switches_all_objects": 48
+  },
+  "mixed_false_tracks": {
+   "n": 14,
+   "per_min": 2.962,
+   "gap_frame_tracks": 6,
+   "minutes": 4.727
+  }
+ }
+}
