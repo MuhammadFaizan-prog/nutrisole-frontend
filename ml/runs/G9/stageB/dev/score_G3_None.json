@@ -1,0 +1,31 @@
+{
+ "tag": "G3",
+ "tau": null,
+ "hndev": {
+  "n": 31,
+  "images_with_false_box": 29,
+  "false_boxes": 88,
+  "high_conf_ge_075": 19
+ },
+ "mdev_video": {
+  "clips": 6,
+  "minutes": 4.38,
+  "displayed_tracks": 206,
+  "births_per_min": 46.994,
+  "per_clip": {
+   "cf3d00ee1": 0,
+   "c018de016": 1,
+   "c237ace91": 29,
+   "c3d1561b2": 0,
+   "cec084f0c": 6,
+   "c61f2d4b9": 170
+  },
+  "verifier_calls_per_frame": 0
+ },
+ "mdev_real_produce_retained": {
+  "banana": "9/9",
+  "carrot": "2/2",
+  "tomato": "30/30"
+ },
+ "mdev_real_produce_retained_total": "41/41"
+}
