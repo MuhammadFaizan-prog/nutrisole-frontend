@@ -14,13 +14,15 @@ OUT, LL, LD, RL, RD = a[:5]; RV, TAU = (a[5], float(a[6])) if len(a) > 6 else (N
 so = ort.SessionOptions(); so.intra_op_num_threads = 2
 def sess(p): return ort.InferenceSession(p, so, providers=["CPUExecutionProvider"])
 SL, SR = sess(LD), sess(RD); V = Verifier(RV, 2) if RV else None
-def det(s, fr):
+GUARDS = {"g1": (0.01, None), "g05": (0.005, None), "g025": (0.0025, None), "ssf50": (0.0025, 0.5), "ssf60": (0.0025, 0.6)}  # Stage D: optional env LGUARD / RGUARD (default g1)
+def det(s, fr, guard="g1"):
     H, W = fr.shape[:2]; x, tf = letterbox(fr, 480); o = s.run(None, {s.get_inputs()[0].name: x})[0]; ds = []
     for d in decode(o, "raw", 0.35):
         b = dst_to_src(d["box"], tf)
         if b[2] - b[0] < 2 or b[3] - b[1] < 2: continue
         ds.append(dict(box=[b[0] / W, b[1] / H, b[2] / W, b[3] / H], classId=d["classId"], score=d["score"]))
-    return scene_guard(ds, maxSameClass=0, minAreaFrac=0.01)
+    maf, ssf = GUARDS[guard]; ds = scene_guard(ds, maxSameClass=0, minAreaFrac=maf)
+    return [d for d in ds if ssf is None or (d["box"][2] - d["box"][0]) * (d["box"][3] - d["box"][1]) >= 0.01 or d["score"] >= ssf]
 def draw(fr, tr, label):
     im = fr.copy(); H, W = im.shape[:2]
     for t in tr:
@@ -38,7 +40,8 @@ for c in clips:
         if not ok: break
         if fi % st == 0:
             s = 360 / fr.shape[0]; fr = cv2.resize(fr, (int(fr.shape[1] * s) // 2 * 2, 360)); t = 1000 * fi / fps
-            L = tl.update(det(SL, fr), t); Rr = tr_.update(det(SR, fr), t, fr) if V else tr_.update(det(SR, fr), t)
+            LG, RG = os.environ.get("LGUARD", "g1"), os.environ.get("RGUARD", "g1")
+            L = tl.update(det(SL, fr, LG), t); Rr = tr_.update(det(SR, fr, RG), t, fr) if V else tr_.update(det(SR, fr, RG), t)
             im = np.hstack([draw(fr, L, LL), draw(fr, Rr, RL)]); cv2.putText(im, f"M-dev clip {c} (independent, not trained on)  t={t/1000:.1f}s", (4, 352), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (255, 255, 255), 1)
             if vw is None: sz = (im.shape[1], im.shape[0]); vw = cv2.VideoWriter(tmp, cv2.VideoWriter_fourcc(*"MJPG"), 10, sz)
             if (im.shape[1], im.shape[0]) != sz: im = cv2.resize(im, sz)
