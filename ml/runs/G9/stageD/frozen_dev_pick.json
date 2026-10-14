@@ -1,0 +1,45 @@
+{
+ "name": "G9 Stage D frozen DEV pick",
+ "frozen": "2026-10-14 PKT",
+ "prereg": "docs/cv/gauntlet/G9_stageD_prereg.md (commit ec66796, before any Stage D result)",
+ "status": "DEV pick only. Not promoted. G3 remains champion. Final validation awaits fresh, independently labelled footage under a new prereg; the old holdout was not used.",
+ "pick": "D0/g1 = unchanged G3 (no arm x guard config passed all of A1-A8)",
+ "detector": {
+  "weights": "G3 YOLO11n det_yolo11n_640_raw.onnx (best.pt sha256 29cc52123247f62ca93ba41952fa4b221e88fa208f3adf566214870435be1cf4)",
+  "deploy_imgsz": 480,
+  "decode": "raw + class-wise NMS 0.7",
+  "score_floor": 0.35
+ },
+ "scene_guard": {
+  "minAreaFrac": 0.01,
+  "area_reference": "source frame",
+  "maxSameClass": 0,
+  "small_score_floor": null
+ },
+ "tracker": {
+  "type": "IouTracker",
+  "iouMatch": 0.3,
+  "minHits": 2,
+  "maxMissed": 4
+ },
+ "admissible_configs": [],
+ "nearest_miss": {
+  "config": "D0/ssf50 (G3 weights; boxes in [0.25%,1%) need score >= 0.50)",
+  "passes": "A1 (+21.5 pp small showcase, +10.1 pp small carrot), A2, A3, A4 (DEV neg 0.75/0.75), A6, A7, A8",
+  "fails": "A5: val box-free false boxes 48 > 43 limit; probe (SYNTHETIC) mixed false tracks 2.4x > 1.5x",
+  "note": "guard-only candidate to carry into a fresh-footage prereg; not picked"
+ },
+ "rejected": {
+  "D1 (fine-tune + S)": "fails A1 (raw small showcase -3.3 pp), A3 (pomegranate AP50 -0.152, citrus -0.064), A4 (DEV neg tracks/min 1.5-2.0), A5, A6 (TTFC p90 847 ms), A8 (IDs/seg 1.50)",
+  "D2 (D1 + collages + scale 0.9)": "fails A1 (raw -4.0 pp), A2 (tomato normal val R -7.9 pp; DEV det -4.3 pp banana), A3 (citrus -0.048, tomato -0.032, pomegranate -0.037), A4 at lower guards, A8 (IDs/seg 1.71)",
+  "D-ctl (replay-only fine-tune, analysis only)": "not selectable; would fail A2 (DEV det apple -17.5 pp), A3 (mango -0.042, lemon_lime -0.026), A4",
+  "D3 (640 / tiled)": "not run: ~1.8x detector FLOPs cannot meet A7 (CPU p95 <= 1.10x)"
+ },
+ "weights_sha256": {
+  "D1_best.pt": "b3835372a581efb8c86053d6b5438cb0363bdeb1f32fe13cbbc9f6520cf8e206",
+  "D2_best.pt": "2d090208a33070328670533650323ca99e3a1cb0865237bf64306c3accab1f82",
+  "Dctl_best.pt": "2f867fc41099501977677a18903b2da87236100b344a9343d63879e9d60384ee"
+ },
+ "weights_location": "sandbox only (/workspace/work/cv/g9d/kout_*), Kaggle kernel outputs mfaizannnn/nutrisole-g9d-train v1 and mfaizannnn/nutrisole-g9d-ctl v1",
+ "evidence": "ml/runs/G9/stageD/out/summary.json, ml/runs/G9/stageD/dev/*.json, ml/runs/G9/stageD/kaggle_out/*.json"
+}
