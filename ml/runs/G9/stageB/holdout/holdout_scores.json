@@ -1,0 +1,3110 @@
+{
+ "all12": {
+  "B0": {
+   "config": "B0",
+   "classes": "all 12",
+   "pairs_n": 22,
+   "pairs_detected": 11,
+   "clip_presence_recall": 0.5,
+   "per_class": {
+    "apple": {
+     "n": 2,
+     "detected": 1,
+     "recall": 0.5
+    },
+    "banana": {
+     "n": 4,
+     "detected": 3,
+     "recall": 0.75
+    },
+    "capsicum": {
+     "n": 1,
+     "detected": 1,
+     "recall": 1.0
+    },
+    "carrot": {
+     "n": 4,
+     "detected": 1,
+     "recall": 0.25
+    },
+    "citrus": {
+     "n": 3,
+     "detected": 2,
+     "recall": 0.667
+    },
+    "cucumber": {
+     "n": 1,
+     "detected": 1,
+     "recall": 1.0
+    },
+    "lemon_lime": {
+     "n": 2,
+     "detected": 1,
+     "recall": 0.5
+    },
+    "mango": {
+     "n": 3,
+     "detected": 1,
+     "recall": 0.333
+    },
+    "potato": {
+     "n": 1,
+     "detected": 0,
+     "recall": 0.0
+    },
+    "tomato": {
+     "n": 1,
+     "detected": 0,
+     "recall": 0.0
+    }
+   },
+   "neg_clips": 16,
+   "neg_minutes": 36.37,
+   "fa_tracks": 104,
+   "fa_per_min": 2.859,
+   "neg_clips_with_class_fa": 4,
+   "neg_class_fa": 4,
+   "ttfc_proxy_s": {
+    "p50": 2.24,
+    "p90": 28.11,
+    "n": 11,
+    "missed_pairs": 11
+   },
+   "track_births_per_min_positive": 34.63,
+   "frag_proxy_tracks_per_detected_pair": 43.18,
+   "label_changes_per_track_min": 3.873,
+   "id_switches": "not measurable (no box-level track truth)",
+   "pairs": [
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 6.4,
+     "ttfc_s": 1.04,
+     "tracks_of_cls": 29
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "apple",
+     "detected": true,
+     "shown_s": 10.0,
+     "ttfc_s": 2.24,
+     "tracks_of_cls": 62
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "mango",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 21.52,
+     "ttfc_s": 1.6,
+     "tracks_of_cls": 187
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "lemon_lime",
+     "detected": true,
+     "shown_s": 7.92,
+     "ttfc_s": 0.08,
+     "tracks_of_cls": 37
+    },
+    {
+     "n": "2",
+     "clip": "c61cbc2a6",
+     "uploader": "Amanpanta1990",
+     "cls": "apple",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 2.5,
+     "ttfc_s": 24.44,
+     "tracks_of_cls": 56
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 3.75,
+     "ttfc_s": 21.94,
+     "tracks_of_cls": 68
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "capsicum",
+     "detected": true,
+     "shown_s": 1.08,
+     "ttfc_s": 28.11,
+     "tracks_of_cls": 1
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "mango",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "uploader": "OJjnr",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "5",
+     "clip": "c19ae062b",
+     "uploader": "OptimusPrimeBot",
+     "cls": "potato",
+     "detected": false,
+     "shown_s": 0.08,
+     "ttfc_s": null,
+     "tracks_of_cls": 1
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "uploader": "Psubhashish",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "16",
+     "clip": "ca1cbf110",
+     "uploader": "Tyler1555",
+     "cls": "carrot",
+     "detected": true,
+     "shown_s": 0.5,
+     "ttfc_s": 0.8,
+     "tracks_of_cls": 6
+    },
+    {
+     "n": "18",
+     "clip": "cd1a3f857",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 4.0,
+     "ttfc_s": 72.83,
+     "tracks_of_cls": 9
+    },
+    {
+     "n": "19",
+     "clip": "cf0b25e3b",
+     "uploader": "Yahya",
+     "cls": "citrus",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "19",
+     "clip": "cf0b25e3b",
+     "uploader": "Yahya",
+     "cls": "lemon_lime",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "tomato",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "banana",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "22",
+     "clip": "c4880a292",
+     "uploader": "OptimusPrimeBot",
+     "cls": "cucumber",
+     "detected": true,
+     "shown_s": 5.25,
+     "ttfc_s": 12.5,
+     "tracks_of_cls": 18
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "uploader": "Isewell",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "25",
+     "clip": "cd4211720",
+     "uploader": "FireFeather",
+     "cls": "mango",
+     "detected": true,
+     "shown_s": 1.28,
+     "ttfc_s": 0.16,
+     "tracks_of_cls": 2
+    }
+   ],
+   "negatives": [
+    {
+     "n": "6",
+     "clip": "c8b2d2f36",
+     "uploader": "Muktee1494",
+     "minutes": 0.28111111111111114,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "7",
+     "clip": "c0a13587f",
+     "uploader": "Hanooz",
+     "minutes": 22.28865410592425,
+     "fa_tracks": 71,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "10",
+     "clip": "c3cc14a1f",
+     "uploader": "Obihoja",
+     "minutes": 0.38149222222222223,
+     "fa_tracks": 1,
+     "fa_classes": []
+    },
+    {
+     "n": "12",
+     "clip": "c87e3900a",
+     "uploader": "Victorgrigas",
+     "minutes": 0.1515402777777778,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "13",
+     "clip": "c94ab39f5",
+     "uploader": "Mx. Granger",
+     "minutes": 0.28409090909090906,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "14",
+     "clip": "c973b3f44",
+     "uploader": "Thamizhpparithi Maari",
+     "minutes": 0.2997438888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "15",
+     "clip": "c97e354bf",
+     "uploader": "Shanze1",
+     "minutes": 1.3546666666666667,
+     "fa_tracks": 10,
+     "fa_classes": [
+      "pomegranate"
+     ]
+    },
+    {
+     "n": "17",
+     "clip": "cb05e346c",
+     "uploader": "GrantHillebrand",
+     "minutes": 0.6866666666666668,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "20",
+     "clip": "cfe0b39f1",
+     "uploader": "DarwIn",
+     "minutes": 3.1333333333333333,
+     "fa_tracks": 9,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "26",
+     "clip": "c0a08d565",
+     "uploader": "Rafic.Mufid",
+     "minutes": 0.29933333333333334,
+     "fa_tracks": 1,
+     "fa_classes": []
+    },
+    {
+     "n": "27",
+     "clip": "c3d854faf",
+     "uploader": "Saimmx",
+     "minutes": 1.5222222222222221,
+     "fa_tracks": 2,
+     "fa_classes": []
+    },
+    {
+     "n": "29",
+     "clip": "c4e9a7195",
+     "uploader": "NairobiPapel",
+     "minutes": 0.5333105555555556,
+     "fa_tracks": 3,
+     "fa_classes": []
+    },
+    {
+     "n": "30",
+     "clip": "c6f5ac9b4",
+     "uploader": "OptimusPrimeBot",
+     "minutes": 0.5822483333333334,
+     "fa_tracks": 2,
+     "fa_classes": []
+    },
+    {
+     "n": "32",
+     "clip": "cc5585ebc",
+     "uploader": "Yann",
+     "minutes": 0.7088888888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "33",
+     "clip": "cd17ce723",
+     "uploader": "Hanooz",
+     "minutes": 3.4859999999999998,
+     "fa_tracks": 5,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "34",
+     "clip": "ce9f2fe34",
+     "uploader": "Chris Light",
+     "minutes": 0.38066666666666665,
+     "fa_tracks": 0,
+     "fa_classes": []
+    }
+   ],
+   "unverified_extra_classes": [
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "classes": [
+      "potato"
+     ]
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "classes": [
+      "apple",
+      "carrot"
+     ]
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "classes": [
+      "banana",
+      "lemon_lime"
+     ]
+    },
+    {
+     "n": "5",
+     "clip": "c19ae062b",
+     "classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "18",
+     "clip": "cd1a3f857",
+     "classes": [
+      "apple"
+     ]
+    },
+    {
+     "n": "22",
+     "clip": "c4880a292",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "25",
+     "clip": "cd4211720",
+     "classes": [
+      "apple",
+      "banana",
+      "cucumber"
+     ]
+    }
+   ],
+   "excluded": [
+    [
+     "8",
+     "c20a12a9c",
+     "EXCLUDED: uncertain fruit (pale-green, apple or guava)"
+    ],
+    [
+     "9",
+     "c32085ee7",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "23",
+     "c6473db48",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "28",
+     "c4a35a451",
+     "EXCLUDED: red peppers/chilies; capsicum = whole bell pepper, chilies not a supported class"
+    ],
+    [
+     "31",
+     "c82e63d5a",
+     "provisional tiles, video check pending"
+    ]
+   ]
+  },
+  "B1": {
+   "config": "B1",
+   "classes": "all 12",
+   "pairs_n": 22,
+   "pairs_detected": 12,
+   "clip_presence_recall": 0.545,
+   "per_class": {
+    "apple": {
+     "n": 2,
+     "detected": 1,
+     "recall": 0.5
+    },
+    "banana": {
+     "n": 4,
+     "detected": 3,
+     "recall": 0.75
+    },
+    "capsicum": {
+     "n": 1,
+     "detected": 1,
+     "recall": 1.0
+    },
+    "carrot": {
+     "n": 4,
+     "detected": 2,
+     "recall": 0.5
+    },
+    "citrus": {
+     "n": 3,
+     "detected": 2,
+     "recall": 0.667
+    },
+    "cucumber": {
+     "n": 1,
+     "detected": 1,
+     "recall": 1.0
+    },
+    "lemon_lime": {
+     "n": 2,
+     "detected": 1,
+     "recall": 0.5
+    },
+    "mango": {
+     "n": 3,
+     "detected": 1,
+     "recall": 0.333
+    },
+    "potato": {
+     "n": 1,
+     "detected": 0,
+     "recall": 0.0
+    },
+    "tomato": {
+     "n": 1,
+     "detected": 0,
+     "recall": 0.0
+    }
+   },
+   "neg_clips": 16,
+   "neg_minutes": 36.37,
+   "fa_tracks": 148,
+   "fa_per_min": 4.069,
+   "neg_clips_with_class_fa": 6,
+   "neg_class_fa": 8,
+   "ttfc_proxy_s": {
+    "p50": 14.02,
+    "p90": 30.97,
+    "n": 12,
+    "missed_pairs": 10
+   },
+   "track_births_per_min_positive": 33.82,
+   "frag_proxy_tracks_per_detected_pair": 38.83,
+   "label_changes_per_track_min": 3.485,
+   "id_switches": "not measurable (no box-level track truth)",
+   "pairs": [
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 7.76,
+     "ttfc_s": 0.8,
+     "tracks_of_cls": 47
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "apple",
+     "detected": true,
+     "shown_s": 2.88,
+     "ttfc_s": 16.88,
+     "tracks_of_cls": 15
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "mango",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 21.12,
+     "ttfc_s": 1.2,
+     "tracks_of_cls": 169
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "lemon_lime",
+     "detected": true,
+     "shown_s": 12.88,
+     "ttfc_s": 0.08,
+     "tracks_of_cls": 73
+    },
+    {
+     "n": "2",
+     "clip": "c61cbc2a6",
+     "uploader": "Amanpanta1990",
+     "cls": "apple",
+     "detected": false,
+     "shown_s": 0.1,
+     "ttfc_s": null,
+     "tracks_of_cls": 1
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 2.92,
+     "ttfc_s": 24.44,
+     "tracks_of_cls": 46
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 1.58,
+     "ttfc_s": 31.11,
+     "tracks_of_cls": 62
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "capsicum",
+     "detected": true,
+     "shown_s": 1.5,
+     "ttfc_s": 28.11,
+     "tracks_of_cls": 4
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "mango",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "uploader": "OJjnr",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "5",
+     "clip": "c19ae062b",
+     "uploader": "OptimusPrimeBot",
+     "cls": "potato",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "uploader": "Psubhashish",
+     "cls": "carrot",
+     "detected": true,
+     "shown_s": 0.8,
+     "ttfc_s": 29.68,
+     "tracks_of_cls": 2
+    },
+    {
+     "n": "16",
+     "clip": "ca1cbf110",
+     "uploader": "Tyler1555",
+     "cls": "carrot",
+     "detected": true,
+     "shown_s": 0.5,
+     "ttfc_s": 0.8,
+     "tracks_of_cls": 4
+    },
+    {
+     "n": "18",
+     "clip": "cd1a3f857",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 4.25,
+     "ttfc_s": 38.33,
+     "tracks_of_cls": 15
+    },
+    {
+     "n": "19",
+     "clip": "cf0b25e3b",
+     "uploader": "Yahya",
+     "cls": "citrus",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "19",
+     "clip": "cf0b25e3b",
+     "uploader": "Yahya",
+     "cls": "lemon_lime",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "tomato",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "banana",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "22",
+     "clip": "c4880a292",
+     "uploader": "OptimusPrimeBot",
+     "cls": "cucumber",
+     "detected": true,
+     "shown_s": 14.83,
+     "ttfc_s": 11.17,
+     "tracks_of_cls": 24
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "uploader": "Isewell",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "25",
+     "clip": "cd4211720",
+     "uploader": "FireFeather",
+     "cls": "mango",
+     "detected": true,
+     "shown_s": 3.44,
+     "ttfc_s": 0.08,
+     "tracks_of_cls": 5
+    }
+   ],
+   "negatives": [
+    {
+     "n": "6",
+     "clip": "c8b2d2f36",
+     "uploader": "Muktee1494",
+     "minutes": 0.28111111111111114,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "7",
+     "clip": "c0a13587f",
+     "uploader": "Hanooz",
+     "minutes": 22.28865410592425,
+     "fa_tracks": 100,
+     "fa_classes": [
+      "banana",
+      "capsicum",
+      "mango"
+     ]
+    },
+    {
+     "n": "10",
+     "clip": "c3cc14a1f",
+     "uploader": "Obihoja",
+     "minutes": 0.38149222222222223,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "12",
+     "clip": "c87e3900a",
+     "uploader": "Victorgrigas",
+     "minutes": 0.1515402777777778,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "13",
+     "clip": "c94ab39f5",
+     "uploader": "Mx. Granger",
+     "minutes": 0.28409090909090906,
+     "fa_tracks": 5,
+     "fa_classes": [
+      "capsicum"
+     ]
+    },
+    {
+     "n": "14",
+     "clip": "c973b3f44",
+     "uploader": "Thamizhpparithi Maari",
+     "minutes": 0.2997438888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "15",
+     "clip": "c97e354bf",
+     "uploader": "Shanze1",
+     "minutes": 1.3546666666666667,
+     "fa_tracks": 10,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "17",
+     "clip": "cb05e346c",
+     "uploader": "GrantHillebrand",
+     "minutes": 0.6866666666666668,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "20",
+     "clip": "cfe0b39f1",
+     "uploader": "DarwIn",
+     "minutes": 3.1333333333333333,
+     "fa_tracks": 11,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "26",
+     "clip": "c0a08d565",
+     "uploader": "Rafic.Mufid",
+     "minutes": 0.29933333333333334,
+     "fa_tracks": 3,
+     "fa_classes": []
+    },
+    {
+     "n": "27",
+     "clip": "c3d854faf",
+     "uploader": "Saimmx",
+     "minutes": 1.5222222222222221,
+     "fa_tracks": 1,
+     "fa_classes": []
+    },
+    {
+     "n": "29",
+     "clip": "c4e9a7195",
+     "uploader": "NairobiPapel",
+     "minutes": 0.5333105555555556,
+     "fa_tracks": 1,
+     "fa_classes": []
+    },
+    {
+     "n": "30",
+     "clip": "c6f5ac9b4",
+     "uploader": "OptimusPrimeBot",
+     "minutes": 0.5822483333333334,
+     "fa_tracks": 1,
+     "fa_classes": [
+      "apple"
+     ]
+    },
+    {
+     "n": "32",
+     "clip": "cc5585ebc",
+     "uploader": "Yann",
+     "minutes": 0.7088888888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "33",
+     "clip": "cd17ce723",
+     "uploader": "Hanooz",
+     "minutes": 3.4859999999999998,
+     "fa_tracks": 14,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "34",
+     "clip": "ce9f2fe34",
+     "uploader": "Chris Light",
+     "minutes": 0.38066666666666665,
+     "fa_tracks": 2,
+     "fa_classes": []
+    }
+   ],
+   "unverified_extra_classes": [
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "classes": [
+      "apple",
+      "lemon_lime"
+     ]
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "classes": [
+      "banana",
+      "lemon_lime"
+     ]
+    },
+    {
+     "n": "5",
+     "clip": "c19ae062b",
+     "classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "classes": [
+      "banana",
+      "cucumber"
+     ]
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "classes": [
+      "citrus"
+     ]
+    },
+    {
+     "n": "22",
+     "clip": "c4880a292",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "classes": [
+      "apple",
+      "banana",
+      "cucumber"
+     ]
+    },
+    {
+     "n": "25",
+     "clip": "cd4211720",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    }
+   ],
+   "excluded": [
+    [
+     "8",
+     "c20a12a9c",
+     "EXCLUDED: uncertain fruit (pale-green, apple or guava)"
+    ],
+    [
+     "9",
+     "c32085ee7",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "23",
+     "c6473db48",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "28",
+     "c4a35a451",
+     "EXCLUDED: red peppers/chilies; capsicum = whole bell pepper, chilies not a supported class"
+    ],
+    [
+     "31",
+     "c82e63d5a",
+     "provisional tiles, video check pending"
+    ]
+   ]
+  },
+  "B2": {
+   "config": "B2",
+   "classes": "all 12",
+   "pairs_n": 22,
+   "pairs_detected": 11,
+   "clip_presence_recall": 0.5,
+   "per_class": {
+    "apple": {
+     "n": 2,
+     "detected": 1,
+     "recall": 0.5
+    },
+    "banana": {
+     "n": 4,
+     "detected": 3,
+     "recall": 0.75
+    },
+    "capsicum": {
+     "n": 1,
+     "detected": 1,
+     "recall": 1.0
+    },
+    "carrot": {
+     "n": 4,
+     "detected": 1,
+     "recall": 0.25
+    },
+    "citrus": {
+     "n": 3,
+     "detected": 2,
+     "recall": 0.667
+    },
+    "cucumber": {
+     "n": 1,
+     "detected": 1,
+     "recall": 1.0
+    },
+    "lemon_lime": {
+     "n": 2,
+     "detected": 1,
+     "recall": 0.5
+    },
+    "mango": {
+     "n": 3,
+     "detected": 1,
+     "recall": 0.333
+    },
+    "potato": {
+     "n": 1,
+     "detected": 0,
+     "recall": 0.0
+    },
+    "tomato": {
+     "n": 1,
+     "detected": 0,
+     "recall": 0.0
+    }
+   },
+   "neg_clips": 16,
+   "neg_minutes": 36.37,
+   "fa_tracks": 56,
+   "fa_per_min": 1.54,
+   "neg_clips_with_class_fa": 4,
+   "neg_class_fa": 4,
+   "ttfc_proxy_s": {
+    "p50": 2.24,
+    "p90": 28.11,
+    "n": 11,
+    "missed_pairs": 11
+   },
+   "track_births_per_min_positive": 32.48,
+   "frag_proxy_tracks_per_detected_pair": 41.0,
+   "label_changes_per_track_min": 4.154,
+   "id_switches": "not measurable (no box-level track truth)",
+   "pairs": [
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 6.4,
+     "ttfc_s": 1.04,
+     "tracks_of_cls": 28
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "apple",
+     "detected": true,
+     "shown_s": 10.0,
+     "ttfc_s": 2.24,
+     "tracks_of_cls": 59
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "mango",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 21.52,
+     "ttfc_s": 1.6,
+     "tracks_of_cls": 177
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "lemon_lime",
+     "detected": true,
+     "shown_s": 7.92,
+     "ttfc_s": 0.08,
+     "tracks_of_cls": 37
+    },
+    {
+     "n": "2",
+     "clip": "c61cbc2a6",
+     "uploader": "Amanpanta1990",
+     "cls": "apple",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 2.5,
+     "ttfc_s": 24.44,
+     "tracks_of_cls": 53
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 3.75,
+     "ttfc_s": 21.94,
+     "tracks_of_cls": 68
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "capsicum",
+     "detected": true,
+     "shown_s": 1.08,
+     "ttfc_s": 28.11,
+     "tracks_of_cls": 1
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "mango",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "uploader": "OJjnr",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "5",
+     "clip": "c19ae062b",
+     "uploader": "OptimusPrimeBot",
+     "cls": "potato",
+     "detected": false,
+     "shown_s": 0.08,
+     "ttfc_s": null,
+     "tracks_of_cls": 1
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "uploader": "Psubhashish",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "16",
+     "clip": "ca1cbf110",
+     "uploader": "Tyler1555",
+     "cls": "carrot",
+     "detected": true,
+     "shown_s": 0.5,
+     "ttfc_s": 0.8,
+     "tracks_of_cls": 4
+    },
+    {
+     "n": "18",
+     "clip": "cd1a3f857",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 1.17,
+     "ttfc_s": 72.83,
+     "tracks_of_cls": 6
+    },
+    {
+     "n": "19",
+     "clip": "cf0b25e3b",
+     "uploader": "Yahya",
+     "cls": "citrus",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "19",
+     "clip": "cf0b25e3b",
+     "uploader": "Yahya",
+     "cls": "lemon_lime",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "tomato",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "banana",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "22",
+     "clip": "c4880a292",
+     "uploader": "OptimusPrimeBot",
+     "cls": "cucumber",
+     "detected": true,
+     "shown_s": 4.67,
+     "ttfc_s": 12.5,
+     "tracks_of_cls": 16
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "uploader": "Isewell",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "25",
+     "clip": "cd4211720",
+     "uploader": "FireFeather",
+     "cls": "mango",
+     "detected": true,
+     "shown_s": 1.28,
+     "ttfc_s": 0.16,
+     "tracks_of_cls": 2
+    }
+   ],
+   "negatives": [
+    {
+     "n": "6",
+     "clip": "c8b2d2f36",
+     "uploader": "Muktee1494",
+     "minutes": 0.28111111111111114,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "7",
+     "clip": "c0a13587f",
+     "uploader": "Hanooz",
+     "minutes": 22.28865410592425,
+     "fa_tracks": 33,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "10",
+     "clip": "c3cc14a1f",
+     "uploader": "Obihoja",
+     "minutes": 0.38149222222222223,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "12",
+     "clip": "c87e3900a",
+     "uploader": "Victorgrigas",
+     "minutes": 0.1515402777777778,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "13",
+     "clip": "c94ab39f5",
+     "uploader": "Mx. Granger",
+     "minutes": 0.28409090909090906,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "14",
+     "clip": "c973b3f44",
+     "uploader": "Thamizhpparithi Maari",
+     "minutes": 0.2997438888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "15",
+     "clip": "c97e354bf",
+     "uploader": "Shanze1",
+     "minutes": 1.3546666666666667,
+     "fa_tracks": 9,
+     "fa_classes": [
+      "pomegranate"
+     ]
+    },
+    {
+     "n": "17",
+     "clip": "cb05e346c",
+     "uploader": "GrantHillebrand",
+     "minutes": 0.6866666666666668,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "20",
+     "clip": "cfe0b39f1",
+     "uploader": "DarwIn",
+     "minutes": 3.1333333333333333,
+     "fa_tracks": 5,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "26",
+     "clip": "c0a08d565",
+     "uploader": "Rafic.Mufid",
+     "minutes": 0.29933333333333334,
+     "fa_tracks": 1,
+     "fa_classes": []
+    },
+    {
+     "n": "27",
+     "clip": "c3d854faf",
+     "uploader": "Saimmx",
+     "minutes": 1.5222222222222221,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "29",
+     "clip": "c4e9a7195",
+     "uploader": "NairobiPapel",
+     "minutes": 0.5333105555555556,
+     "fa_tracks": 3,
+     "fa_classes": []
+    },
+    {
+     "n": "30",
+     "clip": "c6f5ac9b4",
+     "uploader": "OptimusPrimeBot",
+     "minutes": 0.5822483333333334,
+     "fa_tracks": 2,
+     "fa_classes": []
+    },
+    {
+     "n": "32",
+     "clip": "cc5585ebc",
+     "uploader": "Yann",
+     "minutes": 0.7088888888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "33",
+     "clip": "cd17ce723",
+     "uploader": "Hanooz",
+     "minutes": 3.4859999999999998,
+     "fa_tracks": 3,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "34",
+     "clip": "ce9f2fe34",
+     "uploader": "Chris Light",
+     "minutes": 0.38066666666666665,
+     "fa_tracks": 0,
+     "fa_classes": []
+    }
+   ],
+   "unverified_extra_classes": [
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "classes": [
+      "potato"
+     ]
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "classes": [
+      "apple",
+      "carrot"
+     ]
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "classes": [
+      "banana",
+      "lemon_lime"
+     ]
+    },
+    {
+     "n": "5",
+     "clip": "c19ae062b",
+     "classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "18",
+     "clip": "cd1a3f857",
+     "classes": [
+      "apple"
+     ]
+    },
+    {
+     "n": "22",
+     "clip": "c4880a292",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "25",
+     "clip": "cd4211720",
+     "classes": [
+      "apple",
+      "banana",
+      "cucumber"
+     ]
+    }
+   ],
+   "excluded": [
+    [
+     "8",
+     "c20a12a9c",
+     "EXCLUDED: uncertain fruit (pale-green, apple or guava)"
+    ],
+    [
+     "9",
+     "c32085ee7",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "23",
+     "c6473db48",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "28",
+     "c4a35a451",
+     "EXCLUDED: red peppers/chilies; capsicum = whole bell pepper, chilies not a supported class"
+    ],
+    [
+     "31",
+     "c82e63d5a",
+     "provisional tiles, video check pending"
+    ]
+   ]
+  }
+ },
+ "show5": {
+  "B0": {
+   "config": "B0",
+   "classes": [
+    "citrus",
+    "apple",
+    "banana",
+    "tomato",
+    "carrot"
+   ],
+   "pairs_n": 14,
+   "pairs_detected": 7,
+   "clip_presence_recall": 0.5,
+   "per_class": {
+    "apple": {
+     "n": 2,
+     "detected": 1,
+     "recall": 0.5
+    },
+    "banana": {
+     "n": 4,
+     "detected": 3,
+     "recall": 0.75
+    },
+    "carrot": {
+     "n": 4,
+     "detected": 1,
+     "recall": 0.25
+    },
+    "citrus": {
+     "n": 3,
+     "detected": 2,
+     "recall": 0.667
+    },
+    "tomato": {
+     "n": 1,
+     "detected": 0,
+     "recall": 0.0
+    }
+   },
+   "neg_clips": 16,
+   "neg_minutes": 36.37,
+   "fa_tracks": 95,
+   "fa_per_min": 2.612,
+   "neg_clips_with_class_fa": 3,
+   "neg_class_fa": 3,
+   "ttfc_proxy_s": {
+    "p50": 2.24,
+    "p90": 43.8,
+    "n": 7,
+    "missed_pairs": 7
+   },
+   "track_births_per_min_positive": 31.61,
+   "frag_proxy_tracks_per_detected_pair": 59.57,
+   "label_changes_per_track_min": 1.207,
+   "id_switches": "not measurable (no box-level track truth)",
+   "pairs": [
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 6.4,
+     "ttfc_s": 1.04,
+     "tracks_of_cls": 29
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "apple",
+     "detected": true,
+     "shown_s": 10.0,
+     "ttfc_s": 2.24,
+     "tracks_of_cls": 62
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 21.52,
+     "ttfc_s": 1.6,
+     "tracks_of_cls": 187
+    },
+    {
+     "n": "2",
+     "clip": "c61cbc2a6",
+     "uploader": "Amanpanta1990",
+     "cls": "apple",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 2.5,
+     "ttfc_s": 24.44,
+     "tracks_of_cls": 56
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 3.75,
+     "ttfc_s": 21.94,
+     "tracks_of_cls": 68
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "uploader": "OJjnr",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "uploader": "Psubhashish",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "16",
+     "clip": "ca1cbf110",
+     "uploader": "Tyler1555",
+     "cls": "carrot",
+     "detected": true,
+     "shown_s": 0.5,
+     "ttfc_s": 0.8,
+     "tracks_of_cls": 6
+    },
+    {
+     "n": "18",
+     "clip": "cd1a3f857",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 4.0,
+     "ttfc_s": 72.83,
+     "tracks_of_cls": 9
+    },
+    {
+     "n": "19",
+     "clip": "cf0b25e3b",
+     "uploader": "Yahya",
+     "cls": "citrus",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "tomato",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "banana",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "uploader": "Isewell",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    }
+   ],
+   "negatives": [
+    {
+     "n": "6",
+     "clip": "c8b2d2f36",
+     "uploader": "Muktee1494",
+     "minutes": 0.28111111111111114,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "7",
+     "clip": "c0a13587f",
+     "uploader": "Hanooz",
+     "minutes": 22.28865410592425,
+     "fa_tracks": 69,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "10",
+     "clip": "c3cc14a1f",
+     "uploader": "Obihoja",
+     "minutes": 0.38149222222222223,
+     "fa_tracks": 1,
+     "fa_classes": []
+    },
+    {
+     "n": "12",
+     "clip": "c87e3900a",
+     "uploader": "Victorgrigas",
+     "minutes": 0.1515402777777778,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "13",
+     "clip": "c94ab39f5",
+     "uploader": "Mx. Granger",
+     "minutes": 0.28409090909090906,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "14",
+     "clip": "c973b3f44",
+     "uploader": "Thamizhpparithi Maari",
+     "minutes": 0.2997438888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "15",
+     "clip": "c97e354bf",
+     "uploader": "Shanze1",
+     "minutes": 1.3546666666666667,
+     "fa_tracks": 6,
+     "fa_classes": []
+    },
+    {
+     "n": "17",
+     "clip": "cb05e346c",
+     "uploader": "GrantHillebrand",
+     "minutes": 0.6866666666666668,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "20",
+     "clip": "cfe0b39f1",
+     "uploader": "DarwIn",
+     "minutes": 3.1333333333333333,
+     "fa_tracks": 9,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "26",
+     "clip": "c0a08d565",
+     "uploader": "Rafic.Mufid",
+     "minutes": 0.29933333333333334,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "27",
+     "clip": "c3d854faf",
+     "uploader": "Saimmx",
+     "minutes": 1.5222222222222221,
+     "fa_tracks": 2,
+     "fa_classes": []
+    },
+    {
+     "n": "29",
+     "clip": "c4e9a7195",
+     "uploader": "NairobiPapel",
+     "minutes": 0.5333105555555556,
+     "fa_tracks": 3,
+     "fa_classes": []
+    },
+    {
+     "n": "30",
+     "clip": "c6f5ac9b4",
+     "uploader": "OptimusPrimeBot",
+     "minutes": 0.5822483333333334,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "32",
+     "clip": "cc5585ebc",
+     "uploader": "Yann",
+     "minutes": 0.7088888888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "33",
+     "clip": "cd17ce723",
+     "uploader": "Hanooz",
+     "minutes": 3.4859999999999998,
+     "fa_tracks": 5,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "34",
+     "clip": "ce9f2fe34",
+     "uploader": "Chris Light",
+     "minutes": 0.38066666666666665,
+     "fa_tracks": 0,
+     "fa_classes": []
+    }
+   ],
+   "unverified_extra_classes": [
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "classes": [
+      "apple",
+      "carrot"
+     ]
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "5",
+     "clip": "c19ae062b",
+     "classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "18",
+     "clip": "cd1a3f857",
+     "classes": [
+      "apple"
+     ]
+    },
+    {
+     "n": "22",
+     "clip": "c4880a292",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "25",
+     "clip": "cd4211720",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    }
+   ],
+   "excluded": [
+    [
+     "8",
+     "c20a12a9c",
+     "EXCLUDED: uncertain fruit (pale-green, apple or guava)"
+    ],
+    [
+     "9",
+     "c32085ee7",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "23",
+     "c6473db48",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "28",
+     "c4a35a451",
+     "EXCLUDED: red peppers/chilies; capsicum = whole bell pepper, chilies not a supported class"
+    ],
+    [
+     "31",
+     "c82e63d5a",
+     "provisional tiles, video check pending"
+    ]
+   ]
+  },
+  "B1": {
+   "config": "B1",
+   "classes": [
+    "citrus",
+    "apple",
+    "banana",
+    "tomato",
+    "carrot"
+   ],
+   "pairs_n": 14,
+   "pairs_detected": 8,
+   "clip_presence_recall": 0.571,
+   "per_class": {
+    "apple": {
+     "n": 2,
+     "detected": 1,
+     "recall": 0.5
+    },
+    "banana": {
+     "n": 4,
+     "detected": 3,
+     "recall": 0.75
+    },
+    "carrot": {
+     "n": 4,
+     "detected": 2,
+     "recall": 0.5
+    },
+    "citrus": {
+     "n": 3,
+     "detected": 2,
+     "recall": 0.667
+    },
+    "tomato": {
+     "n": 1,
+     "detected": 0,
+     "recall": 0.0
+    }
+   },
+   "neg_clips": 16,
+   "neg_minutes": 36.37,
+   "fa_tracks": 129,
+   "fa_per_min": 3.546,
+   "neg_clips_with_class_fa": 5,
+   "neg_class_fa": 5,
+   "ttfc_proxy_s": {
+    "p50": 20.66,
+    "p90": 33.28,
+    "n": 8,
+    "missed_pairs": 6
+   },
+   "track_births_per_min_positive": 28.23,
+   "frag_proxy_tracks_per_detected_pair": 45.0,
+   "label_changes_per_track_min": 0.291,
+   "id_switches": "not measurable (no box-level track truth)",
+   "pairs": [
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 7.76,
+     "ttfc_s": 0.8,
+     "tracks_of_cls": 47
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "apple",
+     "detected": true,
+     "shown_s": 2.88,
+     "ttfc_s": 16.88,
+     "tracks_of_cls": 15
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 21.12,
+     "ttfc_s": 1.2,
+     "tracks_of_cls": 169
+    },
+    {
+     "n": "2",
+     "clip": "c61cbc2a6",
+     "uploader": "Amanpanta1990",
+     "cls": "apple",
+     "detected": false,
+     "shown_s": 0.1,
+     "ttfc_s": null,
+     "tracks_of_cls": 1
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 2.92,
+     "ttfc_s": 24.44,
+     "tracks_of_cls": 46
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 1.58,
+     "ttfc_s": 31.11,
+     "tracks_of_cls": 62
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "uploader": "OJjnr",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "uploader": "Psubhashish",
+     "cls": "carrot",
+     "detected": true,
+     "shown_s": 0.8,
+     "ttfc_s": 29.68,
+     "tracks_of_cls": 2
+    },
+    {
+     "n": "16",
+     "clip": "ca1cbf110",
+     "uploader": "Tyler1555",
+     "cls": "carrot",
+     "detected": true,
+     "shown_s": 0.5,
+     "ttfc_s": 0.8,
+     "tracks_of_cls": 4
+    },
+    {
+     "n": "18",
+     "clip": "cd1a3f857",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 4.25,
+     "ttfc_s": 38.33,
+     "tracks_of_cls": 15
+    },
+    {
+     "n": "19",
+     "clip": "cf0b25e3b",
+     "uploader": "Yahya",
+     "cls": "citrus",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "tomato",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "banana",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "uploader": "Isewell",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    }
+   ],
+   "negatives": [
+    {
+     "n": "6",
+     "clip": "c8b2d2f36",
+     "uploader": "Muktee1494",
+     "minutes": 0.28111111111111114,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "7",
+     "clip": "c0a13587f",
+     "uploader": "Hanooz",
+     "minutes": 22.28865410592425,
+     "fa_tracks": 88,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "10",
+     "clip": "c3cc14a1f",
+     "uploader": "Obihoja",
+     "minutes": 0.38149222222222223,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "12",
+     "clip": "c87e3900a",
+     "uploader": "Victorgrigas",
+     "minutes": 0.1515402777777778,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "13",
+     "clip": "c94ab39f5",
+     "uploader": "Mx. Granger",
+     "minutes": 0.28409090909090906,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "14",
+     "clip": "c973b3f44",
+     "uploader": "Thamizhpparithi Maari",
+     "minutes": 0.2997438888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "15",
+     "clip": "c97e354bf",
+     "uploader": "Shanze1",
+     "minutes": 1.3546666666666667,
+     "fa_tracks": 9,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "17",
+     "clip": "cb05e346c",
+     "uploader": "GrantHillebrand",
+     "minutes": 0.6866666666666668,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "20",
+     "clip": "cfe0b39f1",
+     "uploader": "DarwIn",
+     "minutes": 3.1333333333333333,
+     "fa_tracks": 11,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "26",
+     "clip": "c0a08d565",
+     "uploader": "Rafic.Mufid",
+     "minutes": 0.29933333333333334,
+     "fa_tracks": 2,
+     "fa_classes": []
+    },
+    {
+     "n": "27",
+     "clip": "c3d854faf",
+     "uploader": "Saimmx",
+     "minutes": 1.5222222222222221,
+     "fa_tracks": 1,
+     "fa_classes": []
+    },
+    {
+     "n": "29",
+     "clip": "c4e9a7195",
+     "uploader": "NairobiPapel",
+     "minutes": 0.5333105555555556,
+     "fa_tracks": 1,
+     "fa_classes": []
+    },
+    {
+     "n": "30",
+     "clip": "c6f5ac9b4",
+     "uploader": "OptimusPrimeBot",
+     "minutes": 0.5822483333333334,
+     "fa_tracks": 1,
+     "fa_classes": [
+      "apple"
+     ]
+    },
+    {
+     "n": "32",
+     "clip": "cc5585ebc",
+     "uploader": "Yann",
+     "minutes": 0.7088888888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "33",
+     "clip": "cd17ce723",
+     "uploader": "Hanooz",
+     "minutes": 3.4859999999999998,
+     "fa_tracks": 14,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "34",
+     "clip": "ce9f2fe34",
+     "uploader": "Chris Light",
+     "minutes": 0.38066666666666665,
+     "fa_tracks": 2,
+     "fa_classes": []
+    }
+   ],
+   "unverified_extra_classes": [
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "classes": [
+      "apple"
+     ]
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "5",
+     "clip": "c19ae062b",
+     "classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "classes": [
+      "citrus"
+     ]
+    },
+    {
+     "n": "22",
+     "clip": "c4880a292",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "25",
+     "clip": "cd4211720",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    }
+   ],
+   "excluded": [
+    [
+     "8",
+     "c20a12a9c",
+     "EXCLUDED: uncertain fruit (pale-green, apple or guava)"
+    ],
+    [
+     "9",
+     "c32085ee7",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "23",
+     "c6473db48",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "28",
+     "c4a35a451",
+     "EXCLUDED: red peppers/chilies; capsicum = whole bell pepper, chilies not a supported class"
+    ],
+    [
+     "31",
+     "c82e63d5a",
+     "provisional tiles, video check pending"
+    ]
+   ]
+  },
+  "B2": {
+   "config": "B2",
+   "classes": [
+    "citrus",
+    "apple",
+    "banana",
+    "tomato",
+    "carrot"
+   ],
+   "pairs_n": 14,
+   "pairs_detected": 7,
+   "clip_presence_recall": 0.5,
+   "per_class": {
+    "apple": {
+     "n": 2,
+     "detected": 1,
+     "recall": 0.5
+    },
+    "banana": {
+     "n": 4,
+     "detected": 3,
+     "recall": 0.75
+    },
+    "carrot": {
+     "n": 4,
+     "detected": 1,
+     "recall": 0.25
+    },
+    "citrus": {
+     "n": 3,
+     "detected": 2,
+     "recall": 0.667
+    },
+    "tomato": {
+     "n": 1,
+     "detected": 0,
+     "recall": 0.0
+    }
+   },
+   "neg_clips": 16,
+   "neg_minutes": 36.37,
+   "fa_tracks": 48,
+   "fa_per_min": 1.32,
+   "neg_clips_with_class_fa": 3,
+   "neg_class_fa": 3,
+   "ttfc_proxy_s": {
+    "p50": 2.24,
+    "p90": 43.8,
+    "n": 7,
+    "missed_pairs": 7
+   },
+   "track_births_per_min_positive": 29.63,
+   "frag_proxy_tracks_per_detected_pair": 56.43,
+   "label_changes_per_track_min": 1.291,
+   "id_switches": "not measurable (no box-level track truth)",
+   "pairs": [
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 6.4,
+     "ttfc_s": 1.04,
+     "tracks_of_cls": 28
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "apple",
+     "detected": true,
+     "shown_s": 10.0,
+     "ttfc_s": 2.24,
+     "tracks_of_cls": 59
+    },
+    {
+     "n": "1",
+     "clip": "c6e08132a",
+     "uploader": "Missvain",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 21.52,
+     "ttfc_s": 1.6,
+     "tracks_of_cls": 177
+    },
+    {
+     "n": "2",
+     "clip": "c61cbc2a6",
+     "uploader": "Amanpanta1990",
+     "cls": "apple",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "citrus",
+     "detected": true,
+     "shown_s": 2.5,
+     "ttfc_s": 24.44,
+     "tracks_of_cls": 53
+    },
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 3.75,
+     "ttfc_s": 21.94,
+     "tracks_of_cls": 68
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "uploader": "OJjnr",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "uploader": "Psubhashish",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "16",
+     "clip": "ca1cbf110",
+     "uploader": "Tyler1555",
+     "cls": "carrot",
+     "detected": true,
+     "shown_s": 0.5,
+     "ttfc_s": 0.8,
+     "tracks_of_cls": 4
+    },
+    {
+     "n": "18",
+     "clip": "cd1a3f857",
+     "uploader": "NMaia",
+     "cls": "banana",
+     "detected": true,
+     "shown_s": 1.17,
+     "ttfc_s": 72.83,
+     "tracks_of_cls": 6
+    },
+    {
+     "n": "19",
+     "clip": "cf0b25e3b",
+     "uploader": "Yahya",
+     "cls": "citrus",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "tomato",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "21",
+     "clip": "c31b80875",
+     "uploader": "\u0412\u0438\u043a\u0442\u043e\u0440 \u041f\u0438\u043d\u0447\u0443\u043a",
+     "cls": "banana",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "uploader": "Isewell",
+     "cls": "carrot",
+     "detected": false,
+     "shown_s": 0,
+     "ttfc_s": null,
+     "tracks_of_cls": 0
+    }
+   ],
+   "negatives": [
+    {
+     "n": "6",
+     "clip": "c8b2d2f36",
+     "uploader": "Muktee1494",
+     "minutes": 0.28111111111111114,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "7",
+     "clip": "c0a13587f",
+     "uploader": "Hanooz",
+     "minutes": 22.28865410592425,
+     "fa_tracks": 32,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "10",
+     "clip": "c3cc14a1f",
+     "uploader": "Obihoja",
+     "minutes": 0.38149222222222223,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "12",
+     "clip": "c87e3900a",
+     "uploader": "Victorgrigas",
+     "minutes": 0.1515402777777778,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "13",
+     "clip": "c94ab39f5",
+     "uploader": "Mx. Granger",
+     "minutes": 0.28409090909090906,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "14",
+     "clip": "c973b3f44",
+     "uploader": "Thamizhpparithi Maari",
+     "minutes": 0.2997438888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "15",
+     "clip": "c97e354bf",
+     "uploader": "Shanze1",
+     "minutes": 1.3546666666666667,
+     "fa_tracks": 5,
+     "fa_classes": []
+    },
+    {
+     "n": "17",
+     "clip": "cb05e346c",
+     "uploader": "GrantHillebrand",
+     "minutes": 0.6866666666666668,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "20",
+     "clip": "cfe0b39f1",
+     "uploader": "DarwIn",
+     "minutes": 3.1333333333333333,
+     "fa_tracks": 5,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "26",
+     "clip": "c0a08d565",
+     "uploader": "Rafic.Mufid",
+     "minutes": 0.29933333333333334,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "27",
+     "clip": "c3d854faf",
+     "uploader": "Saimmx",
+     "minutes": 1.5222222222222221,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "29",
+     "clip": "c4e9a7195",
+     "uploader": "NairobiPapel",
+     "minutes": 0.5333105555555556,
+     "fa_tracks": 3,
+     "fa_classes": []
+    },
+    {
+     "n": "30",
+     "clip": "c6f5ac9b4",
+     "uploader": "OptimusPrimeBot",
+     "minutes": 0.5822483333333334,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "32",
+     "clip": "cc5585ebc",
+     "uploader": "Yann",
+     "minutes": 0.7088888888888889,
+     "fa_tracks": 0,
+     "fa_classes": []
+    },
+    {
+     "n": "33",
+     "clip": "cd17ce723",
+     "uploader": "Hanooz",
+     "minutes": 3.4859999999999998,
+     "fa_tracks": 3,
+     "fa_classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "34",
+     "clip": "ce9f2fe34",
+     "uploader": "Chris Light",
+     "minutes": 0.38066666666666665,
+     "fa_tracks": 0,
+     "fa_classes": []
+    }
+   ],
+   "unverified_extra_classes": [
+    {
+     "n": "3",
+     "clip": "c9030be18",
+     "classes": [
+      "apple",
+      "carrot"
+     ]
+    },
+    {
+     "n": "4",
+     "clip": "c97bdc431",
+     "classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "5",
+     "clip": "c19ae062b",
+     "classes": [
+      "banana"
+     ]
+    },
+    {
+     "n": "11",
+     "clip": "c59f957c2",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "18",
+     "clip": "cd1a3f857",
+     "classes": [
+      "apple"
+     ]
+    },
+    {
+     "n": "22",
+     "clip": "c4880a292",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "24",
+     "clip": "c90447971",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    },
+    {
+     "n": "25",
+     "clip": "cd4211720",
+     "classes": [
+      "apple",
+      "banana"
+     ]
+    }
+   ],
+   "excluded": [
+    [
+     "8",
+     "c20a12a9c",
+     "EXCLUDED: uncertain fruit (pale-green, apple or guava)"
+    ],
+    [
+     "9",
+     "c32085ee7",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "23",
+     "c6473db48",
+     "provisional tiles, video check pending"
+    ],
+    [
+     "28",
+     "c4a35a451",
+     "EXCLUDED: red peppers/chilies; capsicum = whole bell pepper, chilies not a supported class"
+    ],
+    [
+     "31",
+     "c82e63d5a",
+     "provisional tiles, video check pending"
+    ]
+   ]
+  }
+ },
+ "bootstrap": {
+  "B1_vs_B0 (all12)": {
+   "n_uploaders": 25,
+   "recall_diff_ci95": [
+    0.0,
+    0.182
+   ],
+   "fa_per_min_diff_ci95": [
+    -0.283,
+    1.74
+   ],
+   "resamples": 1000
+  },
+  "B1_vs_B0 (show5)": {
+   "n_uploaders": 24,
+   "recall_diff_ci95": [
+    0.0,
+    0.273
+   ],
+   "fa_per_min_diff_ci95": [
+    -0.237,
+    1.322
+   ],
+   "resamples": 1000
+  },
+  "B2_vs_B0 (all12)": {
+   "n_uploaders": 25,
+   "recall_diff_ci95": [
+    0.0,
+    0.0
+   ],
+   "fa_per_min_diff_ci95": [
+    -1.483,
+    -0.352
+   ],
+   "resamples": 1000
+  },
+  "B2_vs_B0 (show5)": {
+   "n_uploaders": 24,
+   "recall_diff_ci95": [
+    0.0,
+    0.0
+   ],
+   "fa_per_min_diff_ci95": [
+    -1.448,
+    -0.338
+   ],
+   "resamples": 1000
+  }
+ },
+ "pairs_vs_B0": {
+  "B0": {
+   "detected": 11,
+   "of": 22,
+   "recovered": [],
+   "lost": []
+  },
+  "B1": {
+   "detected": 12,
+   "of": 22,
+   "recovered": [
+    "#11 carrot"
+   ],
+   "lost": []
+  },
+  "B2": {
+   "detected": 11,
+   "of": 22,
+   "recovered": [],
+   "lost": []
+  }
+ },
+ "kaggle_cpu_arm_latency_ms": {
+  "B0": {
+   "p50": 162.3,
+   "p95": 191.6,
+   "n": 40548
+  },
+  "B1": {
+   "p50": 161.4,
+   "p95": 186.5,
+   "n": 40548
+  },
+  "B2": {
+   "p50": 162.4,
+   "p95": 192.2,
+   "n": 40548
+  }
+ },
+ "verifier_calls_per_frame": {
+  "B0": 0.0,
+  "B1": 0.0,
+  "B2": 0.031
+ },
+ "replayed_clips": 34,
+ "extra": {
+  "B0": {
+   "samples": {
+    "whole_clip_provisional": {
+     "minutes": 36.37,
+     "fa_tracks": 104,
+     "fa_per_min": 2.859,
+     "raw_boxes_per_min": 18.53
+    },
+    "verified_windows": {
+     "minutes": 3.15,
+     "fa_tracks": 9,
+     "fa_per_min": 2.855,
+     "displayed_track_s": 1.2,
+     "raw_boxes_per_min": 7.93,
+     "clips_with_window_fa": 7
+    },
+    "ttfc_from_clip_start_s": {
+     "p50": 2.24,
+     "p90": 28.11,
+     "n": 11
+    }
+   },
+   "union": {
+    "whole_clip_provisional": {
+     "minutes": 36.37,
+     "fa_tracks": 104,
+     "fa_per_min": 2.859,
+     "raw_boxes_per_min": 18.53
+    },
+    "verified_windows": {
+     "minutes": 4.1,
+     "fa_tracks": 23,
+     "fa_per_min": 5.607,
+     "displayed_track_s": 7.4,
+     "raw_boxes_per_min": 29.99,
+     "clips_with_window_fa": 9
+    },
+    "ttfc_from_clip_start_s": {
+     "p50": 2.24,
+     "p90": 28.11,
+     "n": 11
+    }
+   }
+  },
+  "B1": {
+   "samples": {
+    "whole_clip_provisional": {
+     "minutes": 36.37,
+     "fa_tracks": 148,
+     "fa_per_min": 4.069,
+     "raw_boxes_per_min": 22.71
+    },
+    "verified_windows": {
+     "minutes": 3.15,
+     "fa_tracks": 11,
+     "fa_per_min": 3.49,
+     "displayed_track_s": 3.5,
+     "raw_boxes_per_min": 20.3,
+     "clips_with_window_fa": 5
+    },
+    "ttfc_from_clip_start_s": {
+     "p50": 14.02,
+     "p90": 30.97,
+     "n": 12
+    }
+   },
+   "union": {
+    "whole_clip_provisional": {
+     "minutes": 36.37,
+     "fa_tracks": 148,
+     "fa_per_min": 4.069,
+     "raw_boxes_per_min": 22.71
+    },
+    "verified_windows": {
+     "minutes": 4.1,
+     "fa_tracks": 20,
+     "fa_per_min": 4.876,
+     "displayed_track_s": 7.9,
+     "raw_boxes_per_min": 32.42,
+     "clips_with_window_fa": 8
+    },
+    "ttfc_from_clip_start_s": {
+     "p50": 14.02,
+     "p90": 30.97,
+     "n": 12
+    }
+   }
+  },
+  "B2": {
+   "samples": {
+    "whole_clip_provisional": {
+     "minutes": 36.37,
+     "fa_tracks": 56,
+     "fa_per_min": 1.54,
+     "raw_boxes_per_min": 18.53
+    },
+    "verified_windows": {
+     "minutes": 3.15,
+     "fa_tracks": 7,
+     "fa_per_min": 2.221,
+     "displayed_track_s": 1.0,
+     "raw_boxes_per_min": 7.93,
+     "clips_with_window_fa": 5
+    },
+    "ttfc_from_clip_start_s": {
+     "p50": 2.24,
+     "p90": 28.11,
+     "n": 11
+    }
+   },
+   "union": {
+    "whole_clip_provisional": {
+     "minutes": 36.37,
+     "fa_tracks": 56,
+     "fa_per_min": 1.54,
+     "raw_boxes_per_min": 18.53
+    },
+    "verified_windows": {
+     "minutes": 4.1,
+     "fa_tracks": 16,
+     "fa_per_min": 3.901,
+     "displayed_track_s": 4.4,
+     "raw_boxes_per_min": 29.99,
+     "clips_with_window_fa": 7
+    },
+    "ttfc_from_clip_start_s": {
+     "p50": 2.24,
+     "p90": 28.11,
+     "n": 11
+    }
+   }
+  }
+ }
+}
