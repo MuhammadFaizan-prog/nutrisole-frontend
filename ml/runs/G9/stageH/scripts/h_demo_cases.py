@@ -31,13 +31,15 @@ for it in OI:
             v = verify_identity(dict(status="identified", classId=1), None, H2[k]["probs"], PV)
             occ = occlusion_reasons(cu, PO) if v["status"] == "verified" else []
             dd = stageh_decision(v, occ, "graded", [], True)
-            if dd["outcome"] != "graded" and best is None: best = (it, s, c, r, v, occ, dd, k)
+            if dd["outcome"] != "graded":
+                rank = 0 if (v["status"] == "verified" and occ) else 1  # prefer a crop whose identity verifies and the occlusion rule stops
+                if best is None or rank < best[-1]: best = (it, s, c, r, v, occ, dd, k, rank)
 if best:
-    it, s, c, r, v, occ, dd, k = best; credits.add(f"cu{it['id']}: {cc['cu' + it['id']]['title']} ({cc['cu' + it['id']]['licence']}, {cc['cu' + it['id']]['artist'][:40]})")
+    it, s, c, r, v, occ, dd, k, _ = best; credits.add(f"cu{it['id']}: {cc['cu' + it['id']]['title']} ({cc['cu' + it['id']]['licence']}, {cc['cu' + it['id']]['artist'][:40]})")
     cases.append(dict(title="1. Occluded apple", subtitle=f"CU-check apple cu{it['id']}, {s} px crop, occluder '{c}' (synthetic). Same crop on both sides.",
                       img_h0=f"/workspace/work/g9h/occ/crops/{k}.png", img_h=f"/workspace/work/g9h/occ/crops/{k}.png", h0_bad=True,
                       h0=[f"Apple - grade {r['grade']} shown", "Passed every Stage G check: size, blur, light, visible surface, confidence"],
-                      h=["Not graded" if v["status"] == "verified" else "Unable to identify", "Reason: " + ", ".join((occ or [v.get("reason", "")]))[:80], "Category price only"]))
+                      h=["Not graded" if v["status"] == "verified" else "Unable to identify", "Reason: " + ", ".join((occ or [v.get("reason", "")]))[:80], "Category reference price only" if v["status"] == "verified" else "No name, no grade, no price"]))
 # (2) wrong ID from the Stage G approach
 ap = ID["cu_check_approach"].get("with_H_final", {}).get("items", [])
 w = [x for x in ap if x["graded_stageG"] and not x["wide_correct"]]
