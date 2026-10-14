@@ -1,0 +1,54 @@
+{
+ "holdout_clips": 34,
+ "holdout_keyframes_compared": 864,
+ "hn_kept": 192,
+ "min_phash_distance_to_holdout": 16,
+ "hn_within_10_of_holdout": [],
+ "video_sources": [
+  "c237ace91",
+  "c5ed7eb90",
+  "c8e6ccd85",
+  "cd80902de",
+  "cea174b05",
+  "cec084f0c",
+  "cf14f0db2",
+  "cfb66f6d2",
+  "cff999d3b"
+ ],
+ "video_source_roles": [
+  "M-dev",
+  "M-train"
+ ],
+ "commons_uploaders_in_holdout_uploaders_after_exclusion": [],
+ "excluded_for_uploader_overlap": [
+  "cw_0057",
+  "cw_0579",
+  "cw_0580",
+  "cw_0581",
+  "cw_0582",
+  "cw_1020"
+ ],
+ "holdout_tiles_used": 0,
+ "muktee_clips_used": 0,
+ "mdev_in_train": 0,
+ "near_duplicates_dropped": [
+  "vc_vt025",
+  "vc_vt026",
+  "vc_vt027",
+  "vc_vt028",
+  "vc_vt029",
+  "vc_vt030",
+  "vc_vt031",
+  "vc_vt032",
+  "vc_vt033",
+  "vc_vt035",
+  "vc_vt037",
+  "vc_vt038",
+  "vc_vt042",
+  "vc_vt058",
+  "cw_1778"
+ ],
+ "commons_reviewed_rejected": 48,
+ "video_tiles_reviewed": 86,
+ "video_tiles_rejected": 26
+}
