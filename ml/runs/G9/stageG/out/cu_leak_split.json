@@ -1,0 +1,839 @@
+{
+ "n_refs": 1607,
+ "n_ref_titles": 5054,
+ "dropped": [
+  "cu0048",
+  "cu0058",
+  "cu0064",
+  "cu0072",
+  "cu0073",
+  "cu0094",
+  "cu0095"
+ ],
+ "per_image": {
+  "cu0000": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0001": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0002": {
+   "title_overlap": false,
+   "phash_min": 14
+  },
+  "cu0003": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0004": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0005": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0006": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0007": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0008": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0009": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0010": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0011": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0012": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0013": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0014": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0015": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0016": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0017": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0018": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0019": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0020": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0021": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0022": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0023": {
+   "title_overlap": false,
+   "phash_min": 14
+  },
+  "cu0024": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0025": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0026": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0027": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0028": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0029": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0030": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0031": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0032": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0033": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0034": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0035": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0036": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0037": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0038": {
+   "title_overlap": false,
+   "phash_min": 14
+  },
+  "cu0039": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0040": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0041": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0042": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0043": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0044": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0045": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0046": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0047": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0048": {
+   "title_overlap": true,
+   "phash_min": 0
+  },
+  "cu0049": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0050": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0051": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0052": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0053": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0054": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0055": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0056": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0057": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0058": {
+   "title_overlap": true,
+   "phash_min": 2
+  },
+  "cu0059": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0060": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0061": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0062": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0063": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0064": {
+   "title_overlap": true,
+   "phash_min": 0
+  },
+  "cu0065": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0066": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0067": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0068": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0069": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0070": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0071": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0072": {
+   "title_overlap": true,
+   "phash_min": 2
+  },
+  "cu0073": {
+   "title_overlap": true,
+   "phash_min": 0
+  },
+  "cu0074": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0075": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0076": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0077": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0078": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0079": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0080": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0081": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0082": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0083": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0084": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0085": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0086": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0087": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0088": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0089": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0090": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0091": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0092": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0093": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0094": {
+   "title_overlap": true,
+   "phash_min": 2
+  },
+  "cu0095": {
+   "unreadable": true
+  },
+  "cu0096": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0097": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0098": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0099": {
+   "title_overlap": false,
+   "phash_min": 14
+  },
+  "cu0100": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0101": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0102": {
+   "title_overlap": false,
+   "phash_min": 14
+  },
+  "cu0103": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0104": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0105": {
+   "title_overlap": false,
+   "phash_min": 14
+  },
+  "cu0106": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0107": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0108": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0109": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0110": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0111": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0112": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0113": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0114": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0115": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0116": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0117": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0118": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0119": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0120": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0121": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0122": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0123": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0124": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0125": {
+   "title_overlap": false,
+   "phash_min": 14
+  },
+  "cu0126": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0127": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0128": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0129": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0130": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0131": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0132": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0133": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0134": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0135": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0136": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0137": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0138": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0139": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0140": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0141": {
+   "title_overlap": false,
+   "phash_min": 14
+  },
+  "cu0142": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0143": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0144": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0145": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0146": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0147": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0148": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0149": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0150": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0151": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0152": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0153": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0154": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0155": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0156": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0157": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0158": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0159": {
+   "title_overlap": false,
+   "phash_min": 14
+  },
+  "cu0160": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0161": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0162": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0163": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0164": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0165": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0166": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0167": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0168": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0169": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0170": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0171": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0172": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0173": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0174": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0175": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0176": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0177": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0178": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0179": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0180": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0181": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0182": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0183": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0184": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0185": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0186": {
+   "title_overlap": false,
+   "phash_min": 18
+  },
+  "cu0187": {
+   "title_overlap": false,
+   "phash_min": 14
+  },
+  "cu0188": {
+   "title_overlap": false,
+   "phash_min": 16
+  },
+  "cu0189": {
+   "title_overlap": false,
+   "phash_min": 20
+  },
+  "cu0190": {
+   "title_overlap": false,
+   "phash_min": 18
+  }
+ },
+ "split": {
+  "0000": "check",
+  "0001": "check",
+  "0011": "tune",
+  "0014": "check",
+  "0015": "tune",
+  "0127": "check",
+  "0128": "tune",
+  "0130": "check",
+  "0163": "check",
+  "0179": "tune",
+  "0181": "check",
+  "0182": "tune",
+  "0159": "tune",
+  "0023": "tune",
+  "0025": "check",
+  "0143": "tune",
+  "0144": "tune",
+  "0148": "tune",
+  "0149": "tune",
+  "0150": "tune",
+  "0152": "check",
+  "0037": "tune",
+  "0056": "tune",
+  "0055": "tune",
+  "0184": "check",
+  "0186": "check",
+  "0185": "tune",
+  "0138": "check",
+  "0139": "tune",
+  "0041": "tune",
+  "0068": "check",
+  "0070": "tune",
+  "0074": "tune",
+  "0076": "tune",
+  "0132": "tune",
+  "0133": "tune",
+  "0134": "check",
+  "0124": "tune",
+  "0078": "tune",
+  "0082": "check",
+  "0167": "check",
+  "0169": "check",
+  "0170": "check",
+  "0172": "check",
+  "0173": "check",
+  "0176": "check",
+  "0177": "check",
+  "0178": "check",
+  "0100": "check",
+  "0101": "check",
+  "0105": "check",
+  "0106": "check",
+  "0110": "check",
+  "0109": "tune",
+  "0115": "check"
+ },
+ "split_counts": {
+  "tune": 26,
+  "check": 29
+ }
+}
