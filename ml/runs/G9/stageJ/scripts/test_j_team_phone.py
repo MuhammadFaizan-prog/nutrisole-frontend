@@ -98,3 +98,39 @@ def test_exif_gps_refused(tmp_path):
     im.save(p, exif=ex)
     with pytest.raises(ValueError, match="GPS"):
         T.ingest(tmp_path)
+
+
+def test_vocabulary_matches_revised_shot_list():
+    # shot list section 6 (revision 38e6b0a): classes incl. `none`, seven eval conditions + `open` for train apples
+    assert T.INTENDED == {"apple", "banana", "citrus_orange", "tomato", "carrot", "none"}
+    assert T.EVAL_CONDITIONS == {"bag-clear", "bag-mesh", "tray-film", "hid-hand", "hid-fruit", "hid-edge", "hid-object"}
+    assert T.CONDITIONS == T.EVAL_CONDITIONS | {"open"}
+    assert T.COLUMNS == HDR
+
+
+def test_none_negative_and_hid_object_in_eval_none_refused_in_train(tmp_path):
+    sessions(tmp_path, [["S20261018-AB-01", "Ali B", "2026-10-18", "home kitchen", "eval", "CC-BY-4.0", "yes"]])
+    img(tmp_path / "TP_S20261018-AB-01_none_bag-clear_001.jpg", 11)       # optional empty-bag negative
+    img(tmp_path / "TP_S20261018-AB-01_carrot_hid-object_002.jpg", 12)
+    res = T.ingest(tmp_path)
+    by = {i["file"]: i for i in res["items"]}
+    assert by["TP_S20261018-AB-01_none_bag-clear_001.jpg"]["intended_by_photographer"] == "none"
+    assert by["TP_S20261018-AB-01_carrot_hid-object_002.jpg"]["condition"] == "hid-object"
+    assert res["counts"] == {"J-eval": 2}
+    sessions(tmp_path, [["S20261018-AB-01", "Omar F", "2026-10-18", "market", "train", "CC-BY-4.0", "yes"]])
+    for f in list(tmp_path.glob("TP_*")): f.unlink()
+    img(tmp_path / "TP_S20261018-AB-01_none_open_001.jpg", 13)
+    with pytest.raises(ValueError, match="apple-only"):
+        T.ingest(tmp_path)
+
+
+def test_sessions_csv_columns_enforced_and_values_trimmed(tmp_path):
+    with open(tmp_path / "sessions.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f); w.writerow(HDR[:-1]); w.writerow(["S20261018-AB-01", "Ali B", "2026-10-18", "home", "eval", "CC-BY-4.0"])
+    with pytest.raises(ValueError, match="columns must be exactly"):
+        T.ingest(tmp_path)
+    with open(tmp_path / "sessions.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f); w.writerow([" " + h for h in HDR])
+        w.writerow(["S20261018-AB-01", "Ali B", "2026-10-18", "home", " eval ", "CC-BY-4.0 ", "Yes"])
+    img(tmp_path / "TP_S20261018-AB-01_banana_bag-mesh_001.jpg", 14)
+    assert T.ingest(tmp_path)["counts"] == {"J-eval": 1}
