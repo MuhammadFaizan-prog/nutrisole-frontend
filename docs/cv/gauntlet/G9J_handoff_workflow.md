@@ -18,15 +18,27 @@ Implementation sequence (2026-10-15):
 
 ## Inputs and boundaries
 
-The authoritative current results are under `ml/runs/G9/stageJ/out/handoff/20261015/`. That directory is for the lead and
-adjudicator **after** the two independent exports. Give annotators only their original ZIP. Do not send this directory,
+The fresh **AI visual review of all 265 pilot images** is under
+`ml/runs/G9/stageJ/out/handoff/20261015_visual_review/`. It includes individual notes, the exact-schema AI CSV,
+confidence/flags, a 157-row post-hoc queue, source-original retrieval outcomes and a fresh execution of the existing auditor.
+This is new AI-assisted work, not recovery of the missing old AI handoff and not independent human verification.
+The earlier missing-input audit under `ml/runs/G9/stageJ/out/handoff/20261015/` remains historical and unchanged.
+Both directories are for the lead and adjudicator **after** the two independent exports. Give annotators only their original ZIP. Do not send these directories,
 `j_blind_key.csv`, source labels, AI suggestions or the review-priority sheet to independent annotators.
 
-Present: the two original pilot ZIPs, their unchanged extracted HTML tools, guide and blank fallback CSVs, and the committed
-Stage I/J manifests. Missing: the AI handoff ZIP and all three named contents; genuine human exports; original training ZIPs;
+Present: the two original pilot ZIPs, their unchanged extracted HTML tools, guide and blank fallback CSVs, the committed
+Stage I/J manifests, and the separately marked fresh AI visual review. Missing: the old AI handoff ZIP and its original contents; genuine human exports; original training ZIPs;
 full-resolution original/download stores and their byte provenance; earlier reference hash stores. Historical `TestAnnotator`
 exports are synthetic smoke-test outputs. Do not import them as human work. Browser-saved personal labels must be exported by
 the person using that browser; this workflow never reads their storage.
+
+For the fresh review, use its `REPRODUCE.ps1` from this repository root with a Python environment containing the dependencies
+listed below. It validates the exact CSV schema and coverage, cross-checks all 265 CSV notes/tags against the saved review
+batches, checks display indices/image hashes, verifies queue membership and reruns the existing auditor into a new directory.
+All records remain `AI_ASSISTED_NOT_HUMAN`; zero genuine human exports and zero human-verified images remain the actual status.
+One full-size source original (P134) was retrieved and viewed. Fifteen other selected originals returned HTTP 429. The remaining
+review uses supplied package pixels (at most 640px), with 90 additional native-package detail views and explicitly marked
+source context on 26 records. Do not describe it as a blind human review or a full-resolution review of all 265 images.
 
 Pilot is evaluation only. The training batch includes **382 J-train + 79 J-dev representatives**, not 461 training examples.
 The old guide's 458 is stale. Original physical training ZIP inventory cannot be rechecked until those files are recovered.

@@ -1,0 +1,153 @@
+{
+  "base_commit": "4d35a7c426cbb2820fa80d98e2a7a357bc0c3d36",
+  "packages": [
+    {
+      "package": "nutrisole_G9J_pilot_annotator1.zip",
+      "sha256": "d1af6dfac8fd4de6732e56887b5fec8c671b96361d61a41685f62b23c82a9e9e",
+      "checks": {
+        "count_265": true,
+        "expected_ids": true,
+        "no_duplicates": true,
+        "no_corrupt": true,
+        "original_package_sha256": true,
+        "correct_copy": true,
+        "correct_pack": true,
+        "export_schema": true,
+        "fallback_order": true,
+        "offline_resources": true,
+        "authoritative_guide": true
+      },
+      "pass_all": true
+    },
+    {
+      "package": "nutrisole_G9J_pilot_annotator2.zip",
+      "sha256": "261f74f0496de884f659f169b6937faac843856cf6c34dc9cf9e2066b7ce9ab6",
+      "checks": {
+        "count_265": true,
+        "expected_ids": true,
+        "no_duplicates": true,
+        "no_corrupt": true,
+        "original_package_sha256": true,
+        "correct_copy": true,
+        "correct_pack": true,
+        "export_schema": true,
+        "fallback_order": true,
+        "offline_resources": true,
+        "authoritative_guide": true
+      },
+      "pass_all": true
+    }
+  ],
+  "image_identity_pass": true,
+  "different_order": true,
+  "duplicate_candidates": [
+    {
+      "item_id_A": "P001",
+      "item_id_B": "P086",
+      "exact_sha256": false,
+      "phash_hamming": 10,
+      "status": "AUTOMATED_CANDIDATE_NEEDS_HUMAN_REVIEW"
+    },
+    {
+      "item_id_A": "P007",
+      "item_id_B": "P246",
+      "exact_sha256": false,
+      "phash_hamming": 8,
+      "status": "AUTOMATED_CANDIDATE_NEEDS_HUMAN_REVIEW"
+    },
+    {
+      "item_id_A": "P097",
+      "item_id_B": "P194",
+      "exact_sha256": false,
+      "phash_hamming": 10,
+      "status": "AUTOMATED_CANDIDATE_NEEDS_HUMAN_REVIEW"
+    },
+    {
+      "item_id_A": "P106",
+      "item_id_B": "P138",
+      "exact_sha256": false,
+      "phash_hamming": 10,
+      "status": "AUTOMATED_CANDIDATE_NEEDS_HUMAN_REVIEW"
+    },
+    {
+      "item_id_A": "P148",
+      "item_id_B": "P150",
+      "exact_sha256": false,
+      "phash_hamming": 8,
+      "status": "AUTOMATED_CANDIDATE_NEEDS_HUMAN_REVIEW"
+    }
+  ],
+  "ai_imported": true,
+  "ai_imported_rows": 265,
+  "ai_errors": [],
+  "missing_inputs": [],
+  "review_queue_rows": 157,
+  "claimed_review_queue_rows_unverified": 113,
+  "claimed_uncertain_rows_unverified": 81,
+  "human_csvs_received": 0,
+  "human_kappa": null,
+  "human_verified_images": 0,
+  "training": {
+    "representatives": 461,
+    "by_split": {
+      "J-train": 382,
+      "J-dev": 79
+    },
+    "image_files_available": false,
+    "gaps": [
+      {
+        "label": "apple",
+        "j_train_source_candidates": 20,
+        "human_verified_clean": 0,
+        "target": 150,
+        "additional_clean_needed_even_if_every_candidate_passes": 130,
+        "actual_human_verified_shortfall": 150,
+        "source_collections": "commons",
+        "requirements": "licensed diverse phone close-ups; >=2 independent sources; exclude eval sources, video/session/near-duplicate overlap"
+      },
+      {
+        "label": "banana",
+        "j_train_source_candidates": 7,
+        "human_verified_clean": 0,
+        "target": 150,
+        "additional_clean_needed_even_if_every_candidate_passes": 143,
+        "actual_human_verified_shortfall": 150,
+        "source_collections": "commons",
+        "requirements": "licensed diverse phone close-ups; >=2 independent sources; exclude eval sources, video/session/near-duplicate overlap"
+      },
+      {
+        "label": "citrus_orange",
+        "j_train_source_candidates": 135,
+        "human_verified_clean": 0,
+        "target": 150,
+        "additional_clean_needed_even_if_every_candidate_passes": 15,
+        "actual_human_verified_shortfall": 150,
+        "source_collections": "citrus_tw;commons;commons_t",
+        "requirements": "licensed diverse phone close-ups; >=2 independent sources; exclude eval sources, video/session/near-duplicate overlap"
+      },
+      {
+        "label": "tomato",
+        "j_train_source_candidates": 14,
+        "human_verified_clean": 0,
+        "target": 150,
+        "additional_clean_needed_even_if_every_candidate_passes": 136,
+        "actual_human_verified_shortfall": 150,
+        "source_collections": "commons;veg_in",
+        "requirements": "licensed diverse phone close-ups; >=2 independent sources; exclude eval sources, video/session/near-duplicate overlap"
+      },
+      {
+        "label": "carrot",
+        "j_train_source_candidates": 138,
+        "human_verified_clean": 0,
+        "target": 150,
+        "additional_clean_needed_even_if_every_candidate_passes": 12,
+        "actual_human_verified_shortfall": 150,
+        "source_collections": "commons;commons_t;veg_bd;veg_in",
+        "requirements": "licensed diverse phone close-ups; >=2 independent sources; exclude eval sources, video/session/near-duplicate overlap"
+      }
+    ]
+  },
+  "original_source_store_available": false,
+  "weight_binaries_available_locally": false,
+  "evidence_scope": "AUTOMATED_CHECKS; source metadata remains unverified; no model evaluated or trained"
+}
