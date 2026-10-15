@@ -3,6 +3,7 @@
 // (see FDC_SOURCE). Anything not in that release is 'missing' with a reason; nothing is estimated or typed in by hand.
 // Glycemic index / glycemic load are NOT in FoodData Central: they stay missing until a cited source is added.
 import { FDC_SHOWCASE, FDC_SOURCE, NUTRIENT_UNITS, FDC_NUTRIENT_IDS } from './nutritionFdc.ts';
+import { domainIdForCvClass } from '../domainMap.ts';
 
 export type ShowcaseClass = 'apple' | 'banana' | 'citrus_orange' | 'tomato' | 'carrot';
 export const SHOWCASE: readonly ShowcaseClass[] = ['apple', 'banana', 'citrus_orange', 'tomato', 'carrot'];
@@ -39,6 +40,13 @@ export function nutritionFor(produceType: string): NutritionRecord | null {
     nutrients, glycemicIndex: GI_MISSING,
     typicalPortion: r.portion ? { label: r.portion.label, grams: r.portion.grams, source: 'USDA FoodData Central food_portion' } : null,
   };
+}
+
+/** J6: nutrition for a CV recognition output (CV class string, e.g. `citrus` -> citrus_orange record). Goes through domainMap.ts only;
+ *  a class with no domain id (lemon_lime, mango, H2 unknown, ...) returns null. Per 100 g; portion grams come from the user, never the image. */
+export function nutritionForCv(cvClass: string | null): NutritionRecord | null {
+  const d = domainIdForCvClass(cvClass);
+  return d ? nutritionFor(d) : null;
 }
 
 /** Scale sourced per-100 g values to a portion in grams. Missing stays missing (never zero). Rounded to 0.1. */
