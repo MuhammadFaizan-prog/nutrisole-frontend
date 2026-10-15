@@ -9,11 +9,13 @@
 // Not wired to any screen in Stage J4.
 import { STALE_DAYS, type PriceSource, type PriceType, type PriceUnit, type PriceRow } from './reference.ts';
 import { PRICE_LOCATION } from './display.ts';
+import { DOMAIN_IDS, cvClassForDomain, domainIdForCvClass } from '../domainMap.ts';
 
 export type ShowcaseClass = 'apple' | 'banana' | 'citrus_orange' | 'tomato' | 'carrot';
 export const SHOWCASE_CLASSES: readonly ShowcaseClass[] = ['apple', 'banana', 'citrus_orange', 'tomato', 'carrot'];
 /** Showcase label -> app/price class used by ml/prices (class_map). */
-export const SHOWCASE_APP_CLASS: Record<ShowcaseClass, string> = { apple: 'apple', banana: 'banana', citrus_orange: 'citrus', tomato: 'tomato', carrot: 'carrot' };
+// J6: derived from the canonical CV<->domain map (domainMap.ts); same values as before (citrus_orange -> citrus).
+export const SHOWCASE_APP_CLASS: Record<ShowcaseClass, string> = Object.freeze(Object.fromEntries(DOMAIN_IDS.map((d) => [d, cvClassForDomain(d) as string]))) as Record<ShowcaseClass, string>;
 export const LAHORE_SOURCES = Object.keys(PRICE_LOCATION).filter((s) => PRICE_LOCATION[s].startsWith('Lahore'));
 export const PRICE_LOOKUP_LABEL = 'Official Lahore reference price for this produce type, not a seller\'s price and not tied to a grade';
 
@@ -69,4 +71,12 @@ export function checkProducePrice(p: ProducePrice): string[] {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(p.listDate)) e.push('listDate required');
   if (/grade\s*[12ABC]\b/i.test(p.label)) e.push('label must not name a grade');
   return e;
+}
+
+/** J6: price lookup for a CV recognition output (CV class string, e.g. `citrus`). Goes through domainMap.ts only.
+ *  A CV class with no showcase domain (lemon_lime, mango, ...) is 'unknown_produce_type'; nothing is guessed. */
+export function lahoreProducePriceForCv(cvClass: string | null, sources: PriceSource[], today: string): ProducePrice {
+  const d = domainIdForCvClass(cvClass);
+  if (!d) return { status: 'unavailable', produceType: cvClass ?? '', reason: 'unknown_produce_type', lastListDate: null, note: 'No showcase produce type for this recognition class.' };
+  return lahoreProducePrice(d, sources, today);
 }
