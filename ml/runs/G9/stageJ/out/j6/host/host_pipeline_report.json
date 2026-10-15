@@ -1,0 +1,471 @@
+{
+ "label": "HOST-SIDE SIMULATION: sandbox CPU (2 vCPU), Node v22.23.3 + onnxruntime-node 1.24.3. Same TS pipeline + same ONNX files as the debug build. NOT a physical device; no phone latency/FPS/memory claim.",
+ "io_errors": {
+  "h2": [],
+  "g3_det": []
+ },
+ "metadata_available": true,
+ "host_init_ms": {
+  "h2": 71,
+  "g3_det": 29
+ },
+ "host_rss_mb": {
+  "before": 50.5,
+  "after_init": 86.9,
+  "after_runs": 167.8,
+  "growth_init": 36.3
+ },
+ "parity": {
+  "n": 16,
+  "det_tensor_maxAbs": 0.0051,
+  "h2_tensor_maxAbs": 0,
+  "h2_probs_maxAbs": 0,
+  "h2_top1_agree": 16,
+  "det_classes_agree": 13,
+  "tolerance": {
+   "det_tensor_maxAbs": 0.00784313725490196,
+   "h2_tensor_maxAbs": 0.001
+  },
+  "items": [
+   {
+    "id": "j5c00c63d71",
+    "det_tensor": {
+     "maxAbs": 0.0039,
+     "meanAbs": 0.001
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 16,
+    "det_dets_py": 14,
+    "det_classes_agree": false
+   },
+   {
+    "id": "j5c01483d3e",
+    "det_tensor": {
+     "maxAbs": 0.0044,
+     "meanAbs": 0.0006
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 0,
+    "det_dets_py": 0,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c018f8a40",
+    "det_tensor": {
+     "maxAbs": 0.0046,
+     "meanAbs": 0.0008
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 0,
+    "det_dets_py": 0,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c02a79b1a",
+    "det_tensor": {
+     "maxAbs": 0.0046,
+     "meanAbs": 0.001
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 0,
+    "det_dets_py": 0,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c03713fa0",
+    "det_tensor": {
+     "maxAbs": 0.0045,
+     "meanAbs": 0.0008
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 17,
+    "det_dets_py": 15,
+    "det_classes_agree": false
+   },
+   {
+    "id": "j5c060f38c2",
+    "det_tensor": {
+     "maxAbs": 0.0044,
+     "meanAbs": 0.0007
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 0,
+    "det_dets_py": 0,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c067c10c8",
+    "det_tensor": {
+     "maxAbs": 0.0046,
+     "meanAbs": 0.0008
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 19,
+    "det_dets_py": 19,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c07134c20",
+    "det_tensor": {
+     "maxAbs": 0.0051,
+     "meanAbs": 0.001
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 15,
+    "det_dets_py": 15,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c0b5c1e5e",
+    "det_tensor": {
+     "maxAbs": 0.0039,
+     "meanAbs": 0.001
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 15,
+    "det_dets_py": 14,
+    "det_classes_agree": false
+   },
+   {
+    "id": "j5c0c31f16b",
+    "det_tensor": {
+     "maxAbs": 0.0045,
+     "meanAbs": 0.0007
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 7,
+    "det_dets_py": 7,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c0d2128d1",
+    "det_tensor": {
+     "maxAbs": 0.0039,
+     "meanAbs": 0.0008
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 21,
+    "det_dets_py": 21,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c10639aa0",
+    "det_tensor": {
+     "maxAbs": 0.0045,
+     "meanAbs": 0.0007
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 5,
+    "det_dets_py": 5,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c12b10308",
+    "det_tensor": {
+     "maxAbs": 0.0045,
+     "meanAbs": 0.0005
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 1,
+    "det_dets_py": 1,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c13df2ab2",
+    "det_tensor": {
+     "maxAbs": 0.0046,
+     "meanAbs": 0.001
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 0,
+    "det_dets_py": 0,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c142c3b6e",
+    "det_tensor": {
+     "maxAbs": 0.0039,
+     "meanAbs": 0.0008
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 0,
+    "det_dets_py": 0,
+    "det_classes_agree": true
+   },
+   {
+    "id": "j5c1763ac10",
+    "det_tensor": {
+     "maxAbs": 0.0044,
+     "meanAbs": 0.0008
+    },
+    "h2_tensor": {
+     "maxAbs": 0,
+     "meanAbs": 0
+    },
+    "h2_probs_maxAbs": 0,
+    "h2_top1_agree": true,
+    "det_dets_ts": 14,
+    "det_dets_py": 14,
+    "det_classes_agree": true
+   }
+  ]
+ },
+ "latency_host": {
+  "infer_g3_det": {
+   "n": 78,
+   "p50": 44.91381899999942,
+   "p95": 134.4584619999996,
+   "max": 148.35629000000017
+  },
+  "infer_h2": {
+   "n": 26,
+   "p50": 4.54500200000075,
+   "p95": 12.275931999999557,
+   "max": 12.445848999999725
+  },
+  "pipeline_total": {
+   "n": 26,
+   "p50": 157.58416800000032,
+   "p95": 355.0318420000003,
+   "max": 438.69964500000015
+  }
+ },
+ "pipeline": {
+  "n": 26,
+  "titles": [
+   {
+    "id": "j5c00c63d71",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c00c63d71",
+    "tap": "det",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c01483d3e",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c018f8a40",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c02a79b1a",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c03713fa0",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c03713fa0",
+    "tap": "det",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c060f38c2",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c067c10c8",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c067c10c8",
+    "tap": "det",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c07134c20",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c07134c20",
+    "tap": "det",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c0b5c1e5e",
+    "tap": "centre",
+    "title": "Citrus (orange / kinnow / mosambi). Not graded",
+    "domain": "citrus_orange"
+   },
+   {
+    "id": "j5c0b5c1e5e",
+    "tap": "det",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c0c31f16b",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c0c31f16b",
+    "tap": "det",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c0d2128d1",
+    "tap": "centre",
+    "title": "Apple. Not graded",
+    "domain": "apple"
+   },
+   {
+    "id": "j5c0d2128d1",
+    "tap": "det",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c10639aa0",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c10639aa0",
+    "tap": "det",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c12b10308",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c12b10308",
+    "tap": "det",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c13df2ab2",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c142c3b6e",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c1763ac10",
+    "tap": "centre",
+    "title": "Unable to identify",
+    "domain": null
+   },
+   {
+    "id": "j5c1763ac10",
+    "tap": "det",
+    "title": "Unable to identify",
+    "domain": null
+   }
+  ],
+  "display_errors": 0,
+  "grades_shown": 0
+ }
+}
