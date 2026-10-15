@@ -131,6 +131,10 @@ jobs:
           "$aapt2" dump permissions "$apk" | grep -q 'android.permission.CAMERA' || { echo "::error::CAMERA permission missing"; exit 1; }
           unzip -l "$apk" | grep -q 'lib/arm64-v8a/libonnxruntime.so' || { echo "::error::onnxruntime .so missing"; exit 1; }
           grep -a -q NUTRISOLE_QA_FLAGS_ON /tmp/apkx/assets/index.android.bundle || { echo "::error::QA flags not in bundle"; exit 1; }
+          # J8: live CV path + resizer + worklets native libs present (live mode code is in the embedded bundle; no Metro needed)
+          grep -a -q 'NSCV perf window_s=' /tmp/apkx/assets/index.android.bundle || { echo "::error::J8 live perf line not in bundle"; exit 1; }
+          grep -a -q 'held_through_missed_frame' /tmp/apkx/assets/index.android.bundle || { echo "::error::J8 live tracker not in bundle"; exit 1; }
+          echo "== J8 native libs"; unzip -l "$apk" | grep -E 'lib/arm64-v8a/lib(VisionCamera|.*[Rr]esizer|worklets|NitroModules)' || true
           while read -r file bytes sha; do
             echo "$sha  /tmp/apkx/assets/models/$file" | sha256sum -c -
           done < /tmp/models.txt
