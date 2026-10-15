@@ -51,3 +51,20 @@ def test_amended_table_still_refused_as_kappa_input(tmp_path):
     src = V2 / "reviewed_labels_pilot2.csv"
     with pytest.raises(ValueError, match="not independent double annotation"):
         JA.main(["agree", str(src), str(src), "--batch", "pilot2", "--evidence", str(tmp_path / "none.json"), "--out", str(tmp_path / "o")])
+
+
+def test_j6_candidate_pool_rules():
+    import re
+    P = HERE.parent / "out/j6/candidates/j6_candidate_pool.csv"
+    rows = list(csv.DictReader(open(P, encoding="utf-8")))
+    j5 = list(csv.DictReader(open(HERE.parent / "out/j5/candidates/j5_candidate_pool.csv", encoding="utf-8")))
+    assert rows and all(r["cand_id"].startswith("j6c") for r in rows)
+    assert not ({r["cand_id"] for r in rows} & {r["cand_id"] for r in j5}) and not ({r["title"] for r in rows} & {r["title"] for r in j5})
+    for r in rows:
+        assert r["status"] in ("CANDIDATE_UNVERIFIED", "DROPPED") and r["eval_eligible"] == "no" and r["provenance"] == "NONE" and r["human_verified"] == "no"
+        assert r["split"] == "J-train-candidate"
+        assert re.match(r"^(CC BY(-SA)? ?\d(\.\d)?|CC0|Public domain|PD.*)", r["licence"], re.I) and not re.search(r"\bNC\b|\bND\b", r["licence"])
+        assert not re.search(r"unsplash|pixabay|pexels|mixkit", " ".join((r["title"], r["credit"], r["author"])), re.I)
+        if r["status"] == "CANDIDATE_UNVERIFIED": assert int(r["ref_dmin"]) > 10
+    cov = json.loads((HERE.parent / "out/j6/candidates/j6_coverage_vs_quota.json").read_text())
+    assert all(c["t1_human_verified_now"] == 0 for c in cov["classes"])
