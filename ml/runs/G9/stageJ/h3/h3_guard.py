@@ -40,11 +40,16 @@ def load_batch(name, spec, problems):
     if sha(mp) != Path(str(mp) + ".sha256").read_text().split()[0]: problems.append(f"{name}: manifest hash mismatch"); return None
     if sha(ap) != Path(str(ap) + ".sha256").read_text().split()[0]: problems.append(f"{name}: agreement hash mismatch"); return None
     S = json.loads(sp.read_text()); A = json.loads(ap.read_text())
-    if S.get("provenance") != "HUMAN_INDEPENDENT" or A.get("provenance") != "HUMAN_INDEPENDENT": problems.append(f"{name}: not HUMAN_INDEPENDENT"); return None
+    if S.get("provenance") != "HUMAN_INDEPENDENT" or A.get("provenance") != "HUMAN_INDEPENDENT":
+        tiers = sorted({str(S.get("provenance")), str(A.get("provenance"))} - {"HUMAN_INDEPENDENT"})
+        extra = (" (HUMAN_REVIEWED_AI_ASSISTED = one non-blind reviewer of AI labels: recorded, but not double annotation or kappa evidence;"
+                 " the frozen gates do not accept it)") if "HUMAN_REVIEWED_AI_ASSISTED" in tiers else ""
+        problems.append(f"{name}: not HUMAN_INDEPENDENT, provenance {tiers}{extra}"); return None
     if S.get("sha256") != sha(mp) or S.get("agreement_sha256") != sha(ap): problems.append(f"{name}: summary does not bind manifest/agreement"); return None
     if not S.get("complete"): problems.append(f"{name}: R3/T4 adjudication or coverage incomplete")
     rows = list(csv.DictReader(open(mp, newline="", encoding="utf-8")))
-    if any(r.get("provenance") != "HUMAN_INDEPENDENT" for r in rows): problems.append(f"{name}: non-human rows in manifest")
+    if any(not JA.tier_allows(r.get("provenance", ""), "counts_for_eval_gates" if name in EVAL_BATCHES else "counts_for_training_gates") for r in rows):
+        problems.append(f"{name}: rows whose provenance tier is not HUMAN_INDEPENDENT in manifest")
     return dict(rows=rows, summary=S, agreement=A, manifest_sha256=sha(mp))
 
 
