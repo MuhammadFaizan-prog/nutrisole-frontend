@@ -69,8 +69,12 @@ def confusion(a: list, b: list, cats=LABELS) -> list:
     for x, y in zip(a, b): m[ix[x]][ix[y]] += 1
     return m
 
+def key_path(batch: str) -> str:
+    """Frozen blind key for a batch: pilot/train -> out/j_blind_key.csv; Stage J2 supplementary pilot2/train2 -> out/gaps/j2_blind_key.csv."""
+    return os.path.join(OUTD, "gaps", "j2_blind_key.csv") if batch in ("pilot2", "train2") else os.path.join(OUTD, "j_blind_key.csv")
+
 def load_key(batch: str) -> dict:
-    p = os.path.join(OUTD, "j_blind_key.csv")
+    p = key_path(batch)
     with open(p, newline="", encoding="utf-8-sig") as f:
         rows = [r for r in csv.DictReader(f) if r["batch"] == batch]
     if len({r["blind_id"] for r in rows}) != len(rows): raise ValueError("duplicate blind IDs in frozen key")
@@ -117,7 +121,7 @@ def agree(args):
                per_class=per, uncertain_A=la.count("uncertain"), uncertain_B=lb.count("uncertain"),
                confusion_labels=LABELS, confusion_A_rows_B_cols=confusion(la, lb) if both else None)
     rep.update(provenance=pair["provenance"], human_evidence=pair["evidence_kind"], csv_sha256=pair["sha256"], complete_independent_coverage=pair["complete"],
-               frozen_key_sha256=V.frozen_digest(os.path.join(OUTD, "j_blind_key.csv")), evidence_sha256=sha256_file(inputs / "human_evidence.json"))
+               frozen_key_sha256=V.frozen_digest(key_path(args.batch)), evidence_sha256=sha256_file(inputs / "human_evidence.json"))
     rep["floors"] = dict(kappa_class_min=0.85, kappa_supported_min=0.80,
                          kappa_class_ok=rep["kappa_class"] is not None and rep["kappa_class"] >= 0.85,
                          kappa_supported_ok=rep["kappa_supported"] is not None and rep["kappa_supported"] >= 0.80)
@@ -174,7 +178,7 @@ def review_sheets(rows, batch, out):
     except Exception: return
     key = load_key(batch); os.makedirs(os.path.join(out, "adjudication_sheets"), exist_ok=True)
     def path(k):
-        for p in (f"/workspace/work/g9i/cands/img/{k}.jpg", f"/workspace/work/g9j/train/img/{k}.jpg"):
+        for p in (f"/workspace/work/g9i/cands/img/{k}.jpg", f"/workspace/work/g9j/train/img/{k}.jpg", f"/workspace/work/g9j2/eval2/img/{k}.jpg", f"/workspace/work/g9j2/train2/img/{k}.jpg"):
             if os.path.exists(p): return p
     try: F = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 15)
     except Exception: F = ImageFont.load_default()
@@ -212,7 +216,7 @@ def verify(args):
     if sha256_file(rp) != Path(str(rp) + ".sha256").read_text().split()[0]: raise ValueError("agreement history hash mismatch")
     report = json.loads(rp.read_text(encoding="utf-8"))
     key = load_key(args.batch)
-    if report["batch"] != args.batch or report["frozen_key_sha256"] != V.frozen_digest(Path(OUTD) / "j_blind_key.csv"): raise ValueError("batch or frozen key changed")
+    if report["batch"] != args.batch or report["frozen_key_sha256"] != V.frozen_digest(Path(key_path(args.batch))): raise ValueError("batch or frozen key changed")
     ABp = based / "labels_AB.json"
     if sha256_file(ABp) != report["labels_AB_sha256"]: raise ValueError("original label history hash mismatch")
     AB = json.loads(ABp.read_text(encoding="utf-8")); A, B = AB["A"], AB["B"]
@@ -237,7 +241,7 @@ def verify(args):
                     adj[iid][k] = str(adj[iid][k] or "").strip()
                     if adj[iid][k] != "": V.boolean(adj[iid][k])
     key = load_key(args.batch); ids = sorted(set(A) | set(B) | set(key)); lic = {}
-    for lp in ("j_licence.csv", "j_licence_train.csv"):
+    for lp in ("j_licence.csv", "j_licence_train.csv", "gaps/j2_licence.csv"):
         p = os.path.join(OUTD, lp)
         if os.path.exists(p):
             with open(p, newline="", encoding="utf-8-sig") as f: lic.update({r["key"]: r for r in csv.DictReader(f)})
@@ -270,7 +274,8 @@ def verify(args):
             lab, cut, bag, other, status, by = "", 0, 0, "", "pending_adjudication", ""
         role, c13 = role_of(lab, cut, bag, other) if status.startswith("verified") else ("excluded" if status.startswith("excluded") else "pending", "")
         locations = [str(Path(d) / f"{k.get('key')}.jpg") for d in args.image_root]
-        locations += [f"/workspace/work/g9i/cands/img/{k.get('key')}.jpg", f"/workspace/work/g9j/train/img/{k.get('key')}.jpg"]
+        locations += [f"/workspace/work/g9i/cands/img/{k.get('key')}.jpg", f"/workspace/work/g9j/train/img/{k.get('key')}.jpg",
+                      f"/workspace/work/g9j2/eval2/img/{k.get('key')}.jpg", f"/workspace/work/g9j2/train2/img/{k.get('key')}.jpg"]
         img = next((p for p in locations if os.path.exists(p)), None) if k else None
         L = lic.get(k.get("key", ""), {})
         image_hash = sha256_file(img) if img else ""
@@ -295,7 +300,7 @@ def verify(args):
         w = csv.DictWriter(f, fieldnames=list(out[0])); w.writeheader(); w.writerows(out)
     digest = sha256_file(mp); open(mp + ".sha256", "w").write(f"{digest}  {os.path.basename(mp)}\n")
     ver = [r for r in out if r["status"].startswith("verified")]
-    eligible_split = "J-eval" if args.batch == "pilot" else "J-train"
+    eligible_split = "J-eval" if args.batch.startswith("pilot") else "J-train"
     sup = Counter(r["class13"] for r in ver if r["role"] == "supported" and r["split"] == eligible_split)
     neg = Counter(r["role"] for r in ver if r["split"] == eligible_split and r["role"] in ("unsupported", "other_class", "printed", "occluded", "cut", "supported_packaged"))
     gates = readiness_counts(args.batch, sup, neg, cnt)
@@ -307,13 +312,13 @@ def verify(args):
                 train_sources_by_class={c: sorted({r["source"] for r in ver if r["split"] == "J-train" and r["role"] == "supported" and r["class13"] == c}) for c in CLASS13.values()})
     if not pair["complete"]:
         summ["gates"]["adjudication_complete"] = False
-        summ["gates"]["R2_met" if args.batch == "pilot" else "T1_met"] = False
+        summ["gates"]["R2_met" if args.batch.startswith("pilot") else "T1_met"] = False
     json.dump(summ, open(os.path.join(args.out, f"verified_summary_{args.batch}.json"), "w"), indent=1)
     print(json.dumps(summ, indent=1)); return summ
 
 def readiness_counts(batch, sup, neg, cnt):
     """Frozen count gates (G9_stageJ_readiness.md R2 / T1). Packaged supported items and cut items count as negatives (must not be graded)."""
-    if batch == "pilot":
+    if batch.startswith("pilot"):   # pilot2 alone is reported with the same gates; R2 is judged on pilot + pilot2 combined (G9_stageJ_gaps.md)
         negs = sum(neg.values()); g = dict(
             supported_per_class_ge20={c: sup.get(c, 0) >= 20 for c in ("apple", "banana", "citrus", "tomato", "carrot")},
             supported_total_ge100=sum(sup.get(c, 0) for c in ("apple", "banana", "citrus", "tomato", "carrot")) >= 100, negatives_ge60=negs >= 60,
@@ -328,11 +333,11 @@ def readiness_counts(batch, sup, neg, cnt):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter); sp = ap.add_subparsers(dest="cmd", required=True)
-    a = sp.add_parser("agree"); a.add_argument("a"); a.add_argument("b"); a.add_argument("--batch", required=True, choices=["pilot", "train"])
+    a = sp.add_parser("agree"); a.add_argument("a"); a.add_argument("b"); a.add_argument("--batch", required=True, choices=["pilot", "train", "pilot2", "train2"])
     a.add_argument("--out", required=True); a.add_argument("--sheets", action="store_true", help="also draw adjudication contact sheets")
     a.add_argument("--evidence", required=True, help="hash-bound independent-human self-attestations JSON")
     a.add_argument("--ai-csv", action="append", default=[], help="known AI CSV to reject even if annotator names were changed")
-    v = sp.add_parser("verify"); v.add_argument("--batch", required=True, choices=["pilot", "train"]); v.add_argument("--agree-dir", required=True)
+    v = sp.add_parser("verify"); v.add_argument("--batch", required=True, choices=["pilot", "train", "pilot2", "train2"]); v.add_argument("--agree-dir", required=True)
     v.add_argument("--adjudicated"); v.add_argument("--out", required=True)
     v.add_argument("--image-root", action="append", default=[], help="original image directory (source keys as filenames), repeatable")
     v.add_argument("--identity-manifest", help="ingestion provenance CSV: key,image_sha256,source_url,file_url; missing chain never release-eligible")
