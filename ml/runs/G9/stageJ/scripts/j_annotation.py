@@ -135,6 +135,21 @@ def label_fingerprint(rows):
     return hashlib.sha256(json.dumps(payload, ensure_ascii=False).encode()).hexdigest()
 
 
+AI_NEAR_COPY_MIN_ITEMS = 20
+AI_NEAR_COPY_FRACTION = 0.95
+
+
+def ai_near_copy(rows, ai_rows):
+    """Fraction of shared item_ids whose label/name/what/tags payload equals a known AI table (None if too few shared)."""
+    fields = ["label", "other_produce_name", "occluded_or_printed_what"] + TAGS
+    key = lambda r: tuple(boolean(r.get(k), missing=k not in r) if k in TAGS else r.get(k, "").strip() for k in fields)
+    ai = {r["item_id"]: key(r) for r in ai_rows}
+    shared = [r for r in rows if r.get("item_id") in ai and r.get("label", "").strip()]
+    if len(shared) < AI_NEAR_COPY_MIN_ITEMS:
+        return None
+    return sum(key(r) == ai[r["item_id"]] for r in shared) / len(shared)
+
+
 def validate_ai(path, expected):
     rows = load_table(path, exact_schema=True)
     coverage(rows, expected, complete=True)
@@ -160,7 +175,8 @@ def validate_human_pair(a, b, evidence, batch, expected, ai_paths=()):
     known_ai = set(Path(p) for p in ai_paths)
     if imported.exists():
         known_ai.update(imported.glob("*/AI_ASSISTED_NOT_HUMAN/*.csv"))
-    ai_fingerprints = {label_fingerprint(load_table(p)) for p in known_ai}
+    ai_tables = [load_table(p) for p in sorted(known_ai)]
+    ai_fingerprints = {label_fingerprint(t) for t in ai_tables}
     names, tables = [], []
     complete = True
     for p, who, copy, h in zip((a, b), att, ("annotator1", "annotator2"), hashes):
@@ -185,6 +201,10 @@ def validate_human_pair(a, b, evidence, batch, expected, ai_paths=()):
                 raise ValueError("labelled export row lacks timestamp")
         if label_fingerprint(rows) in ai_fingerprints:
             raise ValueError("known AI annotation payload cannot pass as independent human evidence")
+        for t in ai_tables:
+            frac = ai_near_copy(rows, t)
+            if frac is not None and frac >= AI_NEAR_COPY_FRACTION:
+                raise ValueError(f"near-copy of a known AI annotation payload ({frac:.0%} identical) cannot pass as independent human evidence")
         names.append(name)
         tables.append(rows)
     if names[0].casefold() == names[1].casefold():
