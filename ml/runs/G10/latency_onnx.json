@@ -1,0 +1,32 @@
+{
+ "G3_prod_480": {
+  "onnx": "/workspace/work/cv/g3models/k11_480/det_yolo11n_640_raw.onnx",
+  "imgsz": 480,
+  "p50_ms": 43.75,
+  "p95_ms": 44.26
+ },
+ "G3_k11_640": {
+  "onnx": "/workspace/work/cv/g10/models/G3_k11_640_640.onnx",
+  "imgsz": 640,
+  "p50_ms": 75.52,
+  "p95_ms": 78.73
+ },
+ "mark360_y11_640": {
+  "onnx": "/workspace/work/cv/g10/models/mark360_y11_640.onnx",
+  "imgsz": 640,
+  "p50_ms": 74.43,
+  "p95_ms": 75.6
+ },
+ "mark360_y26_640": {
+  "onnx": "/workspace/work/cv/g10/models/mark360_y26_640.onnx",
+  "imgsz": 640,
+  "p50_ms": 63.85,
+  "p95_ms": 67.12
+ },
+ "henning_v8m_640": {
+  "onnx": "/workspace/work/cv/g10/models/henning_v8m_640.onnx",
+  "imgsz": 640,
+  "p50_ms": 634.2,
+  "p95_ms": 1420.83
+ }
+}
