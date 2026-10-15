@@ -1,0 +1,80 @@
+{
+ "nutrisole_G9J_pilot2_annotator1.zip": {
+  "items": 335,
+  "ids_match_key": true,
+  "placeholders_left": [],
+  "tool_code_identical_to_template": true,
+  "jpeg_decode_failures": 0,
+  "photos_with_exif": 0,
+  "fallback_rows": 335,
+  "fallback_order_matches": true,
+  "contact_sheets": 17,
+  "contact_sheets_expected": 17,
+  "has_guide": true,
+  "has_start": true,
+  "inline_scripts_node_check": [
+   true
+  ],
+  "mb": 23.2,
+  "sha256": "ab5d4f31537a9e02410eeefc1380c1efff934232e47f37f1dcfefca7c047ef58"
+ },
+ "nutrisole_G9J_pilot2_annotator2.zip": {
+  "items": 335,
+  "ids_match_key": true,
+  "placeholders_left": [],
+  "tool_code_identical_to_template": true,
+  "jpeg_decode_failures": 0,
+  "photos_with_exif": 0,
+  "fallback_rows": 335,
+  "fallback_order_matches": true,
+  "contact_sheets": 17,
+  "contact_sheets_expected": 17,
+  "has_guide": true,
+  "has_start": true,
+  "inline_scripts_node_check": [
+   true
+  ],
+  "mb": 23.2,
+  "sha256": "e5f1543814be40c84024c8ab88c46b1e18c6000028e89e437cd535ac008c4cdf"
+ },
+ "pilot2_copies_differ_in_order_same_ids": true,
+ "nutrisole_G9J_train2_annotator1.zip": {
+  "items": 646,
+  "ids_match_key": true,
+  "placeholders_left": [],
+  "tool_code_identical_to_template": true,
+  "jpeg_decode_failures": 0,
+  "photos_with_exif": 0,
+  "fallback_rows": 646,
+  "fallback_order_matches": true,
+  "contact_sheets": 33,
+  "contact_sheets_expected": 33,
+  "has_guide": true,
+  "has_start": true,
+  "inline_scripts_node_check": [
+   true
+  ],
+  "mb": 26.3,
+  "sha256": "5353caf7c3965bd3c42141d4457eae9f7e81153abada795a7ff7ea79afc25cea"
+ },
+ "nutrisole_G9J_train2_annotator2.zip": {
+  "items": 646,
+  "ids_match_key": true,
+  "placeholders_left": [],
+  "tool_code_identical_to_template": true,
+  "jpeg_decode_failures": 0,
+  "photos_with_exif": 0,
+  "fallback_rows": 646,
+  "fallback_order_matches": true,
+  "contact_sheets": 33,
+  "contact_sheets_expected": 33,
+  "has_guide": true,
+  "has_start": true,
+  "inline_scripts_node_check": [
+   true
+  ],
+  "mb": 26.3,
+  "sha256": "2433083569abaa73effa78c984169a1f31a3beda3c51cfc4ca18fa7f7625607a"
+ },
+ "train2_copies_differ_in_order_same_ids": true
+}
