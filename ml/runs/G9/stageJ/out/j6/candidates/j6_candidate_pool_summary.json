@@ -1,0 +1,36 @@
+{
+ "note": "J6 batch of unverified TRAINING candidates (Commons per-file CC/PD, same filters as J5). Not labels; never eval; query word is metadata only.",
+ "searched": 360,
+ "downloaded": 360,
+ "status": {
+  "CANDIDATE_UNVERIFIED": 267,
+  "DROPPED": 93
+ },
+ "candidates_by_query_class": {
+  "citrus_orange": 41,
+  "apple": 73,
+  "tomato": 45,
+  "hard_negative_object": 59,
+  "hard_negative_printed": 18,
+  "banana": 21,
+  "hard_negative_persimmon": 10
+ },
+ "licences": {
+  "CC BY-SA 4.0": 123,
+  "CC BY 4.0": 15,
+  "CC BY-SA 3.0": 36,
+  "CC BY 2.0": 16,
+  "Public domain": 38,
+  "CC0": 22,
+  "CC BY 2.5": 2,
+  "CC BY-SA 2.5": 3,
+  "CC BY 3.0": 5,
+  "CC BY-SA 2.0": 5,
+  "CC BY 1.0": 1,
+  "PDM-owner": 1
+ },
+ "dedupe": "pHash <= 10 vs 57,575 reference hashes (incl. M-TEST stored hashes); <= 6 vs the 162 J5 candidates and within pool",
+ "reference_manifest_sha256": "7b87f3e03ae2307c6ed0dd17af704ebf876ccdb982f0715ef428f46125a1e95d",
+ "banned_sources": "Pexels, Pixabay, Mixkit, Unsplash and stock-site credits refused",
+ "pixels": "/workspace/work/g9j6/cands/img (not in Git)"
+}
