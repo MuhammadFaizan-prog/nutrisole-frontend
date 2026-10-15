@@ -92,6 +92,24 @@ def test_ai_exact_schema_and_coverage(tmp_path):
         V.validate_ai(p, {"P001"})
 
 
+def test_ai_pilot2_requires_explicit_matching_batch(tmp_path):
+    p = tmp_path / "ai_pilot2.csv"
+    rows = table(p, name=V.AI_MARKER)
+    for r in rows:
+        r["pack_id"] = "G9J-pilot2"
+    save(p, rows)
+    expected = {"P001", "P002"}
+    result = V.validate_ai(p, expected, batch="pilot2")
+    assert result["provenance"] == V.AI_MARKER
+    assert result["counts"] == {"apple": 1, "banana": 1}
+    with pytest.raises(ValueError, match="pack_id"):
+        V.validate_ai(p, expected)
+    rows[1]["pack_id"] = "G9J-pilot"
+    save(p, rows)
+    with pytest.raises(ValueError, match="pack_id"):
+        V.validate_ai(p, expected, batch="pilot2")
+
+
 def test_human_evidence_required_even_for_perfect_labels(tmp_path):
     a, b = tmp_path / "a.csv", tmp_path / "b.csv"
     table(a)
@@ -317,7 +335,8 @@ def test_j2_batches_use_their_own_frozen_key():
     k1, k2 = J.load_key("pilot"), J.load_key("pilot2")
     if not k2:
         pytest.skip("j2 key not present")
-    assert J.key_path("pilot").endswith("out/j_blind_key.csv") and J.key_path("train2").endswith("out/gaps/j2_blind_key.csv")
+    assert Path(J.key_path("pilot")).as_posix().endswith("out/j_blind_key.csv")
+    assert Path(J.key_path("train2")).as_posix().endswith("out/gaps/j2_blind_key.csv")
     assert not set(k1) & set(k2) and not set(J.load_key("train")) & set(J.load_key("train2"))
     assert all(r["split"] == "J-eval" for r in k2.values()) and all(r["split"] == "J-train" for r in J.load_key("train2").values())
     assert all(V.re.fullmatch(r"[PT][0-9]{3,}", i) for i in list(k2) + list(J.load_key("train2")))

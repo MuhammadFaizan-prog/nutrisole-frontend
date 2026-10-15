@@ -133,3 +133,29 @@ Files: `out/gaps/` (j2_candidates.json, j2_licence.csv, j2_quarantine.csv, j2_au
 (adjudicator only), j2_batches.json, j2_packs.json, j2_pack_check.json, j2_eval_yield_projection.json, j2_training_gap.csv,
 j2_partition_stats.json, j2_readiness.json (BLOCKED), j2_source_original_retry.json). Scripts: `j2_audit.py`, `j2_select.py`, `j2_yield.py`,
 `j2_pack.py`, `j2_pack_check.py`, `j2_gap.py`. Collectors: `j2_collect_mendeley.py`, `j2_collect_commons.py` (images stored in the sandbox under /workspace/work/g9j2, not committed).
+
+## 10. Pilot 2 visual-review follow-up (2026-10-15, AI-assisted)
+
+The supplied 335-image Pilot 2 ZIPs were independently checked locally and all photographs visually reviewed.
+Versioned results are in `out/handoff/20261015_pilot2_visual_review/`, explicitly `AI_ASSISTED_NOT_HUMAN`.
+Counts: apple 44, banana 24, citrus/orange 37, tomato 23, carrot 25, other produce 14, printed/screen 49,
+occluded 0, uncertain 119. The post-hoc queue contains 233 checks (77 HIGH, 65 MEDIUM, 91 LOW).
+Many uncertain cases are clear no-target scenes or cooked foods under the annotation guide.
+
+The 63 packaging and 74 hidden-query categories above remain collection strata. They do not prove actual
+packaged/occluded evaluation coverage: this review finds only eight identifiable real-produce images with B
+(five with a showcase label), no definite primary occluded case, and four potential occlusion/main-item checks.
+Repeated/cropped views also require grouping; for example Pilot 1 P134 and Pilot 2 P731 show the cropped/wider
+foot-carrot photograph. No IDs, frozen memberships or earlier results were changed.
+
+Both original Pilot 2 HTML tools now pass an actual offline headless smoke test locally (335 export rows,
+autosave/reload, import, stable IDs and Unicode/CSV round-trip); this supplements the earlier sandbox limitation.
+The explicit Pilot 2 AI validation path, all 42 Stage J tests, all 111 ML tests and 28 protected runtime files pass.
+All 30 historical frozen-input hashes and the 14 existing J2 gap files are preserved. Available combined J1/J2
+metadata/pHashes show no cross-split conflict, but the earlier external reference hash store was not recovered.
+
+The review used 17 contact sheets and 100 additional native-package detail inspections; no Pilot 2 source
+original was viewed. Three original-file download attempts returned HTTP 429. Confidence remains subjective,
+and source licensing/original-byte identity still needs review. Human-verified remains **0**, kappa remains
+unavailable, and **H3 stays BLOCKED**. The projected training deficits in section 7, including the smaller banana,
+citrus and tomato shortages, remain unresolved by evaluation-image AI review.

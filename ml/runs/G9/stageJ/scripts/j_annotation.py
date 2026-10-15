@@ -150,11 +150,12 @@ def ai_near_copy(rows, ai_rows):
     return sum(key(r) == ai[r["item_id"]] for r in shared) / len(shared)
 
 
-def validate_ai(path, expected):
+def validate_ai(path, expected, *, batch="pilot"):
+    """Validate one AI batch without accepting another batch's pack identity."""
     rows = load_table(path, exact_schema=True)
     coverage(rows, expected, complete=True)
-    if any(r["pack_id"] != "G9J-pilot" for r in rows):
-        raise ValueError("AI CSV pack_id must be G9J-pilot")
+    if any(r["pack_id"] != f"G9J-{batch}" for r in rows):
+        raise ValueError(f"AI CSV pack_id must be G9J-{batch}")
     return dict(provenance=AI_MARKER, rows=rows, counts=dict(Counter(r["label"] for r in rows)),
                 sha256=digest(path), label_fingerprint=label_fingerprint(rows))
 

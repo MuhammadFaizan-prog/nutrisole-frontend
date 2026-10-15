@@ -1,0 +1,18 @@
+{
+  "provenance": "AUTOMATION_TEST_NOT_HUMAN",
+  "html_sha256": "d190aefb7b7de3a1a763d6d2ff333ec5fc63397bb66cac5ebdb44e1b22047e35",
+  "browser": "chrome.exe",
+  "browser_version": "145.0.7632.6",
+  "offline": true,
+  "rows": 335,
+  "labelled": 3,
+  "export_schema": true,
+  "export_sha256": "7edfaea9c3718fa15584733aaeaa20206d3d6462f884505ae55606bc0e5fb623",
+  "autosave_reload": true,
+  "stable_id_mapping": true,
+  "comma_quote_newline_unicode_roundtrip": true,
+  "import_roundtrip": true,
+  "page_errors": [],
+  "external_requests": [],
+  "passed": true
+}

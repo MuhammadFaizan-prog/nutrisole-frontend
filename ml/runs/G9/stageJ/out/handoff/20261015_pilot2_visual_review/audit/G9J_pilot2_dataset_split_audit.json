@@ -1,0 +1,12 @@
+{
+  "conflicts": [],
+  "quarantine_keys": [],
+  "items_checked": 1804,
+  "stored_phashes_checked": 1804,
+  "method": "person (uploader and artist unified), dataset, group, 64-bit pHash Hamming <=10",
+  "earlier_reference_hashes_available": false,
+  "limit": "Original image store, video/session IDs and /workspace/work/g9h reference hashes unavailable; no earlier holdout content opened.",
+  "note": "Recomputed from stored Stage J1+J2 metadata/pHashes. Commons family names adapted to the existing unified uploader/artist comparison; no manifest membership changed.",
+  "new_candidates_checked": 848,
+  "pilot2_ids_all_eval": true
+}

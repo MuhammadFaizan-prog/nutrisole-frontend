@@ -1,0 +1,127 @@
+{
+  "method": "64-bit packaged-JPEG pHash Hamming <=10 plus exact SHA256; candidates require visual confirmation",
+  "within_pilot2": [
+    {
+      "ids": [
+        "P512",
+        "P589"
+      ],
+      "hamming": 10,
+      "exact_bytes": false,
+      "status": "CANDIDATE_NOT_PROOF"
+    },
+    {
+      "ids": [
+        "P562",
+        "P616"
+      ],
+      "hamming": 10,
+      "exact_bytes": false,
+      "status": "CANDIDATE_NOT_PROOF"
+    },
+    {
+      "ids": [
+        "P583",
+        "P784"
+      ],
+      "hamming": 10,
+      "exact_bytes": false,
+      "status": "CANDIDATE_NOT_PROOF"
+    },
+    {
+      "ids": [
+        "P648",
+        "P787"
+      ],
+      "hamming": 8,
+      "exact_bytes": false,
+      "status": "CANDIDATE_NOT_PROOF"
+    },
+    {
+      "ids": [
+        "P697",
+        "P751"
+      ],
+      "hamming": 8,
+      "exact_bytes": false,
+      "status": "CANDIDATE_NOT_PROOF"
+    },
+    {
+      "ids": [
+        "P794",
+        "P834"
+      ],
+      "hamming": 10,
+      "exact_bytes": false,
+      "status": "CANDIDATE_NOT_PROOF"
+    }
+  ],
+  "across_pilot1_pilot2": [
+    {
+      "ids": [
+        "P122",
+        "P530"
+      ],
+      "hamming": 8,
+      "exact_bytes": false,
+      "status": "CANDIDATE_NOT_PROOF"
+    },
+    {
+      "ids": [
+        "P194",
+        "P530"
+      ],
+      "hamming": 10,
+      "exact_bytes": false,
+      "status": "CANDIDATE_NOT_PROOF"
+    },
+    {
+      "ids": [
+        "P079",
+        "P820"
+      ],
+      "hamming": 10,
+      "exact_bytes": false,
+      "status": "CANDIDATE_NOT_PROOF"
+    }
+  ],
+  "manual_related_views": [
+    {
+      "ids": [
+        "P134",
+        "P731"
+      ],
+      "kind": "same_photograph_different_crop",
+      "evidence": "Foot_carrot_(cropped).jpg versus Foot_carrot.jpg; visually matching forked carrot, hands and background"
+    },
+    {
+      "ids": [
+        "P205",
+        "P701"
+      ],
+      "kind": "related_still_life_scene",
+      "evidence": "Visually matching food still-life arrangement at different framing"
+    },
+    {
+      "ids": [
+        "P587",
+        "P737",
+        "P753"
+      ],
+      "kind": "related_fruit_bowl_views",
+      "evidence": "Visually matching bowl, wood surface, citrus and apple arrangement"
+    },
+    {
+      "ids": [
+        "P783",
+        "P794",
+        "P834"
+      ],
+      "kind": "related_carrot_views",
+      "evidence": "Similar carrot and dark work surface; distinct frames, not assumed independent scenes"
+    }
+  ],
+  "holdout_content_opened": false,
+  "membership_changed": false,
+  "limitation": "pHash may miss crops and may match unrelated images; counts are images, not independent scenes. Manual scene groups are examples, not an exhaustive grouping."
+}

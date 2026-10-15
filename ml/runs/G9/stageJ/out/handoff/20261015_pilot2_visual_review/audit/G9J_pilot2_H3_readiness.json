@@ -1,0 +1,95 @@
+{
+  "status": "BLOCKED",
+  "training_authorized": false,
+  "user_go_required_after_readiness": true,
+  "gpu_training_started": false,
+  "stage_j_complete": false,
+  "requirements": [
+    {
+      "id": "R1",
+      "status": "BLOCKED",
+      "missing_evidence": [
+        "Two independent full pilot CSVs, hash-bound human attestations, original kappa(class)>=0.85 and kappa(supported)>=0.80."
+      ]
+    },
+    {
+      "id": "R2",
+      "status": "BLOCKED",
+      "missing_evidence": [
+        "Human-verified J-eval: >=20 clean per priority class, >=100 total, >=60 negatives; no AI/source labels count."
+      ]
+    },
+    {
+      "id": "R3",
+      "status": "BLOCKED",
+      "missing_evidence": [
+        "100% independent coverage and third-human decisions/reasons for all disagreements, uncertain items and subtype/tag mismatches."
+      ]
+    },
+    {
+      "id": "R4",
+      "status": "BLOCKED",
+      "missing_evidence": [
+        "Commit and timestamp evidence for the final manifest + SHA256 freeze before any J-eval model run; no such freeze exists."
+      ]
+    },
+    {
+      "id": "T1",
+      "status": "BLOCKED",
+      "missing_evidence": [
+        ">=150 clean independently reviewed J-train examples/class, >=2 independent sources/class and documented handheld/phone-style coverage."
+      ]
+    },
+    {
+      "id": "T2",
+      "status": "BLOCKED",
+      "missing_evidence": [
+        ">=150 human-verified real-photo J-train negatives."
+      ]
+    },
+    {
+      "id": "T3",
+      "status": "BLOCKED",
+      "missing_evidence": [
+        ">=10 human-verified clean examples/class in J-dev, never counted as J-train."
+      ]
+    },
+    {
+      "id": "T4",
+      "status": "BLOCKED",
+      "missing_evidence": [
+        "Independent training-batch CSVs, original kappa(class)>=0.85 and completed adjudication."
+      ]
+    },
+    {
+      "id": "T5",
+      "status": "BLOCKED",
+      "missing_evidence": [
+        "Per-image permission + attribution tied to downloaded identity, raw image/source/session provenance and pHash audit against earlier stored reference hashes; preserve all exclusions."
+      ]
+    }
+  ],
+  "metric_subquotas": {
+    "status": "PENDING_HUMAN_LABELS",
+    "unsupported": 25,
+    "printed": 10,
+    "packaging": 10,
+    "occluded": 10,
+    "note": "R2 subquota deficits block dependent E metrics; do not fill them from training sources."
+  },
+  "future_model_gates": {
+    "genuine_pooled_min": 0.6,
+    "genuine_commons_min": 0.6,
+    "genuine_phone_min": 0.5,
+    "genuine_per_class_min": 0.4,
+    "wrong_id_max": 0.02,
+    "wrong_identity_grades": 0,
+    "note": "Frozen Wilson rules and remaining E1-E8 apply. These are future acceptance gates, not training permission."
+  },
+  "human_verified_images": 0,
+  "independent_human_exports_received": 0,
+  "kappa": null,
+  "current_ai_review_images": 335,
+  "ai_rows_used_for_human_gates": 0,
+  "pilot2_remains_evaluation": true
+}

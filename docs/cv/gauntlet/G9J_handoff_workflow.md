@@ -173,3 +173,17 @@ the original kappa in the verified summary. When using it on future reports, add
 `document_sha256`; do not invent values or reuse another run. Audit R4 (committed pre-model freeze), source/session diversity,
 original-byte licensing and all earlier reference hashes separately. The current report names every missing R/T prerequisite.
 All gates must be satisfied and reported to the user before a later explicit training go. No tool here launches H3/Kaggle/GPU work.
+
+## Supplementary Pilot 2 AI visual review (2026-10-15)
+
+All 335 P501–P835 images have a separate AI visual assessment at
+`ml/runs/G9/stageJ/out/handoff/20261015_pilot2_visual_review/README.md`.
+Use that folder's `REPRODUCE.py` for the Pilot 2 CSV and optional supplied ZIP recheck; the original
+`j_handoff.py` CLI remains the first pilot's 265-image audit. Call `j_annotation.validate_ai(..., batch="pilot2")`
+for the new `G9J-pilot2` export. The default still validates `G9J-pilot` and rejects a Pilot 2 pack.
+
+The primary annotation CSV alone is under `AI_ASSISTED_NOT_HUMAN/`, so the existing automatic known-AI
+registry can reject it from human inputs. The 335-row detail table and 233-row post-hoc queue sit outside
+that registry subfolder. Keep all of these away from independent annotators until exports are complete.
+Human `agree` / `verify` operations use `--batch pilot2`, and training pack 2 uses `--batch train2`.
+Two independent people and a third adjudicator remain required; the AI review supplies no human verification.
