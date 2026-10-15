@@ -1,0 +1,129 @@
+{
+ "label": "HOST-SIDE (sandbox CPU, onnxruntime Python 1.31.0; device uses onnxruntime-react-native 1.24.3). Not a phone measurement.",
+ "models": {
+  "h2": {
+   "file": "h2_mnv3s.onnx",
+   "sha256_matches_device_models_ts": true,
+   "input": {
+    "name": "images",
+    "shape": [
+     "n",
+     3,
+     224,
+     224
+    ],
+    "type": "tensor(float)"
+   },
+   "output": {
+    "name": "probs",
+    "shape": [
+     "n",
+     13
+    ],
+    "type": "tensor(float)",
+    "run_shape": [
+     1,
+     13
+    ]
+   },
+   "app_spec": {
+    "input": {
+     "name": "images",
+     "shape": [
+      "n",
+      3,
+      224,
+      224
+     ]
+    },
+    "output": {
+     "name": "probs",
+     "shape": [
+      "n",
+      13
+     ]
+    }
+   },
+   "io_errors": [],
+   "host_init_ms": 19.3,
+   "host_rss_growth_mb": 19.1,
+   "host_infer_ms_median_of_10": 3.8,
+   "host_threads": 2,
+   "weights_mb": 5.85
+  },
+  "g3_det": {
+   "file": "det_yolo11n_640_raw.onnx",
+   "sha256_matches_device_models_ts": true,
+   "input": {
+    "name": "images",
+    "shape": [
+     1,
+     3,
+     480,
+     480
+    ],
+    "type": "tensor(float)"
+   },
+   "output": {
+    "name": "output0",
+    "shape": [
+     1,
+     16,
+     4725
+    ],
+    "type": "tensor(float)",
+    "run_shape": [
+     1,
+     16,
+     4725
+    ]
+   },
+   "app_spec": {
+    "input": {
+     "name": null,
+     "shape": [
+      1,
+      3,
+      480,
+      480
+     ]
+    },
+    "output": {
+     "name": null,
+     "shape": [
+      1,
+      16,
+      4725
+     ]
+    }
+   },
+   "io_errors": [],
+   "host_init_ms": 27.5,
+   "host_rss_growth_mb": 13.6,
+   "host_infer_ms_median_of_10": 45.2,
+   "host_threads": 2,
+   "weights_mb": 10.11
+  }
+ },
+ "sample_images": {
+  "source": "unverified J5 training candidates (Commons CC/PD), first 16 sorted; not eval, not M-TEST",
+  "ids": [
+   "j5c00c63d71",
+   "j5c01483d3e",
+   "j5c018f8a40",
+   "j5c02a79b1a",
+   "j5c03713fa0",
+   "j5c060f38c2",
+   "j5c067c10c8",
+   "j5c07134c20",
+   "j5c0b5c1e5e",
+   "j5c0c31f16b",
+   "j5c0d2128d1",
+   "j5c10639aa0",
+   "j5c12b10308",
+   "j5c13df2ab2",
+   "j5c142c3b6e",
+   "j5c1763ac10"
+  ]
+ }
+}
