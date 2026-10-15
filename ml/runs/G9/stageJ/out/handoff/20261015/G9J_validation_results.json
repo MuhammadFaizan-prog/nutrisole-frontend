@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-15",
+  "base_commit": "4d35a7c426cbb2820fa80d98e2a7a357bc0c3d36",
+  "python": {
+    "passed": 105,
+    "failed": 0,
+    "stage_j_subset_passed": 36,
+    "utf8_mode": true,
+    "legacy_camera_test_root_adapted_in_process": true
+  },
+  "native_tests": {
+    "passed": 122,
+    "failed": 0
+  },
+  "domain_tests": {
+    "passed": 5
+  },
+  "expansion_tests": {
+    "passed": 8
+  },
+  "sites_tests": {
+    "passed": 4
+  },
+  "runtime_integrity": {
+    "protected_files": 28,
+    "status": "PASS"
+  },
+  "production_build": "PASS",
+  "offline_annotation_tools": {
+    "copies": 2,
+    "exported_rows_per_copy": 265,
+    "status": "PASS",
+    "provenance": "AUTOMATION_TEST_NOT_HUMAN"
+  },
+  "native_typecheck": {
+    "status": "FAIL_UNCHANGED_TEST_TYPES",
+    "error": "Buffer/URL overload; URLSearchParamsIterator Symbol.dispose"
+  },
+  "rendered_runtime": {
+    "standard_status": "BLOCKED_MISSING_BROWSER_BINARY",
+    "cached_browser": "Chromium145 isolated profile",
+    "cached_passed": 6,
+    "cached_failed": 2,
+    "failures": [
+      "cold navigation timeout",
+      "keyboard dismissal assertion"
+    ],
+    "keyboard_failure_reproduced_on_unchanged_checkpoint": true
+  },
+  "review": {
+    "provenance": "AI_CODE_REVIEW_NOT_HUMAN_ANNOTATION",
+    "findings_fixed": 3,
+    "rechecked": true
+  },
+  "human_exports_received": 0,
+  "human_kappa": null,
+  "ai_rows_imported": 0,
+  "h3": "BLOCKED",
+  "training_started": false,
+  "all_repository_checks_passed": false,
+  "protected_sources_changed": false,
+  "earlier_holdout_content_opened": false
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "provenance": "HUMAN_INDEPENDENT",
+  "batch": "pilot",
+  "annotators": [
+    {
+      "name": "",
+      "copy": "annotator1",
+      "csv_sha256": "",
+      "independently_labelled": false,
+      "no_ai_or_peer_labels_seen": false,
+      "attested_at": ""
+    },
+    {
+      "name": "",
+      "copy": "annotator2",
+      "csv_sha256": "",
+      "independently_labelled": false,
+      "no_ai_or_peer_labels_seen": false,
+      "attested_at": ""
+    }
+  ]
+}

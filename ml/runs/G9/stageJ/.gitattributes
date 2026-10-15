@@ -1,0 +1,2 @@
+# Keep hashed evidence byte-identical when exchanged between Windows and Linux.
+out/handoff/** -text whitespace=cr-at-eol

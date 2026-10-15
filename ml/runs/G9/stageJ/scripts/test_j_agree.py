@@ -2,6 +2,7 @@
 import csv, json, os, sys, tempfile
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import j_agree as J
+import j_annotation as V
 
 COLS = ["pack_id", "copy", "annotator", "item_id", "order_index", "label", "other_produce_name", "occluded_or_printed_what", "cut", "bag", "multi", "rotten_damaged", "note", "seconds", "labelled_at"]
 def write(path, name, rows):
@@ -9,7 +10,19 @@ def write(path, name, rows):
         w = csv.writer(f); w.writerow(COLS)
         for k, (iid, lab, *rest) in enumerate(rows):
             other = rest[0] if rest else ""; cut = rest[1] if len(rest) > 1 else 0; bag = rest[2] if len(rest) > 2 else 0
-            w.writerow(["G9J-test", "x", name, iid, k + 1, lab, other, "", cut, bag, 0, 0, "", 3, ""])
+            copy = "annotator1" if name == "Ann A" else "annotator2"
+            w.writerow(["G9J-pilot", copy, name, iid, k + 1, lab, other, "", cut, bag, 0, 0, "", 3, "2026-10-15T10:00:00Z"])
+
+def human_evidence(tmp, pa, pb, batch):
+    # Synthetic test attestations exist only in temporary fixtures, never project reports.
+    ev = dict(schema_version=1, provenance="HUMAN_INDEPENDENT", batch=batch, annotators=[])
+    for p, copy in ((pa,"annotator1"),(pb,"annotator2")):
+        name = V.load_table(p)[0]["annotator"]
+        ev["annotators"].append(dict(name=name, copy=copy, csv_sha256=V.digest(p), independently_labelled=True,
+                                     no_ai_or_peer_labels_seen=True, attested_at="2026-10-15T11:00:00Z"))
+    p = os.path.join(tmp, "evidence.json")
+    with open(p,"w",encoding="utf-8") as f: json.dump(ev,f)
+    return p
 
 def test_kappa_known_2x2():
     # table [[20,5],[10,15]]: po=0.7, pe=0.5 -> kappa=0.4
@@ -39,14 +52,14 @@ def _pair(tmp, rows_a, rows_b):
     pa, pb = os.path.join(tmp, "a.csv"), os.path.join(tmp, "b.csv"); write(pa, "Ann A", rows_a); write(pb, "Ann B", rows_b); return pa, pb
 
 def test_agree_and_verify_flow(monkeypatch):
-    monkeypatch.setattr(J, "load_key", lambda batch: {})
+    monkeypatch.setattr(J, "load_key", lambda batch: {f"P{i:03}":dict(split="J-eval") for i in range(1,11)})
     tmp = tempfile.mkdtemp()
     ra = [("P001", "apple"), ("P002", "banana"), ("P003", "citrus_orange"), ("P004", "tomato"), ("P005", "carrot"), ("P006", "uncertain"),
           ("P007", "other_produce", "lemon_or_lime"), ("P008", "apple", "", 0, 1), ("P009", "printed_or_screen"), ("P010", "occluded")]
     rb = [("P001", "apple"), ("P002", "banana"), ("P003", "other_produce", "lemon_or_lime"), ("P004", "tomato"), ("P005", "carrot"), ("P006", "apple"),
           ("P007", "other_produce", "lemon_or_lime"), ("P008", "apple", "", 0, 0), ("P009", "printed_or_screen")]          # P010 missing in B
     pa, pb = _pair(tmp, ra, rb); out = os.path.join(tmp, "agree")
-    rep = J.main(["agree", pa, pb, "--batch", "pilot", "--out", out])
+    rep = J.main(["agree", pa, pb, "--batch", "pilot", "--out", out, "--evidence", human_evidence(tmp,pa,pb,"pilot")])
     assert rep["n_both"] == 9 and rep["annotator_A"] == "Ann A" and rep["annotator_B"] == "Ann B"
     assert abs(rep["percent_agreement"] - 7 / 9) < 1e-3
     sheet = list(csv.DictReader(open(os.path.join(out, "adjudication_sheet.csv"))))
@@ -63,12 +76,17 @@ def test_agree_and_verify_flow(monkeypatch):
     for r in sheet:
         r["final_label"] = {"P003": "citrus_orange", "P006": "exclude", "P008": "apple", "P010": "occluded"}[r["item_id"]]
         if r["item_id"] == "P008": r["final_bag"] = "1"
+        if r["item_id"] == "P010":
+            for tag in ("final_cut","final_bag","final_multi","final_rotten_damaged"): r[tag] = "0"
+            r["final_occluded_or_printed_what"] = "unknown"
         r["adjudicator"] = "Adj"
+        r["adjudicator_reason"] = "Synthetic fixture: original-photo inspection decision."
     adjp = os.path.join(tmp, "adj.csv")
     with open(adjp, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(sheet[0])); w.writeheader(); w.writerows(sheet)
     s1 = J.main(["verify", "--batch", "pilot", "--agree-dir", out, "--adjudicated", adjp, "--out", os.path.join(tmp, "v1")])
-    assert s1["complete"] and s1["status"]["excluded_by_adjudicator"] == 1 and s1["n_verified"] == 9
+    assert not s1["complete"]  # missing independent B label cannot be repaired retroactively by adjudication
+    assert s1["status"]["excluded_by_adjudicator"] == 1 and s1["n_verified"] == 9
     assert s1["supported_clean_by_class"]["citrus"] == 1 and s1["supported_clean_by_class"]["apple"] == 1
     assert s1["negatives_by_role"]["supported_packaged"] == 1 and s1["negatives_by_role"]["other_class"] == 1 and s1["negatives_by_role"]["occluded"] == 1
     assert s1["gates"]["R2_met"] is False                                              # far too few items
@@ -86,11 +104,12 @@ def test_gate_counts_met():
 def test_fallback_csv_minimal_columns(monkeypatch):
     monkeypatch.setattr(J, "load_key", lambda batch: {})
     tmp = tempfile.mkdtemp()
-    for n, labs in (("a", ["apple", "Banana"]), ("b", ["apple", "9"])):
+    for n, labs in (("a", ["apple", "banana"]), ("b", ["apple", "uncertain"])):
         with open(os.path.join(tmp, n + ".csv"), "w", newline="") as f:
             w = csv.writer(f); w.writerow(["item_id", "label", "annotator"]); [w.writerow([f"T00{i+1}", l, n]) for i, l in enumerate(labs)]
-    rep = J.main(["agree", os.path.join(tmp, "a.csv"), os.path.join(tmp, "b.csv"), "--batch", "train", "--out", os.path.join(tmp, "o")])
-    assert rep["n_both"] == 2 and rep["n_to_adjudicate"] == 1
+    pa,pb = os.path.join(tmp,"a.csv"),os.path.join(tmp,"b.csv")
+    rep = J.main(["agree",pa,pb,"--batch","train","--out",os.path.join(tmp,"o"),"--evidence",human_evidence(tmp,pa,pb,"train")])
+    assert rep["n_both"] == 2 and rep["n_to_adjudicate"] == 2  # absent tag columns remain unknown
 
 def test_wilson_and_gate_rules():
     import j_gates as G

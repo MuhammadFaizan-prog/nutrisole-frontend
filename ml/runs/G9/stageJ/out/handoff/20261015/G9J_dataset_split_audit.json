@@ -1,0 +1,42 @@
+{
+  "conflicts": [],
+  "quarantine_keys": [],
+  "items_checked": 956,
+  "stored_phashes_checked": 956,
+  "method": "person (uploader and artist unified), dataset, group, 64-bit pHash Hamming <=10",
+  "earlier_reference_hashes_available": false,
+  "limit": "Original image store, video/session IDs and /workspace/work/g9h reference hashes unavailable; no earlier holdout content opened.",
+  "manifest_mismatch_keys": [],
+  "stageI_eval_difference": {
+    "stageI": 486,
+    "stageJ": 485,
+    "removed": [
+      "c0350"
+    ],
+    "added": []
+  },
+  "previous_quarantines_preserved": {
+    "tveg97559e55": "near-dup of an earlier reference set (Hamming 10)",
+    "tveg33d06af6": "near-dup of an earlier reference set (Hamming 10)",
+    "tveg9f49f771": "near-dup of an earlier reference set (Hamming 10)",
+    "tcm0054": "near-dup of an earlier reference set (Hamming 0)",
+    "tcm0055": "near-dup of an earlier reference set (Hamming 0)",
+    "tcm0056": "near-dup of an earlier reference set (Hamming 0)",
+    "tcm0057": "near-dup of an earlier reference set (Hamming 0)",
+    "tcm0060": "near-dup of an earlier reference set (Hamming 0)",
+    "tcm0061": "near-dup of an earlier reference set (Hamming 0)",
+    "tcm0062": "near-dup of an earlier reference set (Hamming 0)",
+    "tcm0063": "near-dup of an earlier reference set (Hamming 0)",
+    "tcm0098": "near-dup of an earlier reference set (Hamming 0)",
+    "c0040": "a:joachim beuckelaer also in J-eval (source separation)",
+    "c0113": "a:nenad stojkovic also in J-eval (source separation)"
+  },
+  "licence_exclusions_preserved": [
+    "c0031",
+    "c0119",
+    "c0187",
+    "c0222",
+    "c0326",
+    "c0350"
+  ]
+}

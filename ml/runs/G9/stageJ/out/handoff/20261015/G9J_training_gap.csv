@@ -1,0 +1,6 @@
+label,j_train_source_candidates,human_verified_clean,target,additional_clean_needed_even_if_every_candidate_passes,actual_human_verified_shortfall,source_collections,requirements
+apple,20,0,150,130,150,commons,"licensed diverse phone close-ups; >=2 independent sources; exclude eval sources, video/session/near-duplicate overlap"
+banana,7,0,150,143,150,commons,"licensed diverse phone close-ups; >=2 independent sources; exclude eval sources, video/session/near-duplicate overlap"
+citrus_orange,135,0,150,15,150,citrus_tw;commons;commons_t,"licensed diverse phone close-ups; >=2 independent sources; exclude eval sources, video/session/near-duplicate overlap"
+tomato,14,0,150,136,150,commons;veg_in,"licensed diverse phone close-ups; >=2 independent sources; exclude eval sources, video/session/near-duplicate overlap"
+carrot,138,0,150,12,150,commons;commons_t;veg_bd;veg_in,"licensed diverse phone close-ups; >=2 independent sources; exclude eval sources, video/session/near-duplicate overlap"

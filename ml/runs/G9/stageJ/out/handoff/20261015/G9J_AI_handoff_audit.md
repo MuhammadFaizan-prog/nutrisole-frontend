@@ -1,0 +1,19 @@
+# G9 Stage J AI handoff audit — 2026-10-15
+
+**H3: BLOCKED. Stage J human verification is pending. No training or model promotion occurred.**
+
+Both original pilot ZIPs were extracted into temporary directories without modifying them. Package checks: [{"package": "nutrisole_G9J_pilot_annotator1.zip", "sha256": "d1af6dfac8fd4de6732e56887b5fec8c671b96361d61a41685f62b23c82a9e9e", "checks": {"count_265": true, "expected_ids": true, "no_duplicates": true, "no_corrupt": true, "original_package_sha256": true, "correct_copy": true, "correct_pack": true, "export_schema": true, "fallback_order": true, "offline_resources": true, "authoritative_guide": true}, "pass_all": true}, {"package": "nutrisole_G9J_pilot_annotator2.zip", "sha256": "261f74f0496de884f659f169b6937faac843856cf6c34dc9cf9e2066b7ce9ab6", "checks": {"count_265": true, "expected_ids": true, "no_duplicates": true, "no_corrupt": true, "original_package_sha256": true, "correct_copy": true, "correct_pack": true, "export_schema": true, "fallback_order": true, "offline_resources": true, "authoritative_guide": true}, "pass_all": true}]. Stable-ID/image comparison: True; different order: True. All images are package JPEGs bounded to 640 pixels, not full-resolution source originals. Full-resolution difficult-case review remains pending.
+
+AI CSV imported: 0 rows. Missing required files: nutrisole_G9J_AI_assisted_pilot_labels_265.csv, nutrisole_G9J_AI_review_queue.csv, nutrisole_G9J_AI_annotation_handoff_README.txt. Errors: []. The request's distribution (including 81 uncertain) and 113-row queue are reported claims, not verified inputs. No rows were invented. A supplied valid AI CSV is preserved byte-for-byte under AI_ASSISTED_NOT_HUMAN with its SHA256.
+
+G9J_review_priority.csv covers all 265 pilot IDs for post-hoc checks, using clearly marked source metadata/quality proxies; original AI queue missing. It is not a replacement for the missing 113-row queue. Source-tagged occlusion candidates are P020, P052, P082, P143, P197; their source titles include art/reliefs and may instead be printed/artificial/no-target. All need genuine independent labeling; source tags do not settle the answer.
+
+Found 5 exact/perceptual duplicate candidates within pilot (see separate CSV). Source-level splits rechecked on 956 stored items; no new split changes. Earlier locked-reference stores, original file hashes, video/session records and full-resolution images are absent. Historical licensing records cover 742 Stage I + 276 extra training candidates. Six license exclusions and 14 quarantines remain. Every unbound original-byte identity remains release-quarantined; recorded CC/PD metadata is not proof that a particular packaged JPEG is that licensed original.
+
+Training inventory is 461 representatives (382 J-train + 79 J-dev) per the actual frozen key, not the stale 458 guide statement. Original training ZIPs/image files are missing; prepared blank CSVs cannot replace those photos. See training pack/gap reports.
+
+Changes extend the existing agreement workflow with strict import, provenance/independence evidence, known-AI rejection, all subtype/tag comparisons, immutable agreement history, a distinct third adjudicator and reason, missing-tag handling, and undefined-kappa handling. Human self-attestation is necessary but cannot cryptographically prove humanity or honesty.
+
+G3 champion configuration, H0/H1/H2 history, grading/ripeness, prices, nutrition, camera, backend and lifestyle modules were not edited. Model checkpoint binaries are not present in this Windows checkout; existing artifact references remain intact. No claim is made that missing binary checkpoints were locally revalidated. Frozen file hashes are recorded in G9J_frozen_inputs.json.
+
+See G9J_human_annotation_status.md for the exact human handoff and docs/cv/gauntlet/G9J_handoff_workflow.md for reproducible commands. This directory is lead/adjudicator-only until both independent exports are complete.
