@@ -1,0 +1,147 @@
+# G9 Stage J7 (cv-gauntlet-device ONLY; never main, never deploy): installable Android QA APK for P1 phone testing.
+# - Release build (JS bundle embedded, no Metro), signed with the committed DEBUG keystore only; no secrets are used or embedded.
+# - QA flavour = NUTRISOLE_QA=1 at bundle time: metro.config.js swaps src/cv/device/flags.ts (false) for flags.qa.ts (true), so the
+#   debug CV pipeline is on in this APK while the committed source / production bundle stays unchanged.
+# - ONNX weights are NOT in this branch's history: fetched from the separate orphan branch qa-models-j7, pinned to commit
+#   QA_MODELS_COMMIT, sha256 + size checked against native/src/cv/device/models.ts, copied to android assets/models/ in the runner
+#   workspace only (never committed here; native/android/.gitignore blocks it).
+# - arm64-v8a only (size). Artifact: nutrisole-qa-apk-<sha7> (APK + .sha256 + build-info.txt).
+name: Android QA APK (cv-gauntlet-device)
+
+on:
+  push:
+    branches: [cv-gauntlet-device]
+  pull_request:
+    branches: [cv-gauntlet]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-qa-apk-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  qa-apk:
+    # pull_request: only PR #2 (cv-gauntlet-device -> cv-gauntlet)
+    if: github.event_name != 'pull_request' || github.event.pull_request.number == 2
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      QA_MODELS_COMMIT: 31219708694fb6ff202c124db7cc82eb8d7c8f16   # branch qa-models-j7 (orphan, never merge)
+      SRC_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      BT: 36.0.0
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            native/package-lock.json
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0 ndk;27.1.12297006 cmake;3.22.1'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Versions
+        run: |
+          node -v; npm -v; java -version 2>&1 | head -1
+          echo "SRC_SHA=$SRC_SHA"; ls "$ANDROID_HOME/ndk" "$ANDROID_HOME/build-tools"
+
+      - name: npm ci (root, shared screens/assets used by the native bundle)
+        run: npm ci --no-audit --no-fund
+
+      - name: npm ci (native)
+        working-directory: native
+        run: npm ci --no-audit --no-fund
+
+      - name: Native tests (committed flags, flag OFF)
+        working-directory: native
+        run: npm test
+
+      - name: Fetch + verify bundled QA models (not committed)
+        run: |
+          set -euo pipefail
+          dest=native/android/app/src/main/assets/models
+          mkdir -p "$dest"
+          node -e '
+            const s = require("fs").readFileSync("native/src/cv/device/models.ts", "utf8");
+            for (const k of ["h2", "g3_det"]) {
+              const m = s.match(new RegExp(k + ": \\{ file: \x27([^\x27]+)\x27, bytes: (\\d+), sha256: \x27([0-9a-f]{64})\x27"));
+              if (!m) { console.error("cannot parse " + k); process.exit(1); }
+              console.log(m[1] + " " + m[2] + " " + m[3]);
+            }' > /tmp/models.txt
+          cat /tmp/models.txt
+          while read -r file bytes sha; do
+            curl -fsSL --retry 3 -o "$dest/$file" "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${QA_MODELS_COMMIT}/models/$file"
+            got=$(sha256sum "$dest/$file" | cut -d' ' -f1); size=$(stat -c %s "$dest/$file")
+            echo "$file size=$size sha256=$got"
+            [ "$got" = "$sha" ] && [ "$size" = "$bytes" ] || { echo "::error::model $file does not match models.ts"; exit 1; }
+          done < /tmp/models.txt
+
+      - name: Gradle assembleRelease (QA flags, arm64-v8a, debug keystore)
+        working-directory: native/android
+        env:
+          NUTRISOLE_QA: '1'
+        run: ./gradlew :app:assembleRelease -PreactNativeArchitectures=arm64-v8a --no-daemon --stacktrace
+
+      - name: Inspect APK (badging, manifest, bundle, models, native libs) + sha256
+        run: |
+          set -euo pipefail
+          sha7=${SRC_SHA:0:7}
+          src=native/android/app/build/outputs/apk/release/app-release.apk
+          out=dist-qa; mkdir -p $out
+          apk=$out/nutrisole-qa-${sha7}.apk
+          cp "$src" "$apk"
+          aapt2="$ANDROID_HOME/build-tools/$BT/aapt2"
+          {
+            echo "source_commit=$SRC_SHA"
+            echo "run=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo "apk=$(basename $apk) bytes=$(stat -c %s $apk)"
+            echo "apk_sha256=$(sha256sum $apk | cut -d' ' -f1)"
+            echo "== badging"; "$aapt2" dump badging "$apk"
+            echo "== permissions"; "$aapt2" dump permissions "$apk"
+            echo "== manifest (merged, from APK)"; "$aapt2" dump xmltree --file AndroidManifest.xml "$apk"
+            echo "== unzip -l"; unzip -l "$apk"
+            echo "== bundled model sha256"
+            rm -rf /tmp/apkx; mkdir -p /tmp/apkx; unzip -q "$apk" 'assets/models/*' 'assets/index.android.bundle' -d /tmp/apkx
+            sha256sum /tmp/apkx/assets/models/*
+            echo "== QA flag marker in JS bundle (count)"; grep -a -c NUTRISOLE_QA_FLAGS_ON /tmp/apkx/assets/index.android.bundle || true
+          } | tee $out/build-info.txt
+          (cd $out && sha256sum "$(basename $apk)" > "$(basename $apk).sha256")
+          echo "APK_NAME=$(basename $apk)" >> "$GITHUB_ENV"
+          echo "SHA7=$sha7" >> "$GITHUB_ENV"
+          # hard checks
+          unzip -l "$apk" | grep -q 'assets/index.android.bundle' || { echo "::error::no JS bundle"; exit 1; }
+          unzip -l "$apk" | grep -q 'assets/models/h2_mnv3s.onnx' || { echo "::error::h2 model missing"; exit 1; }
+          unzip -l "$apk" | grep -q 'assets/models/det_yolo11n_640_raw.onnx' || { echo "::error::g3 model missing"; exit 1; }
+          "$aapt2" dump permissions "$apk" | grep -q 'android.permission.CAMERA' || { echo "::error::CAMERA permission missing"; exit 1; }
+          unzip -l "$apk" | grep -q 'lib/arm64-v8a/libonnxruntime.so' || { echo "::error::onnxruntime .so missing"; exit 1; }
+          grep -a -q NUTRISOLE_QA_FLAGS_ON /tmp/apkx/assets/index.android.bundle || { echo "::error::QA flags not in bundle"; exit 1; }
+          while read -r file bytes sha; do
+            echo "$sha  /tmp/apkx/assets/models/$file" | sha256sum -c -
+          done < /tmp/models.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nutrisole-qa-apk-${{ env.SHA7 }}
+          path: |
+            dist-qa/*.apk
+            dist-qa/*.sha256
+            dist-qa/build-info.txt
+          compression-level: 0
+          retention-days: 30
+          if-no-files-found: error
