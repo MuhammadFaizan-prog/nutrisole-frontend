@@ -1,6 +1,7 @@
-// G9 Stage J5: where the debug build loads its ONNX weights from. Weights are NOT in Git (repo policy) and NOT in the APK: they are
-// pushed to the app's own external files directory with adb (see docs/cv/gauntlet/G9_stageJ5_ANDROID_P1.md). sha256 = the exact
-// files in the handoff zip; the app logs a mismatch instead of guessing.
+// G9 Stage J5: where the debug build loads its ONNX weights from. Weights are NOT in this branch's Git history (repo policy). J7: the Android QA APK built by
+// .github/workflows/android-qa-apk.yml bundles h2 + g3_det as assets/models/<file> (fetched from orphan branch qa-models-j7 + sha256-checked at build
+// time, never committed to this branch); src/cv/device/modelSource.ts loads the bundled copy first and falls back to the adb push into DEVICE_MODEL_DIR
+// (docs/cv/gauntlet/G9_stageJ5_ANDROID_P1.md). Either way the file must match bytes + sha256 below, or it is not loaded.
 export const APP_ID = 'com.muhammadfaizan.nutrisole';
 export const DEVICE_MODEL_DIR = `/sdcard/Android/data/${APP_ID}/files/models`;
 export const DEVICE_MODELS = {
