@@ -1,0 +1,96 @@
+{
+ "schema_version": 1,
+ "amendment_id": "G9J5-HRAI-v1/amendment_001",
+ "amends_record": "G9J5-HRAI-v1",
+ "supersedes_for_items": [
+  "P729"
+ ],
+ "record_version": "v2 (= v1 + amendment_001; v1 kept byte-identical)",
+ "provenance": "HUMAN_REVIEWED_AI_ASSISTED",
+ "tier_properties": {
+  "human": true,
+  "blind": false,
+  "independent_double_annotation": false,
+  "kappa_evidence": false,
+  "verified_manifest": false,
+  "counts_for_eval_gates": false,
+  "counts_for_training_gates": false
+ },
+ "reviewer": {
+  "name": "M Faizan",
+  "role": "project lead",
+  "count": 1
+ },
+ "blind": false,
+ "independent": false,
+ "approval_source": {
+  "kind": "chat message from M Faizan to Hark (relayed verbatim in the Stage J6 brief)",
+  "at": "Fri 2026-10-16 12:06 AM PKT (UTC+05:00)",
+  "decision": "approved the versioned correction P729 uncertain -> carrot",
+  "evidence_stated": "real orange carrots in transparent wrapping, sufficiently visible",
+  "tags_stated": {
+   "bag": true,
+   "multiple": true,
+   "cut": false,
+   "rotten": false,
+   "occluded": false
+  }
+ },
+ "item": "P729",
+ "batch": "pilot2",
+ "split": "J-eval",
+ "before": {
+  "label": "uncertain",
+  "cut": "0",
+  "bag": "1",
+  "multi": "1",
+  "rotten_damaged": "0",
+  "role_if_accepted": "excluded",
+  "class13_if_accepted": "",
+  "disputed": "P729 v2 change unconfirmed"
+ },
+ "after": {
+  "label": "carrot",
+  "cut": "0",
+  "bag": "1",
+  "multi": "1",
+  "rotten_damaged": "0",
+  "role_if_accepted": "supported_packaged",
+  "class13_if_accepted": "carrot"
+ },
+ "occluded": false,
+ "occluded_note": "In the Stage J schema `occluded` is a label, not a tag; the approved label is carrot, so occluded=false.",
+ "matches_hark_v2_row": true,
+ "hark_v2_sha256": "09ad0c9d08463c623ffc828fda6b3b627b8ebc3fb81d169fe638a0e8e6596b7c",
+ "original_annotation": {
+  "path": "out/handoff/20261015_pilot2_visual_review/AI_ASSISTED_NOT_HUMAN/nutrisole_G9J_pilot2_AI_visual_review_335.csv",
+  "sha256": "6c17debff4bb545bc8841abc140242d86a1fed86dc303ade4274eac35048d2aa",
+  "label": "uncertain",
+  "kept_unmodified": true
+ },
+ "v1_files": {
+  "human_review_record.json": {
+   "sha256": "108d84c68b4b41b4d93c396521fad1bc1bfb7dc67797d01530f80c53ddf4c173",
+   "sha256_file_matches": true
+  },
+  "reviewed_labels_pilot.csv": {
+   "sha256": "53732617d83a31d4341843dbacb0bf4d3ecc289ec774542e97c641024a2d79ba",
+   "sha256_file_matches": true
+  },
+  "reviewed_labels_pilot2.csv": {
+   "sha256": "e8ea63a2982215f7ae2562652759cea7c138a3fcf5b70c49582898241fb3afcb",
+   "sha256_file_matches": true
+  }
+ },
+ "effect": {
+  "role": "supported_packaged (B=1): a must-not-grade packaged item, never a clean supported item",
+  "uncertain_rows_pilot2": "119 -> 118",
+  "disputed_rows": "1 -> 0",
+  "kappa_evidence": false,
+  "verified_manifest": false,
+  "counts_for_eval_gates": false,
+  "training_label": false,
+  "can_unlock_h3": false
+ },
+ "problems": []
+}
