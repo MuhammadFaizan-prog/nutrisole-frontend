@@ -1,0 +1,7 @@
+cls,stageJ_candidates,stageJ_expected_verified,j2_new_candidates,j2_new_by_source,j2_expected_verified,total_expected_verified,target,remaining_shortfall,n_sources,sources,human_verified
+apple,20,11,135,commons_t2:135,74,85,150,65,2,commons;commons_t2,0
+banana,7,4,158,bg_in:60;mb_in:58;sp_co:40,142,146,150,4,4,bg_in;commons;mb_in;sp_co,0
+citrus,135,92,56,citrus_tw:17;sp_co:39,50,142,150,8,4,citrus_tw;commons;commons_t;sp_co,0
+tomato,14,8,149,sp_co:38;veg_in:68;vegnet:43,134,142,150,8,4,commons;sp_co;veg_in;vegnet,0
+carrot,138,105,51,veg_in:51,46,151,150,0,4,commons;commons_t;veg_bd;veg_in,0
+"negatives (real-photo, J-train)",65,65,97,bg_in:13;mb_in:15;sp_co:21;veg_in:29;vegnet:19,87,152,150,0,6,stageJ mix;bg_in;mb_in;sp_co;veg_in;vegnet,0
