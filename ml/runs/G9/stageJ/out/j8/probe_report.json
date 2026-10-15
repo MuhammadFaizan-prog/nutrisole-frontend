@@ -1,0 +1,11027 @@
+{
+ "label": "HOST-SIDE diagnostic on an AI-labelled probe set (not a phone, not evidence, never a gate). Static images stand in for 3 identical live frames; G3/H2 weights, thresholds and policies unchanged.",
+ "n_rows": 215,
+ "n_orig": 122,
+ "n_synthetic_lighting": 93,
+ "orig": {
+  "live_J8_label": {
+   "apple": {
+    "correct": 31,
+    "wrong_id": 2,
+    "abstain": 3
+   },
+   "banana": {
+    "correct": 10,
+    "abstain": 3
+   },
+   "capsicum": {
+    "abstain": 1
+   },
+   "carrot": {
+    "abstain": 4,
+    "correct": 3
+   },
+   "citrus": {
+    "abstain": 4,
+    "wrong_id": 6,
+    "correct": 13
+   },
+   "multi": {
+    "correct": 5,
+    "abstain": 2
+   },
+   "tomato": {
+    "abstain": 9,
+    "wrong_id": 4,
+    "correct": 1
+   },
+   "unsupported": {
+    "abstain": 13,
+    "unsupported_accept": 8
+   },
+   "ALL": {
+    "abstain": 39,
+    "correct": 63,
+    "wrong_id": 12,
+    "unsupported_accept": 8
+   }
+  },
+  "closeup_J8_title": {
+   "apple": {
+    "abstain": 24,
+    "correct": 12
+   },
+   "banana": {
+    "abstain": 8,
+    "correct": 5
+   },
+   "capsicum": {
+    "abstain": 1
+   },
+   "carrot": {
+    "abstain": 5,
+    "correct": 2
+   },
+   "citrus": {
+    "abstain": 22,
+    "correct": 1
+   },
+   "multi": {
+    "abstain": 6,
+    "correct": 1
+   },
+   "tomato": {
+    "abstain": 14
+   },
+   "unsupported": {
+    "abstain": 20,
+    "unsupported_accept": 1
+   },
+   "ALL": {
+    "abstain": 100,
+    "correct": 21,
+    "unsupported_accept": 1
+   }
+  },
+  "tap3_J7_title": {
+   "apple": {
+    "abstain": 24,
+    "correct": 12
+   },
+   "banana": {
+    "abstain": 8,
+    "correct": 5
+   },
+   "capsicum": {
+    "abstain": 1
+   },
+   "carrot": {
+    "abstain": 3,
+    "correct": 4
+   },
+   "citrus": {
+    "abstain": 22,
+    "correct": 1
+   },
+   "multi": {
+    "abstain": 6,
+    "correct": 1
+   },
+   "tomato": {
+    "abstain": 14
+   },
+   "unsupported": {
+    "abstain": 20,
+    "unsupported_accept": 1
+   },
+   "ALL": {
+    "abstain": 98,
+    "correct": 23,
+    "unsupported_accept": 1
+   }
+  },
+  "j7_overlay_wrong_name_on_primary": 34,
+  "j8_live_two_names_on_one_object": 0,
+  "confusion_live": {
+   "apple": {
+    "apple": 31,
+    "pomegranate": 2,
+    "abstain": 3
+   },
+   "banana": {
+    "banana": 10,
+    "abstain": 3
+   },
+   "capsicum": {
+    "abstain": 1
+   },
+   "carrot": {
+    "abstain": 4,
+    "carrot": 3
+   },
+   "citrus": {
+    "abstain": 4,
+    "lemon_lime": 1,
+    "citrus": 13,
+    "tomato": 1,
+    "mango": 1,
+    "pomegranate": 1,
+    "apple": 2
+   },
+   "multi": {
+    "apple": 4,
+    "abstain": 2,
+    "citrus": 1
+   },
+   "tomato": {
+    "abstain": 9,
+    "apple": 2,
+    "tomato": 1,
+    "citrus": 1,
+    "mango": 1
+   },
+   "unsupported": {
+    "abstain": 13,
+    "citrus": 3,
+    "apple": 3,
+    "pomegranate": 2
+   }
+  },
+  "confusion_closeup": {
+   "apple": {
+    "abstain": 24,
+    "apple": 12
+   },
+   "banana": {
+    "abstain": 8,
+    "banana": 5
+   },
+   "capsicum": {
+    "abstain": 1
+   },
+   "carrot": {
+    "abstain": 5,
+    "carrot": 2
+   },
+   "citrus": {
+    "abstain": 22,
+    "citrus": 1
+   },
+   "multi": {
+    "abstain": 6,
+    "citrus": 1
+   },
+   "tomato": {
+    "abstain": 14
+   },
+   "unsupported": {
+    "abstain": 20,
+    "apple": 1
+   }
+  },
+  "attribution_live": {
+   "wide_score_below_idMinScore": 10,
+   "g3_class_confusion": 22,
+   "h2_unknown": 6,
+   "h2_class_confusion": 14,
+   "g3_no_detection": 17,
+   "small_object": 11,
+   "g3_h2_disagree": 5,
+   "g3_competing_classes_same_object": 3,
+   "other": 1
+  },
+  "attribution_closeup": {
+   "wide_score_below_idMinScore": 10,
+   "h2_class_confusion": 37,
+   "g3_class_confusion": 22,
+   "h2_unknown": 20,
+   "g3_h2_disagree": 16,
+   "other": 5,
+   "g3_no_detection": 17,
+   "small_object": 14,
+   "g3_competing_classes_same_object": 3
+  },
+  "hints_live": {
+   "keep_in_view": 18,
+   "move_closer": 16,
+   "hold_steady": 5
+  },
+  "closeup_hints": {
+   "move_closer": 74
+  },
+  "contested": 72,
+  "closeup_vs_j7_same_title": 103,
+  "bgr_swap_changes_h2_top1": 75,
+  "preview_vs_highres_h2_top1_differs": 19
+ },
+ "synthetic_lighting": {
+  "live_J8_label": {
+   "apple": {
+    "correct": 26,
+    "abstain": 4,
+    "wrong_id": 6
+   },
+   "carrot": {
+    "correct": 12,
+    "abstain": 8,
+    "wrong_id": 1
+   },
+   "citrus": {
+    "correct": 24,
+    "wrong_id": 8,
+    "abstain": 4
+   },
+   "ALL": {
+    "correct": 62,
+    "abstain": 16,
+    "wrong_id": 15
+   }
+  },
+  "closeup_J8_title": {
+   "apple": {
+    "abstain": 26,
+    "correct": 10
+   },
+   "carrot": {
+    "correct": 9,
+    "abstain": 12
+   },
+   "citrus": {
+    "abstain": 34,
+    "wrong_id": 1,
+    "correct": 1
+   },
+   "ALL": {
+    "correct": 20,
+    "abstain": 72,
+    "wrong_id": 1
+   }
+  },
+  "tap3_J7_title": {
+   "apple": {
+    "abstain": 26,
+    "correct": 10
+   },
+   "carrot": {
+    "abstain": 13,
+    "correct": 8
+   },
+   "citrus": {
+    "abstain": 34,
+    "wrong_id": 1,
+    "correct": 1
+   },
+   "ALL": {
+    "abstain": 73,
+    "correct": 19,
+    "wrong_id": 1
+   }
+  },
+  "j7_overlay_wrong_name_on_primary": 19,
+  "j8_live_two_names_on_one_object": 0,
+  "confusion_live": {
+   "apple": {
+    "apple": 26,
+    "abstain": 4,
+    "pomegranate": 6
+   },
+   "carrot": {
+    "carrot": 12,
+    "abstain": 8,
+    "citrus": 1
+   },
+   "citrus": {
+    "citrus": 24,
+    "mango": 2,
+    "abstain": 4,
+    "pomegranate": 3,
+    "apple": 3
+   }
+  },
+  "confusion_closeup": {
+   "apple": {
+    "abstain": 26,
+    "apple": 10
+   },
+   "carrot": {
+    "carrot": 9,
+    "abstain": 12
+   },
+   "citrus": {
+    "abstain": 34,
+    "pomegranate": 1,
+    "citrus": 1
+   }
+  },
+  "attribution_live": {
+   "g3_no_detection": 1,
+   "h2_class_confusion": 9,
+   "lighting": 30,
+   "wide_score_below_idMinScore": 11,
+   "g3_class_confusion": 19,
+   "h2_unknown": 12,
+   "small_object": 2
+  },
+  "attribution_closeup": {
+   "g3_no_detection": 1,
+   "h2_class_confusion": 38,
+   "lighting": 72,
+   "h2_unknown": 19,
+   "g3_h2_disagree": 7,
+   "wide_score_below_idMinScore": 11,
+   "g3_class_confusion": 19,
+   "small_object": 6
+  },
+  "hints_live": {
+   "keep_in_view": 20,
+   "improve_lighting": 22,
+   "move_closer": 7,
+   "hold_steady": 8
+  },
+  "closeup_hints": {
+   "move_closer": 63
+  },
+  "contested": 59,
+  "closeup_vs_j7_same_title": 85,
+  "bgr_swap_changes_h2_top1": 70,
+  "preview_vs_highres_h2_top1_differs": 22
+ },
+ "apple_to_citrus": {
+  "n_apple_rows": 78,
+  "live_label_citrus": [],
+  "closeup_title_citrus": [],
+  "j7_overlay_citrus_name_on_apple": [],
+  "g3_raw_citrus_competing_on_apple": [],
+  "h2_top1_citrus_on_apple": []
+ },
+ "per_row": [
+  {
+   "key": "tcm0101__orig",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 188,
+   "g3": "carrot",
+   "g3_score": 0.349,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.392
+    },
+    {
+     "cls": "tomato",
+     "p": 0.192
+    },
+    {
+     "cls": "apple",
+     "p": 0.109
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 188,
+    "area_frac": 0.1389,
+    "mean_v": 185,
+    "luma": 153,
+    "blur_var": 1159.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcm0101__dark",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 190,
+   "g3": "carrot",
+   "g3_score": 0.51,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.513
+    },
+    {
+     "cls": "potato",
+     "p": 0.121
+    },
+    {
+     "cls": "tomato",
+     "p": 0.092
+    }
+   ],
+   "closeup": "Carrot. Not graded",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 190,
+    "area_frac": 0.142,
+    "mean_v": 82,
+    "luma": 68,
+    "blur_var": 234.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcm0101__warm",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 147,
+   "g3": "carrot",
+   "g3_score": 0.643,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.454
+    },
+    {
+     "cls": "tomato",
+     "p": 0.166
+    },
+    {
+     "cls": "potato",
+     "p": 0.08
+    }
+   ],
+   "closeup": "Carrot. Not graded",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 147,
+    "area_frac": 0.0849,
+    "mean_v": 196,
+    "luma": 152,
+    "blur_var": 1178.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcm0101__over",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "tcm0098__orig",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 328,
+   "g3": "carrot",
+   "g3_score": 0.254,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.89
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.032
+    },
+    {
+     "cls": "potato",
+     "p": 0.019
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 328,
+    "area_frac": 0.3534,
+    "mean_v": 206,
+    "luma": 152,
+    "blur_var": 584.3,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0043__warm",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 161,
+   "g3": "apple",
+   "g3_score": 0.673,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.314
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.171
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.123
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 161,
+    "area_frac": 0.0905,
+    "mean_v": 216,
+    "luma": 133,
+    "blur_var": 144.7,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0043__over",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 159,
+   "g3": "apple",
+   "g3_score": 0.845,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.306
+    },
+    {
+     "cls": "carrot",
+     "p": 0.14
+    },
+    {
+     "cls": "apple",
+     "p": 0.132
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "improve_lighting:overexposed_v_245",
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 159,
+    "area_frac": 0.089,
+    "mean_v": 245,
+    "luma": 197,
+    "blur_var": 275.1,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0049__orig",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 161,
+   "g3": "apple",
+   "g3_score": 0.944,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.343
+    },
+    {
+     "cls": "unknown",
+     "p": 0.167
+    },
+    {
+     "cls": "carrot",
+     "p": 0.106
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 161,
+    "area_frac": 0.0861,
+    "mean_v": 140,
+    "luma": 116,
+    "blur_var": 317.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0049__dark",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 160,
+   "g3": "apple",
+   "g3_score": 0.91,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.442
+    },
+    {
+     "cls": "unknown",
+     "p": 0.169
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.088
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [
+    "improve_lighting:too_dark_v_63"
+   ],
+   "q": {
+    "side_px": 160,
+    "area_frac": 0.0847,
+    "mean_v": 63,
+    "luma": 52,
+    "blur_var": 65.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0049__warm",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 160,
+   "g3": "apple",
+   "g3_score": 0.805,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.308
+    },
+    {
+     "cls": "potato",
+     "p": 0.229
+    },
+    {
+     "cls": "carrot",
+     "p": 0.129
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 160,
+    "area_frac": 0.0854,
+    "mean_v": 147,
+    "luma": 110,
+    "blur_var": 275.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0049__over",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 161,
+   "g3": "apple",
+   "g3_score": 0.496,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "cucumber",
+     "p": 0.276
+    },
+    {
+     "cls": "carrot",
+     "p": 0.247
+    },
+    {
+     "cls": "unknown",
+     "p": 0.178
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 161,
+    "area_frac": 0.0854,
+    "mean_v": 207,
+    "luma": 177,
+    "blur_var": 660,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0131__orig",
+   "label": "apple",
+   "attr": "apple_red_with_patch",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 403,
+   "g3": "apple",
+   "g3_score": 0.913,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.873
+    },
+    {
+     "cls": "unknown",
+     "p": 0.025
+    },
+    {
+     "cls": "potato",
+     "p": 0.018
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 403,
+    "area_frac": 0.4354,
+    "mean_v": 127,
+    "luma": 100,
+    "blur_var": 664.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0131__dark",
+   "label": "apple",
+   "attr": "apple_red_with_patch",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 404,
+   "g3": "apple",
+   "g3_score": 0.922,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.705
+    },
+    {
+     "cls": "unknown",
+     "p": 0.09
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.072
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "improve_lighting:too_dark_v_57"
+   ],
+   "q": {
+    "side_px": 404,
+    "area_frac": 0.4354,
+    "mean_v": 57,
+    "luma": 44,
+    "blur_var": 135.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0131__warm",
+   "label": "apple",
+   "attr": "apple_red_with_patch",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 403,
+   "g3": "apple",
+   "g3_score": 0.889,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.918
+    },
+    {
+     "cls": "unknown",
+     "p": 0.018
+    },
+    {
+     "cls": "potato",
+     "p": 0.012
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 403,
+    "area_frac": 0.4327,
+    "mean_v": 134,
+    "luma": 94,
+    "blur_var": 573.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0131__over",
+   "label": "apple",
+   "attr": "apple_red_with_patch",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 403,
+   "g3": "apple",
+   "g3_score": 0.927,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.92
+    },
+    {
+     "cls": "unknown",
+     "p": 0.019
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.009
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 403,
+    "area_frac": 0.4341,
+    "mean_v": 194,
+    "luma": 152,
+    "blur_var": 971.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0057__orig",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 355,
+   "g3": "pomegranate",
+   "g3_score": 0.821,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.746
+    },
+    {
+     "cls": "apple",
+     "p": 0.07
+    },
+    {
+     "cls": "potato",
+     "p": 0.055
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 355,
+    "area_frac": 0.3664,
+    "mean_v": 144,
+    "luma": 91,
+    "blur_var": 1016.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0057__dark",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 355,
+   "g3": "pomegranate",
+   "g3_score": 0.853,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.536
+    },
+    {
+     "cls": "apple",
+     "p": 0.168
+    },
+    {
+     "cls": "mango",
+     "p": 0.078
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "improve_lighting:too_dark_v_64"
+   ],
+   "q": {
+    "side_px": 355,
+    "area_frac": 0.3676,
+    "mean_v": 64,
+    "luma": 40,
+    "blur_var": 205.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0057__warm",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 355,
+   "g3": "pomegranate",
+   "g3_score": 0.883,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.782
+    },
+    {
+     "cls": "potato",
+     "p": 0.057
+    },
+    {
+     "cls": "mango",
+     "p": 0.051
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 355,
+    "area_frac": 0.3664,
+    "mean_v": 153,
+    "luma": 88,
+    "blur_var": 853.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0057__over",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 355,
+   "g3": "pomegranate",
+   "g3_score": 0.74,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.796
+    },
+    {
+     "cls": "mango",
+     "p": 0.061
+    },
+    {
+     "cls": "potato",
+     "p": 0.051
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 355,
+    "area_frac": 0.3664,
+    "mean_v": 181,
+    "luma": 134,
+    "blur_var": 1735.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0058__orig",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 356,
+   "g3": "pomegranate",
+   "g3_score": 0.916,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.411
+    },
+    {
+     "cls": "apple",
+     "p": 0.2
+    },
+    {
+     "cls": "mango",
+     "p": 0.159
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 356,
+    "area_frac": 0.4171,
+    "mean_v": 138,
+    "luma": 102,
+    "blur_var": 252.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0058__dark",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 357,
+   "g3": "pomegranate",
+   "g3_score": 0.917,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.355
+    },
+    {
+     "cls": "unknown",
+     "p": 0.292
+    },
+    {
+     "cls": "mango",
+     "p": 0.19
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "improve_lighting:too_dark_v_62"
+   ],
+   "q": {
+    "side_px": 357,
+    "area_frac": 0.417,
+    "mean_v": 62,
+    "luma": 45,
+    "blur_var": 51.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0058__warm",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 358,
+   "g3": "pomegranate",
+   "g3_score": 0.914,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.566
+    },
+    {
+     "cls": "mango",
+     "p": 0.188
+    },
+    {
+     "cls": "apple",
+     "p": 0.086
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 358,
+    "area_frac": 0.4201,
+    "mean_v": 145,
+    "luma": 97,
+    "blur_var": 214.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0058__over",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 361,
+   "g3": "pomegranate",
+   "g3_score": 0.913,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.435
+    },
+    {
+     "cls": "potato",
+     "p": 0.163
+    },
+    {
+     "cls": "apple",
+     "p": 0.118
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 361,
+    "area_frac": 0.4263,
+    "mean_v": 195,
+    "luma": 153,
+    "blur_var": 429.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0059__orig",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 511,
+   "g3": "apple",
+   "g3_score": 0.876,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.781
+    },
+    {
+     "cls": "unknown",
+     "p": 0.127
+    },
+    {
+     "cls": "mango",
+     "p": 0.021
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 511,
+    "area_frac": 0.6415,
+    "mean_v": 195,
+    "luma": 149,
+    "blur_var": 283.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0059__dark",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 509,
+   "g3": "apple",
+   "g3_score": 0.871,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.44
+    },
+    {
+     "cls": "unknown",
+     "p": 0.282
+    },
+    {
+     "cls": "mango",
+     "p": 0.1
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 509,
+    "area_frac": 0.6349,
+    "mean_v": 87,
+    "luma": 66,
+    "blur_var": 58,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0059__warm",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 510,
+   "g3": "apple",
+   "g3_score": 0.867,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.924
+    },
+    {
+     "cls": "unknown",
+     "p": 0.053
+    },
+    {
+     "cls": "mango",
+     "p": 0.005
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 510,
+    "area_frac": 0.6382,
+    "mean_v": 208,
+    "luma": 143,
+    "blur_var": 239.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0059__over",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 507,
+   "g3": "apple",
+   "g3_score": 0.882,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.577
+    },
+    {
+     "cls": "apple",
+     "p": 0.302
+    },
+    {
+     "cls": "mango",
+     "p": 0.023
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 507,
+    "area_frac": 0.6332,
+    "mean_v": 244,
+    "luma": 189,
+    "blur_var": 425.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0067__orig",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 96,
+   "g3": "apple",
+   "g3_score": 0.402,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.519
+    },
+    {
+     "cls": "potato",
+     "p": 0.139
+    },
+    {
+     "cls": "unknown",
+     "p": 0.102
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 96,
+    "area_frac": 0.0307,
+    "mean_v": 152,
+    "luma": 122,
+    "blur_var": 376,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0067__dark",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 96,
+   "g3": "apple",
+   "g3_score": 0.361,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.614
+    },
+    {
+     "cls": "apple",
+     "p": 0.094
+    },
+    {
+     "cls": "unknown",
+     "p": 0.079
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "improve_lighting:too_dark_v_68",
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 96,
+    "area_frac": 0.0307,
+    "mean_v": 68,
+    "luma": 55,
+    "blur_var": 77.2,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0067__warm",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 96,
+   "g3": "apple",
+   "g3_score": 0.368,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.276
+    },
+    {
+     "cls": "potato",
+     "p": 0.188
+    },
+    {
+     "cls": "carrot",
+     "p": 0.127
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 96,
+    "area_frac": 0.0303,
+    "mean_v": 164,
+    "luma": 119,
+    "blur_var": 325.7,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0067__over",
+   "label": "apple",
+   "attr": "apple_striped_gala",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 96,
+   "g3": "apple",
+   "g3_score": 0.693,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.633
+    },
+    {
+     "cls": "unknown",
+     "p": 0.105
+    },
+    {
+     "cls": "tomato",
+     "p": 0.061
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "move_closer:side_96px_lt_quality_min_96",
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 96,
+    "area_frac": 0.0308,
+    "mean_v": 230,
+    "luma": 194,
+    "blur_var": 725,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0128__orig",
+   "label": "apple",
+   "attr": "apple_red_envy",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 70,
+   "g3": "apple",
+   "g3_score": 0.749,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.465
+    },
+    {
+     "cls": "unknown",
+     "p": 0.378
+    },
+    {
+     "cls": "mango",
+     "p": 0.05
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "move_closer:side_70px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 70,
+    "area_frac": 0.0162,
+    "mean_v": 143,
+    "luma": 102,
+    "blur_var": 1213.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0129__orig",
+   "label": "apple",
+   "attr": "apple_red_envy",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 172,
+   "g3": "apple",
+   "g3_score": 0.922,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.701
+    },
+    {
+     "cls": "unknown",
+     "p": 0.077
+    },
+    {
+     "cls": "mango",
+     "p": 0.076
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 172,
+    "area_frac": 0.0975,
+    "mean_v": 144,
+    "luma": 101,
+    "blur_var": 706.5,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0075__orig",
+   "label": "apple",
+   "attr": "apple_green",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 177,
+   "g3": "lemon_lime",
+   "g3_score": 0.466,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "cucumber",
+     "p": 0.47
+    },
+    {
+     "cls": "unknown",
+     "p": 0.379
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.043
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Lemon / lime"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 177,
+    "area_frac": 0.1031,
+    "mean_v": 129,
+    "luma": 117,
+    "blur_var": 182.7,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0076__orig",
+   "label": "apple",
+   "attr": "apple_green",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 133,
+   "g3": "apple",
+   "g3_score": 0.935,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.476
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.2
+    },
+    {
+     "cls": "tomato",
+     "p": 0.121
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 133,
+    "area_frac": 0.072,
+    "mean_v": 138,
+    "luma": 122,
+    "blur_var": 109.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0079__orig",
+   "label": "apple",
+   "attr": "apple_green",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 333,
+   "g3": "apple",
+   "g3_score": 0.932,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.756
+    },
+    {
+     "cls": "apple",
+     "p": 0.041
+    },
+    {
+     "cls": "unknown",
+     "p": 0.035
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 333,
+    "area_frac": 0.2745,
+    "mean_v": 140,
+    "luma": 119,
+    "blur_var": 17.4,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0111__orig",
+   "label": "apple",
+   "attr": "apple_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 154,
+   "g3": "apple",
+   "g3_score": 0.69,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.421
+    },
+    {
+     "cls": "apple",
+     "p": 0.285
+    },
+    {
+     "cls": "mango",
+     "p": 0.099
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 154,
+    "area_frac": 0.0792,
+    "mean_v": 148,
+    "luma": 127,
+    "blur_var": 110.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0114__orig",
+   "label": "apple",
+   "attr": "apple_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 165,
+   "g3": "apple",
+   "g3_score": 0.913,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.398
+    },
+    {
+     "cls": "unknown",
+     "p": 0.307
+    },
+    {
+     "cls": "tomato",
+     "p": 0.171
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "other"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 165,
+    "area_frac": 0.0901,
+    "mean_v": 159,
+    "luma": 145,
+    "blur_var": 334.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0115__orig",
+   "label": "apple",
+   "attr": "apple_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 213,
+   "g3": "apple",
+   "g3_score": 0.642,
+   "competing": [
+    "Mango"
+   ],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.482
+    },
+    {
+     "cls": "potato",
+     "p": 0.204
+    },
+    {
+     "cls": "unknown",
+     "p": 0.132
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple",
+    "Mango"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 213,
+    "area_frac": 0.1509,
+    "mean_v": 143,
+    "luma": 130,
+    "blur_var": 206.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0051__orig",
+   "label": "multi",
+   "attr": "multi_apples_4_varieties",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 153,
+   "g3": "apple",
+   "g3_score": 0.953,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.369
+    },
+    {
+     "cls": "potato",
+     "p": 0.201
+    },
+    {
+     "cls": "apple",
+     "p": 0.18
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 153,
+    "area_frac": 0.0876,
+    "mean_v": 175,
+    "luma": 125,
+    "blur_var": 1171.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0080__orig",
+   "label": "multi",
+   "attr": "multi_apples_4_varieties",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 127,
+   "g3": "apple",
+   "g3_score": 0.953,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "mango",
+     "p": 0.41
+    },
+    {
+     "cls": "potato",
+     "p": 0.103
+    },
+    {
+     "cls": "apple",
+     "p": 0.101
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 127,
+    "area_frac": 0.0606,
+    "mean_v": 156,
+    "luma": 102,
+    "blur_var": 451.7,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0063__orig",
+   "label": "multi",
+   "attr": "multi_apples_bananas",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 431,
+   "g3": "apple",
+   "g3_score": 0.732,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.5
+    },
+    {
+     "cls": "apple",
+     "p": 0.214
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.07
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 431,
+    "area_frac": 0.6069,
+    "mean_v": 110,
+    "luma": 92,
+    "blur_var": 254.5,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0123__orig",
+   "label": "multi",
+   "attr": "multi_bagged_oranges_apples",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "t2c0140__orig",
+   "label": "apple",
+   "attr": "apple_red",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 252,
+   "g3": "apple",
+   "g3_score": 0.662,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.627
+    },
+    {
+     "cls": "tomato",
+     "p": 0.075
+    },
+    {
+     "cls": "mango",
+     "p": 0.069
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 252,
+    "area_frac": 0.2087,
+    "mean_v": 146,
+    "luma": 131,
+    "blur_var": 84.5,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0141__orig",
+   "label": "apple",
+   "attr": "apple_red",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 261,
+   "g3": "apple",
+   "g3_score": 0.914,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.281
+    },
+    {
+     "cls": "apple",
+     "p": 0.207
+    },
+    {
+     "cls": "carrot",
+     "p": 0.139
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 261,
+    "area_frac": 0.1684,
+    "mean_v": 175,
+    "luma": 91,
+    "blur_var": 247.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0142__orig",
+   "label": "apple",
+   "attr": "apple_red",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 295,
+   "g3": "apple",
+   "g3_score": 0.785,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.381
+    },
+    {
+     "cls": "apple",
+     "p": 0.182
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.093
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 295,
+    "area_frac": 0.2148,
+    "mean_v": 191,
+    "luma": 97,
+    "blur_var": 218.2,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0136__orig",
+   "label": "apple",
+   "attr": "apple_red_plate",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 248,
+   "g3": "apple",
+   "g3_score": 0.95,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.514
+    },
+    {
+     "cls": "unknown",
+     "p": 0.186
+    },
+    {
+     "cls": "potato",
+     "p": 0.068
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 248,
+    "area_frac": 0.2023,
+    "mean_v": 199,
+    "luma": 120,
+    "blur_var": 190.7,
+    "edge": false
+   }
+  },
+  {
+   "key": "j5c5211eada__orig",
+   "label": "apple",
+   "attr": "apple_red",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 32,
+   "g3": "apple",
+   "g3_score": 0.573,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.621
+    },
+    {
+     "cls": "unknown",
+     "p": 0.119
+    },
+    {
+     "cls": "carrot",
+     "p": 0.067
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "move_closer:side_32px_lt_quality_min_96",
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 32,
+    "area_frac": 0.0036,
+    "mean_v": 199,
+    "luma": 149,
+    "blur_var": 796.4,
+    "edge": true
+   }
+  },
+  {
+   "key": "j5cc6d81335__orig",
+   "label": "apple",
+   "attr": "apple_red_hand_indoor",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 123,
+   "g3": "apple",
+   "g3_score": 0.927,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.336
+    },
+    {
+     "cls": "unknown",
+     "p": 0.148
+    },
+    {
+     "cls": "apple",
+     "p": 0.148
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 123,
+    "area_frac": 0.0563,
+    "mean_v": 166,
+    "luma": 109,
+    "blur_var": 618.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "j5c4477df11__orig",
+   "label": "apple",
+   "attr": "apple_red_green_hand_occluded",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 130,
+   "g3": "apple",
+   "g3_score": 0.929,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.61
+    },
+    {
+     "cls": "unknown",
+     "p": 0.229
+    },
+    {
+     "cls": "potato",
+     "p": 0.047
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 130,
+    "area_frac": 0.063,
+    "mean_v": 168,
+    "luma": 122,
+    "blur_var": 421.7,
+    "edge": false
+   }
+  },
+  {
+   "key": "j5ce354db3b__orig",
+   "label": "apple",
+   "attr": "apple_hand_occluded_indoor",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 264,
+   "g3": "banana",
+   "g3_score": 0.324,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.221
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.192
+    },
+    {
+     "cls": "banana",
+     "p": 0.18
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 264,
+    "area_frac": 0.2587,
+    "mean_v": 127,
+    "luma": 94,
+    "blur_var": 927.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "j5cc0002248__orig",
+   "label": "apple",
+   "attr": "apple_red_two",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 228,
+   "g3": "apple",
+   "g3_score": 0.816,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.669
+    },
+    {
+     "cls": "apple",
+     "p": 0.229
+    },
+    {
+     "cls": "banana",
+     "p": 0.015
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 228,
+    "area_frac": 0.2079,
+    "mean_v": 200,
+    "luma": 146,
+    "blur_var": 628.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "j5c2658dbc7__orig",
+   "label": "apple",
+   "attr": "apple_desk_indoor",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 283,
+   "g3": "apple",
+   "g3_score": 0.929,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.689
+    },
+    {
+     "cls": "unknown",
+     "p": 0.106
+    },
+    {
+     "cls": "potato",
+     "p": 0.052
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 283,
+    "area_frac": 0.2625,
+    "mean_v": 169,
+    "luma": 130,
+    "blur_var": 145.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c92d8b878__orig",
+   "label": "apple",
+   "attr": "apple_pinklady_market",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 121,
+   "g3": "apple",
+   "g3_score": 0.917,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.272
+    },
+    {
+     "cls": "potato",
+     "p": 0.219
+    },
+    {
+     "cls": "carrot",
+     "p": 0.129
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "other"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 121,
+    "area_frac": 0.0394,
+    "mean_v": 128,
+    "luma": 83,
+    "blur_var": 90.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6cc694776c__orig",
+   "label": "apple",
+   "attr": "apple_braeburn_market",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 85,
+   "g3": "apple",
+   "g3_score": 0.851,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.535
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.113
+    },
+    {
+     "cls": "apple",
+     "p": 0.093
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "small_object",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_85px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 85,
+    "area_frac": 0.0207,
+    "mean_v": 166,
+    "luma": 115,
+    "blur_var": 319,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c5151a99a__orig",
+   "label": "apple",
+   "attr": "apple_jazz_red_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 81,
+   "g3": "apple",
+   "g3_score": 0.933,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.285
+    },
+    {
+     "cls": "carrot",
+     "p": 0.268
+    },
+    {
+     "cls": "guava",
+     "p": 0.09
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "small_object"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_81px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 81,
+    "area_frac": 0.0215,
+    "mean_v": 180,
+    "luma": 108,
+    "blur_var": 267.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c5151a99a__dark",
+   "label": "apple",
+   "attr": "apple_jazz_red_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 80,
+   "g3": "apple",
+   "g3_score": 0.927,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.244
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.187
+    },
+    {
+     "cls": "carrot",
+     "p": 0.173
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "small_object",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_80px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 80,
+    "area_frac": 0.0215,
+    "mean_v": 81,
+    "luma": 48,
+    "blur_var": 54.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c5151a99a__warm",
+   "label": "apple",
+   "attr": "apple_jazz_red_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 80,
+   "g3": "apple",
+   "g3_score": 0.934,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.353
+    },
+    {
+     "cls": "apple",
+     "p": 0.13
+    },
+    {
+     "cls": "banana",
+     "p": 0.118
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "small_object",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_80px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 80,
+    "area_frac": 0.0212,
+    "mean_v": 195,
+    "luma": 107,
+    "blur_var": 226.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c5151a99a__over",
+   "label": "apple",
+   "attr": "apple_jazz_red_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 81,
+   "g3": "apple",
+   "g3_score": 0.878,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.26
+    },
+    {
+     "cls": "unknown",
+     "p": 0.137
+    },
+    {
+     "cls": "banana",
+     "p": 0.109
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "small_object",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_81px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 81,
+    "area_frac": 0.0219,
+    "mean_v": 236,
+    "luma": 160,
+    "blur_var": 492.7,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c352ac38b__orig",
+   "label": "apple",
+   "attr": "apple_jazz_red_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 117,
+   "g3": "apple",
+   "g3_score": 0.649,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.813
+    },
+    {
+     "cls": "carrot",
+     "p": 0.055
+    },
+    {
+     "cls": "tomato",
+     "p": 0.037
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 117,
+    "area_frac": 0.0453,
+    "mean_v": 189,
+    "luma": 149,
+    "blur_var": 652.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c352ac38b__dark",
+   "label": "apple",
+   "attr": "apple_jazz_red_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 116,
+   "g3": "apple",
+   "g3_score": 0.64,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.862
+    },
+    {
+     "cls": "tomato",
+     "p": 0.036
+    },
+    {
+     "cls": "unknown",
+     "p": 0.031
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 116,
+    "area_frac": 0.0448,
+    "mean_v": 85,
+    "luma": 67,
+    "blur_var": 132,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c352ac38b__warm",
+   "label": "apple",
+   "attr": "apple_jazz_red_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 116,
+   "g3": "apple",
+   "g3_score": 0.891,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.227
+    },
+    {
+     "cls": "unknown",
+     "p": 0.16
+    },
+    {
+     "cls": "citrus",
+     "p": 0.089
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 116,
+    "area_frac": 0.0453,
+    "mean_v": 181,
+    "luma": 109,
+    "blur_var": 437.5,
+    "edge": true
+   }
+  },
+  {
+   "key": "j6c352ac38b__over",
+   "label": "apple",
+   "attr": "apple_jazz_red_yellow",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 117,
+   "g3": "apple",
+   "g3_score": 0.442,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.257
+    },
+    {
+     "cls": "carrot",
+     "p": 0.208
+    },
+    {
+     "cls": "apple",
+     "p": 0.146
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 117,
+    "area_frac": 0.0458,
+    "mean_v": 236,
+    "luma": 201,
+    "blur_var": 1030.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6ca334a9fa__orig",
+   "label": "apple",
+   "attr": "apple_pacificqueen_red_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 122,
+   "g3": "apple",
+   "g3_score": 0.867,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.191
+    },
+    {
+     "cls": "potato",
+     "p": 0.179
+    },
+    {
+     "cls": "apple",
+     "p": 0.101
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 122,
+    "area_frac": 0.0494,
+    "mean_v": 197,
+    "luma": 121,
+    "blur_var": 336.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6ca334a9fa__dark",
+   "label": "apple",
+   "attr": "apple_pacificqueen_red_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 121,
+   "g3": "apple",
+   "g3_score": 0.842,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.189
+    },
+    {
+     "cls": "unknown",
+     "p": 0.146
+    },
+    {
+     "cls": "potato",
+     "p": 0.125
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 121,
+    "area_frac": 0.0483,
+    "mean_v": 88,
+    "luma": 54,
+    "blur_var": 69.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6ca334a9fa__warm",
+   "label": "apple",
+   "attr": "apple_pacificqueen_red_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 121,
+   "g3": "apple",
+   "g3_score": 0.734,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.197
+    },
+    {
+     "cls": "carrot",
+     "p": 0.167
+    },
+    {
+     "cls": "unknown",
+     "p": 0.11
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 121,
+    "area_frac": 0.0483,
+    "mean_v": 211,
+    "luma": 119,
+    "blur_var": 270.7,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6ca334a9fa__over",
+   "label": "apple",
+   "attr": "apple_pacificqueen_red_yellow",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 120,
+   "g3": "apple",
+   "g3_score": 0.894,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.45
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.157
+    },
+    {
+     "cls": "unknown",
+     "p": 0.116
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 120,
+    "area_frac": 0.0483,
+    "mean_v": 243,
+    "luma": 175,
+    "blur_var": 476.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6cad037fc5__orig",
+   "label": "apple",
+   "attr": "apple_green",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 241,
+   "g3": "apple",
+   "g3_score": 0.915,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.818
+    },
+    {
+     "cls": "apple",
+     "p": 0.076
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.037
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 241,
+    "area_frac": 0.143,
+    "mean_v": 145,
+    "luma": 122,
+    "blur_var": 469,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6cb7a63809__orig",
+   "label": "apple",
+   "attr": "apple_green_creamy",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 197,
+   "g3": "apple",
+   "g3_score": 0.939,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.475
+    },
+    {
+     "cls": "apple",
+     "p": 0.419
+    },
+    {
+     "cls": "potato",
+     "p": 0.036
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 197,
+    "area_frac": 0.0963,
+    "mean_v": 152,
+    "luma": 138,
+    "blur_var": 326.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6cdef79c99__orig",
+   "label": "apple",
+   "attr": "apple_green",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 112,
+   "g3": "apple",
+   "g3_score": 0.924,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.802
+    },
+    {
+     "cls": "tomato",
+     "p": 0.091
+    },
+    {
+     "cls": "unknown",
+     "p": 0.042
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 112,
+    "area_frac": 0.0418,
+    "mean_v": 171,
+    "luma": 156,
+    "blur_var": 370.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c4af240fb__orig",
+   "label": "apple",
+   "attr": "apple_fuji_plu_sticker",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 453,
+   "g3": "apple",
+   "g3_score": 0.607,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.421
+    },
+    {
+     "cls": "unknown",
+     "p": 0.166
+    },
+    {
+     "cls": "apple",
+     "p": 0.139
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 453,
+    "area_frac": 0.6708,
+    "mean_v": 177,
+    "luma": 117,
+    "blur_var": 623.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6cd419526e__orig",
+   "label": "multi",
+   "attr": "multi_red_green_apples",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 295,
+   "g3": "apple",
+   "g3_score": 0.916,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.276
+    },
+    {
+     "cls": "apple",
+     "p": 0.134
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.105
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 295,
+    "area_frac": 0.3656,
+    "mean_v": 177,
+    "luma": 93,
+    "blur_var": 571.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "j5c2d9e9950__orig",
+   "label": "multi",
+   "attr": "multi_apple_and_orange_hand",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 55,
+   "g3": "potato",
+   "g3_score": 0.482,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.602
+    },
+    {
+     "cls": "banana",
+     "p": 0.153
+    },
+    {
+     "cls": "apple",
+     "p": 0.092
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Potato"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "small_object"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "small_object"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_55px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 55,
+    "area_frac": 0.0117,
+    "mean_v": 169,
+    "luma": 124,
+    "blur_var": 380.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6cfbd9a7a6__orig",
+   "label": "citrus",
+   "attr": "orange_thai_greenish",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "j5c9491f1b5__orig",
+   "label": "multi",
+   "attr": "multi_tomatoes_and_oranges_bowl",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 153,
+   "g3": "citrus",
+   "g3_score": 0.929,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "citrus",
+     "p": 0.813
+    },
+    {
+     "cls": "guava",
+     "p": 0.058
+    },
+    {
+     "cls": "unknown",
+     "p": 0.032
+    }
+   ],
+   "closeup": "Citrus (orange / kinnow / mosambi). Not graded",
+   "j7_tap": "Citrus (orange / kinnow / mosambi). Not graded",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 153,
+    "area_frac": 0.0772,
+    "mean_v": 168,
+    "luma": 101,
+    "blur_var": 116.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "j5c2fe13d07__orig",
+   "label": "unsupported",
+   "attr": "printed_drawing_bowl",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "j5c556ab9af__orig",
+   "label": "citrus",
+   "attr": "tangerine_bowl",
+   "live": "lemon_lime",
+   "live_state": "identified",
+   "side_src_px": 172,
+   "g3": "lemon_lime",
+   "g3_score": 0.878,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.199
+    },
+    {
+     "cls": "unknown",
+     "p": 0.154
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.105
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Lemon / lime"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 172,
+    "area_frac": 0.0993,
+    "mean_v": 129,
+    "luma": 101,
+    "blur_var": 130.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "j5c1e00988b__orig",
+   "label": "citrus",
+   "attr": "orange_green_senegal",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 132,
+   "g3": "citrus",
+   "g3_score": 0.899,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.257
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.239
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.193
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 132,
+    "area_frac": 0.0644,
+    "mean_v": 217,
+    "luma": 148,
+    "blur_var": 255.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "j5c03713fa0__orig",
+   "label": "citrus",
+   "attr": "orange_green_senegal",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 101,
+   "g3": "citrus",
+   "g3_score": 0.553,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.383
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.149
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.093
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 101,
+    "area_frac": 0.038,
+    "mean_v": 163,
+    "luma": 116,
+    "blur_var": 83.2,
+    "edge": true
+   }
+  },
+  {
+   "key": "j5c92eb8c45__orig",
+   "label": "citrus",
+   "attr": "orange_libyan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 99,
+   "g3": "citrus",
+   "g3_score": 0.899,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.229
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.181
+    },
+    {
+     "cls": "unknown",
+     "p": 0.142
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 99,
+    "area_frac": 0.0251,
+    "mean_v": 178,
+    "luma": 117,
+    "blur_var": 513.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "j5c55911243__orig",
+   "label": "citrus",
+   "attr": "kinnow_pakistan_seller",
+   "live": "tomato",
+   "live_state": "identified",
+   "side_src_px": 40,
+   "g3": "tomato",
+   "g3_score": 0.589,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.286
+    },
+    {
+     "cls": "apple",
+     "p": 0.157
+    },
+    {
+     "cls": "carrot",
+     "p": 0.13
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Tomato"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "small_object"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "small_object"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_40px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 40,
+    "area_frac": 0.006,
+    "mean_v": 235,
+    "luma": 140,
+    "blur_var": 314.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c3a2bec74__orig",
+   "label": "tomato",
+   "attr": "tomato_green",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 224,
+   "g3": "apple",
+   "g3_score": 0.485,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.626
+    },
+    {
+     "cls": "apple",
+     "p": 0.199
+    },
+    {
+     "cls": "unknown",
+     "p": 0.042
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 224,
+    "area_frac": 0.1653,
+    "mean_v": 93,
+    "luma": 76,
+    "blur_var": 666.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6ca50f452c__orig",
+   "label": "tomato",
+   "attr": "tomato_green",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 228,
+   "g3": "apple",
+   "g3_score": 0.841,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.823
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.067
+    },
+    {
+     "cls": "apple",
+     "p": 0.033
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 228,
+    "area_frac": 0.1283,
+    "mean_v": 154,
+    "luma": 133,
+    "blur_var": 255.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6cf496d99a__orig",
+   "label": "tomato",
+   "attr": "tomato_green",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 279,
+   "g3": "apple",
+   "g3_score": 0.672,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.668
+    },
+    {
+     "cls": "unknown",
+     "p": 0.149
+    },
+    {
+     "cls": "apple",
+     "p": 0.072
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 279,
+    "area_frac": 0.257,
+    "mean_v": 170,
+    "luma": 151,
+    "blur_var": 157.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c15ada2c8__orig",
+   "label": "tomato",
+   "attr": "tomato_red_store",
+   "live": "tomato",
+   "live_state": "identified",
+   "side_src_px": 252,
+   "g3": "tomato",
+   "g3_score": 0.934,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.474
+    },
+    {
+     "cls": "tomato",
+     "p": 0.137
+    },
+    {
+     "cls": "guava",
+     "p": 0.093
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Tomato"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 252,
+    "area_frac": 0.2089,
+    "mean_v": 175,
+    "luma": 104,
+    "blur_var": 148.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c39691b46__orig",
+   "label": "tomato",
+   "attr": "tomato_red",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 146,
+   "g3": "capsicum",
+   "g3_score": 0.346,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.719
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.215
+    },
+    {
+     "cls": "unknown",
+     "p": 0.016
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Capsicum"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 146,
+    "area_frac": 0.071,
+    "mean_v": 111,
+    "luma": 94,
+    "blur_var": 1327.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c0272b377__orig",
+   "label": "tomato",
+   "attr": "tomato_green_zebra",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 203,
+   "g3": "capsicum",
+   "g3_score": 0.399,
+   "competing": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.432
+    },
+    {
+     "cls": "tomato",
+     "p": 0.36
+    },
+    {
+     "cls": "apple",
+     "p": 0.077
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Capsicum",
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "g3_competing_classes_same_object",
+     "h2_unknown"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "g3_competing_classes_same_object",
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 203,
+    "area_frac": 0.1524,
+    "mean_v": 179,
+    "luma": 164,
+    "blur_var": 27.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "j5cd4690e10__orig",
+   "label": "banana",
+   "attr": "banana_overripe",
+   "live": "banana",
+   "live_state": "identified",
+   "side_src_px": 278,
+   "g3": "banana",
+   "g3_score": 0.85,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.636
+    },
+    {
+     "cls": "potato",
+     "p": 0.103
+    },
+    {
+     "cls": "apple",
+     "p": 0.078
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 278,
+    "area_frac": 0.2526,
+    "mean_v": 137,
+    "luma": 120,
+    "blur_var": 2310.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c7103e93c__orig",
+   "label": "banana",
+   "attr": "banana_pakistan",
+   "live": "banana",
+   "live_state": "identified",
+   "side_src_px": 228,
+   "g3": "banana",
+   "g3_score": 0.908,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.426
+    },
+    {
+     "cls": "banana",
+     "p": 0.155
+    },
+    {
+     "cls": "apple",
+     "p": 0.107
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 228,
+    "area_frac": 0.1712,
+    "mean_v": 147,
+    "luma": 120,
+    "blur_var": 535.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6cf7e4245f__orig",
+   "label": "unsupported",
+   "attr": "persimmon_fuyu",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 58,
+   "g3": "citrus",
+   "g3_score": 0.266,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.206
+    },
+    {
+     "cls": "unknown",
+     "p": 0.176
+    },
+    {
+     "cls": "tomato",
+     "p": 0.173
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "small_object"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "small_object"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_58px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 58,
+    "area_frac": 0.0209,
+    "mean_v": 188,
+    "luma": 132,
+    "blur_var": 1429.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6c683528c6__orig",
+   "label": "unsupported",
+   "attr": "persimmon_hachiya",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 61,
+   "g3": "citrus",
+   "g3_score": 0.921,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.706
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.141
+    },
+    {
+     "cls": "unknown",
+     "p": 0.036
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "unsupported_accept",
+    [
+     "small_object",
+     "g3_h2_disagree"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "small_object",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_61px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 61,
+    "area_frac": 0.0169,
+    "mean_v": 184,
+    "luma": 123,
+    "blur_var": 1438.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6cc1623b16__orig",
+   "label": "unsupported",
+   "attr": "persimmon",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 75,
+   "g3": "citrus",
+   "g3_score": 0.729,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.347
+    },
+    {
+     "cls": "tomato",
+     "p": 0.264
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.199
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "unsupported_accept",
+    [
+     "small_object"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "small_object"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_75px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 75,
+    "area_frac": 0.0218,
+    "mean_v": 235,
+    "luma": 180,
+    "blur_var": 1422.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6cda3b3fba__orig",
+   "label": "unsupported",
+   "attr": "persimmon_sharon",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 49,
+   "g3": "apple",
+   "g3_score": 0.751,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.396
+    },
+    {
+     "cls": "citrus",
+     "p": 0.178
+    },
+    {
+     "cls": "tomato",
+     "p": 0.138
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "unsupported_accept",
+    [
+     "small_object"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "small_object"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_49px_lt_quality_min_96",
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 49,
+    "area_frac": 0.0093,
+    "mean_v": 150,
+    "luma": 77,
+    "blur_var": 1199.9,
+    "edge": true
+   }
+  },
+  {
+   "key": "j6ca5b1aa97__orig",
+   "label": "unsupported",
+   "attr": "printed_still_life",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 75,
+   "g3": "apple",
+   "g3_score": 0.873,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "mango",
+     "p": 0.34
+    },
+    {
+     "cls": "unknown",
+     "p": 0.28
+    },
+    {
+     "cls": "apple",
+     "p": 0.231
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "unsupported_accept",
+    [
+     "small_object"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "small_object"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_75px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 75,
+    "area_frac": 0.0172,
+    "mean_v": 99,
+    "luma": 75,
+    "blur_var": 823.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "j6ce7578e72__orig",
+   "label": "unsupported",
+   "attr": "printed_vangogh_fruit",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "tcit5bd71d77__orig",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": "mango",
+   "live_state": "identified",
+   "side_src_px": 290,
+   "g3": "mango",
+   "g3_score": 0.554,
+   "competing": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.228
+    },
+    {
+     "cls": "tomato",
+     "p": 0.167
+    },
+    {
+     "cls": "apple",
+     "p": 0.154
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Mango",
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "g3_competing_classes_same_object",
+     "h2_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "g3_competing_classes_same_object",
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 290,
+    "area_frac": 0.2759,
+    "mean_v": 156,
+    "luma": 104,
+    "blur_var": 101.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit5bd71d77__dark",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 286,
+   "g3": "citrus",
+   "g3_score": 0.627,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "mango",
+     "p": 0.32
+    },
+    {
+     "cls": "apple",
+     "p": 0.17
+    },
+    {
+     "cls": "potato",
+     "p": 0.161
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "improve_lighting:too_dark_v_70"
+   ],
+   "q": {
+    "side_px": 286,
+    "area_frac": 0.2685,
+    "mean_v": 70,
+    "luma": 46,
+    "blur_var": 21.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit5bd71d77__warm",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": "mango",
+   "live_state": "identified",
+   "side_src_px": 289,
+   "g3": "mango",
+   "g3_score": 0.544,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.268
+    },
+    {
+     "cls": "tomato",
+     "p": 0.206
+    },
+    {
+     "cls": "potato",
+     "p": 0.139
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Mango"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 289,
+    "area_frac": 0.2745,
+    "mean_v": 164,
+    "luma": 101,
+    "blur_var": 87.7,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit5bd71d77__over",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 290,
+   "g3": "mango",
+   "g3_score": 0.482,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "citrus",
+     "p": 0.207
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.12
+    },
+    {
+     "cls": "tomato",
+     "p": 0.105
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Mango"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 290,
+    "area_frac": 0.2761,
+    "mean_v": 211,
+    "luma": 145,
+    "blur_var": 159.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit4fbbbc39__orig",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 152,
+   "g3": "pomegranate",
+   "g3_score": 0.907,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "pomegranate",
+     "p": 0.353
+    },
+    {
+     "cls": "mango",
+     "p": 0.114
+    },
+    {
+     "cls": "guava",
+     "p": 0.093
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 152,
+    "area_frac": 0.0765,
+    "mean_v": 130,
+    "luma": 84,
+    "blur_var": 240.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit4fbbbc39__dark",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 152,
+   "g3": "pomegranate",
+   "g3_score": 0.908,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "pomegranate",
+     "p": 0.622
+    },
+    {
+     "cls": "mango",
+     "p": 0.083
+    },
+    {
+     "cls": "potato",
+     "p": 0.078
+    }
+   ],
+   "closeup": "Pomegranate. Not graded",
+   "j7_tap": "Pomegranate. Not graded",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "improve_lighting:too_dark_v_59"
+   ],
+   "q": {
+    "side_px": 152,
+    "area_frac": 0.0759,
+    "mean_v": 59,
+    "luma": 38,
+    "blur_var": 50.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit4fbbbc39__warm",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 152,
+   "g3": "pomegranate",
+   "g3_score": 0.85,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.3
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.18
+    },
+    {
+     "cls": "unknown",
+     "p": 0.102
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 152,
+    "area_frac": 0.0765,
+    "mean_v": 137,
+    "luma": 81,
+    "blur_var": 213.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit4fbbbc39__over",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 154,
+   "g3": "pomegranate",
+   "g3_score": 0.873,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.212
+    },
+    {
+     "cls": "unknown",
+     "p": 0.171
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.145
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 154,
+    "area_frac": 0.0785,
+    "mean_v": 189,
+    "luma": 127,
+    "blur_var": 417.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit47c1e47f__orig",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 107,
+   "g3": "citrus",
+   "g3_score": 0.423,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "pomegranate",
+     "p": 0.332
+    },
+    {
+     "cls": "tomato",
+     "p": 0.159
+    },
+    {
+     "cls": "unknown",
+     "p": 0.116
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 107,
+    "area_frac": 0.0384,
+    "mean_v": 83,
+    "luma": 49,
+    "blur_var": 378.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit47c1e47f__dark",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 38,
+   "g3": "citrus",
+   "g3_score": 0.328,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.419
+    },
+    {
+     "cls": "apple",
+     "p": 0.3
+    },
+    {
+     "cls": "tomato",
+     "p": 0.124
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "small_object",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "small_object",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_38px_lt_quality_min_96",
+    "improve_lighting:too_dark_v_34",
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 38,
+    "area_frac": 0.0048,
+    "mean_v": 34,
+    "luma": 21,
+    "blur_var": 24.1,
+    "edge": true
+   }
+  },
+  {
+   "key": "tcit47c1e47f__warm",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 107,
+   "g3": "citrus",
+   "g3_score": 0.501,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "pomegranate",
+     "p": 0.312
+    },
+    {
+     "cls": "tomato",
+     "p": 0.213
+    },
+    {
+     "cls": "unknown",
+     "p": 0.172
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 107,
+    "area_frac": 0.0379,
+    "mean_v": 88,
+    "luma": 49,
+    "blur_var": 331.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit47c1e47f__over",
+   "label": "citrus",
+   "attr": "citrus_tw_ponkan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 108,
+   "g3": "citrus",
+   "g3_score": 0.688,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "pomegranate",
+     "p": 0.277
+    },
+    {
+     "cls": "tomato",
+     "p": 0.263
+    },
+    {
+     "cls": "unknown",
+     "p": 0.143
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 108,
+    "area_frac": 0.0389,
+    "mean_v": 139,
+    "luma": 83,
+    "blur_var": 900.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit97a48ed3__orig",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 181,
+   "g3": "citrus",
+   "g3_score": 0.94,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "citrus",
+     "p": 0.308
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.162
+    },
+    {
+     "cls": "tomato",
+     "p": 0.125
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "other"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 181,
+    "area_frac": 0.1085,
+    "mean_v": 119,
+    "luma": 84,
+    "blur_var": 59.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit97a48ed3__dark",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 178,
+   "g3": "citrus",
+   "g3_score": 0.936,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.206
+    },
+    {
+     "cls": "mango",
+     "p": 0.159
+    },
+    {
+     "cls": "apple",
+     "p": 0.1
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_13.6_lt_15",
+    "improve_lighting:too_dark_v_53"
+   ],
+   "q": {
+    "side_px": 178,
+    "area_frac": 0.1054,
+    "mean_v": 53,
+    "luma": 37,
+    "blur_var": 13.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit97a48ed3__warm",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 182,
+   "g3": "citrus",
+   "g3_score": 0.919,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.327
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.207
+    },
+    {
+     "cls": "citrus",
+     "p": 0.138
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 182,
+    "area_frac": 0.1085,
+    "mean_v": 127,
+    "luma": 81,
+    "blur_var": 52.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit97a48ed3__over",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 181,
+   "g3": "citrus",
+   "g3_score": 0.934,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "citrus",
+     "p": 0.529
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.129
+    },
+    {
+     "cls": "tomato",
+     "p": 0.126
+    }
+   ],
+   "closeup": "Citrus (orange / kinnow / mosambi). Not graded",
+   "j7_tap": "Citrus (orange / kinnow / mosambi). Not graded",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 181,
+    "area_frac": 0.1078,
+    "mean_v": 201,
+    "luma": 142,
+    "blur_var": 160,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcitb475a3b3__orig",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 168,
+   "g3": "citrus",
+   "g3_score": 0.921,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.244
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.203
+    },
+    {
+     "cls": "tomato",
+     "p": 0.162
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 168,
+    "area_frac": 0.0933,
+    "mean_v": 126,
+    "luma": 86,
+    "blur_var": 47.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcitb475a3b3__dark",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 167,
+   "g3": "citrus",
+   "g3_score": 0.915,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "cucumber",
+     "p": 0.285
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.227
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.137
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_11.3_lt_15",
+    "improve_lighting:too_dark_v_56"
+   ],
+   "q": {
+    "side_px": 167,
+    "area_frac": 0.0926,
+    "mean_v": 56,
+    "luma": 38,
+    "blur_var": 11.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcitb475a3b3__warm",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 169,
+   "g3": "citrus",
+   "g3_score": 0.855,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.317
+    },
+    {
+     "cls": "tomato",
+     "p": 0.27
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.098
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 169,
+    "area_frac": 0.0941,
+    "mean_v": 135,
+    "luma": 84,
+    "blur_var": 42.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcitb475a3b3__over",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 168,
+   "g3": "citrus",
+   "g3_score": 0.916,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.242
+    },
+    {
+     "cls": "tomato",
+     "p": 0.168
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.13
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 168,
+    "area_frac": 0.0933,
+    "mean_v": 209,
+    "luma": 143,
+    "blur_var": 115.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit119f2339__orig",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 170,
+   "g3": "citrus",
+   "g3_score": 0.927,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.239
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.213
+    },
+    {
+     "cls": "citrus",
+     "p": 0.155
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 170,
+    "area_frac": 0.0955,
+    "mean_v": 136,
+    "luma": 93,
+    "blur_var": 61.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit119f2339__dark",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 169,
+   "g3": "citrus",
+   "g3_score": 0.933,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.261
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.17
+    },
+    {
+     "cls": "potato",
+     "p": 0.115
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_13.9_lt_15",
+    "improve_lighting:too_dark_v_61"
+   ],
+   "q": {
+    "side_px": 169,
+    "area_frac": 0.0948,
+    "mean_v": 61,
+    "luma": 41,
+    "blur_var": 13.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit119f2339__warm",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 171,
+   "g3": "citrus",
+   "g3_score": 0.841,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.383
+    },
+    {
+     "cls": "tomato",
+     "p": 0.301
+    },
+    {
+     "cls": "citrus",
+     "p": 0.068
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 171,
+    "area_frac": 0.097,
+    "mean_v": 146,
+    "luma": 90,
+    "blur_var": 53.7,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit119f2339__over",
+   "label": "citrus",
+   "attr": "citrus_tw_tankan",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 171,
+   "g3": "citrus",
+   "g3_score": 0.928,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "citrus",
+     "p": 0.355
+    },
+    {
+     "cls": "tomato",
+     "p": 0.231
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.111
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 171,
+    "area_frac": 0.097,
+    "mean_v": 227,
+    "luma": 156,
+    "blur_var": 128.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit11ced194__orig",
+   "label": "citrus",
+   "attr": "citrus_tw_tngerines",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 143,
+   "g3": "pomegranate",
+   "g3_score": 0.489,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.623
+    },
+    {
+     "cls": "mango",
+     "p": 0.087
+    },
+    {
+     "cls": "citrus",
+     "p": 0.066
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 143,
+    "area_frac": 0.0682,
+    "mean_v": 136,
+    "luma": 98,
+    "blur_var": 457.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit11ced194__dark",
+   "label": "citrus",
+   "attr": "citrus_tw_tngerines",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 94,
+   "g3": "citrus",
+   "g3_score": 0.839,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.412
+    },
+    {
+     "cls": "potato",
+     "p": 0.164
+    },
+    {
+     "cls": "tomato",
+     "p": 0.094
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "small_object",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_94px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 94,
+    "area_frac": 0.0291,
+    "mean_v": 83,
+    "luma": 62,
+    "blur_var": 110.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit11ced194__warm",
+   "label": "citrus",
+   "attr": "citrus_tw_tngerines",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 153,
+   "g3": "pomegranate",
+   "g3_score": 0.326,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.529
+    },
+    {
+     "cls": "apple",
+     "p": 0.094
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.088
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 153,
+    "area_frac": 0.0776,
+    "mean_v": 147,
+    "luma": 99,
+    "blur_var": 495,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit11ced194__over",
+   "label": "citrus",
+   "attr": "citrus_tw_tngerines",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 134,
+   "g3": "pomegranate",
+   "g3_score": 0.368,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "cucumber",
+     "p": 0.231
+    },
+    {
+     "cls": "carrot",
+     "p": 0.134
+    },
+    {
+     "cls": "unknown",
+     "p": 0.132
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 134,
+    "area_frac": 0.0595,
+    "mean_v": 196,
+    "luma": 151,
+    "blur_var": 698.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit3817a85d__orig",
+   "label": "citrus",
+   "attr": "citrus_tw_tngerines",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 129,
+   "g3": "apple",
+   "g3_score": 0.777,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.408
+    },
+    {
+     "cls": "apple",
+     "p": 0.117
+    },
+    {
+     "cls": "potato",
+     "p": 0.106
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 129,
+    "area_frac": 0.0555,
+    "mean_v": 168,
+    "luma": 126,
+    "blur_var": 434.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit3817a85d__dark",
+   "label": "citrus",
+   "attr": "citrus_tw_tngerines",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 127,
+   "g3": "apple",
+   "g3_score": 0.773,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.304
+    },
+    {
+     "cls": "potato",
+     "p": 0.154
+    },
+    {
+     "cls": "mango",
+     "p": 0.126
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "improve_lighting:too_dark_v_76"
+   ],
+   "q": {
+    "side_px": 127,
+    "area_frac": 0.0538,
+    "mean_v": 76,
+    "luma": 57,
+    "blur_var": 88.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit3817a85d__warm",
+   "label": "citrus",
+   "attr": "citrus_tw_tngerines",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 129,
+   "g3": "apple",
+   "g3_score": 0.685,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.317
+    },
+    {
+     "cls": "apple",
+     "p": 0.213
+    },
+    {
+     "cls": "potato",
+     "p": 0.134
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 129,
+    "area_frac": 0.0555,
+    "mean_v": 178,
+    "luma": 122,
+    "blur_var": 370.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit3817a85d__over",
+   "label": "citrus",
+   "attr": "citrus_tw_tngerines",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 128,
+   "g3": "apple",
+   "g3_score": 0.869,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.271
+    },
+    {
+     "cls": "apple",
+     "p": 0.167
+    },
+    {
+     "cls": "tomato",
+     "p": 0.16
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 128,
+    "area_frac": 0.0544,
+    "mean_v": 225,
+    "luma": 189,
+    "blur_var": 781.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "umb_6bde4aa9__orig",
+   "label": "banana",
+   "attr": "banana_raw_green",
+   "live": "banana",
+   "live_state": "identified",
+   "side_src_px": 242,
+   "g3": "banana",
+   "g3_score": 0.885,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.586
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.112
+    },
+    {
+     "cls": "tomato",
+     "p": 0.059
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 242,
+    "area_frac": 0.1925,
+    "mean_v": 161,
+    "luma": 144,
+    "blur_var": 75,
+    "edge": false
+   }
+  },
+  {
+   "key": "umb_947103f4__orig",
+   "label": "banana",
+   "attr": "banana_ripe",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 183,
+   "g3": "banana",
+   "g3_score": 0.344,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "banana",
+     "p": 0.343
+    },
+    {
+     "cls": "potato",
+     "p": 0.21
+    },
+    {
+     "cls": "apple",
+     "p": 0.114
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 183,
+    "area_frac": 0.1115,
+    "mean_v": 131,
+    "luma": 119,
+    "blur_var": 240.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "umb_97f074b1__orig",
+   "label": "banana",
+   "attr": "banana_raw_green",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 402,
+   "g3": "banana",
+   "g3_score": 0.273,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.383
+    },
+    {
+     "cls": "mango",
+     "p": 0.201
+    },
+    {
+     "cls": "tomato",
+     "p": 0.14
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 402,
+    "area_frac": 0.5289,
+    "mean_v": 188,
+    "luma": 149,
+    "blur_var": 469.1,
+    "edge": true
+   }
+  },
+  {
+   "key": "umb_29a78177__orig",
+   "label": "banana",
+   "attr": "banana_raw_green",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "umb_949f6a9c__orig",
+   "label": "banana",
+   "attr": "banana_ripe",
+   "live": "banana",
+   "live_state": "identified",
+   "side_src_px": 189,
+   "g3": "banana",
+   "g3_score": 0.845,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "banana",
+     "p": 0.395
+    },
+    {
+     "cls": "potato",
+     "p": 0.264
+    },
+    {
+     "cls": "apple",
+     "p": 0.083
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "other"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 189,
+    "area_frac": 0.1182,
+    "mean_v": 163,
+    "luma": 137,
+    "blur_var": 231.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "umb_88d048c3__orig",
+   "label": "banana",
+   "attr": "banana_ripe",
+   "live": "banana",
+   "live_state": "identified",
+   "side_src_px": 166,
+   "g3": "banana",
+   "g3_score": 0.847,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "banana",
+     "p": 0.404
+    },
+    {
+     "cls": "carrot",
+     "p": 0.147
+    },
+    {
+     "cls": "mango",
+     "p": 0.107
+    }
+   ],
+   "closeup": "Banana. Not graded",
+   "j7_tap": "Banana. Not graded",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 166,
+    "area_frac": 0.0909,
+    "mean_v": 113,
+    "luma": 93,
+    "blur_var": 160,
+    "edge": false
+   }
+  },
+  {
+   "key": "umb_280cd6b1__orig",
+   "label": "banana",
+   "attr": "banana_ripe",
+   "live": "banana",
+   "live_state": "identified",
+   "side_src_px": 157,
+   "g3": "banana",
+   "g3_score": 0.882,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.387
+    },
+    {
+     "cls": "banana",
+     "p": 0.255
+    },
+    {
+     "cls": "tomato",
+     "p": 0.118
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 157,
+    "area_frac": 0.0822,
+    "mean_v": 122,
+    "luma": 114,
+    "blur_var": 245.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "umb_eea76717__orig",
+   "label": "banana",
+   "attr": "banana_ripe",
+   "live": "banana",
+   "live_state": "identified",
+   "side_src_px": 272,
+   "g3": "banana",
+   "g3_score": 0.901,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "banana",
+     "p": 0.73
+    },
+    {
+     "cls": "potato",
+     "p": 0.068
+    },
+    {
+     "cls": "mango",
+     "p": 0.048
+    }
+   ],
+   "closeup": "Banana. Not graded",
+   "j7_tap": "Banana. Not graded",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 272,
+    "area_frac": 0.243,
+    "mean_v": 135,
+    "luma": 122,
+    "blur_var": 78.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcm0098__dark",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 307,
+   "g3": "carrot",
+   "g3_score": 0.611,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.736
+    },
+    {
+     "cls": "potato",
+     "p": 0.062
+    },
+    {
+     "cls": "guava",
+     "p": 0.033
+    }
+   ],
+   "closeup": "Carrot. Not graded",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 307,
+    "area_frac": 0.31,
+    "mean_v": 92,
+    "luma": 68,
+    "blur_var": 55,
+    "edge": true
+   }
+  },
+  {
+   "key": "tcm0098__warm",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 305,
+   "g3": "carrot",
+   "g3_score": 0.82,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.873
+    },
+    {
+     "cls": "potato",
+     "p": 0.024
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.022
+    }
+   ],
+   "closeup": "Carrot. Not graded",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 305,
+    "area_frac": 0.3033,
+    "mean_v": 219,
+    "luma": 146,
+    "blur_var": 218.2,
+    "edge": true
+   }
+  },
+  {
+   "key": "tcm0098__over",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 317,
+   "g3": "carrot",
+   "g3_score": 0.715,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.707
+    },
+    {
+     "cls": "tomato",
+     "p": 0.066
+    },
+    {
+     "cls": "potato",
+     "p": 0.045
+    }
+   ],
+   "closeup": "Carrot. Not graded",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "improve_lighting:overexposed_v_246",
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 317,
+    "area_frac": 0.3292,
+    "mean_v": 246,
+    "luma": 212,
+    "blur_var": 352.8,
+    "edge": true
+   }
+  },
+  {
+   "key": "tcm0093__orig",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 194,
+   "g3": "carrot",
+   "g3_score": 0.684,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.932
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.023
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.011
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 194,
+    "area_frac": 0.1249,
+    "mean_v": 220,
+    "luma": 161,
+    "blur_var": 697.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcm0093__dark",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 127,
+   "g3": "carrot",
+   "g3_score": 0.253,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.921
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.021
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.017
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 127,
+    "area_frac": 0.0537,
+    "mean_v": 102,
+    "luma": 72,
+    "blur_var": 105.7,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcm0093__warm",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 202,
+   "g3": "carrot",
+   "g3_score": 0.786,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.566
+    },
+    {
+     "cls": "potato",
+     "p": 0.213
+    },
+    {
+     "cls": "unknown",
+     "p": 0.047
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 202,
+    "area_frac": 0.1359,
+    "mean_v": 229,
+    "luma": 153,
+    "blur_var": 552.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcm0093__over",
+   "label": "carrot",
+   "attr": "carrot_commons_mixed_light",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 58,
+   "g3": "carrot",
+   "g3_score": 0.306,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.402
+    },
+    {
+     "cls": "unknown",
+     "p": 0.153
+    },
+    {
+     "cls": "apple",
+     "p": 0.116
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "small_object",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "small_object",
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_58px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 58,
+    "area_frac": 0.0116,
+    "mean_v": 229,
+    "luma": 189,
+    "blur_var": 1555.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "tveg3e9fcba2__orig",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 191,
+   "g3": "carrot",
+   "g3_score": 0.405,
+   "competing": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.339
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.182
+    },
+    {
+     "cls": "citrus",
+     "p": 0.106
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot",
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_competing_classes_same_object",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_competing_classes_same_object",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 191,
+    "area_frac": 0.1193,
+    "mean_v": 211,
+    "luma": 130,
+    "blur_var": 62,
+    "edge": true
+   }
+  },
+  {
+   "key": "tveg3e9fcba2__dark",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 190,
+   "g3": "carrot",
+   "g3_score": 0.609,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.265
+    },
+    {
+     "cls": "citrus",
+     "p": 0.18
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.098
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_13.8_lt_15",
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 190,
+    "area_frac": 0.1186,
+    "mean_v": 95,
+    "luma": 58,
+    "blur_var": 13.8,
+    "edge": true
+   }
+  },
+  {
+   "key": "tveg3e9fcba2__warm",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 187,
+   "g3": "citrus",
+   "g3_score": 0.388,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.291
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.176
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.144
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 187,
+    "area_frac": 0.1148,
+    "mean_v": 223,
+    "luma": 127,
+    "blur_var": 45.1,
+    "edge": true
+   }
+  },
+  {
+   "key": "tveg3e9fcba2__over",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 285,
+   "g3": "citrus",
+   "g3_score": 0.526,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.235
+    },
+    {
+     "cls": "tomato",
+     "p": 0.171
+    },
+    {
+     "cls": "carrot",
+     "p": 0.111
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 285,
+    "area_frac": 0.267,
+    "mean_v": 217,
+    "luma": 176,
+    "blur_var": 1338.2,
+    "edge": true
+   }
+  },
+  {
+   "key": "tveg0877ca01__orig",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 355,
+   "g3": "carrot",
+   "g3_score": 0.777,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.872
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.029
+    },
+    {
+     "cls": "citrus",
+     "p": 0.022
+    }
+   ],
+   "closeup": "Carrot. Not graded",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 355,
+    "area_frac": 0.4144,
+    "mean_v": 193,
+    "luma": 124,
+    "blur_var": 381.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "tveg0877ca01__dark",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 362,
+   "g3": "carrot",
+   "g3_score": 0.568,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.827
+    },
+    {
+     "cls": "citrus",
+     "p": 0.038
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.031
+    }
+   ],
+   "closeup": "Carrot. Not graded",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 362,
+    "area_frac": 0.4298,
+    "mean_v": 86,
+    "luma": 55,
+    "blur_var": 79.4,
+    "edge": true
+   }
+  },
+  {
+   "key": "tveg0877ca01__warm",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 459,
+   "g3": "carrot",
+   "g3_score": 0.26,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.802
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.041
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.039
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 459,
+    "area_frac": 0.6916,
+    "mean_v": 212,
+    "luma": 122,
+    "blur_var": 271.7,
+    "edge": true
+   }
+  },
+  {
+   "key": "tveg0877ca01__over",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 303,
+   "g3": "carrot",
+   "g3_score": 0.434,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.613
+    },
+    {
+     "cls": "tomato",
+     "p": 0.161
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.055
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "improve_lighting:overexposed_v_247",
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 303,
+    "area_frac": 0.3014,
+    "mean_v": 247,
+    "luma": 193,
+    "blur_var": 581.1,
+    "edge": true
+   }
+  },
+  {
+   "key": "tvega5435626__orig",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 439,
+   "g3": "carrot",
+   "g3_score": 0.666,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.855
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.028
+    },
+    {
+     "cls": "tomato",
+     "p": 0.021
+    }
+   ],
+   "closeup": "Carrot. Not graded",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 439,
+    "area_frac": 0.6345,
+    "mean_v": 190,
+    "luma": 128,
+    "blur_var": 424.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "tvega5435626__dark",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 483,
+   "g3": "carrot",
+   "g3_score": 0.714,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.839
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.032
+    },
+    {
+     "cls": "tomato",
+     "p": 0.023
+    }
+   ],
+   "closeup": "Carrot. Not graded",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 483,
+    "area_frac": 0.7626,
+    "mean_v": 84,
+    "luma": 55,
+    "blur_var": 78.3,
+    "edge": true
+   }
+  },
+  {
+   "key": "tvega5435626__warm",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 422,
+   "g3": "carrot",
+   "g3_score": 0.674,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.847
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.038
+    },
+    {
+     "cls": "citrus",
+     "p": 0.029
+    }
+   ],
+   "closeup": "Carrot. Not graded",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 422,
+    "area_frac": 0.583,
+    "mean_v": 203,
+    "luma": 126,
+    "blur_var": 351.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "tvega5435626__over",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 433,
+   "g3": "carrot",
+   "g3_score": 0.48,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.528
+    },
+    {
+     "cls": "tomato",
+     "p": 0.185
+    },
+    {
+     "cls": "unknown",
+     "p": 0.054
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 433,
+    "area_frac": 0.6147,
+    "mean_v": 232,
+    "luma": 189,
+    "blur_var": 830.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "tvegfef03a4a__orig",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 257,
+   "g3": "carrot",
+   "g3_score": 0.483,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.551
+    },
+    {
+     "cls": "potato",
+     "p": 0.273
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.047
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 257,
+    "area_frac": 0.2172,
+    "mean_v": 178,
+    "luma": 112,
+    "blur_var": 149.6,
+    "edge": true
+   }
+  },
+  {
+   "key": "tvegfef03a4a__dark",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 257,
+   "g3": "carrot",
+   "g3_score": 0.516,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.787
+    },
+    {
+     "cls": "carrot",
+     "p": 0.081
+    },
+    {
+     "cls": "apple",
+     "p": 0.025
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [
+    "improve_lighting:too_dark_v_80",
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 257,
+    "area_frac": 0.218,
+    "mean_v": 80,
+    "luma": 50,
+    "blur_var": 31.2,
+    "edge": true
+   }
+  },
+  {
+   "key": "tvegfef03a4a__warm",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 258,
+   "g3": "carrot",
+   "g3_score": 0.306,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.427
+    },
+    {
+     "cls": "potato",
+     "p": 0.145
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.089
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "lighting",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 258,
+    "area_frac": 0.2192,
+    "mean_v": 194,
+    "luma": 114,
+    "blur_var": 40.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "tvegfef03a4a__over",
+   "label": "carrot",
+   "attr": "carrot_phone_bd",
+   "live": "carrot",
+   "live_state": "identified",
+   "side_src_px": 256,
+   "g3": "carrot",
+   "g3_score": 0.746,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.857
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.028
+    },
+    {
+     "cls": "potato",
+     "p": 0.022
+    }
+   ],
+   "closeup": "Carrot. Not graded",
+   "j7_tap": "Carrot. Not graded",
+   "j7_overlay": [
+    "Carrot"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 256,
+    "area_frac": 0.2156,
+    "mean_v": 224,
+    "luma": 165,
+    "blur_var": 336.5,
+    "edge": true
+   }
+  },
+  {
+   "key": "tcm0006__orig",
+   "label": "citrus",
+   "attr": "citrus_small_in_indoor_scene",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 83,
+   "g3": "apple",
+   "g3_score": 0.561,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.713
+    },
+    {
+     "cls": "apple",
+     "p": 0.047
+    },
+    {
+     "cls": "carrot",
+     "p": 0.045
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "small_object",
+     "g3_h2_disagree"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion",
+     "small_object",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_83px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 83,
+    "area_frac": 0.0262,
+    "mean_v": 145,
+    "luma": 87,
+    "blur_var": 414.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcm0034__orig",
+   "label": "citrus",
+   "attr": "citrus_commons",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 325,
+   "g3": "citrus",
+   "g3_score": 0.85,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.623
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.075
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.074
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 325,
+    "area_frac": 0.3468,
+    "mean_v": 209,
+    "luma": 127,
+    "blur_var": 67,
+    "edge": true
+   }
+  },
+  {
+   "key": "tcm0033__orig",
+   "label": "citrus",
+   "attr": "citrus_commons",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 197,
+   "g3": "citrus",
+   "g3_score": 0.949,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "citrus",
+     "p": 0.598
+    },
+    {
+     "cls": "carrot",
+     "p": 0.066
+    },
+    {
+     "cls": "tomato",
+     "p": 0.065
+    }
+   ],
+   "closeup": "Citrus (orange / kinnow / mosambi). Not graded",
+   "j7_tap": "Citrus (orange / kinnow / mosambi). Not graded",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 197,
+    "area_frac": 0.1293,
+    "mean_v": 198,
+    "luma": 122,
+    "blur_var": 178.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcm0035__orig",
+   "label": "citrus",
+   "attr": "citrus_bagged_netted",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 102,
+   "g3": "citrus",
+   "g3_score": 0.353,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "capsicum",
+     "p": 0.312
+    },
+    {
+     "cls": "unknown",
+     "p": 0.145
+    },
+    {
+     "cls": "tomato",
+     "p": 0.119
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 102,
+    "area_frac": 0.0392,
+    "mean_v": 160,
+    "luma": 109,
+    "blur_var": 3255.1,
+    "edge": true
+   }
+  },
+  {
+   "key": "tcm0041__orig",
+   "label": "citrus",
+   "attr": "citrus_on_tree_small",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 75,
+   "g3": "citrus",
+   "g3_score": 0.836,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.26
+    },
+    {
+     "cls": "mango",
+     "p": 0.208
+    },
+    {
+     "cls": "carrot",
+     "p": 0.105
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "small_object"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_75px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 75,
+    "area_frac": 0.0212,
+    "mean_v": 150,
+    "luma": 127,
+    "blur_var": 1917.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcitcd405f04__orig",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 150,
+   "g3": "citrus",
+   "g3_score": 0.918,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "pomegranate",
+     "p": 0.214
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.159
+    },
+    {
+     "cls": "potato",
+     "p": 0.105
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 150,
+    "area_frac": 0.0745,
+    "mean_v": 134,
+    "luma": 89,
+    "blur_var": 59.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcitcd405f04__dark",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 149,
+   "g3": "citrus",
+   "g3_score": 0.91,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.35
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.156
+    },
+    {
+     "cls": "mango",
+     "p": 0.093
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_13.5_lt_15",
+    "improve_lighting:too_dark_v_60"
+   ],
+   "q": {
+    "side_px": 149,
+    "area_frac": 0.0725,
+    "mean_v": 60,
+    "luma": 39,
+    "blur_var": 13.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcitcd405f04__warm",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 149,
+   "g3": "citrus",
+   "g3_score": 0.833,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.218
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.145
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.083
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 149,
+    "area_frac": 0.0739,
+    "mean_v": 143,
+    "luma": 86,
+    "blur_var": 50.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcitcd405f04__over",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 149,
+   "g3": "citrus",
+   "g3_score": 0.919,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "citrus",
+     "p": 0.177
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.155
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.118
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 149,
+    "area_frac": 0.0732,
+    "mean_v": 225,
+    "luma": 148,
+    "blur_var": 148,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit3536f0b1__orig",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 158,
+   "g3": "citrus",
+   "g3_score": 0.889,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.797
+    },
+    {
+     "cls": "unknown",
+     "p": 0.119
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.03
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 158,
+    "area_frac": 0.0824,
+    "mean_v": 117,
+    "luma": 78,
+    "blur_var": 66.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit3536f0b1__dark",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 156,
+   "g3": "citrus",
+   "g3_score": 0.898,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.405
+    },
+    {
+     "cls": "unknown",
+     "p": 0.248
+    },
+    {
+     "cls": "mango",
+     "p": 0.167
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [
+    "improve_lighting:too_dark_v_52"
+   ],
+   "q": {
+    "side_px": 156,
+    "area_frac": 0.0804,
+    "mean_v": 52,
+    "luma": 34,
+    "blur_var": 15.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit3536f0b1__warm",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 158,
+   "g3": "citrus",
+   "g3_score": 0.799,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.521
+    },
+    {
+     "cls": "unknown",
+     "p": 0.189
+    },
+    {
+     "cls": "apple",
+     "p": 0.09
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 158,
+    "area_frac": 0.0833,
+    "mean_v": 125,
+    "luma": 76,
+    "blur_var": 57.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit3536f0b1__over",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 157,
+   "g3": "citrus",
+   "g3_score": 0.903,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.62
+    },
+    {
+     "cls": "potato",
+     "p": 0.255
+    },
+    {
+     "cls": "citrus",
+     "p": 0.033
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 157,
+    "area_frac": 0.0824,
+    "mean_v": 197,
+    "luma": 131,
+    "blur_var": 179,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit1b2a3c02__orig",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 147,
+   "g3": "citrus",
+   "g3_score": 0.93,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "pomegranate",
+     "p": 0.207
+    },
+    {
+     "cls": "citrus",
+     "p": 0.144
+    },
+    {
+     "cls": "tomato",
+     "p": 0.141
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 147,
+    "area_frac": 0.0719,
+    "mean_v": 129,
+    "luma": 88,
+    "blur_var": 54.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit1b2a3c02__dark",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 146,
+   "g3": "citrus",
+   "g3_score": 0.925,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.355
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.11
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.103
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_12.8_lt_15",
+    "improve_lighting:too_dark_v_58"
+   ],
+   "q": {
+    "side_px": 146,
+    "area_frac": 0.0713,
+    "mean_v": 58,
+    "luma": 39,
+    "blur_var": 12.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit1b2a3c02__warm",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 147,
+   "g3": "citrus",
+   "g3_score": 0.911,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.357
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.227
+    },
+    {
+     "cls": "citrus",
+     "p": 0.075
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 147,
+    "area_frac": 0.0713,
+    "mean_v": 138,
+    "luma": 85,
+    "blur_var": 48,
+    "edge": false
+   }
+  },
+  {
+   "key": "tcit1b2a3c02__over",
+   "label": "citrus",
+   "attr": "citrus_tw_murcott",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 146,
+   "g3": "citrus",
+   "g3_score": 0.926,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "lemon_lime",
+     "p": 0.254
+    },
+    {
+     "cls": "citrus",
+     "p": 0.188
+    },
+    {
+     "cls": "tomato",
+     "p": 0.167
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 146,
+    "area_frac": 0.0706,
+    "mean_v": 218,
+    "luma": 147,
+    "blur_var": 141.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "ubg_69303f91__orig",
+   "label": "banana",
+   "attr": "banana_classB",
+   "live": "banana",
+   "live_state": "identified",
+   "side_src_px": 424,
+   "g3": "banana",
+   "g3_score": 0.764,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "banana",
+     "p": 0.59
+    },
+    {
+     "cls": "potato",
+     "p": 0.166
+    },
+    {
+     "cls": "unknown",
+     "p": 0.067
+    }
+   ],
+   "closeup": "Banana. Not graded",
+   "j7_tap": "Banana. Not graded",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 424,
+    "area_frac": 0.4421,
+    "mean_v": 153,
+    "luma": 117,
+    "blur_var": 475.9,
+    "edge": false
+   }
+  },
+  {
+   "key": "ubg_bef2fd1c__orig",
+   "label": "banana",
+   "attr": "banana_classB",
+   "live": "banana",
+   "live_state": "identified",
+   "side_src_px": 524,
+   "g3": "banana",
+   "g3_score": 0.748,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "banana",
+     "p": 0.454
+    },
+    {
+     "cls": "unknown",
+     "p": 0.228
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.115
+    }
+   ],
+   "closeup": "Banana. Not graded",
+   "j7_tap": "Banana. Not graded",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 524,
+    "area_frac": 0.6735,
+    "mean_v": 172,
+    "luma": 144,
+    "blur_var": 217.3,
+    "edge": true
+   }
+  },
+  {
+   "key": "ubg_458cc30d__orig",
+   "label": "banana",
+   "attr": "banana_classB",
+   "live": "banana",
+   "live_state": "identified",
+   "side_src_px": 354,
+   "g3": "banana",
+   "g3_score": 0.867,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "banana",
+     "p": 0.689
+    },
+    {
+     "cls": "unknown",
+     "p": 0.144
+    },
+    {
+     "cls": "potato",
+     "p": 0.054
+    }
+   ],
+   "closeup": "Banana. Not graded",
+   "j7_tap": "Banana. Not graded",
+   "j7_overlay": [
+    "Banana"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 354,
+    "area_frac": 0.3079,
+    "mean_v": 137,
+    "luma": 112,
+    "blur_var": 674.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "uveg302ceb43__orig",
+   "label": "tomato",
+   "attr": "tomato_ripe",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 116,
+   "g3": "citrus",
+   "g3_score": 0.509,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.395
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.377
+    },
+    {
+     "cls": "mango",
+     "p": 0.04
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_5.4_lt_15"
+   ],
+   "q": {
+    "side_px": 116,
+    "area_frac": 0.2071,
+    "mean_v": 145,
+    "luma": 94,
+    "blur_var": 5.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "uvega02ccb80__orig",
+   "label": "tomato",
+   "attr": "tomato_ripe",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "uveg3df73fef__orig",
+   "label": "tomato",
+   "attr": "tomato_ripe",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 109,
+   "g3": "citrus",
+   "g3_score": 0.379,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.62
+    },
+    {
+     "cls": "potato",
+     "p": 0.099
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.064
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_12.4_lt_15"
+   ],
+   "q": {
+    "side_px": 109,
+    "area_frac": 0.1819,
+    "mean_v": 172,
+    "luma": 112,
+    "blur_var": 12.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "uveg63c902e8__orig",
+   "label": "tomato",
+   "attr": "tomato_ripe",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "uveg7dcc239e__orig",
+   "label": "tomato",
+   "attr": "tomato_unripe",
+   "live": "mango",
+   "live_state": "identified",
+   "side_src_px": 116,
+   "g3": "mango",
+   "g3_score": 0.941,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.691
+    },
+    {
+     "cls": "apple",
+     "p": 0.088
+    },
+    {
+     "cls": "banana",
+     "p": 0.082
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Mango"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_7.0_lt_15",
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 116,
+    "area_frac": 0.2082,
+    "mean_v": 143,
+    "luma": 133,
+    "blur_var": 7,
+    "edge": true
+   }
+  },
+  {
+   "key": "uvegcdb6152a__orig",
+   "label": "tomato",
+   "attr": "tomato_unripe",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 98,
+   "g3": "apple",
+   "g3_score": 0.497,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.393
+    },
+    {
+     "cls": "unknown",
+     "p": 0.291
+    },
+    {
+     "cls": "tomato",
+     "p": 0.222
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_3.5_lt_15"
+   ],
+   "q": {
+    "side_px": 98,
+    "area_frac": 0.1491,
+    "mean_v": 161,
+    "luma": 151,
+    "blur_var": 3.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "uvegd74944f3__orig",
+   "label": "tomato",
+   "attr": "tomato_unripe",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "uveg14404ad4__orig",
+   "label": "tomato",
+   "attr": "tomato_unripe",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 147,
+   "g3": "apple",
+   "g3_score": 0.37,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "cucumber",
+     "p": 0.229
+    },
+    {
+     "cls": "tomato",
+     "p": 0.205
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.121
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_12.4_lt_15"
+   ],
+   "q": {
+    "side_px": 147,
+    "area_frac": 0.3317,
+    "mean_v": 167,
+    "luma": 152,
+    "blur_var": 12.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "usp7ee05f36__orig",
+   "label": "citrus",
+   "attr": "orange_studio",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 140,
+   "g3": "citrus",
+   "g3_score": 0.862,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "lemon_lime",
+     "p": 0.524
+    },
+    {
+     "cls": "unknown",
+     "p": 0.154
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.088
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 140,
+    "area_frac": 0.3951,
+    "mean_v": 157,
+    "luma": 118,
+    "blur_var": 23.7,
+    "edge": false
+   }
+  },
+  {
+   "key": "usp7ee05f36__dark",
+   "label": "citrus",
+   "attr": "orange_studio",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 138,
+   "g3": "citrus",
+   "g3_score": 0.724,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.296
+    },
+    {
+     "cls": "citrus",
+     "p": 0.184
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.112
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_5.2_lt_15",
+    "improve_lighting:too_dark_v_71"
+   ],
+   "q": {
+    "side_px": 138,
+    "area_frac": 0.3849,
+    "mean_v": 71,
+    "luma": 53,
+    "blur_var": 5.2,
+    "edge": false
+   }
+  },
+  {
+   "key": "usp7ee05f36__warm",
+   "label": "citrus",
+   "attr": "orange_studio",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 141,
+   "g3": "citrus",
+   "g3_score": 0.833,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "lemon_lime",
+     "p": 0.605
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.107
+    },
+    {
+     "cls": "tomato",
+     "p": 0.079
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 141,
+    "area_frac": 0.3981,
+    "mean_v": 161,
+    "luma": 111,
+    "blur_var": 19.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "usp7ee05f36__over",
+   "label": "citrus",
+   "attr": "orange_studio",
+   "live": "mango",
+   "live_state": "identified",
+   "side_src_px": 140,
+   "g3": "mango",
+   "g3_score": 0.696,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.356
+    },
+    {
+     "cls": "lemon_lime",
+     "p": 0.165
+    },
+    {
+     "cls": "tomato",
+     "p": 0.15
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Mango"
+   ],
+   "live_outcome": [
+    "wrong_id",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_class_confusion",
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 140,
+    "area_frac": 0.3967,
+    "mean_v": 190,
+    "luma": 165,
+    "blur_var": 42.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "uvegb46d2132__orig",
+   "label": "unsupported",
+   "attr": "unsup_brinjal",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "uveg9669e09f__orig",
+   "label": "unsupported",
+   "attr": "unsup_brinjal",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 79,
+   "g3": "pomegranate",
+   "g3_score": 0.297,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.535
+    },
+    {
+     "cls": "mango",
+     "p": 0.182
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.106
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "small_object"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "small_object"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_79px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 79,
+    "area_frac": 0.379,
+    "mean_v": 93,
+    "luma": 81,
+    "blur_var": 32.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "uveg8f12e4c5__orig",
+   "label": "unsupported",
+   "attr": "unsup_garlic",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "uveg80f6668b__orig",
+   "label": "unsupported",
+   "attr": "unsup_garlic",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "uveg30586dfb__orig",
+   "label": "unsupported",
+   "attr": "unsup_ginger",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "uvegdaff2c50__orig",
+   "label": "unsupported",
+   "attr": "unsup_ginger",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "uveg8028b5c3__orig",
+   "label": "unsupported",
+   "attr": "unsup_onion",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "uveg4cb5a559__orig",
+   "label": "unsupported",
+   "attr": "unsup_onion",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 73,
+   "g3": "apple",
+   "g3_score": 0.888,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.555
+    },
+    {
+     "cls": "potato",
+     "p": 0.154
+    },
+    {
+     "cls": "unknown",
+     "p": 0.119
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "unsupported_accept",
+    [
+     "small_object"
+    ]
+   ],
+   "closeup_outcome": [
+    "unsupported_accept",
+    [
+     "small_object"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_73px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 73,
+    "area_frac": 0.3274,
+    "mean_v": 117,
+    "luma": 94,
+    "blur_var": 156.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "uspcf0b976d__orig",
+   "label": "unsupported",
+   "attr": "unsup_strawberry",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 73,
+   "g3": "pomegranate",
+   "g3_score": 0.58,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.299
+    },
+    {
+     "cls": "potato",
+     "p": 0.219
+    },
+    {
+     "cls": "carrot",
+     "p": 0.099
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "unsupported_accept",
+    [
+     "small_object"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "small_object"
+    ]
+   ],
+   "hints": [
+    "move_closer:side_73px_lt_quality_min_96"
+   ],
+   "q": {
+    "side_px": 73,
+    "area_frac": 0.1084,
+    "mean_v": 118,
+    "luma": 88,
+    "blur_var": 26.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "uspeb41a38b__orig",
+   "label": "unsupported",
+   "attr": "unsup_strawberry",
+   "live": "pomegranate",
+   "live_state": "identified",
+   "side_src_px": 109,
+   "g3": "pomegranate",
+   "g3_score": 0.735,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.366
+    },
+    {
+     "cls": "apple",
+     "p": 0.132
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.114
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Pomegranate"
+   ],
+   "live_outcome": [
+    "unsupported_accept",
+    [
+     "other"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "other"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 109,
+    "area_frac": 0.2396,
+    "mean_v": 107,
+    "luma": 91,
+    "blur_var": 83.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "usp74519644__orig",
+   "label": "unsupported",
+   "attr": "unsup_tamarillo",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "uspfe5f12ee__orig",
+   "label": "unsupported",
+   "attr": "unsup_tamarillo",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "usp3323ef55__orig",
+   "label": "unsupported",
+   "attr": "unsup_lulo",
+   "live": "citrus",
+   "live_state": "identified",
+   "side_src_px": 149,
+   "g3": "citrus",
+   "g3_score": 0.854,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "tomato",
+     "p": 0.896
+    },
+    {
+     "cls": "capsicum",
+     "p": 0.025
+    },
+    {
+     "cls": "citrus",
+     "p": 0.012
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Citrus (orange / kinnow / mosambi)"
+   ],
+   "live_outcome": [
+    "unsupported_accept",
+    [
+     "g3_h2_disagree"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 149,
+    "area_frac": 0.4434,
+    "mean_v": 158,
+    "luma": 111,
+    "blur_var": 82.4,
+    "edge": false
+   }
+  },
+  {
+   "key": "uspc0bc2e46__orig",
+   "label": "unsupported",
+   "attr": "unsup_lulo",
+   "live": null,
+   "live_state": null,
+   "side_src_px": null,
+   "g3": null,
+   "g3_score": null,
+   "competing": null,
+   "h2_top3": null,
+   "closeup": null,
+   "j7_tap": null,
+   "j7_overlay": [],
+   "live_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "g3_no_detection"
+    ]
+   ],
+   "hints": null,
+   "q": null
+  },
+  {
+   "key": "uvegdddc0c5d__orig",
+   "label": "capsicum",
+   "attr": "capsicum_green_bell",
+   "live": null,
+   "live_state": "unable",
+   "side_src_px": 212,
+   "g3": "capsicum",
+   "g3_score": 0.473,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "guava",
+     "p": 0.581
+    },
+    {
+     "cls": "apple",
+     "p": 0.116
+    },
+    {
+     "cls": "unknown",
+     "p": 0.116
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Capsicum"
+   ],
+   "live_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "wide_score_below_idMinScore"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 212,
+    "area_frac": 0.6906,
+    "mean_v": 134,
+    "luma": 123,
+    "blur_var": 109.7,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0041__orig",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 210,
+   "g3": "apple",
+   "g3_score": 0.922,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.432
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.243
+    },
+    {
+     "cls": "unknown",
+     "p": 0.163
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "g3_h2_disagree"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 210,
+    "area_frac": 0.1452,
+    "mean_v": 145,
+    "luma": 115,
+    "blur_var": 28.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0041__dark",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 210,
+   "g3": "apple",
+   "g3_score": 0.921,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.359
+    },
+    {
+     "cls": "pomegranate",
+     "p": 0.25
+    },
+    {
+     "cls": "unknown",
+     "p": 0.235
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "hold_steady:blur_var_7.3_lt_15",
+    "improve_lighting:too_dark_v_65"
+   ],
+   "q": {
+    "side_px": 210,
+    "area_frac": 0.1443,
+    "mean_v": 65,
+    "luma": 51,
+    "blur_var": 7.3,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0041__warm",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 209,
+   "g3": "apple",
+   "g3_score": 0.891,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "potato",
+     "p": 0.323
+    },
+    {
+     "cls": "unknown",
+     "p": 0.216
+    },
+    {
+     "cls": "apple",
+     "p": 0.168
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 209,
+    "area_frac": 0.1443,
+    "mean_v": 155,
+    "luma": 110,
+    "blur_var": 25.6,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0041__over",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 212,
+   "g3": "apple",
+   "g3_score": 0.918,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "unknown",
+     "p": 0.403
+    },
+    {
+     "cls": "apple",
+     "p": 0.328
+    },
+    {
+     "cls": "potato",
+     "p": 0.098
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_unknown",
+     "lighting"
+    ]
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 212,
+    "area_frac": 0.1481,
+    "mean_v": 228,
+    "luma": 186,
+    "blur_var": 52.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0042__orig",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 511,
+   "g3": "apple",
+   "g3_score": 0.93,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.813
+    },
+    {
+     "cls": "unknown",
+     "p": 0.041
+    },
+    {
+     "cls": "guava",
+     "p": 0.035
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 511,
+    "area_frac": 0.6416,
+    "mean_v": 178,
+    "luma": 142,
+    "blur_var": 439.5,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0042__dark",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 510,
+   "g3": "apple",
+   "g3_score": 0.933,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.492
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.141
+    },
+    {
+     "cls": "unknown",
+     "p": 0.099
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [
+    "improve_lighting:too_dark_v_80"
+   ],
+   "q": {
+    "side_px": 510,
+    "area_frac": 0.6382,
+    "mean_v": 80,
+    "luma": 63,
+    "blur_var": 89.8,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0042__warm",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 509,
+   "g3": "apple",
+   "g3_score": 0.933,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.892
+    },
+    {
+     "cls": "unknown",
+     "p": 0.028
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.016
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 509,
+    "area_frac": 0.6349,
+    "mean_v": 191,
+    "luma": 135,
+    "blur_var": 382,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0042__over",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 505,
+   "g3": "apple",
+   "g3_score": 0.929,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "apple",
+     "p": 0.808
+    },
+    {
+     "cls": "unknown",
+     "p": 0.089
+    },
+    {
+     "cls": "tomato",
+     "p": 0.03
+    }
+   ],
+   "closeup": "Apple. Not graded",
+   "j7_tap": "Apple. Not graded",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "correct",
+    []
+   ],
+   "hints": [],
+   "q": {
+    "side_px": 505,
+    "area_frac": 0.6266,
+    "mean_v": 243,
+    "luma": 195,
+    "blur_var": 785.1,
+    "edge": false
+   }
+  },
+  {
+   "key": "t2c0043__orig",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 160,
+   "g3": "apple",
+   "g3_score": 0.884,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.215
+    },
+    {
+     "cls": "unknown",
+     "p": 0.148
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.127
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 160,
+    "area_frac": 0.0905,
+    "mean_v": 202,
+    "luma": 137,
+    "blur_var": 171.5,
+    "edge": true
+   }
+  },
+  {
+   "key": "t2c0043__dark",
+   "label": "apple",
+   "attr": "apple_red_yellow_fuji",
+   "live": "apple",
+   "live_state": "identified",
+   "side_src_px": 159,
+   "g3": "apple",
+   "g3_score": 0.848,
+   "competing": [],
+   "h2_top3": [
+    {
+     "cls": "carrot",
+     "p": 0.237
+    },
+    {
+     "cls": "potato",
+     "p": 0.189
+    },
+    {
+     "cls": "cucumber",
+     "p": 0.13
+    }
+   ],
+   "closeup": "Unable to identify",
+   "j7_tap": "Unable to identify",
+   "j7_overlay": [
+    "Apple"
+   ],
+   "live_outcome": [
+    "correct",
+    []
+   ],
+   "closeup_outcome": [
+    "abstain",
+    [
+     "h2_class_confusion",
+     "lighting"
+    ]
+   ],
+   "hints": [
+    "keep_in_view:box_touches_frame_edge"
+   ],
+   "q": {
+    "side_px": 159,
+    "area_frac": 0.0882,
+    "mean_v": 91,
+    "luma": 61,
+    "blur_var": 36.1,
+    "edge": true
+   }
+  }
+ ]
+}
