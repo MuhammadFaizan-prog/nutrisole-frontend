@@ -177,3 +177,14 @@ synthetic data, missing integration or missing human/device evidence.
    reference with source/date/staleness; build a cited nutrient table for the five showcase classes linked to confirmed identity.
 6. Then: plan rule engine (row 7), footwear rule table (row 8), real assistant with guardrail tests (row 9), and one scripted end-to-end
    demo recording for the viva.
+
+## Addendum 2026-10-15 (Stage J3): hard-coded demo values are excluded from CV evidence
+
+Confirmed still present (UI files **not changed**; protected UI needs his approval): `src/nutrisole/Scan.tsx` "Confidence 97%",
+`src/nutrisole/extensions/useExpansion.ts` evidence notice "Confidence: 97%", `native/responsive/ScanScreen.tsx` "Apple · Confidence 97%",
+and "VISIBLE GRADE A" / "Grade A" in `src/nutrisole/extensions/model.ts` (rendered by native `ExpandedScreen.tsx`).
+
+**Exclusion rule:** these strings are static demo content. They are never counted as recognition, confidence, grading, accuracy or
+device evidence in any CV report, gate, table, slide, video or viva material; they are never an input to `j_agree.py`, `j_gates.py`,
+`h3_guard.py` or `h3_compare.py`; and any screenshot that shows them must be captioned "static demo value, not a model output".
+Grades remain blocked. Stage J3 test counts: ML pytest **141/141**, native **122/122**, web **5/5**, expansion **8/8**, runtime **28 OK**.
