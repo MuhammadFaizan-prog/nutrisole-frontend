@@ -85,3 +85,38 @@ export async function runDebugPipeline(stills: UprightStill[], tap: [number, num
   const display = fromStageH(o, labelOf);
   return { display, displayErrors: checkDisplayResult(display), wide, verify: v, plan, detections, tappedPerStill: tapped.map((d) => d?.classId ?? null), logLines: log, inference: 'real', domain: domainOf(v) };
 }
+
+// ---- G9 Stage J8: close-up path for LIVE mode. The wide identity comes from the live track (trackWide over the last 3 live frames,
+// the unchanged DEFAULT_ID policy); ONE high-resolution photo is captured for the H2 crop (never a preview-resolution crop). The
+// verification is the unchanged FROZEN_VERIFY P-a; grades stay blocked. Returns the same DebugOutcome plus the close-up diagnostics.
+export type CloseupDiag = { g3AtTap: { classId: number; score: number } | null; h2Top3: { classId: number; p: number }[]; agree: boolean | null; cropSidePx: number; cropW: number; cropH: number };
+export function h2Top3(probs: readonly number[]): { classId: number; p: number }[] {
+  return probs.map((p, i) => ({ classId: i, p: Math.round(p * 1e4) / 1e4 })).sort((a, b) => b.p - a.p || a.classId - b.classId).slice(0, 3);
+}
+export async function runCloseupFromTrack(still: UprightStill, tap: [number, number], view: Size, wide: IdResult, infer: Infer,
+  now: () => number = () => Date.now()): Promise<DebugOutcome & { closeup: CloseupDiag | null }> {
+  const log: string[] = [];
+  const t0 = now();
+  const out = await infer('g3_det', detectorInput(still.rgb, still.w, still.h), MODEL_IO.g3_det.inputs[0].shape as number[]);
+  if (out.length !== (4 + NC) * N_ANCHORS) throw new Error(`detector output ${out.length} != ${(4 + NC) * N_ANCHORS}`);
+  const dets = decodeRawWithNms(out, NC, N_ANCHORS, DET_DECODE_FLOOR).map((d) => ({ ...d, box: detectorToFrame(d.box, still.w, still.h) }));
+  log.push(`NSCV stage=closeup_det ms=${now() - t0}`);
+  const plan = planTapOnUprightStill(tap, view, [still.w, still.h], dets.map((d) => d.box));
+  if (!plan) {
+    const display = fromStageH(stageHDecision({ status: 'unable', reason: 'tap_outside_image', suggestions: [] }, [], 'not_run', []), labelOf);
+    return { display, displayErrors: checkDisplayResult(display), wide, verify: null, plan: null, detections: [dets], tappedPerStill: [], logLines: log, inference: 'real', domain: domainOf(null), closeup: null };
+  }
+  const td = tappedDetection(dets, plan.framePoint, still.w, still.h);
+  const crop = cropRgb(still.rgb, still.w, still.h, plan.crop);
+  const t1 = now();
+  const probs = asProbs(await infer('h2', h2Input(crop.rgb, crop.w, crop.h), [1, 3, 224, 224]));
+  if (probs.length !== H2_CLASSES.length) throw new Error(`h2 output ${probs.length} != ${H2_CLASSES.length}`);
+  log.push(`NSCV stage=h2 ms=${now() - t1}`);
+  const v = verifyIdentity(wide, null, probs, FROZEN_VERIFY);
+  const o = stageHDecision(v, [], 'not_run', ['quality_gate_not_run_in_debug'], false);
+  const display = fromStageH(o, labelOf);
+  const top = h2Top3(probs);
+  const closeup: CloseupDiag = { g3AtTap: td ? { classId: td.classId, score: Math.round(td.score * 1e4) / 1e4 } : null, h2Top3: top,
+    agree: wide.status === 'identified' ? top[0].classId === wide.classId : null, cropSidePx: Math.round(plan.sidePx), cropW: crop.w, cropH: crop.h };
+  return { display, displayErrors: checkDisplayResult(display), wide, verify: v, plan, detections: [dets], tappedPerStill: [td?.classId ?? null], logLines: log, inference: 'real', domain: domainOf(v), closeup };
+}
