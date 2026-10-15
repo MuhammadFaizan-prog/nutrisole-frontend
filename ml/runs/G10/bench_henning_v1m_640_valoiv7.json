@@ -1,0 +1,107 @@
+{
+ "model": "/workspace/work/cv/g10/ext/henning/yolo_fruits_and_vegetables_v1.pt",
+ "map": "lvis63",
+ "imgsz": 640,
+ "list": "/workspace/work/cv/g10/val_oiv7.txt",
+ "n_images": 57,
+ "device": "sandbox CPU (2 vCPU aarch64), PyTorch/Ultralytics predict",
+ "label_status": "existing dataset / agent-curated labels; EXPLORATORY, not human-verified",
+ "mAP50": 0.1504,
+ "mAP50_95": 0.1286,
+ "P": 0.216,
+ "R": 0.2359,
+ "per_class": {
+  "mango": {
+   "P": 0.0,
+   "R": 0.0,
+   "AP50": 0.0,
+   "AP50_95": 0.0,
+   "gt": 11,
+   "recall_at_035": 0.0,
+   "model_predicts_class": false
+  },
+  "citrus": {
+   "P": 0.354,
+   "R": 1.0,
+   "AP50": 0.4975,
+   "AP50_95": 0.4975,
+   "gt": 1,
+   "recall_at_035": 1.0,
+   "model_predicts_class": true
+  },
+  "pomegranate": {
+   "P": 0.0,
+   "R": 0.0,
+   "AP50": 0.0,
+   "AP50_95": 0.0,
+   "gt": 16,
+   "recall_at_035": 0.0,
+   "model_predicts_class": false
+  },
+  "tomato": {
+   "P": 0.0,
+   "R": 0.0,
+   "AP50": 0.0,
+   "AP50_95": 0.0,
+   "gt": 1,
+   "recall_at_035": 0.0,
+   "model_predicts_class": true
+  },
+  "cucumber": {
+   "P": 0.6143,
+   "R": 0.1304,
+   "AP50": 0.2996,
+   "AP50_95": 0.2097,
+   "gt": 110,
+   "recall_at_035": 0.2,
+   "model_predicts_class": true
+  },
+  "carrot": {
+   "P": 0.0915,
+   "R": 0.4167,
+   "AP50": 0.1431,
+   "AP50_95": 0.0974,
+   "gt": 12,
+   "recall_at_035": 0.5,
+   "model_predicts_class": true
+  },
+  "capsicum": {
+   "P": 0.4522,
+   "R": 0.1045,
+   "AP50": 0.1124,
+   "AP50_95": 0.0954,
+   "gt": 67,
+   "recall_at_035": 0.1045,
+   "model_predicts_class": true
+  }
+ },
+ "size_bucket_recall_at_035": {
+  "<6": {
+   "hit": 0,
+   "gt": 0,
+   "recall": 0.0
+  },
+  "6-12": {
+   "hit": 0,
+   "gt": 4,
+   "recall": 0.0
+  },
+  "12-24": {
+   "hit": 2,
+   "gt": 20,
+   "recall": 0.1
+  },
+  "24-48": {
+   "hit": 18,
+   "gt": 71,
+   "recall": 0.2535
+  },
+  ">=48": {
+   "hit": 16,
+   "gt": 123,
+   "recall": 0.1301
+  }
+ },
+ "predict_ms_p50": 748.1,
+ "predict_ms_p95": 1048.8
+}
