@@ -29,6 +29,7 @@ LICENCES = {"CC-BY-4.0", "internal-FYP"}
 NAME = re.compile(r"^TP_(S\d{8}-[A-Z]{2,3}-\d{2})_([a-z_]+?)_([a-z]+-[a-z]+|open)_(\d{3})\.(jpe?g|png)$", re.I)
 SESSION = re.compile(r"^S\d{8}-[A-Z]{2,3}-\d{2}$")
 CROSS, GROUP = 10, 6
+COLUMNS = ["session_id", "photographer", "date", "place", "purpose", "licence", "consent_confirmed"]   # shot list section 8
 
 
 def phash(path):
@@ -48,7 +49,11 @@ def ham(a, b):
 
 
 def load_sessions(path):
-    rows = list(csv.DictReader(open(path, encoding="utf-8-sig", newline="")))
+    rd = csv.DictReader(open(path, encoding="utf-8-sig", newline=""))
+    cols = [c.strip() for c in (rd.fieldnames or [])]
+    if cols != COLUMNS:
+        raise ValueError(f"sessions.csv columns must be exactly {','.join(COLUMNS)} (got {','.join(cols)})")
+    rows = [{k.strip(): (v or "").strip() for k, v in r.items() if k is not None} for r in rd]
     S, owner = {}, {}
     for r in rows:
         sid = r["session_id"].strip()
