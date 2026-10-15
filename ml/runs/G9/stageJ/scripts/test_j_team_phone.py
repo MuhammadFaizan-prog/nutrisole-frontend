@@ -120,7 +120,7 @@ def test_none_negative_and_hid_object_in_eval_none_refused_in_train(tmp_path):
     sessions(tmp_path, [["S20261018-AB-01", "Omar F", "2026-10-18", "market", "train", "CC-BY-4.0", "yes"]])
     for f in list(tmp_path.glob("TP_*")): f.unlink()
     img(tmp_path / "TP_S20261018-AB-01_none_open_001.jpg", 13)
-    with pytest.raises(ValueError, match="apple-only"):
+    with pytest.raises(ValueError, match="train sessions this round"):  # J4: apple/banana/tomato allowed, none refused
         T.ingest(tmp_path)
 
 
