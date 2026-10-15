@@ -1,0 +1,58 @@
+{
+ "pilot2": [
+  {
+   "zip": "/workspace/work/g9j2/packs/nutrisole_G9J_pilot2_annotator1.zip",
+   "mb": 23.2,
+   "items": 335,
+   "sha256": "ab5d4f31537a9e02410eeefc1380c1efff934232e47f37f1dcfefca7c047ef58",
+   "html_order_first5": [
+    "P724",
+    "P675",
+    "P804",
+    "P559",
+    "P526"
+   ]
+  },
+  {
+   "zip": "/workspace/work/g9j2/packs/nutrisole_G9J_pilot2_annotator2.zip",
+   "mb": 23.2,
+   "items": 335,
+   "sha256": "e5f1543814be40c84024c8ab88c46b1e18c6000028e89e437cd535ac008c4cdf",
+   "html_order_first5": [
+    "P794",
+    "P587",
+    "P711",
+    "P636",
+    "P663"
+   ]
+  }
+ ],
+ "train2": [
+  {
+   "zip": "/workspace/work/g9j2/packs/nutrisole_G9J_train2_annotator1.zip",
+   "mb": 26.3,
+   "items": 646,
+   "sha256": "5353caf7c3965bd3c42141d4457eae9f7e81153abada795a7ff7ea79afc25cea",
+   "html_order_first5": [
+    "T887",
+    "T1134",
+    "T1119",
+    "T980",
+    "T595"
+   ]
+  },
+  {
+   "zip": "/workspace/work/g9j2/packs/nutrisole_G9J_train2_annotator2.zip",
+   "mb": 26.3,
+   "items": 646,
+   "sha256": "2433083569abaa73effa78c984169a1f31a3beda3c51cfc4ca18fa7f7625607a",
+   "html_order_first5": [
+    "T501",
+    "T889",
+    "T1010",
+    "T801",
+    "T525"
+   ]
+  }
+ ]
+}
