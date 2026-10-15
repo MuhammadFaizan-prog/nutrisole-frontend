@@ -1,0 +1,4 @@
+{"id": "mfaizannnn/nutrisole-g9-h3", "title": "nutrisole-g9-h3", "code_file": "run_h3.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": true, "enable_internet": false,
+ "dataset_sources": ["mfaizannnn/nutrisole-h2v2-weights", "mfaizannnn/nutrisole-g9-h3-jtrain-verified"], "competition_sources": [], "kernel_sources": [],
+ "_note": "TEMPLATE ONLY. h3_launch.py copies this to kernel-metadata.json only after h3_guard.py returns PASS. The two datasets do not exist yet."}
