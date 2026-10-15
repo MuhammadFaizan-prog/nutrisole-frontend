@@ -1,0 +1,150 @@
+{
+ "model": "/workspace/work/cv/g10/models/G3_best_copy.pt",
+ "map": "g3",
+ "imgsz": 480,
+ "list": "/workspace/work/cv/g10/val.txt",
+ "n_images": 402,
+ "device": "sandbox CPU (2 vCPU aarch64), PyTorch/Ultralytics predict",
+ "label_status": "existing dataset / agent-curated labels; EXPLORATORY, not human-verified",
+ "mAP50": 0.4006,
+ "mAP50_95": 0.2787,
+ "P": 0.5849,
+ "R": 0.372,
+ "per_class": {
+  "banana": {
+   "P": 0.602,
+   "R": 0.4925,
+   "AP50": 0.5076,
+   "AP50_95": 0.2382,
+   "gt": 469,
+   "recall_at_035": 0.4861,
+   "model_predicts_class": true
+  },
+  "apple": {
+   "P": 0.618,
+   "R": 0.5879,
+   "AP50": 0.5673,
+   "AP50_95": 0.4065,
+   "gt": 199,
+   "recall_at_035": 0.5829,
+   "model_predicts_class": true
+  },
+  "mango": {
+   "P": 0.7591,
+   "R": 0.6364,
+   "AP50": 0.6945,
+   "AP50_95": 0.5887,
+   "gt": 11,
+   "recall_at_035": 0.6364,
+   "model_predicts_class": true
+  },
+  "citrus": {
+   "P": 0.7882,
+   "R": 0.6779,
+   "AP50": 0.74,
+   "AP50_95": 0.5847,
+   "gt": 208,
+   "recall_at_035": 0.6731,
+   "model_predicts_class": true
+  },
+  "pomegranate": {
+   "P": 0.5185,
+   "R": 0.5,
+   "AP50": 0.4324,
+   "AP50_95": 0.3266,
+   "gt": 16,
+   "recall_at_035": 0.5,
+   "model_predicts_class": true
+  },
+  "lemon_lime": {
+   "P": 0.38,
+   "R": 0.048,
+   "AP50": 0.0785,
+   "AP50_95": 0.0572,
+   "gt": 77,
+   "recall_at_035": 0.039,
+   "model_predicts_class": true
+  },
+  "tomato": {
+   "P": 0.5744,
+   "R": 0.429,
+   "AP50": 0.4441,
+   "AP50_95": 0.2811,
+   "gt": 317,
+   "recall_at_035": 0.4322,
+   "model_predicts_class": true
+  },
+  "potato": {
+   "P": 0.0,
+   "R": 0.0,
+   "AP50": 0.0016,
+   "AP50_95": 0.0012,
+   "gt": 20,
+   "recall_at_035": 0.0,
+   "model_predicts_class": true
+  },
+  "cucumber": {
+   "P": 0.6551,
+   "R": 0.1948,
+   "AP50": 0.2716,
+   "AP50_95": 0.172,
+   "gt": 154,
+   "recall_at_035": 0.1948,
+   "model_predicts_class": true
+  },
+  "carrot": {
+   "P": 0.71,
+   "R": 0.3011,
+   "AP50": 0.4021,
+   "AP50_95": 0.2286,
+   "gt": 435,
+   "recall_at_035": 0.2989,
+   "model_predicts_class": true
+  },
+  "capsicum": {
+   "P": 0.8292,
+   "R": 0.2241,
+   "AP50": 0.2667,
+   "AP50_95": 0.181,
+   "gt": 116,
+   "recall_at_035": 0.2241,
+   "model_predicts_class": true
+  }
+ },
+ "size_bucket_recall_at_035": {
+  "<6": {
+   "hit": 0,
+   "gt": 32,
+   "recall": 0.0
+  },
+  "6-12": {
+   "hit": 7,
+   "gt": 163,
+   "recall": 0.0429
+  },
+  "12-24": {
+   "hit": 141,
+   "gt": 515,
+   "recall": 0.2738
+  },
+  "24-48": {
+   "hit": 261,
+   "gt": 662,
+   "recall": 0.3943
+  },
+  ">=48": {
+   "hit": 416,
+   "gt": 650,
+   "recall": 0.64
+  }
+ },
+ "predict_ms_p50": 135.3,
+ "predict_ms_p95": 201.0,
+ "neg": {
+  "list": "/workspace/work/cv/g10/negdev.txt",
+  "n": 110,
+  "images_with_mapped_box_ge_035": 3,
+  "fa_image_rate": 0.0273,
+  "boxes": 3
+ }
+}
