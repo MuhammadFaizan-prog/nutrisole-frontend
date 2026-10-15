@@ -264,3 +264,62 @@ def test_frozen_dataset_membership_is_preserved():
     baseline = json.loads((root / "ml/runs/G9/stageJ/out/handoff/20261015/G9J_frozen_inputs.json").read_text())
     for name, expected in baseline["git_lf_sha256"].items():
         assert V.frozen_digest(root / name) == expected, name
+
+
+REAL_AI = Path(__file__).resolve().parents[1] / "out/handoff/20261015_visual_review/AI_ASSISTED_NOT_HUMAN/nutrisole_G9J_AI_visual_review_265.csv"
+
+
+def _renamed_real_ai(path, name, copy, edit=0):
+    rows = V.load_table(REAL_AI)
+    for r in rows:
+        r.update(annotator=name, copy=copy)
+    for r in rows[:edit]:
+        r["label"] = "banana" if r["label"] != "banana" else "apple"
+    save(path, rows)
+    return {r["item_id"] for r in rows}
+
+
+@pytest.mark.parametrize("edit", [0, 5])
+def test_committed_ai_review_refused_as_human_without_ai_csv_flag(tmp_path, edit):
+    """G9-J2 guard: the committed AI_ASSISTED_NOT_HUMAN review (auto-discovered, no --ai-csv), renamed as a person
+    and optionally lightly edited, must never pass as an independent human annotator."""
+    if not REAL_AI.exists():
+        pytest.skip("committed AI review not present")
+    a, b = tmp_path / "a.csv", tmp_path / "b.csv"
+    ids = _renamed_real_ai(a, "Reviewer One", "annotator1", edit)
+    rb = V.load_table(a)
+    for r in rb:
+        r.update(annotator="Reviewer Two", copy="annotator2", label="uncertain")
+    save(b, rb)
+    with pytest.raises(ValueError, match="near-copy" if edit else "known AI annotation payload"):
+        V.validate_human_pair(a, b, evidence(a, b), "pilot", ids)
+
+
+def test_unmodified_ai_marker_rows_refused(tmp_path):
+    if not REAL_AI.exists():
+        pytest.skip("committed AI review not present")
+    a, b = tmp_path / "a.csv", tmp_path / "b.csv"
+    a.write_bytes(REAL_AI.read_bytes())
+    table(b, "Reviewer Two", "annotator2")
+    with pytest.raises(ValueError):
+        V.validate_human_pair(a, b, evidence(a, b), "pilot", {r["item_id"] for r in V.load_table(a)})
+
+
+def test_near_copy_threshold_allows_genuinely_different_labels(tmp_path):
+    ai = [dict(item_id=f"P{i:03}", label="apple", cut="0", bag="0", multi="0", rotten_damaged="0") for i in range(1, 41)]
+    hum = [dict(r, label=("apple" if i < 30 else "banana")) for i, r in enumerate(ai)]
+    assert V.ai_near_copy(hum, ai) == 0.75
+    assert V.ai_near_copy(hum[:5], ai) is None
+
+
+def test_j2_batches_use_their_own_frozen_key():
+    """G9-J2: pilot2/train2 load out/gaps/j2_blind_key.csv; the frozen Stage J key is untouched and ids never collide."""
+    k1, k2 = J.load_key("pilot"), J.load_key("pilot2")
+    if not k2:
+        pytest.skip("j2 key not present")
+    assert J.key_path("pilot").endswith("out/j_blind_key.csv") and J.key_path("train2").endswith("out/gaps/j2_blind_key.csv")
+    assert not set(k1) & set(k2) and not set(J.load_key("train")) & set(J.load_key("train2"))
+    assert all(r["split"] == "J-eval" for r in k2.values()) and all(r["split"] == "J-train" for r in J.load_key("train2").values())
+    assert all(V.re.fullmatch(r"[PT][0-9]{3,}", i) for i in list(k2) + list(J.load_key("train2")))
+    pilot1_keys = {r["key"] for r in k1.values()}
+    assert not pilot1_keys & {r["key"] for r in k2.values()}
