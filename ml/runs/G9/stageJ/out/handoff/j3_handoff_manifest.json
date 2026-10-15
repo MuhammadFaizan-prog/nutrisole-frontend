@@ -1,0 +1,143 @@
+{
+ "zips": {
+  "NutriSole_G9J_ANNOTATOR_A.zip": {
+   "sha256": "ce9fa826dd1bc892ae48e3e56e8760bd12103d5d4271acfdb18a0d99d5a7ae40",
+   "mb": 43.6,
+   "members": [
+    "nutrisole_G9J_pilot_annotator1.zip",
+    "nutrisole_G9J_pilot2_annotator1.zip",
+    "annotation_guide.md",
+    "INSTRUCTIONS_ANNOTATOR_A.md",
+    "attestation_annotator1.json"
+   ]
+  },
+  "NutriSole_G9J_ANNOTATOR_A_training.zip": {
+   "sha256": "5123e6a27164a686e2b638f6ad9a8a44ea85505e733b2355100eea2b9cc1742a",
+   "mb": 63.9,
+   "members": [
+    "nutrisole_G9J_train_annotator1.zip",
+    "nutrisole_G9J_train2_annotator1.zip",
+    "annotation_guide.md",
+    "INSTRUCTIONS_ANNOTATOR_A_training.md",
+    "attestation_annotator1_training.json"
+   ]
+  },
+  "NutriSole_G9J_ANNOTATOR_B.zip": {
+   "sha256": "d9772f71412079c970ab960428fab8f2d9db7373069234d4484bd2746cc4de60",
+   "mb": 43.6,
+   "members": [
+    "nutrisole_G9J_pilot_annotator2.zip",
+    "nutrisole_G9J_pilot2_annotator2.zip",
+    "annotation_guide.md",
+    "INSTRUCTIONS_ANNOTATOR_B.md",
+    "attestation_annotator2.json"
+   ]
+  },
+  "NutriSole_G9J_ANNOTATOR_B_training.zip": {
+   "sha256": "2aeb58513aa47e39ff44ef4619a71635c8f6ace069f154498c453cb4c8736e98",
+   "mb": 63.9,
+   "members": [
+    "nutrisole_G9J_train_annotator2.zip",
+    "nutrisole_G9J_train2_annotator2.zip",
+    "annotation_guide.md",
+    "INSTRUCTIONS_ANNOTATOR_B_training.md",
+    "attestation_annotator2_training.json"
+   ]
+  },
+  "NutriSole_G9J_TEAM_PHOTOS.zip": {
+   "sha256": "87fda90566e55a123e3a2576575ce95a90b953b986f623cc8b78675da413f190",
+   "mb": 0.0,
+   "members": [
+    "G9_stageJ_team_photo_shotlist.md",
+    "sessions_TEMPLATE.csv",
+    "SUBMISSION_STEPS.md"
+   ]
+  },
+  "NutriSole_G9J_ADJUDICATOR.zip": {
+   "sha256": "a679788a89e732f645af02bf859b23143cd020d70f614abafd70c536ea9edae0",
+   "mb": 8.1,
+   "members": [
+    "nutrisole_G9J2_originals_2048_ADJUDICATOR_ONLY.zip",
+    "ADJUDICATION_INSTRUCTIONS.md",
+    "annotation_guide.md",
+    "G9_stageJ_readiness.md"
+   ]
+  },
+  "NutriSole_G9J_ADJUDICATOR_AI_POSTHOC_release_after_exports.zip": {
+   "sha256": "48cdf5aa07433c5e9b40fc662f7cc3c3ddc4dd1406270edb9cbbd47224544b9b",
+   "mb": 0.1,
+   "members": [
+    "README_POSTHOC_AI.txt",
+    "AI_ASSISTED_NOT_HUMAN/20261015_visual_review/nutrisole_G9J_AI_visual_review_265.csv",
+    "AI_ASSISTED_NOT_HUMAN/20261015_visual_review/G9J_AI_per_image_review.csv",
+    "AI_ASSISTED_NOT_HUMAN/20261015_pilot2_visual_review/nutrisole_G9J_pilot2_AI_visual_review_335.csv",
+    "AI_ASSISTED_NOT_HUMAN/20261015_pilot2_visual_review/G9J_pilot2_AI_per_image_review.csv",
+    "AI_ASSISTED_NOT_HUMAN/20261015_pilot2_visual_review_v2_hark/nutrisole_G9J_pilot2_AI_visual_review_335_v2_hark.csv",
+    "AI_ASSISTED_NOT_HUMAN/20261015_pilot2_visual_review_v2_hark/G9J_pilot2_ai_review_corrections_v2.csv",
+    "AI_ASSISTED_NOT_HUMAN/20261015_pilot2_visual_review_v2_hark/README.md"
+   ]
+  }
+ },
+ "inner_packs": {
+  "nutrisole_G9J_pilot_annotator1.zip": {
+   "sha256": "d1af6dfac8fd4de6732e56887b5fec8c671b96361d61a41685f62b23c82a9e9e",
+   "recorded_sha256": "d1af6dfac8fd4de6732e56887b5fec8c671b96361d61a41685f62b23c82a9e9e",
+   "items": 265,
+   "verified": true
+  },
+  "nutrisole_G9J_pilot2_annotator1.zip": {
+   "sha256": "ab5d4f31537a9e02410eeefc1380c1efff934232e47f37f1dcfefca7c047ef58",
+   "recorded_sha256": "ab5d4f31537a9e02410eeefc1380c1efff934232e47f37f1dcfefca7c047ef58",
+   "items": 335,
+   "verified": true
+  },
+  "nutrisole_G9J_train_annotator1.zip": {
+   "sha256": "e0185a5a5b9518eb32e67b8743119f47b000bd0fd451db50a76eeb455bccd88b",
+   "recorded_sha256": "e0185a5a5b9518eb32e67b8743119f47b000bd0fd451db50a76eeb455bccd88b",
+   "items": 461,
+   "verified": true
+  },
+  "nutrisole_G9J_train2_annotator1.zip": {
+   "sha256": "5353caf7c3965bd3c42141d4457eae9f7e81153abada795a7ff7ea79afc25cea",
+   "recorded_sha256": "5353caf7c3965bd3c42141d4457eae9f7e81153abada795a7ff7ea79afc25cea",
+   "items": 646,
+   "verified": true
+  },
+  "nutrisole_G9J_pilot_annotator2.zip": {
+   "sha256": "261f74f0496de884f659f169b6937faac843856cf6c34dc9cf9e2066b7ce9ab6",
+   "recorded_sha256": "261f74f0496de884f659f169b6937faac843856cf6c34dc9cf9e2066b7ce9ab6",
+   "items": 265,
+   "verified": true
+  },
+  "nutrisole_G9J_pilot2_annotator2.zip": {
+   "sha256": "e5f1543814be40c84024c8ab88c46b1e18c6000028e89e437cd535ac008c4cdf",
+   "recorded_sha256": "e5f1543814be40c84024c8ab88c46b1e18c6000028e89e437cd535ac008c4cdf",
+   "items": 335,
+   "verified": true
+  },
+  "nutrisole_G9J_train_annotator2.zip": {
+   "sha256": "eb1463bd8853e3e507fec7069a3bed5b37782ad03c5f8b6bef1cf5a0007ad8c9",
+   "recorded_sha256": "eb1463bd8853e3e507fec7069a3bed5b37782ad03c5f8b6bef1cf5a0007ad8c9",
+   "items": 461,
+   "verified": true
+  },
+  "nutrisole_G9J_train2_annotator2.zip": {
+   "sha256": "2433083569abaa73effa78c984169a1f31a3beda3c51cfc4ca18fa7f7625607a",
+   "recorded_sha256": "2433083569abaa73effa78c984169a1f31a3beda3c51cfc4ca18fa7f7625607a",
+   "items": 646,
+   "verified": true
+  }
+ },
+ "ai_leak_check": {
+  "NutriSole_G9J_ANNOTATOR_A.zip": "clean",
+  "NutriSole_G9J_ANNOTATOR_A_training.zip": "clean",
+  "NutriSole_G9J_ANNOTATOR_B.zip": "clean",
+  "NutriSole_G9J_ANNOTATOR_B_training.zip": "clean",
+  "NutriSole_G9J_TEAM_PHOTOS.zip": "clean",
+  "NutriSole_G9J_ADJUDICATOR.zip": [
+   "ADJUDICATION_INSTRUCTIONS.md: AI_ASSISTED_NOT_HUMAN",
+   "ADJUDICATION_INSTRUCTIONS.md: AI_ASSISTED"
+  ]
+ },
+ "note": "no labels, no training; zips are not in git"
+}
