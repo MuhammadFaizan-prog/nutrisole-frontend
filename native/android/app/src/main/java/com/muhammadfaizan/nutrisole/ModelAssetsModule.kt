@@ -18,6 +18,13 @@ import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
 import java.security.MessageDigest
+import android.graphics.Bitmap
+import android.os.Build
+import android.os.Debug
+import android.os.PowerManager
+import android.util.Base64
+import android.util.Log
+import java.io.FileWriter
 
 class ModelAssetsModule(context: ReactApplicationContext) : ReactContextBaseJavaModule(context) {
   override fun getName(): String = "NsModelAssets"
@@ -68,6 +75,66 @@ class ModelAssetsModule(context: ReactApplicationContext) : ReactContextBaseJava
       }
     }.start()
   }
+
+  // ---- G9 Stage J8 (QA debug layer): see NsCvDiag below.
+  @ReactMethod
+  fun log(line: String) { Log.i("NutriSoleCV", line) }
+
+  @ReactMethod
+  fun runtimeStats(promise: Promise) {
+    try {
+      val m = Arguments.createMap()
+      val pm = reactApplicationContext.getSystemService(android.content.Context.POWER_SERVICE) as PowerManager?
+      m.putInt("thermal", if (Build.VERSION.SDK_INT >= 29 && pm != null) pm.currentThermalStatus else -1)
+      m.putDouble("nativeHeapMb", Debug.getNativeHeapAllocatedSize() / 1048576.0)
+      val rt = Runtime.getRuntime()
+      m.putDouble("javaHeapMb", (rt.totalMemory() - rt.freeMemory()) / 1048576.0)
+      m.putInt("sdk", Build.VERSION.SDK_INT)
+      promise.resolve(m)
+    } catch (e: Exception) { promise.reject("stats_failed", e.toString()) }
+  }
+
+  @ReactMethod
+  fun diagDir(promise: Promise) { promise.resolve(NsCvDiag(reactApplicationContext).dir().absolutePath) }
+
+  @ReactMethod
+  fun appendDiag(line: String, promise: Promise) {
+    Thread {
+      try {
+        FileWriter(File(NsCvDiag(reactApplicationContext).dir(), "nscv_diag.jsonl"), true).use { it.write(line); it.write("\n") }
+        promise.resolve(true)
+      } catch (e: Exception) { promise.reject("diag_write_failed", e.toString()) }
+    }.start()
+  }
+
+  /** rgbBase64 = tightly packed RGB (w*h*3). Written as JPEG q90 to diag/<name>.jpg. */
+  @ReactMethod
+  fun saveRgbJpeg(name: String, rgbBase64: String, w: Int, h: Int, promise: Promise) {
+    val diag = NsCvDiag(reactApplicationContext)
+    if (!diag.safe(name) || w <= 0 || h <= 0 || w * h > 16_000_000) { promise.reject("bad_args", "invalid name or size"); return }
+    Thread {
+      try {
+        val rgb = Base64.decode(rgbBase64, Base64.DEFAULT)
+        if (rgb.size != w * h * 3) { promise.reject("bad_size", "${rgb.size} != ${w}x${h}x3"); return@Thread }
+        val px = IntArray(w * h)
+        for (i in 0 until w * h) {
+          px[i] = (0xFF shl 24) or ((rgb[3 * i].toInt() and 0xFF) shl 16) or ((rgb[3 * i + 1].toInt() and 0xFF) shl 8) or (rgb[3 * i + 2].toInt() and 0xFF)
+        }
+        val bmp = Bitmap.createBitmap(px, w, h, Bitmap.Config.ARGB_8888)
+        val out = File(diag.dir(), "$name.jpg")
+        FileOutputStream(out).use { bmp.compress(Bitmap.CompressFormat.JPEG, 90, it) }
+        bmp.recycle()
+        promise.resolve(out.absolutePath)
+      } catch (e: Exception) { promise.reject("jpeg_failed", e.toString()) }
+    }.start()
+  }
+}
+
+// ---- G9 Stage J8 (QA debug layer only): logcat tag, runtime stats, diagnostic JSONL + frame/crop saves. Files go to the app's
+// external files dir (/sdcard/Android/data/<app>/files/diag), which `adb pull` can read without root. Nothing here touches a model.
+class NsCvDiag(private val ctx: ReactApplicationContext) {
+  fun dir(): File { val d = File(ctx.getExternalFilesDir(null) ?: ctx.filesDir, "diag"); d.mkdirs(); return d }
+  fun safe(name: String): Boolean = name.matches(Regex("[A-Za-z0-9_.-]{1,80}")) && name != "." && name != ".."
 }
 
 class ModelAssetsPackage : ReactPackage {
