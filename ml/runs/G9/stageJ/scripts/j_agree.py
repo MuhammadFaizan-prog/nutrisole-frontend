@@ -69,8 +69,16 @@ def confusion(a: list, b: list, cats=LABELS) -> list:
     for x, y in zip(a, b): m[ix[x]][ix[y]] += 1
     return m
 
+KEY_OVERRIDE: dict = {}   # Stage J3: team_eval / team_train keys live with each ingestion run (j_team_phone.py --out-dir DIR/team_blind_key.csv)
+TEAM_BATCHES = ("team_eval", "team_train")
+
+def is_eval_batch(batch: str) -> bool: return batch.startswith("pilot") or batch == "team_eval"
+
 def key_path(batch: str) -> str:
-    """Frozen blind key for a batch: pilot/train -> out/j_blind_key.csv; Stage J2 supplementary pilot2/train2 -> out/gaps/j2_blind_key.csv."""
+    """Frozen blind key for a batch: pilot/train -> out/j_blind_key.csv; Stage J2 supplementary pilot2/train2 -> out/gaps/j2_blind_key.csv;
+    team_eval/team_train -> the --key given (j_team_phone.py team_blind_key.csv)."""
+    if batch in KEY_OVERRIDE: return KEY_OVERRIDE[batch]
+    if batch in TEAM_BATCHES: raise ValueError(f"batch {batch} needs --key DIR/team_blind_key.csv from j_team_phone.py")
     return os.path.join(OUTD, "gaps", "j2_blind_key.csv") if batch in ("pilot2", "train2") else os.path.join(OUTD, "j_blind_key.csv")
 
 def load_key(batch: str) -> dict:
@@ -300,7 +308,7 @@ def verify(args):
         w = csv.DictWriter(f, fieldnames=list(out[0])); w.writeheader(); w.writerows(out)
     digest = sha256_file(mp); open(mp + ".sha256", "w").write(f"{digest}  {os.path.basename(mp)}\n")
     ver = [r for r in out if r["status"].startswith("verified")]
-    eligible_split = "J-eval" if args.batch.startswith("pilot") else "J-train"
+    eligible_split = "J-eval" if is_eval_batch(args.batch) else "J-train"
     sup = Counter(r["class13"] for r in ver if r["role"] == "supported" and r["split"] == eligible_split)
     neg = Counter(r["role"] for r in ver if r["split"] == eligible_split and r["role"] in ("unsupported", "other_class", "printed", "occluded", "cut", "supported_packaged"))
     gates = readiness_counts(args.batch, sup, neg, cnt)
@@ -312,13 +320,13 @@ def verify(args):
                 train_sources_by_class={c: sorted({r["source"] for r in ver if r["split"] == "J-train" and r["role"] == "supported" and r["class13"] == c}) for c in CLASS13.values()})
     if not pair["complete"]:
         summ["gates"]["adjudication_complete"] = False
-        summ["gates"]["R2_met" if args.batch.startswith("pilot") else "T1_met"] = False
+        summ["gates"]["R2_met" if is_eval_batch(args.batch) else "T1_met"] = False
     json.dump(summ, open(os.path.join(args.out, f"verified_summary_{args.batch}.json"), "w"), indent=1)
     print(json.dumps(summ, indent=1)); return summ
 
 def readiness_counts(batch, sup, neg, cnt):
     """Frozen count gates (G9_stageJ_readiness.md R2 / T1). Packaged supported items and cut items count as negatives (must not be graded)."""
-    if batch.startswith("pilot"):   # pilot2 alone is reported with the same gates; R2 is judged on pilot + pilot2 combined (G9_stageJ_gaps.md)
+    if is_eval_batch(batch):   # pilot2 (and team_eval) alone is reported with the same gates; R2 is judged on pilot + pilot2 combined (G9_stageJ_gaps.md)
         negs = sum(neg.values()); g = dict(
             supported_per_class_ge20={c: sup.get(c, 0) >= 20 for c in ("apple", "banana", "citrus", "tomato", "carrot")},
             supported_total_ge100=sum(sup.get(c, 0) for c in ("apple", "banana", "citrus", "tomato", "carrot")) >= 100, negatives_ge60=negs >= 60,
@@ -333,15 +341,19 @@ def readiness_counts(batch, sup, neg, cnt):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter); sp = ap.add_subparsers(dest="cmd", required=True)
-    a = sp.add_parser("agree"); a.add_argument("a"); a.add_argument("b"); a.add_argument("--batch", required=True, choices=["pilot", "train", "pilot2", "train2"])
+    B = ["pilot", "train", "pilot2", "train2", "team_eval", "team_train"]
+    a = sp.add_parser("agree"); a.add_argument("a"); a.add_argument("b"); a.add_argument("--batch", required=True, choices=B)
+    a.add_argument("--key", help="blind key CSV for team_eval/team_train (j_team_phone.py --out-dir output)")
     a.add_argument("--out", required=True); a.add_argument("--sheets", action="store_true", help="also draw adjudication contact sheets")
     a.add_argument("--evidence", required=True, help="hash-bound independent-human self-attestations JSON")
     a.add_argument("--ai-csv", action="append", default=[], help="known AI CSV to reject even if annotator names were changed")
-    v = sp.add_parser("verify"); v.add_argument("--batch", required=True, choices=["pilot", "train", "pilot2", "train2"]); v.add_argument("--agree-dir", required=True)
+    v = sp.add_parser("verify"); v.add_argument("--batch", required=True, choices=B); v.add_argument("--agree-dir", required=True)
+    v.add_argument("--key", help="blind key CSV for team_eval/team_train")
     v.add_argument("--adjudicated"); v.add_argument("--out", required=True)
     v.add_argument("--image-root", action="append", default=[], help="original image directory (source keys as filenames), repeatable")
     v.add_argument("--identity-manifest", help="ingestion provenance CSV: key,image_sha256,source_url,file_url; missing chain never release-eligible")
     args = ap.parse_args(argv)
+    if getattr(args, "key", None): KEY_OVERRIDE[args.batch] = args.key
     return agree(args) if args.cmd == "agree" else verify(args)
 
 if __name__ == "__main__":
