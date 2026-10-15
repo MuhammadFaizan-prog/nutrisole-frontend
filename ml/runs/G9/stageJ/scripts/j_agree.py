@@ -29,6 +29,22 @@ ALIAS = {"orange": "citrus_orange", "citrus": "citrus_orange", "kinnow": "citrus
 OTHER13 = {"lemon_or_lime": "lemon_lime", "mango": "mango", "guava": "guava", "pomegranate": "pomegranate", "potato": "potato",
            "cucumber": "cucumber", "capsicum_bell_pepper": "capsicum"}
 CLASS13 = {"apple": "apple", "banana": "banana", "citrus_orange": "citrus", "tomato": "tomato", "carrot": "carrot"}
+# Stage J5: explicit provenance tiers. Only HUMAN_INDEPENDENT (two independent, self-attested blind annotators + third-human adjudication)
+# is double-annotation / kappa evidence and can feed the frozen R/T gates. HUMAN_REVIEWED_AI_ASSISTED = one person confirmed AI-prefilled
+# labels (non-blind): recorded and reported, never kappa, never a verified manifest, never unlocks H3. AI_ASSISTED_NOT_HUMAN = no human.
+PROVENANCE_TIERS = {
+    "HUMAN_INDEPENDENT": dict(human=True, blind=True, independent_double_annotation=True, kappa_evidence=True, verified_manifest=True,
+                              counts_for_eval_gates=True, counts_for_training_gates=True),
+    "HUMAN_REVIEWED_AI_ASSISTED": dict(human=True, blind=False, independent_double_annotation=False, kappa_evidence=False, verified_manifest=False,
+                                       counts_for_eval_gates=False, counts_for_training_gates=False),
+    "AI_ASSISTED_NOT_HUMAN": dict(human=False, blind=False, independent_double_annotation=False, kappa_evidence=False, verified_manifest=False,
+                                  counts_for_eval_gates=False, counts_for_training_gates=False),
+}
+
+def tier_allows(provenance: str, use: str) -> bool:
+    """use in PROVENANCE_TIERS[...] keys. Unknown provenance strings allow nothing."""
+    return bool(PROVENANCE_TIERS.get(provenance, {}).get(use, False))
+
 HERE = os.path.dirname(os.path.abspath(__file__)); OUTD = os.path.normpath(os.path.join(HERE, "..", "out"))
 
 def norm_label(s: str) -> str | None:
@@ -104,6 +120,10 @@ def disagreement_reasons(a, b):
 def agree(args):
     key = load_key(args.batch)
     A, badA, nA = read_csv(args.a); B, badB, nB = read_csv(args.b)
+    for path in (args.a, args.b):
+        provs = {(r.get("provenance") or "").strip() for r in V.load_table(path)} - {""}
+        if provs and not all(tier_allows(p, "kappa_evidence") for p in provs):
+            raise ValueError(f"{os.path.basename(path)}: provenance {sorted(provs)} is not independent double annotation; not kappa evidence")
     pair = V.validate_human_pair(args.a, args.b, args.evidence, args.batch, set(key) or (set(A) | set(B)), args.ai_csv)
     os.makedirs(args.out, exist_ok=False)  # version every run; never overwrite disagreement history
     inputs = Path(args.out) / "inputs"; inputs.mkdir()
