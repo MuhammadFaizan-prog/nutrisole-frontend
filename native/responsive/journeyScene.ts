@@ -1,10 +1,10 @@
 import { buildScene, type ExtensionRoute, type ExpansionState } from '../../src/nutrisole/extensions/model.ts';
 import type { Profile } from '../../src/nutrisole/store';
 import { portionAction, portionRouteFor, type JourneyState } from './journeyData.ts';
-export function journeyScene(route: ExtensionRoute, state: ExpansionState, profile?: Profile, connected = false, editingMeal = false) {
+export function journeyScene(route: ExtensionRoute, state: ExpansionState, profile?: Profile, _connected = false, editingMeal = false) {
+  // `_connected` is ignored: glucose import sources are research-only in this build, so no simulated "connected" label is shown.
   const scene = buildScene(route, state);
   if (route === 'analysis-result') scene.layers.forEach(layer => { if (layer.text === 'Confirm food') layer.action = 'go:nutrition-details'; });
-  if (route === 'health-connections') scene.layers.forEach(layer => { if (layer.text === 'Not connected') layer.text = connected ? 'Demo connected' : 'Not connected'; });
   if (route === 'plan-generation' && profile) scene.layers.forEach(layer => {
     if (layer.text === 'Balanced, higher protein') layer.text = profile.dietary;
     if (layer.text === 'Tree nuts, shellfish') layer.text = profile.allergens;
