@@ -1,0 +1,65 @@
+{
+ "note": "EXPLORATORY projection only (yield 0.55 = the Stage J2 Commons rate). Candidates are NOT labels; T1 counts only human-verified (two annotators + adjudicator) J-train images; human-verified now = 0.",
+ "classes": [
+  {
+   "class_": "apple",
+   "t1_target": 150,
+   "t1_human_verified_now": 0,
+   "j2_projected_shortfall": 65,
+   "j5_candidates": 42,
+   "j6_candidates": 73,
+   "expected_yield_commons": 0.55,
+   "expected_from_j5": 23.1,
+   "expected_from_j6": 40.2,
+   "projected_remaining_after_j5_j6": 1.7,
+   "team_photo_quota": 75
+  },
+  {
+   "class_": "citrus_orange",
+   "t1_target": 150,
+   "t1_human_verified_now": 0,
+   "j2_projected_shortfall": 8,
+   "j5_candidates": 53,
+   "j6_candidates": 41,
+   "expected_yield_commons": 0.55,
+   "expected_from_j5": 29.2,
+   "expected_from_j6": 22.6,
+   "projected_remaining_after_j5_j6": 0,
+   "team_photo_quota": 20
+  },
+  {
+   "class_": "tomato",
+   "t1_target": 150,
+   "t1_human_verified_now": 0,
+   "j2_projected_shortfall": 8,
+   "j5_candidates": 39,
+   "j6_candidates": 45,
+   "expected_yield_commons": 0.55,
+   "expected_from_j5": 21.5,
+   "expected_from_j6": 24.8,
+   "projected_remaining_after_j5_j6": 0,
+   "team_photo_quota": 15
+  },
+  {
+   "class_": "banana",
+   "t1_target": 150,
+   "t1_human_verified_now": 0,
+   "j2_projected_shortfall": 4,
+   "j5_candidates": 28,
+   "j6_candidates": 21,
+   "expected_yield_commons": 0.55,
+   "expected_from_j5": 15.4,
+   "expected_from_j6": 11.6,
+   "projected_remaining_after_j5_j6": 0,
+   "team_photo_quota": 10
+  }
+ ],
+ "hard_negative_candidates_j6": {
+  "hard_negative_object": 59,
+  "hard_negative_printed": 18,
+  "hard_negative_persimmon": 10
+ },
+ "hard_negative_total": 87,
+ "t2_projection": "already projected met in J2 (152 expected vs 150); J6 hard negatives add persimmon/printed/object cases",
+ "carrot": "no training shortfall projected; carrot training sessions still refused by j_team_phone"
+}
