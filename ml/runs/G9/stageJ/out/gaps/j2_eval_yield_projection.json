@@ -1,0 +1,547 @@
+{
+ "note": "EXPLORATORY ONLY. AI_ASSISTED_NOT_HUMAN labels estimate survival rates; human-verified count is 0; nothing here is a label.",
+ "pilot_ai_optimistic": {
+  "supported": {
+   "apple": 12,
+   "banana": 18,
+   "citrus": 15,
+   "tomato": 18,
+   "carrot": 22
+  },
+  "supported_total": 85,
+  "negatives": {
+   "unsupported": 29,
+   "other_class": 13,
+   "printed": 42,
+   "occluded": 3,
+   "cut": 8,
+   "supported_packaged": 1
+  },
+  "negatives_total": 96,
+  "per_class_ge20": {
+   "apple": false,
+   "banana": false,
+   "citrus": false,
+   "tomato": false,
+   "carrot": true
+  },
+  "total_ge100": false,
+  "negatives_ge60": true,
+  "unsupported_ge25": true,
+  "printed_ge10": true,
+  "packaging_ge10": false,
+  "occluded_ge10": false
+ },
+ "pilot_ai_strict": {
+  "supported": {
+   "apple": 7,
+   "banana": 9,
+   "citrus": 3,
+   "tomato": 16,
+   "carrot": 12
+  },
+  "supported_total": 47,
+  "negatives": {
+   "unsupported": 8,
+   "other_class": 6,
+   "printed": 41,
+   "occluded": 0,
+   "cut": 6,
+   "supported_packaged": 0
+  },
+  "negatives_total": 61,
+  "per_class_ge20": {
+   "apple": false,
+   "banana": false,
+   "citrus": false,
+   "tomato": false,
+   "carrot": false
+  },
+  "total_ge100": false,
+  "negatives_ge60": true,
+  "unsupported_ge25": false,
+  "printed_ge10": true,
+  "packaging_ge10": false,
+  "occluded_ge10": false
+ },
+ "pilot_strata_n": {
+  "fruitnet|supported|citrus": 19,
+  "commons|printed|-": 15,
+  "carrot_m|supported|carrot": 16,
+  "commons|supported|tomato": 16,
+  "commons|supported|apple": 16,
+  "tomato_m|supported|tomato": 16,
+  "fruitnet|supported|guava": 4,
+  "commons|unsupported|-": 61,
+  "fruitnet|supported|apple": 16,
+  "commons|occluded|-": 5,
+  "commons|supported|banana": 16,
+  "fruitnet|supported|banana": 16,
+  "commons|supported|citrus": 13,
+  "commons|packaging|-": 12,
+  "commons|supported|carrot": 16,
+  "fruitnet|supported|lemon_lime": 4,
+  "fruitnet|supported|pomegranate": 4
+ },
+ "pilot_rates": {
+  "fruitnet|supported|citrus": {
+   "supported:citrus": [
+    13,
+    3
+   ],
+   "excluded": [
+    4,
+    0
+   ],
+   "other_class": [
+    2,
+    1
+   ]
+  },
+  "commons|printed|-": {
+   "printed": [
+    10,
+    10
+   ],
+   "excluded": [
+    5,
+    0
+   ]
+  },
+  "carrot_m|supported|carrot": {
+   "supported:carrot": [
+    16,
+    11
+   ]
+  },
+  "commons|supported|tomato": {
+   "excluded": [
+    13,
+    0
+   ],
+   "cut": [
+    1,
+    0
+   ],
+   "supported:tomato": [
+    2,
+    1
+   ]
+  },
+  "commons|supported|apple": {
+   "printed": [
+    8,
+    7
+   ],
+   "excluded": [
+    6,
+    0
+   ],
+   "supported:apple": [
+    2,
+    1
+   ]
+  },
+  "tomato_m|supported|tomato": {
+   "supported:tomato": [
+    16,
+    15
+   ]
+  },
+  "fruitnet|supported|guava": {
+   "other_class": [
+    3,
+    0
+   ],
+   "excluded": [
+    1,
+    0
+   ]
+  },
+  "commons|unsupported|-": {
+   "excluded": [
+    24,
+    0
+   ],
+   "unsupported": [
+    29,
+    8
+   ],
+   "printed": [
+    7,
+    7
+   ],
+   "occluded": [
+    1,
+    0
+   ]
+  },
+  "fruitnet|supported|apple": {
+   "supported:apple": [
+    10,
+    6
+   ],
+   "excluded": [
+    6,
+    0
+   ]
+  },
+  "commons|occluded|-": {
+   "printed": [
+    5,
+    5
+   ]
+  },
+  "commons|supported|banana": {
+   "excluded": [
+    4,
+    0
+   ],
+   "cut": [
+    6,
+    6
+   ],
+   "printed": [
+    4,
+    4
+   ],
+   "supported:banana": [
+    2,
+    1
+   ]
+  },
+  "fruitnet|supported|banana": {
+   "supported:banana": [
+    16,
+    8
+   ]
+  },
+  "commons|supported|citrus": {
+   "printed": [
+    6,
+    6
+   ],
+   "excluded": [
+    4,
+    0
+   ],
+   "supported:citrus": [
+    2,
+    0
+   ],
+   "occluded": [
+    1,
+    0
+   ]
+  },
+  "commons|packaging|-": {
+   "excluded": [
+    9,
+    0
+   ],
+   "other_class": [
+    1,
+    1
+   ],
+   "printed": [
+    1,
+    1
+   ],
+   "supported_packaged": [
+    1,
+    0
+   ]
+  },
+  "commons|supported|carrot": {
+   "excluded": [
+    7,
+    0
+   ],
+   "supported:carrot": [
+    6,
+    1
+   ],
+   "occluded": [
+    1,
+    0
+   ],
+   "printed": [
+    1,
+    1
+   ],
+   "cut": [
+    1,
+    0
+   ]
+  },
+  "fruitnet|supported|lemon_lime": {
+   "excluded": [
+    1,
+    0
+   ],
+   "other_class": [
+    3,
+    0
+   ]
+  },
+  "fruitnet|supported|pomegranate": {
+   "other_class": [
+    4,
+    4
+   ]
+  }
+ },
+ "pilot2_strata_n": {
+  "commons|supported|tomato": 12,
+  "fruitnet|supported|citrus": 50,
+  "commons|supported|banana": 12,
+  "commons_e2|occluded|-": 74,
+  "fruitnet|supported|apple": 39,
+  "commons_e2|packaging|-": 63,
+  "tomato_m|supported|tomato": 14,
+  "commons|supported|citrus": 8,
+  "fruitnet|supported|banana": 22,
+  "carrot_m|supported|carrot": 14,
+  "commons|supported|apple": 24,
+  "commons|supported|carrot": 3
+ },
+ "pilot2_strata_without_pilot_precedent": {
+  "commons_e2|occluded|-": 74,
+  "commons_e2|packaging|-": 63
+ },
+ "pilot2_projected_optimistic": {
+  "supported": {
+   "apple": 27.375,
+   "banana": 23.5,
+   "citrus": 35.441295546558706,
+   "tomato": 15.5,
+   "carrot": 15.125
+  },
+  "supported_total": 116.9412955465587,
+  "negatives": {
+   "unsupported": 0,
+   "other_class": 5.2631578947368425,
+   "printed": 18.879807692307693,
+   "occluded": 0.8028846153846154,
+   "cut": 5.4375,
+   "supported_packaged": 0
+  },
+  "negatives_total": 30.383350202429153,
+  "per_class_ge20": {
+   "apple": true,
+   "banana": true,
+   "citrus": true,
+   "tomato": false,
+   "carrot": false
+  },
+  "total_ge100": true,
+  "negatives_ge60": false,
+  "unsupported_ge25": false,
+  "printed_ge10": true,
+  "packaging_ge10": false,
+  "occluded_ge10": false
+ },
+ "pilot2_projected_strict": {
+  "supported": {
+   "apple": 16.125,
+   "banana": 11.75,
+   "citrus": 7.894736842105263,
+   "tomato": 13.875,
+   "carrot": 9.8125
+  },
+  "supported_total": 59.45723684210526,
+  "negatives": {
+   "unsupported": 0,
+   "other_class": 2.6315789473684212,
+   "printed": 17.379807692307693,
+   "occluded": 0.0,
+   "cut": 4.5,
+   "supported_packaged": 0
+  },
+  "negatives_total": 24.511386639676115,
+  "per_class_ge20": {
+   "apple": false,
+   "banana": false,
+   "citrus": false,
+   "tomato": false,
+   "carrot": false
+  },
+  "total_ge100": false,
+  "negatives_ge60": false,
+  "unsupported_ge25": false,
+  "printed_ge10": true,
+  "packaging_ge10": false,
+  "occluded_ge10": false
+ },
+ "combined_optimistic": {
+  "supported": {
+   "apple": 39.4,
+   "banana": 41.5,
+   "citrus": 50.4,
+   "tomato": 33.5,
+   "carrot": 37.1
+  },
+  "supported_total": 201.9,
+  "negatives": {
+   "unsupported": 29,
+   "other_class": 18.3,
+   "printed": 60.9,
+   "occluded": 3.8,
+   "cut": 13.4,
+   "supported_packaged": 1
+  },
+  "negatives_total": 126.39999999999999,
+  "per_class_ge20": {
+   "apple": true,
+   "banana": true,
+   "citrus": true,
+   "tomato": true,
+   "carrot": true
+  },
+  "total_ge100": true,
+  "negatives_ge60": true,
+  "unsupported_ge25": true,
+  "printed_ge10": true,
+  "packaging_ge10": false,
+  "occluded_ge10": false
+ },
+ "combined_strict": {
+  "supported": {
+   "apple": 23.1,
+   "banana": 20.8,
+   "citrus": 10.9,
+   "tomato": 29.9,
+   "carrot": 21.8
+  },
+  "supported_total": 106.5,
+  "negatives": {
+   "unsupported": 8,
+   "other_class": 8.6,
+   "printed": 58.4,
+   "occluded": 0.0,
+   "cut": 10.5,
+   "supported_packaged": 0
+  },
+  "negatives_total": 85.5,
+  "per_class_ge20": {
+   "apple": true,
+   "banana": true,
+   "citrus": false,
+   "tomato": true,
+   "carrot": true
+  },
+  "total_ge100": true,
+  "negatives_ge60": true,
+  "unsupported_ge25": false,
+  "printed_ge10": true,
+  "packaging_ge10": false,
+  "occluded_ge10": false
+ },
+ "combined_optimistic_with_prior_for_new_negatives": {
+  "supported": {
+   "apple": 39.4,
+   "banana": 41.5,
+   "citrus": 50.4,
+   "tomato": 33.5,
+   "carrot": 37.1
+  },
+  "supported_total": 201.9,
+  "negatives": {
+   "unsupported": 29,
+   "other_class": 18.3,
+   "printed": 60.9,
+   "occluded": 14.9,
+   "cut": 13.4,
+   "supported_packaged": 16.8
+  },
+  "negatives_total": 153.3,
+  "per_class_ge20": {
+   "apple": true,
+   "banana": true,
+   "citrus": true,
+   "tomato": true,
+   "carrot": true
+  },
+  "total_ge100": true,
+  "negatives_ge60": true,
+  "unsupported_ge25": true,
+  "printed_ge10": true,
+  "packaging_ge10": true,
+  "occluded_ge10": true
+ },
+ "combined_strict_with_prior_for_new_negatives": {
+  "supported": {
+   "apple": 23.1,
+   "banana": 20.8,
+   "citrus": 10.9,
+   "tomato": 29.9,
+   "carrot": 21.8
+  },
+  "supported_total": 106.5,
+  "negatives": {
+   "unsupported": 8,
+   "other_class": 8.6,
+   "printed": 58.4,
+   "occluded": 11.1,
+   "cut": 10.5,
+   "supported_packaged": 15.8
+  },
+  "negatives_total": 112.4,
+  "per_class_ge20": {
+   "apple": true,
+   "banana": true,
+   "citrus": false,
+   "tomato": true,
+   "carrot": true
+  },
+  "total_ge100": true,
+  "negatives_ge60": true,
+  "unsupported_ge25": false,
+  "printed_ge10": true,
+  "packaging_ge10": true,
+  "occluded_ge10": true
+ },
+ "combined_strict_with_low_prior_for_new_negatives": {
+  "supported": {
+   "apple": 23.1,
+   "banana": 20.8,
+   "citrus": 10.9,
+   "tomato": 29.9,
+   "carrot": 21.8
+  },
+  "supported_total": 106.5,
+  "negatives": {
+   "unsupported": 8,
+   "other_class": 8.6,
+   "printed": 58.4,
+   "occluded": 5.9,
+   "cut": 10.5,
+   "supported_packaged": 9.4
+  },
+  "negatives_total": 100.8,
+  "per_class_ge20": {
+   "apple": true,
+   "banana": true,
+   "citrus": false,
+   "tomato": true,
+   "carrot": true
+  },
+  "total_ge100": true,
+  "negatives_ge60": true,
+  "unsupported_ge25": false,
+  "printed_ge10": true,
+  "packaging_ge10": false,
+  "occluded_ge10": false
+ },
+ "priors": {
+  "packaging": [
+   0.15,
+   0.25
+  ],
+  "occluded": [
+   0.08,
+   0.15
+  ],
+  "basis": "assumption: targeted Commons queries are noisy; Stage J pilot Commons negative queries survived poorly"
+ }
+}
