@@ -3,14 +3,14 @@
 // requested and no native camera / inference module is touched. Shows: live camera, tap -> 3-still burst -> G3 + H2 frozen pipeline
 // -> title only ("<name>. Not graded" or "Unable to identify"). Never a grade, never a percentage, never a frame-rate figure.
 import { useEffect, useRef, useState } from 'react';
-import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Linking, NativeModules, Pressable, StyleSheet, Text, View } from 'react-native';
 import { Camera, useCameraDevice, useCameraPermission, usePhotoOutput } from 'react-native-vision-camera';
 import { InferenceSession, Tensor } from 'onnxruntime-react-native';
 import { permissionView } from '../src/cv/device/permissions.ts';
 import { rawToRgb, type PixelFormat } from '../src/cv/device/pixels.ts';
 import { runDebugPipeline, BURST, type UprightStill } from '../src/cv/device/debugPipeline.ts';
 import { overlayBoxes, type OverlayBox } from '../src/cv/device/overlay.ts';
-import { modelPath, DEVICE_MODELS } from '../src/cv/device/models.ts';
+import { resolveDebugModels, MODELS_NOT_LOADED, type ModelNative } from '../src/cv/device/modelSource.ts';
 import { checkModelIO, type RuntimeMeta } from '../src/cv/pipeline/camera.ts';
 import { nscv, setCvDebug, nscvResultLine } from '../src/cv/debug.ts';
 import { inferenceBadge, createLatencyRecorder, createLagSampler } from '../src/cv/device/instrument.ts';
@@ -48,8 +48,12 @@ export default function CvDebugScan({ width, height, back }: { width: number; he
     let live = true;
     (async () => {
       try {
-        const t0 = Date.now(); const h2 = await InferenceSession.create(modelPath('h2')); const t1 = Date.now();
-        const g3 = await InferenceSession.create(modelPath('g3_det')); const t2 = Date.now();
+        // J7: bundled QA-APK assets first, hash-verified adb push second; both sha256-checked against models.ts. No mock fallback.
+        const src = await resolveDebugModels(NativeModules.NsModelAssets as ModelNative | undefined);
+        src.lines.forEach((l) => nscv(l));
+        if (!src.ok) { nscv(`NSCV event=models_not_loaded ${src.message.slice(0, 200)}`); if (live) { setBadgeReason('models not loaded'); setState(src.message); } return; }
+        const t0 = Date.now(); const h2 = await InferenceSession.create(src.paths.h2); const t1 = Date.now();
+        const g3 = await InferenceSession.create(src.paths.g3_det); const t2 = Date.now();
         nscv(`NSCV stage=init model=h2 ms=${t1 - t0}`); nscv(`NSCV stage=init model=g3_det ms=${t2 - t1}`);
         nscv(`NSCV model h2 inputs=${h2.inputNames.join('|')} outputs=${h2.outputNames.join('|')} io=${JSON.stringify(checkModelIO('h2', meta(h2)).filter((e) => !/rank|dim/.test(e)))}`);
         nscv(`NSCV model g3_det inputs=${g3.inputNames.join('|')} outputs=${g3.outputNames.join('|')}`);
@@ -57,7 +61,7 @@ export default function CvDebugScan({ width, height, back }: { width: number; he
       } catch (e) {
         nscv(`NSCV event=model_load_failed error=${String(e).slice(0, 160)}`);
         if (live) setBadgeReason('models not loaded');
-        if (live) setState(`Models not found. Push ${DEVICE_MODELS.h2.file} and ${DEVICE_MODELS.g3_det.file} (see P1 guide).`);
+        if (live) setState(`${MODELS_NOT_LOADED}: ONNX session failed (${String(e).slice(0, 80)}). See P1 guide.`);
       }
     })();
     return () => { live = false; };
