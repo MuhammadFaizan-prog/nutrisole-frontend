@@ -1,0 +1,60 @@
+{
+ "status": "BLOCKED",
+ "stage": "G9 Stage J2 (gaps)",
+ "human_verified_images": 0,
+ "genuine_human_exports": 0,
+ "kappa": null,
+ "adjudication": null,
+ "ai_rows_used_as_labels": 0,
+ "ai_provenance_preserved": "AI_ASSISTED_NOT_HUMAN",
+ "training_started": false,
+ "kaggle_gpu_used": false,
+ "blockers": [
+  "0 independent human exports for pilot (265) and pilot2 (335); R1 kappa not computable",
+  "R2 (>=20 clean per class, >=60 negatives with sub-quotas) cannot be judged without human labels; exploratory projection only",
+  "T1 (>=150 verified per priority class) not met: 0 verified; expected after training packs 1+2: apple 85, banana 146, citrus 142, tomato 142, carrot 151",
+  "apple training remains short after pack 2 (single new source = Commons, 0.55 yield)",
+  "original byte-to-licence identity chain for the Stage J pilot still unproven beyond the 16 retrieved originals"
+ ],
+ "eval_projection_exploratory": {
+  "optimistic": {
+   "supported": {
+    "apple": 39.4,
+    "banana": 41.5,
+    "citrus": 50.4,
+    "tomato": 33.5,
+    "carrot": 37.1
+   },
+   "negatives": {
+    "unsupported": 29,
+    "other_class": 18.3,
+    "printed": 60.9,
+    "occluded": 14.9,
+    "cut": 13.4,
+    "supported_packaged": 16.8
+   }
+  },
+  "strict": {
+   "supported": {
+    "apple": 23.1,
+    "banana": 20.8,
+    "citrus": 10.9,
+    "tomato": 29.9,
+    "carrot": 21.8
+   },
+   "negatives": {
+    "unsupported": 8,
+    "other_class": 8.6,
+    "printed": 58.4,
+    "occluded": 5.9,
+    "cut": 10.5,
+    "supported_packaged": 9.4
+   }
+  }
+ },
+ "packs": {
+  "pilot2": 335,
+  "train2": 646
+ },
+ "next_step": "two independent people label pilot + pilot2 and training packs 1+2 on their own copies; a third person adjudicates"
+}
