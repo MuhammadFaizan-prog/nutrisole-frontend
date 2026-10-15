@@ -35,8 +35,9 @@ INTENDED = {"apple", "banana", "citrus_orange", "tomato", "carrot", "none"}
 CONDITIONS = {"bag-clear", "bag-mesh", "tray-film", "hid-hand", "hid-fruit", "hid-edge", "hid-object", "open"}
 EVAL_CONDITIONS = CONDITIONS - {"open"}
 # Stage J4: training sessions may cover the identified training shortages (gaps table section 7 + user brief 2026-10-15:
-# apple ~65, tomato ~8, banana ~4 projected). Citrus/carrot training sessions stay refused this round (lead decision needed).
-TRAIN_CLASSES = {"apple", "banana", "tomato"}
+# apple ~65, tomato ~8, banana ~4 projected). Stage J5: the user approved collecting orange training photos (2026-10-15 22:53 PKT),
+# so citrus_orange training sessions are now accepted too. Carrot training and `none` stay refused (no approval / no shortage).
+TRAIN_CLASSES = {"apple", "banana", "tomato", "citrus_orange"}
 LICENCES = {"CC-BY-4.0", "internal-FYP"}
 NAME = re.compile(r"^TP_(S\d{8}-[A-Z]{2,3}-\d{2})_([a-z_]+?)_([a-z]+-[a-z]+|open)_(\d{3})\.(jpe?g|png)$", re.I)
 SESSION = re.compile(r"^S\d{8}-[A-Z]{2,3}-\d{2}$")
