@@ -15,6 +15,8 @@ import { V1_CLASSES } from '../models/labels.ts';
 import { cropRgb, detectorInput, asProbs } from './pixels.ts';
 import { planTapOnUprightStill } from './orientation.ts';
 import type { StillCropPlan } from '../pipeline/camera.ts';
+import { domainOf } from './instrument.ts';
+import type { DomainId } from '../domainMap.ts';
 
 export type UprightStill = { rgb: Uint8Array; w: number; h: number };
 export type Infer = (model: 'h2' | 'g3_det', input: Float32Array, dims: number[]) => Promise<Float32Array>;
@@ -25,6 +27,10 @@ const NC = 12; const N_ANCHORS = 4725;
 export type DebugOutcome = {
   display: DisplayResult; displayErrors: string[]; wide: IdResult; verify: VerifyResult | null; plan: StillCropPlan | null;
   detections: Detection[][]; tappedPerStill: (number | null)[]; logLines: string[];
+  /** J6: always 'real' here (this function only returns after running the injected models); the screen decides the badge. */
+  inference: 'real';
+  /** J6: canonical domain id via domainMap.ts (citrus -> citrus_orange); null when not identified. */
+  domain: { cvClass: string | null; domainId: DomainId | null };
 };
 
 const contains = (b: Box, x: number, y: number) => b[0] <= x && x <= b[2] && b[1] <= y && y <= b[3];
@@ -55,7 +61,7 @@ export async function runDebugPipeline(stills: UprightStill[], tap: [number, num
   const plan0 = planTapOnUprightStill(tap, view, [last.w, last.h], []);
   if (!plan0) {
     const display = fromStageH(stageHDecision({ status: 'unable', reason: 'tap_outside_image', suggestions: [] }, [], 'not_run', []), labelOf);
-    return { display, displayErrors: checkDisplayResult(display), wide: { status: 'unable', reason: 'tap_outside_image' }, verify: null, plan: null, detections, tappedPerStill: [], logLines: log };
+    return { display, displayErrors: checkDisplayResult(display), wide: { status: 'unable', reason: 'tap_outside_image' }, verify: null, plan: null, detections, tappedPerStill: [], logLines: log, inference: 'real', domain: domainOf(null) };
   }
   for (const s of stills) {
     const t0 = now();
@@ -77,5 +83,5 @@ export async function runDebugPipeline(stills: UprightStill[], tap: [number, num
   const v = verifyIdentity(wide, null, probs, FROZEN_VERIFY);
   const o = stageHDecision(v, [], 'not_run', ['quality_gate_not_run_in_debug'], false);
   const display = fromStageH(o, labelOf);
-  return { display, displayErrors: checkDisplayResult(display), wide, verify: v, plan, detections, tappedPerStill: tapped.map((d) => d?.classId ?? null), logLines: log };
+  return { display, displayErrors: checkDisplayResult(display), wide, verify: v, plan, detections, tappedPerStill: tapped.map((d) => d?.classId ?? null), logLines: log, inference: 'real', domain: domainOf(v) };
 }
