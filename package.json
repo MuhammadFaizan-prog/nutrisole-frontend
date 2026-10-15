@@ -15,6 +15,8 @@
     "dev": "vite",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/domain.test.ts",
+    "test:glucose": "node --experimental-strip-types --import ./tests/glucose/resolve-ts.mjs --test tests/glucose/*.test.ts",
+    "test:glucose:db": "bash supabase/tests/run-local.sh",
     "native:start": "npm --prefix native start",
     "native:typecheck": "npm --prefix native run typecheck",
     "native:lint": "npm --prefix native run lint",
