@@ -7,7 +7,7 @@ import { stripTypeScriptTypes } from 'node:module';
 import { extensionRoutes, initialExpansionState, buildScene } from '../src/nutrisole/extensions/model.ts';
 const modelURL = new URL('../src/nutrisole/extensions/model.ts', import.meta.url).href;
 const domainCode = stripTypeScriptTypes(fs.readFileSync(new URL('../src/nutrisole/extensions/domain.ts', import.meta.url), 'utf8')).replaceAll("'./model'", JSON.stringify(modelURL));
-const { accountError, readingResult, saveReading, mealResult, assistantReply } = await import('data:text/javascript;base64,' + Buffer.from(domainCode).toString('base64'));
+const { accountError, mealResult, assistantReply } = await import('data:text/javascript;base64,' + Buffer.from(domainCode).toString('base64'));
 
 test('the six original screens and their shared artwork are unchanged', () => {
   const baseline = JSON.parse(fs.readFileSync('artifacts/expansion/six-screen-baseline.json', 'utf8'));
@@ -28,12 +28,13 @@ test('account validation checks email, consent and matching passwords', () => {
   s.fields.email = 'alex@example.org'; assert.match(accountError(s, 'create-account'), /Terms/); s.toggles.terms = true; assert.equal(accountError(s, 'create-account'), undefined);
   s.fields.newPassword = 'demo-pass'; s.fields.confirmPassword = 'other-pass'; assert.match(accountError(s, 'reset-password'), /match/);
 });
-test('manual readings validate values and deduplicate a reviewed record', () => {
-  let s = initialExpansionState(); assert.match(readingResult(s).error, /positive/);
-  s.fields.reading = '-1'; assert.ok(readingResult(s).error); s.fields.reading = '110'; const record = readingResult(s).record; assert.ok(record); s = saveReading(s, record); assert.equal(s.readings.length, 1);
-  s.currentReading = null; assert.match(readingResult(s).error, /already/); s.currentReading = record; s.fields.reading = '111'; s = saveReading(s, readingResult(s).record); assert.equal(s.readings.length, 1); assert.equal(s.readings[0].value, 111);
-  s.choices.unit = 'mmol/L'; s.fields.reading = '110'; assert.match(readingResult(s).error, /range/);
-  s.choices.unit = 'mg/dL'; s.fields.reading = '110'; s.choices.date = 'Sep 31, 2026'; assert.match(readingResult(s).error, /date/);
+// Glucose validation, conversion, repository and RLS tests live in tests/glucose/ and supabase/tests/ (npm run test:glucose).
+test('glucose screens never fall back to sample readings without a repository', () => {
+  const s = initialExpansionState();
+  const detail = buildScene('reading-detail', s); assert.ok(detail.layers.some(l => l.text === 'No reading selected')); assert.ok(!detail.layers.some(l => l.text === '110' || l.text === 'Sample record'));
+  assert.ok(detail.layers.some(l => l.action === 'edit-reading' && l.disabled)); assert.ok(detail.layers.some(l => l.action === 'remove-reading' && l.disabled));
+  const overview = buildScene('glucose-overview', s); assert.ok(overview.layers.some(l => l.text === 'Database not configured'));
+  const connections = buildScene('health-connections', s); assert.ok(!connections.layers.some(l => /connected/i.test(l.text || '') && !/not/i.test(l.text || '')));
 });
 test('portion calculations use the selected food and preserve drafts', () => {
   const s = initialExpansionState(); assert.equal(mealResult(s, false).meal.calories, 95);
