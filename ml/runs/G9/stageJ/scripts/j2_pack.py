@@ -7,7 +7,7 @@ Copies: annotator 1 and annotator 2 see the SAME photos in DIFFERENT random orde
 split is shown; photos are re-encoded without metadata and named by blind id only. The blind-id -> source key stays in out/j_blind_key.csv.
 Usage: j2_pack.py [pilot2|train2|all]"""
 import csv, io, json, base64, random, sys, os, zipfile, hashlib
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 ROOT = "/workspace/work/nutrisole"; J = f"{ROOT}/ml/runs/G9/stageJ"; OUT = f"{J}/out"; LAB = "/workspace/work/g9j2/packs"; os.makedirs(LAB, exist_ok=True)
 TPL = open(f"{J}/tool/labeler_template.html").read()
 GUIDE = f"{ROOT}/docs/cv/gauntlet/G9_stageJ_annotation_guide.md"
@@ -16,8 +16,8 @@ def path(k):
     for d in ("/workspace/work/g9i/cands/img", "/workspace/work/g9j2/eval2/img", "/workspace/work/g9j2/train2/img", "/workspace/work/g9j/train/img"):
         if os.path.exists(f"{d}/{k}.jpg"): return f"{d}/{k}.jpg"
     raise FileNotFoundError(k)
-def clean_jpeg(k, side=640, q=84):
-    im = Image.open(path(k)).convert("RGB"); w, h = im.size; s = min(1.0, side / max(w, h))
+def clean_jpeg(k, side=640, q=84, direct=False, transpose=False):
+    im = Image.open(k if direct else path(k)); im = ImageOps.exif_transpose(im) if transpose else im; im = im.convert("RGB"); w, h = im.size; s = min(1.0, side / max(w, h))
     if s < 1: im = im.resize((round(w * s), round(h * s)), Image.LANCZOS)
     b = io.BytesIO(); im.save(b, "JPEG", quality=q, optimize=True); return b.getvalue(), im   # PIL writes no EXIF unless asked
 def font(sz):
@@ -38,11 +38,15 @@ def sheets(ids, ims, prefix):
 FB_COLS = ["item_id", "label", "other_produce_name", "occluded_or_printed_what", "cut", "bag", "multi", "rotten_damaged", "note", "annotator", "contact_sheet"]
 def build(batch):
     rows = [r for r in KEYS if r["batch"] == batch]; ids = sorted((r["blind_id"] for r in rows), key=lambda b: (b[0], int(b[1:]))); kid = {r["blind_id"]: r["key"] for r in rows}
+    title = {"pilot2": "Pilot 2 (supplementary evaluation photos)", "train2": "Training photos, pack 2"}[batch]
+    return build_from(batch, ids, {bid: path(kid[bid]) for bid in ids}, title, LAB)
+def build_from(batch, ids, img_of, title, lab, transpose=False):
+    """Shared pack builder (Stage J3 team_phone packs reuse it unchanged): same tool, guide, seeds 101/202, fallback CSV and sheets."""
     raw, ims = {}, {}
-    for bid in ids: raw[bid], ims[bid] = clean_jpeg(kid[bid])
+    for bid in ids: raw[bid], ims[bid] = clean_jpeg(img_of[bid], direct=True, transpose=transpose)   # phone photos: apply EXIF rotation, then drop all metadata
     sheet_of = {bid: f"{batch}_sheet_{n // 20 + 1:02d}.jpg" for n, bid in enumerate(ids)}
     shs = sheets(ids, ims, batch)
-    title = {"pilot2": "Pilot 2 (supplementary evaluation photos)", "train2": "Training photos, pack 2"}[batch]
+    os.makedirs(lab, exist_ok=True)
     res = []
     for copy, seed in (("annotator1", 101), ("annotator2", 202)):
         order = ids[:]; random.Random(seed).shuffle(order); pack_id = f"G9J-{batch}"
@@ -52,7 +56,7 @@ def build(batch):
         fb = io.StringIO(); w = csv.writer(fb); w.writerow(FB_COLS)
         for b in order: w.writerow([b, "", "", "", "", "", "", "", "", "", sheet_of[b]])
         start = open(f"{J}/tool/START_HERE.txt").read().replace("__COPY__", copy).replace("__BATCH__", title).replace("__N__", str(len(order)))
-        zp = f"{LAB}/nutrisole_G9J_{batch}_{copy}.zip"
+        zp = f"{lab}/nutrisole_G9J_{batch}_{copy}.zip"
         with zipfile.ZipFile(zp, "w", zipfile.ZIP_DEFLATED) as z:
             z.writestr("START_HERE.txt", start)
             z.writestr(f"NutriSole_labelling_{batch}_{copy}.html", html)
@@ -62,7 +66,8 @@ def build(batch):
         res.append(dict(zip=zp, mb=round(os.path.getsize(zp) / 1e6, 1), items=len(order), sha256=hashlib.sha256(open(zp, "rb").read()).hexdigest(),
                         html_order_first5=order[:5]))
     return res
-which = sys.argv[1] if len(sys.argv) > 1 else "all"
-R = {b: build(b) for b in (["pilot2", "train2"] if which == "all" else [which])}
-prev = json.load(open(f"{OUT}/gaps/j2_packs.json")) if os.path.exists(f"{OUT}/gaps/j2_packs.json") else {}
-prev.update(R); json.dump(prev, open(f"{OUT}/gaps/j2_packs.json", "w"), indent=1); print(json.dumps(R, indent=1))
+if __name__ == "__main__":   # import-safe since Stage J3 (behaviour of the CLI unchanged)
+    which = sys.argv[1] if len(sys.argv) > 1 else "all"
+    R = {b: build(b) for b in (["pilot2", "train2"] if which == "all" else [which])}
+    prev = json.load(open(f"{OUT}/gaps/j2_packs.json")) if os.path.exists(f"{OUT}/gaps/j2_packs.json") else {}
+    prev.update(R); json.dump(prev, open(f"{OUT}/gaps/j2_packs.json", "w"), indent=1); print(json.dumps(R, indent=1))
