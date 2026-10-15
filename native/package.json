@@ -11,7 +11,8 @@
     "lint": "eslint App.tsx responsive/ touchPrimitives.tsx deepLinks.ts nativeMenu.ts index.js metro.config.js babel.config.js react-native.config.js tests/*.test.ts",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
     "export:check": "react-native bundle --entry-file index.js --platform android --dev false --bundle-output dist-check/index.android.bundle --assets-dest dist-check/assets --max-workers 2",
-    "cv:check": "node --experimental-strip-types scripts/check-cv-runtime.ts"
+    "cv:check": "node --experimental-strip-types scripts/check-cv-runtime.ts",
+    "postinstall": "node scripts/patch-onnxruntime-gradle9.cjs"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",
