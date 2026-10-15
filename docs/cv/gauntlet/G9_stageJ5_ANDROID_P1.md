@@ -1,5 +1,7 @@
 # G9 Stage J5: Android P0 / P1 on the isolated device branch `cv-gauntlet-device`
 
+> **J6 (2026-10-16): the P1 steps are superseded by `G9_stageJ6_ANDROID_P1_ADDENDUM.md`** (versions, inference badge, memory/latency capture, what to send back). The J5 record below is kept unchanged.
+
 Written 2026-10-15 (PKT). Branch `cv-gauntlet-device` was cut from `cv-gauntlet` after the J5 commit; it is never merged to `main` and
 never deployed. Approval: the user's 22:53 PKT message ("APPROVED: isolated Android dev branch"). **No FPS, latency or accuracy claim
 is made from anything below.** D6–D8 are functional observations, not accuracy.
