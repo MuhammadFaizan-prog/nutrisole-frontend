@@ -26,3 +26,22 @@ Probe (real functions): `nutritionFor('citrus')` → **null**, `nutritionFor('ci
 6. Grading → price (`gradedPrice`) remains intentionally unreachable while grades are blocked.
 
 Nothing above was changed in J5.
+
+## J6 update (2026-10-16 PKT): canonical mapping added, remaining connections
+**Fixed (gap 1):** `native/src/cv/domainMap.ts` is the single CV ↔ domain map (on `cv-gauntlet` and mirrored on `cv-gauntlet-device`).
+`citrus` (id 3) → `citrus_orange`; `lemon_lime` (id 6) → no domain (never orange); mango/guava/pomegranate/potato/cucumber/capsicum → no
+nutrition/showcase contract (category price rows keep the CV class string as `app_class`, asserted against `ml/prices/lexicon.py`);
+H2 `unknown` (12) / out of range → null. Model output indexes unchanged (asserted vs `labels.ts`, `verify.ts`, `ml/data/class_map.csv`,
+`j_agree.CLASS13`). CV-consuming lookups: `nutritionForCv(cvClass)` and `lahoreProducePriceForCv(cvClass, sources, today)`;
+`SHOWCASE_APP_CLASS` is now derived from the map (same values). `nutritionForCv('citrus')` → FDC 169097 record. Tests: `native/tests/cvDomainMap.test.ts` (6).
+`prices/display.ts closeupDisplay/categoryPrice` already take the CV class, which equals the price `app_class` for all 12 (checked by `checkDomainMap`).
+On the device branch the debug pipeline returns `domain {cvClass, domainId}` and the debug screen shows nutrition availability + "price: no verified source loaded".
+
+| Path step | State after J6 | Missing connection |
+|---|---|---|
+| Recognition (G3 + H2 verify) | functional; consumed only by the device-branch debug layer | Scan screen does not consume it (demo store); needs the P1 phone result before wiring |
+| → domain id | **connected** (`domainMap.ts`) | — |
+| → grading | internal only; `GRADE_DISPLAY_ENABLED = false`, `USER_GRADES_ENABLED = false` | blocked by design until frozen grade criteria + human labels |
+| → price | lookup ready (`lahoreProducePriceForCv`, Lahore sources only, source/location/date/unit, stale → unavailable) | **no ingestion/store of a verified official list in the app** (ml/prices parsers exist offline); nothing fabricated |
+| → nutrition | FDC SR Legacy per 100 g + `forPortion(grams)` | UI nutrition screen still reads the demo `foods` catalog; portion grams must come from the user's portion screen (never from the image); GI missing (no cited source) |
+| → glucose / diet-exercise / footwear / assistant | modules kept, demo data | not connected to CV output (no backend / Supabase schema yet) |
