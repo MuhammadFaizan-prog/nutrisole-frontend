@@ -5,7 +5,7 @@ Branch `cv-gauntlet-device` only (draft PR #2 into `cv-gauntlet`; never `main`, 
 
 **What the QA APK is**
 - A release-type build with the JavaScript bundle **embedded** (no Metro, no PC needed to run it), signed with the repo's
-  **debug keystore** (not a store build). App id `com.muhammadfaizan.nutrisole`, **minSdk 24 (Android 7.0+)**, arm64-v8a only
+  **debug keystore** (not a store build). App id `com.muhammadfaizan.nutrisole`, **minSdk 26 (Android 8.0+)**, arm64-v8a only
   (every phone from roughly 2017 onwards; a 32-bit-only phone will refuse it as "App not installed").
 - **QA flavour:** built with `NUTRISOLE_QA=1`, which turns `CV_DEBUG_PIPELINE` on for this APK only (Metro swaps in
   `native/src/cv/device/flags.qa.ts`). You do **not** edit any code. The committed source and any normal build stay unchanged (flag off).
