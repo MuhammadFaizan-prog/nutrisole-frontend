@@ -1083,7 +1083,7 @@
           "y": 235.85,
           "w": 180,
           "h": 20.08,
-          "text": "Sample analysis",
+          "text": "Demo data · sample",
           "size": 14,
           "color": "#5c626d"
         },
@@ -1121,9 +1121,9 @@
           "y": 327.04999999999995,
           "w": 80,
           "h": 50.58,
-          "text": "A",
+          "text": "—",
           "size": 39,
-          "color": "#123f2c",
+          "color": "#5c626d",
           "serif": true
         },
         {
@@ -1132,9 +1132,9 @@
           "y": 368.84999999999997,
           "w": 232,
           "h": 20.08,
-          "text": "Good visible condition",
+          "text": "Not graded · Demo data",
           "size": 14,
-          "color": "#123f2c"
+          "color": "#5c626d"
         },
         {
           "kind": "surface",
@@ -1325,7 +1325,7 @@
           "y": 553.15,
           "w": 345,
           "h": 35,
-          "text": "Model v1.0 · Rubric v1.0\nA photo cannot confirm food safety.",
+          "text": "Demo data · no model was run\nA photo cannot confirm food safety.",
           "size": 11,
           "color": "#5c626d",
           "line": 16
@@ -1540,7 +1540,7 @@
           "y": 180.75,
           "w": 190,
           "h": 20.08,
-          "text": "Grade A",
+          "text": "Not graded · Demo data",
           "size": 14,
           "color": "#5c626d"
         },
@@ -29768,8 +29768,8 @@
       ]
     ],
     "evidence": [
-      "Assessment evidence",
-      "Sample colour: even red. Shape: whole apple. Surface: minor marks. Confidence 97%. Model v1.0 · Rubric v1.0. A photo cannot determine food safety.",
+      "Assessment evidence · Demo data",
+      "Sample colour: even red. Shape: whole apple. Surface: minor marks. Sample screen. No model was run, so no confidence or grade is shown. A photo cannot determine food safety.",
       [
         [
           "Correct food label",
