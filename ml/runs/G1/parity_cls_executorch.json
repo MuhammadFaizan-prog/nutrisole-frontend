@@ -1,0 +1,7 @@
+{
+ "images": 30,
+ "max_abs_prob_diff": 4.76837158203125e-07,
+ "top1_disagreements": 0,
+ "runtime": "executorch python runtime (CPU) via Ultralytics AutoBackend",
+ "passed": true
+}

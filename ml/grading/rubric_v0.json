@@ -1,0 +1,31 @@
+{
+  "rubricVersion": "rubric-v0.2-g2",
+  "_comment": "G1 PROPOSAL thresholds from the master prompt section 1, not yet calibrated against human graders (no Lahore panel yet). Shared by ml/grading/rules.py and native/src/cv/pipeline/rules.ts; native/tests/cvRules.test.ts asserts they match.",
+  "detectorMinScore": 0.35,
+  "qualityMinMaxProb": 0.5,
+  "minMaskFraction": 0.08,
+  "minBlurVar": 15.0,
+  "minMeanV": 40.0,
+  "maxMeanV": 245.0,
+  "reject": {
+    "pRotten": 0.5,
+    "defectPct": 25.0
+  },
+  "c": {
+    "pMild": 0.4,
+    "defectPct": 10.0,
+    "overripeBandPct": 30.0
+  },
+  "b": {
+    "defectPct": 2.0,
+    "unripeBandPct": 40.0,
+    "shapeScore": 0.85
+  },
+  "a": {
+    "pFresh": 0.7,
+    "targetBandPct": 50.0
+  },
+  "measurementAgreement": {
+    "pRottenMin": 0.05
+  }
+}

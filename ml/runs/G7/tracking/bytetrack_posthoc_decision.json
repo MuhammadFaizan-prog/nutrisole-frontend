@@ -1,0 +1,57 @@
+{
+ "framing": "POST-HOC / exploratory: rule written in G7_prereg.md after the G6 TEST numbers were known; cannot be confirmatory. Outcome can only make ByteTrack the recommended candidate for a phone / labelled-real-footage A/B; app default stays IouTracker (flag OFF).",
+ "source": "ml/runs/G6/tracking/{test_iou_r1,test_bt_r1,test_bt_r2,negtest_*}/gauntlet.json (G6 runs, sandbox CPU, G3 control det ONNX raw 480 + E224 cls 224 T=0.25, fixed-frame stride 1, synthetic clips from locked TEST images)",
+ "rows": {
+  "det_seg_acc": {
+   "iou": 0.6667,
+   "bytetrack_b15": 0.6667,
+   "rule": "not lower",
+   "pass_": true
+  },
+  "det_frame_acc": {
+   "iou": 0.4965,
+   "bytetrack_b15": 0.5316,
+   "rule": "not lower",
+   "pass_": true
+  },
+  "id_switches_det": {
+   "iou": 43,
+   "bytetrack_b15": 30,
+   "rule": ">= 20% fewer",
+   "pass_": true
+  },
+  "ttfc_p90_ms_det": {
+   "iou": 759.9997999999993,
+   "bytetrack_b15": 933.3331999999996,
+   "rule": "<= 1000 and <= 1.25x control",
+   "pass_": true
+  },
+  "fa_per_min_G1neg": {
+   "iou": 1.25,
+   "bytetrack_b15": 1.25,
+   "rule": "not higher",
+   "pass_": true
+  },
+  "fa_per_min_G2negtest": {
+   "iou": 0.0,
+   "bytetrack_b15": 0.0,
+   "rule": "not higher",
+   "pass_": true
+  },
+  "quality_acc": {
+   "iou": 0.9286,
+   "bytetrack_b15": 0.9286,
+   "rule": "not lower",
+   "pass_": true
+  },
+  "rotten_seg_recall": {
+   "iou": 0.875,
+   "bytetrack_b15": 0.875,
+   "rule": "not lower",
+   "pass_": true
+  }
+ },
+ "r1_eq_r2": true,
+ "all_pass": true,
+ "outcome": "ByteTrack b15 meets the post-hoc movable rule -> recommended candidate for the phone / labelled-footage A/B; app default unchanged (IouTracker)."
+}

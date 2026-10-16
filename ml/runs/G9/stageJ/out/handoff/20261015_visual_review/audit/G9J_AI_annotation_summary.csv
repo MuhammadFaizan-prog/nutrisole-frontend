@@ -1,0 +1,10 @@
+label,reported_unverified_count,imported_count,comparison,provenance,human_verified
+apple,19,12,DISCREPANCY,AI_ASSISTED_NOT_HUMAN,false
+banana,18,18,MATCH,AI_ASSISTED_NOT_HUMAN,false
+citrus_orange,18,16,DISCREPANCY,AI_ASSISTED_NOT_HUMAN,false
+tomato,20,19,DISCREPANCY,AI_ASSISTED_NOT_HUMAN,false
+carrot,30,29,DISCREPANCY,AI_ASSISTED_NOT_HUMAN,false
+other_produce,42,42,MATCH,AI_ASSISTED_NOT_HUMAN,false
+printed_or_screen,37,42,DISCREPANCY,AI_ASSISTED_NOT_HUMAN,false
+occluded,0,3,DISCREPANCY,AI_ASSISTED_NOT_HUMAN,false
+uncertain,81,84,DISCREPANCY,AI_ASSISTED_NOT_HUMAN,false

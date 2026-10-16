@@ -1,0 +1,78 @@
+clip_id,origin,uploader,licence,page,dur_s,role,split,counts_toward_60,labels
+c59f957c2,G6,Psubhashish,CC BY-SA 3.0,https://commons.wikimedia.org/wiki/File:Vegetable_vendor_selling_vegetables_in_a_Bangalore_street.webm,59.59,produce,holdout (LOCKED),True,machine proposals only
+c973b3f44,G6,Thamizhpparithi Maari,CC BY-SA 3.0,https://commons.wikimedia.org/wiki/File:A_vendor_in_cycle.ogv,18.0,produce,holdout (LOCKED),True,machine proposals only
+c87e3900a,G6,Victorgrigas,CC0,"https://commons.wikimedia.org/wiki/File:KR_Market_in_Bangalore,_2011.webm",9.1,produce,holdout (LOCKED),True,machine proposals only
+cf0b25e3b,G6,Yahya,CC BY 4.0,"https://commons.wikimedia.org/wiki/File:Street_market,_Jurain,_Dhaka.webm",7.47,produce,holdout (LOCKED),True,machine proposals only
+c32085ee7,G6,Azimronnie,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Traditional_floating_fruits_market.webm,260.01,produce,holdout (LOCKED),True,machine proposals only
+c8ddc4768,G6,Sumita Roy Dutta,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Video_of_lockdown_period_Sakerbazar_market_during_3_hrs_open_in_a_day_VID_20210602_081954.webm,10.14,produce,dev,True,machine proposals only
+c97e354bf,G6,Shanze1,CC BY 3.0,https://commons.wikimedia.org/wiki/File:Covid-19_in_India-_Market_in_TN%E2%80%99s_Tiruppur_sets_up_disinfection_tunnel_for_customers.webm,81.3,produce,holdout (LOCKED),True,machine proposals only
+cf3d00ee1,G6,Gangulybiswarup,CC BY 3.0,https://commons.wikimedia.org/wiki/File:Mirpur_Road_-_New_Market_Area_-_Dhaka_2015-05-29_1928.ogv,65.89,produce,dev,True,machine proposals only
+c42c27498,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Carrots_video.webm,18.5,produce,dev,True,machine proposals only
+ca3a8411d,G6,Muktee1494,CC BY-SA 4.0,"https://commons.wikimedia.org/wiki/File:Carrots,_cabbage_%F0%9F%A5%AC_cucumber_and_green_beans_video.webm",14.77,produce,dev,True,machine proposals only
+ca4d0f9cf,G6,Muktee1494,CC BY-SA 4.0,"https://commons.wikimedia.org/wiki/File:Carrots,_cabbages_%F0%9F%A5%AC_cucumber_and_green_beans_video.webm",2.7,produce,dev,True,machine proposals only
+c20606e36,G6,Muktee1494,CC BY-SA 4.0,"https://commons.wikimedia.org/wiki/File:Carrots,_cucumber_and_green_beans_video.webm",16.93,produce,dev,True,machine proposals only
+cfda01e90,G6,Muktee1494,CC BY-SA 4.0,"https://commons.wikimedia.org/wiki/File:Carrots,_green_beans_and_cabbage_%F0%9F%A5%AC_video.webm",17.8,produce,dev,True,machine proposals only
+ca5207d1f,G6,Muktee1494,CC BY-SA 4.0,"https://commons.wikimedia.org/wiki/File:Carrots,_green_beans_and_cucumbers_video.webm",17.14,produce,dev,True,machine proposals only
+cbc4ee137,G6,Muktee1494,CC BY-SA 4.0,"https://commons.wikimedia.org/wiki/File:Carrots,_green_beans_and_cucumbers_video_01.webm",14.77,produce,dev,True,machine proposals only
+cf11cd00b,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Cucumber_%F0%9F%A5%92_green_beans_and_others_video.webm,14.85,produce,dev,True,machine proposals only
+ccd5949e0,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Big_and_fresh_Pepper_%F0%9F%8C%B6%EF%B8%8F_video.webm,32.9,produce,dev,True,machine proposals only
+cb09ab182,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Big_and_fresh_Pepper_%F0%9F%8C%B6%EF%B8%8F_video_01.webm,14.98,produce,dev,True,machine proposals only
+c9048d7da,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Big_and_fresh_Pepper_%F0%9F%8C%B6%EF%B8%8F_video_02.webm,32.9,produce,dev,True,machine proposals only
+c1ee7d682,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Fresh_Pepper_%F0%9F%8C%B6%EF%B8%8F_Video.webm,14.9,produce,dev,True,machine proposals only
+c5e5004e3,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Pepper_%F0%9F%8C%B6%EF%B8%8F_Video.webm,10.13,produce,dev,True,machine proposals only
+c86f74c3a,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Fresh_orange_%F0%9F%8D%8A_video.webm,1.97,produce,dev,True,machine proposals only
+c18be0288,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Tomatoes_basket_%F0%9F%A7%BA_video.webm,7.4,produce,dev,True,machine proposals only
+c6c0d485a,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Tomatoes_%F0%9F%8D%85_Video.webm,16.27,produce,dev,True,machine proposals only
+cb045e06b,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Big_and_fresh_mango_%F0%9F%A5%AD_Video.webm,7.77,produce,dev,True,machine proposals only
+c69f0e13b,G6,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Onion_and_pepper_%F0%9F%8C%B6%EF%B8%8F_video.webm,16.3,produce,dev,True,machine proposals only
+ca1cbf110,G6,Tyler1555,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Carbage_And_Carrot_Sold_In_Market.webm,2.23,produce,holdout (LOCKED),True,machine proposals only
+c3cc14a1f,G6,Obihoja,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Cutting_Vegitable_In_A_Market.webm,22.92,produce,holdout (LOCKED),True,machine proposals only
+c0be28daa,G6,Anna Frodesiak,CC0,https://commons.wikimedia.org/wiki/File:Haikou_wholesale_fruit_market_panorama_-_01.ogv,62.85,negative(hardneg source),train_only(G5 hardneg source),True,machine proposals only
+c018de016,G6,Mrtony77,CC BY-SA 3.0,https://commons.wikimedia.org/wiki/File:Fruit_vendor_in_Colombia_-_20110527.ogv,54.63,produce,dev,True,machine proposals only
+cb05e346c,G6,GrantHillebrand,CC BY-SA 4.0,"https://commons.wikimedia.org/wiki/File:Hendrik_Green_Fruit_Seller_-_Koeberg_Road,_Cape_Town.webm",41.23,produce,holdout (LOCKED),True,machine proposals only
+cfe0b39f1,G6,DarwIn,CC BY 3.0,"https://commons.wikimedia.org/wiki/File:Mercado,_Funchal_-_2012.webm",188.0,produce,holdout (LOCKED),True,machine proposals only
+c9030be18,G6,NMaia,CC BY 3.0,"https://commons.wikimedia.org/wiki/File:Ceagesp,_um_dos_maiores_mercados_atacadistas_da_Am%C3%A9rica_Latina.webm",151.84,produce,holdout (LOCKED),True,machine proposals only
+c20a12a9c,G6,Isewell,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Damnoen_Saduak.ogv,47.04,produce,holdout (LOCKED),True,machine proposals only
+cfb66f6d2,G6,YT Arty,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Pasar_Malam_Alun-alun_Merdeka_Ngawi.webm,41.47,produce,dev,True,machine proposals only
+c94ab39f5,G6,Mx. Granger,CC0,https://commons.wikimedia.org/wiki/File:%E9%AB%98%E9%9B%84%E5%93%88%E5%9B%89%E5%B8%82%E5%A0%B4_4.webm,17.13,produce,holdout (LOCKED),True,machine proposals only
+cd1a3f857,G6,NMaia,CC BY 3.0,"https://commons.wikimedia.org/wiki/File:Bac_Ha_Market_,_Vietnam.webm",412.1,produce,holdout (LOCKED),True,machine proposals only
+c0a13587f,G6,Hanooz,CC BY 3.0,https://commons.wikimedia.org/wiki/File:Night_Walk_in_Tehran_City_-_%D8%AA%D8%AC%D8%B1%DB%8C%D8%B4%D8%8C_%D8%AA%D9%87%D8%B1%D8%A7%D9%86.webm,1337.34,produce,holdout (LOCKED),True,machine proposals only
+c3d854faf,G7,Saimmx,CC0,https://commons.wikimedia.org/wiki/File:20251106_213507_Shengli_night_market_walk_(temp).webm,91.333,negative,negatives_v7,True,machine proposals only
+c4e9a7195,G7,NairobiPapel,CC BY 3.0,https://commons.wikimedia.org/wiki/File:The_Maasai_Market_in_Nairobi_-_we%27re_just_looking.webm,32.028,negative,negatives_v7,True,machine proposals only
+c6f5ac9b4,G7,OptimusPrimeBot,Public domain,https://commons.wikimedia.org/wiki/File:2012_USDA_Farmers_Market_Opening_(20120601-DM-LSC-9002).webm,34.977000000000004,negative,negatives_v7,True,machine proposals only
+c90447971,G7,Isewell,CC BY-SA 2.5,https://commons.wikimedia.org/wiki/File:Dominica-roseau-farmers-market.ogv,73.90040816326531,produce,holdout_v7_pending,True,machine proposals only
+cb24e4c46,G7,Ayorinde Ogundele,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Market_Movements.webm,39.851,reject,excluded,False,machine proposals only
+cc5585ebc,G7,Yann,CC BY 3.0,"https://commons.wikimedia.org/wiki/File:Main_Bazar_from_Krishna_Caf%C3%A9,_Delhi.webm",42.588,negative,negatives_v7,True,machine proposals only
+cd17ce723,G7,Hanooz,CC BY 3.0,"https://commons.wikimedia.org/wiki/File:Bazar_,_Tajrish.webm",209.18800000000002,negative,negatives_v7,True,machine proposals only
+cd61265f9,G7,Marsupium,CC0,https://commons.wikimedia.org/wiki/File:Apple_harvest_in_South_Tyrol_2015_video.webm,16.536,reject,excluded,False,machine proposals only
+cd80902de,G7,Jon Kolbert,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Wikimania_2023_-_Ver-o-peso_market_tour_-_Bringing_Amazonian_culture_to_the_Wikimedia_projects.webm,400.021,weak_exploratory,weak_exploratory,False,machine proposals only
+ce9f2fe34,G7,Chris Light,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Pikes_Market_2015-06_186_(30_Sec).ogv,25.578666666666667,negative,negatives_v7,True,machine proposals only
+c0a08d565,G7,Rafic.Mufid,CC BY 3.0,https://commons.wikimedia.org/wiki/File:Iran_-_Im_Bazar.webm,18.021,negative,negatives_v7,True,machine proposals only
+c4a35a451,G7,Stephanie cheks,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Shombo_and_pepper.webm,6.933,negative,negatives_v7,True,machine proposals only
+c72da5fa1,G7,Spiritia,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Browning_Fuji_apple_-_32_minutes_in_16_seconds.webm,16,weak_exploratory,weak_exploratory,False,machine proposals only
+c82e63d5a,G7,Onyinye Achukwu,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Umerum_Wiki_for_Minorities_Photowalk_05.mpg,131.1011011011011,negative,negatives_v7,True,machine proposals only
+c84cdc183,G7,Atlasowa,CC BY 3.0,https://commons.wikimedia.org/wiki/File:Time_Lapse_Banana_Ripening.webm,30.03,weak_exploratory,weak_exploratory,False,machine proposals only
+c8b2d2f36,G7,Muktee1494,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Fresh_onion_market_video.webm,16.9,negative,negatives_v7,True,machine proposals only
+c8e6ccd85,G7,Ready Street,CC BY-SA 4.0,"https://commons.wikimedia.org/wiki/File:Video_of_the_Activities_in_Oshodi,_Lagos,_Nigeria.webm",287.23,weak_exploratory,weak_exploratory,False,machine proposals only
+c9a897fb2,G7,Gzen92Bot,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Marchandes_des_quatre_saisons_rue_des_Abbesses_-_AI49442.webm,45.008,reject,excluded,False,machine proposals only
+cff999d3b,G7,Atlasowa,CC BY 2.0,https://commons.wikimedia.org/wiki/File:Rotting_carrot_time_lapse_video.ogv,29.976961451247167,weak_exploratory,weak_exploratory,False,machine proposals only
+c61cbc2a6,G7,Amanpanta1990,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Apple_grading_and_packing.webm,17.124,produce,holdout_v7_pending,True,machine proposals only
+cd4211720,G7,FireFeather,CC BY-SA 3.0,https://commons.wikimedia.org/wiki/File:Cutting_mango.webm,26.056,produce,holdout_v7_pending,True,machine proposals only
+c6e08132a,G7,Missvain,CC BY 4.0,https://commons.wikimedia.org/wiki/File:Hudson_Greens_and_Goods_-_February_2024_-_Sarah_Stierch_02.webm,24.083000000000002,produce,holdout_v7_pending,True,machine proposals only
+c97bdc431,G7,OJjnr,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Tamale_Market_(No_Audio).webm,25.491,produce,holdout_v7_pending,True,machine proposals only
+c6473db48,G7,McZusatz,CC BY-SA 3.0,https://commons.wikimedia.org/wiki/File:Farmers_market2.theora.ogv,45.04533333333333,produce,holdout_v7_pending,True,machine proposals only
+c19ae062b,G7,OptimusPrimeBot,Public domain,https://commons.wikimedia.org/wiki/File:Potatoes_Sorting_Montana2026_(55252116350).webm,58.767,produce,holdout_v7_pending,True,machine proposals only
+c4880a292,G7,OptimusPrimeBot,Public domain,https://commons.wikimedia.org/wiki/File:Supermarket_Grocery_Products_(13083756734).webm,142.81,produce,holdout_v7_pending,True,machine proposals only
+c31b80875,G7,Виктор Пинчук,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Vegetable_Market_(Amman).webm,26.706,produce,holdout_v7_pending,True,machine proposals only
+cea174b05,G7,NiferO,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Market_Day_in_Okigwe.webm,26.445,produce,dev_v7,True,machine proposals only
+c237ace91,G7,Anthu0811,CC BY-SA 4.0,"https://commons.wikimedia.org/wiki/File:Exhibici%C3%B3n_de_frutas_en_puesto_de_venta_en_el_Mercado_N%C2%B01_de_Tocache,_Per%C3%BA_(2025).webm",8.683,produce,dev_v7,True,machine proposals only
+c3d1561b2,G7,Anthu0811,CC BY-SA 4.0,"https://commons.wikimedia.org/wiki/File:Venta_de_verduras_de_un_puesto_en_el_Mercado_de_abastos_y_productores_%22Amazonas%22_de_Tocache,_Per%C3%BA_(2025).webm",13.288,produce,dev_v7,True,machine proposals only
+ce3fc202a,G7,Nesnad,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Fruit_Stand_-_Kitasenju_Tokyo_-_2018_1_21.webm,20.787,produce,dev_v7,True,machine proposals only
+cec084f0c,G7,Adimora chidinma,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Market_of_food_stuff.webm,32.549,produce,dev_v7,True,machine proposals only
+c61f2d4b9,G7,SarKaLay,CC0,https://commons.wikimedia.org/wiki/File:%E1%80%81%E1%80%9B%E1%80%99%E1%80%BA%E1%80%B8%E1%80%81%E1%80%BB%E1%80%A5%E1%80%BA%E1%80%9E%E1%80%AE%E1%80%B8.webm,89.533,produce,dev_v7,True,machine proposals only
+cc44ad5c9,G7,Attahokah,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Fresh_mango.webm,12.1,produce,train_v7_weak,True,machine proposals only
+c7e7795ef,G7,Inyor4mr,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Tomato_at_Bakin_Dogo_Market.webm,14.603,produce,train_v7_weak,True,machine proposals only
+cf14f0db2,G7,Litllegenius,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Grand-marche-de-marcory-realisateur-abraham-kodja-wiki-loves-africa-cote-divoire-fan-club.webm,93.88,produce,train_v7_weak,True,machine proposals only
+c7bf0608b,G7,Nouha lemharchi,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Market_of_Food_-_Oujda_-_Morroco.webm,26.798000000000002,produce,train_v7_weak,True,machine proposals only
+c5ed7eb90,G7,Nouha lemharchi,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Traditional_Market_of_Food_-_Oujda_-_Morroco.webm,16.026,produce,train_v7_weak,True,machine proposals only
+c376d058d,G7,Fastily,CC BY-SA 4.0,https://commons.wikimedia.org/wiki/File:Lemon_1_2019-09-13.webm,8.943,produce,train_v7_weak,True,machine proposals only

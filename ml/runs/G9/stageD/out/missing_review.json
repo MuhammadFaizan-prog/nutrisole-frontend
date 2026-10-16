@@ -1,0 +1,7 @@
+{"what": "Agent review (not human) of out/missing_sample.json: 36 random det_v3 TRAIN images with >=1 showcase box; G3 640 tiled proposals >=0.5 unmatched to GT drawn red. Sheets: /workspace/work/cv/g9d/missing_sheet_{1,2}.jpg (sandbox only, not committed: COCO/LVIS/OIV7 images).",
+ "images": 36, "unmatched_proposals": 54,
+ "real_produce_missing_a_box": {"images": [1, 10, 13, 19, 22], "n_images": 5, "notes": "1 pomegranate unlabelled; 10 bananas/orange half unlabelled (LVIS federated labels); 13 several cherry tomatoes; 19 two tangerines; 22 a few oranges in a crate"},
+ "teacher_false_proposals": {"images": [9, 17, 18, 24, 26, 31], "notes": "pears->apple/citrus, watermelon->tomato, fruit slices, food in bowls, banana peel"},
+ "small_boxes_on_pieces_not_whole_produce": {"images": [7, 8, 11, 18, 21, 26, 28, 29, 32, 34], "n_images": 10, "notes": "tomato slices on pizza/salad/sandwich (7, 8, 11, 26, 28, 29, 34), carrot sticks/pieces (18, 21), banana costume (32, 34 boxes)"},
+ "market_or_vendor_scenes": {"images": [22], "n_images": 1},
+ "summary": "~14% of sampled images miss at least one real produce box; ~28% carry small boxes on slices/pieces/props rather than whole produce; only 1/36 is a market/vendor scene. Small boxes are plentiful but come from kitchen/table/food scenes, not distant piles."}

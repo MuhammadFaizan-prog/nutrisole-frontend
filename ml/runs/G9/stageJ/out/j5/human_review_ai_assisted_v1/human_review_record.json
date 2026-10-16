@@ -1,0 +1,490 @@
+{
+ "schema_version": 1,
+ "record_id": "G9J5-HRAI-v1",
+ "provenance": "HUMAN_REVIEWED_AI_ASSISTED",
+ "tier_properties": {
+  "human": true,
+  "blind": false,
+  "independent_double_annotation": false,
+  "kappa_evidence": false,
+  "verified_manifest": false,
+  "counts_for_eval_gates": false,
+  "counts_for_training_gates": false
+ },
+ "reviewer": {
+  "name": "M Faizan",
+  "role": "project lead",
+  "count": 1
+ },
+ "review_mode": {
+  "blind": false,
+  "independent_double_annotation": false,
+  "reviewed_ai_prefilled_labels": true,
+  "note": "The reviewer saw the AI-assisted labels while reviewing. This is a confirmation of AI-assisted labels, not a blind annotation."
+ },
+ "stated_at": "2026-10-15T22:53:00+05:00",
+ "stated_at_display": "Thu 2026-10-15 10:53 PM PKT (UTC+05:00)",
+ "source": {
+  "kind": "chat statement to Hark (relayed in the Stage J5 brief)",
+  "verbatim": "I have manually reviewed the AI annotation files against the images and confirm that the labels match my assessment. Do not unnecessarily recreate the same annotations or restart Stage J. Preserve the existing CSV labels and image IDs. Record my confirmation as human review of AI-assisted labels, not as fabricated independent blind annotation. Use the existing Stage J workflow to record this review, identify which frozen H3 requirements are satisfied and which genuinely remain pending, and prepare the next steps for improving the existing H2 model.",
+  "not_a_file": "No exported CSV or signed attestation accompanies this statement; none was created on his behalf."
+ },
+ "reviewed_files": {
+  "pilot": {
+   "path": "out/handoff/20261015_visual_review/AI_ASSISTED_NOT_HUMAN/nutrisole_G9J_AI_visual_review_265.csv",
+   "sha256": "4bf78b68f47831c17e6872218f46dc3027210acaf7c03f0a28458377844b6ef9",
+   "rows": 265,
+   "kept_unmodified": true
+  },
+  "pilot2": {
+   "path": "out/handoff/20261015_pilot2_visual_review/AI_ASSISTED_NOT_HUMAN/nutrisole_G9J_pilot2_AI_visual_review_335.csv",
+   "sha256": "6c17debff4bb545bc8841abc140242d86a1fed86dc303ade4274eac35048d2aa",
+   "rows": 335,
+   "kept_unmodified": true
+  }
+ },
+ "hark_v2_corrections": {
+  "path": "out/handoff/20261015_pilot2_visual_review_v2_hark/AI_ASSISTED_NOT_HUMAN/nutrisole_G9J_pilot2_AI_visual_review_335_v2_hark.csv",
+  "sha256": "09ad0c9d08463c623ffc828fda6b3b627b8ebc3fb81d169fe638a0e8e6596b7c",
+  "corrections_csv": "out/handoff/20261015_pilot2_visual_review_v2_hark/G9J_pilot2_ai_review_corrections_v2.csv",
+  "corrections_sha256": "c78d96a89204074af283a7a117fc8767a307231272453605c3142b8d5bffefc6",
+  "changed_rows": [
+   {
+    "item_id": "P729",
+    "batch": "pilot2",
+    "v1_label": "uncertain",
+    "v2_hark_label": "carrot",
+    "v1_tags": "BM",
+    "status": "NEEDS_REVIEWER_CONFIRMATION (statement does not say whether v2 was accepted)"
+   }
+  ],
+  "acceptance": "UNCONFIRMED: the statement does not say whether he accepted the v2 P729 change (uncertain -> carrot B M). The record therefore keeps his v1 label (uncertain) as the reviewed label and lists P729 as disputed."
+ },
+ "id_checks": {
+  "pilot": {
+   "sha256_matches": true,
+   "n_rows": 265,
+   "n_expected": 265,
+   "duplicate_ids": [],
+   "ids_equal_frozen_key": true,
+   "missing_ids": [],
+   "extra_ids": [],
+   "blank_labels": 0,
+   "invalid_labels": [],
+   "annotator_column": [
+    "AI_ASSISTED_NOT_HUMAN"
+   ],
+   "frozen_key_sha256": "a704aeb60a2838f68f2c0807d21a0482eaeefc3a41bea53c33cd788aca32e19d"
+  },
+  "pilot2": {
+   "sha256_matches": true,
+   "n_rows": 335,
+   "n_expected": 335,
+   "duplicate_ids": [],
+   "ids_equal_frozen_key": true,
+   "missing_ids": [],
+   "extra_ids": [],
+   "blank_labels": 0,
+   "invalid_labels": [],
+   "annotator_column": [
+    "AI_ASSISTED_NOT_HUMAN"
+   ],
+   "frozen_key_sha256": "4e614dfb598c02904dd8b13a839795aefcf1a05be2a7d5eacfb82a611932d7ab"
+  },
+  "pilot2_v2_hark": {
+   "sha256_matches": true,
+   "corrections_sha256_matches": true
+  }
+ },
+ "class_balance": {
+  "pilot": {
+   "labels": {
+    "citrus_orange": 16,
+    "printed_or_screen": 42,
+    "carrot": 29,
+    "uncertain": 84,
+    "tomato": 19,
+    "other_produce": 42,
+    "apple": 12,
+    "banana": 18,
+    "occluded": 3
+   },
+   "roles": {
+    "supported": 85,
+    "printed": 42,
+    "excluded": 84,
+    "other_class": 13,
+    "unsupported": 29,
+    "cut": 8,
+    "occluded": 3,
+    "supported_packaged": 1
+   },
+   "clean_supported_J_eval": {
+    "citrus": 15,
+    "carrot": 22,
+    "tomato": 18,
+    "apple": 12,
+    "banana": 18
+   },
+   "splits": {
+    "J-eval": 265
+   },
+   "uncertain": 84
+  },
+  "pilot2": {
+   "labels": {
+    "tomato": 23,
+    "citrus_orange": 37,
+    "uncertain": 119,
+    "printed_or_screen": 49,
+    "apple": 44,
+    "other_produce": 14,
+    "carrot": 25,
+    "banana": 24
+   },
+   "roles": {
+    "supported": 144,
+    "excluded": 119,
+    "printed": 49,
+    "unsupported": 9,
+    "cut": 6,
+    "other_class": 5,
+    "supported_packaged": 3
+   },
+   "clean_supported_J_eval": {
+    "tomato": 22,
+    "citrus": 37,
+    "apple": 43,
+    "banana": 23,
+    "carrot": 19
+   },
+   "splits": {
+    "J-eval": 335
+   },
+   "uncertain": 119
+  }
+ },
+ "uncertain_rows": {
+  "pilot": {
+   "n": 84,
+   "item_ids": [
+    "P004",
+    "P006",
+    "P009",
+    "P011",
+    "P012",
+    "P015",
+    "P018",
+    "P019",
+    "P021",
+    "P023",
+    "P026",
+    "P030",
+    "P033",
+    "P035",
+    "P036",
+    "P037",
+    "P039",
+    "P041",
+    "P043",
+    "P044",
+    "P045",
+    "P047",
+    "P050",
+    "P054",
+    "P056",
+    "P057",
+    "P061",
+    "P068",
+    "P071",
+    "P077",
+    "P079",
+    "P083",
+    "P088",
+    "P089",
+    "P090",
+    "P093",
+    "P094",
+    "P099",
+    "P101",
+    "P103",
+    "P112",
+    "P114",
+    "P115",
+    "P116",
+    "P119",
+    "P121",
+    "P123",
+    "P126",
+    "P127",
+    "P128",
+    "P129",
+    "P131",
+    "P133",
+    "P137",
+    "P142",
+    "P151",
+    "P154",
+    "P164",
+    "P168",
+    "P172",
+    "P174",
+    "P177",
+    "P179",
+    "P184",
+    "P199",
+    "P203",
+    "P204",
+    "P207",
+    "P208",
+    "P209",
+    "P214",
+    "P215",
+    "P220",
+    "P236",
+    "P237",
+    "P239",
+    "P240",
+    "P242",
+    "P243",
+    "P248",
+    "P255",
+    "P261",
+    "P262",
+    "P265"
+   ]
+  },
+  "pilot2": {
+   "n": 119,
+   "item_ids": [
+    "P504",
+    "P507",
+    "P510",
+    "P513",
+    "P514",
+    "P516",
+    "P517",
+    "P519",
+    "P520",
+    "P522",
+    "P524",
+    "P525",
+    "P526",
+    "P528",
+    "P533",
+    "P536",
+    "P537",
+    "P538",
+    "P539",
+    "P540",
+    "P542",
+    "P543",
+    "P547",
+    "P551",
+    "P556",
+    "P557",
+    "P559",
+    "P561",
+    "P562",
+    "P563",
+    "P564",
+    "P565",
+    "P567",
+    "P572",
+    "P582",
+    "P583",
+    "P584",
+    "P591",
+    "P592",
+    "P594",
+    "P596",
+    "P598",
+    "P599",
+    "P600",
+    "P604",
+    "P616",
+    "P617",
+    "P618",
+    "P620",
+    "P621",
+    "P623",
+    "P626",
+    "P628",
+    "P631",
+    "P634",
+    "P635",
+    "P637",
+    "P645",
+    "P646",
+    "P648",
+    "P649",
+    "P650",
+    "P651",
+    "P654",
+    "P655",
+    "P658",
+    "P660",
+    "P664",
+    "P671",
+    "P674",
+    "P675",
+    "P688",
+    "P689",
+    "P695",
+    "P701",
+    "P702",
+    "P707",
+    "P709",
+    "P712",
+    "P716",
+    "P723",
+    "P724",
+    "P728",
+    "P729",
+    "P733",
+    "P735",
+    "P742",
+    "P743",
+    "P745",
+    "P746",
+    "P749",
+    "P755",
+    "P760",
+    "P761",
+    "P763",
+    "P768",
+    "P771",
+    "P772",
+    "P774",
+    "P777",
+    "P778",
+    "P784",
+    "P787",
+    "P795",
+    "P796",
+    "P800",
+    "P804",
+    "P805",
+    "P806",
+    "P809",
+    "P810",
+    "P812",
+    "P814",
+    "P815",
+    "P816",
+    "P823",
+    "P828",
+    "P830",
+    "P835"
+   ]
+  }
+ },
+ "train_eval_independence": {
+  "eval_items": 600,
+  "train_dev_items": 1107,
+  "cand_key_overlap": [],
+  "commons_uploader_overlap": [],
+  "dataset_overlap_non_commons": [],
+  "eval_only_sources_in_train": [],
+  "train_splits": {
+   "J-train": 1028,
+   "J-dev": 79
+  },
+  "phash": {
+   "rule": "Hamming <= 10",
+   "eval_hashed": 467,
+   "train_hashed": 900,
+   "images_missing": 340,
+   "near_duplicates": []
+  }
+ },
+ "uploads_22_23": {
+  "nutrisole_G9J_pilot2_annotator1 (1).zip": {
+   "sha256": "ab5d4f31537a9e02410eeefc1380c1efff934232e47f37f1dcfefca7c047ef58",
+   "identical_blank_pack": "nutrisole_G9J_pilot2_annotator1.zip"
+  },
+  "nutrisole_G9J_pilot2_annotator1.zip": {
+   "sha256": "ab5d4f31537a9e02410eeefc1380c1efff934232e47f37f1dcfefca7c047ef58",
+   "identical_blank_pack": "nutrisole_G9J_pilot2_annotator1.zip"
+  },
+  "nutrisole_G9J_pilot2_annotator2.zip": {
+   "sha256": "e5f1543814be40c84024c8ab88c46b1e18c6000028e89e437cd535ac008c4cdf",
+   "identical_blank_pack": "nutrisole_G9J_pilot2_annotator2.zip"
+  },
+  "nutrisole_G9J_pilot_annotator1.zip": {
+   "sha256": "d1af6dfac8fd4de6732e56887b5fec8c671b96361d61a41685f62b23c82a9e9e",
+   "identical_blank_pack": "nutrisole_G9J_pilot_annotator1.zip"
+  },
+  "nutrisole_G9J_pilot_annotator2.zip": {
+   "sha256": "261f74f0496de884f659f169b6937faac843856cf6c34dc9cf9e2066b7ce9ab6",
+   "identical_blank_pack": "nutrisole_G9J_pilot_annotator2.zip"
+  },
+  "_csv_or_json_files_in_uploads": []
+ },
+ "gates": {
+  "R1": {
+   "verdict": "FAIL",
+   "rule": "kappa(class) >= 0.85 and kappa(supported) >= 0.80 between two independent annotators on pilot and pilot2",
+   "reason": "needs two independent blind annotators (HUMAN_INDEPENDENT); this tier has one non-blind reviewer; kappa is undefined (no second label set)"
+  },
+  "R3": {
+   "verdict": "FAIL",
+   "rule": "100% of items labelled by BOTH annotators; every disagreement / uncertain / cut-bag mismatch adjudicated by a third human",
+   "reason": "needs two independent blind annotators (HUMAN_INDEPENDENT); this tier has one non-blind reviewer"
+  },
+  "T4": {
+   "verdict": "FAIL",
+   "rule": "kappa(class) >= 0.85 on the training batches, adjudicated as R3",
+   "reason": "needs two independent blind annotators (HUMAN_INDEPENDENT); this tier has one non-blind reviewer; kappa is undefined (no second label set)"
+  },
+  "R2": {
+   "verdict": "FAIL",
+   "rule": ">= 20 clean supported per priority class, >= 100 total, >= 60 negatives among ADJUDICATED (verified) J-eval items",
+   "reason": "counts only from verified (independent + adjudicated) manifests; this tier produces none"
+  },
+  "T1": {
+   "verdict": "FAIL",
+   "rule": ">= 150 human-verified clean J-train images per priority class from >= 2 sources",
+   "reason": "counts only from verified (independent + adjudicated) manifests; this tier produces none"
+  },
+  "T2": {
+   "verdict": "FAIL",
+   "rule": ">= 150 verified real-photo negatives in J-train",
+   "reason": "counts only from verified (independent + adjudicated) manifests; this tier produces none"
+  },
+  "T3": {
+   "verdict": "FAIL",
+   "rule": ">= 10 verified clean J-dev items per priority class",
+   "reason": "counts only from verified (independent + adjudicated) manifests; this tier produces none"
+  },
+  "R4": {
+   "verdict": "FAIL",
+   "rule": "verified_manifest + .sha256 committed before any model sees a J-eval image",
+   "reason": "no verified manifest exists to freeze"
+  },
+  "T5": {
+   "verdict": "NOT_PROVENANCE_DEPENDENT",
+   "rule": "licence + split separation + pHash <= 10 against all earlier sets; no J-eval / eval-only source in training",
+   "reason": "checked separately on the data (keys, owners, pHash)"
+  },
+  "GO": {
+   "verdict": "FAIL",
+   "rule": "user-written h3/USER_TRAINING_GO.json naming the plan and verified-manifest hashes",
+   "reason": "only the user writes it, and only after R1-R4/T1-T5 pass"
+  },
+  "E1-E8": {
+   "verdict": "NOT_RUN",
+   "rule": "H3 evaluation gates",
+   "reason": "no H3 run; eval needs human-verified J-eval labels first"
+  },
+  "summary": {
+   "provenance": "HUMAN_REVIEWED_AI_ASSISTED",
+   "kappa_evidence": false,
+   "counts_as_double_annotation": false,
+   "can_unlock_h3_eval_gate": false,
+   "can_feed_training_gates": false,
+   "frozen_gates_allow_single_reviewer_tier": false
+  }
+ },
+ "problems": []
+}

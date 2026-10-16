@@ -1,0 +1,14 @@
+{
+ "config": "v8m",
+ "n": 40,
+ "device": "sandbox CPU 2 vCPU aarch64 (shared), ORT CPU EP, 2 threads",
+ "model_ms_p50": 639.3,
+ "model_ms_p95": 1288.1,
+ "total_ms_p50": 641.6,
+ "total_ms_p95": 1290.5,
+ "peak_rss_mb": 348.2,
+ "rss_before_sessions_mb": 50.2,
+ "onnx_mb": {
+  "v8m": 103.8
+ }
+}

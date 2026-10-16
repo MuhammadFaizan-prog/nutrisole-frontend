@@ -1,0 +1,55 @@
+{
+ "mode": "quality",
+ "model": "/workspace/work/cv/g3models/cls/E_224_e15_b64_sgd01.onnx",
+ "data": "/workspace/work/cv/g3data/quality2_g3crop/test",
+ "n": 270,
+ "night_sodium_hard": false,
+ "imgsz": 224,
+ "device": "sandbox/Kaggle CPU, ONNX Runtime",
+ "decision": "argmax",
+ "rows": [
+  {
+   "hue_shift_deg": 0,
+   "acc": 0.9889,
+   "pos_recall": 0.9832,
+   "n_pos": 119
+  },
+  {
+   "hue_shift_deg": -5,
+   "acc": 0.9815,
+   "pos_recall": 0.9832,
+   "n_pos": 119
+  },
+  {
+   "hue_shift_deg": 5,
+   "acc": 0.9926,
+   "pos_recall": 0.9832,
+   "n_pos": 119
+  },
+  {
+   "hue_shift_deg": -10,
+   "acc": 0.9741,
+   "pos_recall": 0.9832,
+   "n_pos": 119
+  },
+  {
+   "hue_shift_deg": 10,
+   "acc": 0.9778,
+   "pos_recall": 0.9496,
+   "n_pos": 119
+  },
+  {
+   "hue_shift_deg": -20,
+   "acc": 0.9111,
+   "pos_recall": 0.9328,
+   "n_pos": 119
+  },
+  {
+   "hue_shift_deg": 20,
+   "acc": 0.9,
+   "pos_recall": 0.7815,
+   "n_pos": 119
+  }
+ ],
+ "pos_class": "rotten"
+}

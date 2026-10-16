@@ -1,0 +1,32 @@
+[
+  {
+    "item_id": "P729",
+    "reason": "Native-image follow-up during the provenance audit: the central opaque block cannot be identified as ice or as a particular carrot.",
+    "before": {
+      "item_id": "P729",
+      "label": "carrot",
+      "other_produce_name": "",
+      "occluded_or_printed_what": "",
+      "tags": "BM",
+      "confidence": "medium",
+      "review_flags": "potential_occlusion;central_target",
+      "note": "Mostly visible carrots in a clear-lined bag/basket, with a wrapped ice block hiding some central roots; check the selected main root.",
+      "visual_evidence": "contact_sheet+native_package_detail",
+      "source_context_used": false,
+      "reviewed_at": "2026-10-15T14:24:03.306135+00:00"
+    },
+    "after": {
+      "item_id": "P729",
+      "label": "uncertain",
+      "other_produce_name": "",
+      "occluded_or_printed_what": "",
+      "tags": "BM",
+      "confidence": "medium",
+      "review_flags": "central_target;potential_occlusion;source_context;taxonomy_edge",
+      "note": "Opaque wrapped block occupies the centre of a clear-lined bag of carrots; visible surrounding roots are mostly exposed, but no individual hidden central root is established. Human check of main-item and occlusion treatment needed.",
+      "visual_evidence": "contact_sheet+native_package_detail",
+      "source_context_used": true,
+      "reviewed_at": "2026-10-15T14:38:01.883715+00:00"
+    }
+  }
+]

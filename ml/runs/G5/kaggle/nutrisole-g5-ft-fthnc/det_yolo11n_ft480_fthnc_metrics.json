@@ -1,0 +1,66 @@
+{
+ "model": "/kaggle/input/datasets/mfaizannnn/nutrisole-cv-g5-w/A1_best.pt",
+ "name": "det_yolo11n_ft480_fthnc",
+ "variant": "fthnc",
+ "imgsz": 480,
+ "data_counts": {
+  "train": 2110,
+  "val": 654,
+  "test_guava": 121,
+  "test_capsicum_whole": 12,
+  "train_instances": {
+   "capsicum": 1144,
+   "carrot": 1474,
+   "tomato": 1636,
+   "lemon_lime": 161,
+   "cucumber": 456,
+   "banana": 1740,
+   "citrus": 658,
+   "apple": 1494,
+   "potato": 342,
+   "guava": 324,
+   "pomegranate": 194,
+   "mango": 96
+  },
+  "train_backgrounds": 642
+ },
+ "train_wall_s": 9197.8,
+ "torch": "2.11.0+cpu",
+ "ultralytics": "8.4.175",
+ "gpu": "kaggle-cpu",
+ "evals": [
+  {
+   "split": "test_guava",
+   "n": 121,
+   "imgsz": 480,
+   "device": "kaggle-cpu",
+   "mAP50": 0.9294,
+   "mAP50_95": 0.7129,
+   "per_class": {
+    "guava": {
+     "P": 0.9901,
+     "R": 0.9237,
+     "mAP50": 0.9294,
+     "mAP50_95": 0.7129
+    }
+   }
+  },
+  {
+   "split": "test_capsicum_whole",
+   "n": 12,
+   "imgsz": 480,
+   "device": "kaggle-cpu",
+   "mAP50": 0.7013,
+   "mAP50_95": 0.283,
+   "per_class": {
+    "capsicum": {
+     "P": 0.7454,
+     "R": 0.5789,
+     "mAP50": 0.7013,
+     "mAP50_95": 0.283
+    }
+   }
+  }
+ ],
+ "total_wall_s": 9206.2
+}

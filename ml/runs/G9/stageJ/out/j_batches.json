@@ -1,0 +1,62 @@
+{
+ "pilot": 265,
+ "train": 461,
+ "pilot_by_kind": {
+  "supported": 172,
+  "printed": 15,
+  "unsupported": 61,
+  "occluded": 5,
+  "packaging": 12
+ },
+ "pilot_supported": {
+  "citrus": 32,
+  "carrot": 32,
+  "tomato": 32,
+  "apple": 32,
+  "guava": 4,
+  "banana": 32,
+  "lemon_lime": 4,
+  "pomegranate": 4
+ },
+ "pilot_by_source": {
+  "fruitnet": 63,
+  "commons": 170,
+  "carrot_m": 16,
+  "tomato_m": 16
+ },
+ "pilot_detail": {
+  "occluded|-|commons": 5,
+  "packaging|-|commons": 12,
+  "printed|-|commons": 15,
+  "supported|apple|commons": 16,
+  "supported|apple|fruitnet": 16,
+  "supported|banana|commons": 16,
+  "supported|banana|fruitnet": 16,
+  "supported|carrot|carrot_m": 16,
+  "supported|carrot|commons": 16,
+  "supported|citrus|commons": 13,
+  "supported|citrus|fruitnet": 19,
+  "supported|guava|fruitnet": 4,
+  "supported|lemon_lime|fruitnet": 4,
+  "supported|pomegranate|fruitnet": 4,
+  "supported|tomato|commons": 16,
+  "supported|tomato|tomato_m": 16,
+  "unsupported|-|commons": 61
+ },
+ "train_by_split": {
+  "J-train": 382,
+  "J-dev": 79
+ },
+ "train_by_label": {
+  "carrot/supported": 147,
+  "unknown/printed": 23,
+  "citrus/supported": 150,
+  "apple/supported": 30,
+  "tomato/supported": 18,
+  "banana/supported": 14,
+  "unknown/packaging": 21,
+  "unknown/occluded": 18,
+  "unknown/unsupported": 37,
+  "lemon_lime/supported": 3
+ }
+}

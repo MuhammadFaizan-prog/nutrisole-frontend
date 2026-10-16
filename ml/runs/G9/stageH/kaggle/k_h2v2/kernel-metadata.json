@@ -1,0 +1,1 @@
+{"id": "mfaizannnn/nutrisole-g9h-h2v2", "title": "nutrisole-g9h-h2v2", "code_file": "run.py", "language": "python", "kernel_type": "script", "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["moltean/fruits", "chrisfilo/fruit-recognition", "misrakahmed/vegetable-image-dataset"], "competition_sources": [], "kernel_sources": []}

@@ -1,0 +1,98 @@
+{
+ "models": [
+  "G1champ (yolo26n 320; raw-head eval as in G1-G3 docs)",
+  "G3champ control (yolo11n 640->480)",
+  "A1 hygiene off [A1hyg] yolo11n 640->480",
+  "A2 backgrounds 15% [A2bg15] yolo11n 640->480"
+ ],
+ "deltas": {
+  "G1champ (yolo26n 320; raw-head eval as in G1-G3 docs)": {
+   "G1": {
+    "banana": 0.0,
+    "apple": 0.0,
+    "citrus": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.0,
+    "cucumber": 0.0,
+    "carrot": 0.0,
+    "capsicum": 0.0
+   },
+   "G3": {
+    "banana": -0.0914,
+    "apple": 0.0131,
+    "citrus": 0.1553,
+    "lemon_lime": -0.0065,
+    "tomato": -0.3447,
+    "cucumber": -0.0003,
+    "carrot": -0.0567,
+    "capsicum": 0.0763
+   }
+  },
+  "G3champ control (yolo11n 640->480)": {
+   "G1": {
+    "banana": 0.0914,
+    "apple": -0.0131,
+    "citrus": -0.1553,
+    "lemon_lime": 0.0065,
+    "tomato": 0.3447,
+    "cucumber": 0.0003,
+    "carrot": 0.0567,
+    "capsicum": -0.0763
+   },
+   "G3": {
+    "banana": 0.0,
+    "apple": 0.0,
+    "citrus": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.0,
+    "cucumber": 0.0,
+    "carrot": 0.0,
+    "capsicum": 0.0
+   }
+  },
+  "A1 hygiene off [A1hyg] yolo11n 640->480": {
+   "G1": {
+    "banana": 0.0698,
+    "apple": 0.1578,
+    "citrus": 0.0043,
+    "lemon_lime": -0.0099,
+    "tomato": 0.2432,
+    "cucumber": 0.046,
+    "carrot": 0.1287,
+    "capsicum": 0.0215
+   },
+   "G3": {
+    "banana": -0.0216,
+    "apple": 0.1709,
+    "citrus": 0.1596,
+    "lemon_lime": -0.0164,
+    "tomato": -0.1015,
+    "cucumber": 0.0457,
+    "carrot": 0.072,
+    "capsicum": 0.0978
+   }
+  },
+  "A2 backgrounds 15% [A2bg15] yolo11n 640->480": {
+   "G1": {
+    "banana": 0.0989,
+    "apple": -0.0084,
+    "citrus": -0.0124,
+    "lemon_lime": -0.0094,
+    "tomato": 0.2509,
+    "cucumber": 0.0302,
+    "carrot": 0.1373,
+    "capsicum": -0.0849
+   },
+   "G3": {
+    "banana": 0.0075,
+    "apple": 0.0047,
+    "citrus": 0.1429,
+    "lemon_lime": -0.0159,
+    "tomato": -0.0938,
+    "cucumber": 0.0299,
+    "carrot": 0.0806,
+    "capsicum": -0.0086
+   }
+  }
+ }
+}

@@ -1,0 +1,1 @@
+{"mode": "full640", "onnx": "G3_raw640.onnx", "frames": 84, "p50_ms": 103.5, "p95_ms": 196.2, "peak_rss_mb": 188.8, "threads": 2, "note": "sandbox CPU (2 vCPU), ONNX Runtime; same session for all modes"}

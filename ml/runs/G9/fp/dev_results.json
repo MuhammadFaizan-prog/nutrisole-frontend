@@ -1,0 +1,260 @@
+{
+ "A0": {
+  "det": {
+   "segment_acc": 0.5417,
+   "frame_acc": 0.4365,
+   "ttfc_ms": {
+    "p50": 533.3329999999987,
+    "p90": 733.3329999999995,
+    "max": 800.0,
+    "n": 15
+   },
+   "never_correct": 9,
+   "id_switches": 68,
+   "fragmentations": 22,
+   "flicker_static": 5.0,
+   "per_class_recall": {
+    "banana": {
+     "n": 413,
+     "recall": 0.627
+    },
+    "apple": {
+     "n": 240,
+     "recall": 0.671
+    },
+    "citrus": {
+     "n": 299,
+     "recall": 0.565
+    },
+    "tomato": {
+     "n": 60,
+     "recall": 0.0
+    },
+    "potato": {
+     "n": 60,
+     "recall": 0.0
+    },
+    "cucumber": {
+     "n": 60,
+     "recall": 0.0
+    },
+    "carrot": {
+     "n": 240,
+     "recall": 0.15
+    },
+    "capsicum": {
+     "n": 60,
+     "recall": 0.0
+    }
+   }
+  },
+  "neg": {
+   "fa_min": 0.75,
+   "false_tracks": 3,
+   "minutes": 4.0,
+   "births_min": 0.75,
+   "life_mean_s": 0.2,
+   "life_max_s": 0.333,
+   "fa_episodes_min": 0.75,
+   "by_class": {
+    "banana": 2,
+    "capsicum": 1
+   }
+  },
+  "val_boxfree": {
+   "boxfree_imgs": 90,
+   "false_boxes": 66,
+   "imgs_with_false_box": 16
+  },
+  "val_recall": {
+   "banana": 0.5309,
+   "apple": 0.5829,
+   "mango": 0.6364,
+   "citrus": 0.6731,
+   "guava": null,
+   "pomegranate": 0.5625,
+   "lemon_lime": 0.0519,
+   "tomato": 0.429,
+   "potato": 0.0,
+   "cucumber": 0.1688,
+   "carrot": 0.3011,
+   "capsicum": 0.2241
+  }
+ },
+ "A1": {
+  "det": {
+   "segment_acc": 0.5417,
+   "frame_acc": 0.4029,
+   "ttfc_ms": {
+    "p50": 400.0,
+    "p90": 1013.3331999999998,
+    "max": 3400.0,
+    "n": 15
+   },
+   "never_correct": 9,
+   "id_switches": 34,
+   "fragmentations": 22,
+   "flicker_static": 2.5,
+   "per_class_recall": {
+    "banana": {
+     "n": 413,
+     "recall": 0.538
+    },
+    "apple": {
+     "n": 240,
+     "recall": 0.667
+    },
+    "citrus": {
+     "n": 299,
+     "recall": 0.565
+    },
+    "tomato": {
+     "n": 60,
+     "recall": 0.0
+    },
+    "potato": {
+     "n": 60,
+     "recall": 0.0
+    },
+    "cucumber": {
+     "n": 60,
+     "recall": 0.0
+    },
+    "carrot": {
+     "n": 240,
+     "recall": 0.108
+    },
+    "capsicum": {
+     "n": 60,
+     "recall": 0.0
+    }
+   }
+  },
+  "neg": {
+   "fa_min": 0.25,
+   "false_tracks": 1,
+   "minutes": 4.0,
+   "births_min": 0.25,
+   "life_mean_s": 0.333,
+   "life_max_s": 0.333,
+   "fa_episodes_min": 0.25,
+   "by_class": {
+    "banana": 1
+   }
+  },
+  "val_boxfree": {
+   "boxfree_imgs": 90,
+   "false_boxes": 45,
+   "imgs_with_false_box": 14
+  },
+  "val_recall": {
+   "banana": 0.4861,
+   "apple": 0.5578,
+   "mango": 0.6364,
+   "citrus": 0.6394,
+   "guava": null,
+   "pomegranate": 0.5625,
+   "lemon_lime": 0.013,
+   "tomato": 0.3817,
+   "potato": 0.0,
+   "cucumber": 0.1234,
+   "carrot": 0.2621,
+   "capsicum": 0.181
+  }
+ },
+ "A2": {
+  "det": {
+   "segment_acc": 0.5417,
+   "frame_acc": 0.3925,
+   "ttfc_ms": {
+    "p50": 533.3329999999987,
+    "p90": 1053.3334000000007,
+    "max": 3466.6670000000013,
+    "n": 15
+   },
+   "never_correct": 9,
+   "id_switches": 27,
+   "fragmentations": 19,
+   "flicker_static": 2.083,
+   "per_class_recall": {
+    "banana": {
+     "n": 413,
+     "recall": 0.521
+    },
+    "apple": {
+     "n": 240,
+     "recall": 0.658
+    },
+    "citrus": {
+     "n": 299,
+     "recall": 0.555
+    },
+    "tomato": {
+     "n": 60,
+     "recall": 0.0
+    },
+    "potato": {
+     "n": 60,
+     "recall": 0.0
+    },
+    "cucumber": {
+     "n": 60,
+     "recall": 0.0
+    },
+    "carrot": {
+     "n": 240,
+     "recall": 0.096
+    },
+    "capsicum": {
+     "n": 60,
+     "recall": 0.0
+    }
+   }
+  },
+  "neg": {
+   "fa_min": 0.25,
+   "false_tracks": 1,
+   "minutes": 4.0,
+   "births_min": 0.25,
+   "life_mean_s": 0.267,
+   "life_max_s": 0.267,
+   "fa_episodes_min": 0.25,
+   "by_class": {
+    "banana": 1
+   }
+  },
+  "val_boxfree": {
+   "boxfree_imgs": 90,
+   "false_boxes": 45,
+   "imgs_with_false_box": 14
+  },
+  "val_recall": {
+   "banana": 0.4861,
+   "apple": 0.5578,
+   "mango": 0.6364,
+   "citrus": 0.6394,
+   "guava": null,
+   "pomegranate": 0.5625,
+   "lemon_lime": 0.013,
+   "tomato": 0.3817,
+   "potato": 0.0,
+   "cucumber": 0.1234,
+   "carrot": 0.2621,
+   "capsicum": 0.181
+  }
+ },
+ "A2_policy": {
+  "minHits": 3,
+  "delta": 0.0
+ },
+ "parity_ref_G8_dev_G3": {
+  "segment_acc": 0.5417,
+  "frame_acc": 0.4365,
+  "ttfc_p50": 533,
+  "ttfc_p90": 733,
+  "id_switches": 68,
+  "fragmentations": 22,
+  "flicker": 5.0,
+  "neg_fa_min": 0.75
+ }
+}

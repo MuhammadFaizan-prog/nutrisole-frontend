@@ -1,0 +1,532 @@
+{
+"ref_hashes_eval": 2581,
+"ref_hashes_total": 6143,
+"candidates": 26,
+"drop_leak": [],
+"drop_dup": [],
+"drop_uploader": [
+"sd0442.jpg"
+],
+"per_image": {
+"sd0013.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"clip:excluded_uploader_overlaps_holdout:c86f74c3a"
+],
+[
+18,
+"clip:holdout_never_used:c90447971"
+],
+[
+18,
+"clip:M-train:cc44ad5c9"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Kolforn",
+"uploader_role": null
+},
+"sd0024.jpg": {
+"min_dist": 14,
+"nearest": [
+[
+14,
+"det_v3_train"
+],
+[
+16,
+"dev_neg_clip"
+],
+[
+18,
+"clip:holdout_never_used:c82e63d5a"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Ser Amantio di Nicolao",
+"uploader_role": null
+},
+"sd0029.jpg": {
+"min_dist": 16,
+"nearest": [
+[
+16,
+"clip:holdout_never_used:c61cbc2a6"
+],
+[
+16,
+"clip:holdout_never_used:c61cbc2a6"
+],
+[
+18,
+"dev_neg_clip"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Terryngari",
+"uploader_role": null
+},
+"sd0038.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"clip:excluded_uploader_overlaps_holdout:c18be0288"
+],
+[
+18,
+"clip:excluded_uploader_overlaps_holdout:c20606e36"
+],
+[
+18,
+"clip:holdout_never_used:c4a35a451"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Omer123hussain",
+"uploader_role": null
+},
+"sd0039.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"clip:M-dev:cec084f0c"
+],
+[
+18,
+"dev_neg_clip"
+],
+[
+18,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "GeographBot",
+"uploader_role": null
+},
+"sd0040.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"clip:M-train:c7bf0608b"
+],
+[
+18,
+"clip:holdout_never_used:c90447971"
+],
+[
+18,
+"clip:holdout_never_used:ce9f2fe34"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Mutney",
+"uploader_role": null
+},
+"sd0041.jpg": {
+"min_dist": 16,
+"nearest": [
+[
+16,
+"clip:holdout_never_used:c19ae062b"
+],
+[
+16,
+"clip:holdout_never_used:cc5585ebc"
+],
+[
+16,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Andre Carrotflower",
+"uploader_role": null
+},
+"sd0055.jpg": {
+"min_dist": 16,
+"nearest": [
+[
+16,
+"det_v3_train"
+],
+[
+18,
+"det_v3_train"
+],
+[
+18,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Jmabel",
+"uploader_role": null
+},
+"sd0125.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"clip:excluded_uploader_overlaps_holdout:c18be0288"
+],
+[
+18,
+"dev_val"
+],
+[
+18,
+"dev_det_clip"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Olameemoses",
+"uploader_role": null
+},
+"sd0126.jpg": {
+"min_dist": 14,
+"nearest": [
+[
+14,
+"clip:holdout_never_used:c32085ee7"
+],
+[
+14,
+"det_v3_train"
+],
+[
+16,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Daderot",
+"uploader_role": null
+},
+"sd0128.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"clip:holdout_never_used:c82e63d5a"
+],
+[
+18,
+"clip:holdout_never_used:c9030be18"
+],
+[
+18,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Featous",
+"uploader_role": null
+},
+"sd0130.jpg": {
+"min_dist": 16,
+"nearest": [
+[
+16,
+"det_v3_train"
+],
+[
+16,
+"det_v3_train"
+],
+[
+16,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Ivykas",
+"uploader_role": null
+},
+"sd0136.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"clip:holdout_never_used:c82e63d5a"
+],
+[
+18,
+"det_v3_train"
+],
+[
+18,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Tenaciuos Ntaawa",
+"uploader_role": null
+},
+"sd0151.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"det_v3_train"
+],
+[
+20,
+"dev_det_clip"
+],
+[
+20,
+"dev_det_clip"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Geagea",
+"uploader_role": null
+},
+"sd0298.jpg": {
+"min_dist": 16,
+"nearest": [
+[
+16,
+"dev_val"
+],
+[
+18,
+"det_v3_train"
+],
+[
+20,
+"clip:excluded_uploader_overlaps_holdout:c69f0e13b"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Nick-D",
+"uploader_role": null
+},
+"sd0336.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"clip:holdout_never_used:c97e354bf"
+],
+[
+18,
+"det_v3_train"
+],
+[
+20,
+"clip:holdout_never_used:c4e9a7195"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Tisahd 23 HAOEYVMA",
+"uploader_role": null
+},
+"sd0347.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"det_v3_train"
+],
+[
+18,
+"det_v3_train"
+],
+[
+18,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Shio Piemnd Wosmvi",
+"uploader_role": null
+},
+"sd0352.jpg": {
+"min_dist": 16,
+"nearest": [
+[
+16,
+"dev_val"
+],
+[
+16,
+"det_v3_train"
+],
+[
+18,
+"clip:holdout_never_used:c973b3f44"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Ivykas",
+"uploader_role": null
+},
+"sd0380.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"clip:holdout_never_used:c0a08d565"
+],
+[
+18,
+"clip:excluded_uploader_overlaps_holdout:c5e5004e3"
+],
+[
+18,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "GeographBot",
+"uploader_role": null
+},
+"sd0381.jpg": {
+"min_dist": 16,
+"nearest": [
+[
+16,
+"clip:holdout_never_used:c3cc14a1f"
+],
+[
+18,
+"clip:holdout_never_used:c31b80875"
+],
+[
+18,
+"clip:holdout_never_used:c61cbc2a6"
+]
+],
+"within_S_dup_of": [],
+"uploader": "GeographBot",
+"uploader_role": null
+},
+"sd0384.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"clip:holdout_never_used:c32085ee7"
+],
+[
+18,
+"dev_det_clip"
+],
+[
+18,
+"dev_det_clip"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Headlison",
+"uploader_role": null
+},
+"sd0442.jpg": {
+"min_dist": 18,
+"nearest": [
+[
+18,
+"det_v3_train"
+],
+[
+18,
+"det_v3_train"
+],
+[
+20,
+"clip:holdout_never_used:c0a13587f"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Adimora chidinma",
+"uploader_role": "M-dev"
+},
+"sd0504.jpg": {
+"min_dist": 16,
+"nearest": [
+[
+16,
+"det_v3_train"
+],
+[
+18,
+"clip:M-train:c0be28daa"
+],
+[
+18,
+"clip:excluded_uploader_overlaps_holdout:c18be0288"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Panoramio upload bot",
+"uploader_role": null
+},
+"sd0535.jpg": {
+"min_dist": 16,
+"nearest": [
+[
+16,
+"det_v3_train"
+],
+[
+18,
+"clip:holdout_never_used:cd17ce723"
+],
+[
+18,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "FrogsLegs71",
+"uploader_role": null
+},
+"sd0538.jpg": {
+"min_dist": 16,
+"nearest": [
+[
+16,
+"dev_val"
+],
+[
+16,
+"det_v3_train"
+],
+[
+18,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Friday musa",
+"uploader_role": null
+},
+"sd0548.jpg": {
+"min_dist": 14,
+"nearest": [
+[
+14,
+"det_v3_train"
+],
+[
+18,
+"det_v3_train"
+],
+[
+18,
+"det_v3_train"
+]
+],
+"within_S_dup_of": [],
+"uploader": "Mutney",
+"uploader_role": null
+}
+}
+}

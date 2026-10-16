@@ -1,0 +1,107 @@
+{
+ "model": "/workspace/work/cv/g10/models/G3_best_copy.pt",
+ "map": "g3",
+ "imgsz": 480,
+ "list": "/workspace/work/cv/g10/val_oiv7.txt",
+ "n_images": 57,
+ "device": "sandbox CPU (2 vCPU aarch64), PyTorch/Ultralytics predict",
+ "label_status": "existing dataset / agent-curated labels; EXPLORATORY, not human-verified",
+ "mAP50": 0.502,
+ "mAP50_95": 0.3925,
+ "P": 0.7236,
+ "R": 0.4196,
+ "per_class": {
+  "mango": {
+   "P": 0.9695,
+   "R": 0.6364,
+   "AP50": 0.7033,
+   "AP50_95": 0.5946,
+   "gt": 11,
+   "recall_at_035": 0.6364,
+   "model_predicts_class": true
+  },
+  "citrus": {
+   "P": 0.7517,
+   "R": 1.0,
+   "AP50": 0.995,
+   "AP50_95": 0.8955,
+   "gt": 1,
+   "recall_at_035": 1.0,
+   "model_predicts_class": true
+  },
+  "pomegranate": {
+   "P": 0.612,
+   "R": 0.3957,
+   "AP50": 0.5166,
+   "AP50_95": 0.3873,
+   "gt": 16,
+   "recall_at_035": 0.5,
+   "model_predicts_class": true
+  },
+  "tomato": {
+   "P": 0.0,
+   "R": 0.0,
+   "AP50": 0.0,
+   "AP50_95": 0.0,
+   "gt": 1,
+   "recall_at_035": 0.0,
+   "model_predicts_class": true
+  },
+  "cucumber": {
+   "P": 0.7964,
+   "R": 0.2134,
+   "AP50": 0.406,
+   "AP50_95": 0.2565,
+   "gt": 110,
+   "recall_at_035": 0.2727,
+   "model_predicts_class": true
+  },
+  "carrot": {
+   "P": 0.968,
+   "R": 0.3333,
+   "AP50": 0.4357,
+   "AP50_95": 0.3007,
+   "gt": 12,
+   "recall_at_035": 0.3333,
+   "model_predicts_class": true
+  },
+  "capsicum": {
+   "P": 0.9672,
+   "R": 0.3582,
+   "AP50": 0.4572,
+   "AP50_95": 0.3127,
+   "gt": 67,
+   "recall_at_035": 0.3881,
+   "model_predicts_class": true
+  }
+ },
+ "size_bucket_recall_at_035": {
+  "<6": {
+   "hit": 0,
+   "gt": 0,
+   "recall": 0.0
+  },
+  "6-12": {
+   "hit": 0,
+   "gt": 4,
+   "recall": 0.0
+  },
+  "12-24": {
+   "hit": 0,
+   "gt": 20,
+   "recall": 0.0
+  },
+  "24-48": {
+   "hit": 9,
+   "gt": 71,
+   "recall": 0.1268
+  },
+  ">=48": {
+   "hit": 67,
+   "gt": 123,
+   "recall": 0.5447
+  }
+ },
+ "predict_ms_p50": 91.4,
+ "predict_ms_p95": 202.7
+}

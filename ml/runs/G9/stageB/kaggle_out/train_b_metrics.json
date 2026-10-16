@@ -1,0 +1,297 @@
+{
+ "hn_built": {
+  "train": 160,
+  "dev": 31
+ },
+ "hn_fail": [
+  [
+   "vc_vt084",
+   "frame read failed"
+  ]
+ ],
+ "epochs": 20,
+ "b1_data": {
+  "base_train": 3562,
+  "hn_train": 160,
+  "hn_share": 0.043,
+  "val": 402
+ },
+ "env": {
+  "torch": "2.11.0+cu128",
+  "ultralytics": "8.4.175",
+  "gpu": "Tesla T4"
+ },
+ "G3_val480": {
+  "mAP50": 0.4282,
+  "mAP50_95": 0.309,
+  "per_class": {
+   "banana": {
+    "P": 0.6753,
+    "R": 0.5501,
+    "AP50": 0.5627,
+    "AP50_95": 0.298
+   },
+   "apple": {
+    "P": 0.6843,
+    "R": 0.5779,
+    "AP50": 0.6261,
+    "AP50_95": 0.4941
+   },
+   "mango": {
+    "P": 0.6353,
+    "R": 0.6364,
+    "AP50": 0.6462,
+    "AP50_95": 0.5533
+   },
+   "citrus": {
+    "P": 0.8033,
+    "R": 0.6923,
+    "AP50": 0.7446,
+    "AP50_95": 0.5943
+   },
+   "pomegranate": {
+    "P": 0.5634,
+    "R": 0.5646,
+    "AP50": 0.5485,
+    "AP50_95": 0.3849
+   },
+   "lemon_lime": {
+    "P": 0.4927,
+    "R": 0.039,
+    "AP50": 0.1007,
+    "AP50_95": 0.0696
+   },
+   "tomato": {
+    "P": 0.5747,
+    "R": 0.4511,
+    "AP50": 0.4581,
+    "AP50_95": 0.3136
+   },
+   "potato": {
+    "P": 0.0,
+    "R": 0.0,
+    "AP50": 0.0092,
+    "AP50_95": 0.0065
+   },
+   "cucumber": {
+    "P": 0.6597,
+    "R": 0.1883,
+    "AP50": 0.2952,
+    "AP50_95": 0.2107
+   },
+   "carrot": {
+    "P": 0.7463,
+    "R": 0.3178,
+    "AP50": 0.4409,
+    "AP50_95": 0.268
+   },
+   "capsicum": {
+    "P": 0.7107,
+    "R": 0.2155,
+    "AP50": 0.2779,
+    "AP50_95": 0.2061
+   }
+  }
+ },
+ "G3_train_args": {
+  "task": "detect",
+  "mode": "train",
+  "model": "yolo11n.pt",
+  "data": "/tmp/data/det_v3.yaml",
+  "epochs": "150",
+  "time": "None",
+  "patience": "30",
+  "batch": "19",
+  "imgsz": "640",
+  "save": "True",
+  "save_period": "-1",
+  "cache": "ram",
+  "device": "0",
+  "workers": "4",
+  "project": "/kaggle/working/runs",
+  "name": "det_yolo11n_640",
+  "exist_ok": "True",
+  "pretrained": "True",
+  "cls_remap": "True",
+  "optimizer": "AdamW",
+  "verbose": "False",
+  "seed": "0",
+  "deterministic": "True",
+  "single_cls": "False",
+  "rect": "False",
+  "cos_lr": "True",
+  "close_mosaic": "15",
+  "resume": "False",
+  "amp": "True",
+  "fraction": "1.0",
+  "profile": "False",
+  "freeze": "None",
+  "multi_scale": "0.0",
+  "compile": "False",
+  "channels_last": "None",
+  "overlap_mask": "True",
+  "mask_ratio": "4",
+  "dropout": "0.0",
+  "val": "True",
+  "split": "val",
+  "save_json": "False",
+  "conf": "None",
+  "iou": "0.7",
+  "max_det": "318",
+  "quantize": "None",
+  "dnn": "False",
+  "plots": "True",
+  "nms": "None",
+  "source": "None",
+  "vid_stride": "1",
+  "stream_buffer": "False",
+  "visualize": "False",
+  "augment": "False",
+  "agnostic_nms": "False",
+  "classes": "None",
+  "retina_masks": "False",
+  "embed": "None",
+  "show": "False",
+  "save_frames": "False",
+  "save_txt": "False",
+  "save_conf": "False",
+  "save_crop": "False",
+  "show_labels": "True",
+  "show_conf": "True",
+  "show_boxes": "True",
+  "line_width": "None",
+  "format": "torchscript",
+  "optimize": "False",
+  "dynamic": "False",
+  "simplify": "True",
+  "opset": "None",
+  "workspace": "None",
+  "lr0": "0.000625",
+  "lrf": "0.01",
+  "momentum": "0.937",
+  "weight_decay": "0.0005",
+  "warmup_epochs": "3.0",
+  "warmup_momentum": "0.8",
+  "warmup_bias_lr": "0.0",
+  "distill_model": "None",
+  "dis": "6.0",
+  "box": "7.5",
+  "cls": "0.5",
+  "cls_pw": "0.0",
+  "dfl": "1.5",
+  "pose": "12.0",
+  "kobj": "1.0",
+  "rle": "1.0",
+  "angle": "1.0",
+  "dlog": "1.0",
+  "dgrad": "0.5",
+  "dlam": "1.0",
+  "nbs": "64",
+  "hsv_h": "0.015",
+  "hsv_s": "0.6",
+  "hsv_v": "0.5",
+  "degrees": "10",
+  "translate": "0.1",
+  "scale": "0.5",
+  "shear": "0.0",
+  "perspective": "0.0",
+  "flipud": "0.0",
+  "fliplr": "0.5",
+  "bgr": "0.0",
+  "mosaic": "1.0",
+  "mixup": "0.1",
+  "cutmix": "0.0",
+  "copy_paste": "0.0",
+  "copy_paste_mode": "flip",
+  "auto_augment": "randaugment",
+  "erasing": "0.4",
+  "cfg": "None",
+  "tracker": "tracktrack.yaml"
+ },
+ "B1": {
+  "train_wall_s": 672.2,
+  "val480": {
+   "mAP50": 0.4163,
+   "mAP50_95": 0.3042,
+   "per_class": {
+    "banana": {
+     "P": 0.5629,
+     "R": 0.582,
+     "AP50": 0.5593,
+     "AP50_95": 0.3028
+    },
+    "apple": {
+     "P": 0.7875,
+     "R": 0.5075,
+     "AP50": 0.6047,
+     "AP50_95": 0.4631
+    },
+    "mango": {
+     "P": 0.6736,
+     "R": 0.5455,
+     "AP50": 0.5813,
+     "AP50_95": 0.5215
+    },
+    "citrus": {
+     "P": 0.7856,
+     "R": 0.7398,
+     "AP50": 0.7733,
+     "AP50_95": 0.6112
+    },
+    "pomegranate": {
+     "P": 0.4562,
+     "R": 0.6875,
+     "AP50": 0.474,
+     "AP50_95": 0.3755
+    },
+    "lemon_lime": {
+     "P": 0.3225,
+     "R": 0.0909,
+     "AP50": 0.0903,
+     "AP50_95": 0.0551
+    },
+    "tomato": {
+     "P": 0.4927,
+     "R": 0.4763,
+     "AP50": 0.4587,
+     "AP50_95": 0.3127
+    },
+    "potato": {
+     "P": 0.1461,
+     "R": 0.05,
+     "AP50": 0.0201,
+     "AP50_95": 0.0151
+    },
+    "cucumber": {
+     "P": 0.5999,
+     "R": 0.185,
+     "AP50": 0.2847,
+     "AP50_95": 0.2028
+    },
+    "carrot": {
+     "P": 0.6163,
+     "R": 0.3286,
+     "AP50": 0.3944,
+     "AP50_95": 0.249
+    },
+    "capsicum": {
+     "P": 0.6305,
+     "R": 0.2586,
+     "AP50": 0.3382,
+     "AP50_95": 0.2375
+    }
+   }
+  }
+ },
+ "verifier_data": {
+  "tr_pos": 6856,
+  "tr_neg": 952,
+  "val_pos": 2020,
+  "val_neg": 192,
+  "hndev_neg": 123,
+  "hntr_neg": 508,
+  "mdev_pos": 41
+ },
+ "verifier_error": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 171, in <module>\n    net = net.cpu(); torch.onnx.export(net, torch.zeros(1, 3, 128, 128), f\"{OUT}/verifier_mnv3s_128.onnx\", input_names=[\"x\"], output_names=[\"logit\"], dynamic_axes={\"x\": {0: \"n\"}}, opset_version=17)\n                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/dist-packages/torch/onnx/__init__.py\", line 286, in export\n    from torch.onnx._internal.exporter import _compat\n  File \"/usr/local/lib/python3.13/dist-packages/torch/onnx/_internal/exporter/_compat.py\", line 16, in <module>\n    from torch.onnx._internal.exporter import (\n    ...<6 lines>...\n    )\n  File \"/usr/local/lib/python3.13/dist-packages/torch/onnx/_internal/exporter/_core.py\", line 19, in <module>\n    import onnxscript\nModuleNotFoundError: No module named 'onnxscript'\n",
+ "total_wall_s": 1458.4
+}

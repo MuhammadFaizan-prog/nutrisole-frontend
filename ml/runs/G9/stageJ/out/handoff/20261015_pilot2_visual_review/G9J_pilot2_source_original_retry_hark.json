@@ -1,0 +1,86 @@
+{
+ "note": "Hark polite retry of the 3 Commons originals that returned HTTP 429 in his pilot-2 visual review (his file G9J_pilot2_source_original_attempts.json is left unchanged). Sequential, one request at a time, >=10 s between requests, descriptive User-Agent with contact, Retry-After honoured (give up rather than retry early if it exceeds 90 s), at most 2 retries per file; canonical upload.wikimedia.org URL without the utm query. Pixels NOT committed; sha256/size/pHash recorded. pHash distance is to the Stage J2 candidate image (commons_e2 thumbnail) the pilot-2 package was made from. Downscaled <=2048 px copies were added to the adjudicator-only originals zip (not git). Licence/author are as recorded in his audit/G9J_pilot2_license_and_provenance.json, not re-validated here. No labels were changed; this does not make any item human-verified.",
+ "user_agent": "NutriSoleResearchBot/1.0 (https://github.com/MuhammadFaizan-prog/nutrisole-frontend; clydara1@gmail.com) python-requests",
+ "attempted": 3,
+ "retrieved": 3,
+ "items": [
+  {
+   "item_id": "P729",
+   "stage_key": "e2c0012",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/CBP_Field_Operations_Seizes_%241.7_Million_in_Narcotics_at_the_Pharr_International_Bridge_%2823367227031%29.jpg",
+   "user_agent": "NutriSoleResearchBot/1.0 (https://github.com/MuhammadFaizan-prog/nutrisole-frontend; clydara1@gmail.com) python-requests",
+   "attempts": [
+    {
+     "at": "2026-10-15T14:56Z (19:56 PKT; seconds lost to a logging bug, file mtime-confirmed)",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "status": "RETRIEVED",
+   "sha256": "39e4c99916b1847acccab796decfcb70b9868158823d5c0dc3e4d39957daa530",
+   "bytes": 3791590,
+   "width": 3333,
+   "height": 2138,
+   "phash": "ebd197a45c999a48",
+   "phash_distance_to_candidate": 0,
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3ACBP_Field_Operations_Seizes_%241.7_Million_in_Narcotics_at_the_Pharr_International_Bridge_%2823367227031%29.jpg",
+   "licence": "Public domain",
+   "author": "U.S. Customs and Border Protection",
+   "licence_compliant": "yes",
+   "page_matches_key": true,
+   "package_jpeg_sha256": "ae03c1f22d842451a30d4800fb08e8c077365cb68a2a68127045d8b134bf0519"
+  },
+  {
+   "item_id": "P756",
+   "stage_key": "e2c0027",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Jacaratia_spinosa_%28Aubl.%29_A.DC._%288602151634%29.jpg",
+   "user_agent": "NutriSoleResearchBot/1.0 (https://github.com/MuhammadFaizan-prog/nutrisole-frontend; clydara1@gmail.com) python-requests",
+   "attempts": [
+    {
+     "at": "2026-10-15T14:57:52Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "status": "RETRIEVED",
+   "sha256": "722bbe614f4a9e33a1d3369f6a717dacd544b846ddccaedcdf0568f0b41cacdf",
+   "bytes": 956161,
+   "width": 1600,
+   "height": 902,
+   "phash": "d21b78c28e3c61e7",
+   "phash_distance_to_candidate": 0,
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3AJacaratia_spinosa_%28Aubl.%29_A.DC._%288602151634%29.jpg",
+   "licence": "CC BY 2.0",
+   "author": "Alex Popovkin, Bahia, Brazil from Brazil",
+   "licence_compliant": "yes",
+   "page_matches_key": true,
+   "package_jpeg_sha256": "d4a0fe00f544b127650c6671d0487798fe5cf074d656a3c5a736d0f5ae40e260"
+  },
+  {
+   "item_id": "P773",
+   "stage_key": "e2c0146",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Apples_in_a_trash_bag_from_the_second_production_stock.jpg",
+   "user_agent": "NutriSoleResearchBot/1.0 (https://github.com/MuhammadFaizan-prog/nutrisole-frontend; clydara1@gmail.com) python-requests",
+   "attempts": [
+    {
+     "at": "2026-10-15T14:58:04Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "status": "RETRIEVED",
+   "sha256": "18ab675b7e4f6462b7ce7d1531a3e2cbd6a8eab2a23ca93faa01fed90bf7f816",
+   "bytes": 76734,
+   "width": 536,
+   "height": 471,
+   "phash": "bfc0918bda254d36",
+   "phash_distance_to_candidate": 0,
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3AApples_in_a_trash_bag_from_the_second_production_stock.jpg",
+   "licence": "CC BY-SA 4.0",
+   "author": "Dkapples",
+   "licence_compliant": "yes",
+   "page_matches_key": true,
+   "package_jpeg_sha256": "a3e358aa6e95f5d7e2fdd8e24fd64dcf3babd24b44fc330b78ff6fb11f5e1e67"
+  }
+ ]
+}

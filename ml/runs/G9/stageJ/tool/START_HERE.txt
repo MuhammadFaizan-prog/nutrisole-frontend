@@ -1,0 +1,18 @@
+NutriSole photo labelling - __BATCH__ - copy: __COPY__  (__N__ photos)
+=====================================================================
+
+1. Unzip this folder anywhere (Desktop is fine).
+2. Double-click the .html file. It opens in Chrome, Edge or Firefox. No internet needed.
+3. Type your name, read the 2-minute guide (the Help button), then label:
+      keys 1-9 choose the answer, arrow keys move, C/B/M/X add tags, U = next unlabelled.
+   Your work saves itself in that browser after every click. You can close it and come back later
+   (same computer, same browser). Do not clear the browser history before exporting.
+4. When finished (or at the end of each session) press "Export CSV" and send the downloaded .csv
+   file to the project lead (WhatsApp / email is fine).
+
+Rules: label on your own, do not discuss photos with the other labeller until both of you have exported,
+and choose 9 (uncertain) whenever you honestly cannot tell. Full rules: annotation_guide.md.
+
+If the .html file will not open: use fallback/fallback_*.csv in Excel or Google Sheets and look at the photos
+in fallback/contact_sheets (each photo has its id in red). Fill the "label" column with one of:
+apple, banana, citrus_orange, tomato, carrot, other_produce, printed_or_screen, occluded, uncertain

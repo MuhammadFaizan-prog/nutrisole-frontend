@@ -1,0 +1,21 @@
+{
+ "n": 276,
+ "non_compliant": 0,
+ "excluded_keys": [],
+ "licences": {
+  "CC BY 4.0": 152,
+  "CC BY 2.0": 13,
+  "CC BY-SA 4.0": 55,
+  "CC BY-SA 3.0": 18,
+  "CC0": 14,
+  "Public domain": 19,
+  "CC BY 2.5": 1,
+  "CC BY-SA 2.0": 4
+ },
+ "by_source": {
+  "citrus_tw": 60,
+  "commons_t": 124,
+  "veg_in": 63,
+  "veg_bd": 29
+ }
+}

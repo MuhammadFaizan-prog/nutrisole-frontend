@@ -1,0 +1,39 @@
+{
+ "source": "Mendeley 10.17632/w3fg8jjmzr.1 (CC BY 4.0), Larkana Sindh PK, studio single-fruit photos",
+ "n_images": 270,
+ "sample": "30 per variety x maturity cell, random seed 0",
+ "imgsz": 480,
+ "conf": 0.35,
+ "device": "sandbox CPU, ONNX Runtime",
+ "models": {
+  "G6rpx": {
+   "model": "/workspace/work/cv/g6models/G6rpx/det_yolo11n_g6_rpx_raw.onnx",
+   "hit_rate": 0.993,
+   "hit_ci95": [
+    0.981,
+    1.0
+   ],
+   "top_is_guava": 0.978,
+   "top_ci95": [
+    0.959,
+    0.993
+   ],
+   "no_detection": 0.0,
+   "top_class_when_not_guava": {
+    "mango": 4,
+    "apple": 2
+   },
+   "hit_rate_per_cell": {
+    "Local Sindhi/Green": "30/30",
+    "Local Sindhi/Mature Green": "29/30",
+    "Local Sindhi/Ripe": "30/30",
+    "Riyali/Green": "30/30",
+    "Riyali/Mature Green": "30/30",
+    "Riyali/Ripe": "29/30",
+    "Thadhrami/Green": "30/30",
+    "Thadhrami/Mature Green": "30/30",
+    "Thadhrami/Ripe": "30/30"
+   }
+  }
+ }
+}

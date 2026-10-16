@@ -1,0 +1,261 @@
+{
+ "y3649cmgg6": {
+  "name": "Mango and Banana Dataset (Ripe Unripe) : Indian RGB image datasets for YOLO object detection",
+  "version": 3,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "doi": "10.17632/y3649cmgg6.3",
+  "files": [
+   {
+    "name": "Mango_Banana_Dataset.zip",
+    "mb": 389.7
+   }
+  ],
+  "n_files": 1,
+  "total_mb": 389.7,
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "USED (390 MB zip, range-read; UUID-named originals only, '_0_' augmented copies skipped)"
+ },
+ "7vb4djkbrc": {
+  "name": "Dataset of Banana Prata Catarina Images Labeled in Eight Ripeness Stages",
+  "version": 1,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "doi": "10.17632/7vb4djkbrc.1",
+  "files": [
+   {
+    "name": "banana-ripening-dataset.coco.rar",
+    "mb": 1206.6
+   }
+  ],
+  "n_files": 1,
+  "total_mb": 1206.6,
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "SKIPPED: single 1.2 GB RAR, not range-readable and no RAR extractor in sandbox"
+ },
+ "56td5w4wz2": {
+  "name": "Fruits (Banana and Guava) datasets for non-destructive quality classifications",
+  "version": 2,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "doi": "10.17632/56td5w4wz2.2",
+  "files": [
+   {
+    "name": "Fruits_Data.zip",
+    "mb": 476.1
+   }
+  ],
+  "n_files": 1,
+  "total_mb": 476.1,
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "USED (476 MB zip, range-read; Class_A/B only, Defect skipped)"
+ },
+ "j9sp322drp": {
+  "name": "Ripen Banana Dataset: A Comprehensive Resource for Carbide Detection and Ripening Stage Analysis to Enhance Food Quality and Agricultural Efficiency",
+  "version": 1,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "doi": "10.17632/j9sp322drp.1",
+  "files": [
+   {
+    "name": "With Carbide.zip",
+    "mb": 4162.3
+   },
+   {
+    "name": "Without Carbide.zip",
+    "mb": 4546.4
+   }
+  ],
+  "n_files": 2,
+  "total_mb": 8708.7,
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "SKIPPED: files 4.2 GB and 4.5 GB (>1.5 GB)"
+ },
+ "y5h6v8w6ms": {
+  "name": "Multispectral images of apples for ripeness, sweetness and variety grading [Data set]",
+  "version": 2,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "doi": "10.17632/y5h6v8w6ms.2",
+  "files": [
+   {
+    "name": "Ripeness Grading.zip",
+    "mb": 1556.0
+   },
+   {
+    "name": "Sweetness Grading.rar",
+    "mb": 80.2
+   },
+   {
+    "name": "Variety Grading.rar",
+    "mb": 87.0
+   }
+  ],
+  "n_files": 3,
+  "total_mb": 1723.2,
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "SKIPPED: Ripeness zip 1.56 GB (>1.5 GB); Sweetness/Variety parts are RAR (no extractor) and multispectral"
+ },
+ "b9rvg4f2st": {
+  "name": "Vegetable Image Dataset for Classification Models: A Bangladeshi Perspective",
+  "version": 4,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "doi": "10.17632/b9rvg4f2st.4",
+  "files": [
+   {
+    "name": "Vegetable_Image.zip",
+    "mb": 2075.4
+   }
+  ],
+  "n_files": 1,
+  "total_mb": 2075.4,
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "SKIPPED: single 2.08 GB zip (>1.5 GB)"
+ },
+ "s42kpg8h37": {
+  "name": "Tomato Maturity Detection and Quality Grading Dataset",
+  "version": 1,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "doi": "10.17632/s42kpg8h37.1",
+  "files": [
+   {
+    "name": "Tomato Maturity Detection Dataset.zip",
+    "mb": 2390.1
+   },
+   {
+    "name": "Tomato Quality Grading Dataset.zip",
+    "mb": 3064.1
+   }
+  ],
+  "n_files": 2,
+  "total_mb": 5454.2,
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "SKIPPED: files 2.4 GB and 3.1 GB (>1.5 GB)"
+ },
+ "6nxnjbn9w6": {
+  "name": "VegNet: Vegetable Dataset with quality (Unripe, Ripe, Old, Dried and Damaged)",
+  "version": 1,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "doi": "10.17632/6nxnjbn9w6.1",
+  "files": [
+   {
+    "name": "VegNet (Unripe, Ripe, Old, Dried and Damaged).zip",
+    "mb": 127.7
+   }
+  ],
+  "n_files": 1,
+  "total_mb": 127.7,
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "USED (128 MB zip; Tomato Ripe/Unripe + pepper/chili negatives; Old/Dried/Damaged skipped)"
+ },
+ "chv7dmvtfm": {
+  "name": "Vegetable Recognition Dataset",
+  "version": 1,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "doi": "10.17632/chv7dmvtfm.1",
+  "files": [
+   {
+    "name": "1.jpg",
+    "mb": 0.0
+   },
+   {
+    "name": "1.jpg",
+    "mb": 0.0
+   },
+   {
+    "name": "1.jpg",
+    "mb": 0.0
+   },
+   {
+    "name": "1.jpg",
+    "mb": 0.0
+   },
+   {
+    "name": "1.jpg",
+    "mb": 0.0
+   }
+  ],
+  "n_files": 8310,
+  "total_mb": 26.3,
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "USED (rest of veg_in: tomato, carrot, 6 vegetable negatives)"
+ },
+ "6ps7gtp2wg": {
+  "name": "Spoiled and fresh fruit inspection dataset",
+  "version": 1,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "doi": "10.17632/6ps7gtp2wg.1",
+  "files": [
+   {
+    "name": "1.jpg",
+    "mb": 0.0
+   },
+   {
+    "name": "1.jpg",
+    "mb": 0.0
+   },
+   {
+    "name": "1.jpg",
+    "mb": 0.0
+   },
+   {
+    "name": "1.jpg",
+    "mb": 0.0
+   },
+   {
+    "name": "1.jpg",
+    "mb": 0.0
+   }
+  ],
+  "n_files": 16000,
+  "total_mb": 100.1,
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "USED (individual 224 px files; FRESH folders only: banana, orange, tomato + lulo/strawberry/tamarillo/mango negatives)"
+ },
+ "bxfgvsn9kw": {
+  "name": "A Dataset of Citrus Fruit Images",
+  "version": 6,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "doi": "10.17632/bxfgvsn9kw.6",
+  "files": [
+   {
+    "name": "DSC02690.JPG",
+    "mb": 3.6
+   },
+   {
+    "name": "DSC02690be.jpg",
+    "mb": 1.1
+   },
+   {
+    "name": "DSC02690cl.jpg",
+    "mb": 0.9
+   },
+   {
+    "name": "DSC02690co.jpg",
+    "mb": 1.0
+   },
+   {
+    "name": "DSC02690fl.jpg",
+    "mb": 0.9
+   }
+  ],
+  "n_files": 8963,
+  "total_mb": 10125.8,
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "USED (more citrus_tw Original images, disease folders skipped)"
+ },
+ "b6fftwbr2v": {
+  "name": "FruitNet: Indian Fruits Dataset with quality (Good, Bad & Mixed quality)",
+  "version": 3,
+  "licence": "CC BY 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by/4.0",
+  "checked_at": "2026-10-15 (Mendeley public API)",
+  "decision": "USED for EVAL ONLY (existing whole-J-eval source): extra Good-quality Orange/Apple rows via the CC BY 4.0 HF mirror Project-AgML/FruitNet_quality_classification"
+ }
+}

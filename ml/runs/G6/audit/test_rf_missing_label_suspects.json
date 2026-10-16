@@ -1,0 +1,147 @@
+{
+ "empty": 60,
+ "empty_with_owl03": [
+  [
+   "20240326_cf3f38d0-7783-4ced-9409-1619c54978f2_2_png.rf.8cdadb985908c9ff0b11f73b6.jpg",
+   4,
+   0.44
+  ],
+  [
+   "20240326_d86a11ae-6de8-4b3b-972b-f25e28d958d8_3_png.rf.0e81decda5d908f741f62d80e.jpg",
+   1,
+   0.39
+  ],
+  [
+   "20240327_24aa6e29-f1ef-4333-b3b4-6d008a5b5c8c_1_png.rf.2646678deea133135038920a3.jpg",
+   6,
+   0.43
+  ],
+  [
+   "20240327_cf3f38d0-7783-4ced-9409-1619c54978f2_1_png.rf.5a30fdc657c72caf783eae8b1.jpg",
+   1,
+   0.73
+  ],
+  [
+   "20240328_6f2c8e4e-302b-4053-bc4f-87f96a6b3004_3_png.rf.068ce152009c51ef49c4457d6.jpg",
+   1,
+   0.31
+  ],
+  [
+   "20240328_8fab6e58-c1a7-4ea3-9309-26c1aa3ceb99_1_png.rf.0a5a0b2b0bb3aa5c80827b313.jpg",
+   1,
+   0.47
+  ],
+  [
+   "20240328_f2dceff6-416c-4f9e-ba0f-a203e561e963_1_png.rf.47e17d1dfcc4a95e788307d32.jpg",
+   4,
+   0.5
+  ],
+  [
+   "20240329_24aa6e29-f1ef-4333-b3b4-6d008a5b5c8c_2_png.rf.92c0b67a66c6ca90d2213b7e3.jpg",
+   1,
+   0.39
+  ],
+  [
+   "20240329_ad61f4d1-5de3-4bc0-9ca1-5739e6c27b93_1_png.rf.4e9c3702b682fc4ed38055b87.jpg",
+   10,
+   0.56
+  ],
+  [
+   "20240329_ad61f4d1-5de3-4bc0-9ca1-5739e6c27b93_2_png.rf.da3b36cce8520f7681e1e628e.jpg",
+   7,
+   0.45
+  ],
+  [
+   "20240402_3f803a6c-9204-4ddd-934a-cbbbefbdf14f_3_png.rf.7cf31e858e4f7e090520307c5.jpg",
+   1,
+   0.49
+  ],
+  [
+   "20240402_ad61f4d1-5de3-4bc0-9ca1-5739e6c27b93_1_png.rf.1f2bd442a1912428203b00fab.jpg",
+   1,
+   0.35
+  ],
+  [
+   "20240402_cf3f38d0-7783-4ced-9409-1619c54978f2_2_png.rf.df3542b4ba4d7a7748205e903.jpg",
+   1,
+   0.38
+  ],
+  [
+   "20240402_cf3f38d0-7783-4ced-9409-1619c54978f2_3_png.rf.bd66b71b5b2789f453f9e4b6d.jpg",
+   2,
+   0.63
+  ],
+  [
+   "20240402_d2e6cc91-5c10-4f25-9a29-924f7c25a5ad_1_png.rf.9db3cafeff87b7e6f654143af.jpg",
+   5,
+   0.49
+  ],
+  [
+   "20240402_d2e6cc91-5c10-4f25-9a29-924f7c25a5ad_3_png.rf.2ebfcee5b41dd6ec51be11ca7.jpg",
+   1,
+   0.89
+  ],
+  [
+   "20240403_cf3f38d0-7783-4ced-9409-1619c54978f2_7_png.rf.d5d0613837a2fb7885ab76cb4.jpg",
+   5,
+   0.49
+  ],
+  [
+   "20240404_cf3f38d0-7783-4ced-9409-1619c54978f2_1_png.rf.b6b1a4b2e1226fb9b94ac4bf2.jpg",
+   10,
+   0.57
+  ]
+ ],
+ "owl_cls": {
+  "cucumber": 15,
+  "capsicum": 9,
+  "lemon_lime": 2,
+  "banana": 3,
+  "pomegranate": 1,
+  "carrot": 18,
+  "tomato": 1,
+  "apple": 9,
+  "mango": 2,
+  "potato": 2
+ },
+ "unmatched_owl04": 95,
+ "unmatched_imgs": [
+  "20240326_24aa6e29-f1ef-4333-b3b4-6d008a5b5c8c_1_png.rf.1f4af6b2d2ec2f99de89eb8d6.jpg",
+  "20240326_24aa6e29-f1ef-4333-b3b4-6d008a5b5c8c_2_png.rf.39835e5ad6112393f0f9c8f41.jpg",
+  "20240326_3c8f4813-06ae-4d71-8dd3-d6f5d2e41c9a_1_png.rf.de9321530f6982f8a97c0b596.jpg",
+  "20240326_3c8f4813-06ae-4d71-8dd3-d6f5d2e41c9a_4_png.rf.80f6b676270765ab2315309a1.jpg",
+  "20240326_a0b8699c-84e3-4681-b9e9-dbff61d797c6_1_png.rf.9843f462de07064074b7f66f3.jpg",
+  "20240326_d2e6cc91-5c10-4f25-9a29-924f7c25a5ad_3_png.rf.973066a6968554f6963e8348b.jpg",
+  "20240326_da48c0fd-c904-41ea-a71a-a3b5658b491b_2_png.rf.f3e2f93dcedad1428685128f1.jpg",
+  "20240326_f2dceff6-416c-4f9e-ba0f-a203e561e963_1_jpeg.rf.43d9a619549fe61885cc3fcd.jpg",
+  "20240327_24aa6e29-f1ef-4333-b3b4-6d008a5b5c8c_3_png.rf.24b7faf28eb4633e8e9432f94.jpg",
+  "20240327_3c8f4813-06ae-4d71-8dd3-d6f5d2e41c9a_4_png.rf.ef6e00bb24b03c891f248a606.jpg",
+  "20240327_6f2c8e4e-302b-4053-bc4f-87f96a6b3004_1_png.rf.650d20f01fdf35b314575a016.jpg",
+  "20240327_8fab6e58-c1a7-4ea3-9309-26c1aa3ceb99_3_png.rf.74a98b4b6c46af6a2d9f2c5dc.jpg",
+  "20240327_8fab6e58-c1a7-4ea3-9309-26c1aa3ceb99_4_png.rf.1678013981e39e2922a3dad56.jpg",
+  "20240327_a0b8699c-84e3-4681-b9e9-dbff61d797c6_1_png.rf.77c74b90dc90c70f528610d66.jpg",
+  "20240328_24aa6e29-f1ef-4333-b3b4-6d008a5b5c8c_2_png.rf.290fbce5ee62f19e2a8af2ccf.jpg",
+  "20240328_3f803a6c-9204-4ddd-934a-cbbbefbdf14f_1_png.rf.da0521eb0f9ec766c068a3dc4.jpg",
+  "20240328_3f803a6c-9204-4ddd-934a-cbbbefbdf14f_2_png.rf.059951961efe1f7e3dc05c522.jpg",
+  "20240328_3f803a6c-9204-4ddd-934a-cbbbefbdf14f_3_png.rf.f0d6d64341aedce4d18bf7db9.jpg",
+  "20240328_628c651b-a872-4934-bcf9-e9c7b1003b6c_3_png.rf.4c926fb4c531b004f6d115fa4.jpg",
+  "20240328_6f2c8e4e-302b-4053-bc4f-87f96a6b3004_2_png.rf.08359b0988c8653b9a659c3d4.jpg",
+  "20240328_a0b8699c-84e3-4681-b9e9-dbff61d797c6_2_png.rf.800e88b5177b66c8e9ec351bc.jpg",
+  "20240328_cf3f38d0-7783-4ced-9409-1619c54978f2_1_png.rf.dc8bcd5f7096966e6473a14aa.jpg",
+  "20240328_d2e6cc91-5c10-4f25-9a29-924f7c25a5ad_3_png.rf.de917ec93601a4b1d690f6585.jpg",
+  "20240328_da48c0fd-c904-41ea-a71a-a3b5658b491b_2_png.rf.41265e816ff7564e1844e62f1.jpg",
+  "20240328_da48c0fd-c904-41ea-a71a-a3b5658b491b_3_png.rf.6d460269d9093beea8267565e.jpg",
+  "20240329_3f803a6c-9204-4ddd-934a-cbbbefbdf14f_2_png.rf.93152583fce6aba2b6a04b627.jpg",
+  "20240329_4432624f-9fac-4d78-afab-742d358eb95c_1_png.rf.88f2f4030e570b7d7992e6a6b.jpg",
+  "20240329_8fab6e58-c1a7-4ea3-9309-26c1aa3ceb99_2_png.rf.c82b22561cb72a4817e416d09.jpg",
+  "20240329_9e8be4cc-058a-4c5f-8a6c-28370d18f7d7_1_png.rf.a508c9e66de01cd5db526253f.jpg",
+  "20240402_6292eef6-310e-4d41-8a49-4f0da52d4651_1_png.rf.0ead89c627cedc27bee2bb749.jpg",
+  "20240403_4432624f-9fac-4d78-afab-742d358eb95c_1_png.rf.713a2208111a7804cbf8635cc.jpg",
+  "20240403_6a21271b-b453-48b8-9c18-1d7ed03e00ef_1_png.rf.ff267e90817b6fae6433d28d3.jpg",
+  "20240403_76d09a5e-a329-415d-ad04-ccd40f3d1a01_1_png.rf.bcd6b5fd46930386a851b0283.jpg",
+  "20240403_cf3f38d0-7783-4ced-9409-1619c54978f2_2_png.rf.126f98a5e1c5da2191e8d23f3.jpg",
+  "20240403_cf3f38d0-7783-4ced-9409-1619c54978f2_3_png.rf.096c9116fa7e100b8cbfc042e.jpg",
+  "20240403_cf3f38d0-7783-4ced-9409-1619c54978f2_4_png.rf.cf1cf4e4a11852715899d4b86.jpg",
+  "20240403_d2e6cc91-5c10-4f25-9a29-924f7c25a5ad_2_png.rf.a4ef5e88165835de0cca2cf69.jpg"
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "total_files": 77,
+ "counted_independent": 69,
+ "distinct_uploaders_counted": 44,
+ "human_verified_clips": 0,
+ "by_split": {
+  "dev": {
+   "files": 22,
+   "counted": 22,
+   "uploaders": 5
+  },
+  "dev_v7": {
+   "files": 6,
+   "counted": 6,
+   "uploaders": 5
+  },
+  "excluded": {
+   "files": 3,
+   "counted": 0,
+   "uploaders": 3
+  },
+  "holdout (LOCKED)": {
+   "files": 15,
+   "counted": 15,
+   "uploaders": 14
+  },
+  "holdout_v7_pending": {
+   "files": 9,
+   "counted": 9,
+   "uploaders": 8
+  },
+  "negatives_v7": {
+   "files": 10,
+   "counted": 10,
+   "uploaders": 10
+  },
+  "train_only(G5 hardneg source)": {
+   "files": 1,
+   "counted": 1,
+   "uploaders": 1
+  },
+  "train_v7_weak": {
+   "files": 6,
+   "counted": 6,
+   "uploaders": 5
+  },
+  "weak_exploratory": {
+   "files": 5,
+   "counted": 0,
+   "uploaders": 4
+  }
+ }
+}

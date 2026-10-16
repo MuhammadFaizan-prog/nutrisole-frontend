@@ -1,0 +1,81 @@
+{
+ "build": "det-v2",
+ "base": "det-v1 (ml/data/builds/v1/det_manifest.json), positives unchanged",
+ "added": "COCO val2017 backgrounds: COCO val2017, no classes 39-55/60, not in LVIS F&V or coco128",
+ "neg_candidates": 3667,
+ "blocked": [
+  "Open Images V7 mango/pomegranate: annotation CSVs 403 AccessDenied (2026-10-12)",
+  "guava: not an OIV7 boxable class"
+ ],
+ "counts": {
+  "train": {
+   "images": 2929,
+   "background_images": 530,
+   "coco_negatives": 290,
+   "instances": {
+    "apple": 6633,
+    "banana": 23243,
+    "capsicum": 1884,
+    "carrot": 7197,
+    "citrus": 4397,
+    "cucumber": 617,
+    "lemon_lime": 1450,
+    "potato": 1730,
+    "tomato": 5427
+   }
+  },
+  "val": {
+   "images": 489,
+   "background_images": 90,
+   "coco_negatives": 50,
+   "instances": {
+    "apple": 1266,
+    "banana": 2353,
+    "capsicum": 300,
+    "carrot": 1120,
+    "citrus": 871,
+    "cucumber": 162,
+    "lemon_lime": 176,
+    "potato": 132,
+    "tomato": 901
+   }
+  },
+  "test": {
+   "images": 557,
+   "background_images": 50,
+   "coco_negatives": 0,
+   "instances": {
+    "apple": 2122,
+    "banana": 5048,
+    "capsicum": 280,
+    "carrot": 1558,
+    "citrus": 1833,
+    "cucumber": 111,
+    "lemon_lime": 290,
+    "potato": 366,
+    "tomato": 659
+   }
+  },
+  "test_rf": {
+   "images": 149,
+   "background_images": 60,
+   "coco_negatives": 0,
+   "instances": {
+    "apple": 25,
+    "banana": 75,
+    "capsicum": 110,
+    "carrot": 84,
+    "citrus": 34,
+    "cucumber": 73,
+    "lemon_lime": 4,
+    "tomato": 122
+   }
+  },
+  "neg_test": {
+   "images": 80,
+   "background_images": 80,
+   "coco_negatives": 80,
+   "instances": {}
+  }
+ }
+}

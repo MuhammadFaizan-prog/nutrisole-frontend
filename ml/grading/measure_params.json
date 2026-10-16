@@ -1,0 +1,23 @@
+{
+ "version": "measure-v0.3-g2",
+ "_comment": "Tuned on quality2 VAL (n=275) by ml/grading/tune_v2.py with best.pt; G1 was rel_drop 38 / floor 35 / no chroma gate / no surface mask.",
+ "dark_defect": {
+  "rel_drop": 30.0,
+  "abs_floor": 35.0,
+  "chroma_max": 25.0,
+  "baseline_weight": 0.0
+ },
+ "surface": {
+  "ring_frac": 0.3,
+  "shadow_chroma": 16.0,
+  "spec_v": 256,
+  "spec_s": 40
+ },
+ "class_baseline_L": {
+  "apple": 55.69,
+  "banana": 56.86,
+  "citrus": 60.2,
+  "guava": 45.88,
+  "pomegranate": 45.1
+ }
+}

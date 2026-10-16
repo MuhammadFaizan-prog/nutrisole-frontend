@@ -1,0 +1,67 @@
+{
+ "det": "/workspace/work/cv/g4models/A2bg15/det_yolo11n_640_bg15_raw.onnx",
+ "det_kind": "raw",
+ "imgsz": 480,
+ "cls": null,
+ "cls_imgsz": 192,
+ "temperature": 1.0,
+ "device": "CPU x2 (sandbox), onnxruntime 1.31.0, 2 intra-op threads",
+ "realtime_drop_frames": false,
+ "mode": "fixed-frame stride 1",
+ "scene_guard": {
+  "maxSameClass": 0,
+  "minAreaFrac": 0.01
+ },
+ "tracker_params": {
+  "iouMatch": 0.3,
+  "boxAlpha": 0.6,
+  "scoreAlpha": 0.2,
+  "switchMargin": 0.15,
+  "switchFrames": 3,
+  "minHits": 2,
+  "maxMissed": 4,
+  "stableIou": 0.8,
+  "stableMs": 500
+ },
+ "rubric": "rubric-v0.2-g2",
+ "disclaimer": "Synthetic handheld clips from locked TEST images: regression test, not a headline or phone number.",
+ "clips": {
+  "neg": {
+   "false_alarm_tracks": 1,
+   "minutes": 2.667,
+   "false_alarms_per_min": 0.38,
+   "fa_episodes": 1,
+   "fa_episodes_per_min": 0.38,
+   "frames_with_any_box": 4,
+   "frames": 2400,
+   "n_frames": 2400,
+   "processed_frames": 2400,
+   "dropped_frames": 0,
+   "wall_s": 122.4,
+   "latency_det_ms": {
+    "p50": 45.07583650001834,
+    "p90": 53.49783700012267,
+    "p95": 79.01494445017072
+   },
+   "latency_full_ms": {
+    "p50": 45.31705600004443,
+    "p90": 53.74911209992206,
+    "p95": 79.50026064982008
+   },
+   "effective_fps": 19.9
+  }
+ },
+ "latency_overall": {
+  "det_ms": {
+   "p50": 45.07583650001834,
+   "p90": 53.49783700012267,
+   "p95": 79.01494445017072
+  },
+  "full_ms": {
+   "p50": 45.31705600004443,
+   "p90": 53.74911209992206,
+   "p95": 79.50026064982008
+  },
+  "det_fps": 20.0
+ }
+}

@@ -1,0 +1,14 @@
+# versions used in G1 (CPU sandbox, aarch64)
+ultralytics==8.4.175
+torch==2.14.1
+onnx==1.23.2
+onnxruntime==1.31.0
+onnxslim==0.1.98
+opencv-python-headless
+numpy==2.5.2
+pillow==12.3.0
+pyarrow
+huggingface_hub==2.2.0
+imagehash
+scikit-learn
+pytest

@@ -1,0 +1,87 @@
+{
+ "all": {
+  "n": 180,
+  "top1_15way": 0.9722,
+  "per_fruit": {
+   "apple": {
+    "n": 36,
+    "top1": 0.9722
+   },
+   "banana": {
+    "n": 49,
+    "top1": 1.0
+   },
+   "mango": {
+    "n": 40,
+    "top1": 0.975
+   },
+   "orange": {
+    "n": 26,
+    "top1": 0.9231
+   },
+   "tomato": {
+    "n": 29,
+    "top1": 0.9655
+   }
+  }
+ },
+ "dedup": {
+  "n": 155,
+  "top1_15way": 0.9677,
+  "per_fruit": {
+   "apple": {
+    "n": 31,
+    "top1": 0.9677
+   },
+   "banana": {
+    "n": 43,
+    "top1": 1.0
+   },
+   "mango": {
+    "n": 36,
+    "top1": 0.9722
+   },
+   "orange": {
+    "n": 25,
+    "top1": 0.92
+   },
+   "tomato": {
+    "n": 20,
+    "top1": 0.95
+   }
+  }
+ },
+ "neardup_only": {
+  "n": 25,
+  "top1_15way": 1.0,
+  "per_fruit": {
+   "apple": {
+    "n": 5,
+    "top1": 1.0
+   },
+   "banana": {
+    "n": 6,
+    "top1": 1.0
+   },
+   "mango": {
+    "n": 4,
+    "top1": 1.0
+   },
+   "orange": {
+    "n": 1,
+    "top1": 1.0
+   },
+   "tomato": {
+    "n": 9,
+    "top1": 1.0
+   }
+  }
+ },
+ "meta": {
+  "split": "test_cc0 (Kaggle CC0 asadullahprl/fruits-ripeness-classification-dataset)",
+  "model": "yolo11n-cls G7 ripeness",
+  "imgsz": 224,
+  "device_of_preds": "Tesla T4 (Kaggle)",
+  "near_dup_def": "pHash min Hamming to any train image <= 4"
+ }
+}

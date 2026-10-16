@@ -1,0 +1,42 @@
+{
+ "apple": {
+  "objects": 75,
+  "obj_hit_480": 15,
+  "obj_hit_640": 21,
+  "objframes": 1350,
+  "objframe_hit_480": 219,
+  "objframe_hit_640": 270
+ },
+ "banana": {
+  "objects": 42,
+  "obj_hit_480": 15,
+  "obj_hit_640": 23,
+  "objframes": 756,
+  "objframe_hit_480": 233,
+  "objframe_hit_640": 264
+ },
+ "carrot": {
+  "objects": 132,
+  "obj_hit_480": 8,
+  "obj_hit_640": 17,
+  "objframes": 2376,
+  "objframe_hit_480": 39,
+  "objframe_hit_640": 95
+ },
+ "citrus": {
+  "objects": 57,
+  "obj_hit_480": 10,
+  "obj_hit_640": 13,
+  "objframes": 1026,
+  "objframe_hit_480": 101,
+  "objframe_hit_640": 135
+ },
+ "tomato": {
+  "objects": 81,
+  "obj_hit_480": 8,
+  "obj_hit_640": 9,
+  "objframes": 1458,
+  "objframe_hit_480": 67,
+  "objframe_hit_640": 99
+ }
+}

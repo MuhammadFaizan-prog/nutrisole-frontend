@@ -1,0 +1,21 @@
+{
+ "G3": {
+  "n": 200,
+  "p50": 64.05,
+  "p95": 86.31,
+  "mean": 65.53
+ },
+ "G3r5": {
+  "n": 200,
+  "p50": 67.52,
+  "p95": 87.57,
+  "mean": 72.63
+ },
+ "show_s0": {
+  "n": 200,
+  "p50": 65.85,
+  "p95": 84.51,
+  "mean": 68.8
+ },
+ "note": "sandbox CPU (2 cores aarch64, shared), onnxruntime CPU EP, 100 val frames x 2 passes, model order alternated per pass, det session.run only (letterbox excluded)"
+}

@@ -24,3 +24,56 @@ __pycache__/
 !/artifacts/native/**/README.md
 !/artifacts/native/**/validation.json
 !/artifacts/native/plain-rn-apk-inspection.json
+
+# NutriSole CV (G1): raw data, dataset builds and weights stay out of Git.
+# Manifests, configs, metrics JSON/CSV and small plots ARE versioned.
+ml/data/raw/
+ml/data/builds/*/det/
+ml/data/builds/*/quality*/
+ml/data/builds/*/_pool/
+ml/runs/**/weights/
+ml/runs/**/*.pt
+ml/runs/**/*.onnx
+ml/runs/**/*.pte
+ml/runs/**/*.tflite
+ml/runs/**/*_saved_model/
+ml/runs/**/*.mp4
+ml/runs/**/*.cache
+ml/models/**/*.pt
+ml/models/**/*.onnx
+ml/models/**/*.pte
+ml/models/**/*.tflite
+ml/models/**/*_saved_model/
+*.pt
+.pytest_cache/
+
+# G2: Ultralytics writes to ./runs/<task>/ when project= is relative (G1 accident);
+# weights, exports, videos and per-batch preview mosaics never go into Git.
+/runs/
+*.onnx
+*.pte
+*.tflite
+*.mp4
+ml/runs/**/weights/
+ml/runs/**/*_executorch_model/
+ml/runs/**/train_batch*.jpg
+ml/runs/**/val_batch*_pred.jpg
+ml/runs/**/val_batch*_labels.jpg
+ml/runs/**/dets_cache_*.pkl
+# G2: per-split eval plots and Kaggle training plots are regenerable; keep JSON/CSV only
+ml/runs/**/eval_det_*/**/*.png
+ml/runs/**/eval_det_*/**/*.jpg
+ml/runs/**/kaggle_*/runs/**/*.png
+ml/runs/**/kaggle_*/runs/**/*.jpg
+ml/runs/**/kaggle_*/*.pt
+ml/runs/G3/**/*.pkl
+ml/runs/G3/kaggle/**/*.png
+ml/runs/G3/kaggle/**/*.jpg
+ml/runs/G4/kaggle/nutrisole-g4-owlv2/owlv2_proposals.json
+ml/runs/G5/kaggle/**/*.png
+ml/runs/G5/kaggle/**/*.jpg
+ml/runs/G5/kaggle/**/*.csv
+ml/runs/G5/**/*.pkl
+ml/runs/G6/kaggle/**/*.png
+ml/runs/G6/kaggle/**/*.jpg
+ml/runs/G6/**/*.pkl

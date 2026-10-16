@@ -1,0 +1,21 @@
+names:
+  0: banana
+  1: apple
+  2: mango
+  3: citrus
+  4: guava
+  5: pomegranate
+  6: lemon_lime
+  7: tomato
+  8: potato
+  9: cucumber
+  10: carrot
+  11: capsicum
+neg_test: /workspace/work/cv/g3data/det_v3/neg_test.txt
+path: /workspace/work/cv/g3data/det_v3
+test: /workspace/work/cv/g3data/det_v3/test.txt
+test_oiv7: /workspace/work/cv/g3data/det_v3/test_oiv7.txt
+test_oiv7c: /workspace/work/cv/g4data/test_oiv7c.txt
+test_rf: /workspace/work/cv/g3data/det_v3/test_rf.txt
+train: /workspace/work/cv/g3data/det_v3/train.txt
+val: /workspace/work/cv/g3data/det_v3/val.txt

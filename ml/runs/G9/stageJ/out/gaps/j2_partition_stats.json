@@ -1,0 +1,118 @@
+{
+ "J-train": {
+  "stageJ_groups": 382,
+  "stageJ_images": 392,
+  "j2_added": 646,
+  "total_images": 1038,
+  "j2_added_by_label": {
+   "apple": 135,
+   "banana": 158,
+   "guava": 13,
+   "citrus": 56,
+   "mango": 18,
+   "tamarillo": 6,
+   "tomato": 149,
+   "strawberry": 6,
+   "lulo": 6,
+   "carrot": 51,
+   "garlic": 5,
+   "potato": 4,
+   "pepper_chili": 19,
+   "chilli": 5,
+   "ginger": 5,
+   "brinjal": 5,
+   "onion": 5
+  },
+  "j2_added_by_source": {
+   "commons_t2": 135,
+   "bg_in": 73,
+   "citrus_tw": 17,
+   "mb_in": 73,
+   "sp_co": 138,
+   "veg_in": 148,
+   "vegnet": 62
+  },
+  "stageJ_supported_by_class": {
+   "apple": 20,
+   "banana": 7,
+   "citrus": 135,
+   "tomato": 14,
+   "carrot": 138,
+   "lemon_lime": 3
+  },
+  "stageJ_negatives_by_kind": {
+   "unsupported": 22,
+   "packaging": 15,
+   "printed": 12,
+   "occluded": 16
+  }
+ },
+ "J-dev": {
+  "stageJ_groups": 79,
+  "stageJ_images": 79,
+  "j2_added": 0,
+  "total_images": 79,
+  "j2_added_by_label": {},
+  "j2_added_by_source": {},
+  "stageJ_supported_by_class": {
+   "apple": 10,
+   "banana": 7,
+   "citrus": 15,
+   "tomato": 4,
+   "carrot": 9
+  },
+  "stageJ_negatives_by_kind": {
+   "unsupported": 15,
+   "packaging": 6,
+   "printed": 11,
+   "occluded": 2
+  }
+ },
+ "J-eval": {
+  "stageJ_groups": 441,
+  "stageJ_images": 485,
+  "j2_added": 202,
+  "total_images": 687,
+  "j2_added_by_label": {
+   "packaging": 63,
+   "occluded": 74,
+   "apple": 28,
+   "citrus": 37
+  },
+  "j2_added_by_source": {
+   "commons_e2": 158,
+   "fruitnet": 44
+  },
+  "stageJ_supported_by_class": {
+   "apple": 67,
+   "banana": 66,
+   "citrus": 53,
+   "tomato": 90,
+   "carrot": 49,
+   "lemon_lime": 7,
+   "guava": 8,
+   "pomegranate": 8
+  },
+  "stageJ_negatives_by_kind": {
+   "unsupported": 61,
+   "packaging": 12,
+   "printed": 15,
+   "occluded": 5
+  }
+ },
+ "audit": {
+  "new_candidates": 907,
+  "kept": 848,
+  "quarantined": 59,
+  "reasons": {
+   "near-dup of an earlier reference set": 22,
+   "near-dup": 22,
+   "within-split near-dup": 8,
+   "a:olgatladi already owned by J-eval": 6,
+   "a:wolfmann already owned by J-eval": 1
+  },
+  "m_test_content_opened": false,
+  "frozen_stageJ_partitions_modified": false,
+  "cross_split_neardups_after_j2": 0
+ }
+}

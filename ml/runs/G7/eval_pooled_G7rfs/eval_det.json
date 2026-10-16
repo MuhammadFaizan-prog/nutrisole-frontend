@@ -1,0 +1,101 @@
+{
+ "model": "/workspace/work/cv/g7models/k_rfs/runs/det_yolo11n_g7_rfs/weights/best.pt",
+ "device": "cpu",
+ "head": "default (one2many + NMS iou 0.7)",
+ "results": [
+  {
+   "split": "pooled",
+   "imgsz": 480,
+   "mAP50": 0.3107,
+   "mAP50_95": 0.2184,
+   "P": 0.4661,
+   "R": 0.3152,
+   "per_class": {
+    "banana": {
+     "P": 0.4608,
+     "R": 0.3305,
+     "mAP50": 0.3052,
+     "mAP50_95": 0.1516,
+     "instances": 5123
+    },
+    "apple": {
+     "P": 0.5647,
+     "R": 0.1788,
+     "mAP50": 0.218,
+     "mAP50_95": 0.1473,
+     "instances": 2148
+    },
+    "mango": {
+     "P": 0.3297,
+     "R": 0.3636,
+     "mAP50": 0.3326,
+     "mAP50_95": 0.2864,
+     "instances": 22
+    },
+    "citrus": {
+     "P": 0.6687,
+     "R": 0.424,
+     "mAP50": 0.4807,
+     "mAP50_95": 0.3278,
+     "instances": 1868
+    },
+    "pomegranate": {
+     "P": 0.5545,
+     "R": 0.6743,
+     "mAP50": 0.6954,
+     "mAP50_95": 0.5605,
+     "instances": 48
+    },
+    "lemon_lime": {
+     "P": 0.2346,
+     "R": 0.0952,
+     "mAP50": 0.0617,
+     "mAP50_95": 0.0514,
+     "instances": 294
+    },
+    "tomato": {
+     "P": 0.3423,
+     "R": 0.3978,
+     "mAP50": 0.3566,
+     "mAP50_95": 0.2316,
+     "instances": 822
+    },
+    "potato": {
+     "P": 0.4512,
+     "R": 0.0738,
+     "mAP50": 0.0884,
+     "mAP50_95": 0.0651,
+     "instances": 366
+    },
+    "cucumber": {
+     "P": 0.5544,
+     "R": 0.3193,
+     "mAP50": 0.3197,
+     "mAP50_95": 0.2305,
+     "instances": 357
+    },
+    "carrot": {
+     "P": 0.4092,
+     "R": 0.3899,
+     "mAP50": 0.3092,
+     "mAP50_95": 0.1675,
+     "instances": 1645
+    },
+    "capsicum": {
+     "P": 0.5572,
+     "R": 0.2196,
+     "mAP50": 0.2506,
+     "mAP50_95": 0.1831,
+     "instances": 510
+    }
+   },
+   "speed_ms": {
+    "preprocess": 0.874639681543203,
+    "inference": 97.46599204704302,
+    "loss": 0.00014963811719922806,
+    "postprocess": 0.7950851688766406
+   },
+   "save_dir": "/workspace/work/nutrisole/runs/detect/ml/runs/G7/eval_pooled_G7rfs/pooled_480"
+  }
+ ]
+}

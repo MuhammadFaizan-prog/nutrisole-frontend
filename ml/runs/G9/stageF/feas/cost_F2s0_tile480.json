@@ -1,0 +1,1 @@
+{"mode": "tile480", "onnx": "F2s0_raw480.onnx", "frames": 84, "p50_ms": 308.5, "p95_ms": 903.4, "peak_rss_mb": 169.8, "threads": 2, "note": "sandbox CPU (2 vCPU), ONNX Runtime; same session for all modes"}

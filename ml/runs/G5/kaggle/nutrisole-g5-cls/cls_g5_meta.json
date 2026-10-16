@@ -1,0 +1,43 @@
+{
+ "torch": "2.11.0+cpu",
+ "ultralytics": "8.4.175",
+ "gpu": "kaggle-cpu",
+ "runs": {
+  "G5_E224_e12_b64_sgd01": {
+   "imgsz": 224,
+   "epochs": 12,
+   "wall_s": 2287.3,
+   "val_full": 0.9964,
+   "val_crop": 0.9927,
+   "val_full_rot": 0.9936,
+   "val_crop_rot": 0.9872,
+   "n_val_full": 275,
+   "n_val_crop": 275,
+   "n_val_full_rot": 156,
+   "n_val_crop_rot": 156,
+   "val_lolo_hard": 0.9727,
+   "val_lolo_hard_rot": 0.9744,
+   "n_val_lolo_hard": 550,
+   "n_val_lolo_hard_rot": 312
+  },
+  "G5_E224_e20_b64_sgd01": {
+   "imgsz": 224,
+   "epochs": 20,
+   "wall_s": 3881.0,
+   "val_full": 0.9964,
+   "val_crop": 0.9964,
+   "val_full_rot": 0.9936,
+   "val_crop_rot": 0.9936,
+   "n_val_full": 275,
+   "n_val_crop": 275,
+   "n_val_full_rot": 156,
+   "n_val_crop_rot": 156,
+   "val_lolo_hard": 0.9764,
+   "val_lolo_hard_rot": 0.9744,
+   "n_val_lolo_hard": 550,
+   "n_val_lolo_hard_rot": 312
+  }
+ },
+ "selected": "G5_E224_e20_b64_sgd01",
+ "total_wall_s": 6235.2
+}

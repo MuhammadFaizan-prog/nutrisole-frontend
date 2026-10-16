@@ -1,0 +1,13 @@
+{
+ "torch": "2.11.0+cu128",
+ "ultralytics": "8.4.175",
+ "gpu": "Tesla T4",
+ "runs": {
+  "cls_q2aug_yolo26n_224": {
+   "wall_s": 215.6
+  },
+  "cls_q3_yolo26n_224_quarantined": {
+   "wall_s": 524.0
+  }
+ }
+}

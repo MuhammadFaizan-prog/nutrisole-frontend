@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "provenance": "AI_ASSISTED_NOT_HUMAN",
+  "review_status": "AI_VISUAL_REVIEW_COMPLETE_HUMAN_VERIFICATION_PENDING",
+  "reviewed_package_images": 335,
+  "contact_sheets_viewed": 17,
+  "native_package_detail_views": 100,
+  "source_originals_viewed": 0,
+  "source_original_download_attempts": 3,
+  "source_original_attempts_http429": 3,
+  "source_context_used": 8,
+  "source_context_ids": [
+    "P632",
+    "P639",
+    "P658",
+    "P729",
+    "P731",
+    "P738",
+    "P756",
+    "P773"
+  ],
+  "review_not_blind": true,
+  "source_metadata_used_as_ground_truth": false,
+  "source_classes_not_automatically_imported": true,
+  "label_counts": {
+    "apple": 44,
+    "banana": 24,
+    "citrus_orange": 37,
+    "tomato": 23,
+    "carrot": 25,
+    "other_produce": 14,
+    "printed_or_screen": 49,
+    "occluded": 0,
+    "uncertain": 119
+  },
+  "subjective_confidence_counts": {
+    "high": 243,
+    "medium": 74,
+    "low": 18
+  },
+  "review_queue_rows": 233,
+  "queue_priority_counts": {
+    "HIGH": 77,
+    "MEDIUM": 65,
+    "LOW": 91
+  },
+  "tag_counts": {
+    "C": 12,
+    "B": 32,
+    "M": 123,
+    "X": 28
+  },
+  "bagged_identifiable_real_produce_ids": [
+    "P531",
+    "P571",
+    "P581",
+    "P602",
+    "P666",
+    "P759",
+    "P773",
+    "P780"
+  ],
+  "potential_occlusion_review_ids": [
+    "P533",
+    "P695",
+    "P729",
+    "P773"
+  ],
+  "source_query_strata_to_ai_labels": {
+    "supported": {
+      "tomato": 19,
+      "citrus_orange": 37,
+      "uncertain": 33,
+      "apple": 42,
+      "printed_or_screen": 19,
+      "carrot": 18,
+      "banana": 23,
+      "other_produce": 7
+    },
+    "occluded": {
+      "printed_or_screen": 24,
+      "uncertain": 42,
+      "other_produce": 3,
+      "tomato": 3,
+      "banana": 1,
+      "apple": 1
+    },
+    "packaging": {
+      "uncertain": 44,
+      "other_produce": 4,
+      "printed_or_screen": 6,
+      "carrot": 7,
+      "tomato": 1,
+      "apple": 1
+    }
+  },
+  "source_query_labels_are_verified_labels": false,
+  "source_original_needed_for_label_review": 83,
+  "human_verified_images": 0,
+  "independent_human_exports_received": 0,
+  "kappa": null,
+  "H3_status": "BLOCKED",
+  "training_started": false,
+  "measured_per_image_seconds": false,
+  "seconds_column_explanation": "0 means not measured; this is not an estimate of human annotation time.",
+  "pack_id": "G9J-pilot2",
+  "pack1_sha256": "ab5d4f31537a9e02410eeefc1380c1efff934232e47f37f1dcfefca7c047ef58",
+  "pack2_sha256": "e5f1543814be40c84024c8ab88c46b1e18c6000028e89e437cd535ac008c4cdf",
+  "base_commit": "095e8004ffbb21cd02efa52bcd88707ca0d2efb2",
+  "assembled_at": "2026-10-15T14:39:41.117715+00:00",
+  "annotation_csv_sha256": "6c17debff4bb545bc8841abc140242d86a1fed86dc303ade4274eac35048d2aa",
+  "annotation_label_fingerprint": "d4ae694f592e234dd255e65ded035a9b1f48aa26827eda7448dc258c0e1599b8"
+}

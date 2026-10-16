@@ -1,0 +1,17 @@
+{
+ "detector": {
+  "pt": "/workspace/work/cv/g8show/show5_s0_12row.pt",
+  "onnx": "/workspace/work/cv/g8show/show5_s0_12row_raw.onnx",
+  "images": 40,
+  "imgsz": 480,
+  "matched_pairs": 130,
+  "class_disagreements": 0,
+  "min_iou": 0.999995598684248,
+  "mean_iou": 0.9999990585413656,
+  "max_dconf": 5.811452865600586e-06,
+  "mean_dconf": 6.095721171452449e-07,
+  "unmatched_beyond_tolerance": 0,
+  "unmatched_near_threshold": 0,
+  "pass": true
+ }
+}

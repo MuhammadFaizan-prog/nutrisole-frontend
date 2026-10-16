@@ -1,0 +1,43 @@
+{
+ "images": "/tmp/nsdata2/neg/images/neg_test",
+ "n": 80,
+ "score_threshold": 0.35,
+ "imgsz": 320,
+ "device": "cpu",
+ "results": {
+  "/workspace/work/nutrisole/ml/runs/G1/det_yolo26n_320/weights/best.pt": {
+   "images_with_false_alarm": 2,
+   "fa_image_rate": 0.025,
+   "boxes_per_image": 0.025,
+   "classes": {
+    "carrot": 1,
+    "citrus": 1
+   }
+  },
+  "/workspace/work/nutrisole/ml/runs/G1/det_yolo26n_320/weights/best.pt [one2one]": {
+   "images_with_false_alarm": 2,
+   "fa_image_rate": 0.025,
+   "boxes_per_image": 0.025,
+   "classes": {
+    "apple": 1,
+    "tomato": 1
+   }
+  },
+  "/workspace/work/nutrisole/ml/runs/G2/kaggle_det_yolo26n_640/runs/det_yolo26n_640/weights/best.pt": {
+   "images_with_false_alarm": 3,
+   "fa_image_rate": 0.0375,
+   "boxes_per_image": 0.037,
+   "classes": {
+    "apple": 3
+   }
+  },
+  "/workspace/work/nutrisole/ml/runs/G2/kaggle_det_yolo26n_640/runs/det_yolo26n_640/weights/best.pt [one2one]": {
+   "images_with_false_alarm": 3,
+   "fa_image_rate": 0.0375,
+   "boxes_per_image": 0.05,
+   "classes": {
+    "apple": 4
+   }
+  }
+ }
+}

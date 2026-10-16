@@ -1,0 +1,42 @@
+{
+ "reviewed_by": "Faizi",
+ "at": "2026-10-13 23:49 PKT",
+ "flip_to_positive": [
+  3,
+  4,
+  11,
+  18,
+  19
+ ],
+ "pending_video_review": [
+  9,
+  23,
+  31
+ ],
+ "negatives_reviewed_tiles_false": [
+  6,
+  7,
+  10,
+  12,
+  14,
+  15,
+  17,
+  20,
+  26,
+  27,
+  29,
+  30,
+  33,
+  34
+ ],
+ "negatives_zero_hits": [
+  13,
+  32
+ ],
+ "excluded_uncertain": [
+  8,
+  28
+ ],
+ "caveat": "Top-4 moments per clip only; remaining detector moments unreviewed. Negatives are 'no supported produce found in reviewed moments', not certified full-clip absence.",
+ "hard_negative_sources": "clothing, umbrellas, signs, printed produce images, packaging, sacks, equipment, oil-palm fruit, melons, green chilies"
+}

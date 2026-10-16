@@ -1,0 +1,86 @@
+{
+ "classes": [
+  "unripe",
+  "ripe",
+  "overripe"
+ ],
+ "sources": {
+  "kaggle_cc0": {
+   "id": "asadullahprl/fruits-ripeness-classification-dataset",
+   "licence": "CC0",
+   "n_train_pool": 3658,
+   "n_test": 180,
+   "fruit_tokens": {
+    "apple": 675,
+    "banana": 1052,
+    "mango": 1102,
+    "orange": 243,
+    "tomato": 586
+   },
+   "test_near_dup_in_train": 17
+  }
+ },
+ "notes": [
+  "banana external test failed: JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+  "tomato external test failed: JSONDecodeError('Expecting value: line 1 column 1 (char 0)')"
+ ],
+ "eval": {
+  "val": {
+   "n": 548,
+   "acc": 0.9726,
+   "recall": {
+    "unripe": 0.9603,
+    "ripe": 0.9852,
+    "overripe": 0.0
+   },
+   "confusion": {
+    "unripe": {
+     "unripe": 266,
+     "ripe": 11,
+     "overripe": 0
+    },
+    "ripe": {
+     "unripe": 4,
+     "ripe": 267,
+     "overripe": 0
+    },
+    "overripe": {
+     "unripe": 0,
+     "ripe": 0,
+     "overripe": 0
+    }
+   }
+  },
+  "test_cc0": {
+   "n": 180,
+   "acc": 0.6611,
+   "recall": {
+    "unripe": 0.9833,
+    "ripe": 1.0,
+    "overripe": 0.0
+   },
+   "confusion": {
+    "unripe": {
+     "unripe": 59,
+     "ripe": 1,
+     "overripe": 0
+    },
+    "ripe": {
+     "unripe": 0,
+     "ripe": 60,
+     "overripe": 0
+    },
+    "overripe": {
+     "unripe": 1,
+     "ripe": 59,
+     "overripe": 0
+    }
+   }
+  }
+ },
+ "device": "kaggle-cpu",
+ "imgsz": 224,
+ "model": "yolo11n-cls",
+ "onnx": true,
+ "wall_s": 3558.2
+}

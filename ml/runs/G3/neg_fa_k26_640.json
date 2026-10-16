@@ -1,0 +1,25 @@
+{
+ "images": "/workspace/work/cv/g3data/det_v3/neg/images/neg_test",
+ "n": 80,
+ "score_threshold": 0.35,
+ "imgsz": 640,
+ "device": "cpu",
+ "results": {
+  "/workspace/work/nutrisole/ml/runs/G3/kaggle/nutrisole-g3-det-yolo26n-640/runs/det_yolo26n_640/weights/best.pt": {
+   "images_with_false_alarm": 2,
+   "fa_image_rate": 0.025,
+   "boxes_per_image": 0.025,
+   "classes": {
+    "apple": 2
+   }
+  },
+  "/workspace/work/nutrisole/ml/runs/G3/kaggle/nutrisole-g3-det-yolo26n-640/runs/det_yolo26n_640/weights/best.pt [one2one]": {
+   "images_with_false_alarm": 2,
+   "fa_image_rate": 0.025,
+   "boxes_per_image": 0.025,
+   "classes": {
+    "apple": 2
+   }
+  }
+ }
+}

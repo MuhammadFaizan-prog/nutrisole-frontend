@@ -1,0 +1,51 @@
+{
+ "images": {
+  "train": 70,
+  "dev": 10,
+  "rejected": 8
+ },
+ "sources_used": 70,
+ "val_sources": 10,
+ "boxes_by_class": {
+  "train": {
+   "citrus": 809,
+   "lemon_lime": 119,
+   "apple": 251,
+   "mango": 306,
+   "banana": 146,
+   "tomato": 903,
+   "potato": 129,
+   "carrot": 458,
+   "cucumber": 102,
+   "capsicum": 208,
+   "guava": 40,
+   "pomegranate": 65
+  },
+  "dev": {
+   "lemon_lime": 81,
+   "citrus": 114,
+   "mango": 27,
+   "apple": 3,
+   "banana": 1,
+   "potato": 25,
+   "tomato": 205,
+   "cucumber": 47,
+   "guava": 38
+  }
+ },
+ "box_free_images": {
+  "train": 20,
+  "dev": 3
+ },
+ "licences": {
+  "CC BY-SA 4.0": 45,
+  "CC BY-SA 3.0": 13,
+  "CC BY 2.0": 3,
+  "CC0": 8,
+  "CC BY-SA 2.0": 4,
+  "CC BY 4.0": 4,
+  "CC BY 2.5": 1,
+  "Public domain": 2
+ },
+ "max_images_per_source": 4
+}

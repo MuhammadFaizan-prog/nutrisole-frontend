@@ -1,0 +1,73 @@
+{
+ "cases": [
+  {
+   "title": "1. Occluded apple",
+   "subtitle": "CU-check apple cu0130, 192 px crop, occluder 'hand_2' (synthetic). Same crop on both sides.",
+   "img_h0": "/workspace/work/g9h/occ/crops/0130_192_hand_2.png",
+   "img_h": "/workspace/work/g9h/occ/crops/0130_192_hand_2.png",
+   "h0_bad": true,
+   "h0": [
+    "Apple - grade Reject shown",
+    "Passed every Stage G check: size, blur, light, visible surface, confidence"
+   ],
+   "h": [
+    "Not graded",
+    "Reason: outline_incomplete",
+    "Category reference price only"
+   ]
+  },
+  {
+   "title": "2. Wrong identity",
+   "subtitle": "CU-check cu0130 (true: apple). Stage G move-closer simulation named it citrus.",
+   "img_h0": "/workspace/work/g9h/ident/cu_cu0130.png",
+   "img_h": "/workspace/work/g9h/ident/cu_cu0130.png",
+   "h0_bad": true,
+   "h0": [
+    "Citrus - grade Reject shown",
+    "Grade issued on a wrong identity (true: apple)"
+   ],
+   "h": [
+    "Unable to identify",
+    "Close-up check: potato p=0.38; reason: close_up_uncertain",
+    "No grade, no price"
+   ]
+  },
+  {
+   "title": "3. Unsupported item",
+   "subtitle": "h01683 (unsupported: Peppers in water.jpg)",
+   "img_h0": "/workspace/work/g9h/ident/heval_h01683.png",
+   "img_h": "/workspace/work/g9h/ident/heval_h01683.png",
+   "h0_bad": true,
+   "h0": [
+    "Identified as banana - graded",
+    "Name and category price shown for an item we do not support"
+   ],
+   "h": [
+    "Unable to identify",
+    "Reason: close_up_unknown",
+    "No name, no grade, no price"
+   ]
+  },
+  {
+   "title": "4. User-confirm fallback",
+   "subtitle": "cu0127 (true: apple). Not verified automatically (not_identified_wide).",
+   "img_h0": "/workspace/work/g9h/ident/cu_cu0127.png",
+   "img_h": "/workspace/work/g9h/ident/cu_cu0127.png",
+   "h0_bad": true,
+   "h0": [
+    "Unable to identify",
+    "No way for the user to help"
+   ],
+   "h": [
+    "Unable to identify -> 'Is this: Apple / Carrot / something else?'",
+    "User taps Apple -> 'Apple (confirmed by you)'",
+    "Category reference price only; quality not checked; not counted as accuracy"
+   ]
+  }
+ ],
+ "credits": [
+  "cu0127: File:Apple fruit rot disease with insect damage on the ground by baby-bear.org Natalka Ukraine.jpg (CC BY 4.0, Natalka Ukraine (baby-bear.org))",
+  "cu0130: File:Monilinia fructigena brown rot on fallen apple in Ukraine by baby-bear.org Natalka Ukraine.jpg (CC BY 4.0, Natalka Ukraine (baby-bear.org))",
+  "h01683: File:Peppers in water.jpg (CC0, ulleo)"
+ ]
+}

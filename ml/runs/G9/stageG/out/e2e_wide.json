@@ -1,0 +1,202 @@
+{
+ "det_clip": {
+  "frames": 1737,
+  "minutes": 1.93,
+  "positive_segments": 24,
+  "gt_object_frames": 9774,
+  "frame_level": {
+   "g3": {
+    "correct": 4031,
+    "false": 1051
+   },
+   "policy": {
+    "correct": 3334,
+    "false": 636,
+    "unable_frames": 689
+   }
+  },
+  "gt_recall_frames": {
+   "g3": 0.41,
+   "policy": 0.353
+  },
+  "id_precision_frames": {
+   "g3": 0.793,
+   "policy": 0.84
+  },
+  "segments_identified": {
+   "g3": 0.792,
+   "policy": 0.667
+  },
+  "time_to_id_ms": {
+   "g3": {
+    "p50": 400,
+    "p95": 1007,
+    "n": 19
+   },
+   "policy": {
+    "p50": 500,
+    "p95": 750,
+    "n": 16
+   }
+  },
+  "false_id_tracks": {
+   "g3": 98,
+   "policy": 42
+  },
+  "false_id_tracks_per_min": {
+   "g3": 50.78,
+   "policy": 21.76
+  },
+  "det_ms": {
+   "p50": 46.4,
+   "p95": 85.2,
+   "n": 1737
+  }
+ },
+ "quality_clip": {
+  "frames": 1161,
+  "minutes": 1.29,
+  "positive_segments": 16,
+  "gt_object_frames": 923,
+  "frame_level": {
+   "g3": {
+    "correct": 521,
+    "false": 873
+   },
+   "policy": {
+    "correct": 472,
+    "false": 637,
+    "unable_frames": 155
+   }
+  },
+  "gt_recall_frames": {
+   "g3": 0.506,
+   "policy": 0.459
+  },
+  "id_precision_frames": {
+   "g3": 0.374,
+   "policy": 0.426
+  },
+  "segments_identified": {
+   "g3": 0.688,
+   "policy": 0.625
+  },
+  "time_to_id_ms": {
+   "g3": {
+    "p50": 333,
+    "p95": 3133,
+    "n": 11
+   },
+   "policy": {
+    "p50": 433,
+    "p95": 2200,
+    "n": 10
+   }
+  },
+  "false_id_tracks": {
+   "g3": 56,
+   "policy": 34
+  },
+  "false_id_tracks_per_min": {
+   "g3": 43.41,
+   "policy": 26.36
+  },
+  "det_ms": {
+   "p50": 76.6,
+   "p95": 102.2,
+   "n": 1161
+  }
+ },
+ "neg_clip": {
+  "frames": 1812,
+  "minutes": 2.01,
+  "positive_segments": 0,
+  "gt_object_frames": 0,
+  "frame_level": {
+   "g3": {
+    "correct": 0,
+    "false": 9
+   },
+   "policy": {
+    "correct": 0,
+    "false": 3,
+    "unable_frames": 0
+   }
+  },
+  "gt_recall_frames": {
+   "g3": null,
+   "policy": null
+  },
+  "id_precision_frames": {
+   "g3": 0.0,
+   "policy": 0.0
+  },
+  "segments_identified": {
+   "g3": null,
+   "policy": null
+  },
+  "time_to_id_ms": {
+   "g3": null,
+   "policy": null
+  },
+  "false_id_tracks": {
+   "g3": 3,
+   "policy": 1
+  },
+  "false_id_tracks_per_min": {
+   "g3": 1.49,
+   "policy": 0.5
+  },
+  "det_ms": {
+   "p50": 46.3,
+   "p95": 82.6,
+   "n": 1812
+  }
+ },
+ "devneg_clip": {
+  "frames": 3600,
+  "minutes": 4.0,
+  "positive_segments": 0,
+  "gt_object_frames": 0,
+  "frame_level": {
+   "g3": {
+    "correct": 0,
+    "false": 9
+   },
+   "policy": {
+    "correct": 0,
+    "false": 3,
+    "unable_frames": 0
+   }
+  },
+  "gt_recall_frames": {
+   "g3": null,
+   "policy": null
+  },
+  "id_precision_frames": {
+   "g3": 0.0,
+   "policy": 0.0
+  },
+  "segments_identified": {
+   "g3": null,
+   "policy": null
+  },
+  "time_to_id_ms": {
+   "g3": null,
+   "policy": null
+  },
+  "false_id_tracks": {
+   "g3": 3,
+   "policy": 1
+  },
+  "false_id_tracks_per_min": {
+   "g3": 0.75,
+   "policy": 0.25
+  },
+  "det_ms": {
+   "p50": 45.6,
+   "p95": 76.2,
+   "n": 3600
+  }
+ }
+}

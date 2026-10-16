@@ -1,0 +1,85 @@
+{
+ "zips": {
+  "NutriSole_G9J_ANNOTATOR_A.zip": {
+   "sha_ok": true,
+   "members_ok": true
+  },
+  "NutriSole_G9J_ANNOTATOR_A_training.zip": {
+   "sha_ok": true,
+   "members_ok": true
+  },
+  "NutriSole_G9J_ANNOTATOR_B.zip": {
+   "sha_ok": true,
+   "members_ok": true
+  },
+  "NutriSole_G9J_ANNOTATOR_B_training.zip": {
+   "sha_ok": true,
+   "members_ok": true
+  },
+  "NutriSole_G9J_TEAM_PHOTOS.zip": {
+   "sha_ok": true,
+   "members_ok": true
+  },
+  "NutriSole_G9J_ADJUDICATOR.zip": {
+   "sha_ok": true,
+   "members_ok": true
+  },
+  "NutriSole_G9J_ADJUDICATOR_AI_POSTHOC_release_after_exports.zip": {
+   "sha_ok": true,
+   "members_ok": true
+  }
+ },
+ "inner_packs": {
+  "nutrisole_G9J_pilot_annotator1.zip": {
+   "sha_ok": true,
+   "items": 265,
+   "items_expected": 265
+  },
+  "nutrisole_G9J_pilot2_annotator1.zip": {
+   "sha_ok": true,
+   "items": 335,
+   "items_expected": 335
+  },
+  "nutrisole_G9J_train_annotator1.zip": {
+   "sha_ok": true,
+   "items": 461,
+   "items_expected": 461
+  },
+  "nutrisole_G9J_train2_annotator1.zip": {
+   "sha_ok": true,
+   "items": 646,
+   "items_expected": 646
+  },
+  "nutrisole_G9J_pilot_annotator2.zip": {
+   "sha_ok": true,
+   "items": 265,
+   "items_expected": 265
+  },
+  "nutrisole_G9J_pilot2_annotator2.zip": {
+   "sha_ok": true,
+   "items": 335,
+   "items_expected": 335
+  },
+  "nutrisole_G9J_train_annotator2.zip": {
+   "sha_ok": true,
+   "items": 461,
+   "items_expected": 461
+  },
+  "nutrisole_G9J_train2_annotator2.zip": {
+   "sha_ok": true,
+   "items": 646,
+   "items_expected": 646
+  }
+ },
+ "ai_leak": {
+  "NutriSole_G9J_ANNOTATOR_A.zip": "clean",
+  "NutriSole_G9J_ANNOTATOR_A_training.zip": "clean",
+  "NutriSole_G9J_ANNOTATOR_B.zip": "clean",
+  "NutriSole_G9J_ANNOTATOR_B_training.zip": "clean",
+  "NutriSole_G9J_TEAM_PHOTOS.zip": "clean",
+  "NutriSole_G9J_ADJUDICATOR.zip": "instruction-text only (expected)"
+ },
+ "manifest_copy": true,
+ "failures": [],
+ "result": "PASS"
+}

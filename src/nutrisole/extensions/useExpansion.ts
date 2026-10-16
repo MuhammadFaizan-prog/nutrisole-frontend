@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { initialExpansionState, type ExpansionState, type Reading } from './model';
+import { initialExpansionState, DEMO_LABEL, DEMO_PLACEHOLDER, type ExpansionState, type Reading } from './model';
 import { accountError, assistantReply, mealResult, readingResult, saveReading, validMeasurementDate } from './domain';
 import type { AppRoute, Sheet } from '../types';
 export function useExpansion() {
@@ -26,7 +26,7 @@ export function useExpansion() {
       case 'terms': return notice('Terms & Privacy', 'This local frontend uses synthetic records and keeps new entries in memory for this session. No account, health-provider connection or external processing is created.');
       case 'resend': return notice('Resend link', 'No email is sent in this frontend demo. Preview the verification flow below.', [{ label: 'Preview verified link', action: () => go('sign-in') }, { label: 'Preview expired link', action: () => notice('Link expired', 'Request a fresh verification link or use another email.') }]);
       case 'verify-demo': return notice('Verification preview', 'A real email application is not connected. Choose a demo link state.', [{ label: 'Valid link · Continue', action: () => go('sign-in') }, { label: 'Expired link', action: () => notice('Link expired', 'Return and choose Resend link.') }]);
-      case 'evidence': return notice('Assessment evidence', 'Sample visible colour: even red. Shape: whole apple. Surface: minor marks. Confidence: 97%. Model v1.0 · Rubric v1.0. The original prediction stays Apple even if you choose another food. A photo cannot determine food safety.', [{ label: 'Correct food label', action: () => go('food-selector') }, { label: 'Report assessment', action: () => go('report-output') }]);
+      case 'evidence': return notice(`Assessment evidence · ${DEMO_LABEL}`, `Sample visible colour: even red. Shape: whole apple. Surface: minor marks. ${DEMO_PLACEHOLDER.note} The sample stays labelled Apple even if you choose another food. A photo cannot determine food safety.`, [{ label: 'Correct food label', action: () => go('food-selector') }, { label: 'Report assessment', action: () => go('report-output') }]);
       case 'market': return choose('Choose a market', 'market', ['Local retail · Demo', 'Wholesale · Demo', 'Online · Demo']);
       case 'unit-market': return notice('Market comparison unit', 'Per kg is the comparison unit for this demo entry. No verified market observations are available.');
       case 'choose-photo': return notice('Choose a sample photo', 'This frontend previews upload outcomes without uploading a file.', [{ label: 'Clear single apple · Review', action: () => go('analysis-result') }, { label: 'Blurred photo · Try again', action: () => go('capture-retry') }, { label: 'Multiple items', action: () => notice('Frame one item', 'Select one supported produce item before retrying.') }, { label: 'Unsupported or corrupt file', action: () => notice('Cannot use this photo', 'Use a supported image below 10 MB and try again.') }]);

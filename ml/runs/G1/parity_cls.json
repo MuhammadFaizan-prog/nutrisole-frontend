@@ -1,0 +1,13 @@
+{
+ "classifier": {
+  "pt": "/workspace/work/nutrisole/ml/runs/G1/cls_q2_yolo26n_192/weights/best.pt",
+  "onnx": "/workspace/work/cv/g1models/cls_q2_yolo26n_192.onnx",
+  "images": 39,
+  "imgsz": 192,
+  "max_abs_prob_diff": 1.7285346984863281e-06,
+  "mean_abs_prob_diff": 7.075728113681733e-08,
+  "top1_disagreements": 0,
+  "note": "same tensor fed to PyTorch module and ONNX (cls_preprocess = app crop preprocessing)",
+  "pass": true
+ }
+}

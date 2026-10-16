@@ -1,0 +1,48 @@
+{
+ "rule": "(unchanged from G2, written before G3 results): per model, the smallest imgsz whose\ntest_rf mAP50 is within 0.03 of that model's best test_rf mAP50; the candidate is the model with the\nhigher test_rf mAP50 at its deploy size.",
+ "per_model": {
+  "det_yolo11n_480ms": {
+   "deploy_imgsz": 384,
+   "test_rf_mAP50": 0.36,
+   "best_test_rf": 0.36,
+   "weights": "/workspace/work/nutrisole/ml/runs/G3/kaggle/nutrisole-g3-det-yolo11n-480ms/runs/det_yolo11n_480ms/weights/best.pt",
+   "train_wall_s": 2677.0,
+   "data_counts": {
+    "train": 3562,
+    "val": 402,
+    "test": 557,
+    "test_rf": 149,
+    "test_oiv7": 123
+   }
+  },
+  "det_yolo11n_640": {
+   "deploy_imgsz": 480,
+   "test_rf_mAP50": 0.3556,
+   "best_test_rf": 0.3737,
+   "weights": "/workspace/work/nutrisole/ml/runs/G3/kaggle/nutrisole-g3-det-yolo11n-640/runs/det_yolo11n_640/weights/best.pt",
+   "train_wall_s": 3056.4,
+   "data_counts": {
+    "train": 3562,
+    "val": 402,
+    "test": 557,
+    "test_rf": 149,
+    "test_oiv7": 123
+   }
+  },
+  "det_yolo26n_640": {
+   "deploy_imgsz": 640,
+   "test_rf_mAP50": 0.3567,
+   "best_test_rf": 0.3567,
+   "weights": "/workspace/work/nutrisole/ml/runs/G3/kaggle/nutrisole-g3-det-yolo26n-640/runs/det_yolo26n_640/weights/best.pt",
+   "train_wall_s": 4152.9,
+   "data_counts": {
+    "train": 3562,
+    "val": 402,
+    "test": 557,
+    "test_rf": 149,
+    "test_oiv7": 123
+   }
+  }
+ },
+ "candidate": "det_yolo11n_480ms"
+}

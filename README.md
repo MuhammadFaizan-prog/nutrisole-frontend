@@ -12,6 +12,8 @@ This repository contains the runnable web frontend, a plain React Native Android
 
 The app is a **frontend demonstration with synthetic data**. Authentication, food recognition, camera capture, health connections, prices, notifications, and staff permissions are simulated. Original demo edits may persist in the current browser; expanded-flow records reset on reload. Deploying the app does not add a backend or synchronize data across users.
 
+**Computer vision (in progress, FYP scope).** Real-time on-device produce detection and visible-quality grading is now in scope (see `PRD.md`). The training, evaluation and grading code lives in `ml/`, the plan/evidence in `docs/cv/` (start at `docs/cv/DASHBOARD.md`), and the pure-TypeScript pipeline (contract, letterbox/cover maths, tracker, rules) in `native/src/cv/`. The shipped Scan screen is still the static demo: no camera library or model is bundled until a model passes the gauntlet gates. Python checks: `python -m pytest ml/grading/tests` (from `ml/` add it to `PYTHONPATH` or run inside `ml/`).
+
 ## Screens and interactions
 
 The six reference screens remain intact: onboarding, home, scan, log meal, weekly plan, and profile/preferences. Thirty additional concepts and two supporting routes extend the prototype.

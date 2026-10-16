@@ -1,0 +1,17 @@
+{
+ "detector": {
+  "pt": "/workspace/work/cv/g7models/k_rfs/runs/det_yolo11n_g7_rfs/weights/best.pt",
+  "onnx": "/workspace/work/cv/g7models/G7rfs/det_yolo11n_g7_rfs_raw.onnx",
+  "images": 40,
+  "imgsz": 480,
+  "matched_pairs": 451,
+  "class_disagreements": 0,
+  "min_iou": 0.9999928163522269,
+  "mean_iou": 0.9999988997766354,
+  "max_dconf": 3.0994415283203125e-06,
+  "mean_dconf": 3.610640565994838e-07,
+  "unmatched_beyond_tolerance": 0,
+  "unmatched_near_threshold": 0,
+  "pass": true
+ }
+}

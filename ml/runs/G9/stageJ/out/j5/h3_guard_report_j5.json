@@ -1,0 +1,12 @@
+{
+ "ready": false,
+ "gates": {},
+ "problems": [
+  "no h3_inputs.json: no verified human manifests yet"
+ ],
+ "manifests": {},
+ "training_go_problems": [
+  "no user training-go file at /workspace/work/nutrisole/ml/runs/G9/stageJ/h3/USER_TRAINING_GO.json (the user must write it; the agent never does)"
+ ],
+ "verdict": "REFUSED"
+}

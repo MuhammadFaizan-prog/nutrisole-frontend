@@ -1,0 +1,17 @@
+{
+ "detector": {
+  "pt": "ml/runs/G1/det_yolo26n_320/weights/best.pt",
+  "onnx": "/workspace/work/cv/g1models/det_yolo26n_320_e2e.onnx",
+  "images": 40,
+  "imgsz": 320,
+  "matched_pairs": 68,
+  "class_disagreements": 0,
+  "min_iou": 0.9999975859589665,
+  "mean_iou": 0.999999267174244,
+  "max_dconf": 6.4373016357421875e-06,
+  "mean_dconf": 6.880830315982595e-07,
+  "unmatched_beyond_tolerance": 0,
+  "unmatched_near_threshold": 0,
+  "pass": true
+ }
+}

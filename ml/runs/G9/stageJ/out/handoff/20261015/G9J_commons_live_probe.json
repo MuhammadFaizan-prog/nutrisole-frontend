@@ -1,0 +1,6 @@
+{
+  "key": "c0350",
+  "source_url": "https://commons.wikimedia.org/wiki/File%3ARadishes-6997_-_Hans_Braxmeier.jpg",
+  "status": "NOT_VERIFIED_NETWORK_ERROR",
+  "error": "('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
+}

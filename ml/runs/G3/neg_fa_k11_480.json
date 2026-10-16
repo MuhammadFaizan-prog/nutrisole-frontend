@@ -1,0 +1,18 @@
+{
+ "images": "/workspace/work/cv/g3data/det_v3/neg/images/neg_test",
+ "n": 80,
+ "score_threshold": 0.35,
+ "imgsz": 480,
+ "device": "cpu",
+ "results": {
+  "/workspace/work/nutrisole/ml/runs/G3/kaggle/nutrisole-g3-det-yolo11n-640/runs/det_yolo11n_640/weights/best.pt": {
+   "images_with_false_alarm": 2,
+   "fa_image_rate": 0.025,
+   "boxes_per_image": 0.025,
+   "classes": {
+    "apple": 1,
+    "pomegranate": 1
+   }
+  }
+ }
+}

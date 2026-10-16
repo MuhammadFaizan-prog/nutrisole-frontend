@@ -1,0 +1,709 @@
+{
+ "A0": {
+  "neg_raw_detector": {
+   "boxes": 15,
+   "boxes_per_min": 3.75,
+   "frames_with_box": 15,
+   "frames": 3600,
+   "by_class": {
+    "banana": 10,
+    "capsicum": 5
+   }
+  },
+  "neg_post_tracking": {
+   "displayed_tracks": 3,
+   "fa_min": 0.75,
+   "frames_with_displayed_box": 9,
+   "life_mean_s": 0.2,
+   "by_class": {
+    "banana": 2,
+    "capsicum": 1
+   }
+  },
+  "det_raw_detector": {
+   "boxes_per_min": 2803.63,
+   "frames_with_box_frac": 0.6287
+  },
+  "det_post_tracking": {
+   "frame_acc": 0.4365,
+   "segment_acc": 0.5417,
+   "id_switches": 68
+  },
+  "ttfc": {
+   "from_segment_start": {
+    "p50": 533.0,
+    "p90": 733.0,
+    "n": 15
+   },
+   "from_first_visibility": {
+    "p50": 467.0,
+    "p90": 706.6,
+    "n": 15
+   },
+   "per_segment": [
+    {
+     "seg": 0,
+     "cls": "banana",
+     "seg_start_ms": 600,
+     "first_visible_ms": 933,
+     "ttfc_from_seg_start_ms": 733,
+     "ttfc_from_first_visible_ms": 400
+    },
+    {
+     "seg": 1,
+     "cls": "apple",
+     "seg_start_ms": 5400,
+     "first_visible_ms": 5400,
+     "ttfc_from_seg_start_ms": 467,
+     "ttfc_from_first_visible_ms": 467
+    },
+    {
+     "seg": 2,
+     "cls": "citrus",
+     "seg_start_ms": 10200,
+     "first_visible_ms": 10267,
+     "ttfc_from_seg_start_ms": 200,
+     "ttfc_from_first_visible_ms": 133
+    },
+    {
+     "seg": 3,
+     "cls": "tomato",
+     "seg_start_ms": 15000,
+     "first_visible_ms": 15000,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 4,
+     "cls": "potato",
+     "seg_start_ms": 19800,
+     "first_visible_ms": 19800,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 5,
+     "cls": "cucumber",
+     "seg_start_ms": 24600,
+     "first_visible_ms": 24600,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 6,
+     "cls": "carrot",
+     "seg_start_ms": 29400,
+     "first_visible_ms": 29400,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 7,
+     "cls": "capsicum",
+     "seg_start_ms": 34200,
+     "first_visible_ms": 34200,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 8,
+     "cls": "banana",
+     "seg_start_ms": 39000,
+     "first_visible_ms": 39000,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 9,
+     "cls": "apple",
+     "seg_start_ms": 43800,
+     "first_visible_ms": 43800,
+     "ttfc_from_seg_start_ms": 133,
+     "ttfc_from_first_visible_ms": 133
+    },
+    {
+     "seg": 10,
+     "cls": "citrus",
+     "seg_start_ms": 48600,
+     "first_visible_ms": 48600,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 11,
+     "cls": "carrot",
+     "seg_start_ms": 53400,
+     "first_visible_ms": 53400,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 12,
+     "cls": "banana",
+     "seg_start_ms": 58200,
+     "first_visible_ms": 58333,
+     "ttfc_from_seg_start_ms": 333,
+     "ttfc_from_first_visible_ms": 200
+    },
+    {
+     "seg": 13,
+     "cls": "apple",
+     "seg_start_ms": 63000,
+     "first_visible_ms": 63000,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 14,
+     "cls": "citrus",
+     "seg_start_ms": 67800,
+     "first_visible_ms": 67800,
+     "ttfc_from_seg_start_ms": 333,
+     "ttfc_from_first_visible_ms": 333
+    },
+    {
+     "seg": 15,
+     "cls": "carrot",
+     "seg_start_ms": 72600,
+     "first_visible_ms": 72600,
+     "ttfc_from_seg_start_ms": 533,
+     "ttfc_from_first_visible_ms": 533
+    },
+    {
+     "seg": 16,
+     "cls": "banana",
+     "seg_start_ms": 77400,
+     "first_visible_ms": 77400,
+     "ttfc_from_seg_start_ms": 533,
+     "ttfc_from_first_visible_ms": 533
+    },
+    {
+     "seg": 17,
+     "cls": "apple",
+     "seg_start_ms": 82200,
+     "first_visible_ms": 82200,
+     "ttfc_from_seg_start_ms": 667,
+     "ttfc_from_first_visible_ms": 667
+    },
+    {
+     "seg": 18,
+     "cls": "citrus",
+     "seg_start_ms": 87000,
+     "first_visible_ms": 87000,
+     "ttfc_from_seg_start_ms": 200,
+     "ttfc_from_first_visible_ms": 200
+    },
+    {
+     "seg": 19,
+     "cls": "carrot",
+     "seg_start_ms": 91800,
+     "first_visible_ms": 91800,
+     "ttfc_from_seg_start_ms": 667,
+     "ttfc_from_first_visible_ms": 667
+    },
+    {
+     "seg": 20,
+     "cls": "banana",
+     "seg_start_ms": 96600,
+     "first_visible_ms": 96600,
+     "ttfc_from_seg_start_ms": 600,
+     "ttfc_from_first_visible_ms": 600
+    },
+    {
+     "seg": 21,
+     "cls": "citrus",
+     "seg_start_ms": 101400,
+     "first_visible_ms": 101400,
+     "ttfc_from_seg_start_ms": 800,
+     "ttfc_from_first_visible_ms": 800
+    },
+    {
+     "seg": 22,
+     "cls": "banana",
+     "seg_start_ms": 106200,
+     "first_visible_ms": 106200,
+     "ttfc_from_seg_start_ms": 733,
+     "ttfc_from_first_visible_ms": 733
+    },
+    {
+     "seg": 23,
+     "cls": "banana",
+     "seg_start_ms": 111000,
+     "first_visible_ms": 111000,
+     "ttfc_from_seg_start_ms": 267,
+     "ttfc_from_first_visible_ms": 267
+    }
+   ]
+  }
+ },
+ "A1": {
+  "neg_raw_detector": {
+   "boxes": 8,
+   "boxes_per_min": 2.0,
+   "frames_with_box": 8,
+   "frames": 3600,
+   "by_class": {
+    "banana": 8
+   }
+  },
+  "neg_post_tracking": {
+   "displayed_tracks": 1,
+   "fa_min": 0.25,
+   "frames_with_displayed_box": 5,
+   "life_mean_s": 0.333,
+   "by_class": {
+    "banana": 1
+   }
+  },
+  "det_raw_detector": {
+   "boxes_per_min": 2505.7,
+   "frames_with_box_frac": 0.6045
+  },
+  "det_post_tracking": {
+   "frame_acc": 0.4029,
+   "segment_acc": 0.5417,
+   "id_switches": 34
+  },
+  "ttfc": {
+   "from_segment_start": {
+    "p50": 400.0,
+    "p90": 1013.1999999999998,
+    "n": 15
+   },
+   "from_first_visibility": {
+    "p50": 400.0,
+    "p90": 1013.1999999999998,
+    "n": 15
+   },
+   "per_segment": [
+    {
+     "seg": 0,
+     "cls": "banana",
+     "seg_start_ms": 600,
+     "first_visible_ms": 933,
+     "ttfc_from_seg_start_ms": 733,
+     "ttfc_from_first_visible_ms": 400
+    },
+    {
+     "seg": 1,
+     "cls": "apple",
+     "seg_start_ms": 5400,
+     "first_visible_ms": 5400,
+     "ttfc_from_seg_start_ms": 467,
+     "ttfc_from_first_visible_ms": 467
+    },
+    {
+     "seg": 2,
+     "cls": "citrus",
+     "seg_start_ms": 10200,
+     "first_visible_ms": 10267,
+     "ttfc_from_seg_start_ms": 267,
+     "ttfc_from_first_visible_ms": 200
+    },
+    {
+     "seg": 3,
+     "cls": "tomato",
+     "seg_start_ms": 15000,
+     "first_visible_ms": 15000,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 4,
+     "cls": "potato",
+     "seg_start_ms": 19800,
+     "first_visible_ms": 19800,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 5,
+     "cls": "cucumber",
+     "seg_start_ms": 24600,
+     "first_visible_ms": 24600,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 6,
+     "cls": "carrot",
+     "seg_start_ms": 29400,
+     "first_visible_ms": 29400,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 7,
+     "cls": "capsicum",
+     "seg_start_ms": 34200,
+     "first_visible_ms": 34200,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 8,
+     "cls": "banana",
+     "seg_start_ms": 39000,
+     "first_visible_ms": 39000,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 9,
+     "cls": "apple",
+     "seg_start_ms": 43800,
+     "first_visible_ms": 43800,
+     "ttfc_from_seg_start_ms": 133,
+     "ttfc_from_first_visible_ms": 133
+    },
+    {
+     "seg": 10,
+     "cls": "citrus",
+     "seg_start_ms": 48600,
+     "first_visible_ms": 48600,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 11,
+     "cls": "carrot",
+     "seg_start_ms": 53400,
+     "first_visible_ms": 53400,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 12,
+     "cls": "banana",
+     "seg_start_ms": 58200,
+     "first_visible_ms": 58333,
+     "ttfc_from_seg_start_ms": 333,
+     "ttfc_from_first_visible_ms": 200
+    },
+    {
+     "seg": 13,
+     "cls": "apple",
+     "seg_start_ms": 63000,
+     "first_visible_ms": 63000,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 14,
+     "cls": "citrus",
+     "seg_start_ms": 67800,
+     "first_visible_ms": 67800,
+     "ttfc_from_seg_start_ms": 333,
+     "ttfc_from_first_visible_ms": 333
+    },
+    {
+     "seg": 15,
+     "cls": "carrot",
+     "seg_start_ms": 72600,
+     "first_visible_ms": 72600,
+     "ttfc_from_seg_start_ms": 533,
+     "ttfc_from_first_visible_ms": 533
+    },
+    {
+     "seg": 16,
+     "cls": "banana",
+     "seg_start_ms": 77400,
+     "first_visible_ms": 77400,
+     "ttfc_from_seg_start_ms": 533,
+     "ttfc_from_first_visible_ms": 533
+    },
+    {
+     "seg": 17,
+     "cls": "apple",
+     "seg_start_ms": 82200,
+     "first_visible_ms": 82200,
+     "ttfc_from_seg_start_ms": 733,
+     "ttfc_from_first_visible_ms": 733
+    },
+    {
+     "seg": 18,
+     "cls": "citrus",
+     "seg_start_ms": 87000,
+     "first_visible_ms": 87000,
+     "ttfc_from_seg_start_ms": 200,
+     "ttfc_from_first_visible_ms": 200
+    },
+    {
+     "seg": 19,
+     "cls": "carrot",
+     "seg_start_ms": 91800,
+     "first_visible_ms": 91800,
+     "ttfc_from_seg_start_ms": 3400,
+     "ttfc_from_first_visible_ms": 3400
+    },
+    {
+     "seg": 20,
+     "cls": "banana",
+     "seg_start_ms": 96600,
+     "first_visible_ms": 96600,
+     "ttfc_from_seg_start_ms": 333,
+     "ttfc_from_first_visible_ms": 333
+    },
+    {
+     "seg": 21,
+     "cls": "citrus",
+     "seg_start_ms": 101400,
+     "first_visible_ms": 101400,
+     "ttfc_from_seg_start_ms": 400,
+     "ttfc_from_first_visible_ms": 400
+    },
+    {
+     "seg": 22,
+     "cls": "banana",
+     "seg_start_ms": 106200,
+     "first_visible_ms": 106200,
+     "ttfc_from_seg_start_ms": 1200,
+     "ttfc_from_first_visible_ms": 1200
+    },
+    {
+     "seg": 23,
+     "cls": "banana",
+     "seg_start_ms": 111000,
+     "first_visible_ms": 111000,
+     "ttfc_from_seg_start_ms": 267,
+     "ttfc_from_first_visible_ms": 267
+    }
+   ]
+  }
+ },
+ "A2": {
+  "neg_raw_detector": {
+   "boxes": 8,
+   "boxes_per_min": 2.0,
+   "frames_with_box": 8,
+   "frames": 3600,
+   "by_class": {
+    "banana": 8
+   }
+  },
+  "neg_post_tracking": {
+   "displayed_tracks": 1,
+   "fa_min": 0.25,
+   "frames_with_displayed_box": 4,
+   "life_mean_s": 0.267,
+   "by_class": {
+    "banana": 1
+   }
+  },
+  "det_raw_detector": {
+   "boxes_per_min": 2505.7,
+   "frames_with_box_frac": 0.6045
+  },
+  "det_post_tracking": {
+   "frame_acc": 0.3925,
+   "segment_acc": 0.5417,
+   "id_switches": 27
+  },
+  "ttfc": {
+   "from_segment_start": {
+    "p50": 533.0,
+    "p90": 1053.3999999999999,
+    "n": 15
+   },
+   "from_first_visibility": {
+    "p50": 400.0,
+    "p90": 1053.3999999999999,
+    "n": 15
+   },
+   "per_segment": [
+    {
+     "seg": 0,
+     "cls": "banana",
+     "seg_start_ms": 600,
+     "first_visible_ms": 933,
+     "ttfc_from_seg_start_ms": 733,
+     "ttfc_from_first_visible_ms": 400
+    },
+    {
+     "seg": 1,
+     "cls": "apple",
+     "seg_start_ms": 5400,
+     "first_visible_ms": 5400,
+     "ttfc_from_seg_start_ms": 533,
+     "ttfc_from_first_visible_ms": 533
+    },
+    {
+     "seg": 2,
+     "cls": "citrus",
+     "seg_start_ms": 10200,
+     "first_visible_ms": 10267,
+     "ttfc_from_seg_start_ms": 333,
+     "ttfc_from_first_visible_ms": 267
+    },
+    {
+     "seg": 3,
+     "cls": "tomato",
+     "seg_start_ms": 15000,
+     "first_visible_ms": 15000,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 4,
+     "cls": "potato",
+     "seg_start_ms": 19800,
+     "first_visible_ms": 19800,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 5,
+     "cls": "cucumber",
+     "seg_start_ms": 24600,
+     "first_visible_ms": 24600,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 6,
+     "cls": "carrot",
+     "seg_start_ms": 29400,
+     "first_visible_ms": 29400,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 7,
+     "cls": "capsicum",
+     "seg_start_ms": 34200,
+     "first_visible_ms": 34200,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 8,
+     "cls": "banana",
+     "seg_start_ms": 39000,
+     "first_visible_ms": 39000,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 9,
+     "cls": "apple",
+     "seg_start_ms": 43800,
+     "first_visible_ms": 43800,
+     "ttfc_from_seg_start_ms": 200,
+     "ttfc_from_first_visible_ms": 200
+    },
+    {
+     "seg": 10,
+     "cls": "citrus",
+     "seg_start_ms": 48600,
+     "first_visible_ms": 48600,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 11,
+     "cls": "carrot",
+     "seg_start_ms": 53400,
+     "first_visible_ms": 53400,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 12,
+     "cls": "banana",
+     "seg_start_ms": 58200,
+     "first_visible_ms": 58333,
+     "ttfc_from_seg_start_ms": 400,
+     "ttfc_from_first_visible_ms": 267
+    },
+    {
+     "seg": 13,
+     "cls": "apple",
+     "seg_start_ms": 63000,
+     "first_visible_ms": 63000,
+     "ttfc_from_seg_start_ms": null,
+     "ttfc_from_first_visible_ms": null
+    },
+    {
+     "seg": 14,
+     "cls": "citrus",
+     "seg_start_ms": 67800,
+     "first_visible_ms": 67800,
+     "ttfc_from_seg_start_ms": 333,
+     "ttfc_from_first_visible_ms": 333
+    },
+    {
+     "seg": 15,
+     "cls": "carrot",
+     "seg_start_ms": 72600,
+     "first_visible_ms": 72600,
+     "ttfc_from_seg_start_ms": 600,
+     "ttfc_from_first_visible_ms": 600
+    },
+    {
+     "seg": 16,
+     "cls": "banana",
+     "seg_start_ms": 77400,
+     "first_visible_ms": 77400,
+     "ttfc_from_seg_start_ms": 533,
+     "ttfc_from_first_visible_ms": 533
+    },
+    {
+     "seg": 17,
+     "cls": "apple",
+     "seg_start_ms": 82200,
+     "first_visible_ms": 82200,
+     "ttfc_from_seg_start_ms": 733,
+     "ttfc_from_first_visible_ms": 733
+    },
+    {
+     "seg": 18,
+     "cls": "citrus",
+     "seg_start_ms": 87000,
+     "first_visible_ms": 87000,
+     "ttfc_from_seg_start_ms": 267,
+     "ttfc_from_first_visible_ms": 267
+    },
+    {
+     "seg": 19,
+     "cls": "carrot",
+     "seg_start_ms": 91800,
+     "first_visible_ms": 91800,
+     "ttfc_from_seg_start_ms": 3467,
+     "ttfc_from_first_visible_ms": 3467
+    },
+    {
+     "seg": 20,
+     "cls": "banana",
+     "seg_start_ms": 96600,
+     "first_visible_ms": 96600,
+     "ttfc_from_seg_start_ms": 400,
+     "ttfc_from_first_visible_ms": 400
+    },
+    {
+     "seg": 21,
+     "cls": "citrus",
+     "seg_start_ms": 101400,
+     "first_visible_ms": 101400,
+     "ttfc_from_seg_start_ms": 533,
+     "ttfc_from_first_visible_ms": 533
+    },
+    {
+     "seg": 22,
+     "cls": "banana",
+     "seg_start_ms": 106200,
+     "first_visible_ms": 106200,
+     "ttfc_from_seg_start_ms": 1267,
+     "ttfc_from_first_visible_ms": 1267
+    },
+    {
+     "seg": 23,
+     "cls": "banana",
+     "seg_start_ms": 111000,
+     "first_visible_ms": 111000,
+     "ttfc_from_seg_start_ms": 267,
+     "ttfc_from_first_visible_ms": 267
+    }
+   ]
+  }
+ }
+}

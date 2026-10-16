@@ -1,0 +1,368 @@
+{
+ "per_class": {
+  "test/citrus": {
+   "inst": 1833,
+   "g3": 0.4578,
+   "s0": 0.4604,
+   "s1": 0.4588
+  },
+  "test/apple": {
+   "inst": 2122,
+   "g3": 0.2659,
+   "s0": 0.2878,
+   "s1": 0.2994
+  },
+  "test/banana": {
+   "inst": 5048,
+   "g3": 0.3345,
+   "s0": 0.333,
+   "s1": 0.3191
+  },
+  "test/tomato": {
+   "inst": 659,
+   "g3": 0.361,
+   "s0": 0.3569,
+   "s1": 0.3295
+  },
+  "test/carrot": {
+   "inst": 1558,
+   "g3": 0.3289,
+   "s0": 0.362,
+   "s1": 0.3516
+  },
+  "test_rf/citrus": {
+   "inst": 34,
+   "g3": 0.6676,
+   "s0": 0.7997,
+   "s1": 0.7383
+  },
+  "test_rf/apple": {
+   "inst": 25,
+   "g3": 0.2688,
+   "s0": 0.1694,
+   "s1": 0.1953
+  },
+  "test_rf/banana": {
+   "inst": 75,
+   "g3": 0.8356,
+   "s0": 0.8005,
+   "s1": 0.8219
+  },
+  "test_rf/tomato": {
+   "inst": 122,
+   "g3": 0.6756,
+   "s0": 0.5544,
+   "s1": 0.5934
+  },
+  "test_rf/carrot": {
+   "inst": 84,
+   "g3": 0.3024,
+   "s0": 0.2618,
+   "s1": 0.3055
+  },
+  "test_oiv7/citrus": {
+   "inst": 1,
+   "g3": 0.3317,
+   "s0": 0.4975,
+   "s1": 0.4975
+  },
+  "test_oiv7/apple": {
+   "inst": 1,
+   "g3": 0.0765,
+   "s0": 0.0905,
+   "s1": 0.0622
+  },
+  "test_oiv7/tomato": {
+   "inst": 41,
+   "g3": 0.2147,
+   "s0": 0.208,
+   "s1": 0.1691
+  },
+  "test_oiv7/carrot": {
+   "inst": 3,
+   "g3": 0.0054,
+   "s0": 0.0286,
+   "s1": 0.0168
+  },
+  "test_oiv7c/citrus": {
+   "inst": 606,
+   "g3": 0.4509,
+   "s0": 0.4354,
+   "s1": 0.3885
+  },
+  "test_oiv7c/apple": {
+   "inst": 6,
+   "g3": 0.5258,
+   "s0": 0.2357,
+   "s1": 0.6036
+  },
+  "test_oiv7c/tomato": {
+   "inst": 4,
+   "g3": 0.745,
+   "s0": 0.8359,
+   "s1": 0.4967
+  },
+  "test_oiv7c/carrot": {
+   "inst": 4,
+   "g3": 0.995,
+   "s0": 0.945,
+   "s1": 0.995
+  },
+  "pooled/citrus": {
+   "inst": 1868,
+   "g3": 0.4512,
+   "s0": 0.4616,
+   "s1": 0.4575
+  },
+  "pooled/apple": {
+   "inst": 2148,
+   "g3": 0.2472,
+   "s0": 0.2633,
+   "s1": 0.2818
+  },
+  "pooled/banana": {
+   "inst": 5123,
+   "g3": 0.3407,
+   "s0": 0.3417,
+   "s1": 0.3303
+  },
+  "pooled/tomato": {
+   "inst": 822,
+   "g3": 0.3943,
+   "s0": 0.3722,
+   "s1": 0.3543
+  },
+  "pooled/carrot": {
+   "inst": 1645,
+   "g3": 0.3118,
+   "s0": 0.3269,
+   "s1": 0.3219
+  }
+ },
+ "dev_video": {
+  "G3": {
+   "seg": 0.5417,
+   "ttfc_p90": 733.3329999999995,
+   "ids": 68,
+   "frag": 22,
+   "fa": 0.75
+  },
+  "G3r5 (G3, 5 showcase rows)": {
+   "seg": 0.5417,
+   "ttfc_p90": 733.3329999999995,
+   "ids": 62,
+   "frag": 24,
+   "fa": 0.5
+  },
+  "showcase s0": {
+   "seg": 0.6667,
+   "ttfc_p90": 2033.3334999999997,
+   "ids": 33,
+   "frag": 20,
+   "fa": 0.0
+  },
+  "G3 + ByteTrack DEV pick nt0.25_mt0.8_mh1": {
+   "seg": 0.625,
+   "ttfc_p90": 600.0,
+   "ids": 24,
+   "frag": 11,
+   "fa": 0.5
+  }
+ },
+ "holdout": {
+  "all12": {
+   "G3": {
+    "recall": 0.5,
+    "pairs": 22,
+    "fa": 2.859,
+    "ttfc": {
+     "p50": 2.24,
+     "p90": 28.11,
+     "n": 11,
+     "missed_pairs": 11
+    },
+    "births": 34.63,
+    "frag": 43.18,
+    "lab": 3.873
+   },
+   "G3_bt_pick": {
+    "recall": 0.455,
+    "pairs": 22,
+    "fa": 1.677,
+    "ttfc": {
+     "p50": 7.41,
+     "p90": 37.59,
+     "n": 10,
+     "missed_pairs": 12
+    },
+    "births": 24.68,
+    "frag": 35.0,
+    "lab": 3.674
+   },
+   "G3r5": {
+    "recall": 0.318,
+    "pairs": 22,
+    "fa": 2.612,
+    "ttfc": {
+     "p50": 2.24,
+     "p90": 43.8,
+     "n": 7,
+     "missed_pairs": 15
+    },
+    "births": 31.43,
+    "frag": 59.29,
+    "lab": 1.092
+   },
+   "show_s0": {
+    "recall": 0.318,
+    "pairs": 22,
+    "fa": 2.474,
+    "ttfc": {
+     "p50": 1.28,
+     "p90": 22.94,
+     "n": 7,
+     "missed_pairs": 15
+    },
+    "births": 29.63,
+    "frag": 53.14,
+    "lab": 0.695
+   },
+   "show_s1": {
+    "recall": 0.364,
+    "pairs": 22,
+    "fa": 2.612,
+    "ttfc": {
+     "p50": 7.68,
+     "p90": 56.41,
+     "n": 8,
+     "missed_pairs": 14
+    },
+    "births": 32.59,
+    "frag": 42.0,
+    "lab": 1.867
+   }
+  },
+  "show5": {
+   "G3": {
+    "recall": 0.5,
+    "pairs": 14,
+    "fa": 2.612,
+    "ttfc": {
+     "p50": 2.24,
+     "p90": 43.8,
+     "n": 7,
+     "missed_pairs": 7
+    },
+    "births": 31.61,
+    "frag": 59.57,
+    "lab": 1.207
+   },
+   "G3_bt_pick": {
+    "recall": 0.429,
+    "pairs": 14,
+    "fa": 1.54,
+    "ttfc": {
+     "p50": 12.13,
+     "p90": 72.56,
+     "n": 6,
+     "missed_pairs": 8
+    },
+    "births": 23.11,
+    "frag": 52.83,
+    "lab": 1.81
+   },
+   "G3r5": {
+    "recall": 0.5,
+    "pairs": 14,
+    "fa": 2.612,
+    "ttfc": {
+     "p50": 2.24,
+     "p90": 43.8,
+     "n": 7,
+     "missed_pairs": 7
+    },
+    "births": 31.43,
+    "frag": 59.29,
+    "lab": 1.092
+   },
+   "show_s0": {
+    "recall": 0.5,
+    "pairs": 14,
+    "fa": 2.474,
+    "ttfc": {
+     "p50": 1.28,
+     "p90": 22.94,
+     "n": 7,
+     "missed_pairs": 7
+    },
+    "births": 29.63,
+    "frag": 53.14,
+    "lab": 0.695
+   },
+   "show_s1": {
+    "recall": 0.571,
+    "pairs": 14,
+    "fa": 2.612,
+    "ttfc": {
+     "p50": 7.68,
+     "p90": 56.41,
+     "n": 8,
+     "missed_pairs": 6
+    },
+    "births": 32.59,
+    "frag": 42.0,
+    "lab": 1.867
+   }
+  }
+ },
+ "holdout_boot": {
+  "G3_bt_pick_vs_G3 (all12)": {
+   "n_uploaders": 25,
+   "recall_diff_ci95": [
+    -0.182,
+    0.0
+   ],
+   "fa_per_min_diff_ci95": [
+    -2.144,
+    -0.669
+   ],
+   "resamples": 1000
+  },
+  "show_s0_vs_G3r5 (show5)": {
+   "n_uploaders": 24,
+   "recall_diff_ci95": [
+    -0.182,
+    0.222
+   ],
+   "fa_per_min_diff_ci95": [
+    -1.624,
+    0.448
+   ],
+   "resamples": 1000
+  },
+  "show_s1_vs_G3r5 (show5)": {
+   "n_uploaders": 24,
+   "recall_diff_ci95": [
+    0.0,
+    0.231
+   ],
+   "fa_per_min_diff_ci95": [
+    -1.178,
+    1.744
+   ],
+   "resamples": 1000
+  },
+  "show_s0_vs_G3 (show5, G3 12-class restricted to 5 at display)": {
+   "n_uploaders": 24,
+   "recall_diff_ci95": [
+    -0.182,
+    0.222
+   ],
+   "fa_per_min_diff_ci95": [
+    -1.624,
+    0.448
+   ],
+   "resamples": 1000
+  }
+ }
+}

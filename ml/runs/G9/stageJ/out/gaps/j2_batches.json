@@ -1,0 +1,92 @@
+{
+ "pilot2": 335,
+ "train2": 646,
+ "pilot2_by_kind": {
+  "supported": 198,
+  "occluded": 74,
+  "packaging": 63
+ },
+ "pilot2_supported": {
+  "tomato": 26,
+  "citrus": 58,
+  "banana": 34,
+  "apple": 63,
+  "carrot": 17
+ },
+ "pilot2_by_source": {
+  "commons": 38,
+  "fruitnet": 111,
+  "commons_e2": 158,
+  "tomato_m": 14,
+  "carrot_m": 14
+ },
+ "pilot2_detail": {
+  "supported|tomato|commons": 12,
+  "supported|citrus|fruitnet": 50,
+  "supported|banana|commons": 12,
+  "occluded|occluded|commons_e2": 74,
+  "supported|apple|fruitnet": 39,
+  "packaging|packaging|commons_e2": 63,
+  "supported|tomato|tomato_m": 14,
+  "supported|citrus|commons_e2": 8,
+  "supported|banana|fruitnet": 22,
+  "supported|carrot|carrot_m": 14,
+  "supported|apple|commons": 11,
+  "supported|apple|commons_e2": 13,
+  "supported|carrot|commons": 3
+ },
+ "train2_by_label": {
+  "banana": 158,
+  "strawberry": 6,
+  "carrot": 51,
+  "apple": 135,
+  "tomato": 149,
+  "chilli": 5,
+  "pepper_chili": 19,
+  "tamarillo": 6,
+  "garlic": 5,
+  "citrus": 56,
+  "guava": 13,
+  "mango": 18,
+  "onion": 5,
+  "lulo": 6,
+  "ginger": 5,
+  "brinjal": 5,
+  "potato": 4
+ },
+ "train2_by_source": {
+  "bg_in": 73,
+  "sp_co": 138,
+  "veg_in": 148,
+  "commons_t2": 135,
+  "mb_in": 73,
+  "vegnet": 62,
+  "citrus_tw": 17
+ },
+ "train2_detail": {
+  "banana|bg_in": 60,
+  "strawberry|sp_co": 6,
+  "carrot|veg_in": 51,
+  "apple|commons_t2": 135,
+  "tomato|veg_in": 68,
+  "banana|mb_in": 58,
+  "tomato|vegnet": 43,
+  "banana|sp_co": 40,
+  "chilli|veg_in": 5,
+  "tomato|sp_co": 38,
+  "pepper_chili|vegnet": 19,
+  "tamarillo|sp_co": 6,
+  "garlic|veg_in": 5,
+  "citrus|sp_co": 39,
+  "guava|bg_in": 13,
+  "mango|mb_in": 15,
+  "onion|veg_in": 5,
+  "citrus|citrus_tw": 17,
+  "lulo|sp_co": 6,
+  "mango|sp_co": 3,
+  "ginger|veg_in": 5,
+  "brinjal|veg_in": 5,
+  "potato|veg_in": 4
+ },
+ "frozen_stageJ_files_modified": false
+}

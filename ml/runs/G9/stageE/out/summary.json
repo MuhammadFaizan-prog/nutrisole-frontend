@@ -1,0 +1,1732 @@
+{
+ "stage": "G9 Stage E",
+ "prereg": "docs/cv/gauntlet/G9_stageE_prereg.md (commit bfa75b7, before any Stage E result)",
+ "dev": {
+  "g1": {
+   "small_show": {
+    "n": 857,
+    "tp": 22,
+    "R": 0.0257
+   },
+   "small_carrot": {
+    "n": 228,
+    "tp": 3,
+    "R": 0.0132
+   },
+   "normal_by_class": {
+    "citrus": 0.8321,
+    "apple": 0.7699,
+    "banana": 0.5517,
+    "tomato": 0.5643,
+    "carrot": 0.4348
+   },
+   "val_tp": 558,
+   "val_fp": 232,
+   "boxfree": 39,
+   "dev_det_recall": {
+    "citrus": 0.565,
+    "apple": 0.671,
+    "banana": 0.627,
+    "tomato": 0.0,
+    "carrot": 0.15
+   },
+   "neg_tracks_min": 0.75,
+   "neg_ep_min": 0.75,
+   "ttfc_p90": 707,
+   "ids_per_seg": 1.208,
+   "id_switches": 68,
+   "post_ms_p95": 0.1852,
+   "probe_SYNTH_small_show": {
+    "n": 6408,
+    "tp": 21,
+    "R": 0.0033
+   },
+   "probe_SYNTH_small_carrot": {
+    "n": 2178,
+    "tp": 0,
+    "R": 0.0
+   },
+   "probe_SYNTH_mixed_false_min": 2.116,
+   "probe_SYNTH_ids_per_obj": 1.415
+  },
+  "ssf50": {
+   "small_show": {
+    "n": 857,
+    "tp": 206,
+    "R": 0.2404
+   },
+   "small_carrot": {
+    "n": 228,
+    "tp": 26,
+    "R": 0.114
+   },
+   "normal_by_class": {
+    "citrus": 0.8321,
+    "apple": 0.7699,
+    "banana": 0.5747,
+    "tomato": 0.5857,
+    "carrot": 0.4396
+   },
+   "val_tp": 752,
+   "val_fp": 303,
+   "boxfree": 48,
+   "dev_det_recall": {
+    "citrus": 0.565,
+    "apple": 0.671,
+    "banana": 0.627,
+    "tomato": 0.0,
+    "carrot": 0.15
+   },
+   "neg_tracks_min": 0.75,
+   "neg_ep_min": 0.75,
+   "ttfc_p90": 707,
+   "ids_per_seg": 1.208,
+   "id_switches": 68,
+   "post_ms_p95": 0.1987,
+   "probe_SYNTH_small_show": {
+    "n": 6408,
+    "tp": 193,
+    "R": 0.0301
+   },
+   "probe_SYNTH_small_carrot": {
+    "n": 2178,
+    "tp": 10,
+    "R": 0.0046
+   },
+   "probe_SYNTH_mixed_false_min": 5.078,
+   "probe_SYNTH_ids_per_obj": 1.395
+  },
+  "ssf525": {
+   "small_show": {
+    "n": 857,
+    "tp": 199,
+    "R": 0.2322
+   },
+   "small_carrot": {
+    "n": 228,
+    "tp": 25,
+    "R": 0.1096
+   },
+   "normal_by_class": {
+    "citrus": 0.8321,
+    "apple": 0.7699,
+    "banana": 0.5747,
+    "tomato": 0.5857,
+    "carrot": 0.4396
+   },
+   "val_tp": 745,
+   "val_fp": 288,
+   "boxfree": 46,
+   "dev_det_recall": {
+    "citrus": 0.565,
+    "apple": 0.671,
+    "banana": 0.627,
+    "tomato": 0.0,
+    "carrot": 0.15
+   },
+   "neg_tracks_min": 0.75,
+   "neg_ep_min": 0.75,
+   "ttfc_p90": 707,
+   "ids_per_seg": 1.208,
+   "id_switches": 68,
+   "post_ms_p95": 0.1975,
+   "probe_SYNTH_small_show": {
+    "n": 6408,
+    "tp": 179,
+    "R": 0.0279
+   },
+   "probe_SYNTH_small_carrot": {
+    "n": 2178,
+    "tp": 9,
+    "R": 0.0041
+   },
+   "probe_SYNTH_mixed_false_min": 4.654,
+   "probe_SYNTH_ids_per_obj": 1.4
+  },
+  "ssf55": {
+   "small_show": {
+    "n": 857,
+    "tp": 182,
+    "R": 0.2124
+   },
+   "small_carrot": {
+    "n": 228,
+    "tp": 23,
+    "R": 0.1009
+   },
+   "normal_by_class": {
+    "citrus": 0.8321,
+    "apple": 0.7699,
+    "banana": 0.5747,
+    "tomato": 0.5857,
+    "carrot": 0.4396
+   },
+   "val_tp": 728,
+   "val_fp": 279,
+   "boxfree": 44,
+   "dev_det_recall": {
+    "citrus": 0.565,
+    "apple": 0.671,
+    "banana": 0.627,
+    "tomato": 0.0,
+    "carrot": 0.15
+   },
+   "neg_tracks_min": 0.75,
+   "neg_ep_min": 0.75,
+   "ttfc_p90": 707,
+   "ids_per_seg": 1.208,
+   "id_switches": 68,
+   "post_ms_p95": 0.1947,
+   "probe_SYNTH_small_show": {
+    "n": 6408,
+    "tp": 175,
+    "R": 0.0273
+   },
+   "probe_SYNTH_small_carrot": {
+    "n": 2178,
+    "tp": 8,
+    "R": 0.0037
+   },
+   "probe_SYNTH_mixed_false_min": 4.231,
+   "probe_SYNTH_ids_per_obj": 1.387
+  },
+  "ssf575": {
+   "small_show": {
+    "n": 857,
+    "tp": 168,
+    "R": 0.196
+   },
+   "small_carrot": {
+    "n": 228,
+    "tp": 23,
+    "R": 0.1009
+   },
+   "normal_by_class": {
+    "citrus": 0.8321,
+    "apple": 0.7699,
+    "banana": 0.5747,
+    "tomato": 0.5857,
+    "carrot": 0.4396
+   },
+   "val_tp": 713,
+   "val_fp": 270,
+   "boxfree": 43,
+   "dev_det_recall": {
+    "citrus": 0.565,
+    "apple": 0.671,
+    "banana": 0.627,
+    "tomato": 0.0,
+    "carrot": 0.15
+   },
+   "neg_tracks_min": 0.75,
+   "neg_ep_min": 0.75,
+   "ttfc_p90": 707,
+   "ids_per_seg": 1.208,
+   "id_switches": 68,
+   "post_ms_p95": 0.1978,
+   "probe_SYNTH_small_show": {
+    "n": 6408,
+    "tp": 156,
+    "R": 0.0243
+   },
+   "probe_SYNTH_small_carrot": {
+    "n": 2178,
+    "tp": 7,
+    "R": 0.0032
+   },
+   "probe_SYNTH_mixed_false_min": 4.231,
+   "probe_SYNTH_ids_per_obj": 1.351
+  },
+  "ssf60": {
+   "small_show": {
+    "n": 857,
+    "tp": 158,
+    "R": 0.1844
+   },
+   "small_carrot": {
+    "n": 228,
+    "tp": 22,
+    "R": 0.0965
+   },
+   "normal_by_class": {
+    "citrus": 0.8321,
+    "apple": 0.7699,
+    "banana": 0.5747,
+    "tomato": 0.5857,
+    "carrot": 0.4396
+   },
+   "val_tp": 703,
+   "val_fp": 265,
+   "boxfree": 43,
+   "dev_det_recall": {
+    "citrus": 0.565,
+    "apple": 0.671,
+    "banana": 0.627,
+    "tomato": 0.0,
+    "carrot": 0.15
+   },
+   "neg_tracks_min": 0.75,
+   "neg_ep_min": 0.75,
+   "ttfc_p90": 707,
+   "ids_per_seg": 1.208,
+   "id_switches": 68,
+   "post_ms_p95": 0.1938,
+   "probe_SYNTH_small_show": {
+    "n": 6408,
+    "tp": 152,
+    "R": 0.0237
+   },
+   "probe_SYNTH_small_carrot": {
+    "n": 2178,
+    "tp": 7,
+    "R": 0.0032
+   },
+   "probe_SYNTH_mixed_false_min": 4.02,
+   "probe_SYNTH_ids_per_obj": 1.361
+  },
+  "none": {
+   "small_show": {
+    "n": 857,
+    "tp": 296,
+    "R": 0.3454
+   },
+   "small_carrot": {
+    "n": 228,
+    "tp": 40,
+    "R": 0.1754
+   },
+   "normal_by_class": {
+    "citrus": 0.8321,
+    "apple": 0.7699,
+    "banana": 0.5862,
+    "tomato": 0.5857,
+    "carrot": 0.4396
+   },
+   "val_tp": 844,
+   "val_fp": 433,
+   "boxfree": 66,
+   "dev_det_recall": {
+    "citrus": 0.565,
+    "apple": 0.671,
+    "banana": 0.627,
+    "tomato": 0.0,
+    "carrot": 0.15
+   },
+   "neg_tracks_min": 1.25,
+   "neg_ep_min": 1.0,
+   "ttfc_p90": 707,
+   "ids_per_seg": 1.208,
+   "id_switches": 68,
+   "post_ms_p95": 0.2179,
+   "probe_SYNTH_small_show": {
+    "n": 6408,
+    "tp": 322,
+    "R": 0.0502
+   },
+   "probe_SYNTH_small_carrot": {
+    "n": 2178,
+    "tp": 16,
+    "R": 0.0073
+   },
+   "probe_SYNTH_mixed_false_min": 8.674,
+   "probe_SYNTH_ids_per_obj": 1.394
+  }
+ },
+ "mdev": {
+  "g1": {
+   "images": 67,
+   "negative_images": 23,
+   "tp": 0,
+   "fp": 56,
+   "ignored_in_crowd": 132,
+   "boxfree_fp": 47,
+   "fp_by_bin": {
+    "1-2.5%": 31,
+    ">=2.5%": 25
+   },
+   "fp_tags": {
+    "background": 52,
+    "class_error": 4
+   },
+   "class_confusions": {
+    "apple<-citrus": 4
+   },
+   "small_show": {
+    "n": 620,
+    "tp": 0,
+    "R": 0.0
+   },
+   "small_all": {
+    "n": 778,
+    "tp": 0,
+    "R": 0.0
+   },
+   "small_carrot": {
+    "n": 28,
+    "tp": 0,
+    "R": 0.0
+   },
+   "small_by_class": {
+    "banana": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "apple": {
+     "n": 12,
+     "tp": 0,
+     "R": 0.0
+    },
+    "mango": {
+     "n": 5,
+     "tp": 0,
+     "R": 0.0
+    },
+    "citrus": {
+     "n": 376,
+     "tp": 0,
+     "R": 0.0
+    },
+    "guava": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "pomegranate": {
+     "n": 67,
+     "tp": 0,
+     "R": 0.0
+    },
+    "lemon_lime": {
+     "n": 70,
+     "tp": 0,
+     "R": 0.0
+    },
+    "tomato": {
+     "n": 204,
+     "tp": 0,
+     "R": 0.0
+    },
+    "potato": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "cucumber": {
+     "n": 16,
+     "tp": 0,
+     "R": 0.0
+    },
+    "carrot": {
+     "n": 28,
+     "tp": 0,
+     "R": 0.0
+    },
+    "capsicum": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    }
+   },
+   "map50": 0.0,
+   "ap50": {
+    "banana": 0.0,
+    "apple": 0.0,
+    "mango": 0.0,
+    "citrus": 0.0,
+    "guava": null,
+    "pomegranate": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.0,
+    "potato": null,
+    "cucumber": 0.0,
+    "carrot": 0.0,
+    "capsicum": null
+   }
+  },
+  "ssf50": {
+   "images": 67,
+   "negative_images": 23,
+   "tp": 4,
+   "fp": 91,
+   "ignored_in_crowd": 386,
+   "boxfree_fp": 64,
+   "fp_by_bin": {
+    "1-2.5%": 31,
+    "0.5-1%": 13,
+    "0.25-0.5%": 22,
+    ">=2.5%": 25
+   },
+   "fp_tags": {
+    "background": 72,
+    "class_error": 19
+   },
+   "class_confusions": {
+    "tomato<-citrus": 8,
+    "apple<-citrus": 4,
+    "banana<-cucumber": 3,
+    "tomato<-apple": 2,
+    "apple<-pomegranate": 2
+   },
+   "small_show": {
+    "n": 620,
+    "tp": 4,
+    "R": 0.0065
+   },
+   "small_all": {
+    "n": 778,
+    "tp": 4,
+    "R": 0.0051
+   },
+   "small_carrot": {
+    "n": 28,
+    "tp": 0,
+    "R": 0.0
+   },
+   "small_by_class": {
+    "banana": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "apple": {
+     "n": 12,
+     "tp": 3,
+     "R": 0.25
+    },
+    "mango": {
+     "n": 5,
+     "tp": 0,
+     "R": 0.0
+    },
+    "citrus": {
+     "n": 376,
+     "tp": 0,
+     "R": 0.0
+    },
+    "guava": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "pomegranate": {
+     "n": 67,
+     "tp": 0,
+     "R": 0.0
+    },
+    "lemon_lime": {
+     "n": 70,
+     "tp": 0,
+     "R": 0.0
+    },
+    "tomato": {
+     "n": 204,
+     "tp": 1,
+     "R": 0.0049
+    },
+    "potato": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "cucumber": {
+     "n": 16,
+     "tp": 0,
+     "R": 0.0
+    },
+    "carrot": {
+     "n": 28,
+     "tp": 0,
+     "R": 0.0
+    },
+    "capsicum": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    }
+   },
+   "map50": 0.0033,
+   "ap50": {
+    "banana": 0.0,
+    "apple": 0.0296,
+    "mango": 0.0,
+    "citrus": 0.0,
+    "guava": null,
+    "pomegranate": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.0005,
+    "potato": null,
+    "cucumber": 0.0,
+    "carrot": 0.0,
+    "capsicum": null
+   }
+  },
+  "ssf525": {
+   "images": 67,
+   "negative_images": 23,
+   "tp": 4,
+   "fp": 86,
+   "ignored_in_crowd": 364,
+   "boxfree_fp": 62,
+   "fp_by_bin": {
+    "1-2.5%": 31,
+    "0.5-1%": 11,
+    "0.25-0.5%": 19,
+    ">=2.5%": 25
+   },
+   "fp_tags": {
+    "background": 69,
+    "class_error": 17
+   },
+   "class_confusions": {
+    "tomato<-citrus": 8,
+    "apple<-citrus": 4,
+    "banana<-cucumber": 3,
+    "apple<-pomegranate": 2
+   },
+   "small_show": {
+    "n": 620,
+    "tp": 4,
+    "R": 0.0065
+   },
+   "small_all": {
+    "n": 778,
+    "tp": 4,
+    "R": 0.0051
+   },
+   "small_carrot": {
+    "n": 28,
+    "tp": 0,
+    "R": 0.0
+   },
+   "small_by_class": {
+    "banana": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "apple": {
+     "n": 12,
+     "tp": 3,
+     "R": 0.25
+    },
+    "mango": {
+     "n": 5,
+     "tp": 0,
+     "R": 0.0
+    },
+    "citrus": {
+     "n": 376,
+     "tp": 0,
+     "R": 0.0
+    },
+    "guava": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "pomegranate": {
+     "n": 67,
+     "tp": 0,
+     "R": 0.0
+    },
+    "lemon_lime": {
+     "n": 70,
+     "tp": 0,
+     "R": 0.0
+    },
+    "tomato": {
+     "n": 204,
+     "tp": 1,
+     "R": 0.0049
+    },
+    "potato": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "cucumber": {
+     "n": 16,
+     "tp": 0,
+     "R": 0.0
+    },
+    "carrot": {
+     "n": 28,
+     "tp": 0,
+     "R": 0.0
+    },
+    "capsicum": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    }
+   },
+   "map50": 0.0033,
+   "ap50": {
+    "banana": 0.0,
+    "apple": 0.0296,
+    "mango": 0.0,
+    "citrus": 0.0,
+    "guava": null,
+    "pomegranate": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.0005,
+    "potato": null,
+    "cucumber": 0.0,
+    "carrot": 0.0,
+    "capsicum": null
+   }
+  },
+  "ssf55": {
+   "images": 67,
+   "negative_images": 23,
+   "tp": 4,
+   "fp": 81,
+   "ignored_in_crowd": 341,
+   "boxfree_fp": 59,
+   "fp_by_bin": {
+    "1-2.5%": 31,
+    "0.5-1%": 10,
+    "0.25-0.5%": 15,
+    ">=2.5%": 25
+   },
+   "fp_tags": {
+    "background": 66,
+    "class_error": 15
+   },
+   "class_confusions": {
+    "tomato<-citrus": 7,
+    "apple<-citrus": 4,
+    "apple<-pomegranate": 2,
+    "banana<-cucumber": 2
+   },
+   "small_show": {
+    "n": 620,
+    "tp": 4,
+    "R": 0.0065
+   },
+   "small_all": {
+    "n": 778,
+    "tp": 4,
+    "R": 0.0051
+   },
+   "small_carrot": {
+    "n": 28,
+    "tp": 0,
+    "R": 0.0
+   },
+   "small_by_class": {
+    "banana": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "apple": {
+     "n": 12,
+     "tp": 3,
+     "R": 0.25
+    },
+    "mango": {
+     "n": 5,
+     "tp": 0,
+     "R": 0.0
+    },
+    "citrus": {
+     "n": 376,
+     "tp": 0,
+     "R": 0.0
+    },
+    "guava": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "pomegranate": {
+     "n": 67,
+     "tp": 0,
+     "R": 0.0
+    },
+    "lemon_lime": {
+     "n": 70,
+     "tp": 0,
+     "R": 0.0
+    },
+    "tomato": {
+     "n": 204,
+     "tp": 1,
+     "R": 0.0049
+    },
+    "potato": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "cucumber": {
+     "n": 16,
+     "tp": 0,
+     "R": 0.0
+    },
+    "carrot": {
+     "n": 28,
+     "tp": 0,
+     "R": 0.0
+    },
+    "capsicum": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    }
+   },
+   "map50": 0.0033,
+   "ap50": {
+    "banana": 0.0,
+    "apple": 0.0296,
+    "mango": 0.0,
+    "citrus": 0.0,
+    "guava": null,
+    "pomegranate": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.0005,
+    "potato": null,
+    "cucumber": 0.0,
+    "carrot": 0.0,
+    "capsicum": null
+   }
+  },
+  "ssf575": {
+   "images": 67,
+   "negative_images": 23,
+   "tp": 4,
+   "fp": 75,
+   "ignored_in_crowd": 322,
+   "boxfree_fp": 56,
+   "fp_by_bin": {
+    "1-2.5%": 31,
+    "0.5-1%": 8,
+    "0.25-0.5%": 11,
+    ">=2.5%": 25
+   },
+   "fp_tags": {
+    "background": 62,
+    "class_error": 13
+   },
+   "class_confusions": {
+    "tomato<-citrus": 6,
+    "apple<-citrus": 4,
+    "apple<-pomegranate": 2,
+    "banana<-cucumber": 1
+   },
+   "small_show": {
+    "n": 620,
+    "tp": 4,
+    "R": 0.0065
+   },
+   "small_all": {
+    "n": 778,
+    "tp": 4,
+    "R": 0.0051
+   },
+   "small_carrot": {
+    "n": 28,
+    "tp": 0,
+    "R": 0.0
+   },
+   "small_by_class": {
+    "banana": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "apple": {
+     "n": 12,
+     "tp": 3,
+     "R": 0.25
+    },
+    "mango": {
+     "n": 5,
+     "tp": 0,
+     "R": 0.0
+    },
+    "citrus": {
+     "n": 376,
+     "tp": 0,
+     "R": 0.0
+    },
+    "guava": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "pomegranate": {
+     "n": 67,
+     "tp": 0,
+     "R": 0.0
+    },
+    "lemon_lime": {
+     "n": 70,
+     "tp": 0,
+     "R": 0.0
+    },
+    "tomato": {
+     "n": 204,
+     "tp": 1,
+     "R": 0.0049
+    },
+    "potato": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "cucumber": {
+     "n": 16,
+     "tp": 0,
+     "R": 0.0
+    },
+    "carrot": {
+     "n": 28,
+     "tp": 0,
+     "R": 0.0
+    },
+    "capsicum": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    }
+   },
+   "map50": 0.0033,
+   "ap50": {
+    "banana": 0.0,
+    "apple": 0.0296,
+    "mango": 0.0,
+    "citrus": 0.0,
+    "guava": null,
+    "pomegranate": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.0005,
+    "potato": null,
+    "cucumber": 0.0,
+    "carrot": 0.0,
+    "capsicum": null
+   }
+  },
+  "ssf60": {
+   "images": 67,
+   "negative_images": 23,
+   "tp": 4,
+   "fp": 71,
+   "ignored_in_crowd": 298,
+   "boxfree_fp": 53,
+   "fp_by_bin": {
+    "1-2.5%": 31,
+    "0.5-1%": 5,
+    "0.25-0.5%": 10,
+    ">=2.5%": 25
+   },
+   "fp_tags": {
+    "background": 58,
+    "class_error": 13
+   },
+   "class_confusions": {
+    "tomato<-citrus": 6,
+    "apple<-citrus": 4,
+    "apple<-pomegranate": 2,
+    "banana<-cucumber": 1
+   },
+   "small_show": {
+    "n": 620,
+    "tp": 4,
+    "R": 0.0065
+   },
+   "small_all": {
+    "n": 778,
+    "tp": 4,
+    "R": 0.0051
+   },
+   "small_carrot": {
+    "n": 28,
+    "tp": 0,
+    "R": 0.0
+   },
+   "small_by_class": {
+    "banana": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "apple": {
+     "n": 12,
+     "tp": 3,
+     "R": 0.25
+    },
+    "mango": {
+     "n": 5,
+     "tp": 0,
+     "R": 0.0
+    },
+    "citrus": {
+     "n": 376,
+     "tp": 0,
+     "R": 0.0
+    },
+    "guava": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "pomegranate": {
+     "n": 67,
+     "tp": 0,
+     "R": 0.0
+    },
+    "lemon_lime": {
+     "n": 70,
+     "tp": 0,
+     "R": 0.0
+    },
+    "tomato": {
+     "n": 204,
+     "tp": 1,
+     "R": 0.0049
+    },
+    "potato": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "cucumber": {
+     "n": 16,
+     "tp": 0,
+     "R": 0.0
+    },
+    "carrot": {
+     "n": 28,
+     "tp": 0,
+     "R": 0.0
+    },
+    "capsicum": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    }
+   },
+   "map50": 0.0033,
+   "ap50": {
+    "banana": 0.0,
+    "apple": 0.0296,
+    "mango": 0.0,
+    "citrus": 0.0,
+    "guava": null,
+    "pomegranate": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.0005,
+    "potato": null,
+    "cucumber": 0.0,
+    "carrot": 0.0,
+    "capsicum": null
+   }
+  },
+  "none": {
+   "images": 67,
+   "negative_images": 23,
+   "tp": 57,
+   "fp": 191,
+   "ignored_in_crowd": 738,
+   "boxfree_fp": 78,
+   "fp_by_bin": {
+    "<0.25%": 61,
+    "1-2.5%": 31,
+    "0.5-1%": 27,
+    "0.25-0.5%": 47,
+    ">=2.5%": 25
+   },
+   "fp_tags": {
+    "background": 113,
+    "class_error": 78
+   },
+   "class_confusions": {
+    "banana<-potato": 19,
+    "tomato<-citrus": 15,
+    "banana<-cucumber": 15,
+    "tomato<-apple": 10,
+    "apple<-citrus": 8,
+    "apple<-pomegranate": 4,
+    "tomato<-pomegranate": 2,
+    "banana<-tomato": 2,
+    "banana<-citrus": 1,
+    "apple<-tomato": 1,
+    "tomato<-lemon_lime": 1
+   },
+   "small_show": {
+    "n": 620,
+    "tp": 57,
+    "R": 0.0919
+   },
+   "small_all": {
+    "n": 778,
+    "tp": 57,
+    "R": 0.0733
+   },
+   "small_carrot": {
+    "n": 28,
+    "tp": 2,
+    "R": 0.0714
+   },
+   "small_by_class": {
+    "banana": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "apple": {
+     "n": 12,
+     "tp": 4,
+     "R": 0.3333
+    },
+    "mango": {
+     "n": 5,
+     "tp": 0,
+     "R": 0.0
+    },
+    "citrus": {
+     "n": 376,
+     "tp": 3,
+     "R": 0.008
+    },
+    "guava": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "pomegranate": {
+     "n": 67,
+     "tp": 0,
+     "R": 0.0
+    },
+    "lemon_lime": {
+     "n": 70,
+     "tp": 0,
+     "R": 0.0
+    },
+    "tomato": {
+     "n": 204,
+     "tp": 48,
+     "R": 0.2353
+    },
+    "potato": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "cucumber": {
+     "n": 16,
+     "tp": 0,
+     "R": 0.0
+    },
+    "carrot": {
+     "n": 28,
+     "tp": 2,
+     "R": 0.0714
+    },
+    "capsicum": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    }
+   },
+   "map50": 0.0299,
+   "ap50": {
+    "banana": 0.0,
+    "apple": 0.0359,
+    "mango": 0.0,
+    "citrus": 0.006,
+    "guava": null,
+    "pomegranate": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.1561,
+    "potato": null,
+    "cucumber": 0.0,
+    "carrot": 0.0714,
+    "capsicum": null
+   }
+  },
+  "raw001": {
+   "images": 67,
+   "negative_images": 23,
+   "tp": 156,
+   "fp": 3478,
+   "ignored_in_crowd": 3737,
+   "boxfree_fp": 1031,
+   "fp_by_bin": {
+    "<0.25%": 2085,
+    "0.25-0.5%": 561,
+    "1-2.5%": 292,
+    "0.5-1%": 359,
+    ">=2.5%": 181
+   },
+   "fp_tags": {
+    "background": 2011,
+    "class_error": 1467
+   },
+   "class_confusions": {
+    "tomato<-citrus": 267,
+    "tomato<-lemon_lime": 184,
+    "tomato<-apple": 172,
+    "apple<-citrus": 163,
+    "banana<-cucumber": 121,
+    "banana<-potato": 80,
+    "tomato<-pomegranate": 72,
+    "banana<-lemon_lime": 70,
+    "banana<-tomato": 52,
+    "banana<-citrus": 51,
+    "banana<-apple": 31,
+    "apple<-tomato": 30,
+    "apple<-lemon_lime": 28,
+    "tomato<-capsicum": 22,
+    "apple<-pomegranate": 18,
+    "banana<-carrot": 18,
+    "carrot<-tomato": 14,
+    "cucumber<-capsicum": 10,
+    "lemon_lime<-citrus": 9,
+    "apple<-capsicum": 7,
+    "tomato<-cucumber": 6,
+    "citrus<-lemon_lime": 6,
+    "citrus<-tomato": 5,
+    "tomato<-carrot": 5,
+    "banana<-pomegranate": 4,
+    "banana<-mango": 3,
+    "tomato<-banana": 3,
+    "apple<-mango": 2,
+    "carrot<-citrus": 2,
+    "tomato<-potato": 2,
+    "apple<-cucumber": 2,
+    "capsicum<-cucumber": 2,
+    "tomato<-mango": 1,
+    "pomegranate<-apple": 1,
+    "citrus<-apple": 1,
+    "lemon_lime<-apple": 1,
+    "lemon_lime<-tomato": 1,
+    "banana<-capsicum": 1
+   },
+   "small_show": {
+    "n": 620,
+    "tp": 151,
+    "R": 0.2435
+   },
+   "small_all": {
+    "n": 778,
+    "tp": 156,
+    "R": 0.2005
+   },
+   "small_carrot": {
+    "n": 28,
+    "tp": 13,
+    "R": 0.4643
+   },
+   "small_by_class": {
+    "banana": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "apple": {
+     "n": 12,
+     "tp": 7,
+     "R": 0.5833
+    },
+    "mango": {
+     "n": 5,
+     "tp": 0,
+     "R": 0.0
+    },
+    "citrus": {
+     "n": 376,
+     "tp": 26,
+     "R": 0.0691
+    },
+    "guava": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "pomegranate": {
+     "n": 67,
+     "tp": 0,
+     "R": 0.0
+    },
+    "lemon_lime": {
+     "n": 70,
+     "tp": 0,
+     "R": 0.0
+    },
+    "tomato": {
+     "n": 204,
+     "tp": 105,
+     "R": 0.5147
+    },
+    "potato": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    },
+    "cucumber": {
+     "n": 16,
+     "tp": 5,
+     "R": 0.3125
+    },
+    "carrot": {
+     "n": 28,
+     "tp": 13,
+     "R": 0.4643
+    },
+    "capsicum": {
+     "n": 0,
+     "tp": 0,
+     "R": null
+    }
+   },
+   "map50": 0.0769,
+   "ap50": {
+    "banana": 0.0,
+    "apple": 0.0457,
+    "mango": 0.0,
+    "citrus": 0.0145,
+    "guava": null,
+    "pomegranate": 0.0,
+    "lemon_lime": 0.0,
+    "tomato": 0.2263,
+    "potato": null,
+    "cucumber": 0.2279,
+    "carrot": 0.1778,
+    "capsicum": null
+   }
+  }
+ },
+ "configs": {
+  "ssf50": {
+   "criteria": {
+    "A1": {
+     "pass_": true,
+     "small_show_gain_pp": 21.5,
+     "small_carrot_gain_pp": 10.1,
+     "small_carrot_tp": 26,
+     "needed_carrot_tp": 26
+    },
+    "A2": {
+     "pass_": true,
+     "val_normal_pp": {
+      "citrus": 0.0,
+      "apple": 0.0,
+      "banana": 2.3,
+      "tomato": 2.1,
+      "carrot": 0.5
+     },
+     "dev_det_pp": {
+      "citrus": 0.0,
+      "apple": 0.0,
+      "banana": 0.0,
+      "tomato": 0.0,
+      "carrot": 0.0
+     }
+    },
+    "A3": {
+     "pass_": true,
+     "note": "G3 weights unchanged: per-class AP50 identical to D0 (delta 0 by construction; Stage D D0 val480 mAP50 0.4282)"
+    },
+    "A4": {
+     "pass_": true,
+     "tracks_min": 0.75,
+     "episodes_min": 0.75
+    },
+    "A5": {
+     "pass_": false,
+     "new_tp": 194,
+     "new_fp": 71,
+     "false_per_recovered": 0.366,
+     "boxfree": 48,
+     "boxfree_limit": 43,
+     "probe_SYNTH_mixed_false_min": 5.078,
+     "probe_x": 2.4,
+     "probe_limit_min": 3.17
+    },
+    "A6": {
+     "pass_": true,
+     "ttfc_p90": 707
+    },
+    "A7": {
+     "pass_": true,
+     "p95_ms": 78.41,
+     "d0_p95_ms": 78.4,
+     "note": "same detector as Stage D D0; only guard post-processing differs (p95 0.199 vs 0.185 ms)"
+    },
+    "A8": {
+     "pass_": true,
+     "ids_per_seg": 1.208
+    },
+    "M1": {
+     "pass_": false,
+     "gain_pp": 0.65
+    },
+    "M2": {
+     "pass_": false,
+     "new_tp": 4,
+     "new_fp": 35,
+     "ratio": 8.75
+    },
+    "M3": {
+     "pass_": false,
+     "boxfree_fp": 64,
+     "limit": 49
+    }
+   },
+   "failed": [
+    "A5",
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "admissible": false
+  },
+  "ssf525": {
+   "criteria": {
+    "A1": {
+     "pass_": false,
+     "small_show_gain_pp": 20.6,
+     "small_carrot_gain_pp": 9.6,
+     "small_carrot_tp": 25,
+     "needed_carrot_tp": 26
+    },
+    "A2": {
+     "pass_": true,
+     "val_normal_pp": {
+      "citrus": 0.0,
+      "apple": 0.0,
+      "banana": 2.3,
+      "tomato": 2.1,
+      "carrot": 0.5
+     },
+     "dev_det_pp": {
+      "citrus": 0.0,
+      "apple": 0.0,
+      "banana": 0.0,
+      "tomato": 0.0,
+      "carrot": 0.0
+     }
+    },
+    "A3": {
+     "pass_": true,
+     "note": "G3 weights unchanged: per-class AP50 identical to D0 (delta 0 by construction; Stage D D0 val480 mAP50 0.4282)"
+    },
+    "A4": {
+     "pass_": true,
+     "tracks_min": 0.75,
+     "episodes_min": 0.75
+    },
+    "A5": {
+     "pass_": false,
+     "new_tp": 187,
+     "new_fp": 56,
+     "false_per_recovered": 0.299,
+     "boxfree": 46,
+     "boxfree_limit": 43,
+     "probe_SYNTH_mixed_false_min": 4.654,
+     "probe_x": 2.2,
+     "probe_limit_min": 3.17
+    },
+    "A6": {
+     "pass_": true,
+     "ttfc_p90": 707
+    },
+    "A7": {
+     "pass_": true,
+     "p95_ms": 78.41,
+     "d0_p95_ms": 78.4,
+     "note": "same detector as Stage D D0; only guard post-processing differs (p95 0.198 vs 0.185 ms)"
+    },
+    "A8": {
+     "pass_": true,
+     "ids_per_seg": 1.208
+    },
+    "M1": {
+     "pass_": false,
+     "gain_pp": 0.65
+    },
+    "M2": {
+     "pass_": false,
+     "new_tp": 4,
+     "new_fp": 30,
+     "ratio": 7.5
+    },
+    "M3": {
+     "pass_": false,
+     "boxfree_fp": 62,
+     "limit": 49
+    }
+   },
+   "failed": [
+    "A1",
+    "A5",
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "admissible": false
+  },
+  "ssf55": {
+   "criteria": {
+    "A1": {
+     "pass_": false,
+     "small_show_gain_pp": 18.7,
+     "small_carrot_gain_pp": 8.8,
+     "small_carrot_tp": 23,
+     "needed_carrot_tp": 26
+    },
+    "A2": {
+     "pass_": true,
+     "val_normal_pp": {
+      "citrus": 0.0,
+      "apple": 0.0,
+      "banana": 2.3,
+      "tomato": 2.1,
+      "carrot": 0.5
+     },
+     "dev_det_pp": {
+      "citrus": 0.0,
+      "apple": 0.0,
+      "banana": 0.0,
+      "tomato": 0.0,
+      "carrot": 0.0
+     }
+    },
+    "A3": {
+     "pass_": true,
+     "note": "G3 weights unchanged: per-class AP50 identical to D0 (delta 0 by construction; Stage D D0 val480 mAP50 0.4282)"
+    },
+    "A4": {
+     "pass_": true,
+     "tracks_min": 0.75,
+     "episodes_min": 0.75
+    },
+    "A5": {
+     "pass_": false,
+     "new_tp": 170,
+     "new_fp": 47,
+     "false_per_recovered": 0.276,
+     "boxfree": 44,
+     "boxfree_limit": 43,
+     "probe_SYNTH_mixed_false_min": 4.231,
+     "probe_x": 2.0,
+     "probe_limit_min": 3.17
+    },
+    "A6": {
+     "pass_": true,
+     "ttfc_p90": 707
+    },
+    "A7": {
+     "pass_": true,
+     "p95_ms": 78.41,
+     "d0_p95_ms": 78.4,
+     "note": "same detector as Stage D D0; only guard post-processing differs (p95 0.195 vs 0.185 ms)"
+    },
+    "A8": {
+     "pass_": true,
+     "ids_per_seg": 1.208
+    },
+    "M1": {
+     "pass_": false,
+     "gain_pp": 0.65
+    },
+    "M2": {
+     "pass_": false,
+     "new_tp": 4,
+     "new_fp": 25,
+     "ratio": 6.25
+    },
+    "M3": {
+     "pass_": false,
+     "boxfree_fp": 59,
+     "limit": 49
+    }
+   },
+   "failed": [
+    "A1",
+    "A5",
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "admissible": false
+  },
+  "ssf575": {
+   "criteria": {
+    "A1": {
+     "pass_": false,
+     "small_show_gain_pp": 17.0,
+     "small_carrot_gain_pp": 8.8,
+     "small_carrot_tp": 23,
+     "needed_carrot_tp": 26
+    },
+    "A2": {
+     "pass_": true,
+     "val_normal_pp": {
+      "citrus": 0.0,
+      "apple": 0.0,
+      "banana": 2.3,
+      "tomato": 2.1,
+      "carrot": 0.5
+     },
+     "dev_det_pp": {
+      "citrus": 0.0,
+      "apple": 0.0,
+      "banana": 0.0,
+      "tomato": 0.0,
+      "carrot": 0.0
+     }
+    },
+    "A3": {
+     "pass_": true,
+     "note": "G3 weights unchanged: per-class AP50 identical to D0 (delta 0 by construction; Stage D D0 val480 mAP50 0.4282)"
+    },
+    "A4": {
+     "pass_": true,
+     "tracks_min": 0.75,
+     "episodes_min": 0.75
+    },
+    "A5": {
+     "pass_": false,
+     "new_tp": 155,
+     "new_fp": 38,
+     "false_per_recovered": 0.245,
+     "boxfree": 43,
+     "boxfree_limit": 43,
+     "probe_SYNTH_mixed_false_min": 4.231,
+     "probe_x": 2.0,
+     "probe_limit_min": 3.17
+    },
+    "A6": {
+     "pass_": true,
+     "ttfc_p90": 707
+    },
+    "A7": {
+     "pass_": true,
+     "p95_ms": 78.41,
+     "d0_p95_ms": 78.4,
+     "note": "same detector as Stage D D0; only guard post-processing differs (p95 0.198 vs 0.185 ms)"
+    },
+    "A8": {
+     "pass_": true,
+     "ids_per_seg": 1.208
+    },
+    "M1": {
+     "pass_": false,
+     "gain_pp": 0.65
+    },
+    "M2": {
+     "pass_": false,
+     "new_tp": 4,
+     "new_fp": 19,
+     "ratio": 4.75
+    },
+    "M3": {
+     "pass_": false,
+     "boxfree_fp": 56,
+     "limit": 49
+    }
+   },
+   "failed": [
+    "A1",
+    "A5",
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "admissible": false
+  },
+  "ssf60": {
+   "criteria": {
+    "A1": {
+     "pass_": false,
+     "small_show_gain_pp": 15.9,
+     "small_carrot_gain_pp": 8.3,
+     "small_carrot_tp": 22,
+     "needed_carrot_tp": 26
+    },
+    "A2": {
+     "pass_": true,
+     "val_normal_pp": {
+      "citrus": 0.0,
+      "apple": 0.0,
+      "banana": 2.3,
+      "tomato": 2.1,
+      "carrot": 0.5
+     },
+     "dev_det_pp": {
+      "citrus": 0.0,
+      "apple": 0.0,
+      "banana": 0.0,
+      "tomato": 0.0,
+      "carrot": 0.0
+     }
+    },
+    "A3": {
+     "pass_": true,
+     "note": "G3 weights unchanged: per-class AP50 identical to D0 (delta 0 by construction; Stage D D0 val480 mAP50 0.4282)"
+    },
+    "A4": {
+     "pass_": true,
+     "tracks_min": 0.75,
+     "episodes_min": 0.75
+    },
+    "A5": {
+     "pass_": false,
+     "new_tp": 145,
+     "new_fp": 33,
+     "false_per_recovered": 0.228,
+     "boxfree": 43,
+     "boxfree_limit": 43,
+     "probe_SYNTH_mixed_false_min": 4.02,
+     "probe_x": 1.9,
+     "probe_limit_min": 3.17
+    },
+    "A6": {
+     "pass_": true,
+     "ttfc_p90": 707
+    },
+    "A7": {
+     "pass_": true,
+     "p95_ms": 78.41,
+     "d0_p95_ms": 78.4,
+     "note": "same detector as Stage D D0; only guard post-processing differs (p95 0.194 vs 0.185 ms)"
+    },
+    "A8": {
+     "pass_": true,
+     "ids_per_seg": 1.208
+    },
+    "M1": {
+     "pass_": false,
+     "gain_pp": 0.65
+    },
+    "M2": {
+     "pass_": false,
+     "new_tp": 4,
+     "new_fp": 15,
+     "ratio": 3.75
+    },
+    "M3": {
+     "pass_": false,
+     "boxfree_fp": 53,
+     "limit": 49
+    }
+   },
+   "failed": [
+    "A1",
+    "A5",
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "admissible": false
+  }
+ },
+ "admissible": [],
+ "pick": "g1"
+}

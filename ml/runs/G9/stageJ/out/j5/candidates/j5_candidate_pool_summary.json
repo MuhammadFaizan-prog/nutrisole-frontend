@@ -1,0 +1,30 @@
+{
+ "note": "Unverified TRAINING candidates (Commons per-file CC/PD). Not labels; never eval; two independent annotators + adjudicator decide.",
+ "searched": 172,
+ "downloaded": 172,
+ "status": {
+  "CANDIDATE_UNVERIFIED": 162,
+  "DROPPED": 10
+ },
+ "candidates_by_query_class": {
+  "citrus_orange": 53,
+  "banana": 28,
+  "apple": 42,
+  "tomato": 39
+ },
+ "licences": {
+  "CC BY-SA 4.0": 65,
+  "CC BY 2.0": 40,
+  "CC BY-SA 2.0": 4,
+  "CC BY 4.0": 9,
+  "CC BY 2.5 au": 1,
+  "CC0": 14,
+  "CC BY-SA 3.0": 9,
+  "Public domain": 19,
+  "CC BY-SA 2.5": 1
+ },
+ "reference_manifest_sha256": "7b87f3e03ae2307c6ed0dd17af704ebf876ccdb982f0715ef428f46125a1e95d",
+ "banned_sources": "Pexels, Pixabay, Mixkit, Unsplash and stock-site credits refused",
+ "zenodo": "not added this run (no record with phone-style produce photos and per-record CC BY checked yet)",
+ "pixels": "/workspace/work/g9j5/cands/img (not in Git)"
+}

@@ -1,0 +1,35 @@
+n,clip,uploader,split,present_classes,to_confirm_classes,status,caveat
+1,c6e08132a,Missvain,holdout_v7_pending,banana;apple;mango;citrus;lemon_lime,,positive_verified,"clip-level presence only (not box-level); presence verdict from 6 sampled frames, Faizi 2026-10-13 23:24 PKT"
+2,c61cbc2a6,Amanpanta1990,holdout_v7_pending,apple,,positive_verified,"clip-level presence only (not box-level); presence verdict from 6 sampled frames, Faizi 2026-10-13 23:24 PKT"
+3,c9030be18,NMaia,holdout (LOCKED),citrus;banana;capsicum;mango,,positive_verified,"clip-level presence only (not box-level); absence-check tiles, Faizi 2026-10-13 23:49 PKT; flipped from 'none' by absence check: real tiles 001 citrus, 003 banana, 004 capsicum (orange bell pepper); tile 002 'mango not apple' -> mango; reviewer also saw oranges and green bananas"
+4,c97bdc431,OJjnr,holdout_v7_pending,carrot,,positive_verified,"clip-level presence only (not box-level); absence-check tiles, Faizi 2026-10-13 23:49 PKT; flipped by absence check: real tile 006 (carrot)"
+5,c19ae062b,OptimusPrimeBot,holdout_v7_pending,potato,,positive_verified,"clip-level presence only (not box-level); presence verdict from 6 sampled frames, Faizi 2026-10-13 23:24 PKT"
+6,c8b2d2f36,Muktee1494,negatives_v7,,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+7,c0a13587f,Hanooz,holdout (LOCKED),,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+8,c20a12a9c,Isewell,holdout (LOCKED),,,excluded_uncertain,"EXCLUDED: uncertain fruit (pale-green, apple or guava)"
+9,c32085ee7,Azimronnie,holdout (LOCKED),,,excluded_pending,"provisional tiles, video check pending"
+10,c3cc14a1f,Obihoja,holdout (LOCKED),,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+11,c59f957c2,Psubhashish,holdout (LOCKED),carrot,,positive_verified,"clip-level presence only (not box-level); absence-check tiles, Faizi 2026-10-13 23:49 PKT; flipped by absence check: real tile 026 (carrot)"
+12,c87e3900a,Victorgrigas,holdout (LOCKED),,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+13,c94ab39f5,Mx. Granger,holdout (LOCKED),,,negative_reviewed,"clip-level presence only (not box-level); zero detector hits (G3>=0.25, OWLv2>=0.3) plus 6 sampled frames 'none'"
+14,c973b3f44,Thamizhpparithi Maari,holdout (LOCKED),,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+15,c97e354bf,Shanze1,holdout (LOCKED),,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+16,ca1cbf110,Tyler1555,holdout (LOCKED),carrot,,positive_verified,"clip-level presence only (not box-level); presence verdict from 6 sampled frames, Faizi 2026-10-13 23:24 PKT"
+17,cb05e346c,GrantHillebrand,holdout (LOCKED),,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+18,cd1a3f857,NMaia,holdout (LOCKED),banana,,positive_verified,"clip-level presence only (not box-level); absence-check tiles, Faizi 2026-10-13 23:49 PKT; flipped by absence check: real tile 036 (banana)"
+19,cf0b25e3b,Yahya,holdout (LOCKED),citrus;lemon_lime,,positive_verified,"clip-level presence only (not box-level); absence-check tiles, Faizi 2026-10-13 23:49 PKT; flipped by absence check: real tiles 041 (citrus), 043 (lemon_lime)"
+20,cfe0b39f1,DarwIn,holdout (LOCKED),,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+21,c31b80875,Виктор Пинчук,holdout_v7_pending,tomato;banana,potato,positive_verified,"clip-level presence only (not box-level); presence verdict from 6 sampled frames, Faizi 2026-10-13 23:24 PKT; potato listed as 'to confirm' by reviewer: excluded from recall"
+22,c4880a292,OptimusPrimeBot,holdout_v7_pending,cucumber,,positive_verified,"clip-level presence only (not box-level); presence verdict from 6 sampled frames, Faizi 2026-10-13 23:24 PKT"
+23,c6473db48,McZusatz,holdout_v7_pending,,,excluded_pending,"provisional tiles, video check pending"
+24,c90447971,Isewell,holdout_v7_pending,carrot,,positive_verified,"clip-level presence only (not box-level); presence verdict from 6 sampled frames, Faizi 2026-10-13 23:24 PKT"
+25,cd4211720,FireFeather,holdout_v7_pending,mango,,positive_verified,"clip-level presence only (not box-level); presence verdict from 6 sampled frames, Faizi 2026-10-13 23:24 PKT"
+26,c0a08d565,Rafic.Mufid,negatives_v7,,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+27,c3d854faf,Saimmx,negatives_v7,,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+28,c4a35a451,Stephanie cheks,negatives_v7,,,excluded_uncertain,"EXCLUDED: red peppers/chilies; capsicum = whole bell pepper, chilies not a supported class"
+29,c4e9a7195,NairobiPapel,negatives_v7,,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+30,c6f5ac9b4,OptimusPrimeBot,negatives_v7,,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+31,c82e63d5a,Onyinye Achukwu,negatives_v7,,,excluded_pending,"provisional tiles, video check pending"
+32,cc5585ebc,Yann,negatives_v7,,,negative_reviewed,"clip-level presence only (not box-level); zero detector hits (G3>=0.25, OWLv2>=0.3) plus 6 sampled frames 'none'"
+33,cd17ce723,Hanooz,negatives_v7,,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence
+34,ce9f2fe34,Chris Light,negatives_v7,,,negative_reviewed,clip-level presence only (not box-level); no supported produce in the reviewed moments (top-4 detector moments + 6 sampled frames); not certified full-clip absence

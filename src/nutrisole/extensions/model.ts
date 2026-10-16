@@ -114,14 +114,14 @@ export function buildScene(id: ExtensionRoute, s = initialExpansionState()): Sce
       field('Confirm password', 'confirmPassword', 275, 'Confirm new password', { secure: true }); button('Save new password', 398, 'reset-password'); break;
     case 'analysis-result':
       header(); brand(46, 53); heading('Food assessment', 109, 'Review what we can see in your photo.', 35);
-      card(181, 110); photo('apple-thumbnail', 29, 192, 111, 98); text('Apple', 155, 209, 180, 21, { bold: true }); text('Sample analysis', 155, 243, 180, 14, { color: colors.muted });
-      card(307, 104, colors.pale); icon('Leaf', 43, 339, 36); text('VISIBLE GRADE', 117, 322, 222, 10, { color: colors.muted }); text('A', 117, 339, 80, 39, { serif: true, color: colors.green }); text('Good visible condition', 117, 383, 232, 14, { color: colors.green });
+      card(181, 110); photo('apple-thumbnail', 29, 192, 111, 98); text(DEMO_PLACEHOLDER.identity, 155, 209, 180, 21, { bold: true }); text(`${DEMO_LABEL} · sample`, 155, 243, 180, 14, { color: colors.muted });
+      card(307, 104, colors.pale); icon('Leaf', 43, 339, 36); text('VISIBLE GRADE', 117, 322, 222, 10, { color: colors.muted }); { const g = gradeDisplay(DEMO_PLACEHOLDER.grade); text(g.shown ? g.text : '—', 117, 339, 80, 39, { serif: true, color: g.shown ? colors.green : colors.muted }); text(g.shown ? 'Visible condition' : `${NOT_GRADED} · ${DEMO_LABEL}`, 117, 383, 232, 14, { color: g.shown ? colors.green : colors.muted }); }
       row(425, 'Ripeness', 'Even colour', 'Apple', 'evidence'); row(472, 'Surface', 'Minor marks', 'Flower', 'evidence'); row(519, 'Evidence', 'Visible features only', 'Search', 'evidence');
-      text('Model v1.0 · Rubric v1.0\nA photo cannot confirm food safety.', 27, 577, 345, 11, { color: colors.muted, line: 16 });
+      text(`${DEMO_LABEL} · no model was run\nA photo cannot confirm food safety.`, 27, 577, 345, 11, { color: colors.muted, line: 16 });
       row(626, 'Market reference', '', 'ShoppingCart', 'go:market-reference', 'Typical seasonal info'); row(700, 'Nutrition', '', 'ChartNoAxesColumnIncreasing', 'go:nutrition-details', 'Typical values for 1 medium (sample)');
       button('Confirm food', 778, 'go:food-selector'); break;
     case 'market-reference':
-      header('Market reference'); card(109, 117); photo('apple-thumbnail', 30, 120, 95); text('Apple', 140, 143, 196, 31, { serif: true }); text('Grade A', 140, 185, 190, 14, { color: colors.muted });
+      header('Market reference'); card(109, 117); photo('apple-thumbnail', 30, 120, 95); text(DEMO_PLACEHOLDER.identity, 140, 143, 196, 31, { serif: true }); text(`${gradeDisplay(DEMO_PLACEHOLDER.grade).text} · ${DEMO_LABEL}`, 140, 185, 190, 14, { color: colors.muted });
       row(236, 'Market', s.choices.market || '', 'MapPin', 'market', 'Select a market'); row(302, 'Unit', 'per kg', 'Weight', 'unit-market');
       card(382, 215, colors.pale); icon('ChartNoAxesColumnIncreasing', 167, 409, 47); text('No verified price yet', 30, 492, 333, 24, { serif: true, align: 'center' }); text('Choose a market to check dated,\ncomparable observations.', 31, 534, 332, 15, { color: colors.muted, align: 'center', line: 21 });
       row(611, 'Source', '—', 'NotebookText', undefined, 'Not available'); row(682, 'Observed', '—', 'CalendarDays', undefined, 'Not available'); button('Choose market', 769, 'market'); break;
@@ -266,4 +266,52 @@ export function buildScene(id: ExtensionRoute, s = initialExpansionState()): Sce
   layers.forEach(l => { if (l.y >= 100) { l.y = 100 + (l.y - 100) * .95; if (l.kind !== 'text') l.h *= .95; } });
   scene.height = 100 + (scene.height - 100) * .95 + 34;
   return scene;
+}
+
+// ---- G9 Stage J4: DEMO_PLACEHOLDER (single source for demo identity/confidence/grade text) ----
+// Kept in this file because model.ts is imported directly by node tests and the Figma importer and has no imports.
+// The app has NO verified on-device model result yet (human-verified images: 0, H3 blocked, user-facing grades blocked).
+// Anything shown before a real model result exists must come from here, carry the visible "Demo data" label, and never
+// look like a model output: no confidence number, no A/B/C grade, no model version.
+//
+// Flags (edit here only):
+//  - showDemoPlaceholders: show the sample identity with its "Demo data" label (false = hide the sample line entirely).
+//  - gradeDisplayEnabled:  user-facing A/B/C grades. MUST stay false until the frozen H3 / human-verification gates pass
+//    and the user approves. Even when true, gradeDisplay() only shows a grade passed in from a real model result;
+//    the demo placeholder itself has no grade, so a demo can never display one.
+
+export type DemoFlags = { showDemoPlaceholders: boolean; gradeDisplayEnabled: boolean };
+export const DEMO_FLAGS: Readonly<DemoFlags> = Object.freeze({ showDemoPlaceholders: true, gradeDisplayEnabled: false });
+
+export const DEMO_LABEL = 'Demo data';
+export const NOT_GRADED = 'Not graded';
+
+export const DEMO_PLACEHOLDER = Object.freeze({
+  isModelOutput: false as const,
+  label: DEMO_LABEL,
+  identity: 'Apple',            // sample photo subject, not a recognition result
+  confidence: null,             // never a number: there is no model confidence for a demo
+  grade: null,                  // never a grade
+  modelVersion: null,           // no model was run
+  note: 'Sample screen. No model was run, so no confidence or grade is shown.',
+});
+
+/** Text for the confidence slot of the scan banner. Never a percentage for demo content. */
+export function demoConfidenceText(flags: DemoFlags = DEMO_FLAGS): string {
+  return flags.showDemoPlaceholders ? `${DEMO_LABEL} · not a model result` : '';
+}
+
+/** Short variant for narrow fixed-width slots. */
+export function demoBadge(flags: DemoFlags = DEMO_FLAGS): string {
+  return flags.showDemoPlaceholders ? DEMO_LABEL : '';
+}
+
+export type GradeView = { shown: boolean; text: string; reason: 'grades_blocked' | 'no_model_grade' | 'model_grade' };
+const REAL_GRADES = ['A', 'B', 'C', 'Reject'] as const;
+
+/** Grade text for the UI. A grade appears only when the flag is on AND a real model grade is supplied. */
+export function gradeDisplay(modelGrade: string | null | undefined, flags: DemoFlags = DEMO_FLAGS): GradeView {
+  if (!flags.gradeDisplayEnabled) return { shown: false, text: NOT_GRADED, reason: 'grades_blocked' };
+  if (!modelGrade || !(REAL_GRADES as readonly string[]).includes(modelGrade)) return { shown: false, text: NOT_GRADED, reason: 'no_model_grade' };
+  return { shown: true, text: modelGrade, reason: 'model_grade' };
 }

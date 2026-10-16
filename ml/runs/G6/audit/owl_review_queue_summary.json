@@ -1,0 +1,168 @@
+{
+ "n": 1172,
+ "n_images": 122,
+ "by_class": {
+  "lemon_lime": 135,
+  "pomegranate": 17,
+  "potato": 84,
+  "capsicum": 91,
+  "citrus": 103,
+  "mango": 40,
+  "carrot": 144,
+  "cucumber": 8,
+  "apple": 111,
+  "tomato": 113,
+  "banana": 326
+ },
+ "flags": {
+  "g3_conflict": 60,
+  "citrus_lemon_lime": 238,
+  "tiny_box": 251,
+  "g3_missed": 964,
+  "group_box": 10
+ },
+ "g3_agree": 149,
+ "top20": [
+  [
+   1,
+   "lvisdrop/images/val/000000156242.jpg",
+   "lemon_lime",
+   0.3904,
+   "g3_conflict|citrus_lemon_lime"
+  ],
+  [
+   2,
+   "lvisdrop/images/val/000000193673.jpg",
+   "pomegranate",
+   0.4701,
+   "g3_conflict"
+  ],
+  [
+   3,
+   "lvisdrop/images/val/000000183435.jpg",
+   "potato",
+   0.4647,
+   "g3_conflict"
+  ],
+  [
+   4,
+   "lvisdrop/images/val/000000385181.jpg",
+   "capsicum",
+   0.512,
+   "g3_conflict"
+  ],
+  [
+   5,
+   "lvisdrop/images/val/000000536183.jpg",
+   "capsicum",
+   0.4771,
+   "g3_conflict"
+  ],
+  [
+   6,
+   "lvisdrop/images/val/000000550815.jpg",
+   "potato",
+   0.4453,
+   "g3_conflict"
+  ],
+  [
+   7,
+   "lvisdrop/images/val/000000193673.jpg",
+   "pomegranate",
+   0.4339,
+   "g3_conflict"
+  ],
+  [
+   8,
+   "lvisdrop/images/val/000000178748.jpg",
+   "capsicum",
+   0.4752,
+   "g3_conflict"
+  ],
+  [
+   9,
+   "lvisdrop/images/val/000000193673.jpg",
+   "pomegranate",
+   0.4327,
+   "g3_conflict"
+  ],
+  [
+   10,
+   "lvisdrop/images/val/000000536183.jpg",
+   "capsicum",
+   0.4716,
+   "g3_conflict"
+  ],
+  [
+   11,
+   "lvisdrop/images/val/000000156242.jpg",
+   "lemon_lime",
+   0.3466,
+   "g3_conflict|citrus_lemon_lime"
+  ],
+  [
+   12,
+   "lvisdrop/images/val/000000148792.jpg",
+   "citrus",
+   0.3159,
+   "g3_conflict|tiny_box|citrus_lemon_lime"
+  ],
+  [
+   13,
+   "lvisdrop/images/val/000000156242.jpg",
+   "lemon_lime",
+   0.3445,
+   "g3_conflict|citrus_lemon_lime"
+  ],
+  [
+   14,
+   "lvisdrop/images/val/000000385181.jpg",
+   "capsicum",
+   0.4667,
+   "g3_conflict"
+  ],
+  [
+   15,
+   "lvisdrop/images/val/000000193673.jpg",
+   "pomegranate",
+   0.4145,
+   "g3_conflict"
+  ],
+  [
+   16,
+   "lvisdrop/images/val/000000007913.jpg",
+   "citrus",
+   0.3046,
+   "g3_conflict|tiny_box|citrus_lemon_lime"
+  ],
+  [
+   17,
+   "lvisdrop/images/val/000000206859.jpg",
+   "citrus",
+   0.4022,
+   "g3_conflict|citrus_lemon_lime"
+  ],
+  [
+   18,
+   "lvisdrop/images/val/000000156242.jpg",
+   "lemon_lime",
+   0.3302,
+   "g3_conflict|citrus_lemon_lime"
+  ],
+  [
+   19,
+   "lvisdrop/images/val/000000193673.jpg",
+   "pomegranate",
+   0.4064,
+   "g3_conflict"
+  ],
+  [
+   20,
+   "lvisdrop/images/val/000000385181.jpg",
+   "capsicum",
+   0.4473,
+   "g3_conflict"
+  ]
+ ],
+ "note": "ordering only; all 1 172 items remain pending_review (no human review in sandbox); nothing enters training"
+}

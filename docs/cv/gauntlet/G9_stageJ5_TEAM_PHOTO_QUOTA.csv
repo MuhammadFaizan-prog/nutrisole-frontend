@@ -1,0 +1,16 @@
+priority,split,class,condition,target_candidates,reason,accepted_by_j_team_phone
+1,J-train,apple,open,75,projected T1 shortfall 65 after training packs 1+2 (G9_stageJ_gaps.md §7),yes
+1,J-train,citrus_orange,open,20,orange training approved 2026-10-15 22:53 PKT; projected shortfall 8 + T1 needs a phone-style source per class,yes (J5)
+1,J-train,tomato,open,15,projected shortfall 8,yes
+1,J-train,banana,open,10,projected shortfall 4,yes
+1,J-eval,apple,bag-clear/bag-mesh/tray-film,10,R2 packaging sub-quota (AI review saw only 4 bagged items),yes
+1,J-eval,apple,hid-hand/hid-fruit/hid-edge/hid-object,10,R2 occluded sub-quota (AI review saw 3 occluded),yes
+1,J-eval,banana,bag-clear/bag-mesh/tray-film,10,R2 packaging,yes
+1,J-eval,banana,hid-hand/hid-fruit/hid-edge/hid-object,10,R2 occluded,yes
+1,J-eval,tomato,bag-clear/bag-mesh/tray-film,10,R2 packaging,yes
+1,J-eval,tomato,hid-hand/hid-fruit/hid-edge/hid-object,10,R2 occluded,yes
+2,J-eval,citrus_orange,bag-clear/bag-mesh/tray-film,8,R2 packaging,yes
+2,J-eval,citrus_orange,hid-hand/hid-fruit/hid-edge/hid-object,8,R2 occluded,yes
+2,J-eval,carrot,bag-clear/bag-mesh/tray-film,8,R2 packaging,yes
+2,J-eval,carrot,hid-hand/hid-fruit/hid-edge/hid-object,8,R2 occluded,yes
+opt,J-eval,none,bag-clear/bag-mesh/tray-film,5,empty bag/tray or onions in a net (negative),yes

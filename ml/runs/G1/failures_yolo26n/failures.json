@@ -1,0 +1,797 @@
+{
+ "classifier": {
+  "n": 270,
+  "errors": 5,
+  "errors_by_produce": {
+   "citrus:fresh": 4,
+   "guava:rotten": 1
+  },
+  "worst50": [
+   {
+    "file": "citrus__orange_0_01190.jpg",
+    "label": "fresh",
+    "pred": "rotten",
+    "p_true": 0.06779028838637224,
+    "loss": 2.691336333434545
+   },
+   {
+    "file": "citrus__orange_0_01058.jpg",
+    "label": "fresh",
+    "pred": "rotten",
+    "p_true": 0.24866222586537143,
+    "loss": 1.3916598260561988
+   },
+   {
+    "file": "guava__guava_1_02235.jpg",
+    "label": "rotten",
+    "pred": "fresh",
+    "p_true": 0.26047966603637174,
+    "loss": 1.3452304782773072
+   },
+   {
+    "file": "citrus__orange_0_01173.jpg",
+    "label": "fresh",
+    "pred": "rotten",
+    "p_true": 0.28509987124511305,
+    "loss": 1.2549157346766853
+   },
+   {
+    "file": "citrus__orange_0_01108.jpg",
+    "label": "fresh",
+    "pred": "rotten",
+    "p_true": 0.35067508880563125,
+    "loss": 1.0478951571344544
+   },
+   {
+    "file": "citrus__orange_0_01117.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.5126201453268416,
+    "loss": 0.668220165537938
+   },
+   {
+    "file": "pomegranate__pomegranate_0_01309.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.5186144122274449,
+    "loss": 0.6565946156207546
+   },
+   {
+    "file": "citrus__orange_1_02742.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.6789699172971618,
+    "loss": 0.3871784568273529
+   },
+   {
+    "file": "guava__guava_1_02261.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.6932552724043517,
+    "loss": 0.36635698917171294
+   },
+   {
+    "file": "citrus__orange_0_01005.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.7464028265206758,
+    "loss": 0.2924898425849569
+   },
+   {
+    "file": "banana__banana_0_00329.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.7500957995488517,
+    "loss": 0.2875543478771094
+   },
+   {
+    "file": "citrus__orange_0_01194.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.750097576875697,
+    "loss": 0.287551978413448
+   },
+   {
+    "file": "citrus__orange_0_01172.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.7931488994949715,
+    "loss": 0.23174430764049134
+   },
+   {
+    "file": "pomegranate__pomegranate_1_02852.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.8037065321000982,
+    "loss": 0.21852108626122038
+   },
+   {
+    "file": "citrus__orange_0_01040.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.8379145136115489,
+    "loss": 0.17683919610039214
+   },
+   {
+    "file": "banana__banana_0_00267.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.8905688243536083,
+    "loss": 0.11589489192437963
+   },
+   {
+    "file": "pomegranate__pomegranate_0_01312.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.8994168067915378,
+    "loss": 0.10600871814952352
+   },
+   {
+    "file": "guava__guava_1_02300.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9123278546623657,
+    "loss": 0.09175586374740229
+   },
+   {
+    "file": "citrus__orange_0_01027.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.922783311123576,
+    "loss": 0.08036083788771324
+   },
+   {
+    "file": "guava__guava_1_02279.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9281080251182867,
+    "loss": 0.07460714659316896
+   },
+   {
+    "file": "guava__guava_1_02223.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9521138513485999,
+    "loss": 0.04907065958856428
+   },
+   {
+    "file": "citrus__orange_0_01118.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9559952550116673,
+    "loss": 0.04500232931997045
+   },
+   {
+    "file": "pomegranate__pomegranate_0_01232.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9578622043118898,
+    "loss": 0.0430513481919742
+   },
+   {
+    "file": "guava__guava_1_02256.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.960839313544776,
+    "loss": 0.03994809154224611
+   },
+   {
+    "file": "pomegranate__pomegranate_0_01200.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9612669484253494,
+    "loss": 0.0395031266658601
+   },
+   {
+    "file": "citrus__orange_0_01188.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9661634774933494,
+    "loss": 0.03442222772805528
+   },
+   {
+    "file": "apple__apple_0_00186.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9686543824219688,
+    "loss": 0.03184740520197706
+   },
+   {
+    "file": "citrus__orange_0_01193.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9760461986565155,
+    "loss": 0.0242453590002428
+   },
+   {
+    "file": "apple__apple_1_01780.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9786633893733475,
+    "loss": 0.0215675266544031
+   },
+   {
+    "file": "citrus__orange_0_01191.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9793594657814647,
+    "loss": 0.02085652735671049
+   },
+   {
+    "file": "citrus__orange_1_02793.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9849518291257489,
+    "loss": 0.015162543446773433
+   },
+   {
+    "file": "guava__guava_1_02276.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9862894671816067,
+    "loss": 0.013805390201581207
+   },
+   {
+    "file": "pomegranate__pomegranate_1_02910.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9890762488969833,
+    "loss": 0.010983853367660367
+   },
+   {
+    "file": "citrus__orange_0_01039.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9891881683137111,
+    "loss": 0.010870704270023518
+   },
+   {
+    "file": "banana__banana_0_00330.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9892193229996487,
+    "loss": 0.010839209559174641
+   },
+   {
+    "file": "citrus__orange_0_01174.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9892800295179501,
+    "loss": 0.010777843334067434
+   },
+   {
+    "file": "guava__guava_1_02284.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9897640072883259,
+    "loss": 0.01028874074612809
+   },
+   {
+    "file": "guava__guava_1_02275.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9908050828195699,
+    "loss": 0.009237451364376556
+   },
+   {
+    "file": "citrus__orange_0_01119.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9918350712931031,
+    "loss": 0.008198444296900642
+   },
+   {
+    "file": "citrus__orange_0_01198.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9920152957270006,
+    "loss": 0.008016752736499298
+   },
+   {
+    "file": "citrus__orange_0_01107.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9934371239415446,
+    "loss": 0.006584506419728345
+   },
+   {
+    "file": "pomegranate__pomegranate_1_02909.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9945633666739049,
+    "loss": 0.005451465599905327
+   },
+   {
+    "file": "citrus__orange_0_01088.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9945888606366109,
+    "loss": 0.005425832606756402
+   },
+   {
+    "file": "citrus__orange_1_02788.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9945916585793262,
+    "loss": 0.005423019445569404
+   },
+   {
+    "file": "pomegranate__pomegranate_1_02885.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.9946174831701219,
+    "loss": 0.005397054764174026
+   },
+   {
+    "file": "banana__banana_0_00281.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.995211247604006,
+    "loss": 0.004800255208187561
+   },
+   {
+    "file": "citrus__orange_0_01116.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9955447805429779,
+    "loss": 0.00446517352326299
+   },
+   {
+    "file": "citrus__orange_1_02761.jpg",
+    "label": "rotten",
+    "pred": "rotten",
+    "p_true": 0.995856582723902,
+    "loss": 0.0041520250146563995
+   },
+   {
+    "file": "pomegranate__pomegranate_0_01367.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9959103498771511,
+    "loss": 0.004098035612199594
+   },
+   {
+    "file": "citrus__orange_0_01192.jpg",
+    "label": "fresh",
+    "pred": "fresh",
+    "p_true": 0.9961397356357714,
+    "loss": 0.0038677344151540386
+   }
+  ]
+ },
+ "detector": {
+  "n_images": 557,
+  "total_gt": 12267,
+  "missed": 11407,
+  "false_boxes": 167,
+  "wrong_class": 54,
+  "negatives": 50,
+  "negatives_with_any_box": 8,
+  "gt_by_class": {
+   "apple": 2122,
+   "banana": 5048,
+   "citrus": 1833,
+   "lemon_lime": 290,
+   "tomato": 659,
+   "carrot": 1558,
+   "potato": 366,
+   "cucumber": 111,
+   "capsicum": 280
+  },
+  "missed_by_class": {
+   "apple": 2013,
+   "banana": 4819,
+   "citrus": 1562,
+   "lemon_lime": 276,
+   "tomato": 560,
+   "carrot": 1427,
+   "potato": 364,
+   "cucumber": 111,
+   "capsicum": 275
+  },
+  "top_confusions": [
+   {
+    "gt": "apple",
+    "pred": "citrus",
+    "n": 11
+   },
+   {
+    "gt": "lemon_lime",
+    "pred": "citrus",
+    "n": 10
+   },
+   {
+    "gt": "citrus",
+    "pred": "lemon_lime",
+    "n": 5
+   },
+   {
+    "gt": "tomato",
+    "pred": "citrus",
+    "n": 5
+   },
+   {
+    "gt": "banana",
+    "pred": "apple",
+    "n": 3
+   },
+   {
+    "gt": "lemon_lime",
+    "pred": "apple",
+    "n": 3
+   },
+   {
+    "gt": "tomato",
+    "pred": "apple",
+    "n": 3
+   },
+   {
+    "gt": "tomato",
+    "pred": "carrot",
+    "n": 3
+   },
+   {
+    "gt": "capsicum",
+    "pred": "carrot",
+    "n": 2
+   },
+   {
+    "gt": "capsicum",
+    "pred": "tomato",
+    "n": 2
+   }
+  ],
+  "worst50": [
+   {
+    "file": "000000527846.jpg",
+    "gt": 438,
+    "fn": 438,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000416337.jpg",
+    "gt": 405,
+    "fn": 405,
+    "fp": 1,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000189452.jpg",
+    "gt": 360,
+    "fn": 360,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000087096.jpg",
+    "gt": 262,
+    "fn": 262,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000136271.jpg",
+    "gt": 258,
+    "fn": 258,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000490044.jpg",
+    "gt": 203,
+    "fn": 203,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000040635.jpg",
+    "gt": 181,
+    "fn": 181,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000289497.jpg",
+    "gt": 179,
+    "fn": 179,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000299001.jpg",
+    "gt": 179,
+    "fn": 178,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000165164.jpg",
+    "gt": 165,
+    "fn": 165,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000166586.jpg",
+    "gt": 164,
+    "fn": 164,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000292170.jpg",
+    "gt": 164,
+    "fn": 164,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000310202.jpg",
+    "gt": 158,
+    "fn": 158,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000010432.jpg",
+    "gt": 145,
+    "fn": 140,
+    "fp": 4,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000477919.jpg",
+    "gt": 137,
+    "fn": 137,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000167583.jpg",
+    "gt": 134,
+    "fn": 134,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000468548.jpg",
+    "gt": 127,
+    "fn": 127,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000559400.jpg",
+    "gt": 125,
+    "fn": 125,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000445327.jpg",
+    "gt": 124,
+    "fn": 124,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000286719.jpg",
+    "gt": 117,
+    "fn": 117,
+    "fp": 1,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000375461.jpg",
+    "gt": 118,
+    "fn": 118,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000266371.jpg",
+    "gt": 115,
+    "fn": 115,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000485724.jpg",
+    "gt": 117,
+    "fn": 112,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000540714.jpg",
+    "gt": 115,
+    "fn": 111,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000194140.jpg",
+    "gt": 110,
+    "fn": 110,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000071682.jpg",
+    "gt": 108,
+    "fn": 108,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000458567.jpg",
+    "gt": 108,
+    "fn": 108,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000571518.jpg",
+    "gt": 111,
+    "fn": 102,
+    "fp": 1,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000166320.jpg",
+    "gt": 100,
+    "fn": 100,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000383762.jpg",
+    "gt": 103,
+    "fn": 98,
+    "fp": 2,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000037638.jpg",
+    "gt": 99,
+    "fn": 99,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000469235.jpg",
+    "gt": 99,
+    "fn": 99,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000558362.jpg",
+    "gt": 98,
+    "fn": 94,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000000715.jpg",
+    "gt": 94,
+    "fn": 93,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000405580.jpg",
+    "gt": 92,
+    "fn": 92,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000490405.jpg",
+    "gt": 92,
+    "fn": 92,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000542717.jpg",
+    "gt": 86,
+    "fn": 86,
+    "fp": 1,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000298711.jpg",
+    "gt": 94,
+    "fn": 84,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000473427.jpg",
+    "gt": 87,
+    "fn": 84,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000236607.jpg",
+    "gt": 83,
+    "fn": 83,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000230598.jpg",
+    "gt": 76,
+    "fn": 76,
+    "fp": 2,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000008081.jpg",
+    "gt": 78,
+    "fn": 77,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000095427.jpg",
+    "gt": 76,
+    "fn": 76,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000521964.jpg",
+    "gt": 75,
+    "fn": 75,
+    "fp": 1,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000414777.jpg",
+    "gt": 79,
+    "fn": 72,
+    "fp": 1,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000047952.jpg",
+    "gt": 72,
+    "fn": 72,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000213453.jpg",
+    "gt": 72,
+    "fn": 72,
+    "fp": 0,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000256575.jpg",
+    "gt": 75,
+    "fn": 71,
+    "fp": 1,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000508489.jpg",
+    "gt": 71,
+    "fn": 71,
+    "fp": 1,
+    "wrong_class": 0
+   },
+   {
+    "file": "000000301971.jpg",
+    "gt": 72,
+    "fn": 71,
+    "fp": 0,
+    "wrong_class": 0
+   }
+  ]
+ }
+}

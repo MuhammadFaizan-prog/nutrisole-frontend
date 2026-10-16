@@ -1,0 +1,195 @@
+{
+ "model": "/workspace/work/cv/g10/models/G3_best_copy.pt",
+ "device": "cpu",
+ "head": "default (one2many + NMS iou 0.7)",
+ "results": [
+  {
+   "split": "val",
+   "imgsz": 480,
+   "mAP50": 0.4323,
+   "mAP50_95": 0.3109,
+   "P": 0.61,
+   "R": 0.3789,
+   "per_class": {
+    "banana": {
+     "P": 0.6924,
+     "R": 0.5328,
+     "mAP50": 0.5608,
+     "mAP50_95": 0.2974,
+     "instances": 469
+    },
+    "apple": {
+     "P": 0.7093,
+     "R": 0.5779,
+     "mAP50": 0.632,
+     "mAP50_95": 0.4946,
+     "instances": 199
+    },
+    "mango": {
+     "P": 0.6536,
+     "R": 0.6364,
+     "mAP50": 0.6835,
+     "mAP50_95": 0.577,
+     "instances": 11
+    },
+    "citrus": {
+     "P": 0.8076,
+     "R": 0.6863,
+     "mAP50": 0.7443,
+     "mAP50_95": 0.5942,
+     "instances": 208
+    },
+    "pomegranate": {
+     "P": 0.5598,
+     "R": 0.5567,
+     "mAP50": 0.5445,
+     "mAP50_95": 0.383,
+     "instances": 16
+    },
+    "lemon_lime": {
+     "P": 0.5206,
+     "R": 0.0287,
+     "mAP50": 0.1008,
+     "mAP50_95": 0.0702,
+     "instances": 77
+    },
+    "tomato": {
+     "P": 0.5979,
+     "R": 0.4511,
+     "mAP50": 0.4606,
+     "mAP50_95": 0.3154,
+     "instances": 317
+    },
+    "potato": {
+     "P": 0.0,
+     "R": 0.0,
+     "mAP50": 0.0088,
+     "mAP50_95": 0.0063,
+     "instances": 20
+    },
+    "cucumber": {
+     "P": 0.6602,
+     "R": 0.1818,
+     "mAP50": 0.2977,
+     "mAP50_95": 0.2111,
+     "instances": 154
+    },
+    "carrot": {
+     "P": 0.737,
+     "R": 0.3011,
+     "mAP50": 0.4412,
+     "mAP50_95": 0.2646,
+     "instances": 435
+    },
+    "capsicum": {
+     "P": 0.7714,
+     "R": 0.2155,
+     "mAP50": 0.2811,
+     "mAP50_95": 0.2062,
+     "instances": 116
+    }
+   },
+   "speed_ms": {
+    "preprocess": 0.780930579602415,
+    "inference": 109.65774332835812,
+    "loss": 0.0001590771139535492,
+    "postprocess": 0.5863060845769466
+   },
+   "save_dir": "/workspace/work/cv/g10/runs/eval_det_G3_val/val_480"
+  },
+  {
+   "split": "val",
+   "imgsz": 640,
+   "mAP50": 0.4523,
+   "mAP50_95": 0.3366,
+   "P": 0.6015,
+   "R": 0.408,
+   "per_class": {
+    "banana": {
+     "P": 0.6209,
+     "R": 0.5373,
+     "mAP50": 0.5874,
+     "mAP50_95": 0.3262,
+     "instances": 469
+    },
+    "apple": {
+     "P": 0.6129,
+     "R": 0.5968,
+     "mAP50": 0.6075,
+     "mAP50_95": 0.4872,
+     "instances": 199
+    },
+    "mango": {
+     "P": 0.6807,
+     "R": 0.7273,
+     "mAP50": 0.7206,
+     "mAP50_95": 0.5934,
+     "instances": 11
+    },
+    "citrus": {
+     "P": 0.7102,
+     "R": 0.7187,
+     "mAP50": 0.74,
+     "mAP50_95": 0.6029,
+     "instances": 208
+    },
+    "pomegranate": {
+     "P": 0.6231,
+     "R": 0.5625,
+     "mAP50": 0.6128,
+     "mAP50_95": 0.4556,
+     "instances": 16
+    },
+    "lemon_lime": {
+     "P": 0.7327,
+     "R": 0.1299,
+     "mAP50": 0.1783,
+     "mAP50_95": 0.1386,
+     "instances": 77
+    },
+    "tomato": {
+     "P": 0.5514,
+     "R": 0.4322,
+     "mAP50": 0.4596,
+     "mAP50_95": 0.3394,
+     "instances": 317
+    },
+    "potato": {
+     "P": 0.0,
+     "R": 0.0,
+     "mAP50": 0.0401,
+     "mAP50_95": 0.0284,
+     "instances": 20
+    },
+    "cucumber": {
+     "P": 0.7597,
+     "R": 0.2258,
+     "mAP50": 0.316,
+     "mAP50_95": 0.2385,
+     "instances": 154
+    },
+    "carrot": {
+     "P": 0.7039,
+     "R": 0.3333,
+     "mAP50": 0.4413,
+     "mAP50_95": 0.2757,
+     "instances": 435
+    },
+    "capsicum": {
+     "P": 0.6209,
+     "R": 0.2241,
+     "mAP50": 0.2714,
+     "mAP50_95": 0.2168,
+     "instances": 116
+    }
+   },
+   "speed_ms": {
+    "preprocess": 2.039408955223807,
+    "inference": 208.98078254477545,
+    "loss": 0.00014349005207022224,
+    "postprocess": 0.8441339203989003
+   },
+   "save_dir": "/workspace/work/cv/g10/runs/eval_det_G3_val/val_640"
+  }
+ ]
+}

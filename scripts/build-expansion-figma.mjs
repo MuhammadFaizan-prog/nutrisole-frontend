@@ -23,7 +23,7 @@ const direct = {
 const dialogs = {
   recover: ['Check your inbox', 'If an account exists, a recovery link would be sent. No email is sent by this frontend prototype.', [['Preview recovery link', 'reset-password']]],
   resend: ['Verification link', 'Preview the verified or expired-link state. No email is sent.', [['Valid link', 'sign-in'], ['Use another email', 'create-account']]],
-  evidence: ['Assessment evidence', 'Sample colour: even red. Shape: whole apple. Surface: minor marks. Confidence 97%. Model v1.0 · Rubric v1.0. A photo cannot determine food safety.', [['Correct food label', 'food-selector'], ['Report assessment', 'report-output']]],
+  evidence: [`Assessment evidence · ${model.DEMO_LABEL}`, `Sample colour: even red. Shape: whole apple. Surface: minor marks. ${model.DEMO_PLACEHOLDER.note} A photo cannot determine food safety.`, [['Correct food label', 'food-selector'], ['Report assessment', 'report-output']]],
   market: ['Choose a market', 'Local retail, wholesale and online are demo selectors. No verified price, source or observation date is available.', [['Local retail · Demo', 'market-reference'], ['Wholesale · Demo', 'market-reference']]],
   'review-reading': ['Review manual reading', 'Sample entry: 110 mg/dL · Sep 30, 2026 · 8:15 AM · Pacific Time · Before a meal · Manual meter entry.', [['Confirm & save', 'reading-detail'], ['Edit value', 'add-reading']]],
   'remove-reading': ['Remove manual record?', 'This is a synthetic prototype record. Removal has no effect on the original six screens.', [['Remove record', 'glucose-overview']]],

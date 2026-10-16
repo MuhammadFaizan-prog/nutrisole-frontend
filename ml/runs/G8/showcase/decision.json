@@ -1,0 +1,194 @@
+{
+ "rule": "Addendum 2026-10-13 S3",
+ "target": 0.6,
+ "classes": [
+  "citrus",
+  "apple",
+  "banana",
+  "tomato",
+  "carrot"
+ ],
+ "seeds": {
+  "show_s0": {
+   "per_class": {
+    "citrus": {
+     "g3": 0.4512,
+     "cand": 0.4616,
+     "cand_R": 0.4695,
+     "cand_P": 0.6534,
+     "g3_R": 0.4325,
+     "g3_P": 0.651,
+     "inst": 1868,
+     "cand_mAP50_95": 0.3308,
+     "g3_mAP50_95": 0.3188,
+     "pass_": false
+    },
+    "apple": {
+     "g3": 0.2472,
+     "cand": 0.2633,
+     "cand_R": 0.2408,
+     "cand_P": 0.6222,
+     "g3_R": 0.2081,
+     "g3_P": 0.6067,
+     "inst": 2148,
+     "cand_mAP50_95": 0.1803,
+     "g3_mAP50_95": 0.1571,
+     "pass_": false
+    },
+    "banana": {
+     "g3": 0.3407,
+     "cand": 0.3417,
+     "cand_R": 0.3555,
+     "cand_P": 0.4976,
+     "g3_R": 0.3881,
+     "g3_P": 0.4338,
+     "inst": 5123,
+     "cand_mAP50_95": 0.1728,
+     "g3_mAP50_95": 0.1678,
+     "pass_": false
+    },
+    "tomato": {
+     "g3": 0.3943,
+     "cand": 0.3722,
+     "cand_R": 0.3674,
+     "cand_P": 0.4673,
+     "g3_R": 0.4246,
+     "g3_P": 0.4125,
+     "inst": 822,
+     "cand_mAP50_95": 0.248,
+     "g3_mAP50_95": 0.2574,
+     "pass_": false
+    },
+    "carrot": {
+     "g3": 0.3118,
+     "cand": 0.3269,
+     "cand_R": 0.3596,
+     "cand_P": 0.5084,
+     "g3_R": 0.3717,
+     "g3_P": 0.4272,
+     "inst": 1645,
+     "cand_mAP50_95": 0.1781,
+     "g3_mAP50_95": 0.1628,
+     "pass_": false
+    }
+   },
+   "n_pass": 0
+  },
+  "show_s1": {
+   "per_class": {
+    "citrus": {
+     "g3": 0.4512,
+     "cand": 0.4575,
+     "cand_R": 0.4165,
+     "cand_P": 0.6937,
+     "g3_R": 0.4325,
+     "g3_P": 0.651,
+     "inst": 1868,
+     "cand_mAP50_95": 0.3321,
+     "g3_mAP50_95": 0.3188,
+     "pass_": false
+    },
+    "apple": {
+     "g3": 0.2472,
+     "cand": 0.2818,
+     "cand_R": 0.2649,
+     "cand_P": 0.6039,
+     "g3_R": 0.2081,
+     "g3_P": 0.6067,
+     "inst": 2148,
+     "cand_mAP50_95": 0.1871,
+     "g3_mAP50_95": 0.1571,
+     "pass_": false
+    },
+    "banana": {
+     "g3": 0.3407,
+     "cand": 0.3303,
+     "cand_R": 0.333,
+     "cand_P": 0.5364,
+     "g3_R": 0.3881,
+     "g3_P": 0.4338,
+     "inst": 5123,
+     "cand_mAP50_95": 0.167,
+     "g3_mAP50_95": 0.1678,
+     "pass_": false
+    },
+    "tomato": {
+     "g3": 0.3943,
+     "cand": 0.3543,
+     "cand_R": 0.3625,
+     "cand_P": 0.4729,
+     "g3_R": 0.4246,
+     "g3_P": 0.4125,
+     "inst": 822,
+     "cand_mAP50_95": 0.2369,
+     "g3_mAP50_95": 0.2574,
+     "pass_": false
+    },
+    "carrot": {
+     "g3": 0.3118,
+     "cand": 0.3219,
+     "cand_R": 0.3836,
+     "cand_P": 0.4451,
+     "g3_R": 0.3717,
+     "g3_P": 0.4272,
+     "inst": 1645,
+     "cand_mAP50_95": 0.176,
+     "g3_mAP50_95": 0.1628,
+     "pass_": false
+    }
+   },
+   "n_pass": 0
+  }
+ },
+ "video_fa_min": {
+  "G3": 0.75,
+  "G3r5": 0.5,
+  "show_s0": 0.0
+ },
+ "latency": {
+  "G3": {
+   "n": 200,
+   "p50": 64.05,
+   "p95": 86.31,
+   "mean": 65.53
+  },
+  "G3r5": {
+   "n": 200,
+   "p50": 67.52,
+   "p95": 87.57,
+   "mean": 72.63
+  },
+  "show_s0": {
+   "n": 200,
+   "p50": 65.85,
+   "p95": 84.51,
+   "mean": 68.8
+  },
+  "note": "sandbox CPU (2 cores aarch64, shared), onnxruntime CPU EP, 100 val frames x 2 passes, model order alternated per pass, det session.run only (letterbox excluded)"
+ },
+ "parity": {
+  "detector": {
+   "pt": "/workspace/work/cv/g8show/show5_s0_12row.pt",
+   "onnx": "/workspace/work/cv/g8show/show5_s0_12row_raw.onnx",
+   "images": 40,
+   "imgsz": 480,
+   "matched_pairs": 130,
+   "class_disagreements": 0,
+   "min_iou": 0.999995598684248,
+   "mean_iou": 0.9999990585413656,
+   "max_dconf": 5.811452865600586e-06,
+   "mean_dconf": 6.095721171452449e-07,
+   "unmatched_beyond_tolerance": 0,
+   "unmatched_near_threshold": 0,
+   "pass": true
+  }
+ },
+ "criteria": {
+  "1_per_class_>=4of5_both_seeds": false,
+  "2_video_fa_min_le_G3r5": true,
+  "3_latency_p95_le_1.10x": true,
+  "4_onnx_parity": true
+ },
+ "PASS": false,
+ "claimable_classes_seed0": []
+}

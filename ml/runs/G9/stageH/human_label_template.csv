@@ -1,0 +1,4 @@
+item_id,capture_id,image_file,source,licence,author,session_id,split,annotator,class,unknown_name,whole_or_cut,supported,condition,abc_grade,ripeness,occluder,visible_fraction_est,truncated_by_frame,lighting,blur,gradable_capture,defect_area_pct_est,confidence,notes
+H0001,H0001-c1,img/H0001_c1.jpg,own_photo,CC BY 4.0,NutriSole team,S03-2026-11-02-Akbari,pilot-check,A1,apple,,whole,yes,minor_defect,B,ripe,none,100,no,good,none,yes,4,sure,
+H0001,H0001-c2,img/H0001_c2.jpg,own_photo,CC BY 4.0,NutriSole team,S03-2026-11-02-Akbari,pilot-check,A1,apple,,whole,yes,cannot_judge,ungradable,cannot_judge,hand,50-74,no,good,none,no,,sure,hand covers left half
+H0002,H0002-c1,img/H0002_c1.jpg,commons,CC BY-SA 4.0,<author>,S07-commons-<uploader>,pilot-tune,A1,unknown,persimmon,whole,no,,ungradable,,none,100,no,good,none,no,,sure,

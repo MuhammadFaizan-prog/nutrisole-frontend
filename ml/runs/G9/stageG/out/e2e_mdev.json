@@ -1,0 +1,17 @@
+{
+ "images": 84,
+ "gt_boxes": 1493,
+ "g3": {
+  "tp": 14,
+  "fp": 63,
+  "fp_boxfree": 47,
+  "ignored": 192
+ },
+ "policy": {
+  "tp": 13,
+  "fp": 52,
+  "fp_boxfree": 37,
+  "ignored": 141
+ },
+ "note": "stills: tracker hits assumed (policy = score >= 0.5); crowd/ignore matches excluded; same-class only"
+}

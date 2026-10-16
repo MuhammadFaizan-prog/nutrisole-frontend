@@ -1,0 +1,73 @@
+{
+ "model": "/workspace/work/cv/g10/models/G3_best_copy.pt",
+ "imgsz": 480,
+ "list": "/workspace/work/cv/g10/val.txt",
+ "neg": "/workspace/work/cv/g10/negdev.txt",
+ "n_neg": 110,
+ "gt_boxes": 2022,
+ "score": 0.35,
+ "maxSameClass": 0,
+ "label_status": "dataset / agent-curated labels; EXPLORATORY",
+ "rows": [
+  {
+   "minAreaFrac": 0.0,
+   "tp": 825,
+   "fp": 433,
+   "neg_imgs": 3,
+   "neg_boxes": 3,
+   "recall": 0.408,
+   "gt_share_below": 0.0,
+   "neg_image_rate": 0.0273
+  },
+  {
+   "minAreaFrac": 0.001,
+   "tp": 824,
+   "fp": 429,
+   "neg_imgs": 3,
+   "neg_boxes": 3,
+   "recall": 0.4075,
+   "gt_share_below": 0.0559,
+   "neg_image_rate": 0.0273
+  },
+  {
+   "minAreaFrac": 0.0025,
+   "tp": 814,
+   "fp": 397,
+   "neg_imgs": 2,
+   "neg_boxes": 2,
+   "recall": 0.4026,
+   "gt_share_below": 0.1578,
+   "neg_image_rate": 0.0182
+  },
+  {
+   "minAreaFrac": 0.005,
+   "tp": 742,
+   "fp": 344,
+   "neg_imgs": 2,
+   "neg_boxes": 2,
+   "recall": 0.367,
+   "gt_share_below": 0.3136,
+   "neg_image_rate": 0.0182
+  },
+  {
+   "minAreaFrac": 0.01,
+   "tp": 593,
+   "fp": 243,
+   "neg_imgs": 1,
+   "neg_boxes": 1,
+   "recall": 0.2933,
+   "gt_share_below": 0.499,
+   "neg_image_rate": 0.0091
+  },
+  {
+   "minAreaFrac": 0.02,
+   "tp": 420,
+   "fp": 151,
+   "neg_imgs": 1,
+   "neg_boxes": 1,
+   "recall": 0.2077,
+   "gt_share_below": 0.6741,
+   "neg_image_rate": 0.0091
+  }
+ ]
+}

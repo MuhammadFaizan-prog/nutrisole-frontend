@@ -1,0 +1,133 @@
+{
+ "test_rf": {
+  "n_images": 149,
+  "gt_instances": {
+   "banana": 75,
+   "apple": 25,
+   "citrus": 34,
+   "lemon_lime": 4,
+   "tomato": 122,
+   "cucumber": 73,
+   "carrot": 84,
+   "capsicum": 110
+  },
+  "single": {
+   "mAP50": 0.3371,
+   "per_class": {
+    "banana": 0.8144,
+    "apple": 0.2461,
+    "citrus": 0.6212,
+    "lemon_lime": 0.0309,
+    "tomato": 0.5784,
+    "cucumber": 0.0682,
+    "carrot": 0.322,
+    "capsicum": 0.0153
+   }
+  },
+  "two_stage": {
+   "mAP50": 0.353,
+   "per_class": {
+    "banana": 0.7537,
+    "apple": 0.306,
+    "citrus": 0.6998,
+    "lemon_lime": 0.0137,
+    "tomato": 0.5452,
+    "cucumber": 0.0857,
+    "carrot": 0.374,
+    "capsicum": 0.0458
+   }
+  },
+  "latency_ms": {
+   "det_p50": 48.8,
+   "det_plus_type_p50": 122.4,
+   "boxes_classified_max": 30
+  }
+ },
+ "test_oiv7": {
+  "n_images": 123,
+  "gt_instances": {
+   "apple": 1,
+   "mango": 22,
+   "citrus": 1,
+   "pomegranate": 48,
+   "tomato": 41,
+   "cucumber": 173,
+   "carrot": 3,
+   "capsicum": 120
+  },
+  "single": {
+   "mAP50": 0.3621,
+   "per_class": {
+    "apple": 0.0,
+    "mango": 0.328,
+    "citrus": 0.4975,
+    "pomegranate": 0.5636,
+    "tomato": 0.2482,
+    "cucumber": 0.4976,
+    "carrot": 0.0204,
+    "capsicum": 0.7412
+   }
+  },
+  "two_stage": {
+   "mAP50": 0.3625,
+   "per_class": {
+    "apple": 0.1421,
+    "mango": 0.2045,
+    "citrus": 0.4975,
+    "pomegranate": 0.5927,
+    "tomato": 0.1824,
+    "cucumber": 0.5206,
+    "carrot": 0.0109,
+    "capsicum": 0.7496
+   }
+  },
+  "latency_ms": {
+   "det_p50": 48.7,
+   "det_plus_type_p50": 113.6,
+   "boxes_classified_max": 30
+  }
+ },
+ "test_oiv7c": {
+  "n_images": 181,
+  "gt_instances": {
+   "apple": 6,
+   "citrus": 609,
+   "lemon_lime": 299,
+   "tomato": 4,
+   "carrot": 4
+  },
+  "single": {
+   "mAP50": 0.5493,
+   "per_class": {
+    "apple": 0.4378,
+    "citrus": 0.4654,
+    "lemon_lime": 0.2622,
+    "tomato": 0.5859,
+    "carrot": 0.995
+   }
+  },
+  "two_stage": {
+   "mAP50": 0.5421,
+   "per_class": {
+    "apple": 0.5659,
+    "citrus": 0.4221,
+    "lemon_lime": 0.4782,
+    "tomato": 0.3993,
+    "carrot": 0.845
+   }
+  },
+  "latency_ms": {
+   "det_p50": 48.4,
+   "det_plus_type_p50": 116.9,
+   "boxes_classified_max": 30
+  }
+ },
+ "setup": {
+  "stage1": "/workspace/work/cv/g3models/k11_480/det_yolo11n_640_raw.onnx (class-agnostic NMS 0.7, top-30, conf>=0.001)",
+  "stage2": "g4models/type/type128.onnx",
+  "imgsz_det": 480,
+  "imgsz_type": 128,
+  "device": "sandbox CPU x2, onnxruntime",
+  "note": "stage 1 is the G3 multi-class detector used class-agnostically (proxy); a dedicated class-agnostic detector is G5 work; mAP from this script's own AP code (101-pt), not Ultralytics"
+ }
+}

@@ -1,0 +1,1560 @@
+{
+ "rules": "(stated before training; none of them look at the locked test / test_rf):\n  1. licence: every image must have a CC licence row (all CC BY 2.0 in this subset) -> else drop.\n  2. label sanity: class id in 0..11, box inside [0,1], w,h >= 0.004 -> else drop the box.\n  3. IsGroupOf boxes (one box around a pile) are dropped and their region is filled with\n     YOLO letterbox grey (114) so the pile is not an unlabelled positive; the remaining\n     single-item boxes are pasted back from the original. Image dropped if groups cover >50%.\n  4. missing labels: OIV7 boxes are exhaustive only for the image-level labels that were\n     verified; lemon/orange MIDs did not resolve in the kernel, so citrus/lemon instances may\n     be unlabelled. Screen with the G2 yolo11n detector (480, conf>=0.5): a detection of a\n     class not labelled in that image and IoU<0.3 with every GT box is a suspected missing\n     label. train/val: grey-fill it. test_oiv7: drop the image (no model-driven edits in test).\n  5. dedupe: 64-bit dHash vs every det-v1 image (train/val/test/test_rf) and COCO negatives;\n     Hamming <= 6 -> drop from OIV7.",
+ "counters": {
+  "group_boxes_removed": 911,
+  "images_greyfilled": 410,
+  "suspected_missing_carrot_filled": 154,
+  "suspected_missing_tomato_filled": 518,
+  "suspected_missing_apple_filled": 309,
+  "suspected_missing_citrus_filled": 96,
+  "suspected_missing_banana_filled": 92,
+  "suspected_missing_lemon_lime_filled": 94,
+  "suspected_missing_potato_filled": 9,
+  "suspected_missing_capsicum_filled": 31,
+  "suspected_missing_cucumber_filled": 7
+ },
+ "drops": {
+  "group_cover_gt50": 428,
+  "no_single_boxes_left": 63,
+  "test_suspected_missing_label": 50
+ },
+ "drop_detail": {
+  "group_cover_gt50": [
+   "004a9ec75eca5910",
+   "006aca79eebb40c8",
+   "008aa959e28d602b",
+   "00c93f6ea1ae7134",
+   "014abb8f9dd9bf13",
+   "017c87db737fce8f",
+   "021d93ed50abb1ea",
+   "02a3b5355cb871d3",
+   "02bd120826d1e23e",
+   "03304fc9849922f6",
+   "0360c42783db20ed",
+   "03be3d072f7cb0b7",
+   "03c510697e4506b5",
+   "0419f27aa4e95ce4",
+   "04d128efffc684fe",
+   "05264f0b15ef6573",
+   "0533bb1fcc0fe923",
+   "0559422b93ae7a92",
+   "06047edced02a386",
+   "063e81b3d5530a9d",
+   "0685d67d61a748d8",
+   "06e83bda7dd99c96",
+   "06fbda07148e9057",
+   "073724d5bc9110f4",
+   "074a3dd9209691fa",
+   "0797dd943e397f8c",
+   "07a3510f16522f0e",
+   "07b6f46967420381",
+   "081fd131e90e9e11",
+   "089dbf53f5b55a4b",
+   "094117d23caa9136",
+   "099a78fb2fe828cd",
+   "0a7c4f8b9e4a2257",
+   "0a8543063cd9b347",
+   "0ad854cdf72b4678",
+   "0aef683c578251b4",
+   "0b2389dba7b160fc",
+   "0ba6a984b0432b3d",
+   "0bc1e4fec4f8d0b1",
+   "0bdbd331402dc6ff",
+   "0bdcffbb5344f319",
+   "0bdfd58cbb47a053",
+   "0be7a3cfbc1ee9a1",
+   "0dfb57ebb30275a5",
+   "0f1030b2f85c4f45",
+   "0f8b837e303bf2d1",
+   "0fd3dfa762f69b59",
+   "0fe79b500bce814d",
+   "1034d189c7b4d7b3",
+   "111d3ded77022743",
+   "1166b9acbbb80436",
+   "11beaaf3fee82831",
+   "11d952af176a09d3",
+   "1246e6478e5ee21f",
+   "1288810383a2e633",
+   "12a6aa7661096b0d",
+   "1323247979237dd4",
+   "136a29a489e3297f",
+   "136ec9aadc5ebc3d",
+   "149766985fb6eb8e",
+   "15286e30b1ac69f1",
+   "154b46cc36d9315f",
+   "1594cd5a79a8a111",
+   "161883b388170bd3",
+   "16f5eb23bd644a6d",
+   "171fc0b452a6ab4d",
+   "17c74d0bbec1ee9b",
+   "1816059bc7d41342",
+   "186949d5a263662d",
+   "18fc2c17549db0b3",
+   "19a029399e911cf0",
+   "1aa0fe4d7612edec",
+   "1bcdc01071b886a3",
+   "1bed069fede7771b",
+   "1c81e1f2fd86e025",
+   "1cbd5accb2b7e2de",
+   "1cdbcea9d9426e87",
+   "1d0dc59f5dcb4ef2",
+   "1d475085ea3bc219",
+   "1d6282df25bffdb3",
+   "1d8714eb7fef97ee",
+   "1d94746ddb8d65f9",
+   "1db44990092ea260",
+   "1dcd52033ab6b285",
+   "1e1d68a740c694da",
+   "1e4b84506ef2009a",
+   "1f5021cd70c15c41",
+   "1f85d0b66cc7d5c7",
+   "2028c2186e59efbc",
+   "2041418c4e8970c8",
+   "211fae7ddce756ce",
+   "2143f8df8f965b5f",
+   "21865e0774dbe0c1",
+   "219050d379bacf1e",
+   "2199fc08ccc2f0b9",
+   "220f5a9905ae89a0",
+   "221a50cadf6a16b9",
+   "227bd5ada99e3a98",
+   "22bc1150ec2d2ee4",
+   "23919ffbe578d8fb",
+   "24a4d947d68ac016",
+   "2545bea4429d128c",
+   "26831f92f5aeae56",
+   "269184ce1177c74e",
+   "273e7a2982607b95",
+   "28216d0a5099f5ed",
+   "286db4c4660c2499",
+   "28773a3c6616a614",
+   "29008b9143263b9e",
+   "299ab4f5618495f5",
+   "29df3b5b2040887c",
+   "2a2883050d8210d3",
+   "2aeab320b6b45e53",
+   "2afaa8dca2a8f3d8",
+   "2b09c8b0dbe18c1b",
+   "2b31de9183b09b26",
+   "2c500933278b0271",
+   "2c8193947e475278",
+   "2cccfe845e483cf6",
+   "2daa3d73b75e6558",
+   "2dc6b4e870984e75",
+   "2eb2a1df7828945f",
+   "2eda6508adc0470b",
+   "2ef9731e272a4dea",
+   "2f9f80a3f121e143",
+   "2ff1cb414b415679",
+   "32129227bd6a8817",
+   "327479f0fdcf5ef4",
+   "32b19e9c3ee37d11",
+   "32c7774ab1800a09",
+   "32ff72b386789c5a",
+   "3441aa8c50df6992",
+   "35662ba188f7a487",
+   "3582f35244d16b9b",
+   "35a1c87edf7a43aa",
+   "35de77aef1e96d1d",
+   "364e190e3631be49",
+   "3675c866682c18f6",
+   "36840f2607eebbe8",
+   "368b9bddcf12a846",
+   "36c3fee998686f2f",
+   "36eaad74460a4818",
+   "36f076081a2d1093",
+   "36f19d05e40dc4ee",
+   "377a6b0fa34efdcc",
+   "37b52505f9865f99",
+   "381f61897636c513",
+   "3866c6c5b78ef5b4",
+   "386e3f1be638956a",
+   "3873e5141344bdea",
+   "38f1ac96136d1d03",
+   "38fe542b4330d7f8",
+   "391630df1320cd7e",
+   "398244a4f56198e0",
+   "398ac79ec12439d6",
+   "39f8d5252ec63039",
+   "3b326bb5a08485ae",
+   "3b6fc2296c13a33a",
+   "3b7e45aab1b204ce",
+   "3b976d608deaec97",
+   "3c0ce8938aa926a4",
+   "3c3cfb532d970553",
+   "3c7da8b84a0a7ee7",
+   "3ce83c2b133f173e",
+   "3d0d706eb31e025b",
+   "3d66494b17ca0169",
+   "3e7b316249d5c50a",
+   "4008d3077e309fa1",
+   "40d697a737357d92",
+   "4101ba500c281eb8",
+   "42e1353e4b252052",
+   "42ee88033f87970e",
+   "448429b5a1464c4d",
+   "4560b8b06d35c01b",
+   "458f6a9acf5b844a",
+   "4848b0ca6809c2a8",
+   "4897b5244bb42ffd",
+   "49ba2150ecd74fb3",
+   "49e2651a79c522af",
+   "49e2e51ee16d64d1",
+   "4a377108d6b8b4e0",
+   "4a4df55420729efe",
+   "4b4221888b98cb8e",
+   "4bd1f4c277d343f8",
+   "4bd294a840ca9058",
+   "4be34e13b806f360",
+   "4c75714d3aab8715",
+   "4cb421d6cc449f78",
+   "4d1a370546c34aaa",
+   "4d1e8704fa4bc4e5",
+   "4d5ece82dead5c1a",
+   "4db7e1bf4980779c",
+   "4df9dc09efc766c3",
+   "4ee91d0986372557",
+   "4f280d5fb33c8ee3",
+   "50ae0124ad115b57",
+   "50d4e952a6d78e50",
+   "5243e9d6813cd956",
+   "5322cddcea150026",
+   "535a3b569b3b053c",
+   "53826fe13f1af3ff",
+   "53e237c37b61976a",
+   "53e87587bbc62a7a",
+   "54440cc73ea9743d",
+   "546a7dcb054556be",
+   "546bef454860c4b3",
+   "554e8023648267ee",
+   "55e0fdc6587211fa",
+   "5677a09b5ffb8abf",
+   "568779d15b55a776",
+   "57d383403e455096",
+   "580aa9d6fe714528",
+   "58502926ff03905a",
+   "59cb224c1ce3a017",
+   "5a72bfb99e34cbde",
+   "5a89c8e0dc766b08",
+   "5c2ccfe6fdcacce0",
+   "5c8e74c4eef4167b",
+   "5d77807dcab2d7a8",
+   "5df03b895388d46e",
+   "5dfe474036fa24d7",
+   "5fa19d05f1760775",
+   "60f82ef1a9b2a022",
+   "62315755cc359916",
+   "63888e74b35e8786",
+   "63c6f1708ef6aea2",
+   "64917ae04162dac7",
+   "64a5716f4255ffbc",
+   "65bce8f438ef57fa",
+   "66b34879b1e95bac",
+   "66ffd1d51010421a",
+   "67bc748a0e59ab9f",
+   "68a27cc141a8fb30",
+   "68ded02494e39d16",
+   "6a20aa8537977dd2",
+   "6abe5140ab25e13d",
+   "6ac6997a2c3e27f4",
+   "6ad4d63223232770",
+   "6b28e09607c49325",
+   "6b5a5dacaef4cc8c",
+   "6b99c64bd1ead75b",
+   "6f333c32b47d6172",
+   "70b99d1f15693b0e",
+   "715c45790f79b5f8",
+   "7206017a0b501a7e",
+   "726d317cc456e455",
+   "726d4e7ac9f5fa7e",
+   "73c7faae9d23b021",
+   "74281e7dfd351310",
+   "754c40fe9d0c333f",
+   "758d529a0b5f5f38",
+   "76e0838b7a4ecae5",
+   "770319d9d4f8e7f9",
+   "779398d1b1bb39ed",
+   "78d301f0e6085d13",
+   "78e1c4c1d312c0e8",
+   "79e6953ea9d70545",
+   "7a2bb8944c87b58a",
+   "7ad86187efab11f0",
+   "7b19bae571967293",
+   "7b4bc5db3fff7fc7",
+   "7bd641f4ac2f5e85",
+   "7cd81276d7f188a0",
+   "7d0be6f40207186c",
+   "7d3bf6348edfd5c8",
+   "7d4b47d27511715a",
+   "7ddd975bb03bef60",
+   "7fffa0b23b1180ef",
+   "8002c9095e959d67",
+   "8014d74022eac9cf",
+   "804ade941ed533d6",
+   "81657a4dd0632936",
+   "819cd5c367e55d96",
+   "82b1319b2366845d",
+   "82b3045b7f3bad8b",
+   "82fd973539542033",
+   "83b8e467fc21824b",
+   "84018eb0d8299b47",
+   "84bfd786448980dc",
+   "85bdaa91adf80e74",
+   "85ed624f107f1391",
+   "8618d12bef849fce",
+   "86a06479431a587b",
+   "86ff24754039c325",
+   "87bb35507b10c37d",
+   "8827ed44a6f8e5cb",
+   "883496eab2ae7a12",
+   "8ba418ecf29f2ed4",
+   "90086f2527a9421f",
+   "903f0df8b3a6b202",
+   "908c7085876c997f",
+   "90d64b50d594785f",
+   "90fcd4642c308e3a",
+   "91013e32f7931fc7",
+   "933e0fd7711a8bc8",
+   "93e99e72cb3492b1",
+   "94e2e8a2036dd1dd",
+   "952880f7b18184af",
+   "95d2fcb5ef142afa",
+   "9672a50dd0b2ad9f",
+   "968f0b1ca7ce582b",
+   "96e81b2cec781ffc",
+   "96f3d742d4fc2d1f",
+   "97275cca7be6692a",
+   "976248e0db7a0256",
+   "99c38c75be37c735",
+   "9a2975e515a711c4",
+   "9caa9b9d141fd269",
+   "9d243fd3460e04fb",
+   "9da09e833317ec9e",
+   "9dd714790d425123",
+   "9e24e8258f46262b",
+   "9e290ae3e4ffd773",
+   "9eb993283a898cae",
+   "9f0be7ecf55bba30",
+   "a07471d4077c44d0",
+   "a07d964e8efeabf9",
+   "a0b0cdea5a7d4611",
+   "a20bd4f5182b569d",
+   "a33328b3270bbfbe",
+   "a36153f07ab1e957",
+   "a42e23523cddc47f",
+   "a49ec8959ef0645f",
+   "a5c5de8276f18c7d",
+   "a5edddcadb24b3ed",
+   "a618816323b87a71",
+   "a665377ab8f2a880",
+   "a69c6ba5c4f8f9fb",
+   "a6da34e7db4d2c4f",
+   "a889e3c4c957ab09",
+   "a9a1c8dee7934470",
+   "aa0ffe5ed065b25b",
+   "ab081bd89727bb15",
+   "ad7f4d174585a209",
+   "ae6be536a932a749",
+   "af404a5de7b72c23",
+   "af5bcc4434a25113",
+   "b04f7462d226b020",
+   "b0f3625ec4f09560",
+   "b14730c6eaff81f6",
+   "b1c167d76c5d6e15",
+   "b22f56393732ea1c",
+   "b2c6d6f79385eebf",
+   "b3343b4a2606e3df",
+   "b44ff36c31795e49",
+   "b70362f900451e98",
+   "b8b608e77a4fc4d6",
+   "bb1ffea31f3e2e08",
+   "bb26fe7d1836a580",
+   "bbb4a411c275f953",
+   "be0f073377ff1d11",
+   "be24f0e6d46a191e",
+   "be74ae485bd43e73",
+   "bf10a0adc11522d9",
+   "bfda070a8e91868e",
+   "c05b4308d5532a1e",
+   "c08ce37685d006ae",
+   "c090801e1d622db8",
+   "c2f4216247b7e8fc",
+   "c3241e09dac30d65",
+   "c332da5094b0fe19",
+   "c4743a548d8b9011",
+   "c50b5e3b5907dbde",
+   "c60fb2823ed66e5a",
+   "c68a93574d240a5e",
+   "c8cac74c690fa08d",
+   "c8d48f5bed00e0f0",
+   "c97729ae3c211d0f",
+   "c9c414e243100f85",
+   "cd3c4eb6949339c6",
+   "cd6b764e4ca7209a",
+   "d08d8f4c625bacc7",
+   "d1cf43d6facbd623",
+   "d3cfcc0e0db1b0a8",
+   "d40b767e411caf6d",
+   "d5f1a0a5c5109a9b",
+   "d8546b515f008db7",
+   "daa1fb300d1e215f",
+   "db601dc791da0541",
+   "db91ecae78a8f84e",
+   "dbe13f1144b225d0",
+   "dd95c9b339505ecd",
+   "de3b9d6f9f267536",
+   "de56f0f451dc1e23",
+   "df1588264c30afd3",
+   "df30d3aa3b496af3",
+   "df9576897e1a2962",
+   "e0081af4f7accc75",
+   "e0e3ba96aaab9f03",
+   "e1cef1cb78f264d8",
+   "e37ab52292532d25",
+   "e38665f0b813b50e",
+   "e45dcdd00f8a6d89",
+   "e52b939d594933ad",
+   "e54d0d632d6269f8",
+   "e585e02e24776f02",
+   "e5ced444fedde242",
+   "e66ec66d797043b1",
+   "e696ddbef1ec60c0",
+   "e8ec02f099525121",
+   "e9cf51b3eb3af9f2",
+   "ea693b6e5d0756b1",
+   "eaa6fb5511b2c2ae",
+   "ee0b70e034667537",
+   "eee24995c55bf2a8",
+   "ef8f48f7b754f2cf",
+   "f075c8ad1bd79f0e",
+   "f11204dffea164b1",
+   "f1134c87183e878a",
+   "f132e0e3f72d1a7b",
+   "f2097f4f7c8aed46",
+   "f250e8a9e1dd7db5",
+   "f2be3351ccbee81c",
+   "f330d1468648097e",
+   "f3cb8cd019e119dd",
+   "f40c27c72da8a9cf",
+   "f47492981d294a4a",
+   "f5c1987ee0ecefe6",
+   "f63fde3d504189ae",
+   "f656b31512e8ba05",
+   "f7251e27a480f2cb",
+   "f7a43c479263a73c",
+   "f8a9890ff7ed72a6",
+   "faa270254f1268b1",
+   "fb1655eb40be3735",
+   "fcf3ff68a05aaa7b",
+   "fd93546f3721f21e",
+   "fee9dc2df61f41b7"
+  ],
+  "no_single_boxes_left": [
+   "01bbba51f999febf",
+   "026adb549fe3dd9e",
+   "029cf674cc774859",
+   "03823d0c79cef6a2",
+   "03bfd1e05e7e90f3",
+   "0431d46ef2ef4f84",
+   "04a13cd763b62673",
+   "05efa5912c4b0d53",
+   "06daabc30c505bf1",
+   "07e6ca03c01ebd0f",
+   "1180e19ac02c5fc2",
+   "13dd4f7f18f1702e",
+   "18c5b372c067b579",
+   "18d5672192db1b6b",
+   "1f571950454b3ef7",
+   "1f7502272eb5fa2a",
+   "214632f793f3389d",
+   "214f355fcd5f4a91",
+   "249552318cf1aacd",
+   "28ba1a3819fc7149",
+   "291de70257da0065",
+   "2a1aa34320eef141",
+   "2b2c1106be22d438",
+   "2b8e99258a101d32",
+   "3428484f04aaf42c",
+   "3ab30ba9a90be195",
+   "3c56c796cabeb906",
+   "449854c5a27d423e",
+   "550e39f737084241",
+   "614ff542e219ee24",
+   "6319d223d4b1064c",
+   "70532ca19d39d550",
+   "729cb09b2648bf1b",
+   "80b5d6f5cd2303a7",
+   "84cb94933b36e2b2",
+   "8de3532d9a007595",
+   "91f1cb39baf6c4e7",
+   "97d2acdc81d43861",
+   "996f9c249bd4c1c9",
+   "9d52ebe792288a33",
+   "9ef1fda32619b08e",
+   "a633844ae3f4db09",
+   "aa9ad1c0a1813cd8",
+   "b048aec976eb596b",
+   "b4442e94dd8062cd",
+   "b4ee1dd8790f1840",
+   "b5e3d55a2a9b844b",
+   "bdc52c1dd2a65681",
+   "c1cd3cfb2b4d0790",
+   "c2a32e81d46c3854",
+   "c537723ff41d7214",
+   "c542d605c0024365",
+   "d53f00c30c13b7ed",
+   "d65e034cc5476957",
+   "ded6435ffd74b6a8",
+   "e05d1a8077872d29",
+   "e404f1a23767d9a3",
+   "e96c879ef7c587f0",
+   "eaffd1c3be7dddd1",
+   "f51ab607d93ea134",
+   "fb26bb4b5c0c68aa",
+   "fcd884e61384f168",
+   "ff4fd116f5f8ed1c"
+  ],
+  "test_suspected_missing_label": [
+   {
+    "id": "035ff0e7ad9ab60d",
+    "sus": [
+     [
+      "tomato",
+      0.721
+     ],
+     [
+      "tomato",
+      0.566
+     ]
+    ]
+   },
+   {
+    "id": "04f1b18f2647c093",
+    "sus": [
+     [
+      "tomato",
+      0.529
+     ]
+    ]
+   },
+   {
+    "id": "05f18e396c0602e8",
+    "sus": [
+     [
+      "apple",
+      0.855
+     ],
+     [
+      "apple",
+      0.768
+     ]
+    ]
+   },
+   {
+    "id": "07d4da9ff4908e0b",
+    "sus": [
+     [
+      "carrot",
+      0.546
+     ]
+    ]
+   },
+   {
+    "id": "0d52f7f9918ca887",
+    "sus": [
+     [
+      "apple",
+      0.527
+     ]
+    ]
+   },
+   {
+    "id": "129aea294e9aecbe",
+    "sus": [
+     [
+      "apple",
+      0.625
+     ]
+    ]
+   },
+   {
+    "id": "15077497161532b3",
+    "sus": [
+     [
+      "citrus",
+      0.514
+     ]
+    ]
+   },
+   {
+    "id": "153e56e86931e922",
+    "sus": [
+     [
+      "carrot",
+      0.606
+     ]
+    ]
+   },
+   {
+    "id": "15e9c56ed41c914b",
+    "sus": [
+     [
+      "banana",
+      0.687
+     ]
+    ]
+   },
+   {
+    "id": "1692bfbd67e65f90",
+    "sus": [
+     [
+      "apple",
+      0.578
+     ]
+    ]
+   },
+   {
+    "id": "1b067b3ea6ccc0bc",
+    "sus": [
+     [
+      "citrus",
+      0.677
+     ]
+    ]
+   },
+   {
+    "id": "32def9997c0f69ee",
+    "sus": [
+     [
+      "apple",
+      0.518
+     ]
+    ]
+   },
+   {
+    "id": "354d7a327bbcc152",
+    "sus": [
+     [
+      "capsicum",
+      0.645
+     ],
+     [
+      "capsicum",
+      0.51
+     ]
+    ]
+   },
+   {
+    "id": "3e5ec24a33e87138",
+    "sus": [
+     [
+      "apple",
+      0.807
+     ]
+    ]
+   },
+   {
+    "id": "43200d1e5c86e555",
+    "sus": [
+     [
+      "tomato",
+      0.824
+     ],
+     [
+      "tomato",
+      0.769
+     ],
+     [
+      "tomato",
+      0.731
+     ],
+     [
+      "tomato",
+      0.693
+     ],
+     [
+      "tomato",
+      0.585
+     ],
+     [
+      "tomato",
+      0.574
+     ]
+    ]
+   },
+   {
+    "id": "43c669daaa0399e1",
+    "sus": [
+     [
+      "banana",
+      0.505
+     ]
+    ]
+   },
+   {
+    "id": "447b1a9c78dd6e8b",
+    "sus": [
+     [
+      "lemon_lime",
+      0.661
+     ],
+     [
+      "lemon_lime",
+      0.542
+     ]
+    ]
+   },
+   {
+    "id": "4d16689e6047b2cc",
+    "sus": [
+     [
+      "tomato",
+      0.79
+     ],
+     [
+      "tomato",
+      0.704
+     ],
+     [
+      "tomato",
+      0.703
+     ],
+     [
+      "tomato",
+      0.672
+     ],
+     [
+      "tomato",
+      0.664
+     ],
+     [
+      "tomato",
+      0.635
+     ],
+     [
+      "tomato",
+      0.626
+     ],
+     [
+      "tomato",
+      0.622
+     ],
+     [
+      "tomato",
+      0.57
+     ],
+     [
+      "tomato",
+      0.568
+     ],
+     [
+      "tomato",
+      0.537
+     ],
+     [
+      "tomato",
+      0.536
+     ],
+     [
+      "tomato",
+      0.503
+     ]
+    ]
+   },
+   {
+    "id": "4d17686b27bd13b5",
+    "sus": [
+     [
+      "tomato",
+      0.649
+     ]
+    ]
+   },
+   {
+    "id": "4fa1fd227104f1b9",
+    "sus": [
+     [
+      "apple",
+      0.533
+     ],
+     [
+      "apple",
+      0.501
+     ]
+    ]
+   },
+   {
+    "id": "56905589dea62cb2",
+    "sus": [
+     [
+      "lemon_lime",
+      0.571
+     ],
+     [
+      "lemon_lime",
+      0.545
+     ]
+    ]
+   },
+   {
+    "id": "5a639b9ea7739f07",
+    "sus": [
+     [
+      "apple",
+      0.895
+     ]
+    ]
+   },
+   {
+    "id": "5ede7605d82f7945",
+    "sus": [
+     [
+      "lemon_lime",
+      0.588
+     ],
+     [
+      "lemon_lime",
+      0.581
+     ],
+     [
+      "lemon_lime",
+      0.572
+     ]
+    ]
+   },
+   {
+    "id": "606388dee36ac499",
+    "sus": [
+     [
+      "potato",
+      0.638
+     ],
+     [
+      "potato",
+      0.61
+     ],
+     [
+      "potato",
+      0.58
+     ],
+     [
+      "potato",
+      0.57
+     ],
+     [
+      "potato",
+      0.547
+     ],
+     [
+      "potato",
+      0.522
+     ],
+     [
+      "potato",
+      0.506
+     ],
+     [
+      "potato",
+      0.502
+     ]
+    ]
+   },
+   {
+    "id": "65b298331faa35a0",
+    "sus": [
+     [
+      "tomato",
+      0.801
+     ],
+     [
+      "tomato",
+      0.776
+     ],
+     [
+      "tomato",
+      0.661
+     ],
+     [
+      "tomato",
+      0.643
+     ],
+     [
+      "tomato",
+      0.586
+     ]
+    ]
+   },
+   {
+    "id": "6d4266e7237ecd4e",
+    "sus": [
+     [
+      "apple",
+      0.685
+     ],
+     [
+      "apple",
+      0.619
+     ],
+     [
+      "apple",
+      0.613
+     ],
+     [
+      "apple",
+      0.571
+     ],
+     [
+      "banana",
+      0.54
+     ]
+    ]
+   },
+   {
+    "id": "85aa4d179e0f3ac2",
+    "sus": [
+     [
+      "banana",
+      0.59
+     ]
+    ]
+   },
+   {
+    "id": "8e5632d35c91e78d",
+    "sus": [
+     [
+      "lemon_lime",
+      0.8
+     ]
+    ]
+   },
+   {
+    "id": "9c4359e19f5f7ddf",
+    "sus": [
+     [
+      "tomato",
+      0.709
+     ],
+     [
+      "tomato",
+      0.637
+     ],
+     [
+      "tomato",
+      0.599
+     ],
+     [
+      "tomato",
+      0.535
+     ]
+    ]
+   },
+   {
+    "id": "a894e4e534f42a40",
+    "sus": [
+     [
+      "potato",
+      0.571
+     ]
+    ]
+   },
+   {
+    "id": "acf0b011ac6f581b",
+    "sus": [
+     [
+      "tomato",
+      0.697
+     ]
+    ]
+   },
+   {
+    "id": "bd9f192668ac5ec7",
+    "sus": [
+     [
+      "apple",
+      0.767
+     ]
+    ]
+   },
+   {
+    "id": "c13c55fb739e2ccc",
+    "sus": [
+     [
+      "tomato",
+      0.724
+     ],
+     [
+      "tomato",
+      0.565
+     ]
+    ]
+   },
+   {
+    "id": "c24548db5e7d3182",
+    "sus": [
+     [
+      "tomato",
+      0.545
+     ],
+     [
+      "tomato",
+      0.541
+     ],
+     [
+      "tomato",
+      0.531
+     ]
+    ]
+   },
+   {
+    "id": "c468aa9dd7883517",
+    "sus": [
+     [
+      "carrot",
+      0.653
+     ]
+    ]
+   },
+   {
+    "id": "c47c7714bd8ac422",
+    "sus": [
+     [
+      "lemon_lime",
+      0.862
+     ],
+     [
+      "lemon_lime",
+      0.838
+     ],
+     [
+      "lemon_lime",
+      0.837
+     ],
+     [
+      "lemon_lime",
+      0.835
+     ],
+     [
+      "lemon_lime",
+      0.764
+     ],
+     [
+      "lemon_lime",
+      0.734
+     ],
+     [
+      "lemon_lime",
+      0.713
+     ],
+     [
+      "lemon_lime",
+      0.691
+     ],
+     [
+      "lemon_lime",
+      0.666
+     ],
+     [
+      "lemon_lime",
+      0.654
+     ],
+     [
+      "lemon_lime",
+      0.647
+     ],
+     [
+      "lemon_lime",
+      0.62
+     ],
+     [
+      "lemon_lime",
+      0.6
+     ],
+     [
+      "lemon_lime",
+      0.598
+     ],
+     [
+      "tomato",
+      0.578
+     ],
+     [
+      "lemon_lime",
+      0.546
+     ],
+     [
+      "lemon_lime",
+      0.538
+     ],
+     [
+      "lemon_lime",
+      0.502
+     ]
+    ]
+   },
+   {
+    "id": "c61e40de2737a3c6",
+    "sus": [
+     [
+      "citrus",
+      0.712
+     ]
+    ]
+   },
+   {
+    "id": "d3ed451ae7a79fbf",
+    "sus": [
+     [
+      "apple",
+      0.755
+     ],
+     [
+      "apple",
+      0.742
+     ]
+    ]
+   },
+   {
+    "id": "dcea20e930d53164",
+    "sus": [
+     [
+      "tomato",
+      0.734
+     ]
+    ]
+   },
+   {
+    "id": "df6cdc95c3dd63ea",
+    "sus": [
+     [
+      "citrus",
+      0.638
+     ],
+     [
+      "citrus",
+      0.547
+     ]
+    ]
+   },
+   {
+    "id": "e47ae4da9bf7813f",
+    "sus": [
+     [
+      "banana",
+      0.647
+     ],
+     [
+      "lemon_lime",
+      0.637
+     ],
+     [
+      "banana",
+      0.598
+     ],
+     [
+      "banana",
+      0.568
+     ],
+     [
+      "lemon_lime",
+      0.508
+     ]
+    ]
+   },
+   {
+    "id": "eb1cb8f37bc352f7",
+    "sus": [
+     [
+      "capsicum",
+      0.516
+     ]
+    ]
+   },
+   {
+    "id": "ed27799e940f2830",
+    "sus": [
+     [
+      "tomato",
+      0.804
+     ],
+     [
+      "tomato",
+      0.785
+     ],
+     [
+      "apple",
+      0.774
+     ],
+     [
+      "tomato",
+      0.766
+     ],
+     [
+      "tomato",
+      0.739
+     ],
+     [
+      "citrus",
+      0.728
+     ],
+     [
+      "apple",
+      0.726
+     ],
+     [
+      "tomato",
+      0.717
+     ],
+     [
+      "tomato",
+      0.708
+     ],
+     [
+      "tomato",
+      0.7
+     ],
+     [
+      "apple",
+      0.696
+     ],
+     [
+      "apple",
+      0.694
+     ],
+     [
+      "citrus",
+      0.693
+     ],
+     [
+      "apple",
+      0.687
+     ],
+     [
+      "tomato",
+      0.683
+     ],
+     [
+      "tomato",
+      0.681
+     ],
+     [
+      "citrus",
+      0.671
+     ],
+     [
+      "citrus",
+      0.671
+     ],
+     [
+      "tomato",
+      0.67
+     ],
+     [
+      "tomato",
+      0.669
+     ],
+     [
+      "tomato",
+      0.66
+     ],
+     [
+      "tomato",
+      0.657
+     ],
+     [
+      "tomato",
+      0.655
+     ],
+     [
+      "tomato",
+      0.65
+     ],
+     [
+      "citrus",
+      0.65
+     ],
+     [
+      "tomato",
+      0.633
+     ],
+     [
+      "citrus",
+      0.632
+     ],
+     [
+      "tomato",
+      0.625
+     ],
+     [
+      "citrus",
+      0.618
+     ],
+     [
+      "tomato",
+      0.617
+     ],
+     [
+      "tomato",
+      0.599
+     ],
+     [
+      "citrus",
+      0.594
+     ],
+     [
+      "citrus",
+      0.587
+     ],
+     [
+      "tomato",
+      0.585
+     ],
+     [
+      "tomato",
+      0.581
+     ],
+     [
+      "tomato",
+      0.573
+     ],
+     [
+      "apple",
+      0.565
+     ],
+     [
+      "citrus",
+      0.563
+     ],
+     [
+      "citrus",
+      0.553
+     ],
+     [
+      "citrus",
+      0.549
+     ],
+     [
+      "citrus",
+      0.538
+     ],
+     [
+      "citrus",
+      0.525
+     ],
+     [
+      "tomato",
+      0.521
+     ],
+     [
+      "tomato",
+      0.52
+     ],
+     [
+      "apple",
+      0.509
+     ],
+     [
+      "tomato",
+      0.507
+     ],
+     [
+      "citrus",
+      0.502
+     ]
+    ]
+   },
+   {
+    "id": "ef2f87495e745b7d",
+    "sus": [
+     [
+      "tomato",
+      0.803
+     ],
+     [
+      "tomato",
+      0.573
+     ],
+     [
+      "tomato",
+      0.551
+     ]
+    ]
+   },
+   {
+    "id": "f199dbcc4720606b",
+    "sus": [
+     [
+      "tomato",
+      0.607
+     ],
+     [
+      "tomato",
+      0.582
+     ],
+     [
+      "tomato",
+      0.546
+     ],
+     [
+      "tomato",
+      0.539
+     ],
+     [
+      "tomato",
+      0.538
+     ],
+     [
+      "apple",
+      0.531
+     ]
+    ]
+   },
+   {
+    "id": "f1f793726a3fcc84",
+    "sus": [
+     [
+      "carrot",
+      0.682
+     ]
+    ]
+   },
+   {
+    "id": "f75b8c89185aed0e",
+    "sus": [
+     [
+      "apple",
+      0.716
+     ],
+     [
+      "apple",
+      0.669
+     ],
+     [
+      "apple",
+      0.661
+     ],
+     [
+      "apple",
+      0.629
+     ],
+     [
+      "apple",
+      0.594
+     ],
+     [
+      "apple",
+      0.589
+     ],
+     [
+      "apple",
+      0.527
+     ],
+     [
+      "apple",
+      0.52
+     ],
+     [
+      "apple",
+      0.519
+     ],
+     [
+      "apple",
+      0.513
+     ],
+     [
+      "apple",
+      0.512
+     ]
+    ]
+   },
+   {
+    "id": "fb53b3ef1dd99863",
+    "sus": [
+     [
+      "banana",
+      0.519
+     ]
+    ]
+   },
+   {
+    "id": "fc36b9dee9c0976e",
+    "sus": [
+     [
+      "cucumber",
+      0.755
+     ],
+     [
+      "tomato",
+      0.643
+     ],
+     [
+      "cucumber",
+      0.583
+     ],
+     [
+      "tomato",
+      0.572
+     ],
+     [
+      "citrus",
+      0.563
+     ],
+     [
+      "cucumber",
+      0.507
+     ]
+    ]
+   },
+   {
+    "id": "fd3f8338efc9ca72",
+    "sus": [
+     [
+      "tomato",
+      0.523
+     ]
+    ]
+   }
+  ]
+ },
+ "kept": {
+  "train": {
+   "cucumber": 797,
+   "_images": 848,
+   "pomegranate": 540,
+   "capsicum": 548,
+   "mango": 276,
+   "apple": 21,
+   "banana": 5,
+   "citrus": 6,
+   "tomato": 279,
+   "carrot": 36,
+   "potato": 1
+  },
+  "test_oiv7": {
+   "cucumber": 173,
+   "_images": 123,
+   "capsicum": 120,
+   "pomegranate": 48,
+   "apple": 1,
+   "tomato": 41,
+   "mango": 22,
+   "citrus": 1,
+   "carrot": 3
+  },
+  "val": {
+   "pomegranate": 16,
+   "_images": 57,
+   "cucumber": 110,
+   "capsicum": 67,
+   "mango": 11,
+   "citrus": 1,
+   "carrot": 12,
+   "tomato": 1
+  }
+ },
+ "licences": {
+  "https://creativecommons.org/licenses/by/2.0/": 1028
+ },
+ "screen_model": "ml/runs/G2/kaggle_det_yolo11n_640/runs/det_yolo11n_640/weights/best.pt",
+ "screen_imgsz": 480,
+ "screen_conf": 0.5
+}

@@ -1,0 +1,2552 @@
+{
+ "0.01|iou0.3": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.671,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.15,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.2239,
+   "apple": 0.4523,
+   "citrus": 0.5673,
+   "tomato": 0.2587,
+   "carrot": 0.2138
+  },
+  "val_tp": 558,
+  "val_false": {
+   "total": 232,
+   "by_bin": {
+    "1-2.5%": 103,
+    ">=2.5%": 129
+   },
+   "boxfree_images": 39
+  },
+  "val_small_show": [
+   2.6,
+   22,
+   857
+  ],
+  "val_small_carrot": [
+   1.3,
+   3,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    259
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    274
+   ],
+   "0.5-1%": [
+    6.8,
+    22,
+    324
+   ],
+   "1-2.5%": [
+    45.7,
+    164,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 0.75,
+  "neg_tracks": 3,
+  "neg_ep_min": 0.75,
+  "neg_frames_box": 9,
+  "det_idsw": 68,
+  "det_ids_seg": 1.208,
+  "det_frag": 22,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 707,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 45,
+   "per_min": 23.316,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 116,
+   "mean_distinct_ids": 2.707,
+   "objects_with_gt1_id": 75,
+   "id_switches_all_objects": 336
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.0081,
+    "p95": 0.1898
+   },
+   "neg": {
+    "p50": 0.001,
+    "p95": 0.0011
+   },
+   "probe": {
+    "p50": 0.0011,
+    "p95": 0.0102
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.059,
+   "mango": 0.198,
+   "citrus": 0.052,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.012,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.0,
+   "capsicum": 0.269
+  },
+  "probe_frame_acc": 0.1328,
+  "probe_seg_acc": 0.1808,
+  "probe_small_show": [
+   0.3,
+   21,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.0,
+   0,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    5220
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    720
+   ],
+   "0.5-1%": [
+    4.5,
+    21,
+    468
+   ],
+   "1-2.5%": [
+    42.9,
+    139,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    0.0,
+    0,
+    162
+   ],
+   "1-2.5%": [
+    7.9,
+    10,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   0.3,
+   35,
+   10980
+  ],
+  "probe_idsw": 32,
+  "probe_ids_seg": 0.311,
+  "probe_frag": 24,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 413,
+   "n": 33
+  },
+  "probe_never": 144,
+  "probe_ids_obj": {
+   "objects_matched": 53,
+   "mean_distinct_ids": 1.415,
+   "objects_with_gt1_id": 19,
+   "id_switches_all_objects": 42
+  },
+  "probe_mixed_false": {
+   "n": 10,
+   "per_min": 2.116,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": null
+ },
+ "0.005|iou0.3": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.671,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.15,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.4051,
+   "apple": 0.5377,
+   "citrus": 0.6346,
+   "tomato": 0.3375,
+   "carrot": 0.269
+  },
+  "val_tp": 725,
+  "val_false": {
+   "total": 335,
+   "by_bin": {
+    "1-2.5%": 104,
+    "0.5-1%": 102,
+    ">=2.5%": 129
+   },
+   "boxfree_images": 51
+  },
+  "val_small_show": [
+   20.7,
+   177,
+   857
+  ],
+  "val_small_carrot": [
+   11.4,
+   26,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    259
+   ],
+   "0.25-0.5%": [
+    12.8,
+    35,
+    274
+   ],
+   "0.5-1%": [
+    43.8,
+    142,
+    324
+   ],
+   "1-2.5%": [
+    48.5,
+    174,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 1.25,
+  "neg_tracks": 5,
+  "neg_ep_min": 1.0,
+  "neg_frames_box": 10,
+  "det_idsw": 68,
+  "det_ids_seg": 1.208,
+  "det_frag": 22,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 707,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 53,
+   "per_min": 27.461,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 117,
+   "mean_distinct_ids": 2.726,
+   "objects_with_gt1_id": 75,
+   "id_switches_all_objects": 338
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.0081,
+    "p95": 0.2064
+   },
+   "neg": {
+    "p50": 0.001,
+    "p95": 0.0012
+   },
+   "probe": {
+    "p50": 0.0011,
+    "p95": 0.0159
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.117,
+   "mango": 0.198,
+   "citrus": 0.105,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.071,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.003,
+   "capsicum": 0.321
+  },
+  "probe_frame_acc": 0.1557,
+  "probe_seg_acc": 0.209,
+  "probe_small_show": [
+   2.3,
+   145,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.7,
+   16,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    5220
+   ],
+   "0.25-0.5%": [
+    0.3,
+    2,
+    720
+   ],
+   "0.5-1%": [
+    30.6,
+    143,
+    468
+   ],
+   "1-2.5%": [
+    43.2,
+    140,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    9.9,
+    16,
+    162
+   ],
+   "1-2.5%": [
+    8.7,
+    11,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   1.7,
+   186,
+   10980
+  ],
+  "probe_idsw": 36,
+  "probe_ids_seg": 0.373,
+  "probe_frag": 22,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 327,
+   "n": 38
+  },
+  "probe_never": 139,
+  "probe_ids_obj": {
+   "objects_matched": 66,
+   "mean_distinct_ids": 1.439,
+   "objects_with_gt1_id": 22,
+   "id_switches_all_objects": 42
+  },
+  "probe_mixed_false": {
+   "n": 26,
+   "per_min": 5.501,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": null
+ },
+ "0.0025|iou0.3": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.671,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.15,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.5117,
+   "apple": 0.5628,
+   "citrus": 0.6635,
+   "tomato": 0.4006,
+   "carrot": 0.2989
+  },
+  "val_tp": 819,
+  "val_false": {
+   "total": 399,
+   "by_bin": {
+    "1-2.5%": 104,
+    "0.5-1%": 103,
+    ">=2.5%": 129,
+    "0.25-0.5%": 63
+   },
+   "boxfree_images": 59
+  },
+  "val_small_show": [
+   31.6,
+   271,
+   857
+  ],
+  "val_small_carrot": [
+   17.1,
+   39,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    2.7,
+    7,
+    259
+   ],
+   "0.25-0.5%": [
+    41.6,
+    114,
+    274
+   ],
+   "0.5-1%": [
+    46.3,
+    150,
+    324
+   ],
+   "1-2.5%": [
+    48.5,
+    174,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 1.25,
+  "neg_tracks": 5,
+  "neg_ep_min": 1.0,
+  "neg_frames_box": 10,
+  "det_idsw": 68,
+  "det_ids_seg": 1.208,
+  "det_frag": 22,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 707,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 55,
+   "per_min": 28.497,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 117,
+   "mean_distinct_ids": 2.744,
+   "objects_with_gt1_id": 75,
+   "id_switches_all_objects": 341
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.0082,
+    "p95": 0.2206
+   },
+   "neg": {
+    "p50": 0.001,
+    "p95": 0.0012
+   },
+   "probe": {
+    "p50": 0.0011,
+    "p95": 0.0204
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.167,
+   "mango": 0.284,
+   "citrus": 0.108,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.105,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.003,
+   "capsicum": 0.324
+  },
+  "probe_frame_acc": 0.1692,
+  "probe_seg_acc": 0.2316,
+  "probe_small_show": [
+   4.0,
+   257,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.7,
+   16,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    5220
+   ],
+   "0.25-0.5%": [
+    15.8,
+    114,
+    720
+   ],
+   "0.5-1%": [
+    30.6,
+    143,
+    468
+   ],
+   "1-2.5%": [
+    43.2,
+    140,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    9.9,
+    16,
+    162
+   ],
+   "1-2.5%": [
+    8.7,
+    11,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   3.3,
+   362,
+   10980
+  ],
+  "probe_idsw": 38,
+  "probe_ids_seg": 0.424,
+  "probe_frag": 33,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 427,
+   "n": 44
+  },
+  "probe_never": 133,
+  "probe_ids_obj": {
+   "objects_matched": 82,
+   "mean_distinct_ids": 1.378,
+   "objects_with_gt1_id": 24,
+   "id_switches_all_objects": 44
+  },
+  "probe_mixed_false": {
+   "n": 38,
+   "per_min": 8.039,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": null
+ },
+ "0.0|iou0.3": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.671,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.15,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.5309,
+   "apple": 0.5829,
+   "citrus": 0.6731,
+   "tomato": 0.429,
+   "carrot": 0.3011
+  },
+  "val_tp": 844,
+  "val_false": {
+   "total": 433,
+   "by_bin": {
+    "<0.25%": 34,
+    "1-2.5%": 104,
+    "0.5-1%": 103,
+    ">=2.5%": 129,
+    "0.25-0.5%": 63
+   },
+   "boxfree_images": 66
+  },
+  "val_small_show": [
+   34.5,
+   296,
+   857
+  ],
+  "val_small_carrot": [
+   17.5,
+   40,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    10.4,
+    27,
+    259
+   ],
+   "0.25-0.5%": [
+    43.4,
+    119,
+    274
+   ],
+   "0.5-1%": [
+    46.3,
+    150,
+    324
+   ],
+   "1-2.5%": [
+    48.5,
+    174,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 1.25,
+  "neg_tracks": 5,
+  "neg_ep_min": 1.0,
+  "neg_frames_box": 10,
+  "det_idsw": 68,
+  "det_ids_seg": 1.208,
+  "det_frag": 22,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 707,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 55,
+   "per_min": 28.497,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 117,
+   "mean_distinct_ids": 2.744,
+   "objects_with_gt1_id": 75,
+   "id_switches_all_objects": 341
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.0081,
+    "p95": 0.2175
+   },
+   "neg": {
+    "p50": 0.001,
+    "p95": 0.0012
+   },
+   "probe": {
+    "p50": 0.0011,
+    "p95": 0.0221
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.167,
+   "mango": 0.296,
+   "citrus": 0.148,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.111,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.003,
+   "capsicum": 0.33
+  },
+  "probe_frame_acc": 0.1751,
+  "probe_seg_acc": 0.2429,
+  "probe_small_show": [
+   5.0,
+   322,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.7,
+   16,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    1.2,
+    63,
+    5220
+   ],
+   "0.25-0.5%": [
+    16.1,
+    116,
+    720
+   ],
+   "0.5-1%": [
+    30.6,
+    143,
+    468
+   ],
+   "1-2.5%": [
+    43.2,
+    140,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    9.9,
+    16,
+    162
+   ],
+   "1-2.5%": [
+    8.7,
+    11,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   4.3,
+   471,
+   10980
+  ],
+  "probe_idsw": 40,
+  "probe_ids_seg": 0.446,
+  "probe_frag": 36,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 467,
+   "n": 46
+  },
+  "probe_never": 131,
+  "probe_ids_obj": {
+   "objects_matched": 94,
+   "mean_distinct_ids": 1.394,
+   "objects_with_gt1_id": 29,
+   "id_switches_all_objects": 50
+  },
+  "probe_mixed_false": {
+   "n": 41,
+   "per_min": 8.674,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": null
+ },
+ "0.01|iou0.2": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.675,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.146,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.2239,
+   "apple": 0.4523,
+   "citrus": 0.5673,
+   "tomato": 0.2587,
+   "carrot": 0.2138
+  },
+  "val_tp": 558,
+  "val_false": {
+   "total": 232,
+   "by_bin": {
+    "1-2.5%": 103,
+    ">=2.5%": 129
+   },
+   "boxfree_images": 39
+  },
+  "val_small_show": [
+   2.6,
+   22,
+   857
+  ],
+  "val_small_carrot": [
+   1.3,
+   3,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    259
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    274
+   ],
+   "0.5-1%": [
+    6.8,
+    22,
+    324
+   ],
+   "1-2.5%": [
+    45.7,
+    164,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 0.75,
+  "neg_tracks": 3,
+  "neg_ep_min": 0.75,
+  "neg_frames_box": 9,
+  "det_idsw": 67,
+  "det_ids_seg": 1.167,
+  "det_frag": 21,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 773,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 46,
+   "per_min": 23.834,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 115,
+   "mean_distinct_ids": 2.739,
+   "objects_with_gt1_id": 75,
+   "id_switches_all_objects": 342
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.008,
+    "p95": 0.1853
+   },
+   "neg": {
+    "p50": 0.001,
+    "p95": 0.0012
+   },
+   "probe": {
+    "p50": 0.0011,
+    "p95": 0.0097
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.059,
+   "mango": 0.198,
+   "citrus": 0.052,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.012,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.0,
+   "capsicum": 0.269
+  },
+  "probe_frame_acc": 0.1328,
+  "probe_seg_acc": 0.1808,
+  "probe_small_show": [
+   0.3,
+   21,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.0,
+   0,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    5220
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    720
+   ],
+   "0.5-1%": [
+    4.5,
+    21,
+    468
+   ],
+   "1-2.5%": [
+    42.9,
+    139,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    0.0,
+    0,
+    162
+   ],
+   "1-2.5%": [
+    7.9,
+    10,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   0.3,
+   35,
+   10980
+  ],
+  "probe_idsw": 32,
+  "probe_ids_seg": 0.311,
+  "probe_frag": 24,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 413,
+   "n": 33
+  },
+  "probe_never": 144,
+  "probe_ids_obj": {
+   "objects_matched": 53,
+   "mean_distinct_ids": 1.415,
+   "objects_with_gt1_id": 19,
+   "id_switches_all_objects": 42
+  },
+  "probe_mixed_false": {
+   "n": 10,
+   "per_min": 2.116,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": null
+ },
+ "0.005|iou0.2": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.675,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.146,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.4051,
+   "apple": 0.5377,
+   "citrus": 0.6346,
+   "tomato": 0.3375,
+   "carrot": 0.269
+  },
+  "val_tp": 725,
+  "val_false": {
+   "total": 335,
+   "by_bin": {
+    "1-2.5%": 104,
+    "0.5-1%": 102,
+    ">=2.5%": 129
+   },
+   "boxfree_images": 51
+  },
+  "val_small_show": [
+   20.7,
+   177,
+   857
+  ],
+  "val_small_carrot": [
+   11.4,
+   26,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    259
+   ],
+   "0.25-0.5%": [
+    12.8,
+    35,
+    274
+   ],
+   "0.5-1%": [
+    43.8,
+    142,
+    324
+   ],
+   "1-2.5%": [
+    48.5,
+    174,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 1.25,
+  "neg_tracks": 5,
+  "neg_ep_min": 1.0,
+  "neg_frames_box": 10,
+  "det_idsw": 67,
+  "det_ids_seg": 1.167,
+  "det_frag": 21,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 773,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 61,
+   "per_min": 31.606,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 116,
+   "mean_distinct_ids": 2.741,
+   "objects_with_gt1_id": 75,
+   "id_switches_all_objects": 344
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.0081,
+    "p95": 0.2057
+   },
+   "neg": {
+    "p50": 0.001,
+    "p95": 0.0011
+   },
+   "probe": {
+    "p50": 0.0011,
+    "p95": 0.0161
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.117,
+   "mango": 0.198,
+   "citrus": 0.105,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.071,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.003,
+   "capsicum": 0.321
+  },
+  "probe_frame_acc": 0.1557,
+  "probe_seg_acc": 0.209,
+  "probe_small_show": [
+   2.3,
+   145,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.7,
+   16,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    5220
+   ],
+   "0.25-0.5%": [
+    0.3,
+    2,
+    720
+   ],
+   "0.5-1%": [
+    30.6,
+    143,
+    468
+   ],
+   "1-2.5%": [
+    43.2,
+    140,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    9.9,
+    16,
+    162
+   ],
+   "1-2.5%": [
+    8.7,
+    11,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   1.7,
+   186,
+   10980
+  ],
+  "probe_idsw": 36,
+  "probe_ids_seg": 0.373,
+  "probe_frag": 22,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 327,
+   "n": 38
+  },
+  "probe_never": 139,
+  "probe_ids_obj": {
+   "objects_matched": 66,
+   "mean_distinct_ids": 1.424,
+   "objects_with_gt1_id": 21,
+   "id_switches_all_objects": 41
+  },
+  "probe_mixed_false": {
+   "n": 27,
+   "per_min": 5.712,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": null
+ },
+ "0.0025|iou0.2": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.675,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.146,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.5117,
+   "apple": 0.5628,
+   "citrus": 0.6635,
+   "tomato": 0.4006,
+   "carrot": 0.2989
+  },
+  "val_tp": 819,
+  "val_false": {
+   "total": 399,
+   "by_bin": {
+    "1-2.5%": 104,
+    "0.5-1%": 103,
+    ">=2.5%": 129,
+    "0.25-0.5%": 63
+   },
+   "boxfree_images": 59
+  },
+  "val_small_show": [
+   31.6,
+   271,
+   857
+  ],
+  "val_small_carrot": [
+   17.1,
+   39,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    2.7,
+    7,
+    259
+   ],
+   "0.25-0.5%": [
+    41.6,
+    114,
+    274
+   ],
+   "0.5-1%": [
+    46.3,
+    150,
+    324
+   ],
+   "1-2.5%": [
+    48.5,
+    174,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 1.25,
+  "neg_tracks": 5,
+  "neg_ep_min": 1.0,
+  "neg_frames_box": 10,
+  "det_idsw": 67,
+  "det_ids_seg": 1.167,
+  "det_frag": 21,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 773,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 64,
+   "per_min": 33.161,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 116,
+   "mean_distinct_ids": 2.759,
+   "objects_with_gt1_id": 75,
+   "id_switches_all_objects": 349
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.0081,
+    "p95": 0.2189
+   },
+   "neg": {
+    "p50": 0.001,
+    "p95": 0.0011
+   },
+   "probe": {
+    "p50": 0.0011,
+    "p95": 0.0192
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.167,
+   "mango": 0.284,
+   "citrus": 0.108,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.105,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.003,
+   "capsicum": 0.324
+  },
+  "probe_frame_acc": 0.1692,
+  "probe_seg_acc": 0.2316,
+  "probe_small_show": [
+   4.0,
+   257,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.7,
+   16,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    5220
+   ],
+   "0.25-0.5%": [
+    15.8,
+    114,
+    720
+   ],
+   "0.5-1%": [
+    30.6,
+    143,
+    468
+   ],
+   "1-2.5%": [
+    43.2,
+    140,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    9.9,
+    16,
+    162
+   ],
+   "1-2.5%": [
+    8.7,
+    11,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   3.3,
+   362,
+   10980
+  ],
+  "probe_idsw": 38,
+  "probe_ids_seg": 0.424,
+  "probe_frag": 34,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 427,
+   "n": 44
+  },
+  "probe_never": 133,
+  "probe_ids_obj": {
+   "objects_matched": 82,
+   "mean_distinct_ids": 1.366,
+   "objects_with_gt1_id": 23,
+   "id_switches_all_objects": 43
+  },
+  "probe_mixed_false": {
+   "n": 38,
+   "per_min": 8.039,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": null
+ },
+ "0.0|iou0.2": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.675,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.146,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.5309,
+   "apple": 0.5829,
+   "citrus": 0.6731,
+   "tomato": 0.429,
+   "carrot": 0.3011
+  },
+  "val_tp": 844,
+  "val_false": {
+   "total": 433,
+   "by_bin": {
+    "<0.25%": 34,
+    "1-2.5%": 104,
+    "0.5-1%": 103,
+    ">=2.5%": 129,
+    "0.25-0.5%": 63
+   },
+   "boxfree_images": 66
+  },
+  "val_small_show": [
+   34.5,
+   296,
+   857
+  ],
+  "val_small_carrot": [
+   17.5,
+   40,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    10.4,
+    27,
+    259
+   ],
+   "0.25-0.5%": [
+    43.4,
+    119,
+    274
+   ],
+   "0.5-1%": [
+    46.3,
+    150,
+    324
+   ],
+   "1-2.5%": [
+    48.5,
+    174,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 1.25,
+  "neg_tracks": 5,
+  "neg_ep_min": 1.0,
+  "neg_frames_box": 10,
+  "det_idsw": 67,
+  "det_ids_seg": 1.167,
+  "det_frag": 21,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 773,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 64,
+   "per_min": 33.161,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 116,
+   "mean_distinct_ids": 2.759,
+   "objects_with_gt1_id": 75,
+   "id_switches_all_objects": 349
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.0081,
+    "p95": 0.2198
+   },
+   "neg": {
+    "p50": 0.001,
+    "p95": 0.0011
+   },
+   "probe": {
+    "p50": 0.0011,
+    "p95": 0.0219
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.167,
+   "mango": 0.296,
+   "citrus": 0.148,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.111,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.003,
+   "capsicum": 0.33
+  },
+  "probe_frame_acc": 0.1751,
+  "probe_seg_acc": 0.2429,
+  "probe_small_show": [
+   5.0,
+   321,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.7,
+   16,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    1.2,
+    62,
+    5220
+   ],
+   "0.25-0.5%": [
+    16.1,
+    116,
+    720
+   ],
+   "0.5-1%": [
+    30.6,
+    143,
+    468
+   ],
+   "1-2.5%": [
+    43.2,
+    140,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    9.9,
+    16,
+    162
+   ],
+   "1-2.5%": [
+    8.7,
+    11,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   4.3,
+   470,
+   10980
+  ],
+  "probe_idsw": 40,
+  "probe_ids_seg": 0.446,
+  "probe_frag": 37,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 467,
+   "n": 46
+  },
+  "probe_never": 131,
+  "probe_ids_obj": {
+   "objects_matched": 94,
+   "mean_distinct_ids": 1.372,
+   "objects_with_gt1_id": 27,
+   "id_switches_all_objects": 48
+  },
+  "probe_mixed_false": {
+   "n": 41,
+   "per_min": 8.674,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": null
+ },
+ "0.01|ctr": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.671,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.15,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.2239,
+   "apple": 0.4523,
+   "citrus": 0.5673,
+   "tomato": 0.2587,
+   "carrot": 0.2138
+  },
+  "val_tp": 558,
+  "val_false": {
+   "total": 232,
+   "by_bin": {
+    "1-2.5%": 103,
+    ">=2.5%": 129
+   },
+   "boxfree_images": 39
+  },
+  "val_small_show": [
+   2.6,
+   22,
+   857
+  ],
+  "val_small_carrot": [
+   1.3,
+   3,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    259
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    274
+   ],
+   "0.5-1%": [
+    6.8,
+    22,
+    324
+   ],
+   "1-2.5%": [
+    45.7,
+    164,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 0.75,
+  "neg_tracks": 3,
+  "neg_ep_min": 0.75,
+  "neg_frames_box": 9,
+  "det_idsw": 68,
+  "det_ids_seg": 1.208,
+  "det_frag": 22,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 707,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 47,
+   "per_min": 24.352,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 116,
+   "mean_distinct_ids": 2.707,
+   "objects_with_gt1_id": 75,
+   "id_switches_all_objects": 336
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.0086,
+    "p95": 0.1859
+   },
+   "neg": {
+    "p50": 0.0013,
+    "p95": 0.0015
+   },
+   "probe": {
+    "p50": 0.0014,
+    "p95": 0.0104
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.059,
+   "mango": 0.198,
+   "citrus": 0.052,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.012,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.0,
+   "capsicum": 0.269
+  },
+  "probe_frame_acc": 0.1328,
+  "probe_seg_acc": 0.1808,
+  "probe_small_show": [
+   0.3,
+   21,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.0,
+   0,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    5220
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    720
+   ],
+   "0.5-1%": [
+    4.5,
+    21,
+    468
+   ],
+   "1-2.5%": [
+    42.9,
+    139,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    0.0,
+    0,
+    162
+   ],
+   "1-2.5%": [
+    7.9,
+    10,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   0.3,
+   35,
+   10980
+  ],
+  "probe_idsw": 32,
+  "probe_ids_seg": 0.311,
+  "probe_frag": 24,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 413,
+   "n": 33
+  },
+  "probe_never": 144,
+  "probe_ids_obj": {
+   "objects_matched": 53,
+   "mean_distinct_ids": 1.415,
+   "objects_with_gt1_id": 19,
+   "id_switches_all_objects": 42
+  },
+  "probe_mixed_false": {
+   "n": 10,
+   "per_min": 2.116,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": 1
+ },
+ "0.005|ctr": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.671,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.15,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.4051,
+   "apple": 0.5377,
+   "citrus": 0.6346,
+   "tomato": 0.3375,
+   "carrot": 0.269
+  },
+  "val_tp": 725,
+  "val_false": {
+   "total": 335,
+   "by_bin": {
+    "1-2.5%": 104,
+    "0.5-1%": 102,
+    ">=2.5%": 129
+   },
+   "boxfree_images": 51
+  },
+  "val_small_show": [
+   20.7,
+   177,
+   857
+  ],
+  "val_small_carrot": [
+   11.4,
+   26,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    259
+   ],
+   "0.25-0.5%": [
+    12.8,
+    35,
+    274
+   ],
+   "0.5-1%": [
+    43.8,
+    142,
+    324
+   ],
+   "1-2.5%": [
+    48.5,
+    174,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 1.25,
+  "neg_tracks": 5,
+  "neg_ep_min": 1.0,
+  "neg_frames_box": 10,
+  "det_idsw": 68,
+  "det_ids_seg": 1.208,
+  "det_frag": 22,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 707,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 53,
+   "per_min": 27.461,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 117,
+   "mean_distinct_ids": 2.709,
+   "objects_with_gt1_id": 74,
+   "id_switches_all_objects": 337
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.0088,
+    "p95": 0.2072
+   },
+   "neg": {
+    "p50": 0.0014,
+    "p95": 0.0015
+   },
+   "probe": {
+    "p50": 0.0014,
+    "p95": 0.0166
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.117,
+   "mango": 0.198,
+   "citrus": 0.105,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.071,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.003,
+   "capsicum": 0.321
+  },
+  "probe_frame_acc": 0.1557,
+  "probe_seg_acc": 0.209,
+  "probe_small_show": [
+   2.3,
+   145,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.7,
+   16,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    5220
+   ],
+   "0.25-0.5%": [
+    0.3,
+    2,
+    720
+   ],
+   "0.5-1%": [
+    30.6,
+    143,
+    468
+   ],
+   "1-2.5%": [
+    43.2,
+    140,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    9.9,
+    16,
+    162
+   ],
+   "1-2.5%": [
+    8.7,
+    11,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   1.7,
+   186,
+   10980
+  ],
+  "probe_idsw": 36,
+  "probe_ids_seg": 0.373,
+  "probe_frag": 22,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 327,
+   "n": 38
+  },
+  "probe_never": 139,
+  "probe_ids_obj": {
+   "objects_matched": 66,
+   "mean_distinct_ids": 1.409,
+   "objects_with_gt1_id": 21,
+   "id_switches_all_objects": 40
+  },
+  "probe_mixed_false": {
+   "n": 26,
+   "per_min": 5.501,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": 7
+ },
+ "0.0025|ctr": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.671,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.15,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.5117,
+   "apple": 0.5628,
+   "citrus": 0.6635,
+   "tomato": 0.4006,
+   "carrot": 0.2989
+  },
+  "val_tp": 819,
+  "val_false": {
+   "total": 399,
+   "by_bin": {
+    "1-2.5%": 104,
+    "0.5-1%": 103,
+    ">=2.5%": 129,
+    "0.25-0.5%": 63
+   },
+   "boxfree_images": 59
+  },
+  "val_small_show": [
+   31.6,
+   271,
+   857
+  ],
+  "val_small_carrot": [
+   17.1,
+   39,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    2.7,
+    7,
+    259
+   ],
+   "0.25-0.5%": [
+    41.6,
+    114,
+    274
+   ],
+   "0.5-1%": [
+    46.3,
+    150,
+    324
+   ],
+   "1-2.5%": [
+    48.5,
+    174,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 1.25,
+  "neg_tracks": 5,
+  "neg_ep_min": 1.0,
+  "neg_frames_box": 10,
+  "det_idsw": 68,
+  "det_ids_seg": 1.208,
+  "det_frag": 22,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 707,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 56,
+   "per_min": 29.016,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 117,
+   "mean_distinct_ids": 2.718,
+   "objects_with_gt1_id": 74,
+   "id_switches_all_objects": 341
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.0088,
+    "p95": 0.2234
+   },
+   "neg": {
+    "p50": 0.0013,
+    "p95": 0.0015
+   },
+   "probe": {
+    "p50": 0.0014,
+    "p95": 0.0195
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.167,
+   "mango": 0.284,
+   "citrus": 0.108,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.105,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.003,
+   "capsicum": 0.324
+  },
+  "probe_frame_acc": 0.1692,
+  "probe_seg_acc": 0.2316,
+  "probe_small_show": [
+   4.0,
+   257,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.7,
+   16,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    0.0,
+    0,
+    5220
+   ],
+   "0.25-0.5%": [
+    15.8,
+    114,
+    720
+   ],
+   "0.5-1%": [
+    30.6,
+    143,
+    468
+   ],
+   "1-2.5%": [
+    43.2,
+    140,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    9.9,
+    16,
+    162
+   ],
+   "1-2.5%": [
+    8.7,
+    11,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   3.3,
+   362,
+   10980
+  ],
+  "probe_idsw": 38,
+  "probe_ids_seg": 0.424,
+  "probe_frag": 34,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 427,
+   "n": 44
+  },
+  "probe_never": 133,
+  "probe_ids_obj": {
+   "objects_matched": 82,
+   "mean_distinct_ids": 1.354,
+   "objects_with_gt1_id": 23,
+   "id_switches_all_objects": 42
+  },
+  "probe_mixed_false": {
+   "n": 35,
+   "per_min": 7.405,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": 15
+ },
+ "0.0|ctr": {
+  "det_pcr": {
+   "banana": 0.627,
+   "apple": 0.671,
+   "citrus": 0.565,
+   "tomato": 0.0,
+   "potato": 0.0,
+   "cucumber": 0.0,
+   "carrot": 0.15,
+   "capsicum": 0.0
+  },
+  "det_frame_acc": 0.4365,
+  "det_seg_acc": 0.5417,
+  "val_R": {
+   "banana": 0.5309,
+   "apple": 0.5829,
+   "citrus": 0.6731,
+   "tomato": 0.429,
+   "carrot": 0.3011
+  },
+  "val_tp": 844,
+  "val_false": {
+   "total": 433,
+   "by_bin": {
+    "<0.25%": 34,
+    "1-2.5%": 104,
+    "0.5-1%": 103,
+    ">=2.5%": 129,
+    "0.25-0.5%": 63
+   },
+   "boxfree_images": 66
+  },
+  "val_small_show": [
+   34.5,
+   296,
+   857
+  ],
+  "val_small_carrot": [
+   17.5,
+   40,
+   228
+  ],
+  "val_bins_show": {
+   "<0.25%": [
+    10.4,
+    27,
+    259
+   ],
+   "0.25-0.5%": [
+    43.4,
+    119,
+    274
+   ],
+   "0.5-1%": [
+    46.3,
+    150,
+    324
+   ],
+   "1-2.5%": [
+    48.5,
+    174,
+    359
+   ],
+   ">=2.5%": [
+    73.3,
+    302,
+    412
+   ]
+  },
+  "neg_fa_tracks_min": 1.25,
+  "neg_tracks": 5,
+  "neg_ep_min": 1.0,
+  "neg_frames_box": 10,
+  "det_idsw": 68,
+  "det_ids_seg": 1.208,
+  "det_frag": 22,
+  "det_ttfc": {
+   "p50": 467,
+   "p90": 707,
+   "n": 15
+  },
+  "det_mixed_false": {
+   "n": 56,
+   "per_min": 29.016,
+   "gap_frame_tracks": 0,
+   "minutes": 1.93
+  },
+  "det_ids_obj": {
+   "objects_matched": 117,
+   "mean_distinct_ids": 2.718,
+   "objects_with_gt1_id": 74,
+   "id_switches_all_objects": 341
+  },
+  "post_ms": {
+   "det": {
+    "p50": 0.0087,
+    "p95": 0.2248
+   },
+   "neg": {
+    "p50": 0.0013,
+    "p95": 0.0015
+   },
+   "probe": {
+    "p50": 0.0014,
+    "p95": 0.0228
+   }
+  },
+  "probe_pcr": {
+   "banana": 0.352,
+   "apple": 0.167,
+   "mango": 0.296,
+   "citrus": 0.148,
+   "pomegranate": 0.213,
+   "lemon_lime": 0.0,
+   "tomato": 0.111,
+   "potato": 0.0,
+   "cucumber": 0.25,
+   "carrot": 0.003,
+   "capsicum": 0.33
+  },
+  "probe_frame_acc": 0.1751,
+  "probe_seg_acc": 0.2429,
+  "probe_small_show": [
+   5.0,
+   320,
+   6408
+  ],
+  "probe_small_carrot": [
+   0.7,
+   16,
+   2178
+  ],
+  "probe_bins_show": {
+   "<0.25%": [
+    1.2,
+    61,
+    5220
+   ],
+   "0.25-0.5%": [
+    16.1,
+    116,
+    720
+   ],
+   "0.5-1%": [
+    30.6,
+    143,
+    468
+   ],
+   "1-2.5%": [
+    43.2,
+    140,
+    324
+   ],
+   ">=2.5%": [
+    49.6,
+    116,
+    234
+   ]
+  },
+  "probe_bins_carrot": {
+   "<0.25%": [
+    0.0,
+    0,
+    1728
+   ],
+   "0.25-0.5%": [
+    0.0,
+    0,
+    288
+   ],
+   "0.5-1%": [
+    9.9,
+    16,
+    162
+   ],
+   "1-2.5%": [
+    8.7,
+    11,
+    126
+   ],
+   ">=2.5%": [
+    4.2,
+    3,
+    72
+   ]
+  },
+  "probe_all_small": [
+   4.3,
+   475,
+   10980
+  ],
+  "probe_idsw": 39,
+  "probe_ids_seg": 0.441,
+  "probe_frag": 37,
+  "probe_ttfc": {
+   "p50": 67,
+   "p90": 467,
+   "n": 46
+  },
+  "probe_never": 131,
+  "probe_ids_obj": {
+   "objects_matched": 94,
+   "mean_distinct_ids": 1.351,
+   "objects_with_gt1_id": 26,
+   "id_switches_all_objects": 46
+  },
+  "probe_mixed_false": {
+   "n": 39,
+   "per_min": 8.251,
+   "gap_frame_tracks": 3,
+   "minutes": 4.727
+  },
+  "fallback": 24
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "config": "G3",
+ "n": 40,
+ "device": "sandbox CPU 2 vCPU aarch64 (shared), ORT CPU EP, 2 threads",
+ "model_ms_p50": 45.0,
+ "model_ms_p95": 54.7,
+ "total_ms_p50": 46.4,
+ "total_ms_p95": 56.1,
+ "peak_rss_mb": 136.8,
+ "rss_before_sessions_mb": 50.0,
+ "onnx_mb": {
+  "G3": 10.6
+ }
+}

@@ -1,0 +1,173 @@
+{
+ "rule": "G8_prereg.md Addendum 2026-10-13 showcase track S1 (val only)",
+ "source": "ml/runs/G3/kaggle/nutrisole-g3-det-yolo11n-640/det_yolo11n_640_metrics.json split=val imgsz=480 (T4, n=402); train/val counts from /workspace/work/cv/g3data/det_v3 train.txt/val.txt labels",
+ "ranking": [
+  "citrus",
+  "apple",
+  "banana",
+  "tomato",
+  "carrot",
+  "capsicum",
+  "cucumber",
+  "lemon_lime"
+ ],
+ "selected": [
+  "citrus",
+  "apple",
+  "banana",
+  "tomato",
+  "carrot"
+ ],
+ "selected_ids": [
+  3,
+  1,
+  0,
+  7,
+  10
+ ],
+ "rows": [
+  {
+   "cls": "banana",
+   "val_mAP50": 0.5627,
+   "val_R": 0.5501,
+   "val_P": 0.6753,
+   "train_imgs": 487,
+   "val_inst": 469,
+   "pooled_inst": 5123,
+   "eligible": true,
+   "excluded_because": []
+  },
+  {
+   "cls": "apple",
+   "val_mAP50": 0.6261,
+   "val_R": 0.5779,
+   "val_P": 0.6843,
+   "train_imgs": 430,
+   "val_inst": 199,
+   "pooled_inst": 2148,
+   "eligible": true,
+   "excluded_because": []
+  },
+  {
+   "cls": "mango",
+   "val_mAP50": 0.6462,
+   "val_R": 0.6364,
+   "val_P": 0.6353,
+   "train_imgs": 84,
+   "val_inst": 11,
+   "pooled_inst": 22,
+   "eligible": false,
+   "excluded_because": [
+    "train imgs 84<100",
+    "val inst 11<20"
+   ]
+  },
+  {
+   "cls": "citrus",
+   "val_mAP50": 0.7446,
+   "val_R": 0.6923,
+   "val_P": 0.8033,
+   "train_imgs": 246,
+   "val_inst": 208,
+   "pooled_inst": 1868,
+   "eligible": true,
+   "excluded_because": []
+  },
+  {
+   "cls": "guava",
+   "val_mAP50": null,
+   "val_R": null,
+   "val_P": null,
+   "train_imgs": 0,
+   "val_inst": 0,
+   "pooled_inst": 0,
+   "eligible": false,
+   "excluded_because": [
+    "train imgs 0<100",
+    "val inst 0<20",
+    "pooled inst 0<20"
+   ]
+  },
+  {
+   "cls": "pomegranate",
+   "val_mAP50": 0.5485,
+   "val_R": 0.5646,
+   "val_P": 0.5634,
+   "train_imgs": 180,
+   "val_inst": 16,
+   "pooled_inst": 48,
+   "eligible": false,
+   "excluded_because": [
+    "val inst 16<20"
+   ]
+  },
+  {
+   "cls": "lemon_lime",
+   "val_mAP50": 0.1007,
+   "val_R": 0.039,
+   "val_P": 0.4927,
+   "train_imgs": 112,
+   "val_inst": 77,
+   "pooled_inst": 294,
+   "eligible": true,
+   "excluded_because": []
+  },
+  {
+   "cls": "tomato",
+   "val_mAP50": 0.4581,
+   "val_R": 0.4511,
+   "val_P": 0.5747,
+   "train_imgs": 447,
+   "val_inst": 317,
+   "pooled_inst": 822,
+   "eligible": true,
+   "excluded_because": []
+  },
+  {
+   "cls": "potato",
+   "val_mAP50": 0.0092,
+   "val_R": 0.0,
+   "val_P": 0.0,
+   "train_imgs": 74,
+   "val_inst": 20,
+   "pooled_inst": 366,
+   "eligible": false,
+   "excluded_because": [
+    "train imgs 74<100"
+   ]
+  },
+  {
+   "cls": "cucumber",
+   "val_mAP50": 0.2952,
+   "val_R": 0.1883,
+   "val_P": 0.6597,
+   "train_imgs": 418,
+   "val_inst": 154,
+   "pooled_inst": 357,
+   "eligible": true,
+   "excluded_because": []
+  },
+  {
+   "cls": "carrot",
+   "val_mAP50": 0.4409,
+   "val_R": 0.3178,
+   "val_P": 0.7463,
+   "train_imgs": 340,
+   "val_inst": 435,
+   "pooled_inst": 1645,
+   "eligible": true,
+   "excluded_because": []
+  },
+  {
+   "cls": "capsicum",
+   "val_mAP50": 0.2779,
+   "val_R": 0.2155,
+   "val_P": 0.7107,
+   "train_imgs": 289,
+   "val_inst": 116,
+   "pooled_inst": 510,
+   "eligible": true,
+   "excluded_because": []
+  }
+ ]
+}

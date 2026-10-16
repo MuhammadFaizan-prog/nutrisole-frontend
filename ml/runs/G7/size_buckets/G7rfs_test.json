@@ -1,0 +1,78 @@
+{
+ "model": "/workspace/work/cv/g7models/k_rfs/runs/det_yolo11n_g7_rfs/weights/best.pt",
+ "split": "/workspace/work/cv/g3data/det_v3/test.txt",
+ "n_images": 557,
+ "conf": 0.25,
+ "iou_match": 0.5,
+ "device": "sandbox CPU (2 threads), PyTorch",
+ "modes": {
+  "480": {
+   "buckets": {
+    "<6": {
+     "n_gt": 1666,
+     "recall_cls": 0.0,
+     "recall_any": 0.0
+    },
+    "6-12": {
+     "n_gt": 3109,
+     "recall_cls": 0.021,
+     "recall_any": 0.022
+    },
+    "12-24": {
+     "n_gt": 3423,
+     "recall_cls": 0.212,
+     "recall_any": 0.237
+    },
+    "24-48": {
+     "n_gt": 2795,
+     "recall_cls": 0.461,
+     "recall_any": 0.5
+    },
+    ">=48": {
+     "n_gt": 1274,
+     "recall_cls": 0.648,
+     "recall_any": 0.699
+    }
+   },
+   "recall_cls_all": 0.237,
+   "precision_cls": 0.583,
+   "n_pred": 4980,
+   "latency_ms_p50": 71.4,
+   "latency_ms_p90": 95.3
+  },
+  "640": {
+   "buckets": {
+    "<6": {
+     "n_gt": 1666,
+     "recall_cls": 0.002,
+     "recall_any": 0.002
+    },
+    "6-12": {
+     "n_gt": 3109,
+     "recall_cls": 0.093,
+     "recall_any": 0.095
+    },
+    "12-24": {
+     "n_gt": 3423,
+     "recall_cls": 0.31,
+     "recall_any": 0.332
+    },
+    "24-48": {
+     "n_gt": 2795,
+     "recall_cls": 0.542,
+     "recall_any": 0.587
+    },
+    ">=48": {
+     "n_gt": 1274,
+     "recall_cls": 0.674,
+     "recall_any": 0.727
+    }
+   },
+   "recall_cls_all": 0.304,
+   "precision_cls": 0.592,
+   "n_pred": 6297,
+   "latency_ms_p50": 112.4,
+   "latency_ms_p90": 151.1
+  }
+ }
+}

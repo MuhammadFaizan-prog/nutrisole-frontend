@@ -1,0 +1,29 @@
+[
+  {
+    "item_id": "P729",
+    "file_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/CBP_Field_Operations_Seizes_%241.7_Million_in_Narcotics_at_the_Pharr_International_Bridge_%2823367227031%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "retrieved_at": "2026-10-15T14:36:52.199185+00:00",
+    "status": "UNAVAILABLE",
+    "viewed": false,
+    "http_status": 429,
+    "error": "429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipedia/commons/5/51/CBP_Field_Operations_Seizes_%241.7_Million_in_Narcotics_at_the_Pharr_International_Bridge_%28"
+  },
+  {
+    "item_id": "P756",
+    "file_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Jacaratia_spinosa_%28Aubl.%29_A.DC._%288602151634%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "retrieved_at": "2026-10-15T14:36:52.200167+00:00",
+    "status": "UNAVAILABLE",
+    "viewed": false,
+    "http_status": 429,
+    "error": "429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipedia/commons/4/44/Jacaratia_spinosa_%28Aubl.%29_A.DC._%288602151634%29.jpg?utm_source=commons.wikimedia.org&utm"
+  },
+  {
+    "item_id": "P773",
+    "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Apples_in_a_trash_bag_from_the_second_production_stock.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "retrieved_at": "2026-10-15T14:36:52.201112+00:00",
+    "status": "UNAVAILABLE",
+    "viewed": false,
+    "http_status": 429,
+    "error": "429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Apples_in_a_trash_bag_from_the_second_production_stock.jpg?utm_source=commons.wikimedia.org&u"
+  }
+]

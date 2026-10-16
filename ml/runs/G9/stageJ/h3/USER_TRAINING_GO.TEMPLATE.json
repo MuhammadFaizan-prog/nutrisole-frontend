@@ -1,0 +1,9 @@
+{
+  "_how_to": "ONLY the user (project lead) fills this in, after h3_guard.py reports all gates met. Save as USER_TRAINING_GO.json next to this file. plan_sha256 = sha256 of docs/cv/gauntlet/G9_stageJ3_H3_frozen_plan_v2.md; manifest_sha256 = the 'manifests' map printed by h3_guard.py.",
+  "go": false,
+  "experiment": "H3",
+  "given_by": "",
+  "given_at": "",
+  "plan_sha256": "",
+  "manifest_sha256": {}
+}

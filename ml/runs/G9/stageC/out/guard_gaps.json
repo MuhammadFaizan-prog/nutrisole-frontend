@@ -1,0 +1,48 @@
+{
+ "dev_det": {
+  "0.01": {
+   "objects_with_raw_hits": 120,
+   "objects_all_removed": 0,
+   "objects_straddling": 9,
+   "raw_hit_frames": 3743,
+   "raw_hit_frames_removed": 70
+  },
+  "0.005": {
+   "objects_with_raw_hits": 120,
+   "objects_all_removed": 0,
+   "objects_straddling": 3,
+   "raw_hit_frames": 3743,
+   "raw_hit_frames_removed": 31
+  },
+  "0.0025": {
+   "objects_with_raw_hits": 120,
+   "objects_all_removed": 0,
+   "objects_straddling": 0,
+   "raw_hit_frames": 3743,
+   "raw_hit_frames_removed": 0
+  }
+ },
+ "probe_SYNTHETIC": {
+  "0.01": {
+   "objects_with_raw_hits": 103,
+   "objects_all_removed": 46,
+   "objects_straddling": 6,
+   "raw_hit_frames": 1244,
+   "raw_hit_frames_removed": 516
+  },
+  "0.005": {
+   "objects_with_raw_hits": 103,
+   "objects_all_removed": 33,
+   "objects_straddling": 2,
+   "raw_hit_frames": 1244,
+   "raw_hit_frames_removed": 342
+  },
+  "0.0025": {
+   "objects_with_raw_hits": 103,
+   "objects_all_removed": 13,
+   "objects_straddling": 3,
+   "raw_hit_frames": 1244,
+   "raw_hit_frames_removed": 127
+  }
+ }
+}

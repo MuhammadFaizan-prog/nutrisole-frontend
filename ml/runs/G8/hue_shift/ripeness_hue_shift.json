@@ -1,0 +1,71 @@
+{
+ "model": "G7 per-fruit ripeness ONNX",
+ "split": "CC0 Test (asadullahprl), conditional per-fruit argmax",
+ "device": "Kaggle CPU",
+ "neardup_join": true,
+ "rows": [
+  {
+   "hue_shift_deg": 0,
+   "all_stage_acc": 0.9889,
+   "dedup_stage_acc": 0.9871,
+   "all_overripe_recall": 0.9833,
+   "dedup_overripe_recall": 0.9808,
+   "n_all": 180,
+   "n_dedup": 155
+  },
+  {
+   "hue_shift_deg": -5,
+   "all_stage_acc": 0.9833,
+   "dedup_stage_acc": 0.9806,
+   "all_overripe_recall": 0.9833,
+   "dedup_overripe_recall": 0.9808,
+   "n_all": 180,
+   "n_dedup": 155
+  },
+  {
+   "hue_shift_deg": 5,
+   "all_stage_acc": 0.9833,
+   "dedup_stage_acc": 0.9806,
+   "all_overripe_recall": 0.9833,
+   "dedup_overripe_recall": 0.9808,
+   "n_all": 180,
+   "n_dedup": 155
+  },
+  {
+   "hue_shift_deg": -10,
+   "all_stage_acc": 0.9778,
+   "dedup_stage_acc": 0.9742,
+   "all_overripe_recall": 0.9833,
+   "dedup_overripe_recall": 0.9808,
+   "n_all": 180,
+   "n_dedup": 155
+  },
+  {
+   "hue_shift_deg": 10,
+   "all_stage_acc": 0.9889,
+   "dedup_stage_acc": 0.9871,
+   "all_overripe_recall": 1.0,
+   "dedup_overripe_recall": 1.0,
+   "n_all": 180,
+   "n_dedup": 155
+  },
+  {
+   "hue_shift_deg": -20,
+   "all_stage_acc": 0.9,
+   "dedup_stage_acc": 0.9097,
+   "all_overripe_recall": 0.95,
+   "dedup_overripe_recall": 0.9423,
+   "n_all": 180,
+   "n_dedup": 155
+  },
+  {
+   "hue_shift_deg": 20,
+   "all_stage_acc": 0.8611,
+   "dedup_stage_acc": 0.8516,
+   "all_overripe_recall": 0.9667,
+   "dedup_overripe_recall": 0.9808,
+   "n_all": 180,
+   "n_dedup": 155
+  }
+ ]
+}

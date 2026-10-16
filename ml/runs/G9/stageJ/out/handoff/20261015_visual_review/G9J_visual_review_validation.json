@@ -1,0 +1,85 @@
+{
+  "checked_at": "2026-10-15T11:24:29.699890+00:00",
+  "base_commit": "c5b0c5c7759f4652ed161327f322610036b6b010",
+  "scope": "New AI annotation data, reports and documentation only; no app/model/training/evaluation implementation changed in this follow-up.",
+  "full_python_suite": {
+    "command": "Python -X utf8, temporary old Linux camera-test root adapter, pytest ml -q --tb=short",
+    "passed": 105,
+    "failed": 0,
+    "seconds": 14.52
+  },
+  "stage_j_regressions": {
+    "passed": 36,
+    "failed": 0,
+    "includes": "strict CSV, stable IDs, AI-copy rejection, independent-human evidence, subtype/tags, adjudication, blocked H3"
+  },
+  "protected_mobile_runtime": {
+    "passed_files": 28,
+    "command": "npm run check:runtime"
+  },
+  "historical_frozen_text_inputs": {
+    "passed": 30,
+    "scope": "LF-normalized text against prior checkpoint; not missing model binaries"
+  },
+  "review_consistency": {
+    "rows": 265,
+    "columns": 15,
+    "unique_ids": 265,
+    "notes_and_tags_match_saved_review_batches": true,
+    "display_order_matches_original_pack": true,
+    "image_hashes_match_both_copies": true,
+    "queue_rows": 157,
+    "queue_membership_and_content_checked": true,
+    "artifact_table_value_round_trip": "PASS"
+  },
+  "original_packages": [
+    {
+      "package": "nutrisole_G9J_pilot_annotator1.zip",
+      "sha256": "d1af6dfac8fd4de6732e56887b5fec8c671b96361d61a41685f62b23c82a9e9e",
+      "checks": {
+        "count_265": true,
+        "expected_ids": true,
+        "no_duplicates": true,
+        "no_corrupt": true,
+        "original_package_sha256": true,
+        "correct_copy": true,
+        "correct_pack": true,
+        "export_schema": true,
+        "fallback_order": true,
+        "offline_resources": true,
+        "authoritative_guide": true
+      },
+      "pass_all": true
+    },
+    {
+      "package": "nutrisole_G9J_pilot_annotator2.zip",
+      "sha256": "261f74f0496de884f659f169b6937faac843856cf6c34dc9cf9e2066b7ce9ab6",
+      "checks": {
+        "count_265": true,
+        "expected_ids": true,
+        "no_duplicates": true,
+        "no_corrupt": true,
+        "original_package_sha256": true,
+        "correct_copy": true,
+        "correct_pack": true,
+        "export_schema": true,
+        "fallback_order": true,
+        "offline_resources": true,
+        "authoritative_guide": true
+      },
+      "pass_all": true
+    }
+  ],
+  "ai_imported_rows": 265,
+  "imported_ai_snapshot_byte_exact": true,
+  "annotation_csv_sha256": "4bf78b68f47831c17e6872218f46dc3027210acaf7c03f0a28458377844b6ef9",
+  "source_originals_viewed": 1,
+  "other_full_size_attempts_rate_limited": 15,
+  "human_exports": 0,
+  "human_verified_images": 0,
+  "kappa": null,
+  "H3_status": "BLOCKED",
+  "training_started": false,
+  "model_promoted": false,
+  "limitations": "Classification confidence is subjective. All 265 package images were viewed, not all source originals. Prior native/rendered limitations remain documented in the unchanged 20261015 audit; these data-only changes do not establish device/runtime QA."
+}

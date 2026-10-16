@@ -1,0 +1,31 @@
+{
+ "tag": "B1",
+ "tau": null,
+ "hndev": {
+  "n": 31,
+  "images_with_false_box": 15,
+  "false_boxes": 70,
+  "high_conf_ge_075": 20
+ },
+ "mdev_video": {
+  "clips": 6,
+  "minutes": 4.38,
+  "displayed_tracks": 243,
+  "births_per_min": 55.435,
+  "per_clip": {
+   "cf3d00ee1": 0,
+   "c018de016": 11,
+   "c237ace91": 42,
+   "c3d1561b2": 0,
+   "cec084f0c": 4,
+   "c61f2d4b9": 186
+  },
+  "verifier_calls_per_frame": 0
+ },
+ "mdev_real_produce_retained": {
+  "banana": "7/9",
+  "carrot": "0/2",
+  "tomato": "29/30"
+ },
+ "mdev_real_produce_retained_total": "36/41"
+}

@@ -1,0 +1,8 @@
+{
+ "k11ms_384_384": {
+  "onnx": "/workspace/work/cv/g3models/k11ms_384/det_yolo11n_480ms_raw.onnx",
+  "imgsz": 384,
+  "p50_ms": 27.96,
+  "p95_ms": 28.25
+ }
+}

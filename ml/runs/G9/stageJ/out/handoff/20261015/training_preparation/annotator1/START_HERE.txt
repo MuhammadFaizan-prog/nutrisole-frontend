@@ -1,0 +1,4 @@
+PREPARATION ONLY: 461 frozen training-batch IDs, no labels.
+NOT DISTRIBUTABLE: original training photos/ZIP must be recovered and SHA256 checked.
+Use the original annotation guide; annotate independently, with no AI/peer suggestions.
+Do not treat J-dev as training data. No evaluation images may be added.

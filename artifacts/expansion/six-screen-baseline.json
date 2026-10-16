@@ -17,7 +17,7 @@
   "src/nutrisole/ProgressRing.native.tsx": "72bcb847b108d7c595135481d16aa1e4ec8adf4e64a3436c20aafe5a1a84df20",
   "src/nutrisole/ProgressRing.tsx": "1b050bc1191d95d2100ad5f27e25e9f684258842b328ef1ee225baa3d2d3e227",
   "src/nutrisole/referenceIcons.ts": "858ea5b515062f89af8915044a9a205059fdebc077006a5b2613806d21e74009",
-  "src/nutrisole/Scan.tsx": "2a13b25514bfc563908755a2c22bc1eed216cf3d8513acb881b306ccc0c03710",
+  "src/nutrisole/Scan.tsx": "725ab709247ff491a176ab622fd76d19f8dbc487607a23104571264bcb198c97",
   "src/nutrisole/sceneGeometry.ts": "7f5dff9c78811375345e6dd96f490137930e8d26d46b93df88596a99495210b6",
   "src/nutrisole/ScenePhoto.native.tsx": "18d58da1ec173ffbb0ffc55e011541f3d1b1ce81f83509d94bcd559f78b7391b",
   "src/nutrisole/ScenePhoto.tsx": "f065e57dd26c14ba716e98e6b7fc3d5a92c781136bb75cbc2a9a49398d72a102",

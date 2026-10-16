@@ -1,0 +1,74 @@
+{
+ "train": {
+  "tomato": {
+   "boxes": 1319,
+   "images": 9,
+   "small_lt1pct": 0.966,
+   "side480_median": 17.6
+  },
+  "carrot": {
+   "boxes": 992,
+   "images": 7,
+   "small_lt1pct": 0.9,
+   "side480_median": 21.3
+  },
+  "banana": {
+   "boxes": 7,
+   "images": 3,
+   "small_lt1pct": 0.857,
+   "side480_median": 35.2
+  },
+  "apple": {
+   "boxes": 561,
+   "images": 8,
+   "small_lt1pct": 0.955,
+   "side480_median": 13.1
+  },
+  "citrus": {
+   "boxes": 276,
+   "images": 4,
+   "small_lt1pct": 0.957,
+   "side480_median": 13.9
+  },
+  "_images": 20
+ },
+ "dev": {
+  "tomato": {
+   "boxes": 104,
+   "images": 1,
+   "small_lt1pct": 1.0,
+   "side480_median": 13.2
+  },
+  "carrot": {
+   "boxes": 246,
+   "images": 2,
+   "small_lt1pct": 0.813,
+   "side480_median": 29.7
+  },
+  "potato": {
+   "boxes": 1,
+   "images": 1,
+   "small_lt1pct": 1.0,
+   "side480_median": 34.1
+  },
+  "apple": {
+   "boxes": 3,
+   "images": 2,
+   "small_lt1pct": 1.0,
+   "side480_median": 6.8
+  },
+  "citrus": {
+   "boxes": 191,
+   "images": 1,
+   "small_lt1pct": 1.0,
+   "side480_median": 19.2
+  },
+  "banana": {
+   "boxes": 1,
+   "images": 1,
+   "small_lt1pct": 1.0,
+   "side480_median": 32.0
+  },
+  "_images": 4
+ }
+}

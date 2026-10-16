@@ -1,0 +1,44 @@
+{
+ "hn_built": {
+  "train": 160,
+  "dev": 31
+ },
+ "hn_fail": [
+  [
+   "vc_vt084",
+   "frame read failed"
+  ]
+ ],
+ "epochs": 20,
+ "b1_data": {
+  "base_train": 3562,
+  "hn_train": 160,
+  "hn_share": 0.043,
+  "val": 402
+ },
+ "env": {
+  "torch": "2.11.0+cu128",
+  "ultralytics": "8.4.175",
+  "gpu": "Tesla T4"
+ },
+ "G3_val480": "skipped",
+ "G3_val_err": "string indices must be integers, not 'str'",
+ "B1_error": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 79, in <module>\n    if VERIFIER_ONLY: raise RuntimeError(\"skipped: verifier-only kernel\")\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: skipped: verifier-only kernel\n",
+ "verifier_data": {
+  "tr_pos": 6856,
+  "tr_neg": 952,
+  "val_pos": 2020,
+  "val_neg": 192,
+  "hndev_neg": 123,
+  "hntr_neg": 508,
+  "mdev_pos": 41
+ },
+ "verifier": {
+  "train_wall_s": 160.9,
+  "params": 1518881,
+  "n_pos": 6856,
+  "n_neg": 2476,
+  "epochs": 12
+ },
+ "total_wall_s": 516.7
+}

@@ -1,0 +1,625 @@
+{
+ "split": "H-val (Stage H DEV; agent-triaged, NOT human-verified)",
+ "n": 114,
+ "counts": {
+  "I": 19,
+  "W": 32,
+  "N": 63
+ },
+ "h2": {
+  "supported_n": 51,
+  "top1_correct": 38,
+  "top1_acc": 0.7451,
+  "mean_per_class_top1": 0.7726,
+  "per_class": {
+   "banana": {
+    "n": 10,
+    "top1_correct": 9
+   },
+   "apple": {
+    "n": 13,
+    "top1_correct": 9
+   },
+   "mango": {
+    "n": 4,
+    "top1_correct": 2
+   },
+   "citrus": {
+    "n": 6,
+    "top1_correct": 3
+   },
+   "lemon_lime": {
+    "n": 1,
+    "top1_correct": 1
+   },
+   "tomato": {
+    "n": 3,
+    "top1_correct": 3
+   },
+   "potato": {
+    "n": 4,
+    "top1_correct": 4
+   },
+   "cucumber": {
+    "n": 2,
+    "top1_correct": 2
+   },
+   "carrot": {
+    "n": 5,
+    "top1_correct": 4
+   },
+   "capsicum": {
+    "n": 3,
+    "top1_correct": 1
+   }
+  },
+  "confusion": {
+   "apple": {
+    "apple": 9,
+    "mango": 1,
+    "pomegranate": 2,
+    "tomato": 1
+   },
+   "banana": {
+    "banana": 9,
+    "apple": 1
+   },
+   "capsicum": {
+    "tomato": 1,
+    "cucumber": 1,
+    "capsicum": 1
+   },
+   "citrus": {
+    "guava": 1,
+    "carrot": 1,
+    "citrus": 3,
+    "potato": 1
+   },
+   "cucumber": {
+    "cucumber": 2
+   },
+   "lemon_lime": {
+    "lemon_lime": 1
+   },
+   "mango": {
+    "apple": 1,
+    "mango": 2,
+    "banana": 1
+   },
+   "potato": {
+    "potato": 4
+   },
+   "tomato": {
+    "tomato": 3
+   },
+   "carrot": {
+    "carrot": 4,
+    "cucumber": 1
+   }
+  },
+  "negatives_n": 63,
+  "negatives_named_supported_top1": 63,
+  "accepted_correct": 22,
+  "accepted_wrong": 2,
+  "negatives_accepted": 16,
+  "onnx_ms_p50": 9.73,
+  "onnx_ms_p95": 36.9
+ },
+ "fruitbot": {
+  "raw255": {
+   "supported_n": 51,
+   "top1_correct": 28,
+   "top1_acc": 0.549,
+   "mean_per_class_top1": 0.6645,
+   "per_class": {
+    "banana": {
+     "n": 10,
+     "top1_correct": 5
+    },
+    "apple": {
+     "n": 13,
+     "top1_correct": 6
+    },
+    "mango": {
+     "n": 4,
+     "top1_correct": 1
+    },
+    "citrus": {
+     "n": 6,
+     "top1_correct": 2
+    },
+    "lemon_lime": {
+     "n": 1,
+     "top1_correct": 1
+    },
+    "tomato": {
+     "n": 3,
+     "top1_correct": 3
+    },
+    "potato": {
+     "n": 4,
+     "top1_correct": 2
+    },
+    "cucumber": {
+     "n": 2,
+     "top1_correct": 2
+    },
+    "carrot": {
+     "n": 5,
+     "top1_correct": 3
+    },
+    "capsicum": {
+     "n": 3,
+     "top1_correct": 3
+    }
+   },
+   "confusion": {
+    "apple": {
+     "pomegranate": 2,
+     "apple": 6,
+     "mango": 1,
+     "None": 4
+    },
+    "banana": {
+     "banana": 5,
+     "None": 5
+    },
+    "capsicum": {
+     "capsicum": 3
+    },
+    "citrus": {
+     "citrus": 2,
+     "apple": 1,
+     "capsicum": 1,
+     "None": 1,
+     "lemon_lime": 1
+    },
+    "cucumber": {
+     "cucumber": 2
+    },
+    "lemon_lime": {
+     "lemon_lime": 1
+    },
+    "mango": {
+     "mango": 1,
+     "apple": 1,
+     "None": 1,
+     "potato": 1
+    },
+    "potato": {
+     "apple": 1,
+     "potato": 2,
+     "None": 1
+    },
+    "tomato": {
+     "tomato": 3
+    },
+    "carrot": {
+     "None": 2,
+     "carrot": 3
+    }
+   },
+   "negatives_n": 63,
+   "negatives_named_supported_top1": 37,
+   "at_p050_correct": 26,
+   "at_p050_wrong": 5,
+   "at_p050_negatives_named": 27
+  },
+  "div255": {
+   "supported_n": 51,
+   "top1_correct": 13,
+   "top1_acc": 0.2549,
+   "mean_per_class_top1": 0.1,
+   "per_class": {
+    "banana": {
+     "n": 10,
+     "top1_correct": 0
+    },
+    "apple": {
+     "n": 13,
+     "top1_correct": 13
+    },
+    "mango": {
+     "n": 4,
+     "top1_correct": 0
+    },
+    "citrus": {
+     "n": 6,
+     "top1_correct": 0
+    },
+    "lemon_lime": {
+     "n": 1,
+     "top1_correct": 0
+    },
+    "tomato": {
+     "n": 3,
+     "top1_correct": 0
+    },
+    "potato": {
+     "n": 4,
+     "top1_correct": 0
+    },
+    "cucumber": {
+     "n": 2,
+     "top1_correct": 0
+    },
+    "carrot": {
+     "n": 5,
+     "top1_correct": 0
+    },
+    "capsicum": {
+     "n": 3,
+     "top1_correct": 0
+    }
+   },
+   "confusion": {
+    "apple": {
+     "apple": 13
+    },
+    "banana": {
+     "apple": 9,
+     "None": 1
+    },
+    "capsicum": {
+     "apple": 3
+    },
+    "citrus": {
+     "apple": 6
+    },
+    "cucumber": {
+     "apple": 2
+    },
+    "lemon_lime": {
+     "apple": 1
+    },
+    "mango": {
+     "apple": 4
+    },
+    "potato": {
+     "apple": 4
+    },
+    "tomato": {
+     "apple": 3
+    },
+    "carrot": {
+     "apple": 5
+    }
+   },
+   "negatives_n": 63,
+   "negatives_named_supported_top1": 61,
+   "at_p050_correct": 11,
+   "at_p050_wrong": 30,
+   "at_p050_negatives_named": 58
+  },
+  "resnet50": {
+   "supported_n": 51,
+   "top1_correct": 28,
+   "top1_acc": 0.549,
+   "mean_per_class_top1": 0.4849,
+   "per_class": {
+    "banana": {
+     "n": 10,
+     "top1_correct": 8
+    },
+    "apple": {
+     "n": 13,
+     "top1_correct": 8
+    },
+    "mango": {
+     "n": 4,
+     "top1_correct": 2
+    },
+    "citrus": {
+     "n": 6,
+     "top1_correct": 1
+    },
+    "lemon_lime": {
+     "n": 1,
+     "top1_correct": 0
+    },
+    "tomato": {
+     "n": 3,
+     "top1_correct": 1
+    },
+    "potato": {
+     "n": 4,
+     "top1_correct": 2
+    },
+    "cucumber": {
+     "n": 2,
+     "top1_correct": 2
+    },
+    "carrot": {
+     "n": 5,
+     "top1_correct": 3
+    },
+    "capsicum": {
+     "n": 3,
+     "top1_correct": 1
+    }
+   },
+   "confusion": {
+    "apple": {
+     "apple": 8,
+     "None": 3,
+     "mango": 2
+    },
+    "banana": {
+     "banana": 8,
+     "None": 2
+    },
+    "capsicum": {
+     "apple": 1,
+     "None": 1,
+     "capsicum": 1
+    },
+    "citrus": {
+     "citrus": 1,
+     "None": 2,
+     "lemon_lime": 2,
+     "pomegranate": 1
+    },
+    "cucumber": {
+     "cucumber": 2
+    },
+    "lemon_lime": {
+     "citrus": 1
+    },
+    "mango": {
+     "None": 2,
+     "mango": 2
+    },
+    "potato": {
+     "None": 2,
+     "potato": 2
+    },
+    "tomato": {
+     "None": 1,
+     "tomato": 1,
+     "apple": 1
+    },
+    "carrot": {
+     "carrot": 3,
+     "None": 2
+    }
+   },
+   "negatives_n": 63,
+   "negatives_named_supported_top1": 25,
+   "at_p050_correct": 26,
+   "at_p050_wrong": 4,
+   "at_p050_negatives_named": 18
+  }
+ },
+ "fruitbot_keras_predict_ms_p50": 131.1,
+ "fruitbot_params_m": 24.67,
+ "fruitbot_n_outputs": 60,
+ "fruitbot_note": "config.json lists 36 labels but the h5 has 60 outputs; indices >= 36 have no published name (reported as idxN)",
+ "fruitbot_raw_argmax_by_true_label": {
+  "raw255": {
+   "apple": {
+    "pomegranate": 2,
+    "apple": 6,
+    "mango": 1,
+    "jalepeno": 1,
+    "pear": 2,
+    "beetroot": 1
+   },
+   "banana": {
+    "banana": 5,
+    "pineapple": 2,
+    "peas": 1,
+    "onion": 1,
+    "sweetpotato": 1
+   },
+   "capsicum": {
+    "capsicum": 2,
+    "bell pepper": 1
+   },
+   "citrus": {
+    "orange": 2,
+    "apple": 1,
+    "paprika": 1,
+    "chilli pepper": 1,
+    "lemon": 1
+   },
+   "cucumber": {
+    "cucumber": 2
+   },
+   "lemon_lime": {
+    "lemon": 1
+   },
+   "mango": {
+    "mango": 1,
+    "apple": 1,
+    "pineapple": 1,
+    "potato": 1
+   },
+   "potato": {
+    "apple": 1,
+    "potato": 2,
+    "sweetpotato": 1
+   },
+   "tomato": {
+    "tomato": 3
+   },
+   "carrot": {
+    "sweetpotato": 1,
+    "carrot": 3,
+    "raddish": 1
+   },
+   "cut": {
+    "paprika": 3,
+    "mango": 3,
+    "banana": 3,
+    "cucumber": 3,
+    "garlic": 3,
+    "onion": 1,
+    "pineapple": 4,
+    "sweetpotato": 2,
+    "raddish": 2,
+    "watermelon": 1,
+    "apple": 3,
+    "potato": 2,
+    "carrot": 1,
+    "orange": 1,
+    "sweetcorn": 1,
+    "lemon": 2,
+    "pomegranate": 2,
+    "capsicum": 1,
+    "ginger": 1,
+    "tomato": 1
+   },
+   "printed": {
+    "pomegranate": 1,
+    "apple": 2,
+    "garlic": 3
+   },
+   "unsupported": {
+    "mango": 2,
+    "soy beans": 1,
+    "cabbage": 1,
+    "bell pepper": 3,
+    "banana": 1,
+    "paprika": 1,
+    "jalepeno": 2,
+    "chilli pepper": 1,
+    "raddish": 1,
+    "lemon": 1,
+    "eggplant": 1,
+    "apple": 1,
+    "beetroot": 1
+   }
+  },
+  "div255": {
+   "apple": {
+    "apple": 13
+   },
+   "banana": {
+    "apple": 9,
+    "raddish": 1
+   },
+   "capsicum": {
+    "apple": 3
+   },
+   "citrus": {
+    "apple": 6
+   },
+   "cucumber": {
+    "apple": 2
+   },
+   "lemon_lime": {
+    "apple": 1
+   },
+   "mango": {
+    "apple": 4
+   },
+   "potato": {
+    "apple": 4
+   },
+   "tomato": {
+    "apple": 3
+   },
+   "carrot": {
+    "apple": 5
+   },
+   "cut": {
+    "apple": 38,
+    "raddish": 2
+   },
+   "printed": {
+    "apple": 6
+   },
+   "unsupported": {
+    "apple": 17
+   }
+  },
+  "resnet50": {
+   "apple": {
+    "apple": 8,
+    "eggplant": 2,
+    "mango": 2,
+    "pear": 1
+   },
+   "banana": {
+    "banana": 8,
+    "pineapple": 1,
+    "peas": 1
+   },
+   "capsicum": {
+    "apple": 1,
+    "jalepeno": 1,
+    "bell pepper": 1
+   },
+   "citrus": {
+    "orange": 1,
+    "jalepeno": 1,
+    "lemon": 2,
+    "pomegranate": 1,
+    "eggplant": 1
+   },
+   "cucumber": {
+    "cucumber": 2
+   },
+   "lemon_lime": {
+    "orange": 1
+   },
+   "mango": {
+    "pear": 2,
+    "mango": 2
+   },
+   "potato": {
+    "turnip": 1,
+    "potato": 2,
+    "beetroot": 1
+   },
+   "tomato": {
+    "jalepeno": 1,
+    "tomato": 1,
+    "apple": 1
+   },
+   "carrot": {
+    "carrot": 3,
+    "raddish": 1,
+    "garlic": 1
+   },
+   "cut": {
+    "jalepeno": 2,
+    "eggplant": 2,
+    "sweetpotato": 2,
+    "cucumber": 4,
+    "garlic": 5,
+    "peas": 2,
+    "paprika": 3,
+    "pineapple": 2,
+    "watermelon": 3,
+    "spinach": 2,
+    "apple": 2,
+    "banana": 3,
+    "carrot": 1,
+    "lemon": 3,
+    "turnip": 1,
+    "pomegranate": 1,
+    "capsicum": 1,
+    "beetroot": 1
+   },
+   "printed": {
+    "pineapple": 3,
+    "apple": 1,
+    "eggplant": 1,
+    "watermelon": 1
+   },
+   "unsupported": {
+    "pear": 1,
+    "mango": 1,
+    "cabbage": 1,
+    "eggplant": 3,
+    "banana": 3,
+    "orange": 1,
+    "jalepeno": 3,
+    "chilli pepper": 1,
+    "beetroot": 2,
+    "apple": 1
+   }
+  }
+ }
+}

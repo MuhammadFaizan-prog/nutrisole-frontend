@@ -1,0 +1,16 @@
+{
+  "provenance": "AI_ASSISTED_NOT_HUMAN",
+  "counts": {
+    "citrus_orange": 16,
+    "printed_or_screen": 42,
+    "carrot": 29,
+    "uncertain": 84,
+    "tomato": 19,
+    "other_produce": 42,
+    "apple": 12,
+    "banana": 18,
+    "occluded": 3
+  },
+  "sha256": "4bf78b68f47831c17e6872218f46dc3027210acaf7c03f0a28458377844b6ef9",
+  "label_fingerprint": "a79456bd5fa2d3088fce925ccab1d7aa7943ee6ae6117713f81d5aecd72fc1cd"
+}

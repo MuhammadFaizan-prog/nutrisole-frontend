@@ -1,0 +1,156 @@
+{
+ "grid": [
+  {
+   "tau": 0.05,
+   "val_frr": 0.0401,
+   "showcase_frr": {
+    "citrus": 0.0288,
+    "apple": 0.0503,
+    "banana": 0.0321,
+    "tomato": 0.0253,
+    "carrot": 0.0621
+   },
+   "admissible": false,
+   "rej_val_neg": 0.115,
+   "rej_hndev_neg": 0.398,
+   "mdev_pos_frr": 0.049
+  },
+  {
+   "tau": 0.1,
+   "val_frr": 0.052,
+   "showcase_frr": {
+    "citrus": 0.0385,
+    "apple": 0.0553,
+    "banana": 0.047,
+    "tomato": 0.0443,
+    "carrot": 0.0759
+   },
+   "admissible": false,
+   "rej_val_neg": 0.13,
+   "rej_hndev_neg": 0.447,
+   "mdev_pos_frr": 0.049
+  },
+  {
+   "tau": 0.15,
+   "val_frr": 0.0619,
+   "showcase_frr": {
+    "citrus": 0.0481,
+    "apple": 0.0603,
+    "banana": 0.0491,
+    "tomato": 0.0633,
+    "carrot": 0.0897
+   },
+   "admissible": false,
+   "rej_val_neg": 0.135,
+   "rej_hndev_neg": 0.455,
+   "mdev_pos_frr": 0.049
+  },
+  {
+   "tau": 0.2,
+   "val_frr": 0.0703,
+   "showcase_frr": {
+    "citrus": 0.0481,
+    "apple": 0.0754,
+    "banana": 0.0513,
+    "tomato": 0.0665,
+    "carrot": 0.108
+   },
+   "admissible": false,
+   "rej_val_neg": 0.161,
+   "rej_hndev_neg": 0.463,
+   "mdev_pos_frr": 0.049
+  },
+  {
+   "tau": 0.25,
+   "val_frr": 0.0772,
+   "showcase_frr": {
+    "citrus": 0.0529,
+    "apple": 0.0854,
+    "banana": 0.0556,
+    "tomato": 0.0759,
+    "carrot": 0.1172
+   },
+   "admissible": false,
+   "rej_val_neg": 0.182,
+   "rej_hndev_neg": 0.496,
+   "mdev_pos_frr": 0.049
+  },
+  {
+   "tau": 0.3,
+   "val_frr": 0.0812,
+   "showcase_frr": {
+    "citrus": 0.0529,
+    "apple": 0.0905,
+    "banana": 0.0598,
+    "tomato": 0.0759,
+    "carrot": 0.1241
+   },
+   "admissible": false,
+   "rej_val_neg": 0.208,
+   "rej_hndev_neg": 0.496,
+   "mdev_pos_frr": 0.049
+  },
+  {
+   "tau": 0.35,
+   "val_frr": 0.0911,
+   "showcase_frr": {
+    "citrus": 0.0577,
+    "apple": 0.1256,
+    "banana": 0.0641,
+    "tomato": 0.0791,
+    "carrot": 0.1356
+   },
+   "admissible": false,
+   "rej_val_neg": 0.208,
+   "rej_hndev_neg": 0.496,
+   "mdev_pos_frr": 0.049
+  },
+  {
+   "tau": 0.4,
+   "val_frr": 0.098,
+   "showcase_frr": {
+    "citrus": 0.0625,
+    "apple": 0.1307,
+    "banana": 0.0662,
+    "tomato": 0.0949,
+    "carrot": 0.1425
+   },
+   "admissible": false,
+   "rej_val_neg": 0.224,
+   "rej_hndev_neg": 0.504,
+   "mdev_pos_frr": 0.049
+  },
+  {
+   "tau": 0.45,
+   "val_frr": 0.1059,
+   "showcase_frr": {
+    "citrus": 0.0673,
+    "apple": 0.1407,
+    "banana": 0.0662,
+    "tomato": 0.1203,
+    "carrot": 0.1494
+   },
+   "admissible": false,
+   "rej_val_neg": 0.234,
+   "rej_hndev_neg": 0.52,
+   "mdev_pos_frr": 0.049
+  },
+  {
+   "tau": 0.5,
+   "val_frr": 0.1129,
+   "showcase_frr": {
+    "citrus": 0.0769,
+    "apple": 0.1508,
+    "banana": 0.0705,
+    "tomato": 0.1266,
+    "carrot": 0.1609
+   },
+   "admissible": false,
+   "rej_val_neg": 0.245,
+   "rej_hndev_neg": 0.52,
+   "mdev_pos_frr": 0.073
+  }
+ ],
+ "tau": null,
+ "rule": "largest tau in 0.05..0.50 with val GT-crop false rejection <=2% overall and <=5% per showcase class (n>=20); G9_stageB_prereg.md section 3"
+}

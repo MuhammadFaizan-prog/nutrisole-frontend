@@ -1,0 +1,368 @@
+{
+ "note": "Retry of the 15 Commons originals that returned HTTP 429 in the 2026-10-15 visual review. Sequential, one request at a time, 4 s between files, descriptive User-Agent with contact, Retry-After honoured, at most 2 retries per file. Pixels NOT committed; sha256/size/pHash recorded. pHash distance is to the Stage I candidate (960px Commons thumbnail) that the pilot package was made from.",
+ "user_agent": "NutriSoleResearchBot/1.0 (https://github.com/MuhammadFaizan-prog/nutrisole-frontend; clydara1@gmail.com) python-requests",
+ "attempted": 15,
+ "retrieved": 15,
+ "items": [
+  {
+   "item_id": "P232",
+   "stage_key": "c0130",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Moscow%2C_2024-01-08%2C_food_prices_-_lemon_and_tangerine.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3AMoscow%2C_2024-01-08%2C_food_prices_-_lemon_and_tangerine.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:50:19Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "ceb0f41aea34aa689b218d73129cb545430b0330a6a45a3c3896886350e480db",
+   "bytes": 729188,
+   "width": 2400,
+   "height": 1600,
+   "phash": "d7d26a6f21c10d93",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC0",
+   "author": "Retired electrician",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P048",
+   "stage_key": "c0158",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Black_tomatoes_and_red_chilis_grown_in_Koye%2C_in_the_Kurdistan_Region_of_Iraq_03.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3ABlack_tomatoes_and_red_chilis_grown_in_Koye%2C_in_the_Kurdistan_Region_of_Iraq_03.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:50:25Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "b57be1a5df25ff84c54170b94a69a7b36661a9ab19993dcdbc4120a17141d28e",
+   "bytes": 10117906,
+   "width": 6000,
+   "height": 4000,
+   "phash": "c38dd3918c2c347f",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC0",
+   "author": "Levi Clancy",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P146",
+   "stage_key": "c0206",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Evil_Carrot_-_Flickr_-_Brettf.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3AEvil_Carrot_-_Flickr_-_Brettf.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:50:30Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "a0064b6b5b725194cd9ec530c3c44280c064c3170bfbc659172c766ca9a8dc18",
+   "bytes": 4177681,
+   "width": 2250,
+   "height": 2008,
+   "phash": "87c7c99819b33333",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC BY 2.0",
+   "author": "Brett Forsyth from Geulph, Canada",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P038",
+   "stage_key": "c0258",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Caqui_chocolate_em_fundo_preto_02.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3ACaqui_chocolate_em_fundo_preto_02.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:50:35Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "3f0b4c7a1642a211b4fe70e1274037938fc1634cfadaece7fa51f366ff0fe200",
+   "bytes": 3841646,
+   "width": 3061,
+   "height": 4560,
+   "phash": "926c6d3b90c46b3e",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC BY-SA 4.0",
+   "author": "Rodrigo.Argenton",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P227",
+   "stage_key": "c0278",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/%28Santalum_paniculata_close-up_from_Ka%E2%80%98%C5%ABp%C5%ABlehu%2C_United_States%29_-_DPLA_-_6d24f788516dbb2b10cc6eb1c02ab08a.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3A%28Santalum_paniculata_close-up_from_Ka%E2%80%98%C5%ABp%C5%ABlehu%2C_United_States%29_-_DPLA_-_6d24f788516dbb2b10cc6eb1c02ab08a.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:50:39Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "6c8f69824b88808fe7945b3f0de24655c3760af48d6b241c74320ca3d0e7a7fd",
+   "bytes": 132216,
+   "width": 1500,
+   "height": 1510,
+   "phash": "be09d89696c6f0a5",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC BY 4.0",
+   "author": "Carlquist, Sherwin John, 1930-2021",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P154",
+   "stage_key": "c0291",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/3_x_Fruit_scab_-_Nectarine_-_Avocado_-_Eggplant_-_2017_B.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3A3_x_Fruit_scab_-_Nectarine_-_Avocado_-_Eggplant_-_2017_B.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:50:46Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "d2799347f71baf2e3204e1c27e414816347eeff926a43174dbf1d736f3774af7",
+   "bytes": 2236265,
+   "width": 4424,
+   "height": 3288,
+   "phash": "e8a5935a94d83739",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC0",
+   "author": "Fructibus",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P223",
+   "stage_key": "c0297",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/6._Nectarine_ripened_fruit%2C_SC%2C_Vic%2C_Aust.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3A6._Nectarine_ripened_fruit%2C_SC%2C_Vic%2C_Aust.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:50:51Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "756fec3190f10b42a9245eec3b525211c9d248e86008af7f3f677d2dbf6313f0",
+   "bytes": 208570,
+   "width": 1200,
+   "height": 800,
+   "phash": "bdb49743d6d21a82",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC BY-SA 3.0",
+   "author": "jjron",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P151",
+   "stage_key": "c0298",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Curdsnackcloseup.JPG",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3ACurdsnackcloseup.JPG",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:50:55Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "7b306a3f20960a63ea1e318388984d1110c68bb2bdcc4c5c4776e2e71de1f062",
+   "bytes": 872182,
+   "width": 2272,
+   "height": 1704,
+   "phash": "fa9fc1d481ca258e",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC BY-SA 3.0",
+   "author": "Xil",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P193",
+   "stage_key": "c0302",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Kiwi_%28Fruit_not_Bird%29_%284406852449%29.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3AKiwi_%28Fruit_not_Bird%29_%284406852449%29.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:51:00Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "8fce2249106c38b7e53639216fe8dceda887838d1958711f4a2a96cf6bcbbfe3",
+   "bytes": 17441382,
+   "width": 4583,
+   "height": 3048,
+   "phash": "ac8fc370a8b5566a",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC BY 2.0",
+   "author": "Zach Dischner",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P049",
+   "stage_key": "c0313",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Starr-140309-0074-Carica_papaya-assorted_fruit_on_table_with_giant_variety-Hawea_Pl_Olinda-Maui_%2824614267693%29.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3AStarr-140309-0074-Carica_papaya-assorted_fruit_on_table_with_giant_variety-Hawea_Pl_Olinda-Maui_%2824614267693%29.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:51:05Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "ca01ae9ff47aa23e71cda07532d2f96b7bf7d9cda5c76a21fae0326496366cfe",
+   "bytes": 3564750,
+   "width": 4608,
+   "height": 3456,
+   "phash": "b2abb08d1621b3b7",
+   "phash_distance_to_candidate": 2,
+   "licence": "CC BY 3.0 us",
+   "author": "Forest and Kim Starr",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P014",
+   "stage_key": "c0332",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/2015-10-29_13-00-10_Beta_vulgaris.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3A2015-10-29_13-00-10_Beta_vulgaris.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:51:09Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "3801f2fa1d3445703ca8574a7abbad24574d13e9ba91bcfc19bd8243833798fb",
+   "bytes": 3213517,
+   "width": 3648,
+   "height": 2736,
+   "phash": "a4b4c34b8d979c9a",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC BY-SA 4.0",
+   "author": "Thomas Bresson",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P248",
+   "stage_key": "c0341",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/HO2A0411.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3AHO2A0411.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:51:14Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "fcd1bd678b8d7bc81da408adb4794112cc4c00472b26c609fc16a7800930f643",
+   "bytes": 6897659,
+   "width": 3840,
+   "height": 5760,
+   "phash": "d6d735013c38d437",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC BY-SA 4.0",
+   "author": "Rogerirakoze",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P118",
+   "stage_key": "c0357",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Taro_et_pamplemousse_de_Bonoua.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3ATaro_et_pamplemousse_de_Bonoua.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:51:19Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "14676e6371217ea6f06127341a3f6e324d59b83a30c485808e21a9c7bcb279e8",
+   "bytes": 1549390,
+   "width": 3840,
+   "height": 2560,
+   "phash": "ff52d43acb65c402",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC BY-SA 4.0",
+   "author": "Ecran bleu",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P260",
+   "stage_key": "c0368",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/HK_fruit_a_bag_of_7_%E6%A9%99_Oranges_%E4%BD%B3%E5%AF%B6%E9%A3%9F%E5%93%81_Kai_Bo_Food_May-2012.JPG",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3AHK_fruit_a_bag_of_7_%E6%A9%99_Oranges_%E4%BD%B3%E5%AF%B6%E9%A3%9F%E5%93%81_Kai_Bo_Food_May-2012.JPG",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:51:23Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "09ca9cec8edf786d8efca1da53416e90203e1d767a704940ad29003c52b8d36e",
+   "bytes": 1074530,
+   "width": 2592,
+   "height": 1944,
+   "phash": "943369879ad62bb1",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC BY-SA 3.0",
+   "author": "Cathiniamoa",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  },
+  {
+   "item_id": "P242",
+   "stage_key": "c0395",
+   "status": "RETRIEVED",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/How_to_make_a_fungal_spore_print_%2823541108448%29.jpg",
+   "source_page_url": "https://commons.wikimedia.org/wiki/File%3AHow_to_make_a_fungal_spore_print_%2823541108448%29.jpg",
+   "attempts": [
+    {
+     "at": "2026-10-15T11:51:28Z",
+     "http": 200,
+     "retry_after": null
+    }
+   ],
+   "sha256": "dcb815dc94a9e24c4a7a44c1600389c19a94410ea99dade029597720a3166b34",
+   "bytes": 16693147,
+   "width": 4000,
+   "height": 4000,
+   "phash": "afc2f08d921ecb38",
+   "phash_distance_to_candidate": 0,
+   "licence": "CC BY-SA 2.0",
+   "author": "AJC1 from UK",
+   "licence_compliant": "yes",
+   "page_matches_key": true
+  }
+ ]
+}

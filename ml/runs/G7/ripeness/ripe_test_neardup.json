@@ -1,0 +1,1262 @@
+[
+ {
+  "name": "test_00000.png",
+  "orig": "apple_overripe_003.png",
+  "cls": "apple_overripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00001.png",
+  "orig": "apple_overripe_005.png",
+  "cls": "apple_overripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00002.png",
+  "orig": "apple_overripe_041.png",
+  "cls": "apple_overripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00003.jpeg",
+  "orig": "apple_overripe_066.jpeg",
+  "cls": "apple_overripe",
+  "min_hamming": 11,
+  "near_dup": false
+ },
+ {
+  "name": "test_00004.jpeg",
+  "orig": "apple_overripe_083.jpeg",
+  "cls": "apple_overripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00005.jpeg",
+  "orig": "apple_overripe_085.jpeg",
+  "cls": "apple_overripe",
+  "min_hamming": 12,
+  "near_dup": false
+ },
+ {
+  "name": "test_00006.jpeg",
+  "orig": "apple_overripe_090.jpeg",
+  "cls": "apple_overripe",
+  "min_hamming": 12,
+  "near_dup": false
+ },
+ {
+  "name": "test_00007.jpeg",
+  "orig": "apple_overripe_093.jpeg",
+  "cls": "apple_overripe",
+  "min_hamming": 9,
+  "near_dup": false
+ },
+ {
+  "name": "test_00008.jpeg",
+  "orig": "apple_overripe_095.jpeg",
+  "cls": "apple_overripe",
+  "min_hamming": 14,
+  "near_dup": false
+ },
+ {
+  "name": "test_00009.jpeg",
+  "orig": "apple_overripe_097.jpeg",
+  "cls": "apple_overripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00010.jpeg",
+  "orig": "apple_overripe_108.jpeg",
+  "cls": "apple_overripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00011.jpg",
+  "orig": "banana_overripe_007.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 14,
+  "near_dup": false
+ },
+ {
+  "name": "test_00012.jpg",
+  "orig": "banana_overripe_010.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00013.jpg",
+  "orig": "banana_overripe_018.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 8,
+  "near_dup": false
+ },
+ {
+  "name": "test_00014.jpg",
+  "orig": "banana_overripe_025.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00015.jpg",
+  "orig": "banana_overripe_042.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 3,
+  "near_dup": true
+ },
+ {
+  "name": "test_00016.jpg",
+  "orig": "banana_overripe_062.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00017.jpg",
+  "orig": "banana_overripe_079.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00018.jpg",
+  "orig": "banana_overripe_084.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00019.jpg",
+  "orig": "banana_overripe_098.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00020.jpg",
+  "orig": "banana_overripe_151.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00021.jpg",
+  "orig": "banana_overripe_158.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00022.jpg",
+  "orig": "banana_overripe_163.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00023.jpg",
+  "orig": "banana_overripe_169.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00024.jpg",
+  "orig": "banana_overripe_226.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00025.png",
+  "orig": "banana_overripe_280.png",
+  "cls": "banana_overripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00026.jpg",
+  "orig": "banana_overripe_293.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00027.jpg",
+  "orig": "banana_overripe_298.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00028.jpg",
+  "orig": "banana_overripe_305.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00029.jpg",
+  "orig": "banana_overripe_312.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00030.jpg",
+  "orig": "banana_overripe_325.jpg",
+  "cls": "banana_overripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00031.jpeg",
+  "orig": "mango_overripe_008.jpeg",
+  "cls": "mango_overripe",
+  "min_hamming": 9,
+  "near_dup": false
+ },
+ {
+  "name": "test_00032.jpeg",
+  "orig": "mango_overripe_011.jpeg",
+  "cls": "mango_overripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00033.jpeg",
+  "orig": "mango_overripe_025.jpeg",
+  "cls": "mango_overripe",
+  "min_hamming": 14,
+  "near_dup": false
+ },
+ {
+  "name": "test_00034.jpeg",
+  "orig": "mango_overripe_027.jpeg",
+  "cls": "mango_overripe",
+  "min_hamming": 13,
+  "near_dup": false
+ },
+ {
+  "name": "test_00035.jpeg",
+  "orig": "mango_overripe_029.jpeg",
+  "cls": "mango_overripe",
+  "min_hamming": 13,
+  "near_dup": false
+ },
+ {
+  "name": "test_00036.jpeg",
+  "orig": "mango_overripe_054.jpeg",
+  "cls": "mango_overripe",
+  "min_hamming": 10,
+  "near_dup": false
+ },
+ {
+  "name": "test_00037.jpeg",
+  "orig": "mango_overripe_057.jpeg",
+  "cls": "mango_overripe",
+  "min_hamming": 13,
+  "near_dup": false
+ },
+ {
+  "name": "test_00038.png",
+  "orig": "mango_overripe_074.png",
+  "cls": "mango_overripe",
+  "min_hamming": 11,
+  "near_dup": false
+ },
+ {
+  "name": "test_00039.png",
+  "orig": "mango_overripe_094.png",
+  "cls": "mango_overripe",
+  "min_hamming": 14,
+  "near_dup": false
+ },
+ {
+  "name": "test_00040.png",
+  "orig": "mango_overripe_118.png",
+  "cls": "mango_overripe",
+  "min_hamming": 1,
+  "near_dup": true
+ },
+ {
+  "name": "test_00041.jpg",
+  "orig": "orange_overripe_003.jpg",
+  "cls": "orange_overripe",
+  "min_hamming": 8,
+  "near_dup": false
+ },
+ {
+  "name": "test_00042.jpg",
+  "orig": "orange_overripe_006.jpg",
+  "cls": "orange_overripe",
+  "min_hamming": 8,
+  "near_dup": false
+ },
+ {
+  "name": "test_00043.jpg",
+  "orig": "orange_overripe_011.jpg",
+  "cls": "orange_overripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00044.jpg",
+  "orig": "orange_overripe_016.jpg",
+  "cls": "orange_overripe",
+  "min_hamming": 12,
+  "near_dup": false
+ },
+ {
+  "name": "test_00045.jpg",
+  "orig": "orange_overripe_029.jpg",
+  "cls": "orange_overripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00046.jpg",
+  "orig": "orange_overripe_031.jpg",
+  "cls": "orange_overripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00047.jpeg",
+  "orig": "orange_overripe_034.jpeg",
+  "cls": "orange_overripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00048.jpeg",
+  "orig": "orange_overripe_043.jpeg",
+  "cls": "orange_overripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00049.jpeg",
+  "orig": "orange_overripe_048.jpeg",
+  "cls": "orange_overripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00050.jpeg",
+  "orig": "orange_overripe_067.jpeg",
+  "cls": "orange_overripe",
+  "min_hamming": 12,
+  "near_dup": false
+ },
+ {
+  "name": "test_00051.jpeg",
+  "orig": "orange_overripe_072.jpeg",
+  "cls": "orange_overripe",
+  "min_hamming": 12,
+  "near_dup": false
+ },
+ {
+  "name": "test_00052.jpeg",
+  "orig": "orange_overripe_077.jpeg",
+  "cls": "orange_overripe",
+  "min_hamming": 11,
+  "near_dup": false
+ },
+ {
+  "name": "test_00053.jpeg",
+  "orig": "orange_overripe_091.jpeg",
+  "cls": "orange_overripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00054.jpeg",
+  "orig": "tomato_overripe_004.jpeg",
+  "cls": "tomato_overripe",
+  "min_hamming": 14,
+  "near_dup": false
+ },
+ {
+  "name": "test_00055.jpeg",
+  "orig": "tomato_overripe_010.jpeg",
+  "cls": "tomato_overripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00056.jpeg",
+  "orig": "tomato_overripe_025.jpeg",
+  "cls": "tomato_overripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00057.jpeg",
+  "orig": "tomato_overripe_058.jpeg",
+  "cls": "tomato_overripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00058.jpeg",
+  "orig": "tomato_overripe_072.jpeg",
+  "cls": "tomato_overripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00059.jpeg",
+  "orig": "tomato_overripe_076.jpeg",
+  "cls": "tomato_overripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00060.jpg",
+  "orig": "apple_ripe_004.jpg",
+  "cls": "apple_ripe",
+  "min_hamming": 13,
+  "near_dup": false
+ },
+ {
+  "name": "test_00061.jpg",
+  "orig": "apple_ripe_019.jpg",
+  "cls": "apple_ripe",
+  "min_hamming": 12,
+  "near_dup": false
+ },
+ {
+  "name": "test_00062.jpg",
+  "orig": "apple_ripe_026.jpg",
+  "cls": "apple_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00063.jpg",
+  "orig": "apple_ripe_040.jpg",
+  "cls": "apple_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00064.jpg",
+  "orig": "apple_ripe_044.jpg",
+  "cls": "apple_ripe",
+  "min_hamming": 14,
+  "near_dup": false
+ },
+ {
+  "name": "test_00065.jpg",
+  "orig": "apple_ripe_068.jpg",
+  "cls": "apple_ripe",
+  "min_hamming": 10,
+  "near_dup": false
+ },
+ {
+  "name": "test_00066.jpg",
+  "orig": "apple_ripe_071.jpg",
+  "cls": "apple_ripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00067.jpg",
+  "orig": "apple_ripe_129.jpg",
+  "cls": "apple_ripe",
+  "min_hamming": 10,
+  "near_dup": false
+ },
+ {
+  "name": "test_00068.jpg",
+  "orig": "apple_ripe_145.jpg",
+  "cls": "apple_ripe",
+  "min_hamming": 12,
+  "near_dup": false
+ },
+ {
+  "name": "test_00069.png",
+  "orig": "apple_ripe_217.png",
+  "cls": "apple_ripe",
+  "min_hamming": 1,
+  "near_dup": true
+ },
+ {
+  "name": "test_00070.png",
+  "orig": "apple_ripe_235.png",
+  "cls": "apple_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00071.png",
+  "orig": "apple_ripe_261.png",
+  "cls": "apple_ripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00072.jpg",
+  "orig": "banana_ripe_004.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00073.jpg",
+  "orig": "banana_ripe_050.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00074.jpg",
+  "orig": "banana_ripe_054.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 7,
+  "near_dup": false
+ },
+ {
+  "name": "test_00075.jpg",
+  "orig": "banana_ripe_069.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 14,
+  "near_dup": false
+ },
+ {
+  "name": "test_00076.jpg",
+  "orig": "banana_ripe_127.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00077.jpg",
+  "orig": "banana_ripe_135.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00078.jpg",
+  "orig": "banana_ripe_217.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00079.jpg",
+  "orig": "banana_ripe_226.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 2,
+  "near_dup": true
+ },
+ {
+  "name": "test_00080.jpg",
+  "orig": "banana_ripe_282.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00081.jpg",
+  "orig": "banana_ripe_300.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00082.jpg",
+  "orig": "banana_ripe_356.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00083.jpg",
+  "orig": "banana_ripe_456.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00084.png",
+  "orig": "banana_ripe_521.png",
+  "cls": "banana_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00085.jpg",
+  "orig": "banana_ripe_590.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00086.jpg",
+  "orig": "banana_ripe_597.jpg",
+  "cls": "banana_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00087.jpg",
+  "orig": "mango_ripe_048.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00088.jpg",
+  "orig": "mango_ripe_051.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 10,
+  "near_dup": false
+ },
+ {
+  "name": "test_00089.jpg",
+  "orig": "mango_ripe_101.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 3,
+  "near_dup": true
+ },
+ {
+  "name": "test_00090.jpg",
+  "orig": "mango_ripe_108.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 12,
+  "near_dup": false
+ },
+ {
+  "name": "test_00091.jpg",
+  "orig": "mango_ripe_115.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 3,
+  "near_dup": true
+ },
+ {
+  "name": "test_00092.jpg",
+  "orig": "mango_ripe_126.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00093.jpg",
+  "orig": "mango_ripe_167.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 11,
+  "near_dup": false
+ },
+ {
+  "name": "test_00094.jpg",
+  "orig": "mango_ripe_189.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 9,
+  "near_dup": false
+ },
+ {
+  "name": "test_00095.jpg",
+  "orig": "mango_ripe_240.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00096.jpg",
+  "orig": "mango_ripe_256.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00097.jpg",
+  "orig": "mango_ripe_308.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00098.jpg",
+  "orig": "mango_ripe_375.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 8,
+  "near_dup": false
+ },
+ {
+  "name": "test_00099.jpg",
+  "orig": "mango_ripe_390.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 5,
+  "near_dup": false
+ },
+ {
+  "name": "test_00100.jpg",
+  "orig": "mango_ripe_396.jpg",
+  "cls": "mango_ripe",
+  "min_hamming": 11,
+  "near_dup": false
+ },
+ {
+  "name": "test_00101.png",
+  "orig": "mango_ripe_476.png",
+  "cls": "mango_ripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00102.jpg",
+  "orig": "orange_ripe_039.jpg",
+  "cls": "orange_ripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00103.jpeg",
+  "orig": "orange_ripe_046.jpeg",
+  "cls": "orange_ripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00104.jpeg",
+  "orig": "orange_ripe_057.jpeg",
+  "cls": "orange_ripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00105.jpeg",
+  "orig": "orange_ripe_096.jpeg",
+  "cls": "orange_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00106.jpeg",
+  "orig": "orange_ripe_109.jpeg",
+  "cls": "orange_ripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00107.jpeg",
+  "orig": "orange_ripe_115.jpeg",
+  "cls": "orange_ripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00108.jpg",
+  "orig": "tomato_ripe_006.jpg",
+  "cls": "tomato_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00109.jpg",
+  "orig": "tomato_ripe_019.jpg",
+  "cls": "tomato_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00110.jpg",
+  "orig": "tomato_ripe_026.jpg",
+  "cls": "tomato_ripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00111.jpg",
+  "orig": "tomato_ripe_065.jpg",
+  "cls": "tomato_ripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00112.jpg",
+  "orig": "tomato_ripe_085.jpg",
+  "cls": "tomato_ripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00113.jpg",
+  "orig": "tomato_ripe_096.jpg",
+  "cls": "tomato_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00114.jpg",
+  "orig": "tomato_ripe_150.jpg",
+  "cls": "tomato_ripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00115.jpg",
+  "orig": "tomato_ripe_162.jpg",
+  "cls": "tomato_ripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00116.jpeg",
+  "orig": "tomato_ripe_216.jpeg",
+  "cls": "tomato_ripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00117.jpeg",
+  "orig": "tomato_ripe_239.jpeg",
+  "cls": "tomato_ripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00118.jpeg",
+  "orig": "tomato_ripe_266.jpeg",
+  "cls": "tomato_ripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00119.jpeg",
+  "orig": "tomato_ripe_300.jpeg",
+  "cls": "tomato_ripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00120.jpg",
+  "orig": "apple_unripe_004.jpg",
+  "cls": "apple_unripe",
+  "min_hamming": 11,
+  "near_dup": false
+ },
+ {
+  "name": "test_00121.jpg",
+  "orig": "apple_unripe_017.jpg",
+  "cls": "apple_unripe",
+  "min_hamming": 10,
+  "near_dup": false
+ },
+ {
+  "name": "test_00122.jpg",
+  "orig": "apple_unripe_023.jpg",
+  "cls": "apple_unripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00123.jpg",
+  "orig": "apple_unripe_030.jpg",
+  "cls": "apple_unripe",
+  "min_hamming": 11,
+  "near_dup": false
+ },
+ {
+  "name": "test_00124.jpg",
+  "orig": "apple_unripe_038.jpg",
+  "cls": "apple_unripe",
+  "min_hamming": 14,
+  "near_dup": false
+ },
+ {
+  "name": "test_00125.jpg",
+  "orig": "apple_unripe_065.jpg",
+  "cls": "apple_unripe",
+  "min_hamming": 14,
+  "near_dup": false
+ },
+ {
+  "name": "test_00126.jpg",
+  "orig": "apple_unripe_083.jpg",
+  "cls": "apple_unripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00127.jpg",
+  "orig": "apple_unripe_090.jpg",
+  "cls": "apple_unripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00128.jpg",
+  "orig": "apple_unripe_154.jpg",
+  "cls": "apple_unripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00129.png",
+  "orig": "apple_unripe_191.png",
+  "cls": "apple_unripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00130.png",
+  "orig": "apple_unripe_207.png",
+  "cls": "apple_unripe",
+  "min_hamming": 14,
+  "near_dup": false
+ },
+ {
+  "name": "test_00131.png",
+  "orig": "apple_unripe_247.png",
+  "cls": "apple_unripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00132.png",
+  "orig": "apple_unripe_282.png",
+  "cls": "apple_unripe",
+  "min_hamming": 12,
+  "near_dup": false
+ },
+ {
+  "name": "test_00133.jpg",
+  "orig": "banana_unripe_008.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00134.jpg",
+  "orig": "banana_unripe_024.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00135.jpg",
+  "orig": "banana_unripe_037.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00136.jpg",
+  "orig": "banana_unripe_097.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00137.jpg",
+  "orig": "banana_unripe_098.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 11,
+  "near_dup": false
+ },
+ {
+  "name": "test_00138.jpg",
+  "orig": "banana_unripe_111.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00139.jpg",
+  "orig": "banana_unripe_117.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00140.jpg",
+  "orig": "banana_unripe_123.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 14,
+  "near_dup": false
+ },
+ {
+  "name": "test_00141.jpg",
+  "orig": "banana_unripe_221.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00142.jpg",
+  "orig": "banana_unripe_308.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00143.jpg",
+  "orig": "banana_unripe_332.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00144.jpg",
+  "orig": "banana_unripe_407.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00145.jpg",
+  "orig": "banana_unripe_419.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00146.jpg",
+  "orig": "banana_unripe_426.jpg",
+  "cls": "banana_unripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00147.jpg",
+  "orig": "mango_unripe_027.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00148.jpg",
+  "orig": "mango_unripe_031.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00149.jpg",
+  "orig": "mango_unripe_045.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 5,
+  "near_dup": false
+ },
+ {
+  "name": "test_00150.jpg",
+  "orig": "mango_unripe_057.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 16,
+  "near_dup": false
+ },
+ {
+  "name": "test_00151.jpg",
+  "orig": "mango_unripe_109.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00152.jpg",
+  "orig": "mango_unripe_113.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00153.jpg",
+  "orig": "mango_unripe_123.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00154.jpg",
+  "orig": "mango_unripe_178.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 7,
+  "near_dup": false
+ },
+ {
+  "name": "test_00155.jpg",
+  "orig": "mango_unripe_186.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 6,
+  "near_dup": false
+ },
+ {
+  "name": "test_00156.jpg",
+  "orig": "mango_unripe_243.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 7,
+  "near_dup": false
+ },
+ {
+  "name": "test_00157.jpg",
+  "orig": "mango_unripe_256.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 8,
+  "near_dup": false
+ },
+ {
+  "name": "test_00158.jpg",
+  "orig": "mango_unripe_364.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 6,
+  "near_dup": false
+ },
+ {
+  "name": "test_00159.jpg",
+  "orig": "mango_unripe_430.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 10,
+  "near_dup": false
+ },
+ {
+  "name": "test_00160.jpg",
+  "orig": "mango_unripe_539.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 10,
+  "near_dup": false
+ },
+ {
+  "name": "test_00161.jpg",
+  "orig": "mango_unripe_574.jpg",
+  "cls": "mango_unripe",
+  "min_hamming": 9,
+  "near_dup": false
+ },
+ {
+  "name": "test_00162.jpeg",
+  "orig": "orange_unripe_020.jpeg",
+  "cls": "orange_unripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00163.jpeg",
+  "orig": "orange_unripe_024.jpeg",
+  "cls": "orange_unripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00164.jpeg",
+  "orig": "orange_unripe_029.jpeg",
+  "cls": "orange_unripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00165.jpeg",
+  "orig": "orange_unripe_036.jpeg",
+  "cls": "orange_unripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00166.jpeg",
+  "orig": "orange_unripe_087.jpeg",
+  "cls": "orange_unripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00167.jpeg",
+  "orig": "orange_unripe_105.jpeg",
+  "cls": "orange_unripe",
+  "min_hamming": 15,
+  "near_dup": false
+ },
+ {
+  "name": "test_00168.jpeg",
+  "orig": "orange_unripe_132.jpeg",
+  "cls": "orange_unripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00169.jpg",
+  "orig": "tomato_unripe_043.jpg",
+  "cls": "tomato_unripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00170.jpg",
+  "orig": "tomato_unripe_049.jpg",
+  "cls": "tomato_unripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00171.jpg",
+  "orig": "tomato_unripe_067.jpg",
+  "cls": "tomato_unripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00172.jpg",
+  "orig": "tomato_unripe_127.jpg",
+  "cls": "tomato_unripe",
+  "min_hamming": 19,
+  "near_dup": false
+ },
+ {
+  "name": "test_00173.jpg",
+  "orig": "tomato_unripe_168.jpg",
+  "cls": "tomato_unripe",
+  "min_hamming": 20,
+  "near_dup": false
+ },
+ {
+  "name": "test_00174.jpg",
+  "orig": "tomato_unripe_191.jpg",
+  "cls": "tomato_unripe",
+  "min_hamming": 17,
+  "near_dup": false
+ },
+ {
+  "name": "test_00175.jpg",
+  "orig": "tomato_unripe_205.jpg",
+  "cls": "tomato_unripe",
+  "min_hamming": 18,
+  "near_dup": false
+ },
+ {
+  "name": "test_00176.jpeg",
+  "orig": "tomato_unripe_258.jpeg",
+  "cls": "tomato_unripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00177.jpeg",
+  "orig": "tomato_unripe_264.jpeg",
+  "cls": "tomato_unripe",
+  "min_hamming": 10,
+  "near_dup": false
+ },
+ {
+  "name": "test_00178.jpeg",
+  "orig": "tomato_unripe_292.jpeg",
+  "cls": "tomato_unripe",
+  "min_hamming": 0,
+  "near_dup": true
+ },
+ {
+  "name": "test_00179.jpeg",
+  "orig": "tomato_unripe_299.jpeg",
+  "cls": "tomato_unripe",
+  "min_hamming": 3,
+  "near_dup": true
+ }
+]

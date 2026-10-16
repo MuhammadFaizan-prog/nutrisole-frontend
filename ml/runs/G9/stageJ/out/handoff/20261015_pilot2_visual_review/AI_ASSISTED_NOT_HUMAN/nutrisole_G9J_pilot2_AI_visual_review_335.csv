@@ -1,0 +1,336 @@
+pack_id,copy,annotator,item_id,order_index,label,other_produce_name,occluded_or_printed_what,cut,bag,multi,rotten_damaged,note,seconds,labelled_at
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P501,105,tomato,,,0,0,1,0,"Prominent whole green tomato on its plant, with another behind; main fruit is mostly visible.",0,2026-10-15T14:12:14.625968+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P502,79,citrus_orange,,,0,0,0,0,"Round green-yellow coarse-rind citrus; orange-type appearance, exact citrus type needs checking.",0,2026-10-15T14:12:14.626034+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P503,43,citrus_orange,,,0,0,0,0,Round green-yellow coarse-rind citrus on a purple surface; orange-type appearance.,0,2026-10-15T14:12:14.626052+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P504,290,uncertain,,,0,0,0,0,Rolled green leaf and leaf surface; no identifiable banana fruit.,0,2026-10-15T14:12:14.626071+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P505,281,printed_or_screen,,,0,0,0,0,Portrait painting of a person among flowers.,0,2026-10-15T14:12:14.626082+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P506,70,apple,,,0,0,0,0,Whole green apple with a stem cavity and pale surface marks; severe damage is not established.,0,2026-10-15T14:12:14.626094+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P507,167,uncertain,,,0,1,0,0,Ketchup bottle; processed sauce rather than a whole raw tomato.,0,2026-10-15T14:12:14.626106+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P508,64,tomato,,,0,0,0,0,Whole red tomato on a dark surface.,0,2026-10-15T14:12:14.626118+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P509,137,tomato,,,0,0,0,0,Whole red tomato on a dark surface.,0,2026-10-15T14:12:14.626129+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P510,112,uncertain,,,0,0,1,0,Burger meal with fries and onion rings.,0,2026-10-15T14:12:14.626146+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P511,146,apple,,,0,0,0,0,Whole green apple with a stem cavity and surface marks; clear severe damage not established.,0,2026-10-15T14:12:14.626166+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P512,284,tomato,,,0,0,0,0,Whole round red tomato on a dark surface.,0,2026-10-15T14:12:14.626181+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P513,144,uncertain,,,0,0,0,0,Car interior with seats and steering wheel; no produce.,0,2026-10-15T14:12:14.626195+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P514,179,uncertain,,,0,0,0,0,Close view of a car badge and bodywork; no produce.,0,2026-10-15T14:12:14.626207+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P515,230,printed_or_screen,,other_produce,0,0,1,0,Painting of a market/interior with food and people.,0,2026-10-15T14:12:14.626219+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P516,236,uncertain,,,0,0,0,0,Park path and trees; no clear produce.,0,2026-10-15T14:12:14.626238+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P517,261,uncertain,,,0,0,0,0,Car at an outdoor gathering; no produce.,0,2026-10-15T14:12:14.626248+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P518,278,apple,,,0,0,0,0,Whole green apple with a stem on a ledge outdoors.,0,2026-10-15T14:12:14.626259+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P519,111,uncertain,,,0,0,0,0,Insect among damaged leaves; no identifiable fruit main item.,0,2026-10-15T14:12:14.626271+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P520,57,uncertain,,,0,0,0,0,Large oval yellow-green fruit in a hand; mango versus orange/other citrus is unresolved.,0,2026-10-15T14:12:14.626298+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P521,243,printed_or_screen,,other_produce,0,0,1,0,Still-life painting of assorted fruit and vegetables.,0,2026-10-15T14:12:14.626309+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P522,44,uncertain,,,0,0,0,0,Black-and-white field/farming scene; no identifiable close-up produce target.,0,2026-10-15T14:12:14.626319+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P523,93,other_produce,other,,0,0,1,0,Small glossy red cherry-like fruits on long stalks held in a hand. Outside the five target classes; exact subtype unresolved.,0,2026-10-15T14:12:14.626375+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P524,224,uncertain,,,0,0,1,0,Woman and child with a banana bunch held to the side; no central close-up fruit.,0,2026-10-15T14:12:14.626392+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P525,330,uncertain,,,0,0,0,0,Car at a gathering; no produce.,0,2026-10-15T14:12:14.626408+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P526,5,uncertain,,,0,0,0,0,Tree-lined path with autumn leaves; no produce.,0,2026-10-15T14:12:14.626427+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P527,35,printed_or_screen,,,0,0,0,0,Religious painting of a woman and child.,0,2026-10-15T14:12:14.626442+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P528,102,uncertain,,,0,0,1,0,"Computer keyboards and product packaging; Apple is a brand here, not fruit.",0,2026-10-15T14:12:14.626456+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P529,217,carrot,,,1,0,1,0,Peeled carrot and cut carrot sticks on red fabric.,0,2026-10-15T14:12:14.626468+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P530,98,tomato,,,0,0,0,0,Whole red tomato on a dark surface.,0,2026-10-15T14:12:14.626484+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P531,172,other_produce,other,,0,1,1,0,"Blueberries in the central clear punnet, with starfruit and tomatoes nearby. Main berries are mostly visible.",0,2026-10-15T14:12:14.626501+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P532,169,printed_or_screen,,,0,0,0,0,Religious icon/painting displayed on a wall.,0,2026-10-15T14:12:14.626512+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P533,305,uncertain,,,0,0,1,0,"Person harvesting among tomato plants; overlapping small fruits and foliage, no single prominent central target.",0,2026-10-15T14:12:14.626527+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P534,274,printed_or_screen,,,0,0,0,0,Religious painting with several people.,0,2026-10-15T14:12:14.626539+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P535,187,banana,,,0,0,1,0,"Bunch of green-yellow bananas in hand, with long dark peel marks; severe bruising not established.",0,2026-10-15T14:12:14.626552+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P536,244,uncertain,,,0,0,0,0,"Yellow slug on gravel; an animal, not banana fruit.",0,2026-10-15T14:12:14.626564+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P537,320,uncertain,,,0,0,0,0,Close-up of a green leaf with no fruit.,0,2026-10-15T14:12:14.626576+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P538,174,uncertain,,,0,0,0,0,Black-and-white photograph of buildings and land; no produce target.,0,2026-10-15T14:12:14.626588+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P539,242,uncertain,,,0,0,0,0,Asymmetric green pear/guava/apple-like fruit on a reddish surface; subtype and five-class identity unresolved.,0,2026-10-15T14:12:14.626609+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P540,293,uncertain,,,0,1,1,0,Shop shelf of bottled sauces and condiments; no whole raw main item.,0,2026-10-15T14:12:14.626644+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P541,45,citrus_orange,,,0,0,0,0,Large round green-yellow coarse-rind citrus in hand; orange-type appearance.,0,2026-10-15T14:14:22.694034+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P542,51,uncertain,,,0,0,0,0,Small yellow-orange rounded fruit held in a glove; identity cannot be resolved reliably.,0,2026-10-15T14:14:22.694122+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P543,78,uncertain,,,1,1,0,0,White prepared food being unwrapped from a tied leaf parcel; not a whole raw produce item.,0,2026-10-15T14:14:22.694141+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P544,263,carrot,,,0,0,0,0,Single carrot root with dry/rough surface; severe damage not established.,0,2026-10-15T14:14:22.694165+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P545,13,apple,,,0,0,0,0,"Green rounded fruit with a deep stem cavity; apple appearance, but guava remains a resolution-limited alternative.",0,2026-10-15T14:14:22.694179+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P546,316,other_produce,other,,0,0,1,0,"Several red pointed fruits/pods among broad leaves; outside the five target classes, exact subtype unresolved.",0,2026-10-15T14:14:22.694193+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P547,53,uncertain,,,0,0,1,0,Pile of red crustaceans being handled beside a bag; no fruit or vegetable main item.,0,2026-10-15T14:14:22.694205+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P548,34,citrus_orange,,,0,0,0,0,Large round yellow-green citrus in an open hand; orange-type appearance.,0,2026-10-15T14:14:22.694222+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P549,286,printed_or_screen,,tomato,0,0,0,0,Artificial tomato-shaped squeeze bottle with a green plastic nozzle.,0,2026-10-15T14:14:22.694245+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P550,229,apple,,,0,0,0,1,Apple-shaped fruit with a stem cavity and extensive brown discolouration; damage severity needs checking.,0,2026-10-15T14:14:22.694274+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P551,194,uncertain,,,0,1,1,0,Clear bag containing screws and metal fasteners.,0,2026-10-15T14:14:22.694292+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P552,251,printed_or_screen,,other_produce,0,0,1,0,Still-life painting of a fruit bowl.,0,2026-10-15T14:14:22.694304+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P553,219,carrot,,,0,0,0,0,Single whole carrot root on a dark surface.,0,2026-10-15T14:14:22.694320+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P554,160,apple,,,0,0,0,0,Whole red-yellow apple on a windowsill.,0,2026-10-15T14:14:22.694337+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P555,42,printed_or_screen,,other_produce,0,0,1,0,Dark still-life artwork with a bag and fruit.,0,2026-10-15T14:14:22.694350+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P556,175,uncertain,,,0,0,0,0,Car viewed from behind at a gathering; no produce.,0,2026-10-15T14:14:22.694362+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P557,300,uncertain,,,0,0,1,0,Strongly colour-altered/soft fruit still life; foreground pile and central main item cannot be identified reliably.,0,2026-10-15T14:14:22.694380+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P558,116,apple,,,0,0,0,0,Green round stemmed apple-like fruit with a dark patch; identity and damage severity need checking.,0,2026-10-15T14:14:22.694410+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P559,4,uncertain,,,0,0,1,0,"Prepared meal with meat, fries and sauces.",0,2026-10-15T14:14:22.694452+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P560,20,citrus_orange,,,0,0,1,0,Bowl of whole oranges; grapes are off to the side.,0,2026-10-15T14:14:22.694469+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P561,258,uncertain,,,0,0,0,0,Black-and-white photograph of a soldier/person; no produce.,0,2026-10-15T14:14:22.694496+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P562,198,uncertain,,,0,0,1,0,Bowls of cooked food/mash and stew.,0,2026-10-15T14:14:22.694516+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P563,213,uncertain,,,0,0,1,0,Cooked food in serving dishes; no whole raw produce main item.,0,2026-10-15T14:14:22.694543+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P564,63,uncertain,,,0,1,1,0,Packaged cinnamon-apple ice cream/dessert cups.,0,2026-10-15T14:14:22.694598+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P565,221,uncertain,,,0,0,0,0,Small yellow-orange blocky rounded fruit/object on wood; identity and possible cut/damage are unclear.,0,2026-10-15T14:14:22.694625+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P566,152,apple,,,0,0,0,0,Whole red apple with a stem on a ledge.,0,2026-10-15T14:14:22.694650+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P567,114,uncertain,,,0,1,1,0,Person carrying a crate of tomatoes in a greenhouse; no single central close-up fruit.,0,2026-10-15T14:14:22.694672+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P568,80,citrus_orange,,,0,0,0,0,"Round yellow coarse-rind citrus in hand; orange-type appearance, variety unresolved.",0,2026-10-15T14:14:22.694697+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P569,139,carrot,,,0,0,0,0,Whole forked/bent carrot with green stems beside a sink.,0,2026-10-15T14:14:22.694718+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P570,197,citrus_orange,,,0,0,1,0,Central orange in a bowl with green apples and other oranges; check exact main-item interpretation.,0,2026-10-15T14:14:22.694739+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P571,131,other_produce,other,,0,1,1,0,"Raspberries in an open clear punnet, mostly visible.",0,2026-10-15T14:14:22.694757+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P572,256,uncertain,,,0,0,0,1,"Yellow-green round fruit with extensive dark damage; apple, citrus and other fruit cannot be separated reliably.",0,2026-10-15T14:14:22.694775+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P573,19,citrus_orange,,,0,0,0,0,Round green-yellow coarse-rind citrus held in hand.,0,2026-10-15T14:14:22.694795+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P574,186,carrot,,,0,0,0,0,Single whole carrot root on a dark surface.,0,2026-10-15T14:14:22.694816+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P575,56,tomato,,,0,0,1,0,Two real red tomatoes with healed-looking surface cracks; severe rot/crushing not established.,0,2026-10-15T14:14:22.694833+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P576,92,printed_or_screen,,,0,0,0,0,Stone sculpture of a hand holding a rounded object; not real produce.,0,2026-10-15T14:14:22.694854+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P577,154,printed_or_screen,,,0,0,0,0,Painting of flowers and a garden scene.,0,2026-10-15T14:14:22.694882+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P578,273,printed_or_screen,,,0,0,0,0,Painting/print of a flower basket.,0,2026-10-15T14:14:22.694903+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P579,279,carrot,,,0,0,0,0,Single rough-surfaced carrot root; severe damage not established.,0,2026-10-15T14:14:22.694944+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P580,240,other_produce,lemon_or_lime,,0,0,0,0,Small green smooth-rind lime-like fruit held in a glove; check against orange-type citrus.,0,2026-10-15T14:14:22.694977+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P581,190,carrot,,,1,1,1,0,"Clearly visible cut/peeled carrots in transparent retail bags, labelled as carrots on the photographed packaging.",0,2026-10-15T14:16:43.177947+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P582,214,uncertain,,,1,0,1,0,Cooked/baked dish with sauce and tomatoes; prepared food is the main item.,0,2026-10-15T14:16:43.178001+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P583,317,uncertain,,,0,0,1,0,Bowls of cooked mash/stew.,0,2026-10-15T14:16:43.178018+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P584,225,uncertain,,,0,1,0,0,Person eating a dessert; boxed fruit at the side is not the central main item.,0,2026-10-15T14:16:43.178041+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P585,50,citrus_orange,,,0,0,0,0,Round green-yellow coarse-rind citrus in hand; exact citrus type needs checking.,0,2026-10-15T14:16:43.178056+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P586,269,apple,,,0,0,0,0,Whole red-yellow apple on a ledge.,0,2026-10-15T14:16:43.178068+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P587,239,other_produce,lemon_or_lime,,0,0,1,0,"Small smooth green lime-like citrus in the bowl centre, among apples, oranges and lemons.",0,2026-10-15T14:16:43.178083+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P588,170,apple,,,0,0,0,0,"Whole green apple held in an open hand, with brown surface patches; severe damage not established.",0,2026-10-15T14:16:43.178097+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P589,185,tomato,,,0,0,0,0,Whole red tomato with a visible stem scar.,0,2026-10-15T14:16:43.178110+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P590,232,banana,,,0,0,1,0,Three yellow bananas with peel scuffs/dark local marks; severe damage not established.,0,2026-10-15T14:16:43.178123+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P591,52,uncertain,,,0,0,1,0,"Bread rolls in a display, with a gloved hand reaching among them; no raw produce main item.",0,2026-10-15T14:16:43.178137+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P592,109,uncertain,,,0,0,0,0,Car with its bonnet open; no produce.,0,2026-10-15T14:16:43.178158+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P593,276,banana,,,0,0,1,1,Three bananas with extensive dark bruised/blackened peel patches.,0,2026-10-15T14:16:43.178172+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P594,183,uncertain,,,0,0,0,0,Car at an outdoor gathering; no produce.,0,2026-10-15T14:16:43.178189+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P595,168,apple,,,0,0,0,0,"Red apple mostly visible beneath a hovering hand; dark lighting, but the hand does not cover most of the apple.",0,2026-10-15T14:16:43.178202+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P596,90,uncertain,,,0,0,0,1,Irregular yellow-green fruit with extensive pale/brown damaged tissue; original identity is obscured.,0,2026-10-15T14:16:43.178216+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P597,238,apple,,,0,0,0,0,Whole green apple with a stem on a ledge.,0,2026-10-15T14:16:43.178228+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P598,83,uncertain,,,0,0,0,0,Yellow coarse-rind lemon-like fruit held at the lower edge of a landscape photo; no central close-up fruit target.,0,2026-10-15T14:16:43.178247+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P599,318,uncertain,,,0,0,0,0,Small nearly black round fruit/seed-like object held between fingers; no reliable five-class or subtype identification.,0,2026-10-15T14:16:43.178261+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P600,334,uncertain,,,0,0,0,0,Black-and-white photograph of food preparation/baking.,0,2026-10-15T14:16:43.178274+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P601,10,printed_or_screen,,,0,0,0,0,Cartoon depicted in a cup/latte-art-style image; artwork rather than raw produce. Check artwork versus prepared-drink protocol treatment.,0,2026-10-15T14:16:43.178289+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P602,205,tomato,,,0,1,1,0,Whole tomatoes mostly visible in clear plastic retail containers.,0,2026-10-15T14:16:43.178302+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P603,181,citrus_orange,,,0,0,0,0,"Round yellow coarse-rind citrus held in hand, with a central depression.",0,2026-10-15T14:16:43.178317+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P604,182,uncertain,,,0,0,0,0,Autumn leaves on a branch; no fruit.,0,2026-10-15T14:16:43.178334+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P605,26,printed_or_screen,,,0,0,0,0,Still-life painting of a flower basket.,0,2026-10-15T14:16:43.178347+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P606,133,banana,,,0,0,1,1,"Bananas on vegetation, including a severely blackened one.",0,2026-10-15T14:16:43.178360+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P607,306,printed_or_screen,,,0,0,0,0,"Digital cartoon of a figure, coffee cup and coffee sack.",0,2026-10-15T14:16:43.178374+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P608,33,banana,,,0,0,0,0,Single yellow banana with dense brown peel spots; spotting alone does not prove rot or severe bruising.,0,2026-10-15T14:16:43.178390+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P609,323,apple,,,0,0,0,0,Whole green apple with a stem cavity on a ledge.,0,2026-10-15T14:16:43.178406+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P610,328,tomato,,,0,0,0,1,Tomato with conspicuous mouldy damaged patches.,0,2026-10-15T14:16:43.178420+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P611,288,apple,,,0,0,0,0,Whole red-yellow apple on a windowsill.,0,2026-10-15T14:16:43.178432+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P612,150,carrot,,,0,0,0,0,Single carrot root with rough/dry surface; severe damage not established.,0,2026-10-15T14:16:43.178444+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P613,142,other_produce,lemon_or_lime,,0,0,1,0,Small green lime-like central fruit between a yellow citrus and an orange; exact citrus type needs checking.,0,2026-10-15T14:16:43.178460+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P614,326,printed_or_screen,,,0,0,0,0,Printed historical cartoon and text page.,0,2026-10-15T14:16:43.178478+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P615,246,other_produce,other,,0,0,1,0,Market display of whole papayas; exact central item within the pile needs confirmation.,0,2026-10-15T14:16:43.178494+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P616,132,uncertain,,,0,0,1,0,Bowls of cooked food/mash and stew.,0,2026-10-15T14:16:43.178512+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P617,148,uncertain,,,0,0,0,0,Person pressing or handling soil; no produce.,0,2026-10-15T14:16:43.178527+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P618,295,uncertain,,,0,0,0,0,People holding hands; no produce.,0,2026-10-15T14:16:43.178539+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P619,231,apple,,,0,0,0,0,Whole red-yellow apple on patterned fabric.,0,2026-10-15T14:16:43.178557+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P620,220,uncertain,,,1,1,1,0,"Market stall with bagged cut stalk/root-like pieces in front, melons behind and a person central; no single clear main produce item.",0,2026-10-15T14:16:43.178584+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P621,196,uncertain,,,0,0,1,1,Four heavily discoloured/mouldy round fruits; original species and a single central target are unclear.,0,2026-10-15T14:19:05.303357+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P622,7,apple,,,0,0,1,0,Basket of whole red/green apples.,0,2026-10-15T14:19:05.303404+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P623,309,uncertain,,,0,0,0,0,Rear of a car; no produce.,0,2026-10-15T14:19:05.303420+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P624,25,apple,,,0,0,0,0,Whole green apple with a stem held in a palm.,0,2026-10-15T14:19:05.303440+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P625,129,printed_or_screen,,,0,0,0,0,Projected/shadow-style cartoon of a rhinoceros and stock-price display.,0,2026-10-15T14:19:05.303455+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P626,120,uncertain,,,0,0,1,1,Several yellow/brown rotten or split fruits; citrus versus guava/other fruit cannot be resolved reliably.,0,2026-10-15T14:19:05.303471+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P627,87,carrot,,,0,0,0,0,Single rough-surfaced carrot root; clear severe damage not established.,0,2026-10-15T14:19:05.303485+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P628,121,uncertain,,,0,0,0,0,Close-up of a car badge/body panel; no produce.,0,2026-10-15T14:19:05.303498+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P629,48,tomato,,,0,0,0,0,Whole red tomato on a dark surface.,0,2026-10-15T14:19:05.303514+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P630,30,banana,,,0,0,1,0,Bunch of green-yellow bananas with peel marks; no definite severe damage.,0,2026-10-15T14:19:05.303529+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P631,319,uncertain,,,0,0,0,0,Bowl of cooked stew/curry.,0,2026-10-15T14:19:05.303541+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P632,163,printed_or_screen,,apple,0,0,0,0,"Apple image altered with graphic eyes, teeth and smoke/flame; an artificial/edited depiction, not an ordinary real-fruit recognition sample.",0,2026-10-15T14:19:05.303556+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P633,177,apple,,,0,0,0,0,Whole green apple with a stem on grass.,0,2026-10-15T14:19:05.303568+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P634,59,uncertain,,,0,0,0,0,Car at an outdoor gathering; no produce.,0,2026-10-15T14:19:05.303585+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P635,280,uncertain,,,0,0,0,0,Oval yellow-green fruit in hand; citrus versus another fruit remains unresolved.,0,2026-10-15T14:19:05.303601+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P636,69,citrus_orange,,,0,0,1,0,Pile of large round green-yellow coarse-rind citrus; orange-type appearance.,0,2026-10-15T14:19:05.303618+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P637,298,uncertain,,,0,0,0,0,Leafy branch; no clear prominent fruit target.,0,2026-10-15T14:19:05.303631+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P638,191,apple,,,0,0,0,0,Whole red-yellow apple on a ledge.,0,2026-10-15T14:19:05.303645+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P639,100,apple,,,0,0,0,0,Red apple in water beside a hand; refraction/reflection alters its appearance. No definite cut or less-than-half covering is established.,0,2026-10-15T14:19:05.303662+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P640,157,other_produce,other,,1,0,1,0,Whole and shelled hazelnuts with broken shells; subtype other.,0,2026-10-15T14:19:05.303678+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P641,247,printed_or_screen,,,0,0,0,0,Printed historical cartoon/engraving with text.,0,2026-10-15T14:19:05.303691+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P642,193,citrus_orange,,,0,0,0,0,Round green-yellow coarse-rind citrus held in hand.,0,2026-10-15T14:19:05.303704+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P643,275,citrus_orange,,,0,0,0,1,Orange-yellow coarse-rind citrus with a large brown damaged patch.,0,2026-10-15T14:19:05.303718+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P644,99,carrot,,,1,0,1,0,Cut carrot sticks on red fabric.,0,2026-10-15T14:19:05.303734+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P645,21,uncertain,,,0,0,0,0,Person writing in a book; no produce.,0,2026-10-15T14:19:05.303747+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P646,201,uncertain,,,0,1,0,0,Dog carried in a shoulder bag; no produce.,0,2026-10-15T14:19:05.303760+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P647,49,citrus_orange,,,0,0,1,0,Three whole oranges on a turquoise surface.,0,2026-10-15T14:19:05.303773+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P648,325,uncertain,,,0,0,1,0,Bowls of cooked mash/stew.,0,2026-10-15T14:19:05.303786+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P649,138,uncertain,,,0,0,0,0,Car with its bonnet open; no produce.,0,2026-10-15T14:19:05.303798+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P650,125,uncertain,,,0,0,1,0,Rows of small foil-capped components/containers; no identifiable fruit or vegetable.,0,2026-10-15T14:19:05.303813+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P651,74,uncertain,,,0,0,1,0,Person carrying plates of prepared food.,0,2026-10-15T14:19:05.303829+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P652,192,carrot,,,0,0,1,0,Whole intertwined/forked carrot roots on wood.,0,2026-10-15T14:19:05.303842+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P653,123,printed_or_screen,,apple,0,0,0,0,Large illuminated Apple sign and apple logo on a building; depicted fruit/logo is not real produce.,0,2026-10-15T14:19:05.303859+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P654,147,uncertain,,,0,0,0,1,Yellow-orange rounded fruit with dark damaged patches; species remains unclear.,0,2026-10-15T14:19:05.303877+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P655,122,uncertain,,,0,0,0,0,Person among rooftop plants; no identifiable close-up fruit target.,0,2026-10-15T14:19:05.303891+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P656,302,citrus_orange,,,0,0,0,1,Large round green-yellow coarse-rind citrus with extensive visible mould.,0,2026-10-15T14:19:05.303905+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P657,204,printed_or_screen,,,0,0,0,0,Religious painting of a woman and child.,0,2026-10-15T14:19:05.303918+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P658,11,uncertain,,,0,1,0,0,"Coiled synthetic medical graft in sterile packaging; source filename identifies a Dacron arterial graft, not food.",0,2026-10-15T14:19:05.303933+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P659,23,printed_or_screen,,other_produce,0,0,1,0,Decorative stained-glass lamp with fruit-like motifs; no real produce.,0,2026-10-15T14:19:05.303946+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P660,266,uncertain,,,0,0,0,0,Large oval yellow-green fruit on grass; exact identity cannot be established from the supplied image.,0,2026-10-15T14:19:05.303969+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P661,162,carrot,,,0,0,0,0,Single carrot root with a rough surface; severe damage not established.,0,2026-10-15T14:21:10.423686+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P662,97,apple,,,0,0,0,1,Red apple with a broad dull brown/purple bruised-looking patch; check severity from a higher-resolution original.,0,2026-10-15T14:21:10.423744+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P663,206,carrot,,,0,0,0,0,Single whole carrot root on a dark surface.,0,2026-10-15T14:21:10.423764+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P664,180,uncertain,,,0,0,0,1,Yellow fruit with a deep damaged/mouldy depression; original species is obscured.,0,2026-10-15T14:21:10.423786+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P665,66,printed_or_screen,,,0,0,0,0,Framed religious icon/painting.,0,2026-10-15T14:21:10.423801+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P666,61,carrot,,,1,1,1,0,"Carrots/root sections in clear plastic bags; cut/peeled appearance, but C needs checking against merely trimmed whole roots.",0,2026-10-15T14:21:10.423819+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P667,310,citrus_orange,,,0,0,1,0,Pile of round green-yellow coarse-rind citrus.,0,2026-10-15T14:21:10.423836+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P668,210,banana,,,0,0,0,0,Single yellow banana with local dark peel marks; clear severe damage not established.,0,2026-10-15T14:21:10.423854+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P669,322,printed_or_screen,,,0,0,0,0,Printed historical drawing/engraving of a seated person.,0,2026-10-15T14:21:10.423869+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P670,195,banana,,,0,0,1,1,Bananas on vegetation with extensive darkened/collapsed peel.,0,2026-10-15T14:21:10.423885+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P671,173,uncertain,,,0,0,0,0,Bicycle beneath an autumn tree; no produce.,0,2026-10-15T14:21:10.423899+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P672,104,banana,,,0,0,0,1,"Banana held in hand, with extensive blackened/bruised peel.",0,2026-10-15T14:21:10.423916+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P673,6,carrot,,,0,0,0,0,Single whole carrot root on a dark surface.,0,2026-10-15T14:21:10.423930+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P674,227,uncertain,,,0,0,1,0,Bowls of cooked food/mash and stew.,0,2026-10-15T14:21:10.423951+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P675,2,uncertain,,,1,0,1,0,Cooked meal with sliced tomato garnish; main item is prepared food.,0,2026-10-15T14:21:10.423968+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P676,255,apple,,,0,0,0,0,Whole green apple with a stem on wood. Unusually glossy appearance alone is insufficient to call it artificial.,0,2026-10-15T14:21:10.423986+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P677,285,banana,,,0,0,1,0,Four bananas with dense brown peel spotting; spotting alone does not establish severe damage.,0,2026-10-15T14:21:10.424005+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P678,260,citrus_orange,,,0,0,0,0,Round green-yellow coarse-rind citrus on a dark counter.,0,2026-10-15T14:21:10.424023+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P679,140,tomato,,,0,0,1,0,Black-and-white photograph of tomato plants with identifiable foreground fruit; no print/page boundary establishes fake produce.,0,2026-10-15T14:21:10.424040+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P680,113,banana,,,1,0,0,0,"Peeled banana held in hand, with peel hanging down.",0,2026-10-15T14:21:10.424055+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P681,117,apple,,,0,0,0,0,Whole red-yellow apple resting on newspaper; the newspaper background does not make the fruit printed.,0,2026-10-15T14:21:10.424070+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P682,38,printed_or_screen,,,0,0,0,0,Printed historical engraving of a person.,0,2026-10-15T14:21:10.424084+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P683,164,carrot,,,0,0,0,0,Single thin carrot root with rough surface; severe damage not established.,0,2026-10-15T14:21:10.424097+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P684,332,apple,,,0,0,0,1,Red apple with a large sunken black/mouldy damaged patch.,0,2026-10-15T14:21:10.424115+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P685,282,citrus_orange,,,0,0,0,0,Round yellow-green coarse-rind citrus on a dark surface.,0,2026-10-15T14:21:10.424128+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P686,271,printed_or_screen,,other_produce,0,0,1,0,Printed poster illustrating carrots/beetroot-like vegetables.,0,2026-10-15T14:21:10.424142+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P687,124,printed_or_screen,,,0,0,0,0,Colour map/diagram with labels.,0,2026-10-15T14:21:10.424156+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P688,313,uncertain,,,0,1,0,0,Boxed juice/product with a foil bag and dispensing tap; no raw produce item.,0,2026-10-15T14:21:10.424186+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P689,250,uncertain,,,0,0,1,0,Decorated cupcakes; prepared food.,0,2026-10-15T14:21:10.424202+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P690,283,printed_or_screen,,,0,0,0,0,Printed colour cartoon/illustration with captions.,0,2026-10-15T14:21:10.424216+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P691,46,tomato,,,0,0,1,0,Small red and green tomatoes with calyxes in an open hand; most central fruit is visible.,0,2026-10-15T14:21:10.424232+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P692,84,printed_or_screen,,,0,0,0,0,Decorative egg-shaped ornament and artificial flowers; not real produce.,0,2026-10-15T14:21:10.424246+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P693,141,banana,,,0,0,1,0,Two yellow bananas with brown peel spots; clear severe rot/bruising not established.,0,2026-10-15T14:21:10.424260+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P694,39,banana,,,0,0,0,0,Single yellow banana held in hand.,0,2026-10-15T14:21:10.424285+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P695,296,uncertain,,,0,0,1,0,"Rows of tomato plants; many small fruits and foliage, with no clear central close-up target.",0,2026-10-15T14:21:10.424303+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P696,55,apple,,,0,0,0,1,Red-yellow apple with a dark sunken damaged patch near the stem cavity.,0,2026-10-15T14:21:10.424320+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P697,9,tomato,,,0,0,0,0,Whole red tomato with a visible stem scar.,0,2026-10-15T14:21:10.424335+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P698,151,carrot,,,0,0,0,0,Single whole carrot root on a dark surface.,0,2026-10-15T14:21:10.424350+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P699,14,apple,,,0,0,1,0,Three whole yellow apples beside a basket; shine alone is not evidence of artificial fruit.,0,2026-10-15T14:21:10.424366+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P700,119,printed_or_screen,,,0,0,0,0,"Painted/foil-covered decorative Easter rabbit figure, not real produce.",0,2026-10-15T14:21:10.424387+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P701,54,uncertain,,,1,0,1,0,"Assorted raw and prepared foods, with no single produce main item. Wider composition of Pilot 1 P205; check related-image grouping.",0,2026-10-15T14:24:03.303213+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P702,77,uncertain,,,0,0,0,0,Car engine compartment; no produce.,0,2026-10-15T14:24:03.303262+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P703,297,apple,,,0,0,0,0,Whole red apple with a stem on a ledge.,0,2026-10-15T14:24:03.303277+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P704,107,citrus_orange,,,0,0,0,0,Round green-yellow coarse-rind citrus held in hand.,0,2026-10-15T14:24:03.303299+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P705,215,printed_or_screen,,,0,0,0,0,Cartoon of a rhinoceros and stock-price display.,0,2026-10-15T14:24:03.303313+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P706,89,tomato,,,0,0,1,0,Several whole small red tomatoes in an open hand.,0,2026-10-15T14:24:03.303326+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P707,308,uncertain,,,0,0,1,0,Distant roadside fruit/vegetable stall; no identifiable central close-up item.,0,2026-10-15T14:24:03.303340+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P708,292,tomato,,,0,0,0,0,Whole red tomato on a dark surface.,0,2026-10-15T14:24:03.303353+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P709,103,uncertain,,,0,0,0,0,Small building and trees; no produce.,0,2026-10-15T14:24:03.303365+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P710,202,citrus_orange,,,0,0,0,0,Large round green citrus with a coarse rind in hand; orange-type appearance.,0,2026-10-15T14:24:03.303383+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P711,71,printed_or_screen,,other_produce,0,0,1,0,Painting of a kitchen scene with people and food.,0,2026-10-15T14:24:03.303397+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P712,226,uncertain,,,0,0,0,0,Front of a car; no produce.,0,2026-10-15T14:24:03.303414+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P713,145,printed_or_screen,,,0,0,0,0,Printed historical drawing with a caption.,0,2026-10-15T14:24:03.303427+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P714,155,banana,,,0,0,1,0,Bananas with dense brown peel spots and dark marks; severe damage not established from spotting alone.,0,2026-10-15T14:24:03.303444+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P715,291,apple,,,0,0,0,0,Whole red apple on a ledge beside bars; most fruit remains visible.,0,2026-10-15T14:24:03.303458+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P716,72,uncertain,,,0,0,0,0,Car with its bonnet open; no produce.,0,2026-10-15T14:24:03.303471+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P717,307,apple,,,0,0,0,0,"Apple held between fingers, with most of its body visible; hand covering appears below the half-visible rejection threshold.",0,2026-10-15T14:24:03.303486+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P718,81,carrot,,,0,0,1,0,"Intertwined/forked carrot roots, with other carrots behind.",0,2026-10-15T14:24:03.303500+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P719,149,apple,,,0,0,0,0,Whole green apple with a stem on a ledge.,0,2026-10-15T14:24:03.303511+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P720,136,apple,,,0,0,0,1,Red apple with a large sunken/bruised-looking area on one side; severity needs checking.,0,2026-10-15T14:24:03.303526+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P721,304,printed_or_screen,,,0,0,0,0,Carved stone relief with figures; no real produce.,0,2026-10-15T14:24:03.303540+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P722,277,tomato,,,0,0,1,0,Pile of whole small red tomatoes on a board with herbs.,0,2026-10-15T14:24:03.304133+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P723,211,uncertain,,,0,0,1,0,Bowls of cooked food/mash and stew.,0,2026-10-15T14:24:03.304162+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P724,1,uncertain,,,0,1,1,0,"Bottles, jars and canned food products; no whole raw main produce.",0,2026-10-15T14:24:03.306026+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P725,321,citrus_orange,,,0,0,1,0,Pile of round green-yellow coarse-rind citrus.,0,2026-10-15T14:24:03.306068+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P726,96,printed_or_screen,,,0,0,0,0,Religious painting of a woman and child.,0,2026-10-15T14:24:03.306082+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P727,259,citrus_orange,,,0,0,1,0,Several whole round green-yellow coarse-rind citrus fruits.,0,2026-10-15T14:24:03.306108+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P728,315,uncertain,,,0,1,0,0,"Sealed packet labelled as an arterial graft; medical packaging, not food.",0,2026-10-15T14:24:03.306120+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P729,248,uncertain,,,0,1,1,0,"Opaque wrapped block occupies the centre of a clear-lined bag of carrots; visible surrounding roots are mostly exposed, but no individual hidden central root is established. Human check of main-item and occlusion treatment needed.",0,2026-10-15T14:38:01.883715+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P730,135,banana,,,0,0,1,0,Bunch of yellow bananas in hand with dark peel marks; severe damage not established.,0,2026-10-15T14:24:03.306167+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P731,68,carrot,,,0,0,0,0,Naturally foot-shaped carrot. This wider image corresponds to the cropped Pilot 1 P134 source; do not count the two views as independent scenes.,0,2026-10-15T14:24:03.306183+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P732,86,citrus_orange,,,0,0,0,0,Round yellow coarse-rind citrus held in hand.,0,2026-10-15T14:24:03.306197+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P733,60,uncertain,,,0,0,0,0,Oval yellow-green fruit held by the top; citrus/lemon versus other fruit remains unclear.,0,2026-10-15T14:24:03.306211+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P734,161,apple,,,0,0,0,1,Red apple with a large dark damaged/rotting stem cavity.,0,2026-10-15T14:24:03.306694+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P735,234,uncertain,,,0,0,0,0,Black-and-white photograph of a person in a flowering field; no identifiable carrot root or fruit target.,0,2026-10-15T14:24:03.306751+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P736,257,printed_or_screen,,,0,0,0,0,Decorated ceramic animal figure; not real produce.,0,2026-10-15T14:24:03.306823+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P737,253,other_produce,lemon_or_lime,,0,0,1,0,Central green lime-like fruit in a mixed bowl. Same arrangement as P587; check duplicate/related-view grouping.,0,2026-10-15T14:24:03.306848+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P738,289,tomato,,,0,0,1,0,Whole dark purple/brown tomatoes with characteristic calyxes in open hands; source title also identifies black tomatoes.,0,2026-10-15T14:24:03.306864+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P739,249,apple,,,0,0,0,0,Whole red-yellow apple with a stem on a ledge.,0,2026-10-15T14:24:03.306876+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P740,331,apple,,,0,0,1,0,"Three apples on a turquoise surface; central fruit is elongated/lobed, warranting a shape/identity check.",0,2026-10-15T14:24:03.306900+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P741,184,apple,,,0,0,0,1,Whole green apple on wood; broad brown patch may be substantial bruising. Human check of the X tag needed.,0,2026-10-15T14:29:28.230945+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P742,311,uncertain,,,0,1,1,0,"Transparent zip bag contains metal nuts and bolts, not produce.",0,2026-10-15T14:29:28.230978+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P743,94,uncertain,,,0,0,1,0,Wide fruit shop scene with several kinds of produce and people; no single clear central fruit.,0,2026-10-15T14:29:28.230988+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P744,270,banana,,,0,0,1,0,"Several yellow bananas; ordinary dark skin marks alone do not establish rot, so X is off.",0,2026-10-15T14:29:28.231000+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P745,223,uncertain,,,0,1,1,0,Person and stacked harvest crates in a greenhouse; no individual central tomato is large enough to label.,0,2026-10-15T14:29:28.231008+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P746,166,uncertain,,,0,1,0,0,White shopping bag with an Apple computer logo; no visible real apple or established hidden produce.,0,2026-10-15T14:29:28.231017+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P747,235,citrus_orange,,,0,0,0,0,"Whole round yellow-orange citrus with coarse rind in a hand; orange-type appearance, but human subtype check needed.",0,2026-10-15T14:29:28.231025+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P748,16,banana,,,0,0,0,1,Banana in hand with extensive dark damaged skin; most of the fruit remains visible.,0,2026-10-15T14:29:28.231032+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P749,324,uncertain,,,0,0,1,0,Bowls of cooked mash and stew; cannot label a whole raw produce item.,0,2026-10-15T14:29:28.231038+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P750,91,printed_or_screen,,,0,0,0,0,"Printed floral basket illustration on a page, not real produce.",0,2026-10-15T14:29:28.231044+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P751,165,tomato,,,0,0,0,0,Whole red tomato with stem scar; small skin blemishes do not clearly establish severe damage.,0,2026-10-15T14:29:28.231052+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P752,158,citrus_orange,,,0,0,1,0,Three whole orange-type citrus fruits on a counter.,0,2026-10-15T14:29:28.231058+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P753,88,other_produce,lemon_or_lime,,0,0,1,0,Small green lime in the centre of a mixed fruit bowl. Related bowl views also appear at P587 and P737.,0,2026-10-15T14:29:28.231066+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P754,209,apple,,,0,0,1,0,Three red-striped apples aligned on a turquoise background; central one is an apple.,0,2026-10-15T14:29:28.231074+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P755,76,uncertain,,,0,1,1,0,Open sack of fine dried seed or herb material with some in a hand; no identifiable whole raw fruit or vegetable.,0,2026-10-15T14:29:28.231081+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P756,268,other_produce,other,,0,0,0,0,"Real elongated orange fruit with longitudinal ridges in a hand. Source filename says Jacaratia spinosa; subtype other, not carrot.",0,2026-10-15T14:29:28.231089+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P757,128,printed_or_screen,,other_produce,0,0,1,0,"Still-life painting containing fruit, vessels and a lobster; no real produce in the scene being photographed.",0,2026-10-15T14:29:28.231096+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P758,329,banana,,,0,0,0,1,Banana held upright with a large blackened damaged end; fruit identity remains clear.,0,2026-10-15T14:29:28.231102+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P759,241,other_produce,other,,0,1,1,0,"Open punnets of raspberries and strawberries, with blueberries behind; all visible centre berries are other produce.",0,2026-10-15T14:29:28.231109+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P760,41,uncertain,,,0,0,0,0,Electronic circuit board or module; no produce.,0,2026-10-15T14:29:28.231117+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P761,176,uncertain,,,0,0,0,0,Folds of orange and white fabric or netting; no identifiable real produce under it.,0,2026-10-15T14:29:28.231124+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P762,267,printed_or_screen,,,0,0,0,0,Photograph of a handwritten page; not real produce.,0,2026-10-15T14:29:28.231130+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P763,115,uncertain,,,0,0,1,1,Damaged peach and split tomato side by side with empty centre space; no single central main item.,0,2026-10-15T14:29:28.231136+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P764,208,citrus_orange,,,0,0,0,0,"Round yellow coarse-rinded citrus on grass, consistent with orange-type fruit; size and subtype need human confirmation.",0,2026-10-15T14:29:28.231146+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P765,12,printed_or_screen,,,0,0,0,0,Old ink or painted illustration of a person with plants.,0,2026-10-15T14:29:28.231151+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P766,108,tomato,,,0,0,0,0,"Whole orange-red tomato on a dark counter, with black borders around the photograph.",0,2026-10-15T14:29:28.231159+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P767,106,other_produce,peach_plum_apricot,,0,0,1,0,Three fuzzy peaches in a bowl.,0,2026-10-15T14:29:28.231165+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P768,228,uncertain,,,0,0,1,0,Bowls of cooked mash and stew; related meal scene elsewhere in this pack.,0,2026-10-15T14:29:28.231172+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P769,189,apple,,,0,0,0,0,Whole red-striped apple held by fingertips; well over half the fruit is visible.,0,2026-10-15T14:29:28.231177+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P770,67,banana,,,0,0,1,0,"Bunch of yellow bananas densely speckled brown; spotting alone does not establish rot, so X is off.",0,2026-10-15T14:29:28.231183+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P771,75,uncertain,,,0,0,0,0,Two views of a real forearm with New York tattoos; body art rather than identifiable produce. Human taxonomy check if tattoos count as drawings.,0,2026-10-15T14:29:28.231190+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P772,207,uncertain,,,0,0,0,0,Person carrying a large woven basket topped with small pale blossoms or buds; no identifiable fruit or vegetable.,0,2026-10-15T14:29:28.231196+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P773,153,apple,,,0,1,1,0,"Red round fruits individually clear-wrapped inside an open outer bag. Source filename calls them apples; centre fruits mostly visible, so not forced into occluded.",0,2026-10-15T14:29:28.231204+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P774,287,uncertain,,,0,0,0,0,Sandwich held in a hand with sliced ingredients; not a whole raw produce target.,0,2026-10-15T14:29:28.231212+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P775,156,citrus_orange,,,0,0,0,0,"Round green orange-sized citrus with dimpled rind in a hand; orange-type appearance, but lime boundary needs human check.",0,2026-10-15T14:29:28.231219+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P776,314,banana,,,0,0,1,1,Bananas on the ground with extensive black and brown damaged peel.,0,2026-10-15T14:29:28.231227+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P777,333,uncertain,,,0,0,0,0,Yellow autumn leaves on a tree; no clear fruit.,0,2026-10-15T14:29:28.231249+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P778,237,uncertain,,,0,0,1,0,"Photographic still life mixes cabbage, corn, bananas, apples, bread, potatoes and dry foods; no unambiguous single central target.",0,2026-10-15T14:29:28.231257+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P779,22,banana,,,0,0,1,0,Two mostly green-yellow bananas with minor brown scuffs; no clear severe rot or damage.,0,2026-10-15T14:29:28.231263+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P780,216,carrot,,,0,1,1,0,Many whole trimmed carrots visible through stacked clear retail bags; central carrots remain mostly visible.,0,2026-10-15T14:29:28.231273+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P781,188,citrus_orange,,,0,0,0,0,Round green-yellow dimpled citrus in a hand; appears orange-type but lime boundary needs human confirmation.,0,2026-10-15T14:31:46.674290+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P782,126,citrus_orange,,,0,0,1,0,Several whole orange-type citrus fruits on grass.,0,2026-10-15T14:31:46.674337+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P783,73,carrot,,,0,0,0,0,Whole tapered carrot with a trimmed stem and pale surface abrasions. Peeling is not clear enough to assert C; related view at P794.,0,2026-10-15T14:31:46.674356+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P784,200,uncertain,,,0,0,1,0,Cooked mash and stew in bowls; no whole raw central produce item.,0,2026-10-15T14:31:46.674376+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P785,233,citrus_orange,,,0,0,0,0,"Round green citrus with coarse skin held in an open palm; orange-type appearance, subtype needs human check.",0,2026-10-15T14:31:46.674392+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P786,40,printed_or_screen,,banana,0,1,0,0,Banana illustration printed on a drink bottle label; no real banana. Human check of label-versus-drink taxonomy.,0,2026-10-15T14:31:46.674405+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P787,262,uncertain,,,0,0,1,0,Another view of cooked mash and stew in two bowls.,0,2026-10-15T14:31:46.674416+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P788,62,printed_or_screen,,,0,0,0,0,Religious painting on a shaped panel.,0,2026-10-15T14:31:46.674425+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P789,8,citrus_orange,,,0,0,0,1,"Round green-yellow citrus covered with extensive white mould and brown rot; orange-type body, identity should be checked by a human.",0,2026-10-15T14:31:46.674439+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P790,264,tomato,,,0,0,0,0,Whole red tomato with circular stem scar on a dark counter.,0,2026-10-15T14:31:46.674450+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P791,18,printed_or_screen,,,0,0,0,0,Framed religious painting; no real produce.,0,2026-10-15T14:31:46.674464+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P792,272,citrus_orange,,,0,0,0,0,Whole round green citrus held between fingers; fine dimpled rind suggests orange-type fruit but human subtype check needed.,0,2026-10-15T14:31:46.674476+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P793,222,tomato,,,0,0,1,0,Pile of whole red plum or cherry tomatoes on a chopping board; herbs and garlic are peripheral.,0,2026-10-15T14:31:46.674490+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P794,24,carrot,,,0,0,0,0,Whole carrot on a dark surface with pale scuffed skin; C left off because peeling is unclear. Related carrot view at P783.,0,2026-10-15T14:31:46.674507+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P795,203,uncertain,,,0,0,0,0,Stone wall and open window with a person partly visible; no identifiable produce.,0,2026-10-15T14:31:46.674522+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P796,143,uncertain,,,0,0,0,0,Apple-branded electronic part or mouse underside; the brand logo is not a real apple.,0,2026-10-15T14:31:46.674532+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P797,252,carrot,,,0,0,0,0,Real forked carrot with two joined roots and one shared crown; unusual shape alone does not make it a toy or two separate carrots.,0,2026-10-15T14:31:46.674542+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P798,335,printed_or_screen,,,0,0,0,0,Archival page with text and a printed photograph of people.,0,2026-10-15T14:31:46.674551+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P799,32,banana,,,0,0,1,0,Three yellow bananas on a turquoise surface.,0,2026-10-15T14:31:46.674559+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P800,178,uncertain,,,0,0,1,0,Repeated meal setup with bowls of mash and stew.,0,2026-10-15T14:31:46.674569+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P801,218,citrus_orange,,,0,0,0,0,"Round yellow-green orange-sized citrus with dimpled rind and a depression, held in a hand; subtype needs human check.",0,2026-10-15T14:31:46.674580+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P802,65,printed_or_screen,,,0,0,0,0,Printed drawing of a person in an interior.,0,2026-10-15T14:31:46.674588+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P803,118,citrus_orange,,,0,0,1,0,Three citrus fruits on a counter; centre fruit is green and wrinkled. Provisional orange-type label needs human confirmation.,0,2026-10-15T14:31:46.674600+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P804,3,uncertain,,,0,1,1,0,Store shelves of bagged apples and pears with loose fruit below; no unambiguous central individual and mixed fruit types.,0,2026-10-15T14:31:46.674619+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P805,159,uncertain,,,0,0,0,0,Person on an urban balcony; distant plants do not present a clear produce target.,0,2026-10-15T14:31:46.674632+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P806,82,uncertain,,,0,0,0,1,Severely collapsed mouldy green fruit held near the top; remaining pixels do not safely distinguish apple from citrus.,0,2026-10-15T14:31:46.674647+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P807,294,apple,,,0,0,0,1,"Round red-brown decayed fruit with an apple-like calyx indentation; provisional apple, with severe surface damage and limited detail.",0,2026-10-15T14:31:46.674665+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P808,134,apple,,,0,0,0,0,Whole red-yellow apple on a turquoise surface.,0,2026-10-15T14:31:46.674675+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P809,327,uncertain,,,0,0,0,0,Grey city or construction scene with a bridge and cranes; no produce.,0,2026-10-15T14:31:46.674686+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P810,58,uncertain,,,0,0,0,0,Hands typing on a computer keyboard; no identifiable fruit or vegetable.,0,2026-10-15T14:31:46.674695+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P811,37,carrot,,,1,0,1,0,"Longitudinal carrot piece and carrot peelings or strips on a red plate; recognisable cut carrot, not a mixed salad.",0,2026-10-15T14:31:46.674706+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P812,36,uncertain,,,0,1,1,0,Two small lidded sample pots labelled body cream and shower gel; no real produce.,0,2026-10-15T14:31:46.674717+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P813,127,printed_or_screen,,other_produce,0,0,1,0,"Painted still-life scene with fruit, tableware and cloth.",0,2026-10-15T14:31:46.674732+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P814,265,uncertain,,,0,0,0,0,Close view of an autumn leaf on a tree; no fruit.,0,2026-10-15T14:31:46.674746+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P815,245,uncertain,,,0,0,1,0,"Bowls of cooked mash and stew, related to other meal views in this pack.",0,2026-10-15T14:31:46.674758+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P816,254,uncertain,,,0,1,1,0,"Supermarket shelves of bottled sauces, condiments and seasonings; no identifiable whole raw central produce.",0,2026-10-15T14:31:46.674770+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P817,101,apple,,,0,0,0,0,Red apple resting in a dirty sink; most of the apple is visible. Surface marks do not clearly establish severe damage.,0,2026-10-15T14:31:46.674785+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P818,312,banana,,,0,0,1,0,Two brown-speckled yellow bananas; ordinary ripe spotting alone does not establish rot.,0,2026-10-15T14:31:46.674797+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P819,31,printed_or_screen,,,0,0,0,0,Religious painting containing several people; no real produce.,0,2026-10-15T14:31:46.674808+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P820,130,citrus_orange,,,0,0,0,0,"Whole round yellow-orange dimpled citrus on grass; provisional orange-type fruit, size and subtype need human confirmation.",0,2026-10-15T14:31:46.674830+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P821,95,citrus_orange,,,0,0,1,0,"Four round green-yellow citrus fruits with dimpled skins; provisional orange-type fruit, lime boundary needs human review.",0,2026-10-15T14:32:31.885998+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P822,299,printed_or_screen,,other_produce,0,0,1,0,Decorative fruit-like motifs formed in a stained-glass lampshade; artificial decoration rather than real produce.,0,2026-10-15T14:32:31.886031+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P823,301,uncertain,,,0,0,0,0,Person among balcony plants; no clear individual central produce item.,0,2026-10-15T14:32:31.886041+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P824,199,apple,,,0,0,0,1,"Red apple with a very large dark bruised or decayed patch, held by the stem; most of the fruit remains visible.",0,2026-10-15T14:32:31.886053+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P825,47,tomato,,,0,0,0,0,"Whole red-orange tomato on a dark surface, with a small central scar.",0,2026-10-15T14:32:31.886060+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P826,85,apple,,,0,0,0,0,Whole green apple with a visible stem in an open palm; most of the apple is visible.,0,2026-10-15T14:32:31.886067+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P827,15,citrus_orange,,,0,0,0,0,Whole round orange-coloured citrus with coarse rind held in a hand.,0,2026-10-15T14:32:31.886072+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P828,17,uncertain,,,0,1,1,0,Supermarket shelves of bottled sauces and condiments; no whole raw produce target.,0,2026-10-15T14:32:31.886080+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P829,110,apple,,,0,0,1,0,Several red and yellow apples on grass.,0,2026-10-15T14:32:31.886085+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P830,212,uncertain,,,0,1,1,0,Coloured pencils or pens inside an open zipped case; not produce.,0,2026-10-15T14:32:31.886091+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P831,303,printed_or_screen,,other_produce,0,0,1,0,"Still-life painting of a bowl of mixed fruit, not real produce.",0,2026-10-15T14:32:31.886098+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P832,171,banana,,,0,0,1,0,Bunch of green-yellow bananas with surface scuffs; ordinary skin marks alone do not establish rot.,0,2026-10-15T14:32:31.886104+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P833,27,tomato,,,0,0,0,0,Whole red tomato on a black counter.,0,2026-10-15T14:32:31.886109+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P834,29,carrot,,,0,0,0,0,Whole carrot with pale transverse skin abrasions on a dark surface. C left off because actual peeling is unclear; related views at P783 and P794.,0,2026-10-15T14:32:31.886119+00:00
+G9J-pilot2,annotator1,AI_ASSISTED_NOT_HUMAN,P835,28,uncertain,,,0,0,0,0,Person tending leafy plants on a balcony; no individual produce item clearly fills the centre.,0,2026-10-15T14:32:31.886132+00:00

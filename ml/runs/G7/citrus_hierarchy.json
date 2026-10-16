@@ -1,0 +1,410 @@
+{
+ "conf": 0.35,
+ "imgsz": 480,
+ "iou_match": 0.5,
+ "device": "sandbox CPU, onnxruntime",
+ "val": "OIV7c val (selection)",
+ "test": "test_oiv7c (n=181 images)",
+ "models": {
+  "G3": {
+   "model": "/workspace/work/cv/g3models/k11_480/det_yolo11n_640_raw.onnx",
+   "val_grid": {
+    "0.4": {
+     "coverage": 0.9716,
+     "subtype_precision": 0.7007,
+     "wrong": 41
+    },
+    "0.5": {
+     "coverage": 0.9078,
+     "subtype_precision": 0.7031,
+     "wrong": 38
+    },
+    "0.6": {
+     "coverage": 0.7801,
+     "subtype_precision": 0.7091,
+     "wrong": 32
+    },
+    "0.7": {
+     "coverage": 0.7305,
+     "subtype_precision": 0.699,
+     "wrong": 31
+    }
+   },
+   "picked_tau": 0.6,
+   "flat": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.5385,
+     "committed": 161,
+     "correct": 55,
+     "wrong": 106,
+     "generic": 0,
+     "subtype_precision": 0.3416,
+     "wrong_rate_of_family": 0.6584
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.5846,
+     "committed": 356,
+     "correct": 354,
+     "wrong": 2,
+     "generic": 0,
+     "subtype_precision": 0.9944,
+     "wrong_rate_of_family": 0.0056
+    },
+    "pooled": {
+     "coverage": 1.0,
+     "subtype_precision": 0.7911,
+     "wrong": 108
+    }
+   },
+   "hierarchical": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.5385,
+     "committed": 124,
+     "correct": 44,
+     "wrong": 80,
+     "generic": 37,
+     "subtype_precision": 0.3548,
+     "wrong_rate_of_family": 0.4969
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.5846,
+     "committed": 283,
+     "correct": 282,
+     "wrong": 1,
+     "generic": 73,
+     "subtype_precision": 0.9965,
+     "wrong_rate_of_family": 0.0028
+    },
+    "pooled": {
+     "coverage": 0.7872,
+     "subtype_precision": 0.801,
+     "wrong": 81
+    }
+   }
+  },
+  "G6rpx": {
+   "model": "/workspace/work/cv/g6models/G6rpx/det_yolo11n_g6_rpx_raw.onnx",
+   "val_grid": {
+    "0.4": {
+     "coverage": 0.9624,
+     "subtype_precision": 0.8771,
+     "wrong": 22
+    },
+    "0.5": {
+     "coverage": 0.8978,
+     "subtype_precision": 0.8743,
+     "wrong": 21
+    },
+    "0.6": {
+     "coverage": 0.8495,
+     "subtype_precision": 0.8861,
+     "wrong": 18
+    },
+    "0.7": {
+     "coverage": 0.7312,
+     "subtype_precision": 0.9044,
+     "wrong": 13
+    }
+   },
+   "picked_tau": 0.7,
+   "flat": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.7425,
+     "committed": 222,
+     "correct": 179,
+     "wrong": 43,
+     "generic": 0,
+     "subtype_precision": 0.8063,
+     "wrong_rate_of_family": 0.1937
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.6847,
+     "committed": 417,
+     "correct": 325,
+     "wrong": 92,
+     "generic": 0,
+     "subtype_precision": 0.7794,
+     "wrong_rate_of_family": 0.2206
+    },
+    "pooled": {
+     "coverage": 1.0,
+     "subtype_precision": 0.7887,
+     "wrong": 135
+    }
+   },
+   "hierarchical": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.7425,
+     "committed": 151,
+     "correct": 134,
+     "wrong": 17,
+     "generic": 71,
+     "subtype_precision": 0.8874,
+     "wrong_rate_of_family": 0.0766
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.6847,
+     "committed": 247,
+     "correct": 202,
+     "wrong": 45,
+     "generic": 170,
+     "subtype_precision": 0.8178,
+     "wrong_rate_of_family": 0.1079
+    },
+    "pooled": {
+     "coverage": 0.6228,
+     "subtype_precision": 0.8442,
+     "wrong": 62
+    }
+   }
+  },
+  "G7sB": {
+   "model": "/workspace/work/cv/g7models/G7sB/det_yolo11n_g7_sB_raw.onnx",
+   "val_grid": {
+    "0.4": {
+     "coverage": 0.9563,
+     "subtype_precision": 0.8686,
+     "wrong": 23
+    },
+    "0.5": {
+     "coverage": 0.9016,
+     "subtype_precision": 0.8667,
+     "wrong": 22
+    },
+    "0.6": {
+     "coverage": 0.8525,
+     "subtype_precision": 0.8782,
+     "wrong": 19
+    },
+    "0.7": {
+     "coverage": 0.765,
+     "subtype_precision": 0.8786,
+     "wrong": 17
+    }
+   },
+   "picked_tau": 0.7,
+   "flat": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.806,
+     "committed": 241,
+     "correct": 193,
+     "wrong": 48,
+     "generic": 0,
+     "subtype_precision": 0.8008,
+     "wrong_rate_of_family": 0.1992
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.6798,
+     "committed": 414,
+     "correct": 326,
+     "wrong": 88,
+     "generic": 0,
+     "subtype_precision": 0.7874,
+     "wrong_rate_of_family": 0.2126
+    },
+    "pooled": {
+     "coverage": 1.0,
+     "subtype_precision": 0.7924,
+     "wrong": 136
+    }
+   },
+   "hierarchical": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.806,
+     "committed": 164,
+     "correct": 139,
+     "wrong": 25,
+     "generic": 77,
+     "subtype_precision": 0.8476,
+     "wrong_rate_of_family": 0.1037
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.6798,
+     "committed": 245,
+     "correct": 202,
+     "wrong": 43,
+     "generic": 169,
+     "subtype_precision": 0.8245,
+     "wrong_rate_of_family": 0.1039
+    },
+    "pooled": {
+     "coverage": 0.6244,
+     "subtype_precision": 0.8337,
+     "wrong": 68
+    }
+   }
+  },
+  "G7sA": {
+   "model": "/workspace/work/cv/g7models/G7sA/det_yolo11n_g7_sA_raw.onnx",
+   "val_grid": {
+    "0.4": {
+     "coverage": 0.9399,
+     "subtype_precision": 0.8547,
+     "wrong": 25
+    },
+    "0.5": {
+     "coverage": 0.8962,
+     "subtype_precision": 0.8598,
+     "wrong": 23
+    },
+    "0.6": {
+     "coverage": 0.8525,
+     "subtype_precision": 0.859,
+     "wrong": 22
+    },
+    "0.7": {
+     "coverage": 0.7104,
+     "subtype_precision": 0.8538,
+     "wrong": 19
+    }
+   },
+   "picked_tau": 0.5,
+   "flat": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.7793,
+     "committed": 233,
+     "correct": 183,
+     "wrong": 50,
+     "generic": 0,
+     "subtype_precision": 0.7854,
+     "wrong_rate_of_family": 0.2146
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.688,
+     "committed": 419,
+     "correct": 361,
+     "wrong": 58,
+     "generic": 0,
+     "subtype_precision": 0.8616,
+     "wrong_rate_of_family": 0.1384
+    },
+    "pooled": {
+     "coverage": 1.0,
+     "subtype_precision": 0.8344,
+     "wrong": 108
+    }
+   },
+   "hierarchical": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.7793,
+     "committed": 202,
+     "correct": 162,
+     "wrong": 40,
+     "generic": 31,
+     "subtype_precision": 0.802,
+     "wrong_rate_of_family": 0.1717
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.688,
+     "committed": 330,
+     "correct": 291,
+     "wrong": 39,
+     "generic": 89,
+     "subtype_precision": 0.8818,
+     "wrong_rate_of_family": 0.0931
+    },
+    "pooled": {
+     "coverage": 0.816,
+     "subtype_precision": 0.8515,
+     "wrong": 79
+    }
+   }
+  },
+  "G7rfs": {
+   "model": "/workspace/work/cv/g7models/G7rfs/det_yolo11n_g7_rfs_raw.onnx",
+   "val_grid": {
+    "0.4": {
+     "coverage": 0.9206,
+     "subtype_precision": 0.8908,
+     "wrong": 19
+    },
+    "0.5": {
+     "coverage": 0.873,
+     "subtype_precision": 0.8909,
+     "wrong": 18
+    },
+    "0.6": {
+     "coverage": 0.8201,
+     "subtype_precision": 0.8839,
+     "wrong": 18
+    },
+    "0.7": {
+     "coverage": 0.6455,
+     "subtype_precision": 0.918,
+     "wrong": 10
+    }
+   },
+   "picked_tau": 0.5,
+   "flat": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.7726,
+     "committed": 231,
+     "correct": 201,
+     "wrong": 30,
+     "generic": 0,
+     "subtype_precision": 0.8701,
+     "wrong_rate_of_family": 0.1299
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.6535,
+     "committed": 398,
+     "correct": 308,
+     "wrong": 90,
+     "generic": 0,
+     "subtype_precision": 0.7739,
+     "wrong_rate_of_family": 0.2261
+    },
+    "pooled": {
+     "coverage": 1.0,
+     "subtype_precision": 0.8092,
+     "wrong": 120
+    }
+   },
+   "hierarchical": {
+    "lemon_lime": {
+     "n_gt": 299,
+     "family_recall": 0.7726,
+     "committed": 207,
+     "correct": 182,
+     "wrong": 25,
+     "generic": 24,
+     "subtype_precision": 0.8792,
+     "wrong_rate_of_family": 0.1082
+    },
+    "citrus": {
+     "n_gt": 609,
+     "family_recall": 0.6535,
+     "committed": 333,
+     "correct": 257,
+     "wrong": 76,
+     "generic": 65,
+     "subtype_precision": 0.7718,
+     "wrong_rate_of_family": 0.191
+    },
+    "pooled": {
+     "coverage": 0.8585,
+     "subtype_precision": 0.813,
+     "wrong": 101
+    }
+   }
+  }
+ }
+}

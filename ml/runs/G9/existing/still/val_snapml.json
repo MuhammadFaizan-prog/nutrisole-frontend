@@ -1,0 +1,129 @@
+{
+ "model": "snapml",
+ "n_images": 402,
+ "evaluator": "AP50 101-pt, conf>=0.001, classwise NMS 0.7, max 300",
+ "subsets": {
+  "all": {
+   "banana": {
+    "ap50": 0.1436,
+    "npos": 469
+   },
+   "apple": {
+    "ap50": 0.2171,
+    "npos": 199
+   },
+   "mango": {
+    "ap50": 0.6153,
+    "npos": 11
+   },
+   "citrus": {
+    "ap50": 0.6082,
+    "npos": 208
+   },
+   "guava": {
+    "ap50": null,
+    "npos": 0
+   },
+   "pomegranate": {
+    "ap50": 0.2436,
+    "npos": 16
+   },
+   "lemon_lime": {
+    "ap50": 0.1186,
+    "npos": 77
+   },
+   "tomato": {
+    "ap50": 0.1676,
+    "npos": 317
+   },
+   "potato": {
+    "ap50": 0.0186,
+    "npos": 20
+   },
+   "cucumber": {
+    "ap50": 0.2236,
+    "npos": 154
+   },
+   "carrot": {
+    "ap50": 0.1397,
+    "npos": 435
+   },
+   "capsicum": {
+    "ap50": 0.2648,
+    "npos": 116
+   }
+  },
+  "non_oiv7": {
+   "banana": {
+    "ap50": 0.1456,
+    "npos": 469
+   },
+   "apple": {
+    "ap50": 0.2215,
+    "npos": 199
+   },
+   "mango": {
+    "ap50": null,
+    "npos": 0
+   },
+   "citrus": {
+    "ap50": 0.6088,
+    "npos": 207
+   },
+   "guava": {
+    "ap50": null,
+    "npos": 0
+   },
+   "pomegranate": {
+    "ap50": null,
+    "npos": 0
+   },
+   "lemon_lime": {
+    "ap50": 0.1267,
+    "npos": 77
+   },
+   "tomato": {
+    "ap50": 0.175,
+    "npos": 316
+   },
+   "potato": {
+    "ap50": 0.0187,
+    "npos": 20
+   },
+   "cucumber": {
+    "ap50": 0.005,
+    "npos": 44
+   },
+   "carrot": {
+    "ap50": 0.1435,
+    "npos": 423
+   },
+   "capsicum": {
+    "ap50": 0.0,
+    "npos": 49
+   }
+  }
+ },
+ "latency_ms": {
+  "p50": 40.55564599980244,
+  "p95": 126.16327165010262
+ },
+ "unmapped_src_dets_conf001": {
+  "Salad": 1404,
+  "Broccoli": 3114,
+  "Pineapple": 857,
+  "Watermelon": 411,
+  "Cantaloupe": 81,
+  "Strawberry": 2189,
+  "Coconut": 624,
+  "Grapefruit": 683,
+  "Grape": 2905,
+  "Cabbage": 313,
+  "Pear": 280,
+  "Radish": 285,
+  "Common fig": 156,
+  "Peach": 175,
+  "Winter melon": 14,
+  "Artichoke": 93
+ }
+}

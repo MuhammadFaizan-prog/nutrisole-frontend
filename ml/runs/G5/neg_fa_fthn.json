@@ -1,0 +1,17 @@
+{
+ "images": "/workspace/work/cv/g3data/det_v3/neg/images/neg_test",
+ "n": 80,
+ "score_threshold": 0.35,
+ "imgsz": 480,
+ "device": "cpu",
+ "results": {
+  "/workspace/work/nutrisole/ml/runs/G5/kaggle/nutrisole-g5-ft-fthn/runs/det_yolo11n_ft480_fthn/weights/best.pt": {
+   "images_with_false_alarm": 3,
+   "fa_image_rate": 0.0375,
+   "boxes_per_image": 0.037,
+   "classes": {
+    "apple": 3
+   }
+  }
+ }
+}

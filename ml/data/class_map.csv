@@ -1,0 +1,41 @@
+source,source_label,source_id,nutrisole_class,nutrisole_id,quality_level,task,notes
+nutrisole,banana,,banana,0,,detect,v1 class (Urdu: kela)
+nutrisole,apple,,apple,1,,detect,v1 class (saib)
+nutrisole,mango,,mango,2,,detect,v1 class (aam); NO detection data in G1
+nutrisole,citrus,,citrus,3,,detect,v1 class (malta/kinnow/mosambi)
+nutrisole,guava,,guava,4,,detect,v1 class (amrood); NO detection data in G1
+nutrisole,pomegranate,,pomegranate,5,,detect,v1 class (anaar); NO detection data in G1
+nutrisole,lemon_lime,,lemon_lime,6,,detect,v1 class (leemu)
+nutrisole,tomato,,tomato,7,,detect,v1 class (tamatar)
+nutrisole,potato,,potato,8,,detect,v1 class (aloo)
+nutrisole,cucumber,,cucumber,9,,detect,v1 class (kheera)
+nutrisole,carrot,,carrot,10,,detect,v1 class (gajar)
+nutrisole,capsicum,,capsicum,11,,detect,v1 class (shimla mirch)
+lvis_fv,banana,6,banana,0,,detect,
+lvis_fv,apple,1,apple,1,,detect,
+lvis_fv,orange/orange fruit,44,citrus,3,,detect,
+lvis_fv,mandarin orange,40,citrus,3,,detect,kinnow is a mandarin hybrid
+lvis_fv,clementine,21,citrus,3,,detect,
+lvis_fv,lemon,37,lemon_lime,6,,detect,
+lvis_fv,lime,39,lemon_lime,6,,detect,
+lvis_fv,Tomato,35,tomato,7,,detect,duplicate-cased LVIS label
+lvis_fv,tomato,59,tomato,7,,detect,
+lvis_fv,potato,52,potato,8,,detect,
+lvis_fv,cucumber/cuke,24,cucumber,9,,detect,
+lvis_fv,carrot,14,carrot,10,,detect,
+lvis_fv,bell pepper/capsicum,8,capsicum,11,,detect,
+lvis_fv,(all other 49 LVIS F&V classes),*,__drop__,,,detect,annotation dropped; image kept (object becomes background = unsupported produce)
+sultana_agml,apple/fresh,0,apple,1,fresh,quality,
+sultana_agml,apple/rotten,1,apple,1,rotten,quality,
+sultana_agml,banana/fresh,0,banana,0,fresh,quality,
+sultana_agml,banana/rotten,1,banana,0,rotten,quality,
+sultana_agml,guava/fresh,0,guava,4,fresh,quality,
+sultana_agml,guava/rotten,1,guava,4,rotten,quality,
+sultana_agml,orange/fresh,0,citrus,3,fresh,quality,
+sultana_agml,orange/rotten,1,citrus,3,rotten,quality,
+sultana_agml,pomegranate/fresh,0,pomegranate,5,fresh,quality,
+sultana_agml,pomegranate/rotten,1,pomegranate,5,rotten,quality,
+sultana_agml,grape|jujube|strawberry,*,__drop__,,,quality,not v1 classes (jujube is v1.1; needs own data)
+fruq_db,Fresh,,__unknown_produce__,,fresh,quality,FruQ-DB has no per-image fruit type; only FruQ-multi (4.6 GB) has it
+fruq_db,Mild,,__unknown_produce__,,mild,quality,only public source of a 'mild' level in G1
+fruq_db,Rotten,,__unknown_produce__,,rotten,quality,

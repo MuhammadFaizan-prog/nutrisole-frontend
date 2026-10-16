@@ -1,8 +1,8 @@
 # NutriSole frontend implementation plan
 
-Goal: implement the six supplied screens as interactive React Native UI, with a protected Product Design mobile preview and an Expo native entry.
+Goal: implement the six supplied screens as interactive React Native UI, with a protected Product Design mobile preview and a plain React Native native app (Expo was removed on October 1, 2026).
 
-Architecture: shared UI and domain state in `src/nutrisole/`; web/native primitive, icon, asset, and persistence adapters. `Prototype.tsx` mounts shared UI inside the existing mobile runtime. `native/` runs the same screens through Expo. No server integration.
+Architecture: shared UI and domain state in `src/nutrisole/`; web/native primitive, icon, asset, and persistence adapters. `Prototype.tsx` mounts shared UI inside the existing mobile runtime. `native/` runs the same screens through plain React Native. No server integration.
 
 - [x] Inspect reference images, prior prompt, context notes, JSON, and runtime contract.
 - [x] Bootstrap Product Design mobile preview; scaffold Expo app separately.
@@ -21,3 +21,8 @@ Exact-image acceptance remains blocked by the residual findings in `design-qa.md
 Check commands from app root: `npm run check:runtime`, `npm run typecheck`, `npm test`, `npm run build`, `npm run native:typecheck`, `npm run native:lint`, `npm run native:export`.
 
 Recovery: source documents and PNGs remain untouched; recovered assets retain provenance. Reset clears only the synthetic local app namespace. No git commit, deployment, or external user-data transmission is requested.
+
+
+## CV phase (gauntlet loop)
+- [x] G1: repo infra (`ml/`, `docs/cv/`), dataset v1 with grouped splits, CPU training of YOLO26n/YOLO11n + quality classifier, video gauntlet v2, grading measurements/rules, TS contract + pipeline maths + tests, exports.
+- [ ] G2: Android runtime spike (`docs/cv/android-spike.md`), Lahore capture + labelling, GPU training at 384/640, mango/guava/pomegranate detection data, quality crops from detector.

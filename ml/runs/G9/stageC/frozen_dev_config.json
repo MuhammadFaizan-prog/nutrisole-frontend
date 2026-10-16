@@ -1,0 +1,18 @@
+{
+ "name": "G9 Stage C frozen DEV config",
+ "frozen": "2026-10-14 PKT",
+ "status": "DEV pick only. Not promoted. G3 remains champion. Final evaluation awaits fresh, independently labelled footage; the existing holdout (incl. carrot #16) is not re-run or tuned on.",
+ "pick": "C0 = unchanged G3 post-processing (no admissible arm under the prereg rule)",
+ "detector": {"weights": "G3 YOLO11n det_yolo11n_640_raw.onnx (best.pt sha256 29cc52123247f62ca93ba41952fa4b221e88fa208f3adf566214870435be1cf4)", "train_imgsz": 640, "deploy_imgsz": 480, "resize": "letterbox", "decode": "raw + class-wise NMS 0.7", "score_floor": 0.35},
+ "scene_guard": {"minAreaFrac": 0.01, "area_reference": "source frame (normalised after dst_to_src), not the 480 letterboxed input", "maxSameClass": 0},
+ "tracker": {"type": "IouTracker", "iouMatch": 0.3, "boxAlpha": 0.6, "scoreAlpha": 0.2, "switchMargin": 0.15, "switchFrames": 3, "minHits": 2, "maxMissed": 4, "stableIou": 0.8, "stableMs": 500, "centre_fallback": false},
+ "rejected_arms": {
+  "C1 minAreaFrac 0.005": "fails rule 3 (DEV neg displayed tracks/min 0.75 -> 1.25, limit +0.25) and rule 4 (val box-free false boxes 39 -> 51, limit +2; probe mixed-scene false tracks/min x2.6, limit x1.10)",
+  "C2 minAreaFrac 0.0025": "fails rules 3 and 4 (tracks/min 1.25; box-free 59; probe false x3.8)",
+  "C3 no guard": "fails rules 3 and 4 (tracks/min 1.25; box-free 66; probe false x4.1)"
+ },
+ "analysis_only_not_promoted": {"iouMatch_0.2": "no DEV benefit, TTFC p90 +66 ms", "centre_fallback_small_boxes": "neutral at 1% guard (1 fallback match on the probe)"},
+ "prereg": "docs/cv/gauntlet/G9_stageC_prereg.md",
+ "report": "docs/cv/gauntlet/G9_stageC.md",
+ "evidence": "ml/runs/G9/stageC/out/summary.json, ml/runs/G9/stageC/dev/arm_*.json"
+}

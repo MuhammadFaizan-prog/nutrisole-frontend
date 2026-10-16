@@ -1,0 +1,4 @@
+{
+ "gate": "prereg s5: night_sodium_hard rotten recall >= 0.983 AND low_light rotten recall >= 0.941 AND test (item-crop) rotten recall >= 0.983",
+ "models": {}
+}

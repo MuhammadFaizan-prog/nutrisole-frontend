@@ -1,0 +1,15 @@
+{
+ "note": "G9 Stage J5 preserved model/checkpoint inventory (read-only check 2026-10-15 PKT). Nothing retrained, moved or deleted. Weights are outside Git by repo policy (.gitignore ml/runs/**/weights/).",
+ "models": [
+  {"name": "H2 v2 close-up classifier (H3 initial weights)", "path": "/workspace/work/g9h/h2v2/h2_mnv3s.pt", "sha256": "02b402a1302a437cab59c8ddecae1cfd117fbc4a511529cdb9e7be6a7b09bd82", "bytes": 6254737},
+  {"name": "H2 v2 ONNX", "path": "/workspace/work/g9h/h2v2/h2_mnv3s.onnx", "sha256": "20898d7cdfc1f0580cdf3f58d6d3d63528b9c04178d4603b49dee4ba1b89a22e", "bytes": 6133032},
+  {"name": "H2 ONNX in the h2 run dir (byte-identical to the v2 ONNX)", "path": "/workspace/work/g9h/h2/h2_mnv3s.onnx", "sha256": "20898d7cdfc1f0580cdf3f58d6d3d63528b9c04178d4603b49dee4ba1b89a22e", "bytes": 6133032},
+  {"name": "G3 detector YOLO11n best.pt", "path": "ml/runs/G3/kaggle/nutrisole-g3-det-yolo11n-640/runs/det_yolo11n_640/weights/best.pt", "sha256": "29cc52123247f62ca93ba41952fa4b221e88fa208f3adf566214870435be1cf4", "bytes": 5498778},
+  {"name": "G3 detector ONNX (480, raw)", "path": "/workspace/work/cv/g3models/k11_480/det_yolo11n_640_raw.onnx", "sha256": "c6fcb32a5fb2f51ba34e88ce9106a52d6bbd12ae385ca8361b292d54e3d340c1", "bytes": 10600677},
+  {"name": "G3 detector ExecuTorch .pte", "path": "/workspace/work/cv/g3models/k11_480/det_yolo11n_640_raw_executorch_model/model.pte", "sha256": "edb7623f095f75093e6cd029c60b1d57038599c95ff326646f19ed235b848cf2"},
+  {"name": "G3 E224 condition classifier best.pt", "path": "ml/runs/G3/kaggle/nutrisole-g3-cls/runs/E_224_e15_b64_sgd01/weights/best.pt", "sha256": "320b84b063fce42ed3b0daaf3113a5b39da6ff0df8f177b9926fbb355a1c60f5"},
+  {"name": "G3 E224 ONNX", "path": "/workspace/work/cv/g3models/cls/E_224_e15_b64_sgd01.onnx", "sha256": "c51d21994444d2a5a43907cae66a36ac7fb63b19b1198dda891f24af751f709b", "bytes": 6161022},
+  {"name": "G3 E224 ExecuTorch .pte", "path": "/workspace/work/cv/g3models/cls/E_224_e15_b64_sgd01_executorch_model/model.pte", "sha256": "44f7bc5ff3d2902df5e1c49ac9849849d160dec830a0685d9c501203a1465bb8"},
+  {"name": "Device handoff zip (3 ONNX + SHA256SUMS)", "path": "files/g9/stageJ/handoff/NutriSole_G9J5_device_models.zip", "sha256": "e18fa4c444f7cc1e8942551940ac344adb72fa70b100f3c2cc81b7dd942783fd", "bytes": 20417907}
+ ]
+}

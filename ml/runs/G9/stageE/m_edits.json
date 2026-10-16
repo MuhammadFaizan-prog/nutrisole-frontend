@@ -1,0 +1,1634 @@
+{
+"m0446": {
+"thr": 0.25,
+"ops": [
+[
+"delc",
+0,
+0,
+1,
+1,
+0
+],
+[
+"crowd",
+0.07,
+0.47,
+0.42,
+0.61,
+7
+],
+[
+"crowd",
+0.2,
+0.39,
+0.36,
+0.45,
+7
+],
+[
+"crowd",
+0.8,
+0.3,
+0.94,
+0.35,
+7
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+2
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+1
+]
+],
+"note": "tarp tomatoes boxed; basin, carton and far-table tomatoes crowd"
+},
+"m0002": {
+"neg": true,
+"note": "persimmons (not a target class); proposer called them citrus"
+},
+"m0148": {
+"neg": true,
+"note": "persimmons in bags (Korean 'gam' boxes); not a target class; proposer called them citrus/apple"
+},
+"m0191": {
+"ops": [
+[
+"crowd",
+0.37,
+0.59,
+0.47,
+0.7,
+0
+],
+[
+"rel",
+0.47,
+0.58,
+0.665,
+0.71,
+-1,
+3
+],
+[
+"rel",
+0.665,
+0.58,
+0.76,
+0.71,
+-1,
+2
+]
+],
+"note": "oranges boxed (citrus), mangoes boxed (relabelled from apple/citrus), bananas in bag crowd; zoom-checked"
+},
+"m0592": {
+"ops": [
+[
+"del",
+0.08,
+0.82,
+0.15,
+0.88
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+0
+],
+[
+"crowd",
+0.32,
+0.41,
+0.54,
+0.61,
+1
+],
+[
+"ign",
+0.83,
+0.4,
+1.0,
+0.62
+],
+[
+"rel",
+0.54,
+0.42,
+0.83,
+0.72,
+-1,
+3
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+1
+],
+[
+"crowd",
+0.4,
+0.42,
+0.84,
+0.72,
+3
+]
+],
+"note": "orange pile crowd (overlapping, proposals fragmented); apples crowd; mixed green produce right ignored"
+},
+"m0605": {
+"ops": [
+[
+"del",
+0.42,
+0.14,
+0.83,
+0.33
+],
+[
+"rel",
+0,
+0.4,
+1,
+0.75,
+-1,
+3
+],
+[
+"del",
+0.47,
+0.475,
+0.53,
+0.5
+],
+[
+"del",
+0.78,
+0.515,
+0.84,
+0.535
+],
+[
+"del",
+0.28,
+0.5,
+0.3,
+0.53
+],
+[
+"del",
+0.87,
+0.57,
+0.9,
+0.59
+]
+],
+"note": "mikan stall; printed citrus on banner deleted"
+},
+"m0649": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0,
+0,
+0.7,
+0.3,
+1
+],
+[
+"crowd",
+0.1,
+0.18,
+0.95,
+1,
+3
+],
+[
+"crowd",
+0,
+0.48,
+0.3,
+1,
+3
+],
+[
+"ign",
+0.6,
+0.76,
+1,
+1
+]
+],
+"note": "close-up crates: apples (nets) and mandarins crowd; Asian pears top-right are non-target (negatives); yellow pomelo-like fruit ignored"
+},
+"m0709": {
+"ops": [
+[
+"del",
+0.83,
+0.84,
+0.86,
+0.88
+],
+[
+"rel",
+0,
+0,
+1,
+1,
+-1,
+3
+]
+],
+"note": "mandarin cart, boxes kept item by item"
+},
+"m0184": {
+"ops": [
+[
+"del",
+0.29,
+0.48,
+0.35,
+0.54
+],
+[
+"del",
+0.44,
+0.46,
+0.49,
+0.52
+],
+[
+"del",
+0.66,
+0.72,
+0.71,
+0.83
+],
+[
+"ign",
+0.1,
+0.39,
+0.3,
+0.45
+],
+[
+"ign",
+0.64,
+0.5,
+0.75,
+0.61
+],
+[
+"ign",
+0.84,
+0.46,
+1,
+0.6
+],
+[
+"crowd",
+0.15,
+0.58,
+0.34,
+0.74,
+5
+],
+[
+"rel",
+0.3,
+0.48,
+0.66,
+0.7,
+-1,
+5
+]
+],
+"note": "pomegranates (not apples) in bowls; cut/opened pomegranates are not targets; clothing market background"
+},
+"m0220": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0,
+0.64,
+0.97,
+1.0,
+1
+],
+[
+"crowd",
+0.47,
+0.25,
+0.9,
+0.43,
+3
+],
+[
+"crowd",
+0.38,
+0.44,
+0.62,
+0.56,
+8
+],
+[
+"ign",
+0,
+0,
+1,
+0.25
+],
+[
+"ign",
+0,
+0.25,
+0.3,
+0.55
+]
+],
+"note": "dense Mallorca stall: apples, oranges, potatoes crowd; pears/quinces/nectarines are non-target negatives"
+},
+"m0274": {
+"ops": [
+[
+"del",
+0,
+0.7,
+0.58,
+1
+],
+[
+"ign",
+0,
+0.45,
+0.2,
+0.55
+],
+[
+"ign",
+0,
+0.71,
+0.1,
+0.82
+],
+[
+"ign",
+0.93,
+0.78,
+1,
+0.86
+],
+[
+"rel",
+0.58,
+0.7,
+1,
+1,
+-1,
+5
+]
+],
+"note": "pomegranates boxed; prickly pears, avocados, figs are non-target; far table ignored"
+},
+"m0561": {
+"ops": [
+[
+"del",
+0.2,
+0.58,
+0.26,
+0.66
+],
+[
+"ign",
+0.23,
+0,
+1,
+0.43
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+2
+]
+],
+"note": "apple festival: front apples boxed; printed apples on poster deleted; apples hung on decorative tree ignored (prop status unclear); wooden apple sculpture not a target"
+},
+"m0576": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0,
+0.6,
+0.63,
+1,
+1
+],
+[
+"crowd",
+0.48,
+0.84,
+1,
+1,
+3
+]
+],
+"note": "apple pile on tarp + oranges, crowd only (overlapping items, proposals had duplicates)"
+},
+"m0653": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.08,
+0.15,
+1.0,
+0.56,
+1
+],
+[
+"crowd",
+0.37,
+0.02,
+0.67,
+0.12,
+3
+],
+[
+"crowd",
+0.65,
+0.07,
+1,
+0.2,
+3
+],
+[
+"crowd",
+0.25,
+0,
+0.5,
+0.1,
+0
+],
+[
+"ign",
+0.86,
+0,
+1,
+0.03
+]
+],
+"note": "apple crates crowd; PRINTED apples on cartons are not targets (proposer boxed them); oranges/clementines and bananas crowd"
+},
+"m0684": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.08,
+0.22,
+0.92,
+0.82,
+7
+],
+[
+"crowd",
+0.14,
+0.22,
+0.27,
+0.33,
+8
+],
+[
+"ign",
+0,
+0.3,
+0.2,
+0.65
+],
+[
+"ign",
+0,
+0,
+1,
+0.1
+]
+],
+"note": "greengrocer shelf: tomatoes and potatoes crowd; left edge mangoes/limes/oranges mix ignored. ADJUDICATED after pass 2: pass 1 had put a lemon_lime crowd on AVOCADOS (large green produce) - removed; avocados, sweet potato, ginger, garlic, mushrooms, signs are non-target"
+},
+"m0059": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.47,
+0.5,
+0.75,
+0.73,
+0
+]
+],
+"note": "banana hands in truck, overlapping, crowd"
+},
+"m0197": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.26,
+0.33,
+0.88,
+0.96,
+0
+],
+[
+"crowd",
+0.03,
+0.86,
+0.25,
+0.95,
+0
+]
+],
+"note": "banana cart crowd; clothing rack left and green leafy veg right are negatives"
+},
+"m0257": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.5,
+0.48,
+0.7,
+0.62,
+0
+]
+],
+"note": "green banana cart crowd; shop signs negatives"
+},
+"m0428": {
+"scratch": true,
+"ops": [
+[
+"add",
+0.64,
+0.24,
+0.74,
+0.37,
+0
+],
+[
+"crowd",
+0.47,
+0.4,
+0.62,
+0.56,
+0
+],
+[
+"crowd",
+0.17,
+0.46,
+0.31,
+0.57,
+0
+],
+[
+"crowd",
+0.43,
+0.58,
+0.57,
+0.8,
+0
+],
+[
+"crowd",
+0.68,
+0.62,
+0.79,
+0.77,
+0
+],
+[
+"ign",
+0.62,
+0.4,
+0.8,
+0.56
+]
+],
+"note": "banana bicycle vendor; held hand boxed; others crowd; green papaya-like fruit ignored; clothing rack negative"
+},
+"m0548": {
+"scratch": true,
+"ops": [
+[
+"add",
+0.34,
+0.37,
+0.61,
+0.53,
+0
+]
+],
+"note": "one whole banana bunch carried (one box); bags, balls, toys are negatives"
+},
+"m0663": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0,
+0.05,
+1,
+0.95,
+0
+],
+[
+"crowd",
+0.8,
+0.08,
+0.88,
+0.22,
+9
+]
+],
+"note": "plantain piles crowd; cucumbers top right crowd"
+},
+"m0719": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.12,
+0.41,
+0.7,
+0.52,
+0
+]
+],
+"note": "banana hands on wheelbarrow crowd; printed chicken on bucket and posters are negatives"
+},
+"m0163": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.32,
+0.49,
+0.45,
+0.58,
+7
+],
+[
+"crowd",
+0.44,
+0.42,
+0.6,
+0.5,
+7
+],
+[
+"ign",
+0.13,
+0.6,
+0.33,
+0.68
+],
+[
+"ign",
+0,
+0.43,
+0.35,
+0.52
+]
+],
+"note": "wide market, small tomato heaps crowd; mixed small heaps ignored; cabbages non-target"
+},
+"m0449": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.23,
+0.5,
+0.76,
+0.86,
+7
+],
+[
+"crowd",
+0.56,
+0.9,
+0.73,
+1,
+7
+],
+[
+"ign",
+0.48,
+0.44,
+0.6,
+0.51
+],
+[
+"ign",
+0.86,
+0.4,
+0.97,
+0.51
+]
+],
+"note": "tomato pyramid crowd; printed 'tomato soup' banner is a negative"
+},
+"m0484": {
+"ops": [
+[
+"delc",
+0,
+0,
+1,
+1,
+8
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+2
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+3
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+11
+],
+[
+"del",
+0.7,
+0.3,
+0.86,
+0.56
+],
+[
+"ign",
+0,
+0.38,
+0.05,
+0.45
+],
+[
+"rel",
+0.38,
+0.84,
+0.68,
+1,
+-1,
+7
+],
+[
+"rel",
+0.39,
+0.69,
+0.52,
+0.84,
+-1,
+7
+],
+[
+"del",
+0.52,
+0.55,
+0.79,
+0.86
+],
+[
+"crowd",
+0.52,
+0.55,
+0.79,
+0.86,
+7
+],
+[
+"rel",
+0.72,
+0.56,
+0.92,
+0.66,
+-1,
+10
+],
+[
+"rel",
+0.79,
+0.66,
+0.92,
+0.95,
+-1,
+10
+],
+[
+"ign",
+0.72,
+0.57,
+0.79,
+0.68
+],
+[
+"ign",
+0.72,
+0.8,
+0.8,
+0.88
+],
+[
+"rel",
+0.2,
+0.87,
+0.25,
+0.94,
+-1,
+7
+],
+[
+"rel",
+0,
+0,
+1,
+1,
+1,
+7
+]
+],
+"note": "Ethiopian market: carrots boxed; green/red tomatoes (proposer said apple) relabelled tomato; central tomato heap crowd; chilies and onions are negatives"
+},
+"m0493": {
+"ops": [
+[
+"del",
+0.64,
+0.55,
+0.7,
+0.6
+],
+[
+"ign",
+0.44,
+0.4,
+0.54,
+0.5
+],
+[
+"rel",
+0.08,
+0.43,
+0.45,
+0.53,
+-1,
+7
+]
+],
+"note": "tomatoes in a basket boxed item by item; pumpkin non-target"
+},
+"m0687": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.02,
+0,
+1,
+1,
+7
+]
+],
+"note": "top-down tomato heaps; overlapping, crowd"
+},
+"m0707": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.33,
+0.6,
+0.8,
+0.8,
+7
+],
+[
+"crowd",
+0.03,
+0.56,
+0.33,
+0.65,
+7
+],
+[
+"crowd",
+0.66,
+0.45,
+1,
+0.53,
+7
+],
+[
+"crowd",
+0.12,
+0.43,
+0.42,
+0.5,
+7
+],
+[
+"crowd",
+0.43,
+0.52,
+0.66,
+0.6,
+7
+],
+[
+"ign",
+0.24,
+0.65,
+0.35,
+0.72
+],
+[
+"ign",
+0.3,
+0.38,
+0.56,
+0.44
+]
+],
+"note": "Bolivian tomato stall crowd; fabric/clothing, squash, price sign are negatives"
+},
+"m0024": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.07,
+0.3,
+0.5,
+0.385,
+7
+],
+[
+"crowd",
+0.06,
+0.37,
+0.37,
+0.43,
+11
+],
+[
+"crowd",
+0.18,
+0.78,
+0.66,
+1,
+9
+],
+[
+"crowd",
+0.18,
+0.56,
+0.58,
+0.77,
+9
+],
+[
+"crowd",
+0.57,
+0.66,
+0.82,
+0.91,
+10
+]
+],
+"note": "African market: small tomato row, green bell peppers, cucumbers (incl. yellow), carrot bunch crowd; cabbages, onions, spring onions negatives"
+},
+"m0505": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0,
+0.64,
+0.62,
+0.96,
+10
+]
+],
+"note": "carrot pile crowd; peas, onions (bags), garlic box are negatives"
+},
+"m0549": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.3,
+0.07,
+1,
+1,
+10
+],
+[
+"crowd",
+0.17,
+0.65,
+0.3,
+0.9,
+10
+]
+],
+"note": "carrot crate close-up crowd; leeks and parsnip are negatives"
+},
+"m0555": {
+"ops": [],
+"note": "carrots on head tray boxed item by item (proposals kept); printed fries/food on billboard is a negative"
+},
+"m0577": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.08,
+0.43,
+0.63,
+0.59,
+10
+],
+[
+"crowd",
+0,
+0.59,
+0.3,
+0.76,
+10
+],
+[
+"crowd",
+0.37,
+0.49,
+1,
+1,
+10
+]
+],
+"note": "Bolivian carrot piles crowd; red mesh onion sacks are negatives"
+},
+"m0633": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.18,
+0.24,
+0.92,
+0.95,
+10
+]
+],
+"note": "carrot crate crowd; beets, celeriac, leeks, lettuces and printed logo are negatives"
+},
+"m0676": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0,
+0.38,
+0.62,
+1,
+10
+],
+[
+"ign",
+0,
+0.76,
+0.1,
+1
+]
+],
+"note": "carrots crowd; parsnips, horseradish, celery root, white turnips and price signs are negatives (hard)"
+},
+"m0140": {
+"ops": [
+[
+"delc",
+0,
+0,
+1,
+1,
+11
+],
+[
+"del",
+0.5,
+0.5,
+0.6,
+0.6
+],
+[
+"crowd",
+0.24,
+0.6,
+0.5,
+1,
+7
+],
+[
+"del",
+0.24,
+0.6,
+0.5,
+1
+],
+[
+"rel",
+0.5,
+0.45,
+1,
+1,
+-1,
+6
+]
+],
+"note": "Thai market limes in cups boxed as lemon_lime (proposer called half of them apple); small tomatoes in cups crowd; chilies and shallots negatives"
+},
+"m0262": {
+"ops": [
+[
+"crowd",
+0.03,
+0.81,
+0.5,
+0.95,
+6
+],
+[
+"crowd",
+0.52,
+0.6,
+1,
+0.87,
+6
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+1
+]
+],
+"note": "Indian lime vendor: two held limes boxed as lemon_lime, baskets crowd lemon_lime; beans, sacks and bags negatives"
+},
+"m0650": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0,
+0,
+0.93,
+0.95,
+3
+],
+[
+"ign",
+0.9,
+0,
+1,
+1
+]
+],
+"note": "oranges in baskets (title confirms oranges); proposer labelled them lemon -> citrus crowd; grapefruit-like fruit right ignored"
+},
+"m0374": {
+"scratch": true,
+"ops": [
+[
+"ign",
+0,
+0.5,
+0.85,
+1
+]
+],
+"note": "mangoes/pomegranates front mixed, ignored (class boundary not verifiable); strawberries and pacay pods are non-target negatives"
+},
+"m0350": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0,
+0.76,
+0.66,
+1,
+11
+],
+[
+"crowd",
+0.78,
+0.04,
+1,
+0.23,
+6
+],
+[
+"add",
+0.015,
+0.355,
+0.085,
+0.4,
+6
+],
+[
+"ign",
+0.53,
+0.44,
+0.6,
+0.49
+],
+[
+"ign",
+0,
+0,
+0.12,
+0.2
+]
+],
+"note": "Ankara pazar: green bell peppers crowd capsicum, lemons crowd + one bagged lemon boxed; long red and green peppers are chilies/pointed peppers = negatives; garlic negative"
+},
+"m0475": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0,
+0.46,
+0.67,
+0.9,
+7
+],
+[
+"crowd",
+0.17,
+0.29,
+0.61,
+0.54,
+8
+],
+[
+"ign",
+0.81,
+0.21,
+1,
+0.3
+]
+],
+"note": "Bulandshahr veg shop: tomatoes and potatoes crowd; ginger, onions, garlic, pineapple, posters/calendar negatives"
+},
+"m0629": {
+"scratch": true,
+"ops": [
+[
+"crowd",
+0.04,
+0.38,
+0.2,
+0.65,
+7
+],
+[
+"crowd",
+0.17,
+0.81,
+0.34,
+0.93,
+7
+],
+[
+"crowd",
+0.72,
+0.36,
+0.9,
+0.67,
+7
+],
+[
+"crowd",
+0.2,
+0.38,
+0.35,
+0.51,
+10
+],
+[
+"crowd",
+0.59,
+0.26,
+0.72,
+0.49,
+11
+],
+[
+"crowd",
+0.24,
+0.25,
+0.34,
+0.36,
+11
+],
+[
+"crowd",
+0.35,
+0.23,
+0.48,
+0.38,
+8
+],
+[
+"ign",
+0.72,
+0.12,
+0.87,
+0.35
+],
+[
+"ign",
+0.1,
+0.24,
+0.24,
+0.33
+],
+[
+"ign",
+0.19,
+0.63,
+0.3,
+0.76
+]
+],
+"note": "Sucre market aerial: tomatoes, carrots, red/green bell peppers, potatoes crowd; mixed chili baskets ignored; zucchini (not cucumber), ginger, onions, cauliflower, cabbage, beans, pumpkins negatives"
+},
+"m0492": {
+"ops": [
+[
+"del",
+0,
+0,
+0.28,
+0.52
+],
+[
+"del",
+0.15,
+0.6,
+0.25,
+0.75
+],
+[
+"del",
+0.35,
+0.17,
+0.42,
+0.24
+],
+[
+"ign",
+0.28,
+0.32,
+0.51,
+0.56
+],
+[
+"ign",
+0.7,
+0.26,
+0.9,
+0.61
+],
+[
+"ign",
+0.6,
+0.55,
+0.72,
+0.75
+],
+[
+"rel",
+0.53,
+0,
+0.9,
+0.42,
+-1,
+9
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+6
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+0
+],
+[
+"delc",
+0,
+0,
+1,
+1,
+2
+]
+],
+"note": "Ugandan market: cucumbers (incl. ripe yellow, proposer said banana/mango) boxed; green round citrus-like fruit ignored (green orange vs lime not verifiable, NOT labelled lemon_lime); papayas (proposer said mango) and peas negatives"
+},
+"m0145": {
+"neg": true,
+"note": "dragon fruit (non-target)"
+},
+"m0138": {
+"neg": true,
+"note": "durian market"
+},
+"m0201": {
+"neg": true,
+"note": "red chilies in crate"
+},
+"m0198": {
+"neg": true,
+"note": "greengrocer shop front with PRINTED fruit/veg images"
+},
+"m0326": {
+"neg": true,
+"note": "persimmons (non-target, tomato/citrus-like)"
+},
+"m0331": {
+"neg": true,
+"note": "persimmons in crate"
+},
+"m0353": {
+"neg": true,
+"note": "dried chilies"
+},
+"m0409": {
+"neg": true,
+"note": "tomato SLICES (not whole produce)"
+},
+"m0510": {
+"neg": true,
+"note": "plums + price sign"
+},
+"m0511": {
+"neg": true,
+"note": "flat peaches + price sign"
+},
+"m0543": {
+"neg": true,
+"note": "flower stall"
+},
+"m0643": {
+"neg": true,
+"note": "orange T-shirts on rack (clothing)"
+},
+"m0729": {
+"neg": true,
+"note": "chefs with printed mango graphics on aprons"
+},
+"m0020": {
+"neg": true,
+"note": "printed food poster"
+},
+"m0049": {
+"neg": true,
+"note": "printed fruit poster (oranges/lemons print)"
+},
+"m0040": {
+"neg": true,
+"note": "clothing/scarves"
+},
+"m0048": {
+"neg": true,
+"note": "bags stall"
+},
+"m0119": {
+"neg": true,
+"note": "chilies in cups"
+},
+"m0122": {
+"neg": true,
+"note": "shoe/sandal market"
+},
+"m0001": {
+"neg": true,
+"note": "street signs incl. printed banana logo"
+},
+"m0101": {
+"neg": true,
+"note": "fabric stall with printed fruit motifs"
+},
+"m0362": {
+"scratch": true,
+"ops": [
+[
+"ign",
+0.82,
+0.68,
+0.94,
+0.84
+],
+[
+"ign",
+0.44,
+0.45,
+0.62,
+0.75
+]
+],
+"note": "juice stand: PRINTED citrus wall; small real fruit tray and display case ignored (not box-free)"
+},
+"m0596": {
+"scratch": true,
+"ops": [
+[
+"ign",
+0.36,
+0.48,
+0.52,
+0.58
+]
+],
+"note": "orange-juice vending machine: printed oranges/logo; real oranges in hopper window ignored (not box-free)"
+},
+"m0639": {
+"scratch": true,
+"ops": [
+[
+"ign",
+0.2,
+0.25,
+0.42,
+0.45
+],
+[
+"ign",
+0.47,
+0.25,
+0.7,
+0.45
+]
+],
+"note": "orange-juice vending machines: printed oranges; real oranges in windows ignored (not box-free)"
+}
+}

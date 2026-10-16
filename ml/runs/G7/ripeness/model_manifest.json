@@ -1,0 +1,36 @@
+{
+ "model": "ripeness_g7_perfruit_yolo11n_cls_224",
+ "onnx_sha256": "4bc4ce70ff3baf81ac9886b5be4c2295ddea3aff626c9ab7c81d51556ee889af",
+ "pt_sha256": "d9a3fc3be8d8b4af91815b2436653735ec01cefcef830ec787c7cf1dee7a21d0",
+ "classes": [
+  "apple_overripe",
+  "apple_ripe",
+  "apple_unripe",
+  "banana_overripe",
+  "banana_ripe",
+  "banana_unripe",
+  "mango_overripe",
+  "mango_ripe",
+  "mango_unripe",
+  "orange_overripe",
+  "orange_ripe",
+  "orange_unripe",
+  "tomato_overripe",
+  "tomato_ripe",
+  "tomato_unripe"
+ ],
+ "imgsz": 224,
+ "preprocessing": "RGB, resize short side to 224, centre crop 224, /255 (Ultralytics classify)",
+ "output": "softmax probabilities over classes",
+ "app_wiring": "native/src/cv/pipeline/ripeness.ts ripenessPerFruit (DEFAULT_PERFRUIT.enabled=false); Python mirror ml/grading/ripeness.py ripeness_per_fruit",
+ "fruit_map": {
+  "citrus": "orange"
+ },
+ "unable_to_assess_rule": "fruit mass < 0.5 or conditional top < 0.6 or margin < 0.15",
+ "trained_on": "Kaggle Tesla T4, kernel mfaizannnn/nutrisole-g7-ripeness (ml/runs/G7/kernels/ripeness_g7.py)",
+ "data_licences": [
+  "asadullahprl/fruits-ripeness-classification-dataset CC0",
+  "Sapek007/banana-ripeness CC BY 4.0"
+ ],
+ "weights_location": "/workspace/work/cv/g7models/ripe/ (not in git)"
+}
