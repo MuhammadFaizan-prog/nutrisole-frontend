@@ -134,6 +134,11 @@ jobs:
           # J8: live CV path + resizer + worklets native libs present (live mode code is in the embedded bundle; no Metro needed)
           grep -a -q 'NSCV perf window_s=' /tmp/apkx/assets/index.android.bundle || { echo "::error::J8 live perf line not in bundle"; exit 1; }
           grep -a -q 'held_through_missed_frame' /tmp/apkx/assets/index.android.bundle || { echo "::error::J8 live tracker not in bundle"; exit 1; }
+          # J9: frozen 1 % scene guard wired into the live / close-up / tap-3 paths + its separate diagnostics
+          for m in 'NSCV suppressed ' 'scene_guard_suppressed' 'NSCV event=tap_on_suppressed' 'cv-move-closer'; do
+            grep -a -q "$m" /tmp/apkx/assets/index.android.bundle || { echo "::error::J9 scene guard marker '$m' not in bundle"; exit 1; }
+          done
+          echo "== J9 guard markers in bundle"; for m in 'NSCV suppressed ' 'scene_guard_suppressed' 'tap_on_suppressed' 'cv-move-closer' 'below_min_area'; do echo "$m: $(grep -a -o "$m" /tmp/apkx/assets/index.android.bundle | wc -l)"; done
           echo "== J8 native libs"; unzip -l "$apk" | grep -E 'lib/arm64-v8a/lib(VisionCamera|.*[Rr]esizer|worklets|NitroModules)' || true
           while read -r file bytes sha; do
             echo "$sha  /tmp/apkx/assets/models/$file" | sha256sum -c -
