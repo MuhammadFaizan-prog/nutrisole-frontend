@@ -113,11 +113,14 @@ export function trackWide(obs: (Detection | null)[], window = DEFAULT_ID.idMinHi
 }
 
 export class LiveTracker {
-  P: LiveTrackerParams; tracks: LiveTrack[] = []; nextId = 1;
+  P: LiveTrackerParams; tracks: LiveTrack[] = []; nextId = 1; droppedBySuppression = 0;
   constructor(p: Partial<LiveTrackerParams> = {}) { this.P = { ...LIVE_TRACKER, ...p }; }
   reset(): void { this.tracks = []; }
 
-  update(objs: LiveObject[], tMs: number): LiveTrackView[] {
+  /** J9: `suppressed` = boxes the frozen scene guard removed this frame (guard.ts). They are NEVER matched or counted as a hit.
+   *  An unmatched track that overlaps one (same iouMatch) is the same item now too small: it is dropped AT ONCE (no held box or
+   *  label, no stale overlay), instead of coasting through maxMissed frames. Default [] = J8 behaviour exactly. */
+  update(objs: LiveObject[], tMs: number, suppressed: Box[] = []): LiveTrackView[] {
     const P = this.P; const pairs: [number, number, number][] = [];
     this.tracks.forEach((t, ti) => objs.forEach((o, oi) => { const v = iou(t.rawBox, o.box); if (v >= P.iouMatch) pairs.push([v, ti, oi]); }));
     pairs.sort((a, b) => b[0] - a[0] || this.tracks[a[1]].id - this.tracks[b[1]].id || a[2] - b[2]);
@@ -132,7 +135,10 @@ export class LiveTracker {
     }
     const keep: LiveTrack[] = [];
     this.tracks.forEach((t, ti) => {
-      if (!uT.has(ti)) { t.missed += 1; t.obs.push(null); }
+      if (!uT.has(ti)) {
+        if (suppressed.length && suppressed.some((b) => iou(t.rawBox, b) >= P.iouMatch)) { this.droppedBySuppression += 1; return; }
+        t.missed += 1; t.obs.push(null);
+      }
       if (t.obs.length > 4 * P.window) t.obs.splice(0, t.obs.length - 4 * P.window);
       if (t.missed <= P.maxMissed) keep.push(t);   // lost tracks die: their label can never move to a new object
     });
