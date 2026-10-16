@@ -2,7 +2,8 @@
 # - Release build with the JS bundle embedded (no Metro), signed with the committed DEBUG keystore; no secrets.
 # - Default storage: encrypted on this phone. Optional Supabase account configuration
 #   uses only public repository variables. Android OCR: bundled ML Kit.
-# - arm64-v8a only (size). Artifact: nutrisole-glucose-qa-apk-<sha7> (APK + .sha256 + build-info.txt).
+# - arm64-v8a for phones and x86_64 for the emulator. Includes the instrumentation APK.
+# - Artifact: nutrisole-glucose-qa-apk-<sha7> (APKs + .sha256 + build-info.txt).
 # - Independent of the CV device workflow (cv-gauntlet-device); it touches no CV branch or model.
 name: Android QA APK (glucose)
 
@@ -63,9 +64,9 @@ jobs:
       - name: Write phone storage and optional public account config
         run: node scripts/write-native-env.mjs
 
-      - name: Gradle assembleRelease (arm64-v8a, debug keystore)
+      - name: Gradle phone/emulator APK and native instrumentation
         working-directory: native/android
-        run: ./gradlew :app:assembleRelease -PreactNativeArchitectures=arm64-v8a --no-daemon --stacktrace
+        run: ./gradlew :app:assembleRelease :app:assembleDebugAndroidTest -PreactNativeArchitectures=arm64-v8a,x86_64 --no-daemon --stacktrace
 
       - name: Inspect APK + sha256
         run: |
@@ -74,6 +75,7 @@ jobs:
           out=dist-qa; mkdir -p $out
           apk=$out/nutrisole-glucose-qa-${sha7}.apk
           cp native/android/app/build/outputs/apk/release/app-release.apk "$apk"
+          cp native/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk "$out/nutrisole-glucose-tests-${sha7}.apk"
           aapt2="$ANDROID_HOME/build-tools/$BT/aapt2"
           rm -rf /tmp/apkx; mkdir -p /tmp/apkx; unzip -q "$apk" 'assets/index.android.bundle' -d /tmp/apkx
           {
@@ -83,13 +85,14 @@ jobs:
             echo "apk_sha256=$(sha256sum $apk | cut -d' ' -f1)"
             echo "== badging"; "$aapt2" dump badging "$apk"
             echo "== permissions"; "$aapt2" dump permissions "$apk"
-            echo "== native libs"; unzip -l "$apk" | grep 'lib/arm64-v8a/' || true
+            echo "== native libs"; unzip -l "$apk" | grep -E 'lib/(arm64-v8a|x86_64)/' || true
             echo "== glucose import markers in JS bundle (counts)"
             echo "storage_mode=$NUTRISOLE_GLUCOSE_STORAGE"
             for m in 'import-review' 'ble:gls' 'Health Connect' 'ML Kit Latin (on this phone)' 'Saved on this phone'; do echo "$m: $(grep -a -c "$m" /tmp/apkx/assets/index.android.bundle || true)"; done
             echo "== bundled OCR resources"; unzip -l "$apk" | grep -Ei 'mlkit|ocr' || true
           } | tee $out/build-info.txt
           (cd $out && sha256sum "$(basename $apk)" > "$(basename $apk).sha256")
+          (cd $out && sha256sum "nutrisole-glucose-tests-${sha7}.apk" > "nutrisole-glucose-tests-${sha7}.apk.sha256")
           echo "SHA7=$sha7" >> "$GITHUB_ENV"
           perms=$("$aapt2" dump permissions "$apk")
           for p in android.permission.CAMERA android.permission.BLUETOOTH_SCAN android.permission.BLUETOOTH_CONNECT android.permission.health.READ_BLOOD_GLUCOSE; do

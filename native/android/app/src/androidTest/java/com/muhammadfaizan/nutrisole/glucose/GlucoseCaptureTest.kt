@@ -2,13 +2,14 @@ package com.muhammadfaizan.nutrisole.glucose
 
 import android.os.Bundle
 import android.os.SystemClock
+import android.content.Context
+import android.content.ContextWrapper
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.facebook.react.bridge.Callback
 import com.facebook.react.bridge.PromiseImpl
-import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.BridgeReactContext
 import com.facebook.react.bridge.WritableMap
-import org.json.JSONArray
 import org.json.JSONObject
 import org.junit.Assert.*
 import org.junit.Test
@@ -21,7 +22,18 @@ import java.util.concurrent.TimeUnit
 @RunWith(AndroidJUnit4::class)
 class GlucoseCaptureTest {
   private val instrumentation get() = InstrumentationRegistry.getInstrumentation()
-  private val context get() = instrumentation.context
+  // Instrumentation runs under the target UID. Use its writable directories,
+  // isolate test history from actual readings, and load fixtures from the test APK.
+  private val context by lazy {
+    object : ContextWrapper(instrumentation.targetContext) {
+      override fun getApplicationContext(): Context = this
+      override fun getNoBackupFilesDir(): File = File(baseContext.noBackupFilesDir, "glucose-native-qa").apply { mkdirs() }
+      override fun getCacheDir(): File = File(baseContext.cacheDir, "glucose-native-qa").apply { mkdirs() }
+      override fun getAssets() = instrumentation.context.assets
+    }
+  }
+  @Suppress("DEPRECATION")
+  private fun module() = GlucoseCaptureModule(BridgeReactContext(context))
   private fun call(work: (PromiseImpl) -> Unit): Any? {
     val latch = CountDownLatch(1); var result: Any? = null; var failure: Any? = null
     work(PromiseImpl(Callback { args -> result = args.firstOrNull(); latch.countDown() }, Callback { args -> failure = args.firstOrNull(); latch.countDown() }))
@@ -30,12 +42,12 @@ class GlucoseCaptureTest {
     return result
   }
   @Test fun encryptedHistoryIsDurableAndNotPlaintext() {
-    val first = GlucoseCaptureModule(ReactApplicationContext(context))
+    val first = module()
     val text = "{\"version\":1,\"readings\":[{\"note\":\"top-secret-test-reading\"}]}"
     val times = mutableListOf<Long>()
     repeat(10) { val start = SystemClock.elapsedRealtime(); call { first.writeHistory(text, it) }; times.add(SystemClock.elapsedRealtime() - start) }
     first.invalidate()
-    val restarted = GlucoseCaptureModule(ReactApplicationContext(context))
+    val restarted = module()
     try {
       assertEquals(text, call { restarted.readHistory(it) })
       val encrypted = File(context.noBackupFilesDir, "glucose-v1.enc").readBytes()
@@ -44,7 +56,7 @@ class GlucoseCaptureTest {
     } finally { restarted.invalidate() }
   }
   @Test fun realReaderProcessesImagesAndScannedPdf() {
-    val module = GlucoseCaptureModule(ReactApplicationContext(context))
+    val module = module()
     val output = JSONObject()
     try {
       val images = context.assets.list("")!!.filter { it.endsWith(".jpg") || it.endsWith(".png") || it.endsWith(".pdf") }

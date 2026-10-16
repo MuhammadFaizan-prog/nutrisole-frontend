@@ -13,7 +13,7 @@ import { getSdkStatus, initialize, requestPermission, getGrantedPermissions, rea
 import { BleManager, State, type Device, type Subscription } from 'react-native-ble-plx';
 import type { ConnectionStatus } from '../types';
 import type { ImportPlatform, BleBridge, HealthSourceBridge } from './platform.types';
-import type { PickedFile, OcrResult } from './fileImport';
+import { MAX_FILE_BYTES, ImportFileError, type PickedFile, type OcrResult } from './fileImport';
 import type { HealthConnectGlucoseResult, HealthKitGlucoseSample } from './devices';
 import { GLS_SERVICE_UUID, GLS_MEASUREMENT_UUID, GLS_CONTEXT_UUID, GLS_RACP_UUID, downloadRecords, type GlsTransport } from './gls';
 import { base64ToBytes, bytesToBase64 } from './base64';
@@ -21,6 +21,7 @@ import { scanGlucoseMeters } from './scan';
 
 async function readUri(uri: string): Promise<Uint8Array> {
   const blob = await (await fetch(uri)).blob();
+  if (blob.size > MAX_FILE_BYTES) throw new ImportFileError('too-large', 'This file is larger than 15 MB. Choose a smaller report or image.');
   const dataUrl: string = await new Promise((resolve, reject) => { const r = new FileReader(); r.onload = () => resolve(String(r.result)); r.onerror = () => reject(new Error('The file could not be read.')); r.readAsDataURL(blob); });
   return base64ToBytes(dataUrl.slice(dataUrl.indexOf(',') + 1));
 }
@@ -28,6 +29,7 @@ async function readUri(uri: string): Promise<Uint8Array> {
 async function pickFile(): Promise<PickedFile | null> {
   try {
     const [res] = await pick({ type: [types.csv, types.plainText, types.xlsx, types.pdf, types.images], mode: 'import' });
+    if (res.size && res.size > MAX_FILE_BYTES) throw new ImportFileError('too-large', 'This file is larger than 15 MB. Choose a smaller report or image.');
     const [copy] = await keepLocalCopy({ files: [{ uri: res.uri, fileName: res.name ?? 'import' }], destination: 'cachesDirectory' });
     if (copy.status !== 'success') throw new Error(`The file could not be copied for reading (${copy.copyError}).`);
     return { name: res.name ?? 'import', mime: res.type ?? null, bytes: await readUri(copy.localUri), uri: copy.localUri } as PickedFile & { uri: string };
