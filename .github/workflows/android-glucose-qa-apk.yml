@@ -16,7 +16,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: android-glucose-qa-apk-${{ github.ref }}
+  # Preserve native runtime evidence while a later revision builds separately.
+  group: android-glucose-qa-apk-${{ github.ref }}-${{ github.sha }}
   cancel-in-progress: true
 
 jobs:
