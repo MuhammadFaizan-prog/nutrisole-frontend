@@ -17,7 +17,7 @@ export type CandidateFlag =
 export type Provenance = {
   method: ImportMethod;
   format: ImportFormat;
-  /** Stable provider label stored in source_provider, e.g. "file:csv", "ocr:tesseract", "ble:gls". */
+  /** Stable provider label stored in source_provider, e.g. "file:csv", "ocr:PP-OCRv5 mobile (on-device)", "ble:gls". */
   provider: string;
   /** Immutable source-side id stored in source_record_id (file hash + row, BLE sequence, HC record id). */
   recordId: string;

@@ -1,11 +1,14 @@
 const path = require('path');
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 const workspaceRoot = path.resolve(__dirname, '..');
-const nativePackages = ['react', 'react-native', 'react-native-svg', 'react-native-safe-area-context', 'lucide-react-native', '@react-native-async-storage/async-storage', '@react-native-documents/picker', '@react-native-ml-kit/text-recognition', 'react-native-ble-plx', 'react-native-health-connect', 'react-native-image-picker'];
-module.exports = mergeConfig(getDefaultConfig(__dirname), {
+const nativePackages = ['react', 'react-native', 'react-native-svg', 'react-native-safe-area-context', 'lucide-react-native', '@react-native-async-storage/async-storage', '@react-native-documents/picker', 'onnxruntime-react-native', 'react-native-ble-plx', 'react-native-health-connect', 'react-native-image-picker'];
+const defaults = getDefaultConfig(__dirname);
+module.exports = mergeConfig(defaults, {
   watchFolders: [workspaceRoot],
   maxWorkers: 2,
   resolver: {
+    // PP-OCRv5 models (public/ocr/ppocrv5/*.onnx) ship as raw resources in the APK.
+    assetExts: [...defaults.resolver.assetExts, 'onnx'],
     nodeModulesPaths: [path.join(__dirname, 'node_modules'), path.join(workspaceRoot, 'node_modules')],
     resolveRequest: (context, moduleName, platform) => {
       const requested = nativePackages.some(name => moduleName === name || moduleName.startsWith(name + '/'))

@@ -8,7 +8,9 @@ import type { CandidateFlag, ImportCandidate, ImportFormat, NonGlucoseFinding } 
 import { displayDate, displayTime, findDate, findTime, type DateParts, type TimeParts } from './dates';
 import { plausibilityFlags, resolveUnit, unitFromText } from './unitDetect';
 
-export type TextLine = { text: string; confidence?: number | null; locator: string };
+/** One OCR box on a row; x0/x1 are positions along the text direction (pixels). */
+export type TextCell = { text: string; x0: number; x1: number; confidence: number; h?: number };
+export type TextLine = { text: string; confidence?: number | null; locator: string; cells?: TextCell[] };
 export type LabParseResult = { kind: 'lab-report' | 'meter-screen' | 'none'; candidates: ImportCandidate[]; nonGlucose: NonGlucoseFinding[]; notes: string[]; collected: { date: DateParts | null; time: TimeParts | null; label: string | null } };
 
 /** OCR clean-up that only touches number-like tokens and unit spellings. */
@@ -30,8 +32,8 @@ const NON_GLUCOSE: { kind: NonGlucoseFinding['kind']; re: RegExp; label: string 
   { kind: 'urine', re: /(urine|urinary)\s*(?:\w+\s*){0,2}(sugar|glucose)|(sugar|glucose)\s*\(?\s*urine/i, label: 'Urine sugar' },
 ];
 const TESTS: { re: RegExp; context: MealContext; label: string }[] = [
-  { re: /(fasting\s*(?:blood|plasma|serum)?\s*(?:sugar|glucose)|(?:blood|plasma|serum)?\s*(?:sugar|glucose)\s*[,\-–(]*\s*fasting|\bf\.?\s?b\.?\s?s\b\.?|\bfpg\b|\bfbg\b|glucose\s*\(\s*f\s*\))/i, context: 'fasting', label: 'Fasting' },
-  { re: /(random\s*(?:blood|plasma|serum)?\s*(?:sugar|glucose)|(?:blood|plasma|serum)?\s*(?:sugar|glucose)\s*[,\-–(]*\s*random|\br\.?\s?b\.?\s?s\b\.?|\brbg\b|glucose\s*\(\s*r\s*\))/i, context: 'random', label: 'Random' },
+  { re: /(fasting\s*(?:blood|plasma|serum)?\s*(?:sugar|glucose)|(?:blood|plasma|serum)?\s*(?:sugar|glucose)\s*[,\-–(]*\s*fasting|\bf\.?\s?b\.?\s?s\b\.?|\bfpg\b|\bfbg\b|(?:glucose|sugar)\s*\(\s*f\s*\)|\bbsf\b)/i, context: 'fasting', label: 'Fasting' },
+  { re: /(random\s*(?:blood|plasma|serum)?\s*(?:sugar|glucose)|(?:blood|plasma|serum)?\s*(?:sugar|glucose)\s*[,\-–(]*\s*random|\br\.?\s?b\.?\s?s\b\.?|\brbg\b|(?:glucose|sugar)\s*\(\s*r\s*\)|\bbsr\b)/i, context: 'random', label: 'Random' },
   { re: /(post\s*-?\s*prandial|\bp\.?\s?p\.?\s?b\.?\s?s\b|\b2\s*-?\s*h(?:ou)?rs?\.?\s*(?:after|pp|post|abf)|\bpp\b\s*(?:blood)?\s*(?:sugar|glucose)|(?:sugar|glucose)\s*[,\-–(]*\s*(?:2\s*hrs?\s*)?p\.?p\b|after\s*(?:meal|breakfast|lunch|dinner))/i, context: 'after_meal', label: 'After a meal (PP)' },
   { re: /(?<!urine\s)(?<!urinary\s)\b(?:blood|plasma|serum|capillary)?\s*(?:sugar|glucose)\b/i, context: 'unspecified', label: 'Glucose' },
 ];
@@ -79,12 +81,59 @@ function findCollection(lines: TextLine[]): LabParseResult['collected'] {
   return { date: null, time: null, label: null };
 }
 
+const RANGE_CELL = /^\s*(?:[<>≤≥]|upto|up\s*to|less|more|below|above|normal|ref)|\d\s*[-–~]\s*\d|\d\s+to\s+\d/i;
+type Columns = { result: number | null; range: [number, number] | null; unit: number | null; headerRow: number };
+const mid = (c: TextCell) => (c.x0 + c.x1) / 2;
+/** Table header ("Test | Result | Unit | Reference Range") → x-centre of each column. */
+function findColumns(lines: TextLine[]): Columns | null {
+  for (const [i, l] of lines.entries()) {
+    if (!l.cells || l.cells.length < 2) continue;
+    let result: number | null = null, unit: number | null = null, range: [number, number] | null = null; let hits = 0;
+    for (const c of l.cells) {
+      const t = c.text.toLowerCase();
+      if (/\b(results?|observed\s*value|value|observation)\b/.test(t) && result === null) { result = mid(c); hits++; }
+      else if (/\bunits?\b/.test(t) && unit === null) { unit = mid(c); hits++; }
+      else if (/(range|reference|normal|interval|ref\.)/.test(t) && range === null) { range = [c.x0, c.x1]; hits++; }
+      else if (/(test|investigation|parameter|examination)/.test(t)) hits++;
+    }
+    if (hits >= 2 && result !== null) return { result, unit, range, headerRow: i };
+  }
+  return null;
+}
+type CellPick = { value: string; unitText: GlucoseUnit | null; conf: number; raw: string };
+/** Pair a test-name cell with the value (and unit) printed on the same row. */
+function pickFromCells(line: TextLine, labelIdx: number, labelTail: string, cols: Columns | null): CellPick | null | 'skip' {
+  const cells = line.cells!;
+  if (cells[labelIdx].text.split(/\s+/).length > 7) return 'skip'; // a sentence (interpretation note), not a table row
+  const options: { cell: TextCell; nums: string[]; idx: number }[] = [];
+  const tailNums = resultNumbers(labelTail.replace(/\d+\s*[-–]\s*\d+.*$/, ''));
+  if (tailNums.length && !RANGE_CELL.test(labelTail)) options.push({ cell: { ...cells[labelIdx], text: labelTail }, nums: tailNums, idx: labelIdx });
+  for (let k = labelIdx + 1; k < cells.length; k++) {
+    const c = cells[k]; const t = normalizeOcrLine(c.text);
+    if (RANGE_CELL.test(t)) continue;
+    if (cols?.range && mid(c) >= cols.range[0] - 4 && mid(c) <= cols.range[1] + 4 && (cols.result === null || Math.abs(mid(c) - cols.result) > Math.abs(mid(c) - (cols.range[0] + cols.range[1]) / 2))) continue;
+    const nums = resultNumbers(t); if (nums.length) options.push({ cell: { ...c, text: t }, nums, idx: k });
+  }
+  if (!options.length) return null;
+  let best = options[0];
+  if (cols?.result != null) best = options.slice().sort((a, b) => Math.abs(mid(a.cell) - cols.result!) - Math.abs(mid(b.cell) - cols.result!))[0];
+  const value = normalizeDecimal(best.nums[0]); if (!value) return null;
+  let unitText: GlucoseUnit | null = unitFromText(best.cell.text);
+  if (!unitText) {
+    const after = cells.slice(best.idx + 1).map(c => normalizeOcrLine(c.text));
+    const byCol = cols?.unit != null ? cells.slice(best.idx + 1).find(c => Math.abs(mid(c) - cols.unit!) < (c.x1 - c.x0) + 40) : undefined;
+    unitText = (byCol && unitFromText(normalizeOcrLine(byCol.text))) || after.map(t => unitFromText(t)).find(Boolean) || null;
+  }
+  return { value, unitText, conf: best.cell.confidence, raw: cells.map(c => c.text).join(' | ') };
+}
+
 type Meta = { format: ImportFormat; method: 'file' | 'ocr'; fileName: string | null; fileSha256: string | null; batchId: string; engine: string | null; now?: Date };
 
 export function parseReportText(input: TextLine[], meta: Meta): LabParseResult {
   const lines = input.map(l => ({ ...l, text: normalizeOcrLine(l.text) })).filter(l => l.text);
   const notes: string[] = []; const nonGlucose: NonGlucoseFinding[] = []; const found: { line: number; value: string; unitText: GlucoseUnit | null; context: MealContext; label: string; conf: number; raw: string; locator: string }[] = [];
   const collected = findCollection(lines);
+  const cols = findColumns(lines);
   lines.forEach((line, i) => {
     const text = line.text;
     const ng = NON_GLUCOSE.find(n => n.re.test(text));
@@ -92,7 +141,7 @@ export function parseReportText(input: TextLine[], meta: Meta): LabParseResult {
       const after = text.slice(text.search(ng.re));
       const nums = resultNumbers(after.replace(ng.re, ' '));
       const pct = /(\d{1,2}(?:\.\d{1,2})?)\s*%/.exec(after.replace(ng.re, ' '));
-      const value = ng.kind === 'hba1c' ? (pct?.[1] || nums[0]) : nums[0];
+      const value = ng.kind === 'hba1c' ? (nums[0] || pct?.[1]) : nums[0]; // nums excludes a range end like "4.0 - 5.6 %"
       if (value && !COMMENTARY.test(text.replace(ng.re, ''))) nonGlucose.push({ kind: ng.kind, label: ng.label, value, unit: ng.kind === 'hba1c' ? (/mmol\s*\/\s*mol/i.test(after) ? 'mmol/mol' : '%') : unitFromText(after) || '', raw: text.slice(0, 200), locator: line.locator });
       return;
     }
@@ -102,11 +151,28 @@ export function parseReportText(input: TextLine[], meta: Meta): LabParseResult {
     const tail = text.slice(match.index + match[0].length);
     if (COMMENTARY.test(tail) && !resultNumbers(tail.replace(/\d+\s*[-–]\s*\d+.*$/, '')).length) return;
     if (/^\s*(test|investigation|parameter)/i.test(text)) return;
+    // Section heading ("BLOOD GLUCOSE", "DIABETIC PROFILE") on its own row: not a result.
+    if (line.cells && line.cells.length === 1 && !/\d/.test(text) && text === text.toUpperCase()) return;
+    if (line.cells && line.cells.length) {
+      const idx = line.cells.findIndex(c => test.re.test(normalizeOcrLine(c.text)));
+      if (idx >= 0) {
+        const lt = normalizeOcrLine(line.cells[idx].text); const lm = test.re.exec(lt)!;
+        const pick = pickFromCells(line, idx, lt.slice(lm.index + lm[0].length), cols);
+        if (pick === 'skip') return;
+        if (pick) {
+          const confBase = Math.max(0.2, Math.min(1, pick.conf)) * 0.97;
+          found.push({ line: i, value: pick.value, unitText: pick.unitText, context: test.context, label: test.label, conf: test.context === 'unspecified' ? confBase - 0.05 : confBase, raw: pick.raw.slice(0, 200), locator: line.locator });
+          return;
+        }
+      }
+    }
     let nums = resultNumbers(tail); let raw = text; let unitLine = tail;
     if (!nums.length) {
       // Table layouts split by OCR: result on one of the next two lines.
       for (const next of lines.slice(i + 1, i + 3)) {
         if (TESTS.some(t => t.re.test(next.text)) || NON_GLUCOSE.some(n => n.re.test(next.text))) break;
+        // With geometry, a next row that starts with its own name is a different test, not our result.
+        if (next.cells?.length && /[A-Za-z]{2,}/.test(next.cells[0].text) && !resultNumbers(normalizeOcrLine(next.cells[0].text)).length) break;
         const n = resultNumbers(next.text); if (n.length && !COMMENTARY.test(next.text)) { nums = n; raw = `${text} / ${next.text}`; unitLine = next.text; break; }
       }
     }
@@ -153,7 +219,13 @@ export function parseMeterScreen(lines: TextLine[], meta: Meta): ImportCandidate
   const conf = lines.length ? lines.reduce((s, l) => s + (l.confidence ?? 0.7), 0) / lines.length : 0.5;
   const withUnit = /(?<![\d:./-])(\d{1,3}(?:\.\d)?)[ \t]*(mg\/dL|mmol\/L)/.exec(text);
   let value: string | null = null; let unit: GlucoseUnit | null = null;
-  if (withUnit) { value = normalizeDecimal(withUnit[1]); unit = unitFromText(withUnit[2]); }
+  // Geometry first: on a meter the reading is by far the tallest number on the screen.
+  const plausibleNum = (n: string) => (n.includes('.') && Number(n) >= 1.1 && Number(n) <= 33.3) || (!n.includes('.') && Number(n) >= 20 && Number(n) <= 600);
+  const tall = lines.flatMap(l => l.cells || []).filter(c => c.h && /^\d{2,3}(?:\.\d)?$/.test(normalizeOcrLine(c.text).replace(/\s/g, '')) && plausibleNum(normalizeOcrLine(c.text).replace(/\s/g, '')))
+    .sort((a, b) => (b.h || 0) - (a.h || 0));
+  const allH = lines.flatMap(l => l.cells || []).map(c => c.h || 0).sort((a, b) => a - b); const medH = allH[Math.floor(allH.length / 2)] || 0;
+  if (tall.length && (tall[0].h || 0) >= 1.6 * medH) { value = normalizeDecimal(normalizeOcrLine(tall[0].text).replace(/\s/g, '')); unit = unitFromText(text); }
+  else if (withUnit) { value = normalizeDecimal(withUnit[1]); unit = unitFromText(withUnit[2]); }
   else {
     const nums = lines.flatMap(l => resultNumbers(l.text.replace(/\d{1,2}[:.]\d{2}(\s*[AP]M)?/gi, ' ').replace(/\d{1,4}[/-]\d{1,2}([/-]\d{2,4})?|\d{1,2}\.\d{1,2}\.\d{2,4}/g, ' ')));
     const plausible = nums.map(n => normalizeDecimal(n)).filter((n): n is string => !!n && ((n.includes('.') && Number(n) >= 1.1 && Number(n) <= 33.3) || (!n.includes('.') && Number(n) >= 20 && Number(n) <= 600)));
@@ -171,7 +243,9 @@ export function parseMeterScreen(lines: TextLine[], meta: Meta): ImportCandidate
   const u = resolveUnit(value, unit, null);
   flags.push(...u.flags, ...plausibilityFlags(value, u.unit));
   if (!date) flags.push('missing-date'); if (!time) flags.push('missing-time');
-  const confidence = Math.round(Math.max(0.1, Math.min(0.75, conf * 0.7 * (unit ? 1 : 0.8))) * 100) / 100;
+  // Capped below LOW_CONFIDENCE (0.6): meter photos read 5 of 9 right on the blind held-out set,
+  // so every meter reading is flagged for a look against the meter before it can be saved.
+  const confidence = Math.round(Math.max(0.1, Math.min(0.55, conf * 0.7 * (unit ? 1 : 0.8))) * 100) / 100;
   return {
     id: `${meta.batchId}-m1`, value, unit: u.unit, unitSource: u.source, date: date ? displayDate(date) : '', time: time ? displayTime(time) : '', tzOffsetMinutes: null,
     mealContext: 'unspecified', note: 'Meter screen photo', confidence, flags, original: { value, unit },

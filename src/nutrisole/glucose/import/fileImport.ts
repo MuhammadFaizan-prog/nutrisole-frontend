@@ -1,7 +1,7 @@
 // One entry point for "attach a file" and "scan a report": detects the file type and
 // routes it to the tabular parser, the PDF text layer (with OCR fallback for scans) or
-// OCR. Text extraction and OCR are injected per platform (pdf.js + tesseract.js on web,
-// ML Kit on Android/iOS), so this module stays pure and testable.
+// OCR. Text extraction and OCR are injected per platform (pdf.js on web; PP-OCRv5 via
+// onnxruntime-web on web and onnxruntime-react-native on Android), so this module stays pure and testable.
 import type { ImportBatch, ImportFormat } from './types';
 import { autoMap, parseDelimited, rowsToCandidates } from './tabular';
 import { isXlsx, readXlsx } from './xlsx';

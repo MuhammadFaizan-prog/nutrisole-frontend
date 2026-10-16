@@ -31,8 +31,8 @@
       "@react-native-documents/picker": [
         "./node_modules/@react-native-documents/picker"
       ],
-      "@react-native-ml-kit/text-recognition": [
-        "./node_modules/@react-native-ml-kit/text-recognition"
+      "onnxruntime-react-native": [
+        "./node_modules/onnxruntime-react-native"
       ],
       "react-native-ble-plx": [
         "./node_modules/react-native-ble-plx"

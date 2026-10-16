@@ -1,13 +1,19 @@
-// Native configuration. Fill these two public values (project URL + publishable/anon
-// key) to connect the app to the approved Supabase project. Leave them null to show
-// the honest "Configure database" state. Never put a service-role/secret key here.
+// Native configuration: the public Supabase project URL + anon/publishable key come from
+// nativeEnv.ts (generated at build time by the QA APK workflow). Left null, the app shows the
+// honest "Configure database" state. Never put a service-role/secret key in the app.
 import type { GlucoseConfig } from './types';
+import { NATIVE_SUPABASE_URL, NATIVE_SUPABASE_ANON_KEY } from './nativeEnv';
 
-const SUPABASE_URL: string | null = null; // e.g. 'https://zlxefqhzceiloplyszje.supabase.co' after the migration is approved
-const SUPABASE_ANON_KEY: string | null = null; // publishable/anon key only
 /** Explicit demo flag: in-memory session records, clearly labelled as not saved. */
 const GLUCOSE_DEMO = false;
+const isPublicKey = (k: string | null) => !!k && (k.startsWith('sb_publishable_') || /"role"\s*:\s*"anon"/.test(decodeJwtPayload(k)));
+function decodeJwtPayload(k: string): string {
+  const part = k.split('.')[1]; if (!part) return '';
+  try { const b64 = part.replace(/-/g, '+').replace(/_/g, '/'); return typeof atob === 'function' ? atob(b64 + '='.repeat((4 - (b64.length % 4)) % 4)) : ''; } catch { return ''; }
+}
 
 export function readGlucoseConfig(): GlucoseConfig {
-  return { supabaseUrl: SUPABASE_URL, supabaseAnonKey: SUPABASE_ANON_KEY, demo: GLUCOSE_DEMO, demoSeed: false };
+  const url = NATIVE_SUPABASE_URL && /^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(NATIVE_SUPABASE_URL) ? NATIVE_SUPABASE_URL : null;
+  const key = isPublicKey(NATIVE_SUPABASE_ANON_KEY) ? NATIVE_SUPABASE_ANON_KEY : null; // refuses a service_role key
+  return { supabaseUrl: url && key ? url : null, supabaseAnonKey: url && key ? key : null, demo: GLUCOSE_DEMO, demoSeed: false };
 }

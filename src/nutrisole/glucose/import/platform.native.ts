@@ -1,12 +1,15 @@
 // Android/iOS import platform. Files: @react-native-documents/picker. Camera:
-// react-native-image-picker. OCR: Google ML Kit text recognition, on-device (no cloud).
+// react-native-image-picker. OCR: PaddleOCR PP-OCRv5 mobile via onnxruntime-react-native,
+// on-device (no cloud); the same pipeline as the web app.
 // Devices: Health Connect (react-native-health-connect), Bluetooth GLS
 // (react-native-ble-plx). HealthKit is a typed path only (no native module in this build).
 // BETA: none of the device paths has been exercised with real hardware or a real phone.
 import { PermissionsAndroid, Platform } from 'react-native';
 import { pick, keepLocalCopy, types, isErrorWithCode, errorCodes } from '@react-native-documents/picker';
 import { launchCamera } from 'react-native-image-picker';
-import TextRecognition from '@react-native-ml-kit/text-recognition';
+import { nativeOcrEngine } from '../ocr/runner.native';
+import { decodeImage } from '../ocr/decode';
+import type { Rgba } from '../ocr/ppocr';
 import { getSdkStatus, initialize, requestPermission, getGrantedPermissions, readRecords, openHealthConnectSettings, SdkAvailabilityStatus } from 'react-native-health-connect';
 import { BleManager, State, type Device, type Subscription } from 'react-native-ble-plx';
 import type { ConnectionStatus } from '../types';
@@ -39,20 +42,20 @@ async function captureReport(): Promise<PickedFile | null> {
     const r = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA, { title: 'Camera for report scanning', message: 'NutriSole uses the camera only to photograph a lab report or meter screen. Text is read on this phone; the photo is not uploaded.', buttonPositive: 'Allow', buttonNegative: 'Not now' });
     if (r !== PermissionsAndroid.RESULTS.GRANTED) throw new Error('Camera permission was denied. You can attach a photo of the report instead, or allow the camera in Settings.');
   }
-  const res = await launchCamera({ mediaType: 'photo', includeBase64: true, saveToPhotos: false, quality: 0.9, maxWidth: 2400, maxHeight: 2400 });
+  const res = await launchCamera({ mediaType: 'photo', includeBase64: true, saveToPhotos: false, quality: 0.9, maxWidth: 2000, maxHeight: 2000 });
   if (res.didCancel) return null;
   if (res.errorCode) throw new Error(res.errorCode === 'camera_unavailable' ? 'No camera is available on this device.' : res.errorCode === 'permission' ? 'Camera permission was denied.' : res.errorMessage || 'The camera could not be opened.');
   const a = res.assets?.[0]; if (!a?.uri || !a.base64) return null;
   return { name: a.fileName || 'scan.jpg', mime: a.type || 'image/jpeg', bytes: base64ToBytes(a.base64), uri: a.uri } as PickedFile & { uri: string };
 }
 
-async function mlKitOcr(file: PickedFile): Promise<OcrResult> {
-  // ML Kit reads the local file:// / content:// copy; nothing is uploaded.
-  const uri = (file as PickedFile & { uri?: string }).uri;
-  if (!uri) throw new Error('This image could not be opened for on-device OCR.');
-  const result = await TextRecognition.recognize(uri);
-  const lines = result.blocks.flatMap((b, bi) => b.lines.map((l, li) => ({ text: l.text, confidence: null, locator: `block ${bi + 1} line ${li + 1}` })));
-  return { lines, confidence: null, engine: 'ML Kit (on-device)' };
+const pixels = new WeakMap<PickedFile, Rgba>();
+async function ppOcr(file: PickedFile, onProgress?: (p: string) => void, mode: 'document' | 'sparse' = 'document'): Promise<OcrResult> {
+  // Decoded in JS from the bytes we already hold (JPEG/PNG); nothing is uploaded.
+  const engine = await nativeOcrEngine(onProgress);
+  let img = pixels.get(file);
+  if (!img) { onProgress?.('Preparing the photo…'); await new Promise(r => setTimeout(r, 0)); img = decodeImage(file.bytes, 1800); pixels.set(file, img); }
+  return engine.recognize(img, mode, onProgress);
 }
 
 // ---- Health Connect ----
@@ -146,9 +149,9 @@ const bleBridge: BleBridge = {
 
 export function createImportPlatform(): ImportPlatform {
   return {
-    kind: 'native', os: Platform.OS === 'android' ? 'android' : Platform.OS === 'ios' ? 'ios' : 'other', ocrEngine: 'ML Kit (on this phone)',
+    kind: 'native', os: Platform.OS === 'android' ? 'android' : Platform.OS === 'ios' ? 'ios' : 'other', ocrEngine: 'PP-OCRv5 (on this phone)',
     pickFile, captureReport,
-    extractors: { pdfText: async () => null, imageOcr: file => mlKitOcr(file) },
+    extractors: { pdfText: async () => null, imageOcr: (file, onProgress, mode) => ppOcr(file, onProgress, mode) },
     devices: { healthConnect: Platform.OS === 'android' ? healthConnect : null, healthKit, ble: bleBridge },
   };
 }

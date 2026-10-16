@@ -1,5 +1,5 @@
 // What each platform provides to the import flow. Web: file + camera input, pdf.js and
-// tesseract.js. Android/iOS: document picker, camera, ML Kit OCR, Health Connect /
+// PP-OCRv5 OCR (onnxruntime-web). Android: document picker, camera, PP-OCRv5 OCR (onnxruntime-react-native), Health Connect /
 // HealthKit and Bluetooth GLS. Device import does not exist on web.
 import type { ConnectionStatus } from '../types';
 import type { PickedFile, TextExtractors } from './fileImport';
@@ -29,7 +29,7 @@ export type ImportPlatform = {
   /** Opens the camera; resolves null when cancelled. */
   captureReport(): Promise<PickedFile | null>;
   extractors: TextExtractors;
-  /** OCR engine shown in provenance and UI ("tesseract.js 7 (in-browser)", "ML Kit (on-device)"). */
+  /** OCR engine shown in provenance and UI ("PP-OCRv5 (in your browser)", "PP-OCRv5 (on this phone)"). */
   ocrEngine: string;
   devices: DeviceBridges | null;
 };

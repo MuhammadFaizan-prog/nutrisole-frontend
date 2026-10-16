@@ -1,0 +1,1107 @@
+{
+ "split": "heldout2",
+ "note": "Synthetic only; no real patient data.",
+ "images": [
+  {
+   "file": "heldout2-00-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 52,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "240",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "fasting",
+     "value": "185",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "after_meal",
+     "value": "112",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 9,
+    "d": 7
+   },
+   "nonGlucose": [],
+   "font": "DejaVuSerif.ttf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-00-lab-report-clean.jpg",
+   "variant": "clean",
+   "jpegQuality": 90,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "240",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "fasting",
+     "value": "185",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "after_meal",
+     "value": "112",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 9,
+    "d": 7
+   },
+   "nonGlucose": [],
+   "font": "DejaVuSerif.ttf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-01-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 51,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "fasting",
+     "value": "7.9",
+     "unit": "mmol/L"
+    },
+    {
+     "type": "random",
+     "value": "7.6",
+     "unit": "mmol/L"
+    },
+    {
+     "type": "after_meal",
+     "value": "13.6",
+     "unit": "mmol/L"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 4,
+    "d": 15
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "5.3"
+    }
+   ],
+   "font": "NimbusMonoPS-Regular.otf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-02-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 70,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "fasting",
+     "value": "6.9",
+     "unit": "mmol/L"
+    },
+    {
+     "type": "random",
+     "value": "7.0",
+     "unit": "mmol/L"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 8,
+    "d": 25
+   },
+   "nonGlucose": [],
+   "font": "P052-Roman.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-03-meter-screen-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 64,
+   "kind": "meter-screen",
+   "readings": [
+    {
+     "type": "unspecified",
+     "value": "245",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 10,
+    "d": 11
+   },
+   "time": "20:58",
+   "nonGlucose": [],
+   "font": "NimbusSansNarrow-Bold.otf",
+   "template": "lcd"
+  },
+  {
+   "file": "heldout2-04-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 52,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "263",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "fasting",
+     "value": "127",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 5,
+    "d": 10
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "6.3"
+    }
+   ],
+   "font": "URWGothic-Book.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-05-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 69,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "after_meal",
+     "value": "99",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "random",
+     "value": "246",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 7,
+    "d": 7
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "7.3"
+    }
+   ],
+   "font": "NimbusSans-Regular.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-06-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 57,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "fasting",
+     "value": "124",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 7,
+    "d": 8
+   },
+   "nonGlucose": [],
+   "font": "C059-Roman.otf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-06-lab-report-clean.jpg",
+   "variant": "clean",
+   "jpegQuality": 90,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "fasting",
+     "value": "124",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 7,
+    "d": 8
+   },
+   "nonGlucose": [],
+   "font": "C059-Roman.otf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-07-meter-screen-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 74,
+   "kind": "meter-screen",
+   "readings": [
+    {
+     "type": "unspecified",
+     "value": "10.3",
+     "unit": "mmol/L"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 9,
+    "d": 16
+   },
+   "time": "09:21",
+   "nonGlucose": [],
+   "font": "URWBookman-Demi.otf",
+   "template": "lcd"
+  },
+  {
+   "file": "heldout2-08-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 67,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "313",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 6,
+    "d": 2
+   },
+   "nonGlucose": [],
+   "font": "DejaVuSerif.ttf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-09-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 60,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "after_meal",
+     "value": "200",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "random",
+     "value": "209",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "fasting",
+     "value": "84",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 7,
+    "d": 18
+   },
+   "nonGlucose": [],
+   "font": "NimbusMonoPS-Regular.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-10-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 68,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "fasting",
+     "value": "151",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 9,
+    "d": 6
+   },
+   "nonGlucose": [],
+   "font": "P052-Roman.otf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-11-meter-screen-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 52,
+   "kind": "meter-screen",
+   "readings": [
+    {
+     "type": "unspecified",
+     "value": "12.0",
+     "unit": "mmol/L"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 6,
+    "d": 19
+   },
+   "time": "13:38",
+   "nonGlucose": [],
+   "font": "NimbusSansNarrow-Bold.otf",
+   "template": "lcd"
+  },
+  {
+   "file": "heldout2-12-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 67,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "14.1",
+     "unit": "mmol/L"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 2,
+    "d": 18
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "10.1"
+    }
+   ],
+   "font": "URWGothic-Book.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-12-lab-report-clean.jpg",
+   "variant": "clean",
+   "jpegQuality": 90,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "14.1",
+     "unit": "mmol/L"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 2,
+    "d": 18
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "10.1"
+    }
+   ],
+   "font": "URWGothic-Book.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-13-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 67,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "after_meal",
+     "value": "255",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "random",
+     "value": "261",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 8,
+    "d": 13
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "9.9"
+    }
+   ],
+   "font": "NimbusSans-Regular.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-14-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 73,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "after_meal",
+     "value": "266",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 10,
+    "d": 1
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "7.2"
+    }
+   ],
+   "font": "C059-Roman.otf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-15-meter-screen-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 73,
+   "kind": "meter-screen",
+   "readings": [
+    {
+     "type": "unspecified",
+     "value": "13.1",
+     "unit": "mmol/L"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 8,
+    "d": 22
+   },
+   "time": "22:26",
+   "nonGlucose": [],
+   "font": "URWBookman-Demi.otf",
+   "template": "lcd"
+  },
+  {
+   "file": "heldout2-16-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 63,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "184",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 9,
+    "d": 14
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "9.5"
+    }
+   ],
+   "font": "DejaVuSerif.ttf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-17-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 68,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "after_meal",
+     "value": "108",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "random",
+     "value": "246",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "fasting",
+     "value": "88",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 4,
+    "d": 28
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "8.8"
+    }
+   ],
+   "font": "NimbusMonoPS-Regular.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-18-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 74,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "fasting",
+     "value": "73",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "random",
+     "value": "86",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 5,
+    "d": 17
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "5.7"
+    }
+   ],
+   "font": "P052-Roman.otf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-18-lab-report-clean.jpg",
+   "variant": "clean",
+   "jpegQuality": 90,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "fasting",
+     "value": "73",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "random",
+     "value": "86",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 5,
+    "d": 17
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "5.7"
+    }
+   ],
+   "font": "P052-Roman.otf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-19-meter-screen-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 41,
+   "kind": "meter-screen",
+   "readings": [
+    {
+     "type": "unspecified",
+     "value": "310",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 2,
+    "d": 17
+   },
+   "time": "07:24",
+   "nonGlucose": [],
+   "font": "NimbusSansNarrow-Bold.otf",
+   "template": "lcd"
+  },
+  {
+   "file": "heldout2-20-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 66,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "fasting",
+     "value": "94",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "after_meal",
+     "value": "239",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 10,
+    "d": 2
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "10.2"
+    }
+   ],
+   "font": "URWGothic-Book.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-21-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 69,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "fasting",
+     "value": "144",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 9,
+    "d": 28
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "6.6"
+    }
+   ],
+   "font": "NimbusSans-Regular.otf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-22-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 44,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "after_meal",
+     "value": "6.4",
+     "unit": "mmol/L"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 10,
+    "d": 15
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "6.7"
+    }
+   ],
+   "font": "C059-Roman.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-23-meter-screen-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 69,
+   "kind": "meter-screen",
+   "readings": [
+    {
+     "type": "unspecified",
+     "value": "8.4",
+     "unit": "mmol/L"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 10,
+    "d": 1
+   },
+   "time": "08:42",
+   "nonGlucose": [],
+   "font": "URWBookman-Demi.otf",
+   "template": "lcd"
+  },
+  {
+   "file": "heldout2-24-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 60,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "after_meal",
+     "value": "260",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "fasting",
+     "value": "169",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 1,
+    "d": 10
+   },
+   "nonGlucose": [],
+   "font": "DejaVuSerif.ttf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-24-lab-report-clean.jpg",
+   "variant": "clean",
+   "jpegQuality": 90,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "after_meal",
+     "value": "260",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "fasting",
+     "value": "169",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 1,
+    "d": 10
+   },
+   "nonGlucose": [],
+   "font": "DejaVuSerif.ttf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-25-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 71,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "161",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "after_meal",
+     "value": "126",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 6,
+    "d": 21
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "5.7"
+    }
+   ],
+   "font": "NimbusMonoPS-Regular.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-26-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 71,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "13.2",
+     "unit": "mmol/L"
+    },
+    {
+     "type": "after_meal",
+     "value": "5.9",
+     "unit": "mmol/L"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 4,
+    "d": 28
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "10.1"
+    }
+   ],
+   "font": "P052-Roman.otf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-27-meter-screen-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 68,
+   "kind": "meter-screen",
+   "readings": [
+    {
+     "type": "unspecified",
+     "value": "135",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 1,
+    "d": 13
+   },
+   "time": "21:56",
+   "nonGlucose": [],
+   "font": "NimbusSansNarrow-Bold.otf",
+   "template": "lcd"
+  },
+  {
+   "file": "heldout2-28-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 47,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "210",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 6,
+    "d": 22
+   },
+   "nonGlucose": [],
+   "font": "URWGothic-Book.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-29-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 71,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "after_meal",
+     "value": "242",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "fasting",
+     "value": "112",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 8,
+    "d": 9
+   },
+   "nonGlucose": [],
+   "font": "NimbusSans-Regular.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-30-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 51,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "100",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 6,
+    "d": 5
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "5.3"
+    }
+   ],
+   "font": "C059-Roman.otf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-30-lab-report-clean.jpg",
+   "variant": "clean",
+   "jpegQuality": 90,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "100",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 6,
+    "d": 5
+   },
+   "nonGlucose": [
+    {
+     "kind": "hba1c",
+     "value": "5.3"
+    }
+   ],
+   "font": "C059-Roman.otf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-31-meter-screen-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 63,
+   "kind": "meter-screen",
+   "readings": [
+    {
+     "type": "unspecified",
+     "value": "189",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 9,
+    "d": 5
+   },
+   "time": "09:57",
+   "nonGlucose": [],
+   "font": "URWBookman-Demi.otf",
+   "template": "lcd"
+  },
+  {
+   "file": "heldout2-32-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 74,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "after_meal",
+     "value": "123",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 7,
+    "d": 20
+   },
+   "nonGlucose": [],
+   "font": "DejaVuSerif.ttf",
+   "template": "unit-last"
+  },
+  {
+   "file": "heldout2-33-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 45,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "random",
+     "value": "9.8",
+     "unit": "mmol/L"
+    },
+    {
+     "type": "fasting",
+     "value": "8.5",
+     "unit": "mmol/L"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 3,
+    "d": 24
+   },
+   "nonGlucose": [],
+   "font": "NimbusMonoPS-Regular.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-34-lab-report-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 74,
+   "kind": "lab-report",
+   "readings": [
+    {
+     "type": "fasting",
+     "value": "89",
+     "unit": "mg/dL"
+    },
+    {
+     "type": "random",
+     "value": "271",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 3,
+    "d": 2
+   },
+   "nonGlucose": [],
+   "font": "P052-Roman.otf",
+   "template": "unit-before-range"
+  },
+  {
+   "file": "heldout2-35-meter-screen-photo.jpg",
+   "variant": "photo",
+   "jpegQuality": 71,
+   "kind": "meter-screen",
+   "readings": [
+    {
+     "type": "unspecified",
+     "value": "144",
+     "unit": "mg/dL"
+    }
+   ],
+   "date": {
+    "y": 2026,
+    "m": 3,
+    "d": 25
+   },
+   "time": "22:42",
+   "nonGlucose": [],
+   "font": "NimbusSansNarrow-Bold.otf",
+   "template": "lcd"
+  }
+ ]
+}
