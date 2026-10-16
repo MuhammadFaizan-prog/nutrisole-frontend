@@ -2,6 +2,7 @@
 // node --experimental-strip-types --import ./tests/glucose/resolve-ts.mjs tests/glucose/native-score.mjs INPUT.json OUTPUT.json
 import fs from 'node:fs';
 import path from 'node:path';
+import assert from 'node:assert/strict';
 import { nativeCaptureResult } from '../../src/nutrisole/glucose/ocr/nativeResult.ts';
 import { parseReportText } from '../../src/nutrisole/glucose/import/labText.ts';
 import { displayDate } from '../../src/nutrisole/glucose/import/dates.ts';
@@ -62,3 +63,7 @@ const times = Object.values(output).map(r => r.durationMs).sort((a, b) => a - b)
 const report = { syntheticOnly: true, summary: agg, timing: { files: times.length, min: times[0], median: times[Math.floor(times.length / 2)], p95: times[Math.floor(times.length * .95)], max: times.at(-1) }, details };
 fs.writeFileSync(outputFile, JSON.stringify(report, null, 2));
 console.log(JSON.stringify({ ...report, details: undefined }, null, 2));
+// A functioning engine must recover the known clean baseline. Report the wider
+// held-out result as measured; it is not a clinical accuracy certification.
+const baseline = details.find(d => d.file === 'heldout2-00-lab-report-clean.jpg');
+assert.ok(baseline?.fields.length && baseline.fields.every(f => f.correct), 'Native OCR must recover the clean baseline values, units and reading types');

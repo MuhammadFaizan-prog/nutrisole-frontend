@@ -65,7 +65,11 @@ class GlucoseCaptureTest {
         context.assets.open(name).use { src -> file.outputStream().use { src.copyTo(it) } }
         val result = call { module.recognize(file.toURI().toString(), name.endsWith(".pdf"), name, it) } as WritableMap
         val data = JSONObject(result.toHashMap() as Map<*, *>)
-        assertTrue("No text on $name", data.getJSONArray("pages").length() > 0)
+        val pages = data.getJSONArray("pages")
+        assertTrue("No page on $name", pages.length() > 0)
+        if (name == "heldout2-00-lab-report-clean.jpg") {
+          assertTrue("Bundled OCR returned no text for the clean baseline", (0 until pages.length()).any { pages.getJSONObject(it).getJSONArray("boxes").length() > 0 })
+        }
         output.put(name, data)
         file.delete()
         instrumentation.sendStatus(0, Bundle().apply { putString("stream", "GLUCOSE reader $name: ${data.getDouble("durationMs")} ms\n") })

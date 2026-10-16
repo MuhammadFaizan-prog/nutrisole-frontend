@@ -12,7 +12,7 @@ import { fileToBatch, remapBatch, ImportFileError } from './import/fileImport';
 import { assessBatch, bulk, canConfirm, draftsToSave, editCandidate, flagText, setDecision } from './import/review';
 import { glsToBatch, healthConnectToBatch, healthKitToBatch } from './import/devices';
 import { remap, setColumnUnit, setDateOrder } from './import/tabular';
-import { initialImportState, type ImportUiState } from './import/view';
+import { IMPORT_PAGE_SIZE, initialImportState, type ImportUiState } from './import/view';
 import { contextLabel } from './validation';
 import { parseDisplayDate, parseDisplayTime } from './time';
 import type { ImportBatch, TabularMapping } from './import/types';
@@ -34,7 +34,7 @@ const notice = (ctx: Ctx, title: string, description: string, choices?: Sheet['c
 function startBatch(ctx: Ctx, batch: ImportBatch) {
   ctx.setState(v => {
     const old = imp(v); const previous = old.batch?.id === batch.id ? new Map(old.batch.candidates.map(c => [c.provenance.recordId, c])) : null;
-    return { ...v, glucoseImport: { ...old, batch: { ...batch, candidates: batch.candidates.map(c => { const prior = previous?.get(c.provenance.recordId); return prior?.edited ? prior : prior ? { ...c, decision: prior.decision } : c; }) }, busy: null, error: null, result: null } };
+    return { ...v, glucoseImport: { ...old, page: previous ? old.page || 0 : 0, batch: { ...batch, candidates: batch.candidates.map(c => { const prior = previous?.get(c.provenance.recordId); return prior?.edited ? prior : prior ? { ...c, decision: prior.decision } : c; }) }, busy: null, error: null, result: null } };
   });
   ctx.go('import-review');
 }
@@ -81,7 +81,7 @@ function connectMeter(ctx: Ctx, device: BleMeter) {
         const batch = toBatch(r);
         ctx.setState(v => {
           const current = imp(v); const existing = current.batch?.id === batchId ? new Map(current.batch.candidates.map(c => [c.provenance.recordId, c])) : null;
-              return { ...v, glucoseImport: { ...current, batch: { ...batch, candidates: batch.candidates.map(c => { const old = existing?.get(c.provenance.recordId); return old?.edited ? old : old ? { ...c, decision: old.decision } : c; }) } } };
+          return { ...v, glucoseImport: { ...current, page: existing ? current.page || 0 : 0, batch: { ...batch, candidates: batch.candidates.map(c => { const old = existing?.get(c.provenance.recordId); return old?.edited ? old : old ? { ...c, decision: old.decision } : c; }) } } };
         });
         if (!showing) ctx.go('import-review'); showing = true; published = Date.now();
       }
@@ -197,6 +197,14 @@ function save(ctx: Ctx) {
 /** Returns true when the action belonged to the import flow. */
 export function importAction(action: string, ctx: Ctx): boolean {
   const p = () => importPlatform();
+  if (action === 'import-page:next' || action === 'import-page:previous') {
+    ctx.setState(v => {
+      const ui = imp(v); const last = Math.max(0, Math.ceil((ui.batch?.candidates.length || 0) / IMPORT_PAGE_SIZE) - 1);
+      const current = Math.max(0, Math.min(last, Math.floor(ui.page || 0)));
+      const page = Math.max(0, Math.min(last, current + (action === 'import-page:next' ? 1 : -1)));
+      return { ...v, glucoseImport: { ...ui, page } };
+    }); return true;
+  }
   if (action.startsWith('import-device:')) { deviceImport(ctx, action.slice(14) as 'health_connect' | 'healthkit' | 'ble_meter'); return true; }
   if (action.startsWith('import-meter:')) { const device = imp(ctx.s).foundMeters?.find(d => d.id === action.slice(13)); if (device) connectMeter(ctx, device); return true; }
   if (action.startsWith('import-row:')) { rowSheet(ctx, action.slice(11)); return true; }

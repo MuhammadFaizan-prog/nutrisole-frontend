@@ -265,9 +265,14 @@ export function buildScene(id: ExtensionRoute, s = initialExpansionState()): Sce
       add('button', 20, y, 172, 44, { text: 'Confirm all unflagged', action: 'import-bulk:confirm-clean', size: 13, bold: true, fill: colors.card, color: colors.green, radius: 14 });
       add('button', 201, y, 172, 44, { text: 'Reject all', action: 'import-bulk:reject-all', size: 13, bold: true, fill: colors.card, color: colors.green, radius: 14 }); y += 58;
       text('TAP A ROW TO CHECK, EDIT, CONFIRM OR REJECT', 28, y, 330, 11, { color: colors.muted }); y += 22;
+      if (v.pageCount > 1) {
+        text(`Readings ${v.pageStart + 1}–${v.pageEnd} of ${v.totalRows} · Page ${v.page + 1} of ${v.pageCount}`, 28, y, 330, 12, { color: colors.muted }); y += 24;
+        add('button', 20, y, 172, 44, { text: 'Previous page', action: 'import-page:previous', disabled: v.page === 0, size: 13, fill: colors.card, color: colors.green, radius: 14 });
+        add('button', 201, y, 172, 44, { text: 'Next page', action: 'import-page:next', disabled: v.page + 1 === v.pageCount, size: 13, fill: colors.card, color: colors.green, radius: 14 }); y += 58;
+      }
       if (!v.rows.length) { note('No glucose readings were recognised. Check the column mapping, or enter the reading manually.', y, 64, colors.card); y += 74; }
       v.rows.forEach(r => { row(y, `${r.decision === 'confirmed' ? '✓ ' : r.decision === 'rejected' ? '✕ ' : ''}${r.title}`, r.decision === 'confirmed' ? 'Confirmed' : r.decision === 'rejected' ? 'Rejected' : 'To check', r.icon, `import-row:${r.id}`, r.description, { fill: r.decision === 'confirmed' ? '#f0f6ed' : r.decision === 'rejected' ? '#f1efe9' : colors.card }); y += 85; });
-      if (v.hiddenRows) { note(`${v.hiddenRows} more rows are not shown. Use "Confirm all unflagged" or import a shorter range.`, y, 58, colors.card); y += 68; }
+      if (v.hiddenRows) { note('Use the page controls above to check the remaining readings. Your edits and confirmations stay on every page.', y, 64, colors.card); y += 74; }
       const by = Math.max(740, y + 8);
       button(v.saveLabel, by, 'import-save', 'primary', { h: 50, disabled: !v.canSave });
       button('Discard import', by + 60, 'import-cancel', 'text', { size: 14 });

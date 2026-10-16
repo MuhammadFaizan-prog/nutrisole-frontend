@@ -6,7 +6,8 @@ import type { ImportBatch } from './types';
 import { assessBatch, flagText, summarize, INFO, type AssessedCandidate } from './review';
 import type { BleMeter } from './scan';
 
-export type ImportUiState = { batch: ImportBatch | null; busy: string | null; error: string | null; saving: boolean; result: string | null; lastSequence: Record<string, number>; foundMeters?: BleMeter[] };
+export const IMPORT_PAGE_SIZE = 40;
+export type ImportUiState = { batch: ImportBatch | null; busy: string | null; error: string | null; saving: boolean; result: string | null; lastSequence: Record<string, number>; foundMeters?: BleMeter[]; page?: number };
 export const initialImportState = (): ImportUiState => ({ batch: null, busy: null, error: null, saving: false, result: null, lastSequence: {} });
 
 export type ImportRowView = { id: string; title: string; description: string; decision: 'pending' | 'confirmed' | 'rejected'; flagged: boolean; icon: string };
@@ -16,6 +17,7 @@ export type ImportView = {
   hasBatch: boolean; title: string; subtitle: string; summary: string;
   notes: string[]; nonGlucose: string | null; mapping: { label: string; value: string } | null;
   rows: ImportRowView[]; hiddenRows: number; confirmed: number; saveLabel: string; canSave: boolean;
+  page: number; pageCount: number; pageStart: number; pageEnd: number; totalRows: number;
   meters: BleMeter[]; importedCount: number; lastImport: string;
 };
 
@@ -34,10 +36,14 @@ export function rowView(a: AssessedCandidate): ImportRowView {
   };
 }
 
-export function buildImportView(ui: ImportUiState | undefined, existing: GlucoseReading[], platform: 'web' | 'native', now = new Date(), maxRows = 40): ImportView {
+export function buildImportView(ui: ImportUiState | undefined, existing: GlucoseReading[], platform: 'web' | 'native', now = new Date(), maxRows = IMPORT_PAGE_SIZE): ImportView {
   const s = ui ?? initialImportState(); const b = s.batch;
   const assessed = b ? assessBatch(b, existing, now) : [];
   const sum = summarize(assessed);
+  const pageSize = Math.max(1, Math.floor(maxRows) || IMPORT_PAGE_SIZE);
+  const pageCount = Math.max(1, Math.ceil(assessed.length / pageSize));
+  const page = Math.max(0, Math.min(pageCount - 1, Math.floor(s.page || 0)));
+  const pageStart = page * pageSize; const pageEnd = Math.min(assessed.length, pageStart + pageSize);
   const m = b?.table?.mapping;
   const col = (i: number | null) => (i === null || !m ? '—' : m.header[i] || `column ${i + 1}`);
   const imported = existing.filter(r => r.source.type !== 'manual');
@@ -51,7 +57,8 @@ export function buildImportView(ui: ImportUiState | undefined, existing: Glucose
     notes: b?.notes.filter(Boolean).slice(0, 3) ?? [],
     nonGlucose: b?.nonGlucose.length ? `Not imported as glucose: ${b.nonGlucose.map(n => `${n.label} ${n.value}${n.unit ? ` ${n.unit}` : ''}`).join(' · ')}` : null,
     mapping: m ? { label: m.auto ? 'Columns · detected' : 'Columns · set by you', value: `Value: ${col(m.value)}${m.columnUnit ? ` (${m.columnUnit})` : m.unit !== null ? ` · Unit: ${col(m.unit)}` : ''} · ${m.datetime !== null ? `Date & time: ${col(m.datetime)}` : `Date: ${col(m.date)} · Time: ${col(m.time)}`} · ${m.dateOrder}` } : null,
-    rows: assessed.slice(0, maxRows).map(rowView), hiddenRows: Math.max(0, assessed.length - maxRows),
+    page, pageCount, pageStart, pageEnd, totalRows: assessed.length,
+    rows: assessed.slice(pageStart, pageEnd).map(rowView), hiddenRows: Math.max(0, assessed.length - pageSize),
     confirmed: sum.confirmed, saveLabel: s.saving ? 'Saving…' : s.busy ? 'Transfer in progress…' : sum.confirmed ? `Save ${sum.confirmed} confirmed reading${sum.confirmed === 1 ? '' : 's'}` : 'Confirm readings to save', canSave: sum.confirmed > 0 && !s.saving && !s.busy,
   };
 }

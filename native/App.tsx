@@ -29,7 +29,7 @@ export default function App() {
   const close = () => { Keyboard.dismiss(); setSheet(null); };
   const save = () => { const message = sheet?.save?.(values); if (message) setError(message); else close(); };
   const openScreen = (next: Route) => { close(); setRequestedIntent('push'); setRequestedRoute(next); setNavigationToken(token => token + 1); };
-  return <SafeAreaProvider initialMetrics={initialWindowMetrics}><View style={[styles.app, currentRoute === 'scan' && { backgroundColor: '#111' }]}>
+  return <SafeAreaProvider initialMetrics={initialWindowMetrics}><View testID={`screen-${currentRoute}`} style={[styles.app, currentRoute === 'scan' && { backgroundColor: '#111' }]}>
     <StatusBar barStyle={currentRoute === 'scan' ? 'light-content' : 'dark-content'} />
     <SafeAreaView style={styles.flex} edges={['top', 'left', 'right', 'bottom']}><KeyboardFrame style={styles.flex}><FrameProvider>
       <NutriSole requestedRoute={requestedRoute} requestedIntent={requestedIntent} navigationToken={navigationToken} open={next => { Keyboard.dismiss(); setSheet(withNativeDestinations(next, openScreen)); }} routeChanged={setCurrentRoute} />
