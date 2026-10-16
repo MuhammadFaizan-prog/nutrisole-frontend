@@ -8,6 +8,8 @@ import type { VerifyResult } from '../pipeline/verify.ts';
 import { V1_CLASSES } from '../models/labels.ts';
 import { H2_CLASSES } from '../pipeline/verify.ts';
 import type { QualityMetrics, Hint } from './live.ts';
+import type { Suppressed } from './guard.ts';
+import type { SceneGuardParams } from '../pipeline/postprocess.ts';
 
 export const DIAG_DIR_NAME = 'diag';
 export const DIAG_JSONL = 'nscv_diag.jsonl';
@@ -76,4 +78,34 @@ export function toBase64(u: Uint8Array): string {
   for (; i + 2 < u.length; i += 3) { const n = (u[i] << 16) | (u[i + 1] << 8) | u[i + 2]; s += B64[(n >> 18) & 63] + B64[(n >> 12) & 63] + B64[(n >> 6) & 63] + B64[n & 63]; }
   if (i < u.length) { const n = (u[i] << 16) | ((u[i + 1] ?? 0) << 8); s += B64[(n >> 18) & 63] + B64[(n >> 12) & 63] + (i + 1 < u.length ? B64[(n >> 6) & 63] : '=') + '='; }
   return s;
+}
+
+// ---- G9 Stage J9: scene-guard suppressions, logged SEPARATELY from decisions (logcat prefix "NSCV suppressed", JSONL kind
+// 'scene_guard_suppressed'). Report-only. Rate-limited: at most one record per SUPPRESSED_LOG_MIN_MS per path; the counts between two
+// records are accumulated so nothing is silently lost.
+export const SUPPRESSED_LOG_MIN_MS = 1000;
+export type SuppressedInput = { path: 'live' | 'closeup' | 'tap3'; tMs: number; frame: [number, number]; params: SceneGuardParams; decodeFloor: number; nIn: number; suppressed: Suppressed[];
+  framesSinceLast?: number; suppressedSinceLast?: number; droppedTracks?: number; hintVisible?: boolean };
+export function suppressedRecord(d: SuppressedInput): Record<string, unknown> {
+  return {
+    v: 1, kind: 'scene_guard_suppressed', path: d.path, t_ms: d.tMs, frame: d.frame,
+    guard: { min_area_frac: d.params.minAreaFrac, max_same_class: d.params.maxSameClass }, decode_floor: d.decodeFloor,
+    n_in: d.nIn, n_kept: d.nIn - d.suppressed.length, n_suppressed: d.suppressed.length,
+    frames_since_last: d.framesSinceLast ?? 1, suppressed_since_last: d.suppressedSinceLast ?? d.suppressed.length,
+    dropped_tracks: d.droppedTracks ?? 0, move_closer_hint: d.hintVisible ?? false,
+    items: d.suppressed.slice(0, 8).map((s) => ({ cls: cls(s.classId), score: r(s.score), area_frac: r(s.areaFrac, 5), reason: s.reason, box: s.box.map((v) => Math.round(v)) })),
+  };
+}
+export const suppressedLine = (rec: Record<string, unknown>) => `NSCV suppressed ${JSON.stringify(rec)}`;
+/** Per-path rate limiter for suppressed records. */
+export function createSuppressedLogger(minMs = SUPPRESSED_LOG_MIN_MS) {
+  let last = -Infinity; let frames = 0; let n = 0;
+  return {
+    /** Feed every guarded frame; returns the accumulators when a record is due (null otherwise). */
+    feed(tMs: number, nSuppressed: number): { framesSinceLast: number; suppressedSinceLast: number } | null {
+      if (nSuppressed > 0) { frames += 1; n += nSuppressed; }
+      if (!n || tMs - last < minMs) return null;
+      const out = { framesSinceLast: frames, suppressedSinceLast: n }; last = tMs; frames = 0; n = 0; return out;
+    },
+  };
 }
