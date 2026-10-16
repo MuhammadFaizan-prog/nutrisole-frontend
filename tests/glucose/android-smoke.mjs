@@ -31,7 +31,7 @@ function observe(name, owner = app) {
   fs.writeFileSync(path.join(out, `${name}.xml`), currentXml);
   // An isolated emulator's Pixel Launcher can ANR behind the instrumentation
   // activity. Record and close only that named system dialog, never an app ANR.
-  if (nodes().some(n => n.text === "Pixel Launcher isn't responding")) {
+  if (nodes().some(n => n.package === 'android' && n.text === "Pixel Launcher isn't responding")) {
     assert.ok(++launcherAnrs <= 2, 'The emulator launcher repeatedly stopped responding');
     screenshot(`system-launcher-anr-${launcherAnrs}`);
     fs.writeFileSync(path.join(out, `system-launcher-anr-${launcherAnrs}.xml`), currentXml);
