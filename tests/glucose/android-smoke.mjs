@@ -23,13 +23,26 @@ assert.ok(size, 'Android display size is available');
 const [width, height] = size.slice(1).map(Number);
 const decode = v => v.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&apos;', "'").replaceAll('&#10;', '\n');
 let currentXml = '';
+let launcherAnrs = 0;
 const nodes = () => [...currentXml.matchAll(/<node\s+([^>]+)>/g)].map(m => Object.fromEntries([...m[1].matchAll(/([\w-]+)="([^"]*)"/g)].map(x => [x[1], decode(x[2])])));
 function observe(name, owner = app) {
   adb('shell', 'uiautomator', 'dump', '/sdcard/glucose-ui.xml');
   currentXml = adb('shell', 'cat', '/sdcard/glucose-ui.xml');
+  fs.writeFileSync(path.join(out, `${name}.xml`), currentXml);
+  // An isolated emulator's Pixel Launcher can ANR behind the instrumentation
+  // activity. Record and close only that named system dialog, never an app ANR.
+  if (nodes().some(n => n.text === "Pixel Launcher isn't responding")) {
+    assert.ok(++launcherAnrs <= 2, 'The emulator launcher repeatedly stopped responding');
+    screenshot(`system-launcher-anr-${launcherAnrs}`);
+    fs.writeFileSync(path.join(out, `system-launcher-anr-${launcherAnrs}.xml`), currentXml);
+    const close = nodes().find(n => n['resource-id'] === 'android:id/aerr_close' || n.text === 'Close app');
+    assert.ok(close, 'Pixel Launcher ANR exposes its close control');
+    tapNode(close);
+    adb('shell', 'am', 'force-stop', 'com.google.android.apps.nexuslauncher');
+    return observe(name, owner);
+  }
   assert.ok(currentXml.includes('<hierarchy'), `Android returned a UI hierarchy: ${name}`);
   if (owner) assert.ok(currentXml.includes(owner), `Expected app owns the visible UI: ${name}`);
-  fs.writeFileSync(path.join(out, `${name}.xml`), currentXml);
   return currentXml;
 }
 async function visible(name, pattern, owner = app) {
@@ -151,5 +164,5 @@ screenshot('import-sources');
 const errors = adb('logcat', '-d', `--uid=${appUid}`, '-s', 'ReactNativeJS:E', 'AndroidRuntime:E');
 fs.writeFileSync(path.join(out, 'runtime-errors.txt'), errors);
 assert.doesNotMatch(errors, /FATAL EXCEPTION|TypeError:|ReferenceError:|Unable to load script|Invariant Violation/);
-fs.writeFileSync(path.join(out, 'results.json'), JSON.stringify({ syntheticOnly: true, manualCreateRestartEditDelete: true, filePickerOcrReviewSaveRestart: true, cameraLaunchCancel: true, standaloneWithoutMetro: true, routes }, null, 2));
+fs.writeFileSync(path.join(out, 'results.json'), JSON.stringify({ syntheticOnly: true, apkSourceCommit: process.env.NUTRISOLE_APK_SOURCE_SHA || null, smokeSourceCommit: process.env.GITHUB_SHA || null, systemLauncherAnrsDismissed: launcherAnrs, manualCreateRestartEditDelete: true, filePickerOcrReviewSaveRestart: true, cameraLaunchCancel: true, standaloneWithoutMetro: true, routes }, null, 2));
 console.log(`Standalone phone storage CRUD, report photo import, camera cancellation and ${routes.length} rendered routes passed.`);

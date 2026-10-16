@@ -10,7 +10,7 @@ name: Android QA APK (glucose)
 on:
   push:
     branches: [feature/glucose-monitoring, fix/glucose-live-inputs]
-    paths-ignore: ['docs/**', '**/*.md']
+    paths-ignore: ['docs/**', '**/*.md', 'tests/glucose/android-smoke.mjs', '.github/workflows/android-glucose-runtime.yml']
 
 permissions:
   contents: read
