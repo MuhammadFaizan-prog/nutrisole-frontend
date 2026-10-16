@@ -270,7 +270,10 @@ export function buildScene(id: ExtensionRoute, s = initialExpansionState()): Sce
         add('button', 20, y, 172, 44, { text: 'Previous page', action: 'import-page:previous', disabled: v.page === 0, size: 13, fill: colors.card, color: colors.green, radius: 14 });
         add('button', 201, y, 172, 44, { text: 'Next page', action: 'import-page:next', disabled: v.page + 1 === v.pageCount, size: 13, fill: colors.card, color: colors.green, radius: 14 }); y += 58;
       }
-      if (!v.rows.length) { note('No glucose readings were recognised. Check the column mapping, or enter the reading manually.', y, 64, colors.card); y += 74; }
+      if (!v.rows.length) {
+        note('No glucose readings were recognised. Check the column mapping, or enter the reading manually.', y, 64, colors.card); y += 74;
+        button('Enter the reading manually', y, 'new-reading', 'secondary', { h: 44 }); y += 56;
+      }
       v.rows.forEach(r => { row(y, `${r.decision === 'confirmed' ? '✓ ' : r.decision === 'rejected' ? '✕ ' : ''}${r.title}`, r.decision === 'confirmed' ? 'Confirmed' : r.decision === 'rejected' ? 'Rejected' : 'To check', r.icon, `import-row:${r.id}`, r.description, { fill: r.decision === 'confirmed' ? '#f0f6ed' : r.decision === 'rejected' ? '#f1efe9' : colors.card }); y += 85; });
       if (v.hiddenRows) { note('Use the page controls above to check the remaining readings. Your edits and confirmations stay on every page.', y, 64, colors.card); y += 74; }
       const by = Math.max(740, y + 8);
