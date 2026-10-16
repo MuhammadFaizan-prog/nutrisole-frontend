@@ -11,6 +11,7 @@ import { formatDisplayDate, formatDisplayTime, instantToWallClock, nowDisplay, p
 import { glucoseAdapters } from './adapters';
 import { rangeLabels, type GlucoseRange } from './history';
 import { importAction } from './importActions';
+import { importPlatform } from './importActions';
 
 type SetState = (fn: (s: ExpansionState) => ExpansionState) => void;
 export type GlucoseActionContext = { s: ExpansionState; setState: SetState; store: GlucoseStore; go: (r: AppRoute) => void; back: () => void; open: (sheet: Sheet) => void };
@@ -74,7 +75,7 @@ export function glucoseAction(action: string, ctx: GlucoseActionContext): boolea
       const r = snap.readings.find(x => x.id === s.glucoseCurrentId);
       if (!r) { notice('No reading selected', 'Open a reading from your glucose history first.'); return true; }
       let confirmed = false;
-      notice('Delete this reading?', `${r.valueOriginal} ${r.unitOriginal} will be permanently deleted ${snap.mode === 'supabase' ? 'from your NutriSole account' : 'from this demo session'}. This cannot be undone.`, [{ label: 'Delete reading', action: () => {
+      notice('Delete this reading?', `${r.valueOriginal} ${r.unitOriginal} will be permanently deleted ${snap.mode === 'supabase' ? 'from your NutriSole account' : snap.mode === 'local' ? 'from this phone' : 'from this demo session'}. This cannot be undone.`, [{ label: 'Delete reading', action: () => {
         if (confirmed) return; confirmed = true;
         void store.remove(r.id).then(res => {
           if (res.ok) setState(v => ({ ...v, glucoseRemoved: true, glucoseCurrentId: null }));
@@ -86,7 +87,7 @@ export function glucoseAction(action: string, ctx: GlucoseActionContext): boolea
     case 'glucose-retry': void store.reload(); return true;
     case 'glucose-sign-in': go('sign-in'); return true;
     case 'provider-info': return glucoseAction('provider-info:health_connect', ctx);
-    case 'permissions': notice('Import permissions', `${glucoseAdapters.map(a => `${a.label}: not available (${a.evidence})`).join('\n')}\nNo operating-system permission is requested and nothing is imported in this build.`, [{ label: 'Add reading manually', action: () => startNew(ctx) }, { label: 'Review consent', action: () => go('privacy-data-rights') }]); return true;
+    case 'permissions': notice('Import permissions', importPlatform().os === 'android' ? 'Android asks for camera access when scanning a report, Nearby devices when finding a Bluetooth strip meter, and read-only blood glucose access when importing from Health Connect. You can revoke each permission in Android Settings. Files and photos are read on this phone. Saved phone readings are encrypted and are not uploaded.' : 'Choose a file or photo to read it on this device. Device and health permissions are managed in the mobile app.', [{ label: 'Choose a source', action: () => go('glucose-import') }]); return true;
     default: return false;
   }
 }

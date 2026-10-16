@@ -216,12 +216,20 @@ export function buildScene(id: ExtensionRoute, s = initialExpansionState()): Sce
       header('Health connections'); heading('Choose what you share.', 110, 'Device import is in beta and unverified\nwith real hardware. You review every value.', 29);
       { const web = s.glucoseImportView?.platform !== 'native';
       row(222, 'Health Connect', web ? 'Mobile app' : 'Beta', 'Heart', 'import-device:health_connect', 'Android · reads blood glucose records\nyou allow'); row(299, 'Apple Health', web ? 'Mobile app' : 'Not built', 'Heart', 'import-device:healthkit', 'iOS · typed only, not in this build'); row(376, 'Bluetooth meter', web ? 'Mobile app' : 'Beta', 'Activity', 'import-device:ble_meter', 'Glucose Profile meters · unverified\nwith hardware'); }
-      text('CHOOSE DATA TO SHARE', 28, 458, 330, 11, { color: colors.muted });
-      toggle(480, 'Glucose readings', 'shareGlucose', 'Allow import when a source is supported', 'Droplet', 69); toggle(552, 'Activity records', 'shareActivity', 'Share workouts and daily activity', 'PersonStanding', 69);
-      row(632, 'Last sync', 'Never', 'Clock3'); row(680, 'Imported records', 'None', 'NotebookText'); button('Review permissions', 744, 'permissions'); note('Manual entry is always available.', 814, 58, colors.card);
+      text('YOUR IMPORTED GLUCOSE DATA', 28, 458, 330, 11, { color: colors.muted });
+      note('Read access is requested by Android\nwhen you choose a source. Every reading\ngoes to review before it is saved.', 480, 82, colors.card);
+      row(582, 'Last saved import', '', 'Clock3', undefined, s.glucoseImportView?.lastImport || 'No imports saved'); row(662, 'Imported records', String(s.glucoseImportView?.importedCount || 0), 'NotebookText'); button('Review permissions', 744, 'permissions'); note('Manual entry is always available.', 814, 58, colors.card);
       scene.height = 900; break;
     case 'glucose-import': {
       const v = s.glucoseImportView; const web = v?.platform !== 'native';
+      if (v?.meters.length) {
+        header('Bluetooth strip meter'); heading('Choose your meter.', 110, 'Tap a meter to connect. You can select\nit while the scan is still running.', 29);
+        let y = 214;
+        v.meters.forEach(d => { row(y, d.name || 'Bluetooth strip meter', 'Connect', 'Bluetooth', `import-meter:${d.id}`, `${d.id}${d.rssi != null ? ` · ${d.rssi} dBm` : ''}`); y += 80; });
+        if (v.busy) { note(v.busy, y, 64, colors.card, 'RefreshCw'); y += 80; button('Stop searching', y, 'import-stop', 'secondary', { h: 42 }); y += 60; }
+        button('How importing works', y, 'import-help', 'text', { size: 14 });
+        scene.height = Math.max(852, y + 80); break;
+      }
       header('Add readings'); heading('Bring in your readings.', 110, 'You check every value before it is saved.', 29);
       row(214, 'Enter manually', '', 'NotebookText', 'new-reading', 'Type a reading from your meter');
       row(289, 'Attach a file', '', 'Download', 'import-file', 'CSV or Excel export, PDF lab report,\nor a photo (JPG/PNG)');
@@ -231,8 +239,14 @@ export function buildScene(id: ExtensionRoute, s = initialExpansionState()): Sce
       row(575, 'Bluetooth meter', web ? 'Mobile app' : 'Beta', 'Activity', 'import-device:ble_meter', web ? 'Available in the mobile app' : 'Glucose Profile (0x1808) · unverified\nwith hardware');
       row(668, 'Apple Health', web ? 'Mobile app' : 'Not built', 'Heart', 'import-device:healthkit', web ? 'Available in the iPhone app (planned)' : 'iPhone · typed only, not in this build');
       note(v?.busy ? `${v.busy}` : v?.error ? `Last import failed: ${v.error.slice(0, 90)}` : 'HbA1c and other lab values are shown\nseparately and never saved as glucose.', 755, 64, v?.busy ? '#fbf3df' : colors.card, v?.busy ? 'RefreshCw' : 'Info');
-      button('How importing works', 832, 'import-help', 'text', { size: 14 });
-      scene.height = 900; break;
+      let bottom = 832;
+      if (v?.busy) { button('Stop import', bottom, 'import-stop', 'secondary', { h: 42 }); bottom += 54; }
+      if (v?.meters.length) {
+        text('TAP YOUR METER TO CONNECT', 28, bottom, 330, 11, { color: colors.muted }); bottom += 25;
+        v.meters.forEach(d => { row(bottom, d.name || 'Bluetooth strip meter', 'Connect', 'Bluetooth', `import-meter:${d.id}`, `${d.id}${d.rssi != null ? ` · ${d.rssi} dBm` : ''}`); bottom += 80; });
+      }
+      button('How importing works', bottom, 'import-help', 'text', { size: 14 });
+      scene.height = Math.max(900, bottom + 68); break;
     }
     case 'import-review': {
       const v = s.glucoseImportView;
@@ -247,7 +261,7 @@ export function buildScene(id: ExtensionRoute, s = initialExpansionState()): Sce
       if (v.mapping) { row(y, v.mapping.label, '', 'Filter', 'import-mapping', v.mapping.value.length > 84 ? `${v.mapping.value.slice(0, 83)}…` : v.mapping.value); y += 75; }
       if (v.notes.length) { const n = v.notes[0]; note(n.length > 110 ? `${n.slice(0, 109)}…` : n, y, 64, colors.pale, 'Info'); add('button', 20, y, 353, 64, { text: 'About this import', action: 'import-notes', fill: 'transparent', color: 'transparent' }); y += 74; }
       if (v.nonGlucose) { note(v.nonGlucose.length > 110 ? `${v.nonGlucose.slice(0, 109)}…` : v.nonGlucose, y, 64, '#fbf3df', 'TriangleAlert'); add('button', 20, y, 353, 64, { text: 'Other lab values', action: 'import-nonglucose', fill: 'transparent', color: 'transparent' }); y += 74; }
-      if (v.busy) { note(v.busy, y, 52, '#fbf3df', 'RefreshCw'); y += 62; }
+      if (v.busy) { note(v.busy, y, 52, '#fbf3df', 'RefreshCw'); y += 62; button('Stop transfer', y, 'import-stop', 'secondary', { h: 40 }); y += 50; }
       add('button', 20, y, 172, 44, { text: 'Confirm all unflagged', action: 'import-bulk:confirm-clean', size: 13, bold: true, fill: colors.card, color: colors.green, radius: 14 });
       add('button', 201, y, 172, 44, { text: 'Reject all', action: 'import-bulk:reject-all', size: 13, bold: true, fill: colors.card, color: colors.green, radius: 14 }); y += 58;
       text('TAP A ROW TO CHECK, EDIT, CONFIRM OR REJECT', 28, y, 330, 11, { color: colors.muted }); y += 22;

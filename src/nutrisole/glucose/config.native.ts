@@ -1,8 +1,10 @@
 // Native configuration: the public Supabase project URL + anon/publishable key come from
-// nativeEnv.ts (generated at build time by the QA APK workflow). Left null, the app shows the
-// honest "Configure database" state. Never put a service-role/secret key in the app.
+// nativeEnv.ts (generated at build time by the QA APK workflow). Android defaults
+// to encrypted phone storage. Never put a service-role/secret key in the app.
 import type { GlucoseConfig } from './types';
-import { NATIVE_SUPABASE_URL, NATIVE_SUPABASE_ANON_KEY } from './nativeEnv';
+import { NATIVE_SUPABASE_URL, NATIVE_SUPABASE_ANON_KEY, NATIVE_GLUCOSE_STORAGE } from './nativeEnv';
+import { Platform } from 'react-native';
+import { phoneGlucoseStorage } from './nativeCapture.native';
 
 /** Explicit demo flag: in-memory session records, clearly labelled as not saved. */
 const GLUCOSE_DEMO = false;
@@ -15,5 +17,7 @@ function decodeJwtPayload(k: string): string {
 export function readGlucoseConfig(): GlucoseConfig {
   const url = NATIVE_SUPABASE_URL && /^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(NATIVE_SUPABASE_URL) ? NATIVE_SUPABASE_URL : null;
   const key = isPublicKey(NATIVE_SUPABASE_ANON_KEY) ? NATIVE_SUPABASE_ANON_KEY : null; // refuses a service_role key
-  return { supabaseUrl: url && key ? url : null, supabaseAnonKey: url && key ? key : null, demo: GLUCOSE_DEMO, demoSeed: false };
+  // Android works without a cloud account. Phone readings stay separate from cloud
+  // records; no production migration or hidden upload is performed.
+  return { supabaseUrl: url && key ? url : null, supabaseAnonKey: url && key ? key : null, demo: GLUCOSE_DEMO, demoSeed: false, ...(Platform.OS === 'android' && NATIVE_GLUCOSE_STORAGE === 'phone' ? { localStorage: phoneGlucoseStorage } : {}) };
 }

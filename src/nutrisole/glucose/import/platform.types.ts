@@ -5,6 +5,7 @@ import type { ConnectionStatus } from '../types';
 import type { PickedFile, TextExtractors } from './fileImport';
 import type { HealthConnectGlucoseResult, HealthKitGlucoseSample } from './devices';
 import type { GlsDownload } from './gls';
+import type { BleMeter } from './scan';
 
 export type HealthSourceBridge<T> = {
   status(): Promise<ConnectionStatus>;
@@ -16,8 +17,8 @@ export type HealthSourceBridge<T> = {
 export type BleBridge = {
   status(): Promise<ConnectionStatus>;
   requestPermission(): Promise<ConnectionStatus>;
-  scan(seconds: number): Promise<{ id: string; name: string | null; rssi: number | null }[]>;
-  download(deviceId: string, sinceSequence: number | null): Promise<GlsDownload>;
+  scan(seconds: number, opts?: { signal?: AbortSignal; onFound?: (device: BleMeter) => void }): Promise<BleMeter[]>;
+  download(deviceId: string, sinceSequence: number | null, opts?: { signal?: AbortSignal; onProgress?: (partial: GlsDownload) => void }): Promise<GlsDownload>;
 };
 export type DeviceBridges = { healthConnect: HealthSourceBridge<HealthConnectGlucoseResult> | null; healthKit: HealthSourceBridge<HealthKitGlucoseSample> | null; ble: BleBridge | null };
 

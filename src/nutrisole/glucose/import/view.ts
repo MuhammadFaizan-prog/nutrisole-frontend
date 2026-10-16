@@ -4,8 +4,9 @@ import type { GlucoseReading } from '../types';
 import { contextLabel } from '../validation';
 import type { ImportBatch } from './types';
 import { assessBatch, flagText, summarize, INFO, type AssessedCandidate } from './review';
+import type { BleMeter } from './scan';
 
-export type ImportUiState = { batch: ImportBatch | null; busy: string | null; error: string | null; saving: boolean; result: string | null; lastSequence: Record<string, number> };
+export type ImportUiState = { batch: ImportBatch | null; busy: string | null; error: string | null; saving: boolean; result: string | null; lastSequence: Record<string, number>; foundMeters?: BleMeter[] };
 export const initialImportState = (): ImportUiState => ({ batch: null, busy: null, error: null, saving: false, result: null, lastSequence: {} });
 
 export type ImportRowView = { id: string; title: string; description: string; decision: 'pending' | 'confirmed' | 'rejected'; flagged: boolean; icon: string };
@@ -15,6 +16,7 @@ export type ImportView = {
   hasBatch: boolean; title: string; subtitle: string; summary: string;
   notes: string[]; nonGlucose: string | null; mapping: { label: string; value: string } | null;
   rows: ImportRowView[]; hiddenRows: number; confirmed: number; saveLabel: string; canSave: boolean;
+  meters: BleMeter[]; importedCount: number; lastImport: string;
 };
 
 const methodLabel: Record<ImportBatch['format'], string> = { csv: 'CSV file', xlsx: 'Excel file', 'pdf-text': 'PDF report (text layer)', 'pdf-ocr': 'Scanned PDF (OCR)', 'image-ocr': 'Image (OCR)', 'camera-ocr': 'Camera scan (OCR)', health_connect: 'Health Connect', healthkit: 'Apple Health', ble_gls: 'Bluetooth meter' };
@@ -38,7 +40,11 @@ export function buildImportView(ui: ImportUiState | undefined, existing: Glucose
   const sum = summarize(assessed);
   const m = b?.table?.mapping;
   const col = (i: number | null) => (i === null || !m ? '—' : m.header[i] || `column ${i + 1}`);
+  const imported = existing.filter(r => r.source.type !== 'manual');
+  const lastImport = imported.reduce<string | null>((last, r) => last === null || r.createdAt > last ? r.createdAt : last, null);
   return {
+    meters: s.foundMeters || [], importedCount: imported.length,
+    lastImport: lastImport ? `${lastImport.replace('T', ' ').slice(0, 16)} UTC` : 'No imports saved',
     platform, busy: s.busy, saving: s.saving, error: s.error, result: s.result,
     hasBatch: Boolean(b), title: b ? b.title : 'Nothing to review', subtitle: b ? `${methodLabel[b.format]}${b.ocrConfidence != null ? ` · OCR confidence ${Math.round(b.ocrConfidence * 100)}%` : ''}` : 'Attach a file, scan a report or import from a device first.',
     summary: b ? `${sum.total} reading${sum.total === 1 ? '' : 's'} found · ${sum.flagged} need a look · ${sum.confirmed} confirmed · ${sum.rejected} rejected` : '',
@@ -46,6 +52,6 @@ export function buildImportView(ui: ImportUiState | undefined, existing: Glucose
     nonGlucose: b?.nonGlucose.length ? `Not imported as glucose: ${b.nonGlucose.map(n => `${n.label} ${n.value}${n.unit ? ` ${n.unit}` : ''}`).join(' · ')}` : null,
     mapping: m ? { label: m.auto ? 'Columns · detected' : 'Columns · set by you', value: `Value: ${col(m.value)}${m.columnUnit ? ` (${m.columnUnit})` : m.unit !== null ? ` · Unit: ${col(m.unit)}` : ''} · ${m.datetime !== null ? `Date & time: ${col(m.datetime)}` : `Date: ${col(m.date)} · Time: ${col(m.time)}`} · ${m.dateOrder}` } : null,
     rows: assessed.slice(0, maxRows).map(rowView), hiddenRows: Math.max(0, assessed.length - maxRows),
-    confirmed: sum.confirmed, saveLabel: s.saving ? 'Saving…' : sum.confirmed ? `Save ${sum.confirmed} confirmed reading${sum.confirmed === 1 ? '' : 's'}` : 'Confirm readings to save', canSave: sum.confirmed > 0 && !s.saving,
+    confirmed: sum.confirmed, saveLabel: s.saving ? 'Saving…' : s.busy ? 'Transfer in progress…' : sum.confirmed ? `Save ${sum.confirmed} confirmed reading${sum.confirmed === 1 ? '' : 's'}` : 'Confirm readings to save', canSave: sum.confirmed > 0 && !s.saving && !s.busy,
   };
 }

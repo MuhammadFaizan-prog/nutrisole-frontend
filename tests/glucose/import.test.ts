@@ -105,7 +105,10 @@ test('OCR text (real tesseract.js output on synthetic fixtures): lab layouts and
   for (const name of Object.keys(truth).filter(f => /\.(png|jpe?g)$/.test(f))) {
     const r = parseReportText(ocrLines(name), { format: 'image-ocr', method: 'ocr', fileName: name, fileSha256: 'h', batchId: 'b', engine: 'tesseract.js', now });
     const got = r.candidates.map(c => ({ value: c.value, unit: c.unit, context: c.mealContext, date: c.date, time: c.time }));
-    assert.deepEqual(got, truth[name].readings, name);
+    // The old reader guessed mg/dL when this OCR transcript omitted the unit.
+    // Missing units now require a clearer image or manual entry.
+    if (name === 'meter-mgdl.png') assert.deepEqual(got, [], 'a unit-less number is not sufficient meter evidence');
+    else assert.deepEqual(got, truth[name].readings, name);
     for (const k of truth[name].nonGlucose) assert.ok(r.nonGlucose.some(n => n.kind === k), `${name}: ${k} separated`);
     assert.ok(r.candidates.every(c => c.provenance.method === 'ocr' && c.provenance.engine === 'tesseract.js'));
   }

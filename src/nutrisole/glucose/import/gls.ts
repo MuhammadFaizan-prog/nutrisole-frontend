@@ -44,6 +44,8 @@ export function parseGlsMeasurement(bytes: Uint8Array): GlsRecord {
   const sequence = dv.getUint16(i, true); i += 2;
   const year = dv.getUint16(i, true), month = dv.getUint8(i + 2), day = dv.getUint8(i + 3), hour = dv.getUint8(i + 4), minute = dv.getUint8(i + 5), second = dv.getUint8(i + 6); i += 7;
   if (!year || !month || !day) throw new RangeError('Glucose Measurement has no base time.');
+  const baseTime = new Date(Date.UTC(year, month - 1, day, hour, minute, second));
+  if (year < 1900 || year > 9999 || month < 1 || month > 12 || day < 1 || day > 31 || hour > 23 || minute > 59 || second > 59 || baseTime.getUTCDate() !== day || baseTime.getUTCMonth() !== month - 1) throw new RangeError('Glucose Measurement has an invalid meter date or time.');
   let timeOffsetMinutes = 0; if (flags & 0x01) { need(2); timeOffsetMinutes = dv.getInt16(i, true); i += 2; }
   const unit = flags & 0x04 ? 'mmol/L' as const : 'mg/dL' as const;
   let value: string | null = null; let specimen: GlsSpecimen = 'unknown'; let location = 'not available';
@@ -103,31 +105,46 @@ export function parseRacp(bytes: Uint8Array): RacpIndication {
 // ---- Download session ----
 export interface GlsTransport {
   /** Subscribe to notifications (0x2A18, 0x2A34) or indications (0x2A52). Returns an unsubscribe. */
-  subscribe(characteristic: 'measurement' | 'context' | 'racp', onValue: (bytes: Uint8Array) => void): Promise<() => void>;
+  subscribe(characteristic: 'measurement' | 'context' | 'racp', onValue: (bytes: Uint8Array) => void, onError?: (error: Error) => void): Promise<() => void>;
+  /** Measurement Context is optional in the Bluetooth Glucose Service. */
+  supportsContext?: boolean;
   writeRacp(bytes: Uint8Array): Promise<void>;
 }
 export type GlsDownload = { records: (GlsRecord & { context: GlsContext | null })[]; lastSequence: number | null; outcome: 'success' | 'no-records' | 'failed'; message: string; parseErrors: string[] };
 
 /** Report all stored records, or only those with sequence ≥ `sinceSequence` ("since last sync"). */
-export async function downloadRecords(transport: GlsTransport, opts: { sinceSequence?: number | null; timeoutMs?: number } = {}): Promise<GlsDownload> {
+export async function downloadRecords(transport: GlsTransport, opts: { sinceSequence?: number | null; timeoutMs?: number; signal?: AbortSignal; onProgress?: (partial: GlsDownload) => void } = {}): Promise<GlsDownload> {
   const records = new Map<number, GlsRecord>(); const contexts = new Map<number, GlsContext>(); const parseErrors: string[] = [];
   const unsubs: (() => void)[] = [];
   let finish: (r: RacpIndication | null) => void = () => {};
   const done = new Promise<RacpIndication | null>(resolve => { finish = resolve; });
-  unsubs.push(await transport.subscribe('measurement', b => { try { const r = parseGlsMeasurement(b); records.set(r.sequence, r); } catch (e) { parseErrors.push((e as Error).message); } }));
-  unsubs.push(await transport.subscribe('context', b => { try { const c = parseGlsContext(b); contexts.set(c.sequence, c); } catch (e) { parseErrors.push((e as Error).message); } }));
-  unsubs.push(await transport.subscribe('racp', b => { const r = parseRacp(b); if (r.kind === 'response') finish(r); }));
-  const timer = setTimeout(() => finish(null), opts.timeoutMs ?? 30_000);
+  let failure: string | null = null; let timer: ReturnType<typeof setTimeout> | undefined;
+  const listRecords = () => [...records.values()].sort((a, b) => a.sequence - b.sequence).map(r => ({ ...r, context: contexts.get(r.sequence) || null }));
+  let lastPublished = -Infinity;
+  const progress = () => {
+    if (!opts.onProgress || Date.now() - lastPublished < 50) return;
+    lastPublished = Date.now(); const list = listRecords();
+    opts.onProgress({ records: list, lastSequence: list.at(-1)?.sequence ?? null, outcome: 'success', message: `${list.length} received · transfer in progress`, parseErrors: [...parseErrors] });
+  };
+  const failed = (error: Error) => { failure = error.message; finish(null); };
+  const abort = () => { failure = 'Transfer cancelled. Received readings have not been saved.'; void transport.writeRacp(racpAbort()).catch(() => undefined); finish(null); };
   try {
+    if (opts.signal?.aborted) throw new Error('Transfer cancelled.');
+    unsubs.push(await transport.subscribe('measurement', b => { try { const r = parseGlsMeasurement(b); records.set(r.sequence, r); progress(); } catch (e) { parseErrors.push((e as Error).message); } }, failed));
+    if (transport.supportsContext !== false) unsubs.push(await transport.subscribe('context', b => { try { const c = parseGlsContext(b); contexts.set(c.sequence, c); progress(); } catch (e) { parseErrors.push((e as Error).message); } }, failed));
+    unsubs.push(await transport.subscribe('racp', b => { const r = parseRacp(b); if (r.kind === 'response' && r.requestOpCode === RACP.REPORT_STORED) finish(r); }, failed));
+    opts.signal?.addEventListener('abort', abort, { once: true });
+    if (opts.signal?.aborted) throw new Error('Transfer cancelled.');
+    timer = setTimeout(() => finish(null), opts.timeoutMs ?? 30_000);
     await transport.writeRacp(opts.sinceSequence != null ? racpReportSince(opts.sinceSequence) : racpReportAll());
     const response = await done;
-    const list = [...records.values()].sort((a, b) => a.sequence - b.sequence).map(r => ({ ...r, context: contexts.get(r.sequence) || null }));
+    const list = listRecords();
     const lastSequence = list.length ? list[list.length - 1].sequence : null;
-    if (!response) return { records: list, lastSequence, outcome: 'failed', message: 'The meter stopped responding before the transfer finished.', parseErrors };
+    if (!response) return { records: list, lastSequence, outcome: 'failed', message: failure || 'The meter stopped responding before the transfer finished.', parseErrors };
     if (response.kind === 'response' && response.code === 6) return { records: list, lastSequence, outcome: 'no-records', message: 'The meter has no stored readings in that range.', parseErrors };
     if (response.kind === 'response' && response.code !== 1) return { records: list, lastSequence, outcome: 'failed', message: `The meter refused the request (${response.message}).`, parseErrors };
     return { records: list, lastSequence, outcome: 'success', message: `${list.length} record${list.length === 1 ? '' : 's'} received.`, parseErrors };
-  } finally { clearTimeout(timer); unsubs.forEach(u => u()); }
+  } finally { clearTimeout(timer); opts.signal?.removeEventListener('abort', abort); unsubs.forEach(u => u()); }
 }
 
 // ---- Encoders (simulator + spec byte vectors) ----

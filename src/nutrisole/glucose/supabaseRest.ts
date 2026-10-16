@@ -12,6 +12,8 @@ export class SupabaseRest {
   private readonly anonKey: string;
   private readonly fetcher: FetchLike;
   private session: Session | null = null;
+  private generation = 0;
+  private refreshing: { generation: number; promise: Promise<boolean> } | null = null;
   private listeners = new Set<(s: Session | null) => void>();
   constructor(url: string, anonKey: string, fetcher?: FetchLike) {
     this.url = url.replace(/\/$/, ''); this.anonKey = anonKey;
@@ -19,7 +21,7 @@ export class SupabaseRest {
   }
   currentSession() { return this.session; }
   onSession(listener: (s: Session | null) => void) { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; }
-  private setSession(s: Session | null) { this.session = s; this.listeners.forEach(l => l(s)); }
+  private setSession(s: Session | null, preserveGeneration = false) { if (!preserveGeneration) this.generation++; this.session = s; this.listeners.forEach(l => l(s)); }
   /** For tests / isolated harnesses that mint a token outside GoTrue. */
   adoptSession(s: Session | null) { this.setSession(s); }
 
@@ -29,17 +31,30 @@ export class SupabaseRest {
   }
 
   async signInWithPassword(email: string, password: string): Promise<Session> {
+    const generation = ++this.generation;
     const res = await this.send('/auth/v1/token?grant_type=password', { method: 'POST', headers: { apikey: this.anonKey, 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password }) });
     if (!res.ok) throw new GlucoseRepositoryError(res.status === 400 || res.status === 401 ? 'unauthenticated' : 'server', res.status === 400 || res.status === 401 ? 'Email or password is incorrect, or the email is not confirmed yet.' : 'Sign-in is unavailable right now.');
     const session = toSession(await res.json());
-    this.setSession(session); return session;
+    if (generation !== this.generation) throw new GlucoseRepositoryError('unauthenticated', 'This sign-in attempt was cancelled by an account change.');
+    this.setSession(session, true); return session;
   }
 
   async refresh(): Promise<boolean> {
-    if (!this.session) return false;
-    const res = await this.send('/auth/v1/token?grant_type=refresh_token', { method: 'POST', headers: { apikey: this.anonKey, 'Content-Type': 'application/json' }, body: JSON.stringify({ refresh_token: this.session.refreshToken }) });
-    if (!res.ok) { this.setSession(null); return false; }
-    this.setSession(toSession(await res.json())); return true;
+    const session = this.session, generation = this.generation;
+    if (!session) return false;
+    if (this.refreshing?.generation === generation) return this.refreshing.promise;
+    const promise = (async () => {
+      const res = await this.send('/auth/v1/token?grant_type=refresh_token', { method: 'POST', headers: { apikey: this.anonKey, 'Content-Type': 'application/json' }, body: JSON.stringify({ refresh_token: session.refreshToken }) });
+      if (generation !== this.generation) return false;
+      if (!res.ok) { this.setSession(null); return false; }
+      const fresh = toSession(await res.json());
+      if (generation !== this.generation) return false;
+      if (fresh.userId !== session.userId) throw new GlucoseRepositoryError('unauthenticated', 'The refresh response belongs to a different account. Sign in again.');
+      this.setSession(fresh, true); return true;
+    })();
+    this.refreshing = { generation, promise };
+    try { return await promise; }
+    finally { if (this.refreshing?.promise === promise) this.refreshing = null; }
   }
 
   async signOut() {
@@ -48,16 +63,22 @@ export class SupabaseRest {
   }
 
   /** PostgREST request as the signed-in user. Retries once after a token refresh. */
-  async rest(path: string, init: { method?: string; body?: unknown; prefer?: string } = {}, retried = false): Promise<unknown> {
-    if (!this.session) throw new GlucoseRepositoryError('unauthenticated', 'Sign in to view and save your glucose readings.');
+  async rest(path: string, init: { method?: string; body?: unknown; prefer?: string } = {}): Promise<unknown> {
+    return this.requestRest(path, init, this.generation, false);
+  }
+  private async requestRest(path: string, init: { method?: string; body?: unknown; prefer?: string }, generation: number, retried: boolean): Promise<unknown> {
+    if (!this.session || generation !== this.generation) throw new GlucoseRepositoryError('unauthenticated', 'Your account or session changed. Sign in and reload before retrying.');
     const headers: Record<string, string> = { apikey: this.anonKey, Authorization: `Bearer ${this.session.accessToken}`, Accept: 'application/json' };
     if (init.body !== undefined) headers['Content-Type'] = 'application/json';
     if (init.prefer) headers.Prefer = init.prefer;
     const res = await this.send(`/rest/v1${path}`, { method: init.method || 'GET', headers, body: init.body === undefined ? undefined : JSON.stringify(init.body) });
-    if (res.status === 401 && !retried) { if (await this.refresh()) return this.rest(path, init, true); throw new GlucoseRepositoryError('unauthenticated', 'Your session ended. Sign in again.'); }
+    if (generation !== this.generation) throw new GlucoseRepositoryError('unauthenticated', 'The account changed during this request. Reload its history before retrying.');
+    if (res.status === 401 && !retried) { if (await this.refresh()) return this.requestRest(path, init, generation, true); throw new GlucoseRepositoryError('unauthenticated', 'Your session ended. Sign in again.'); }
     if (!res.ok) throw await restError(res);
     if (res.status === 204) return null;
-    const text = await res.text(); return text ? JSON.parse(text) : null;
+    const text = await res.text();
+    if (generation !== this.generation) throw new GlucoseRepositoryError('unauthenticated', 'The account changed during this request.');
+    return text ? JSON.parse(text) : null;
   }
 }
 
