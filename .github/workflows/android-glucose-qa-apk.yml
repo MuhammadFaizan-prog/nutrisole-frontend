@@ -54,6 +54,7 @@ jobs:
         run: |
           npm ci --no-audit --no-fund
           npm --prefix native ci --no-audit --no-fund
+          node native/scripts/patch-onnxruntime-rn.mjs  # Gradle 9: VersionNumber removed; pin ORT AAR
 
       - name: Glucose + native tests
         run: |
