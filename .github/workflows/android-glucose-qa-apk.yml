@@ -1,0 +1,117 @@
+# Glucose Stage G-3 QA APK (feature/glucose-monitoring ONLY; never main, never deploy).
+# - Release build with the JS bundle embedded (no Metro), signed with the committed DEBUG keystore; no secrets.
+# - Supabase: only the PUBLIC project URL + anon key, injected at build time (repo variables override
+#   the defaults below). Never a service-role key. OCR: PP-OCRv5 mobile (onnxruntime-react-native).
+# - arm64-v8a only (size). Artifact: nutrisole-glucose-qa-apk-<sha7> (APK + .sha256 + build-info.txt).
+# - Independent of the CV device workflow (cv-gauntlet-device); it touches no CV branch or model.
+name: Android QA APK (glucose)
+
+on:
+  push:
+    branches: [feature/glucose-monitoring]
+    paths-ignore: ['docs/**', '**/*.md']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-glucose-qa-apk-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  qa-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      SRC_SHA: ${{ github.sha }}
+      BT: 36.0.0
+      NUTRISOLE_SUPABASE_URL: ${{ vars.NUTRISOLE_SUPABASE_URL || 'https://zlxefqhzceiloplyszje.supabase.co' }}
+      # Public anon key (role "anon"; safe in clients, RLS protects rows).
+      NUTRISOLE_SUPABASE_ANON_KEY: ${{ vars.NUTRISOLE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpseGVmcWh6Y2VpbG9wbHlzemplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE3NDM0MzksImV4cCI6MjEwNzMxOTQzOX0.tAg92VoF3uSx_XYPuA0SvPD_JHEzMa-Fbs5fBjLs8BY' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            native/package-lock.json
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0 ndk;27.1.12297006 cmake;3.22.1'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: npm ci (root + native)
+        run: |
+          npm ci --no-audit --no-fund
+          npm --prefix native ci --no-audit --no-fund
+          node native/scripts/patch-onnxruntime-rn.mjs  # Gradle 9: VersionNumber removed; pin ORT AAR
+
+      - name: Glucose + native tests
+        run: |
+          npm run test:glucose
+          npm --prefix native test
+
+      - name: Write public Supabase config for the app (refuses a service_role key)
+        run: node scripts/write-native-env.mjs
+
+      - name: Gradle assembleRelease (arm64-v8a, debug keystore)
+        working-directory: native/android
+        run: ./gradlew :app:assembleRelease -PreactNativeArchitectures=arm64-v8a --no-daemon --stacktrace
+
+      - name: Inspect APK + sha256
+        run: |
+          set -euo pipefail
+          sha7=${SRC_SHA:0:7}
+          out=dist-qa; mkdir -p $out
+          apk=$out/nutrisole-glucose-qa-${sha7}.apk
+          cp native/android/app/build/outputs/apk/release/app-release.apk "$apk"
+          aapt2="$ANDROID_HOME/build-tools/$BT/aapt2"
+          rm -rf /tmp/apkx; mkdir -p /tmp/apkx; unzip -q "$apk" 'assets/index.android.bundle' -d /tmp/apkx
+          {
+            echo "source_commit=$SRC_SHA"
+            echo "run=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo "apk=$(basename $apk) bytes=$(stat -c %s $apk)"
+            echo "apk_sha256=$(sha256sum $apk | cut -d' ' -f1)"
+            echo "== badging"; "$aapt2" dump badging "$apk"
+            echo "== permissions"; "$aapt2" dump permissions "$apk"
+            echo "== native libs"; unzip -l "$apk" | grep 'lib/arm64-v8a/' || true
+            echo "== glucose import markers in JS bundle (counts)"
+            for m in 'import-review' 'ble:gls' 'Health Connect' 'PP-OCRv5 (on this phone)' 'Confirm all unflagged' 'zlxefqhzceiloplyszje.supabase.co'; do echo "$m: $(grep -a -c "$m" /tmp/apkx/assets/index.android.bundle || true)"; done
+            echo "== OCR models (raw resources, by size)"; unzip -l "$apk" | awk -v a=$(stat -c %s public/ocr/ppocrv5/det.onnx) -v b=$(stat -c %s public/ocr/ppocrv5/rec_en.onnx) '$1==a || $1==b'
+            echo "== ORT native"; unzip -l "$apk" | grep -E 'libonnxruntime' || true
+          } | tee $out/build-info.txt
+          (cd $out && sha256sum "$(basename $apk)" > "$(basename $apk).sha256")
+          echo "SHA7=$sha7" >> "$GITHUB_ENV"
+          perms=$("$aapt2" dump permissions "$apk")
+          for p in android.permission.CAMERA android.permission.BLUETOOTH_SCAN android.permission.BLUETOOTH_CONNECT android.permission.health.READ_BLOOD_GLUCOSE; do
+            echo "$perms" | grep -q "$p" || { echo "::error::$p missing"; exit 1; }
+          done
+          grep -a -q 'import-review' /tmp/apkx/assets/index.android.bundle || { echo "::error::import UI not in bundle"; exit 1; }
+          grep -a -q 'PP-OCRv5 (on this phone)' /tmp/apkx/assets/index.android.bundle || { echo "::error::PP-OCR not in bundle"; exit 1; }
+          grep -a -q "$NUTRISOLE_SUPABASE_URL" /tmp/apkx/assets/index.android.bundle || { echo "::error::Supabase URL not in bundle"; exit 1; }
+          # Models are raw resources (AGP may shorten resource paths), so match them by exact size.
+          det=$(stat -c %s public/ocr/ppocrv5/det.onnx); rec=$(stat -c %s public/ocr/ppocrv5/rec_en.onnx)
+          [ "$(unzip -l "$apk" | awk -v a=$det -v b=$rec '$1==a || $1==b' | wc -l)" -ge 2 ] || { echo "::error::OCR models missing from the APK"; exit 1; }
+          unzip -l "$apk" | grep -q 'libonnxruntime.so' || { echo "::error::onnxruntime native lib missing"; exit 1; }
+          if grep -a -q '"role":"service_role"' /tmp/apkx/assets/index.android.bundle; then echo "::error::service_role key in bundle"; exit 1; fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nutrisole-glucose-qa-apk-${{ env.SHA7 }}
+          path: |
+            dist-qa/*.apk
+            dist-qa/*.sha256
+            dist-qa/build-info.txt
+          compression-level: 0
+          retention-days: 30
+          if-no-files-found: error

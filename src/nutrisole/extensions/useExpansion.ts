@@ -1,9 +1,25 @@
-import { useState } from 'react';
-import { initialExpansionState, type ExpansionState, type Reading } from './model';
-import { accountError, assistantReply, mealResult, readingResult, saveReading, validMeasurementDate } from './domain';
+import { useEffect, useMemo, useState, useSyncExternalStore } from 'react';
+import { initialExpansionState, type ExpansionState } from './model';
+import { accountError, assistantReply, mealResult } from './domain';
 import type { AppRoute, Sheet } from '../types';
+import { createGlucoseStore } from '../glucose/store';
+import { readGlucoseConfig } from '../glucose/config';
+import { glucoseAction } from '../glucose/actions';
+import { buildGlucoseView } from '../glucose/viewModel';
+import { nowDisplay } from '../glucose/time';
+import { buildImportView } from '../glucose/import/view';
+import { importPlatform } from '../glucose/importActions';
+// New readings default to the device's current date/time (not the concept fixture date).
+function freshState(): ExpansionState { const s = initialExpansionState(); const now = nowDisplay(); return { ...s, choices: { ...s.choices, date: now.date, time: now.time } }; }
+import type { GlucoseUnit } from '../glucose/types';
+import type { GlucoseRange } from '../glucose/history';
 export function useExpansion() {
-  const [state, setState] = useState(initialExpansionState);
+  const [rawState, setState] = useState(freshState);
+  // One repository-backed glucose store per app session (Supabase, explicit demo flag, or unconfigured).
+  const [glucose] = useState(() => createGlucoseStore(readGlucoseConfig()));
+  const glucoseSnapshot = useSyncExternalStore(glucose.subscribe, glucose.getSnapshot, glucose.getSnapshot);
+  useEffect(() => { void glucose.start(); }, [glucose]);
+  const state: ExpansionState = useMemo(() => ({ ...rawState, glucose: buildGlucoseView(glucoseSnapshot, { displayUnit: (rawState.choices.displayUnit || 'mg/dL') as GlucoseUnit, range: (rawState.choices.glucoseRange || '7d') as GlucoseRange, currentId: rawState.glucoseCurrentId, removed: rawState.glucoseRemoved, editingId: rawState.glucoseEditingId, editOffset: rawState.glucoseEditOffset, editTzName: rawState.glucoseEditTzName }), glucoseImportView: buildImportView(rawState.glucoseImport, glucoseSnapshot.readings, importPlatform().kind) }), [rawState, glucoseSnapshot]);
   const update = (patch: Partial<ExpansionState>) => setState(s => ({ ...s, ...patch }));
   const field = (key: string, value: string) => setState(s => ({ ...s, fields: { ...s.fields, [key]: value } }));
   function action(action: string, go: (r: AppRoute) => void, back: () => void, open: (s: Sheet) => void) {
@@ -13,13 +29,25 @@ export function useExpansion() {
     const edit = (title: string, key: string, value: string, validate?: (v: string) => string | undefined, destination: 'fields' | 'choices' = 'fields') => open({ title, fields: [{ key, label: title, value }], save: v => { const error = validate?.(v[key]); if (error) return error; setState(old => ({ ...old, [destination]: { ...old[destination], [key]: v[key] } })); } });
     if (action === 'back') return back();
     if (action.startsWith('go:')) return go(action.slice(3) as AppRoute);
+    if (glucoseAction(action, { s, setState, store: glucose, go, back, open })) return;
     if (action.startsWith('toggle:')) { const key = action.slice(7); return setState(v => ({ ...v, toggles: { ...v.toggles, [key]: !v.toggles[key] } })); }
     if (action.startsWith('choose:')) { const [, key, ...parts] = action.split(':'); return setState(v => ({ ...v, choices: { ...v.choices, [key]: parts.join(':') } })); }
     if (['sign-in', 'create-account', 'recover', 'reset-password'].includes(action)) {
       const error = accountError(s, action); if (error) return notice('Check your details', error);
       if (action === 'recover') return notice('Check your inbox', 'If an account exists, a recovery link would be sent. This frontend sends no email.', [{ label: 'Preview recovery link', action: () => go('reset-password') }, { label: 'Back to sign in', action: () => go('sign-in') }]);
+      if (action === 'sign-in' && glucose.client) {
+        // Real Supabase Auth sign-in (only when the database is configured). Tokens stay in memory.
+        const email = (s.fields.email || '').trim(); const password = s.fields.password || '';
+        setState(v => ({ ...v, fields: { ...v.fields, password: '' } }));
+        void glucose.signIn(email, password).then(res => {
+          if (!glucose.client?.currentSession()) return notice('Sign-in failed', res.ok ? 'Sign-in did not complete.' : res.error);
+          setState(v => ({ ...v, session: true }));
+          notice('Signed in', `Signed in as ${email}. Your glucose readings are saved to this account.${res.ok ? '' : `\n${res.error}`}`, [{ label: 'Continue to NutriSole', action: () => go('flow-directory') }]);
+        });
+        return;
+      }
       setState(v => ({ ...v, session: action === 'sign-in', fields: { ...v.fields, password: '', newPassword: '', confirmPassword: '' } }));
-      if (action === 'sign-in') return notice('Frontend demo', 'Account validation is simulated. No account or password is stored.', [{ label: 'Continue to NutriSole', action: () => go('flow-directory') }]);
+      if (action === 'sign-in') return notice('Frontend demo', 'Account validation is simulated. No account or password is stored. Glucose readings need a configured database.', [{ label: 'Continue to NutriSole', action: () => go('flow-directory') }]);
       return go(action === 'create-account' ? 'verify-email' : 'sign-in');
     }
     switch (action) {
@@ -32,18 +60,6 @@ export function useExpansion() {
       case 'choose-photo': return notice('Choose a sample photo', 'This frontend previews upload outcomes without uploading a file.', [{ label: 'Clear single apple · Review', action: () => go('analysis-result') }, { label: 'Blurred photo · Try again', action: () => go('capture-retry') }, { label: 'Multiple items', action: () => notice('Frame one item', 'Select one supported produce item before retrying.') }, { label: 'Unsupported or corrupt file', action: () => notice('Cannot use this photo', 'Use a supported image below 10 MB and try again.') }]);
       case 'basis': return choose('Nutrition basis', 'basis', ['per 100 g', 'per medium']);
       case 'catalog-source': return notice('Demo catalog v1', 'These synthetic fixtures reproduce the supplied UI concepts. They are not a verified food-composition database. Preparation is Raw. No verified source date is available.');
-      case 'reading-unit': return choose('Display unit', 'unit', ['mg/dL', 'mmol/L']);
-      case 'manual-source': return notice('Manual meter entry', 'NutriSole does not measure glucose. Enter values already measured by your meter.');
-      case 'new-reading': setState(v => ({ ...v, currentReading: null, readingRemoved: false, fields: { ...v.fields, reading: '' } })); return go('add-reading');
-      case 'reading-date': return edit('Measured on', 'date', s.choices.date, v => validMeasurementDate(v) ? undefined : 'Use a date such as Sep 30, 2026.', 'choices');
-      case 'reading-time': return edit('Time', 'time', s.choices.time, v => /^(0?[1-9]|1[0-2]):[0-5]\d (AM|PM)$/.test(v) ? undefined : 'Use a time such as 8:15 AM.', 'choices');
-      case 'reading-context': return choose('Measurement context', 'context', ['Before a meal', 'After a meal', 'Fasting', 'Other']);
-      case 'review-reading': { const result = readingResult(s); if (result.error || !result.record) return notice('Check reading', result.error || 'Reading is missing.'); const record = result.record; return notice('Review manual reading', `${record.value} ${record.unit}\n${record.date} · ${record.time} · Pacific Time\n${record.context}\nSource: manual entry`, [{ label: 'Confirm & save reading', action: () => { setState(v => saveReading(v, record)); go('reading-detail'); } }]); }
-      case 'latest-reading': update({ currentReading: s.readings.at(-1) || null }); return go('reading-detail');
-      case 'edit-reading': { const r: Reading = s.currentReading || { id: 'sample-edit', value: 110, unit: 'mg/dL', date: 'Sep 30, 2026', time: '8:15 AM', context: 'Before a meal', source: 'Manual entry' }; setState(v => ({ ...v, currentReading: r, choices: { ...v.choices, unit: r.unit, date: r.date, time: r.time, context: r.context }, fields: { ...v.fields, reading: String(r.value) } })); return go('add-reading'); }
-      case 'remove-reading': return notice('Remove manual record?', 'Remove this record from the new frontend session. The six original screens are unaffected.', [{ label: 'Remove record', action: () => setState(v => ({ ...v, readings: v.readings.filter(r => r.id !== v.currentReading?.id), currentReading: null, readingRemoved: true })) }]);
-      case 'provider-info': return notice('Apple Health', 'A native provider is not connected in this frontend demo. Manual entry remains available.');
-      case 'permissions': return notice('Review requested permissions', `Glucose readings: ${s.toggles.shareGlucose ? 'requested' : 'off'}\nActivity records: ${s.toggles.shareActivity ? 'requested' : 'off'}\nHealth import consent: ${s.toggles.healthImport ? 'on' : 'off'}\nNo OS permissions will be requested by this demo.`, [{ label: 'Preview provider unavailable', action: () => notice('Provider unavailable', 'Apple Health is not connected. No records imported. Continue with manual entry.', [{ label: 'Add reading manually', action: () => go('add-reading') }]) }, { label: 'Review consent', action: () => go('privacy-data-rights') }]);
       case 'profile-diet': return notice('Recorded dietary preferences', 'Balanced, higher protein. The new frontend reads a sample profile; the original profile is preserved.');
       case 'profile-allergens': return notice('Declared allergens', 'Tree nuts and shellfish. Check actual ingredients before following any meal suggestion.');
       case 'profile-activity': return notice('Recorded activity preferences', 'Strength training, 3–4 days/week. Review foot and mobility answers before activity suggestions.', [{ label: 'Review foot support', action: () => go('foot-questionnaire') }]);
@@ -59,9 +75,9 @@ export function useExpansion() {
       case 'assistant-plan': field('assistantResponse', assistantReply('plan')); return;
       case 'assistant-send': if (!(s.fields.assistantQuestion || '').trim()) return notice('Enter a question', 'Ask about food, everyday activity or using NutriSole.'); setState(v => ({ ...v, fields: { ...v.fields, assistantResponse: assistantReply(v.fields.assistantQuestion), assistantQuestion: '' } })); return;
       case 'assistant-sources': return notice('Response sources', 'No external source was retrieved. This is a scripted frontend response using the sample profile and NutriSole flow information.');
-      case 'export': return notice('Export new demo records', 'The export covers entries from the added flows in this frontend session. It does not include real health-provider data or the six original screen fixtures.', [{ label: 'Prepare export', action: () => { update({ exportStatus: 'Demo export ready' }); open({ title: 'Demo export · JSON', description: 'Copy these session records. No file is sent anywhere.', fields: [{ key: 'json', label: 'Session export', value: JSON.stringify({ readings: s.readings, meals: s.meals, report: s.reportSubmitted ? { id: 'DEMO-104', reason: s.choices.reason } : null }, null, 2), multiline: true }] }); } }]);
-      case 'retained': return notice('Retained records', `New session: ${s.readings.length} meter readings, ${s.meals.length} meal entries. Food photo retention: ${s.toggles.retainPhotos ? 'enabled in preferences' : 'off'}. No original photos are captured by this demo.`, [{ label: 'Clear new session records', action: () => update({ readings: [], currentReading: null, meals: [] }) }]);
-      case 'delete-account': return open({ title: 'Confirm demo deletion', description: 'No server account exists. Enter DELETE to clear the added flow session only. Original screens and their saved demo stay untouched.', fields: [{ key: 'confirm', label: 'Type DELETE', value: '' }], save: values => { if (values.confirm !== 'DELETE') return 'Type DELETE to confirm.'; setState(initialExpansionState()); go('sign-in'); } });
+      case 'export': return notice('Export new demo records', 'The export covers entries from the added flows in this frontend session. It does not include real health-provider data or the six original screen fixtures.', [{ label: 'Prepare export', action: () => { update({ exportStatus: 'Demo export ready' }); open({ title: 'Demo export · JSON', description: 'Copy these session records. No file is sent anywhere.', fields: [{ key: 'json', label: 'Session export', value: JSON.stringify({ glucoseReadings: glucose.getSnapshot().readings.map(r => ({ measuredAt: r.measuredAt, value: r.valueOriginal, unit: r.unitOriginal, valueMgDl: r.valueMgDl, context: r.mealContext, note: r.note, source: r.source.type })), meals: s.meals, report: s.reportSubmitted ? { id: 'DEMO-104', reason: s.choices.reason } : null }, null, 2), multiline: true }] }); } }]);
+      case 'retained': { const g = glucose.getSnapshot(); return notice('Retained records', `Glucose: ${g.mode === 'supabase' ? `${g.readings.length} readings in your account (delete individual readings from Reading details)` : g.mode === 'demo' ? `${g.readings.length} demo readings (session only, not saved)` : 'database not configured, no readings stored'}.\nNew session: ${s.meals.length} meal entries. Food photo retention: ${s.toggles.retainPhotos ? 'enabled in preferences' : 'off'}. No original photos are captured by this demo.`, [{ label: 'Clear session meal entries', action: () => update({ meals: [] }) }]); }
+      case 'delete-account': return open({ title: 'Confirm demo deletion', description: glucose.repository.mode === 'supabase' ? 'In-app account deletion is not available yet. Enter DELETE to clear this session and sign out; glucose readings stay in your account until you delete them (they are removed with the account).' : 'No server account exists. Enter DELETE to clear the added flow session only. Original screens and their saved demo stay untouched.', fields: [{ key: 'confirm', label: 'Type DELETE', value: '' }], save: values => { if (values.confirm !== 'DELETE') return 'Type DELETE to confirm.'; setState(freshState()); void glucose.signOut(); go('sign-in'); } });
       case 'save-preferences': return notice('Preferences saved for this session', 'No provider data, photos or assistant context is imported by this frontend.', [{ label: 'Review reminders', action: () => go('reminders') }, { label: 'Explore all flows', action: () => go('flow-directory') }]);
       case 'quiet-hours': return edit('Quiet hours', 'quietHours', s.fields.quietHours || '10:00 PM – 7:00 AM');
       case 'reminder-zone': return edit('Time zone', 'reminderZone', s.fields.reminderZone || 'Pacific Time');
@@ -92,5 +108,5 @@ export function useExpansion() {
       default: if (action.startsWith('audit-detail:')) return notice(action.slice(13), 'Sample audit event. Metadata only: actor role, event outcome, request ID and time. No health payload or credentials are exposed.');
     }
   }
-  return { state, field, action, reset: () => setState(initialExpansionState()) };
+  return { state, field, action, glucose, reset: () => setState(freshState()) };
 }

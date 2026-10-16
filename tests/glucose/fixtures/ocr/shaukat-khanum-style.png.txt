@@ -1,0 +1,9 @@
+# tesseract.js 0.94 document
+SKMCH-STYLE LABORATORY REPORT (SYNTHETIC SAMPLE)
+MR No: SYN-0002 Patient: Test Patient B
+Specimen Collected: 14/10/2026 09:45 Reported: 14/10/2026 13:30
+
+Test Result Units Normal Range
+Random Blood Sugar 168 mg/dl < 200
+
+Urine Sugar Nil

@@ -19,6 +19,7 @@ export const screenGroups: { title: string; screens: DirectoryScreen[] }[] = [
   { title: 'Health & connections', screens: [
     { route: 'glucose-overview', label: 'Glucose overview' }, { route: 'add-reading', label: 'Add a reading' },
     { route: 'reading-detail', label: 'Reading details' }, { route: 'health-connections', label: 'Health connections' },
+    { route: 'glucose-import', label: 'Add readings (file, scan, device)' }, { route: 'import-review', label: 'Review imported readings' },
   ] },
   { title: 'Planning & foot support', screens: [
     { route: 'plan-generation', label: 'Build a plan' }, { route: 'activity-plan', label: 'Activity plan' },

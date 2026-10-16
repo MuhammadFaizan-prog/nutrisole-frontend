@@ -1,0 +1,7 @@
+timestamp,glucose,unit,context,HbA1c,comment
+2026-10-10 08:00,110,mg/dL,fasting,6.1,
+2026-10-10 14:00,7.9,mmol/L,after lunch,,
+2026-10-11 08:10,95,,fasting,,unit missing in this row
+2026-10-11 20:00,850,mg/dL,random,,implausible
+2026-10-10 08:00,110,mg/dL,fasting,,same as first row
+2026-10-12,101,mg/dL,fasting,,no time

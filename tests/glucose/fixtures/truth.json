@@ -1,0 +1,199 @@
+{
+ "chughtai-style.png": {
+  "readings": [
+   {
+    "value": "112",
+    "unit": "mg/dL",
+    "context": "fasting",
+    "date": "Oct 12, 2026",
+    "time": "8:20 AM"
+   }
+  ],
+  "nonGlucose": [
+   "hba1c",
+   "eag"
+  ]
+ },
+ "chughtai-style-photo.jpg": {
+  "readings": [
+   {
+    "value": "112",
+    "unit": "mg/dL",
+    "context": "fasting",
+    "date": "Oct 12, 2026",
+    "time": "8:20 AM"
+   }
+  ],
+  "nonGlucose": [
+   "hba1c",
+   "eag"
+  ]
+ },
+ "shaukat-khanum-style.png": {
+  "readings": [
+   {
+    "value": "168",
+    "unit": "mg/dL",
+    "context": "random",
+    "date": "Oct 14, 2026",
+    "time": "9:45 AM"
+   }
+  ],
+  "nonGlucose": []
+ },
+ "shaukat-khanum-style-photo.jpg": {
+  "readings": [
+   {
+    "value": "168",
+    "unit": "mg/dL",
+    "context": "random",
+    "date": "Oct 14, 2026",
+    "time": "9:45 AM"
+   }
+  ],
+  "nonGlucose": []
+ },
+ "excel-labs-style.png": {
+  "readings": [
+   {
+    "value": "5.8",
+    "unit": "mmol/L",
+    "context": "fasting",
+    "date": "Oct 15, 2026",
+    "time": "7:55 AM"
+   },
+   {
+    "value": "9.1",
+    "unit": "mmol/L",
+    "context": "after_meal",
+    "date": "Oct 15, 2026",
+    "time": "7:55 AM"
+   }
+  ],
+  "nonGlucose": []
+ },
+ "excel-labs-style-photo.jpg": {
+  "readings": [
+   {
+    "value": "5.8",
+    "unit": "mmol/L",
+    "context": "fasting",
+    "date": "Oct 15, 2026",
+    "time": "7:55 AM"
+   },
+   {
+    "value": "9.1",
+    "unit": "mmol/L",
+    "context": "after_meal",
+    "date": "Oct 15, 2026",
+    "time": "7:55 AM"
+   }
+  ],
+  "nonGlucose": []
+ },
+ "idc-style.png": {
+  "readings": [
+   {
+    "value": "134",
+    "unit": "mg/dL",
+    "context": "random",
+    "date": "Oct 16, 2026",
+    "time": "8:10 AM"
+   }
+  ],
+  "nonGlucose": [
+   "hba1c"
+  ]
+ },
+ "idc-style-photo.jpg": {
+  "readings": [
+   {
+    "value": "134",
+    "unit": "mg/dL",
+    "context": "random",
+    "date": "Oct 16, 2026",
+    "time": "8:10 AM"
+   }
+  ],
+  "nonGlucose": [
+   "hba1c"
+  ]
+ },
+ "meter-mgdl.png": {
+  "readings": [
+   {
+    "value": "126",
+    "unit": "mg/dL",
+    "context": "unspecified",
+    "date": "Oct 16, 2026",
+    "time": "7:42 AM"
+   }
+  ],
+  "nonGlucose": []
+ },
+ "meter-mgdl-photo.jpg": {
+  "readings": [
+   {
+    "value": "126",
+    "unit": "mg/dL",
+    "context": "unspecified",
+    "date": "Oct 16, 2026",
+    "time": "7:42 AM"
+   }
+  ],
+  "nonGlucose": []
+ },
+ "meter-mmol.png": {
+  "readings": [
+   {
+    "value": "6.9",
+    "unit": "mmol/L",
+    "context": "unspecified",
+    "date": "Oct 15, 2026",
+    "time": "9:05 PM"
+   }
+  ],
+  "nonGlucose": []
+ },
+ "meter-mmol-photo.jpg": {
+  "readings": [
+   {
+    "value": "6.9",
+    "unit": "mmol/L",
+    "context": "unspecified",
+    "date": "Oct 15, 2026",
+    "time": "9:05 PM"
+   }
+  ],
+  "nonGlucose": []
+ },
+ "chughtai-style.pdf": {
+  "readings": [
+   {
+    "value": "112",
+    "unit": "mg/dL",
+    "context": "fasting",
+    "date": "Oct 12, 2026",
+    "time": "8:20 AM"
+   }
+  ],
+  "nonGlucose": [
+   "hba1c",
+   "eag"
+  ]
+ },
+ "idc-style-scanned.pdf": {
+  "readings": [
+   {
+    "value": "134",
+    "unit": "mg/dL",
+    "context": "random",
+    "date": "Oct 16, 2026",
+    "time": "8:10 AM"
+   }
+  ],
+  "nonGlucose": [
+   "hba1c"
+  ]
+ }
+}

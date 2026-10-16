@@ -2,7 +2,11 @@
   "extends": "@react-native/typescript-config",
   "compilerOptions": {
     "strict": true,
-    "types": ["react", "react-native", "node"],
+    "types": [
+      "react",
+      "react-native",
+      "node"
+    ],
     "allowImportingTsExtensions": true,
     "moduleSuffixes": [
       ".native",
@@ -23,6 +27,21 @@
       ],
       "@react-native-async-storage/async-storage": [
         "./node_modules/@react-native-async-storage/async-storage"
+      ],
+      "@react-native-documents/picker": [
+        "./node_modules/@react-native-documents/picker"
+      ],
+      "onnxruntime-react-native": [
+        "./node_modules/onnxruntime-react-native"
+      ],
+      "react-native-ble-plx": [
+        "./node_modules/react-native-ble-plx"
+      ],
+      "react-native-health-connect": [
+        "./node_modules/react-native-health-connect"
+      ],
+      "react-native-image-picker": [
+        "./node_modules/react-native-image-picker"
       ]
     }
   },

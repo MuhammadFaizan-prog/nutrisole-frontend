@@ -21,3 +21,8 @@ Exact-image acceptance remains blocked by the residual findings in `design-qa.md
 Check commands from app root: `npm run check:runtime`, `npm run typecheck`, `npm test`, `npm run build`, `npm run native:typecheck`, `npm run native:lint`, `npm run native:export`.
 
 Recovery: source documents and PNGs remain untouched; recovered assets retain provenance. Reset clears only the synthetic local app namespace. No git commit, deployment, or external user-data transmission is requested.
+
+
+## Glucose monitoring (feature/glucose-monitoring, draft)
+
+Phases done on the branch: 0 branch isolation from origin/main 0bac361; 1 meter research imported (`docs/glucose/meter-research.md`); 2 domain, validation, migration + RLS validated on local Postgres; 3 web/native manual flow; 4 disabled adapter contracts; 5 verification. Next (each needs approval): apply migration to `nutrisole`; two-user test on the project; hardware GLS test on an approved meter purchase; Health Connect build test before adding any native package. Rollback: revert the branch / run the down migration. Checks: `npm run test:glucose`, `npm run test:glucose:db`, plus the existing commands.

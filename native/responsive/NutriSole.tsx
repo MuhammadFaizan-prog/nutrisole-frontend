@@ -30,7 +30,7 @@ export default function NutriSole({ open, requestedRoute = 'onboarding', request
     Keyboard.dismiss();
     const next = canonicalRoute(destination);
     if (next === 'analysis-result') { setFood('Apple'); setApplePortion(freshApplePortion()); }
-    if (next === 'glucose-overview') expansion.action(`choose:unit:${store.state.profile.glucoseUnit}`, go, back, open);
+    if (next === 'glucose-overview') expansion.action(`choose:displayUnit:${store.state.profile.glucoseUnit}`, go, back, open);
     if (route === 'log-meal' && next === 'nutrition-details') expansion.action('choose:food:Apple', go, back, open);
     const returning = route === 'capture-retry' && next === 'scan' || ['recover-account', 'reset-password', 'verify-email', 'create-account'].includes(route) && next === 'sign-in';
     dispatch({ type: primaryTabs.some(tab => tab.route === next) && next !== 'scan' ? 'tab' : returning ? 'popTo' : 'push', route: next });
@@ -50,11 +50,10 @@ export default function NutriSole({ open, requestedRoute = 'onboarding', request
       go('portion-confirmation'); return;
     }
     if (value.startsWith('choose:mobility:')) store.update(old => ({ ...old, profile: { ...old.profile, mobility: value.endsWith(':Limited') ? 'Limited' : 'None' } }));
-    if (value === 'sign-out') { open({ title: 'Sign out of the demo?', description: 'Your local demo records remain on this device.', choices: [{ label: 'Sign out', action: () => { setSignedIn(false); expansion.field('password', ''); go('sign-in'); } }] }); return; }
+    if (value === 'sign-out') { open({ title: 'Sign out of the demo?', description: 'Your local demo records remain on this device.', choices: [{ label: 'Sign out', action: () => { setSignedIn(false); expansion.field('password', ''); void expansion.glucose.signOut(); go('sign-in'); } }] }); return; }
     if (value === 'my-reports') { if (expansion.state.reportSubmitted) go('report-status'); else open({ title: 'No reports yet', description: 'Reports you submit from a result or the Assistant appear here.', choices: [{ label: 'Report a result', action: () => go('report-output') }] }); return; }
-    if (value === 'provider-info') { open({ title: 'Apple Health', description: 'This connection is simulated. No HealthKit access or real provider data is requested.', choices: [{ label: store.state.connected ? 'Disconnect demo source' : 'Connect demo source', action: () => store.update(old => ({ ...old, connected: !old.connected })) }] }); return; }
-    if (value === 'reading-unit') { open({ title: 'Display unit', choices: ['mg/dL', 'mmol/L'].map(unit => ({ label: unit, selected: sceneState.choices.unit === unit, action: () => { expansion.action(`choose:unit:${unit}`, go, back, open); store.update(old => ({ ...old, profile: { ...old.profile, glucoseUnit: unit } })); } })) }); return; }
-    if (value.startsWith('choose:unit:')) store.update(old => ({ ...old, profile: { ...old.profile, glucoseUnit: value.slice(12) } }));
+    // Glucose display unit follows the profile preference; each reading keeps its entered unit.
+    if (value === 'reading-unit') { open({ title: 'Display unit', description: 'Changes how readings are shown. Each reading keeps the unit it was entered in.', choices: ['mg/dL', 'mmol/L'].map(unit => ({ label: unit, selected: sceneState.choices.displayUnit === unit, action: () => { expansion.action(`choose:displayUnit:${unit}`, go, back, open); store.update(old => ({ ...old, profile: { ...old.profile, glucoseUnit: unit } })); } })) }); return; }
     const preference = { 'profile-diet': 'dietary', 'profile-allergens': 'allergens', 'profile-activity': 'activity' }[value] as 'dietary' | 'allergens' | 'activity' | undefined;
     if (preference) { open({ title: preference === 'dietary' ? 'Dietary Preferences' : preference === 'allergens' ? 'Allergens' : 'Activity Preferences', fields: [{ key: preference, label: 'Preference', value: store.state.profile[preference] }], save: values => { if (!values[preference]?.trim()) return 'Enter your preference, or None.'; store.update(old => ({ ...old, profile: { ...old.profile, [preference]: values[preference].trim() } })); }, choices: preference === 'activity' ? [{ label: 'Review foot support', action: () => go('foot-questionnaire') }] : undefined }); return; }
     if (value === 'save-meal' || value === 'draft-meal') {
@@ -63,8 +62,8 @@ export default function NutriSole({ open, requestedRoute = 'onboarding', request
       const meal = result.meal; const id = `journey-${Date.now()}-${Math.random().toString(36).slice(2)}`; let saved = false;
       open({ title: meal.draft ? 'Save this draft?' : 'Confirm meal', description: `${meal.food} · ${Math.round(meal.grams)} g · ≈ ${meal.calories} cal\n${meal.draft ? 'Drafts are not marked as consumed.' : 'Values are sample estimates.'}`, choices: [{ label: meal.draft ? 'Save draft' : portionRecord?.id && !portionRecord.draft ? 'Update confirmed meal' : 'Log confirmed meal', action: () => { if (saved) return; saved = true; store.update(old => ({ ...old, ...savePortionRecord(old, nativeRecord(meal, id, new Date().toISOString()), meal.draft ? 'draft' : 'consumed', portionRecord) })); setPortionRecord(null); dispatch({ type: 'reset', route: 'personal-history' }); } }] }); return;
     }
-    if (value === 'export') { open({ title: 'Export local demo records', description: 'Preview your local records as JSON. Nothing is sent to a server.', fields: [{ key: 'json', label: 'Session export', value: JSON.stringify({ readings: sceneState.readings, meals: sceneState.meals, report: sceneState.reportSubmitted ? { id: 'DEMO-104', reason: sceneState.choices.reason } : null }, null, 2), multiline: true }] }); return; }
-    if (value === 'retained') { open({ title: 'Retained records', description: `${sceneState.readings.length} manual readings, ${sceneState.meals.length} meal entries.`, choices: [{ label: 'Clear local records', action: () => open({ title: 'Clear local demo records?', description: 'This clears the local demo preferences, readings and meal entries.', choices: [{ label: 'Confirm clear records', action: () => { store.reset(); expansion.reset(); setSignedIn(false); } }] }) }] }); return; }
+    if (value === 'export') { open({ title: 'Export local demo records', description: 'Preview your local records as JSON. Nothing is sent to a server.', fields: [{ key: 'json', label: 'Session export', value: JSON.stringify({ glucoseReadings: expansion.glucose.getSnapshot().readings.map(r => ({ measuredAt: r.measuredAt, value: r.valueOriginal, unit: r.unitOriginal, context: r.mealContext, source: r.source.type })), meals: sceneState.meals, report: sceneState.reportSubmitted ? { id: 'DEMO-104', reason: sceneState.choices.reason } : null }, null, 2), multiline: true }] }); return; }
+    if (value === 'retained') { open({ title: 'Retained records', description: `${expansion.glucose.getSnapshot().mode === 'supabase' ? `${expansion.glucose.getSnapshot().readings.length} glucose readings in your account (not cleared here)` : expansion.glucose.getSnapshot().mode === 'demo' ? `${expansion.glucose.getSnapshot().readings.length} demo glucose readings (session only)` : 'Glucose: database not configured'}, ${sceneState.meals.length} meal entries.`, choices: [{ label: 'Clear local records', action: () => open({ title: 'Clear local demo records?', description: 'This clears the local demo preferences, readings and meal entries.', choices: [{ label: 'Confirm clear records', action: () => { store.reset(); expansion.reset(); setSignedIn(false); } }] }) }] }); return; }
     const destination = (next: AppRoute) => {
       if (next === 'add-reading' && value !== 'new-reading' && value !== 'edit-reading') { expansion.action('new-reading', go, back, open); return; }
       if (value === 'choose-photo' && next === 'analysis-result') setFood('Apple');
@@ -75,7 +74,7 @@ export default function NutriSole({ open, requestedRoute = 'onboarding', request
       else go(next);
     };
     const flowSheet = (sheet: Sheet) => {
-      if (value === 'sign-in' && sheet.title === 'Frontend demo') { setSignedIn(true); store.update(old => ({ ...old, profile: { ...old.profile, email: expansion.state.fields.email.trim() } })); sheet.choices?.[0].action(); return; }
+      if (value === 'sign-in' && (sheet.title === 'Frontend demo' || sheet.title === 'Signed in')) { setSignedIn(true); store.update(old => ({ ...old, profile: { ...old.profile, email: expansion.state.fields.email.trim() } })); sheet.choices?.[0].action(); return; }
       const save = sheet.save;
       open({ ...sheet, choices: sheet.choices?.map(choice => ({ ...choice, label: choice.label === 'Explore all flows' ? 'Back to settings' : choice.label })), save: save ? values => { const error = save(values); if (!error && value === 'delete-account') { store.reset(); setSignedIn(false); } return error; } : undefined });
     };
@@ -87,5 +86,5 @@ export default function NutriSole({ open, requestedRoute = 'onboarding', request
     : route === 'home' ? <Home {...props} /> : route === 'scan' ? <Scan {...props} />
     : route === 'log-meal' ? <LogMeal key={`${route}-${history.length}`} {...props} portion={applePortion} updatePortion={setApplePortion} /> : route === 'weekly-plan' ? <WeeklyPlan {...props} />
     : route === 'profile' ? <Profile {...props} /> : <Onboarding {...props} />;
-  return <View style={{ flex: 1 }}><View style={{ flex: 1 }}>{content}</View>{showTabs(route) && <TabBar route={route} navigate={next => { Keyboard.dismiss(); if (next === 'glucose-overview') expansion.action(`choose:unit:${store.state.profile.glucoseUnit}`, go, back, open); dispatch({ type: 'tab', route: next }); }} />}</View>;
+  return <View style={{ flex: 1 }}><View style={{ flex: 1 }}>{content}</View>{showTabs(route) && <TabBar route={route} navigate={next => { Keyboard.dismiss(); if (next === 'glucose-overview') expansion.action(`choose:displayUnit:${store.state.profile.glucoseUnit}`, go, back, open); dispatch({ type: 'tab', route: next }); }} />}</View>;
 }

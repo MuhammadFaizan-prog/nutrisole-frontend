@@ -1,0 +1,9 @@
+Synthetic export in an Accu-Chek 360-like layout (not real data)
+Serial number;SYN0000001
+Download date;16.10.2026
+Date;Time;Result;Unit;Meal marker;Control test
+12.10.2026;07:10;108;mg/dL;Before meal;
+12.10.2026;13:45;171;mg/dL;After meal;
+13.10.2026;07:05;96;mg/dL;Fasting;
+13.10.2026;09:00;120;mg/dL;;Control test
+13.10.2026;21:30;143;mg/dL;Bedtime;
