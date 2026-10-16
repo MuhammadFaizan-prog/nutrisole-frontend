@@ -40,7 +40,7 @@ export function findDate(text: string, order: DateOrder = 'DMY'): { date: DatePa
   return best ? { date: best.date!, index: best.index, length: best.length } : null;
 }
 
-const timeRe = /(?:^|[^\d:])([01]?\d|2[0-3])[:.]([0-5]\d)(?::[0-5]\d(?:\.\d+)?)?\s*([AaPp]\.?\s?[Mm]\.?)?(?![\d])/;
+const timeRe = /(?:^|[^\d:])([01]?\d|2[0-3])(?:\s*:\s*|\.)([0-5]\d)(?::[0-5]\d(?:\.\d+)?)?\s*([AaPp]\.?\s?[Mm]\.?)?(?![\d])/;
 export function findTime(text: string): { time: TimeParts; index: number } | null {
   const m = timeRe.exec(text);
   if (!m) return null;

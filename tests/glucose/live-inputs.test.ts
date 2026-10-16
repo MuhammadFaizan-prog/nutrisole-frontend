@@ -34,6 +34,35 @@ test('equal glucose values on different report pages keep their own collection d
   assert.notEqual(result.candidates[0].id, result.candidates[1].id);
 });
 
+test('OCR spaces in collection times do not select a later printed-report time', () => {
+  const result = parseReportText(lines('Specimen Collected: 14/10/2026 09: 45  Reported: 14/10/2026 13:30\nRandom Blood Sugar 168 mg/dL'), meta);
+  assert.equal(result.candidates[0].date, 'Oct 14, 2026');
+  assert.equal(result.candidates[0].time, '9:45 AM');
+});
+
+test('OCR can separate the colon from the collection hour', () => {
+  const result = parseReportText(lines('Sample Collection Date: 15-10-2026 07 :55\nFasting Glucose 5.8 mmol/L'), meta);
+  assert.equal(result.candidates[0].time, '7:55 AM');
+});
+
+test('a missing collection time never borrows the report-printing time on the same row', () => {
+  const result = parseReportText(lines('Specimen Collected: 14/10/2026  Reported: 14/10/2026 13:30\nRandom Blood Sugar 168 mg/dL'), meta);
+  assert.equal(result.candidates[0].time, '');
+  assert.ok(result.candidates[0].flags.includes('missing-time'));
+});
+
+test('collection metadata can continue before a reporting field on the next row', () => {
+  const result = parseReportText(lines('Collected:\n14/10/2026 09:45 Reported: 14/10/2026 13:30\nRandom Blood Sugar 168 mg/dL'), meta);
+  assert.equal(result.candidates[0].date, 'Oct 14, 2026');
+  assert.equal(result.candidates[0].time, '9:45 AM');
+});
+
+test('paired collection date and collection time fields stay together', () => {
+  const result = parseReportText(lines('Collection Date: 14/10/2026 Collection Time: 09:45\nRandom Blood Sugar 168 mg/dL'), meta);
+  assert.equal(result.candidates[0].date, 'Oct 14, 2026');
+  assert.equal(result.candidates[0].time, '9:45 AM');
+});
+
 test('meter transfer ignores a response for a different RACP operation', async () => {
   const handlers = new Map<string, (b: Uint8Array) => void>();
   const transport: GlsTransport = {

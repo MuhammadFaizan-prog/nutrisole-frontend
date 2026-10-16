@@ -64,11 +64,18 @@ export function resultNumbers(text: string): string[] {
 
 function findCollection(lines: TextLine[]): LabParseResult['collected'] {
   let best: { rank: number; date: DateParts | null; time: TimeParts | null; label: string } | null = null;
+  // OCR can merge collection and reporting fields into one geometrical row.
+  // A field ends at the next metadata label; never borrow its clock or date.
+  const field = (value: string, rank: number) => {
+    const next = COLLECTION_LABELS.filter(l => l.rank !== rank).map(l => l.re.exec(value)?.index).filter((i): i is number => i !== undefined);
+    return next.length ? value.slice(0, Math.min(...next)) : value;
+  };
   lines.forEach((line, i) => {
     for (const l of COLLECTION_LABELS) {
       const m = l.re.exec(line.text); if (!m) continue;
-      const rest = line.text.slice(m.index + m[0].length);
-      const nextText = lines[i + 1]?.text || '';
+      const rest = field(line.text.slice(m.index + m[0].length), l.rank);
+      const next = lines[i + 1]?.text || '';
+      const nextText = field(next, l.rank);
       const d = findDate(rest) || findDate(nextText);
       if (!d) continue;
       const source = findDate(rest) ? rest : nextText;
