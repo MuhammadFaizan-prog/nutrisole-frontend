@@ -53,5 +53,16 @@ try {
   console.log('ok - B cannot see, edit, delete or forge A rows; anonymous requests are refused');
   assert.equal((await sa2.remove(c1.reading.id)).ok, true); await sa2.reload(); assert.equal(sa2.getSnapshot().readings.length, 1);
   console.log('ok - A deleted a reading; deletion persisted');
+  // Stage G-2: a reviewed CSV import goes through the same client: provenance stored, re-import skipped.
+  const { fileToBatch } = await import('../../src/nutrisole/glucose/import/fileImport.ts');
+  const { bulk, draftsToSave } = await import('../../src/nutrisole/glucose/import/review.ts');
+  const csv = { name: 'mysugr-style.csv', mime: 'text/csv', bytes: new Uint8Array(fs.readFileSync(new URL('./fixtures/mysugr-style.csv', import.meta.url))) };
+  const batch = bulk(await fileToBatch(csv, {}), 'confirm-clean', sa2.getSnapshot().readings);
+  const { drafts } = draftsToSave(batch, sa2.getSnapshot().readings);
+  const imp1 = await sa2.importMany(drafts);
+  assert.equal(imp1.saved.length, 4); assert.equal(imp1.failed.length, 0);
+  assert.equal(imp1.saved[0].source.type, 'file'); assert.equal(imp1.saved[0].source.provider, 'file:csv'); assert.equal(imp1.saved[0].source.meta.fileName, 'mysugr-style.csv'); assert.equal(imp1.saved[0].source.batchId, batch.id); assert.match(imp1.saved[0].source.dedupeKey, /\|99\.0$/);
+  const imp2 = await sa2.importMany(drafts); assert.equal(imp2.saved.length, 0); assert.equal(imp2.skipped, 4);
+  console.log('ok - reviewed CSV import saved 4 rows with provenance; re-importing the same file skips all 4 (unique import uid)');
   console.log('ROUNDTRIP PASSED');
 } finally { pgrst.kill(); proxy.close(); fs.rmSync(conf, { force: true }); }

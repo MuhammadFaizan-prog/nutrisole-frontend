@@ -90,6 +90,27 @@ export class GlucoseStore {
     }
   }
 
+  /**
+   * Save reviewed import rows one by one (each waits for the server). A unique-index
+   * conflict means the row was already imported and is counted as skipped, never retried.
+   */
+  async importMany(drafts: GlucoseDraft[]): Promise<{ saved: GlucoseReading[]; skipped: number; failed: { index: number; error: string }[]; stoppedEarly: string | null }> {
+    if (this.snapshot.busy) return { saved: [], skipped: 0, failed: [], stoppedEarly: 'Please wait for the current action to finish.' };
+    this.set({ busy: 'saving', error: null });
+    const saved: GlucoseReading[] = []; const failed: { index: number; error: string }[] = []; let skipped = 0; let stoppedEarly: string | null = null;
+    for (const [index, draft] of drafts.entries()) {
+      try { saved.push(await this.repository.create(draft)); }
+      catch (error) {
+        const e = error instanceof GlucoseRepositoryError ? error : new GlucoseRepositoryError('server', 'Something went wrong.');
+        if (e.kind === 'conflict') { skipped++; continue; }
+        failed.push({ index, error: e.message });
+        if (['offline', 'unauthenticated', 'unconfigured', 'schema-missing', 'forbidden'].includes(e.kind)) { stoppedEarly = e.message; break; }
+      }
+    }
+    this.set({ busy: null, readings: [...this.snapshot.readings.filter(r => !saved.some(n => n.id === r.id)), ...saved].sort(compareChronological), status: saved.length ? 'ready' : this.snapshot.status });
+    return { saved, skipped, failed, stoppedEarly };
+  }
+
   /** Optimistic delete with rollback on failure. */
   async remove(id: string): Promise<MutationResult> {
     if (this.snapshot.busy) return { ok: false, error: 'Please wait for the current action to finish.', kind: 'busy' };

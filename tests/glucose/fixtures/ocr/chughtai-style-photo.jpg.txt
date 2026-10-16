@@ -1,0 +1,15 @@
+# tesseract.js 0.91 document
+CHUGHTAI-STYLE LAB REPORT (SYNTHETIC SAMPLE - NOT A REAL REPORT)
+Patient Name: Test Patient A Age/Gender: 40 Y / M
+
+Lab No: SYN-0001 Collected On: 12-Oct-2026 08:20 AM
+Registered On: 12-Oct-2026 08:05 AM Reported On: 12-Oct-2026 01:10 PM
+
+Test Name Result Unit Reference Range
+CHEMISTRY
+
+Glucose Fasting 112 mg/dL 70 - 100
+HbAlc 6.4 % 4.0 - 5.6
+Estimated Average Glucose 137 mg/dL
+
+Interpretation: Fasting glucose 100-125 mg/dL impaired; >= 126 mg/dL diabetes.

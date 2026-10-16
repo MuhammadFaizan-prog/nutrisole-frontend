@@ -5,8 +5,8 @@
 export type GlucoseUnit = 'mg/dL' | 'mmol/L';
 export const glucoseUnits: readonly GlucoseUnit[] = ['mg/dL', 'mmol/L'];
 
-/** Where a record came from. Only `manual` is implemented; the others are gated contracts. */
-export type GlucoseSourceType = 'manual' | 'health_connect' | 'healthkit' | 'ble_meter' | 'vendor_import';
+/** Where a record came from. `file`/`ocr` and the device sources always pass the review screen first. */
+export type GlucoseSourceType = 'manual' | 'file' | 'ocr' | 'health_connect' | 'healthkit' | 'ble_meter' | 'vendor_import';
 
 /** Self-reported measurement context. Labels only, never a diagnosis. */
 export type MealContext = 'fasting' | 'before_meal' | 'after_meal' | 'bedtime' | 'random' | 'other' | 'unspecified';
@@ -27,6 +27,12 @@ export type GlucoseSource = {
   device: string | null;
   /** Immutable source-side record id used for idempotent import. Null for manual. */
   recordId: string | null;
+  /** Import provenance (file name/hash, row/line, raw text, OCR engine, confidence, original value/unit). Null for manual. */
+  meta?: Record<string, unknown> | null;
+  /** Review batch the row was confirmed in (one file / scan / device sync). */
+  batchId?: string | null;
+  /** Content key (minute instant + mg/dL) used to spot the same reading from two sources. */
+  dedupeKey?: string | null;
 };
 
 /** Canonical persisted reading (mirrors public.glucose_readings). */
@@ -106,9 +112,14 @@ export interface GlucoseRepository {
 
 export type ConnectionStatus =
   | { state: 'unsupported-platform'; reason: string }
+  | { state: 'unavailable'; reason: string }
+  | { state: 'needs-update'; reason: string }
+  | { state: 'bluetooth-off'; reason: string }
+  | { state: 'unsupported-device'; reason: string }
+  | { state: 'ready'; reason: string }
   | { state: 'research-only'; reason: string }
   | { state: 'permission-required' }
-  | { state: 'permission-denied' }
+  | { state: 'permission-denied'; reason?: string }
   | { state: 'disconnected' }
   | { state: 'syncing'; startedAt: string }
   | { state: 'connected'; lastSyncAt: string | null; stale: boolean };

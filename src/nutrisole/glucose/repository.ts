@@ -9,15 +9,15 @@ export type GlucoseRow = {
   id: string; user_id: string; measured_at: string; tz_offset_minutes: number; tz_name: string | null;
   value_original: number | string; unit_original: GlucoseUnit; value_mg_dl: number | string;
   meal_context: MealContext; note: string | null; source_type: GlucoseSourceType; source_provider: string | null;
-  source_device: string | null; source_record_id: string | null; created_at: string; updated_at: string;
+  source_device: string | null; source_record_id: string | null; source_meta?: Record<string, unknown> | null; import_batch_id?: string | null; dedupe_key?: string | null; created_at: string; updated_at: string;
 };
-const columns = 'id,user_id,measured_at,tz_offset_minutes,tz_name,value_original,unit_original,value_mg_dl,meal_context,note,source_type,source_provider,source_device,source_record_id,created_at,updated_at';
+const columns = 'id,user_id,measured_at,tz_offset_minutes,tz_name,value_original,unit_original,value_mg_dl,meal_context,note,source_type,source_provider,source_device,source_record_id,source_meta,import_batch_id,dedupe_key,created_at,updated_at';
 
 export function rowToReading(row: GlucoseRow): GlucoseReading {
   return {
     id: row.id, userId: row.user_id, measuredAt: new Date(row.measured_at).toISOString(), tzOffsetMinutes: row.tz_offset_minutes, tzName: row.tz_name,
     valueOriginal: String(row.value_original), unitOriginal: row.unit_original, valueMgDl: Number(row.value_mg_dl), mealContext: row.meal_context, note: row.note,
-    source: { type: row.source_type, provider: row.source_provider, device: row.source_device, recordId: row.source_record_id },
+    source: { type: row.source_type, provider: row.source_provider, device: row.source_device, recordId: row.source_record_id, meta: row.source_meta ?? null, batchId: row.import_batch_id ?? null, dedupeKey: row.dedupe_key ?? null },
     createdAt: new Date(row.created_at).toISOString(), updatedAt: new Date(row.updated_at).toISOString(),
   };
 }
@@ -29,6 +29,7 @@ export function draftToRow(draft: GlucoseDraft) {
     value_original: draft.valueOriginal, unit_original: draft.unitOriginal, // value_mg_dl is a generated column
     meal_context: draft.mealContext, note: draft.note,
     source_type: draft.source.type, source_provider: draft.source.provider, source_device: draft.source.device, source_record_id: draft.source.recordId,
+    ...(draft.source.type === 'manual' ? {} : { source_meta: draft.source.meta ?? null, import_batch_id: draft.source.batchId ?? null, dedupe_key: draft.source.dedupeKey ?? null }),
   };
 }
 
@@ -49,7 +50,7 @@ export class SupabaseGlucoseRepository implements GlucoseRepository {
     return rowToReading(rows[0]);
   }
   async update(id: string, draft: GlucoseDraft) {
-    const { source_type: _t, source_provider: _p, source_device: _d, source_record_id: _r, ...editable } = draftToRow(draft);
+    const { source_type: _t, source_provider: _p, source_device: _d, source_record_id: _r, source_meta: _m, import_batch_id: _b, dedupe_key: _k, ...editable } = draftToRow(draft) as ReturnType<typeof draftToRow> & { source_meta?: unknown; import_batch_id?: unknown; dedupe_key?: unknown };
     const rows = await this.client.rest(`/glucose_readings?id=eq.${encodeURIComponent(id)}&select=${columns}`, { method: 'PATCH', body: editable, prefer: 'return=representation' }) as GlucoseRow[];
     if (!rows?.[0]) throw new GlucoseRepositoryError('not-found', 'This reading no longer exists or belongs to another account.');
     return rowToReading(rows[0]);

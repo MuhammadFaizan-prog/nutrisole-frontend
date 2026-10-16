@@ -10,6 +10,7 @@ import { contextFromLabel, contextLabel, inputFromReading, validateGlucoseInput 
 import { formatDisplayDate, formatDisplayTime, instantToWallClock, nowDisplay, parseDisplayDate, parseDisplayTime, timeZoneLabel } from './time';
 import { glucoseAdapters } from './adapters';
 import { rangeLabels, type GlucoseRange } from './history';
+import { importAction } from './importActions';
 
 type SetState = (fn: (s: ExpansionState) => ExpansionState) => void;
 export type GlucoseActionContext = { s: ExpansionState; setState: SetState; store: GlucoseStore; go: (r: AppRoute) => void; back: () => void; open: (sheet: Sheet) => void };
@@ -28,6 +29,7 @@ export function glucoseAction(action: string, ctx: GlucoseActionContext): boolea
     if (snap.status === 'signed-out') { notice('Sign in to save', 'Glucose readings are saved to your NutriSole account. Sign in first; your entry was not saved.', [{ label: 'Sign in', action: () => go('sign-in') }]); return true; }
     return false;
   };
+  if (importAction(action, ctx)) return true;
   if (action.startsWith('choose:glucoseRange:')) { const range = action.slice(20) as GlucoseRange; if (range in rangeLabels) setState(v => ({ ...v, choices: { ...v.choices, glucoseRange: range } })); return true; }
   if (action.startsWith('open-reading:')) { const id = action.slice(13); setState(v => ({ ...v, glucoseCurrentId: id, glucoseRemoved: false })); go('reading-detail'); return true; }
   if (action.startsWith('provider-info:')) {

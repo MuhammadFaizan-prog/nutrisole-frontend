@@ -1,0 +1,9 @@
+# tesseract.js 0.94 document
+IDC-STYLE DIAGNOSTIC CENTRE REPORT (SYNTHETIC SAMPLE)
+Collection Date/Time : 16 Oct 2026 08:10 AM
+
+Ref. By: Self Patient: Test Patient D
+Parameter Result Normal Values
+Blood Glucose Random (RBS) 134 mg/dL 70 - 140
+
+Glycated Hemoglobin (HbAlc) 7.1% < 5.7

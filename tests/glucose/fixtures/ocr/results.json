@@ -1,0 +1,350 @@
+{
+ "chughtai-style.png": {
+  "fields": {
+   "value": [
+    1,
+    1
+   ],
+   "unit": [
+    1,
+    1
+   ],
+   "context": [
+    1,
+    1
+   ],
+   "date": [
+    1,
+    1
+   ],
+   "time": [
+    1,
+    1
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.91,
+  "mode": "document",
+  "ms": 1143
+ },
+ "chughtai-style-photo.jpg": {
+  "fields": {
+   "value": [
+    1,
+    1
+   ],
+   "unit": [
+    1,
+    1
+   ],
+   "context": [
+    1,
+    1
+   ],
+   "date": [
+    1,
+    1
+   ],
+   "time": [
+    1,
+    1
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.91,
+  "mode": "document",
+  "ms": 667
+ },
+ "shaukat-khanum-style.png": {
+  "fields": {
+   "value": [
+    1,
+    1
+   ],
+   "unit": [
+    1,
+    1
+   ],
+   "context": [
+    1,
+    1
+   ],
+   "date": [
+    1,
+    1
+   ],
+   "time": [
+    1,
+    1
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.94,
+  "mode": "document",
+  "ms": 443
+ },
+ "shaukat-khanum-style-photo.jpg": {
+  "fields": {
+   "value": [
+    1,
+    1
+   ],
+   "unit": [
+    1,
+    1
+   ],
+   "context": [
+    1,
+    1
+   ],
+   "date": [
+    1,
+    1
+   ],
+   "time": [
+    1,
+    1
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.94,
+  "mode": "document",
+  "ms": 349
+ },
+ "excel-labs-style.png": {
+  "fields": {
+   "value": [
+    2,
+    2
+   ],
+   "unit": [
+    2,
+    2
+   ],
+   "context": [
+    2,
+    2
+   ],
+   "date": [
+    2,
+    2
+   ],
+   "time": [
+    2,
+    2
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.94,
+  "mode": "document",
+  "ms": 393
+ },
+ "excel-labs-style-photo.jpg": {
+  "fields": {
+   "value": [
+    2,
+    2
+   ],
+   "unit": [
+    2,
+    2
+   ],
+   "context": [
+    2,
+    2
+   ],
+   "date": [
+    2,
+    2
+   ],
+   "time": [
+    2,
+    2
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.92,
+  "mode": "document",
+  "ms": 316
+ },
+ "idc-style.png": {
+  "fields": {
+   "value": [
+    1,
+    1
+   ],
+   "unit": [
+    1,
+    1
+   ],
+   "context": [
+    1,
+    1
+   ],
+   "date": [
+    1,
+    1
+   ],
+   "time": [
+    1,
+    1
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.94,
+  "mode": "document",
+  "ms": 458
+ },
+ "idc-style-photo.jpg": {
+  "fields": {
+   "value": [
+    1,
+    1
+   ],
+   "unit": [
+    1,
+    1
+   ],
+   "context": [
+    1,
+    1
+   ],
+   "date": [
+    1,
+    1
+   ],
+   "time": [
+    1,
+    1
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.93,
+  "mode": "document",
+  "ms": 353
+ },
+ "meter-mgdl.png": {
+  "fields": {
+   "value": [
+    1,
+    1
+   ],
+   "unit": [
+    1,
+    1
+   ],
+   "context": [
+    1,
+    1
+   ],
+   "date": [
+    1,
+    1
+   ],
+   "time": [
+    1,
+    1
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.91,
+  "mode": "document",
+  "ms": 81
+ },
+ "meter-mgdl-photo.jpg": {
+  "fields": {
+   "value": [
+    1,
+    1
+   ],
+   "unit": [
+    1,
+    1
+   ],
+   "context": [
+    1,
+    1
+   ],
+   "date": [
+    1,
+    1
+   ],
+   "time": [
+    1,
+    1
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.92,
+  "mode": "document",
+  "ms": 77
+ },
+ "meter-mmol.png": {
+  "fields": {
+   "value": [
+    1,
+    1
+   ],
+   "unit": [
+    1,
+    1
+   ],
+   "context": [
+    1,
+    1
+   ],
+   "date": [
+    1,
+    1
+   ],
+   "time": [
+    1,
+    1
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.87,
+  "mode": "document",
+  "ms": 261
+ },
+ "meter-mmol-photo.jpg": {
+  "fields": {
+   "value": [
+    1,
+    1
+   ],
+   "unit": [
+    1,
+    1
+   ],
+   "context": [
+    1,
+    1
+   ],
+   "date": [
+    1,
+    1
+   ],
+   "time": [
+    1,
+    1
+   ]
+  },
+  "extraCandidates": 0,
+  "nonGlucoseSeparated": true,
+  "ocrConfidence": 0.85,
+  "mode": "document",
+  "ms": 95
+ }
+}

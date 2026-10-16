@@ -1,0 +1,8 @@
+# tesseract.js 0.94 document
+EXCEL-LABS-STYLE DIAGNOSTIC REPORT (SYNTHETIC SAMPLE)
+
+Patient: Test Patient C Sample Collection Date: 15-10-2026 07:55
+Investigation Result Unit Reference
+FBS 5.8 mmol/L 3.9 - 5.5
+
+PPBS (2 Hrs) 9.1 mmol/L < 7.8

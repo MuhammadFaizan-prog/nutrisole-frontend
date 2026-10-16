@@ -123,4 +123,40 @@ do $$ begin
   if (select count(*) from public.glucose_readings where user_id = 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb') <> 2 then raise exception 'FAIL 9: B rows affected'; end if;
 end $$;
 \echo 'ok 9 - owner delete; deleting the auth user cascades only that user''s readings'
+-- 10. Stage G-2 import columns: file/ocr sources, provenance meta, batch id, dedupe key.
+set role authenticated;
+select set_config('request.jwt.claims', json_build_object('sub', :B, 'role', 'authenticated')::text, false) as jwt \gset
+insert into public.glucose_readings (measured_at, tz_offset_minutes, value_original, unit_original, meal_context, source_type, source_provider, source_record_id, source_meta, import_batch_id, dedupe_key)
+  values (now() - interval '2 hours', 300, 112, 'mg/dL', 'fasting', 'ocr', 'ocr:tesseract.js', 'abc123:line10', '{"fileName":"report.jpg","locator":"line 10","confidence":0.86,"originalValue":"112"}', 'img-test-1', '2026-10-16T03:00:00.000Z|112.0'),
+         (now() - interval '3 hours', 300, 6.1, 'mmol/L', 'random', 'file', 'file:csv', 'def456:row2', '{"fileName":"export.csv"}', 'csv-test-1', '2026-10-16T02:00:00.000Z|109.9');
+do $$ begin
+  if (select count(*) from public.glucose_readings where source_type in ('file', 'ocr')) <> 2 then raise exception 'FAIL 10: import insert'; end if;
+  begin  -- same file row again → unique import uid
+    insert into public.glucose_readings (measured_at, tz_offset_minutes, value_original, unit_original, source_type, source_provider, source_record_id) values (now() - interval '3 hours', 300, 6.1, 'mmol/L', 'file', 'file:csv', 'def456:row2');
+    raise exception 'FAIL 10: duplicate file row accepted';
+  exception when unique_violation then null; end;
+  begin  -- manual rows cannot carry import metadata
+    insert into public.glucose_readings (measured_at, tz_offset_minutes, value_original, unit_original, source_meta) values (now() - interval '1 hour', 300, 100, 'mg/dL', '{"x":1}');
+    raise exception 'FAIL 10: manual with meta accepted';
+  exception when check_violation then null; end;
+  begin  -- meta must be a JSON object
+    insert into public.glucose_readings (measured_at, tz_offset_minutes, value_original, unit_original, source_type, source_provider, source_record_id, source_meta) values (now() - interval '1 hour', 300, 100, 'mg/dL', 'file', 'file:csv', 'x:row9', '[1,2]');
+    raise exception 'FAIL 10: non-object meta accepted';
+  exception when check_violation then null; end;
+  begin  -- provenance meta is immutable after save
+    update public.glucose_readings set source_meta = '{"fileName":"forged"}' where source_record_id = 'abc123:line10';
+    raise exception 'FAIL 10: meta updated';
+  exception when insufficient_privilege or raise_exception then null; end;
+  begin  -- an imported value stays read-only
+    update public.glucose_readings set value_original = 150 where source_record_id = 'abc123:line10';
+    raise exception 'FAIL 10: imported value updated';
+  exception when raise_exception then null; end;
+end $$;
+update public.glucose_readings set note = 'checked against the paper report' where source_record_id = 'abc123:line10';
+reset role;
+do $$ begin
+  if (select value_mg_dl from public.glucose_readings where source_record_id = 'def456:row2') <> 109.91 then raise exception 'FAIL 10: generated mg/dL'; end if;
+  if (select source_meta->>'confidence' from public.glucose_readings where source_record_id = 'abc123:line10') <> '0.86' then raise exception 'FAIL 10: meta stored'; end if;
+end $$;
+\echo 'ok 10 - file/ocr imports: provenance meta + batch + dedupe key stored; re-import blocked; manual rows carry no meta; meta and imported values immutable'
 \echo 'RLS SUITE PASSED'

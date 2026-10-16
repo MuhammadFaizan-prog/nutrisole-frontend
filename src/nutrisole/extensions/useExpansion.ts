@@ -7,6 +7,8 @@ import { readGlucoseConfig } from '../glucose/config';
 import { glucoseAction } from '../glucose/actions';
 import { buildGlucoseView } from '../glucose/viewModel';
 import { nowDisplay } from '../glucose/time';
+import { buildImportView } from '../glucose/import/view';
+import { importPlatform } from '../glucose/importActions';
 // New readings default to the device's current date/time (not the concept fixture date).
 function freshState(): ExpansionState { const s = initialExpansionState(); const now = nowDisplay(); return { ...s, choices: { ...s.choices, date: now.date, time: now.time } }; }
 import type { GlucoseUnit } from '../glucose/types';
@@ -17,7 +19,7 @@ export function useExpansion() {
   const [glucose] = useState(() => createGlucoseStore(readGlucoseConfig()));
   const glucoseSnapshot = useSyncExternalStore(glucose.subscribe, glucose.getSnapshot, glucose.getSnapshot);
   useEffect(() => { void glucose.start(); }, [glucose]);
-  const state: ExpansionState = useMemo(() => ({ ...rawState, glucose: buildGlucoseView(glucoseSnapshot, { displayUnit: (rawState.choices.displayUnit || 'mg/dL') as GlucoseUnit, range: (rawState.choices.glucoseRange || '7d') as GlucoseRange, currentId: rawState.glucoseCurrentId, removed: rawState.glucoseRemoved, editingId: rawState.glucoseEditingId, editOffset: rawState.glucoseEditOffset, editTzName: rawState.glucoseEditTzName }) }), [rawState, glucoseSnapshot]);
+  const state: ExpansionState = useMemo(() => ({ ...rawState, glucose: buildGlucoseView(glucoseSnapshot, { displayUnit: (rawState.choices.displayUnit || 'mg/dL') as GlucoseUnit, range: (rawState.choices.glucoseRange || '7d') as GlucoseRange, currentId: rawState.glucoseCurrentId, removed: rawState.glucoseRemoved, editingId: rawState.glucoseEditingId, editOffset: rawState.glucoseEditOffset, editTzName: rawState.glucoseEditTzName }), glucoseImportView: buildImportView(rawState.glucoseImport, glucoseSnapshot.readings, importPlatform().kind) }), [rawState, glucoseSnapshot]);
   const update = (patch: Partial<ExpansionState>) => setState(s => ({ ...s, ...patch }));
   const field = (key: string, value: string) => setState(s => ({ ...s, fields: { ...s.fields, [key]: value } }));
   function action(action: string, go: (r: AppRoute) => void, back: () => void, open: (s: Sheet) => void) {

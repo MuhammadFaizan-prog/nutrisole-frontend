@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import { extensionRoutes } from '../../src/nutrisole/extensions/model.ts';
 import { canonicalRoute, navigationReducer, sectionForRoute, showTabs, taskLinks, settingsGroups, journeyGraph, type NavigationState } from '../responsive/navigation.ts';
 
-test('task controls connect all 38 screens from onboarding without a screen catalog', () => {
+test('task controls connect all 40 screens from onboarding without a screen catalog', () => {
   const seen = new Set<string>();
   const queue = ['onboarding'];
   while (queue.length) {

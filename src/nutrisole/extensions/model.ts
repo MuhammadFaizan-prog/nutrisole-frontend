@@ -1,6 +1,6 @@
 // App-owned layers shared by React Native and the editable Figma importer.
 // Coordinates describe the selected 393 × 852 concepts; images are discrete photos only.
-export const extensionRoutes = ['sign-in', 'create-account', 'verify-email', 'recover-account', 'reset-password', 'analysis-result', 'market-reference', 'capture-retry', 'food-selector', 'nutrition-details', 'glucose-overview', 'add-reading', 'reading-detail', 'health-connections', 'plan-generation', 'activity-plan', 'plan-rationale', 'foot-questionnaire', 'foot-guidance', 'assistant', 'privacy-data-rights', 'reminders', 'report-output', 'report-status', 'personal-history', 'catalog-queue', 'catalog-review', 'model-release', 'operations-audit', 'report-triage', 'flow-directory', 'portion-confirmation'] as const;
+export const extensionRoutes = ['sign-in', 'create-account', 'verify-email', 'recover-account', 'reset-password', 'analysis-result', 'market-reference', 'capture-retry', 'food-selector', 'nutrition-details', 'glucose-overview', 'add-reading', 'reading-detail', 'health-connections', 'glucose-import', 'import-review', 'plan-generation', 'activity-plan', 'plan-rationale', 'foot-questionnaire', 'foot-guidance', 'assistant', 'privacy-data-rights', 'reminders', 'report-output', 'report-status', 'personal-history', 'catalog-queue', 'catalog-review', 'model-release', 'operations-audit', 'report-triage', 'flow-directory', 'portion-confirmation'] as const;
 export type ExtensionRoute = typeof extensionRoutes[number];
 export type Layer = {
   kind: 'text' | 'surface' | 'photo' | 'icon' | 'button' | 'input' | 'toggle' | 'radio';
@@ -12,10 +12,11 @@ export type Layer = {
 };
 export type Scene = { id: ExtensionRoute; title: string; role: string; layers: Layer[]; height: number };
 import type { GlucoseSceneView } from '../glucose/viewModel';
+import type { ImportUiState, ImportView } from '../glucose/import/view';
 export type ExpansionState = {
   fields: Record<string, string>; choices: Record<string, string>; toggles: Record<string, boolean>;
   /** Glucose view model computed from the repository-backed store (absent = not configured). */
-  glucose?: GlucoseSceneView; glucoseCurrentId: string | null; glucoseEditingId: string | null; glucoseRemoved: boolean; glucoseEditOffset: number | null; glucoseEditTzName: string | null;
+  glucose?: GlucoseSceneView; glucoseImport?: ImportUiState; glucoseImportView?: ImportView; glucoseCurrentId: string | null; glucoseEditingId: string | null; glucoseRemoved: boolean; glucoseEditOffset: number | null; glucoseEditTzName: string | null;
   planVersion: number; activityComplete: boolean; reportSubmitted: boolean; reportResolved: boolean;
   exportStatus: string; session: boolean; meals: { food: string; grams: number; calories: number; draft: boolean }[];
 };
@@ -171,15 +172,15 @@ export function buildScene(id: ExtensionRoute, s = initialExpansionState()): Sce
       }
       y += 253;
       row(y, 'Unit', unit, 'Droplet', 'reading-unit', 'Display format for your readings'); y += 71;
-      row(y, 'Source', 'Manual', 'Flower', 'manual-source', 'How you add your readings'); y += 71;
-      row(y, 'Health connections', '', 'Heart', 'go:health-connections', 'Automatic import is not available yet'); y += 85;
+      row(y, 'Add from a file, scan or device', '', 'Download', 'go:glucose-import', 'CSV, Excel, PDF, photo, Health Connect,\nBluetooth meter · you review first'); y += 89;
+      row(y, 'Health connections', '', 'Heart', 'go:health-connections', 'Device import is in beta'); y += 85;
       if (g?.list.length) {
         text(`READINGS · ${g.listTotal} IN RANGE`, 28, y, 330, 11, { color: colors.muted }); y += 24;
         g.list.forEach(item => { row(y, `${item.value} ${item.unit}`, '', 'Droplet', `open-reading:${item.id}`, `${item.when} · ${item.context}`); y += 74; });
         if (g.listTotal > g.list.length) { note(`Showing the latest ${g.list.length} of ${g.listTotal}. Choose a shorter range to see others.`, y, 58, colors.card); y += 70; }
       }
       const buttonsY = Math.max(740, y + 8);
-      button(g?.busy === 'saving' ? 'Saving…' : 'Add reading', buttonsY, 'new-reading', 'primary', { h: 48 }); button('Connect a health source', buttonsY + 58, 'go:health-connections', 'secondary', { h: 37, size: 14 });
+      button(g?.busy === 'saving' ? 'Saving…' : 'Add reading', buttonsY, 'new-reading', 'primary', { h: 48 }); button('Import readings', buttonsY + 58, 'go:glucose-import', 'secondary', { h: 37, size: 14 });
       scene.height = Math.max(852, buttonsY + 112); break;
     }
     case 'add-reading': {
@@ -212,12 +213,52 @@ export function buildScene(id: ExtensionRoute, s = initialExpansionState()): Sce
       scene.height = 960; break;
     }
     case 'health-connections':
-      header('Health connections'); heading('Choose what you share.', 110, 'Automatic import is not available yet.\nManual entry works with any strip meter.', 29);
-      row(222, 'Health Connect', 'Not available', 'Heart', 'provider-info:health_connect', 'Android · research only, no verified\nmeter app'); row(299, 'Apple Health', 'Not available', 'Heart', 'provider-info:healthkit', 'iOS · planned for a later build'); row(376, 'Bluetooth meter', 'Research only', 'Activity', 'provider-info:ble_meter', 'Needs a hardware-tested meter');
+      header('Health connections'); heading('Choose what you share.', 110, 'Device import is in beta and unverified\nwith real hardware. You review every value.', 29);
+      { const web = s.glucoseImportView?.platform !== 'native';
+      row(222, 'Health Connect', web ? 'Mobile app' : 'Beta', 'Heart', 'import-device:health_connect', 'Android · reads blood glucose records\nyou allow'); row(299, 'Apple Health', web ? 'Mobile app' : 'Not built', 'Heart', 'import-device:healthkit', 'iOS · typed only, not in this build'); row(376, 'Bluetooth meter', web ? 'Mobile app' : 'Beta', 'Activity', 'import-device:ble_meter', 'Glucose Profile meters · unverified\nwith hardware'); }
       text('CHOOSE DATA TO SHARE', 28, 458, 330, 11, { color: colors.muted });
       toggle(480, 'Glucose readings', 'shareGlucose', 'Allow import when a source is supported', 'Droplet', 69); toggle(552, 'Activity records', 'shareActivity', 'Share workouts and daily activity', 'PersonStanding', 69);
       row(632, 'Last sync', 'Never', 'Clock3'); row(680, 'Imported records', 'None', 'NotebookText'); button('Review permissions', 744, 'permissions'); note('Manual entry is always available.', 814, 58, colors.card);
       scene.height = 900; break;
+    case 'glucose-import': {
+      const v = s.glucoseImportView; const web = v?.platform !== 'native';
+      header('Add readings'); heading('Bring in your readings.', 110, 'You check every value before it is saved.', 29);
+      row(214, 'Enter manually', '', 'NotebookText', 'new-reading', 'Type a reading from your meter');
+      row(289, 'Attach a file', '', 'Download', 'import-file', 'CSV or Excel export, PDF lab report,\nor a photo (JPG/PNG)');
+      row(382, 'Scan a report', '', 'Camera', 'import-scan', web ? 'Take a photo; text is read in your\nbrowser, nothing is uploaded' : 'Take a photo; text is read on this\nphone, nothing is uploaded');
+      text('FROM A DEVICE · BETA', 28, 478, 330, 11, { color: colors.muted });
+      row(500, 'Health Connect', web ? 'Mobile app' : 'Beta', 'Heart', 'import-device:health_connect', web ? 'Available in the mobile app' : 'Android · read blood glucose records');
+      row(575, 'Bluetooth meter', web ? 'Mobile app' : 'Beta', 'Activity', 'import-device:ble_meter', web ? 'Available in the mobile app' : 'Glucose Profile (0x1808) · unverified\nwith hardware');
+      row(668, 'Apple Health', web ? 'Mobile app' : 'Not built', 'Heart', 'import-device:healthkit', web ? 'Available in the iPhone app (planned)' : 'iPhone · typed only, not in this build');
+      note(v?.busy ? `${v.busy}` : v?.error ? `Last import failed: ${v.error.slice(0, 90)}` : 'HbA1c and other lab values are shown\nseparately and never saved as glucose.', 755, 64, v?.busy ? '#fbf3df' : colors.card, v?.busy ? 'RefreshCw' : 'Info');
+      button('How importing works', 832, 'import-help', 'text', { size: 14 });
+      scene.height = 900; break;
+    }
+    case 'import-review': {
+      const v = s.glucoseImportView;
+      header('Review import');
+      if (!v?.hasBatch) {
+        heading('Nothing to review', 110, v?.subtitle || 'Attach a file, scan a report or import from a device first.', 30);
+        button('Add readings', 250, 'go:glucose-import'); scene.height = 852; break;
+      }
+      heading(v.title.length > 30 ? `${v.title.slice(0, 29)}…` : v.title, 110, v.subtitle, 26);
+      text(v.summary, 24, 172, 345, 13, { color: colors.green, bold: true });
+      let y = 200;
+      if (v.mapping) { row(y, v.mapping.label, '', 'Filter', 'import-mapping', v.mapping.value.length > 84 ? `${v.mapping.value.slice(0, 83)}…` : v.mapping.value); y += 75; }
+      if (v.notes.length) { const n = v.notes[0]; note(n.length > 110 ? `${n.slice(0, 109)}…` : n, y, 64, colors.pale, 'Info'); add('button', 20, y, 353, 64, { text: 'About this import', action: 'import-notes', fill: 'transparent', color: 'transparent' }); y += 74; }
+      if (v.nonGlucose) { note(v.nonGlucose.length > 110 ? `${v.nonGlucose.slice(0, 109)}…` : v.nonGlucose, y, 64, '#fbf3df', 'TriangleAlert'); add('button', 20, y, 353, 64, { text: 'Other lab values', action: 'import-nonglucose', fill: 'transparent', color: 'transparent' }); y += 74; }
+      if (v.busy) { note(v.busy, y, 52, '#fbf3df', 'RefreshCw'); y += 62; }
+      add('button', 20, y, 172, 44, { text: 'Confirm all unflagged', action: 'import-bulk:confirm-clean', size: 13, bold: true, fill: colors.card, color: colors.green, radius: 14 });
+      add('button', 201, y, 172, 44, { text: 'Reject all', action: 'import-bulk:reject-all', size: 13, bold: true, fill: colors.card, color: colors.green, radius: 14 }); y += 58;
+      text('TAP A ROW TO CHECK, EDIT, CONFIRM OR REJECT', 28, y, 330, 11, { color: colors.muted }); y += 22;
+      if (!v.rows.length) { note('No glucose readings were recognised. Check the column mapping, or enter the reading manually.', y, 64, colors.card); y += 74; }
+      v.rows.forEach(r => { row(y, `${r.decision === 'confirmed' ? '✓ ' : r.decision === 'rejected' ? '✕ ' : ''}${r.title}`, r.decision === 'confirmed' ? 'Confirmed' : r.decision === 'rejected' ? 'Rejected' : 'To check', r.icon, `import-row:${r.id}`, r.description, { fill: r.decision === 'confirmed' ? '#f0f6ed' : r.decision === 'rejected' ? '#f1efe9' : colors.card }); y += 85; });
+      if (v.hiddenRows) { note(`${v.hiddenRows} more rows are not shown. Use "Confirm all unflagged" or import a shorter range.`, y, 58, colors.card); y += 68; }
+      const by = Math.max(740, y + 8);
+      button(v.saveLabel, by, 'import-save', 'primary', { h: 50, disabled: !v.canSave });
+      button('Discard import', by + 60, 'import-cancel', 'text', { size: 14 });
+      scene.height = Math.max(852, by + 110); break;
+    }
     case 'plan-generation':
       header(); brand(92); heading('Build your\nweekly plan', 144, 'Create a personalized meal plan based\non your preferences and recent activity.', 40);
       row(302, 'Diet', 'Balanced, higher protein', 'Apple', 'profile-diet'); row(350, 'Allergens', 'Tree nuts, shellfish', 'Flower', 'profile-allergens'); row(398, 'Activity', 'Strength training', 'PersonStanding', 'profile-activity'); row(446, 'Mobility', 'None reported', 'Accessibility', 'go:foot-questionnaire');

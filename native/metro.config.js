@@ -1,7 +1,7 @@
 const path = require('path');
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 const workspaceRoot = path.resolve(__dirname, '..');
-const nativePackages = ['react', 'react-native', 'react-native-svg', 'react-native-safe-area-context', 'lucide-react-native', '@react-native-async-storage/async-storage'];
+const nativePackages = ['react', 'react-native', 'react-native-svg', 'react-native-safe-area-context', 'lucide-react-native', '@react-native-async-storage/async-storage', '@react-native-documents/picker', '@react-native-ml-kit/text-recognition', 'react-native-ble-plx', 'react-native-health-connect', 'react-native-image-picker'];
 module.exports = mergeConfig(getDefaultConfig(__dirname), {
   watchFolders: [workspaceRoot],
   maxWorkers: 2,

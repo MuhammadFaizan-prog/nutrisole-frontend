@@ -23,11 +23,19 @@ create table public.glucose_readings (
                       check (meal_context in ('fasting', 'before_meal', 'after_meal', 'bedtime', 'random', 'other', 'unspecified')),
   note              text check (note is null or char_length(note) <= 500),
   source_type       text not null default 'manual'
-                      check (source_type in ('manual', 'health_connect', 'healthkit', 'ble_meter', 'vendor_import')),
+                      check (source_type in ('manual', 'file', 'ocr', 'health_connect', 'healthkit', 'ble_meter', 'vendor_import')),
   source_provider   text check (source_provider is null or char_length(source_provider) <= 200),
   source_device     text check (source_device is null or char_length(source_device) <= 200),
   source_record_id  text check (source_record_id is null or char_length(source_record_id) <= 200),
   import_version    smallint,
+  -- Stage G-2 import provenance (file name + sha256, row/line, raw text, OCR engine, confidence,
+  -- original value/unit as found, review flags). Never holds the file itself.
+  source_meta       jsonb check (source_meta is null or (jsonb_typeof(source_meta) = 'object' and pg_column_size(source_meta) <= 4096)),
+  -- One review session (file / scan / device sync) shares an id, so a whole import can be listed or undone.
+  import_batch_id   text check (import_batch_id is null or char_length(import_batch_id) between 1 and 64),
+  -- Content key "minute instant|mg/dL" to spot the same reading arriving from two sources (not unique:
+  -- two genuine readings in the same minute are allowed; the review screen asks the user).
+  dedupe_key        text check (dedupe_key is null or char_length(dedupe_key) <= 64),
   created_at        timestamptz not null default now(),
   updated_at        timestamptz not null default now(),
   constraint glucose_value_positive check (value_original > 0),
@@ -38,7 +46,9 @@ create table public.glucose_readings (
   -- Manual rows carry no source identity; imported rows must carry provider + immutable source id.
   constraint glucose_source_identity check (
     (source_type = 'manual' and source_provider is null and source_record_id is null) or
-    (source_type <> 'manual' and source_provider is not null and source_record_id is not null))
+    (source_type <> 'manual' and source_provider is not null and source_record_id is not null)),
+  constraint glucose_manual_has_no_import_meta check (
+    source_type <> 'manual' or (source_meta is null and import_batch_id is null))
 );
 
 comment on table public.glucose_readings is 'Self-recorded finger-prick glucose readings (manual or authorized import). Informational only; no clinical interpretation.';
@@ -52,6 +62,9 @@ create index glucose_readings_user_measured_idx on public.glucose_readings (user
 create unique index glucose_readings_import_uid on public.glucose_readings
   (user_id, source_type, source_provider, coalesce(source_device, ''), source_record_id)
   where source_record_id is not null;
+-- Cross-source duplicate lookup during review.
+create index glucose_readings_user_dedupe_idx on public.glucose_readings (user_id, dedupe_key) where dedupe_key is not null;
+create index glucose_readings_user_batch_idx on public.glucose_readings (user_id, import_batch_id) where import_batch_id is not null;
 
 -- Integrity trigger: updated_at, no future readings, immutable ownership/provenance, imported values read-only.
 create function public.glucose_readings_guard() returns trigger
@@ -65,7 +78,8 @@ begin
   if tg_op = 'UPDATE' then
     if new.user_id is distinct from old.user_id or new.source_type is distinct from old.source_type
        or new.source_provider is distinct from old.source_provider or new.source_device is distinct from old.source_device
-       or new.source_record_id is distinct from old.source_record_id or new.created_at is distinct from old.created_at then
+       or new.source_record_id is distinct from old.source_record_id or new.created_at is distinct from old.created_at
+       or new.source_meta is distinct from old.source_meta or new.import_batch_id is distinct from old.import_batch_id then
       raise exception 'ownership and provenance of a glucose reading cannot change' using errcode = 'P0001';
     end if;
     if old.source_type <> 'manual' and (new.value_original is distinct from old.value_original
@@ -98,7 +112,8 @@ create policy glucose_delete_own on public.glucose_readings
 revoke all on public.glucose_readings from anon, authenticated, public;
 grant select, delete on public.glucose_readings to authenticated;
 grant insert (measured_at, tz_offset_minutes, tz_name, value_original, unit_original, meal_context, note,
-              source_type, source_provider, source_device, source_record_id, import_version)
+              source_type, source_provider, source_device, source_record_id, import_version,
+              source_meta, import_batch_id, dedupe_key)
   on public.glucose_readings to authenticated;
 grant update (measured_at, tz_offset_minutes, tz_name, value_original, unit_original, meal_context, note)
   on public.glucose_readings to authenticated;

@@ -16,7 +16,7 @@ export function showTabs(route: AppRoute) { return ['home', 'weekly-plan', 'gluc
 export function sectionForRoute(route: AppRoute): AppRoute {
   const next = canonicalRoute(route);
   if (['weekly-plan', 'plan-generation', 'plan-rationale', 'activity-plan'].includes(next)) return 'weekly-plan';
-  if (['glucose-overview', 'add-reading', 'reading-detail', 'health-connections', 'foot-questionnaire', 'foot-guidance'].includes(next)) return 'glucose-overview';
+  if (['glucose-overview', 'add-reading', 'reading-detail', 'health-connections', 'glucose-import', 'import-review', 'foot-questionnaire', 'foot-guidance'].includes(next)) return 'glucose-overview';
   if (['profile', 'flow-directory', 'privacy-data-rights', 'reminders', 'sign-in', 'create-account', 'verify-email', 'recover-account', 'reset-password'].includes(next)) return 'profile';
   return 'home';
 }
@@ -70,7 +70,7 @@ const actionDestinations: Record<string, AppRoute[]> = {
   'sign-in': ['home'], 'create-account': ['verify-email'], recover: ['reset-password', 'sign-in'],
   'reset-password': ['sign-in'], resend: ['sign-in'], 'verify-demo': ['sign-in'],
   evidence: ['food-selector', 'report-output'], 'choose-photo': ['analysis-result', 'capture-retry'],
-  'new-reading': ['add-reading'], 'review-reading': ['reading-detail'], 'latest-reading': ['reading-detail'], 'edit-reading': ['add-reading'],
+  'new-reading': ['add-reading'], 'import-file': ['import-review'], 'import-scan': ['import-review'], 'import-device:health_connect': ['import-review'], 'import-device:ble_meter': ['import-review'], 'import-save': ['glucose-overview'], 'import-cancel': ['glucose-import'], 'review-reading': ['reading-detail'], 'latest-reading': ['reading-detail'], 'edit-reading': ['add-reading'],
   permissions: ['add-reading', 'privacy-data-rights'], 'profile-activity': ['foot-questionnaire'],
   'create-plan': ['plan-rationale', 'foot-guidance'], 'review-foot': ['foot-guidance'],
   'delete-account': ['sign-in'], 'save-preferences': ['reminders', 'flow-directory'],
