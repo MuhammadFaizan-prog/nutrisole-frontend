@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 import { View, Image, ScrollView, StyleSheet } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import { Art, T, Tap, Texture, MaskedPhoto, useFrame, s } from './components';
@@ -7,6 +7,10 @@ import Icons from '../../src/nutrisole/extensions/Icons.native';
 import { DEMO_PLACEHOLDER, demoConfidenceText } from '../../src/nutrisole/extensions/model';
 import type { CoreProps } from './CoreScreens';
 import { cameraFrameHeight, cameraNeedsScroll } from './metrics';
+import { CV_DEBUG_PIPELINE } from '../src/cv/device/flags.ts';
+// G9 Stage J5: phone-test camera pipeline, required only when the debug flag is on (default off: nothing below changes).
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const CvDebugLayer: null | ((p: { width: number; height: number; back: () => void }) => JSX.Element) = CV_DEBUG_PIPELINE ? require('./CvDebugScan').default : null;
 export default function Scan({ back, go, open }: CoreProps) {
   const { width } = useFrame();
   const [preview, setPreview] = useState({ width, height: 580 });
@@ -31,6 +35,7 @@ export default function Scan({ back, go, open }: CoreProps) {
       </View>
       <View onLayout={e => measure('instruction', e.nativeEvent.layout.height)} style={[s.row, { marginHorizontal: compact ? 20 : 35, marginVertical: margin, paddingHorizontal: 18, paddingVertical: compact ? 10 : 17, backgroundColor: '#352719ca', borderRadius: 26, gap: 18 }]}><Art name="scan-instruction-target" size={24} /><View style={{ flex: 1, gap: 5 }}><T size={17} bold color="#fff">Point at your food</T><T size={14} color="#ddd8cf">Keep it in frame and well lit</T></View></View>
       </ScrollView>
+      {CvDebugLayer ? <CvDebugLayer width={preview.width} height={preview.height} back={back} /> : null}
     </View>
     <View testID="footer-scan" style={{ paddingTop: 14, paddingBottom: 18, backgroundColor: '#11110f', gap: 14 }}><Texture asset="scan-controls-surface" /><View style={[s.row, { paddingHorizontal: 20, justifyContent: 'space-between' }]}><Tap label="Choose gallery image" onPress={() => open({ title: 'Choose a demo photo', description: 'Local sample images only. No camera permission, upload, or AI analysis occurs.', choices: [{ label: 'Apple', action: () => { setSelected(DEMO_PLACEHOLDER.identity); setGallery(false); } }, { label: 'Grilled Chicken Bowl', action: () => { setSelected('Chicken Bowl'); setGallery(true); } }, { label: 'Blurred apple · Retake', action: () => go('capture-retry') }] })}><Image source={assets['gallery-thumbnail']} resizeMode="cover" style={{ width: 60, height: 56, borderRadius: 13 }} /></Tap><Tap label="Capture food" onPress={capture}>{recording ? <View style={{ width: 80, height: 80, borderRadius: 40, borderWidth: 5, borderColor: '#fff', alignItems: 'center', justifyContent: 'center' }}><View style={{ width: 60, height: 60, borderRadius: 30, backgroundColor: '#ed3445' }} /></View> : <Art name="scan-shutter" size={80} />}</Tap><View style={{ width: 60 }} /></View><View style={[s.row, { justifyContent: 'center', flexWrap: 'wrap', gap: 30 }]}>{(['PHOTO', 'VIDEO'] as const).map(v => <Tap key={v} label={v === 'PHOTO' ? 'Photo mode' : 'Video mode'} onPress={() => { setRecording(false); setMode(v); }} style={{ minHeight: 44, justifyContent: 'center' }}><T size={19} bold={mode === v} color={mode === v ? '#f2c946' : '#ddd'}>{v}</T></Tap>)}</View>{recording && <T size={13} color="#fff" style={s.center}>Demo recording · Tap to stop</T>}</View>
   </View>;
