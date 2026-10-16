@@ -6,6 +6,9 @@
 //   class-agnostic grouping -> IoU tracker -> label only when the UNCHANGED wide policy (DEFAULT_ID: 3 frames, score >= 0.5) passes
 //   on 3 successive live frames of that track. Tap a tracked item -> ONE high-res photo -> H2 close-up -> FROZEN_VERIFY P-a ->
 //   "<name>. Not graded" / "Unable to identify". Guidance hints (Move closer / Hold steady / Improve lighting) are UI only.
+// J9: the FROZEN G3 scene guard (sceneGuard / DEFAULT_SCENE_GUARD, minAreaFrac 0.01, rule 2 off) runs on every path (live frames,
+//   close-up photo, tap-3 stills) via device/guard.ts before grouping / tracking / tapping. Below it: no box, no label, not tappable,
+//   never confirmed, no tracker hit; one rate-limited "Move closer" chip instead; suppressions logged as "NSCV suppressed".
 // J7 tap -> 3-photo burst stays as an OPTIONAL fallback mode (toggle), never the default. Grades stay blocked; no model score is ever shown.
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AppState, Linking, NativeModules, Pressable, StyleSheet, Text, View } from 'react-native';
@@ -15,7 +18,8 @@ import { createSynchronizable, scheduleOnRN } from 'react-native-worklets';
 import { InferenceSession, Tensor } from 'onnxruntime-react-native';
 import { permissionView } from '../src/cv/device/permissions.ts';
 import { rawToRgb, detectorInput, cropRgb, type PixelFormat } from '../src/cv/device/pixels.ts';
-import { runDebugPipeline, runCloseupFromTrack, BURST, labelOf, type UprightStill } from '../src/cv/device/debugPipeline.ts';
+import { runDebugPipeline, runCloseupFromTrack, BURST, labelOf, DET_DECODE_FLOOR, type UprightStill } from '../src/cv/device/debugPipeline.ts';
+import { guardFrame, closerCandidates, createCloserHint, type Suppressed } from '../src/cv/device/guard.ts';
 import { overlayBoxes, type OverlayBox } from '../src/cv/device/overlay.ts';
 import { resolveDebugModels, MODELS_NOT_LOADED, type ModelNative } from '../src/cv/device/modelSource.ts';
 import { checkModelIO, MODEL_IO, identityCrop, type RuntimeMeta } from '../src/cv/pipeline/camera.ts';
@@ -30,7 +34,8 @@ import {
   boxSide, meanRgb, colourCheck, lifeReduce, LIFE_INITIAL, cameraActive, frameProcessorActive, effectiveMode, DEFAULT_SCAN_MODE, createPerfMeter, perfLine,
   type GateState, type LiveTrackView, type Hint, type ScanMode, type CamOrientation, type PerfSnapshot,
 } from '../src/cv/device/live.ts';
-import { diagRecord, diagLine, shouldSave, toBase64 } from '../src/cv/device/diag.ts';
+import { diagRecord, diagLine, shouldSave, toBase64, suppressedRecord, suppressedLine, createSuppressedLogger } from '../src/cv/device/diag.ts';
+import { DEFAULT_SCENE_GUARD } from '../src/cv/pipeline/postprocess.ts';
 import { h2Input } from '../src/cv/pipeline/camera.ts';
 import { asProbs } from '../src/cv/device/pixels.ts';
 import { h2Top3 } from '../src/cv/device/debugPipeline.ts';
@@ -95,6 +100,13 @@ export default function CvDebugScan({ width, height, back }: { width: number; he
   const [liveBuf, setLiveBuf] = useState<{ w: number; h: number } | null>(null);
   const [perf, setPerf] = useState<PerfSnapshot | null>(null);
   const tracker = useRef(new LiveTracker());
+  // ---- J9 frozen scene guard: one discreet "Move closer" hint for the whole screen + separate suppressed-detection log
+  const [closer, setCloser] = useState(false);
+  const closerHint = useRef(createCloserHint());
+  const suppLog = useRef(createSuppressedLogger());
+  const lastSuppressed = useRef<Suppressed[]>([]);
+  const droppedSeen = useRef(0);
+  const clearLive = () => { tracker.current.reset(); setTracks([]); closerHint.current.reset(); setCloser(false); lastSuppressed.current = []; };
   const throttler = useRef(createThrottler());
   const meter = useRef(createPerfMeter(() => Date.now()));
   const lastLive = useRef<LiveFrame | null>(null);
@@ -116,7 +128,7 @@ export default function CvDebugScan({ width, height, back }: { width: number; he
   useEffect(() => {   // J8: pause on background, resume on foreground; tracks are reset so no stale label survives a pause
     const sub = AppState.addEventListener('change', (s) => {
       const active = s === 'active'; setLife((l) => lifeReduce(l, { type: 'app_state', active }));
-      if (!active) { tracker.current.reset(); setTracks([]); }
+      if (!active) clearLive();
       nscv(`NSCV event=app_state state=${s}`);
     });
     return () => { sub.remove(); setLife((l) => lifeReduce(l, { type: 'unmount' })); tracker.current.reset(); };
@@ -134,7 +146,7 @@ export default function CvDebugScan({ width, height, back }: { width: number; he
   }, []);   // eslint-disable-line react-hooks/exhaustive-deps
 
   const fpActive = frameProcessorActive(life, mode.mode);
-  useEffect(() => { gate.setBlocking((g) => ({ ...g, enabled: fpActive, busy: false })); if (!fpActive) { setTracks([]); tracker.current.reset(); } }, [fpActive, gate]);
+  useEffect(() => { gate.setBlocking((g) => ({ ...g, enabled: fpActive, busy: false })); if (!fpActive) clearLive(); }, [fpActive, gate]);   // eslint-disable-line react-hooks/exhaustive-deps
 
   // ---- J8 perf + runtime stats every 5 s (screen + logcat). Numbers only from this device.
   const lastCounters = useRef({ frames: 0, skipBusy: 0, skipInterval: 0 });
@@ -173,8 +185,20 @@ export default function CvDebugScan({ width, height, back }: { width: number; he
       const x = detectorInput(up.rgb, up.w, up.h);
       const ti = Date.now(); const r = await S.g3_det.run({ [S.g3_det.inputNames[0]]: new Tensor('float32', x, MODEL_IO.g3_det.inputs[0].shape as number[]) });
       const inferMs = Date.now() - ti; const out = r[S.g3_det.outputNames[0]].data as Float32Array;
-      const dets = decodeRawWithNms(out, NC, N_ANCHORS, 0.25).map((d) => ({ ...d, box: detectorToFrame(d.box, up.w, up.h) }));
-      const views = tracker.current.update(mergeAgnostic(dets), t0);
+      const raw = decodeRawWithNms(out, NC, N_ANCHORS, DET_DECODE_FLOOR).map((d) => ({ ...d, box: detectorToFrame(d.box, up.w, up.h) }));
+      // J9: frozen 1 % scene guard, area in the upright camera frame (letterbox undone; the buffer is a uniform scale of the frame).
+      // Suppressed boxes never reach mergeAgnostic / the tracker as hits; a track they overlap is dropped at once (no stale box).
+      const g = guardFrame(raw, up.w, up.h);
+      const views = tracker.current.update(mergeAgnostic(g.kept), t0, g.suppressed.map((d) => d.box));
+      lastSuppressed.current = g.suppressed;
+      const closerOn = closerHint.current.update(closerCandidates(g.suppressed).length, g.kept.length, t0); setCloser(closerOn);
+      const due = suppLog.current.feed(t0, g.suppressed.length);
+      if (due) {
+        const dropped = tracker.current.droppedBySuppression - droppedSeen.current; droppedSeen.current = tracker.current.droppedBySuppression;
+        const srec = suppressedRecord({ path: 'live', tMs: t0, frame: [up.w, up.h], params: g.params, decodeFloor: DET_DECODE_FLOOR, nIn: raw.length, suppressed: g.suppressed,
+          framesSinceLast: due.framesSinceLast, suppressedSinceLast: due.suppressedSinceLast, droppedTracks: dropped, hintVisible: closerOn });
+        nscv(suppressedLine(srec)); nativeCv?.appendDiag?.(JSON.stringify(srec)).catch(() => undefined);
+      }
       const scale = frameUpW / up.w;   // live buffer px -> full frame-output px (the "source pixels" of the size hint)
       const shown: ShownTrack[] = views.map((v) => {
         const q = qualityMetrics(up.rgb, up.w, up.h, v.box, scale);
@@ -213,6 +237,14 @@ export default function CvDebugScan({ width, height, back }: { width: number; he
   const onLiveRef = useRef(onLiveFrame); onLiveRef.current = onLiveFrame;
   const onLiveStable = useCallback((...a: Parameters<typeof onLiveFrame>) => { onLiveRef.current(...a); }, []);
 
+  /** J9: suppressed detections of a tap path (close-up photo / tap-3 stills), logged separately from the decision record. */
+  function logGuard(path: 'closeup' | 'tap3', w: number, h: number, gd: { suppressed: Suppressed[][]; nIn: number[]; tooSmallAtTap: boolean }) {
+    gd.suppressed.forEach((s, i) => {
+      if (!s.length) return;
+      const rec = { ...suppressedRecord({ path, tMs: Date.now(), frame: [w, h], params: DEFAULT_SCENE_GUARD, decodeFloor: DET_DECODE_FLOOR, nIn: gd.nIn[i] ?? s.length, suppressed: s }), still: i, too_small_at_tap: gd.tooSmallAtTap };
+      nscv(suppressedLine(rec)); nativeCv?.appendDiag?.(JSON.stringify(rec)).catch(() => undefined);
+    });
+  }
   function recentSaves() { const t = Date.now(); saves.current = saves.current.filter((s) => t - s < 60000); return saves.current.length; }
   function saveDiag(name: string, rgb: Uint8Array, w: number, h: number, box: [number, number, number, number] | null) {
     if (!nativeCv?.saveRgbJpeg) return; saves.current.push(Date.now());
@@ -265,6 +297,10 @@ export default function CvDebugScan({ width, height, back }: { width: number; he
     const hit = tracks.map((t) => ({ t, v: stillBoxToView(t.box, [liveBuf.w, liveBuf.h], [width, height]) }))
       .filter(({ v }) => x >= v.left && x <= v.left + v.width && y >= v.top && y <= v.top + v.height)
       .sort((a, b) => a.v.width * a.v.height - b.v.width * b.v.height)[0];
+    if (!hit) {   // J9: a below-1 % detection is not tappable: no close-up, no label, just the hint
+      const tiny = lastSuppressed.current.find((d) => { const v = stillBoxToView(d.box, [liveBuf.w, liveBuf.h], [width, height]); return x >= v.left && x <= v.left + v.width && y >= v.top && y <= v.top + v.height; });
+      if (tiny) { setTitle(null); setBanner('Move closer'); nscv(`NSCV event=tap_on_suppressed area_frac=${tiny.areaFrac.toFixed(5)} min_area_frac=${DEFAULT_SCENE_GUARD.minAreaFrac}`); return; }
+    }
     const trk = hit ? tracker.current.tracks.find((k) => k.id === hit.t.id) : undefined;
     const wide = trk ? trackWide(trk.obs) : { status: 'unable' as const, reason: 'nothing_detected_at_tap' };
     busy.current = true; setTitle(null); setDomainLine(null); setState('Close-up check… hold still');
@@ -279,8 +315,9 @@ export default function CvDebugScan({ width, height, back }: { width: number; he
       if (out.plan) nscv(`NSCV map tap=${x.toFixed(1)},${y.toFixed(1)} view=${width}x${height} still=${still.w}x${still.h} crop=${out.plan.crop.x},${out.plan.crop.y},${out.plan.crop.w},${out.plan.crop.h} src=${out.plan.source} rot=0 mirror=0`);
       nscv(nscvResultLine(out.display));
       if (out.displayErrors.length) { nscv(`NSCV event=display_refused errors=${out.displayErrors.join('|')}`); setTitle('Unable to identify'); }
-      else { setTitle(out.display.state === 'unknown' && hints.some((h) => h.code === 'move_closer') ? 'Unable to identify — move closer' : out.display.title); setFromPipeline(true); }
-      setBanner(hints.length ? hints.map((h) => h.text).join(' · ') : null);
+      else { setTitle(out.display.state === 'unknown' && (out.guard.tooSmallAtTap || hints.some((h) => h.code === 'move_closer')) ? 'Unable to identify — move closer' : out.display.title); setFromPipeline(true); }
+      setBanner(hints.length ? hints.map((h) => h.text).join(' · ') : out.guard.tooSmallAtTap ? 'Move closer' : null);
+      logGuard('closeup', still.w, still.h, out.guard);
       const nut = nutritionForCv(out.domain.cvClass);
       setDomainLine(out.domain.domainId ? `domain=${out.domain.domainId} · nutrition ${nut ? 'USDA FDC per 100 g' : 'n/a'} · price: no verified source loaded` : null);
       nscv(`NSCV domain cv=${out.domain.cvClass ?? '-'} domain=${out.domain.domainId ?? '-'} nutrition=${nut ? nut.source.fdcId : '-'} price=no_source`);
@@ -320,7 +357,8 @@ export default function CvDebugScan({ width, height, back }: { width: number; he
       if (out.plan) nscv(`NSCV map tap=${x.toFixed(1)},${y.toFixed(1)} view=${width}x${height} still=${stills[stills.length - 1].w}x${stills[stills.length - 1].h} crop=${out.plan.crop.x},${out.plan.crop.y},${out.plan.crop.w},${out.plan.crop.h} src=${out.plan.source} rot=0 mirror=0`);
       nscv(nscvResultLine(out.display));
       if (out.displayErrors.length) { nscv(`NSCV event=display_refused errors=${out.displayErrors.join('|')}`); setTitle('Unable to identify'); }
-      else { setTitle(out.display.title); setFromPipeline(true); }
+      else { setTitle(out.display.state === 'unknown' && out.guard.tooSmallAtTap ? 'Unable to identify — move closer' : out.display.title); setFromPipeline(true); }
+      logGuard('tap3', stills[stills.length - 1].w, stills[stills.length - 1].h, out.guard);
       const nut = nutritionForCv(out.domain.cvClass);
       setDomainLine(out.domain.domainId ? `domain=${out.domain.domainId} · nutrition ${nut ? 'USDA FDC per 100 g' : 'n/a'} · price: no verified source loaded` : null);
       nscv(`NSCV domain cv=${out.domain.cvClass ?? '-'} domain=${out.domain.domainId ?? '-'} nutrition=${nut ? nut.source.fdcId : '-'} price=no_source`);
@@ -351,10 +389,11 @@ export default function CvDebugScan({ width, height, back }: { width: number; he
     }) : null}
     <View pointerEvents="box-none" style={{ position: 'absolute', left: 12, right: 12, top: 12, flexDirection: 'row', justifyContent: 'space-between' }}>
       <Pressable accessibilityLabel="Close camera" onPress={back} style={{ padding: 10, backgroundColor: '#0009', borderRadius: 20 }}><Text style={{ color: '#fff' }}>Close</Text></Pressable>
-      <Pressable accessibilityLabel="Switch scan mode" testID="cv-mode-toggle" onPress={() => { setPref(pref === 'live' ? 'tap3' : 'live'); setTitle(null); setBoxes([]); setTracks([]); tracker.current.reset(); nscv(`NSCV event=mode_toggle to=${pref === 'live' ? 'tap3' : 'live'}`); }}
+      <Pressable accessibilityLabel="Switch scan mode" testID="cv-mode-toggle" onPress={() => { setPref(pref === 'live' ? 'tap3' : 'live'); setTitle(null); setBoxes([]); clearLive(); nscv(`NSCV event=mode_toggle to=${pref === 'live' ? 'tap3' : 'live'}`); }}
         style={{ padding: 8, backgroundColor: '#0009', borderRadius: 8 }}><Text style={{ color: '#f2c946' }}>{mode.mode === 'live' ? 'LIVE · switch to tap-3' : 'TAP-3 · switch to live'}</Text></Pressable>
     </View>
     {(() => { const b = inferenceBadge(!!sessions.current, fromPipeline, badgeReason); return <Text testID={`cv-inference-${b.source}`} style={{ position: 'absolute', left: 12, right: 12, top: 64, color: '#111', backgroundColor: b.color, padding: 6, borderRadius: 8, fontWeight: '700', textAlign: 'center' }}>{b.text}</Text>; })()}
+    {mode.mode === 'live' && closer ? <Text pointerEvents="none" testID="cv-move-closer" accessibilityLiveRegion="polite" style={{ position: 'absolute', alignSelf: 'center', top: '42%', color: '#111', backgroundColor: '#f2c946e6', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 12, fontSize: 13, fontWeight: '600' }}>Move closer</Text> : null}
     {mode.mode === 'live' ? <CvPerfOverlay p={perf} /> : null}
     <View pointerEvents="none" style={{ position: 'absolute', left: 12, right: 12, bottom: 12, backgroundColor: '#172017d4', borderRadius: 16, padding: 12 }}>
       {title ? <Text style={{ color: '#fff', fontSize: 18, fontWeight: '700' }}>{title}</Text> : null}
