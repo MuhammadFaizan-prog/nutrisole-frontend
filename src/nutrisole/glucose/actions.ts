@@ -83,7 +83,7 @@ export function glucoseAction(action: string, ctx: GlucoseActionContext): boolea
     case 'glucose-retry': void store.reload(); return true;
     case 'glucose-sign-in': go('sign-in'); return true;
     case 'provider-info': return glucoseAction('provider-info:health_connect', ctx);
-    case 'permissions': notice('Import permissions', importPlatform().os === 'android' ? 'Android asks for camera access when scanning a report, Nearby devices when finding a Bluetooth strip meter, and read-only blood glucose access when importing from Health Connect. You can revoke each permission in Android Settings. Files and photos are read on this phone. Saved phone readings are encrypted and are not uploaded.' : 'Choose a file or photo to read it on this device. Device and health permissions are managed in the mobile app.', [{ label: 'Choose a source', action: () => go('glucose-import') }]); return true;
+    case 'permissions': notice('Import permissions', importPlatform().os === 'android' ? `Reports and photos are read on this phone. The file is not uploaded. Confirmed readings are saved ${snap.mode === 'local' ? 'in encrypted storage on this phone' : 'to your NutriSole account'}. You can manage camera permission in Android Settings.` : 'Choose a file or photo to read it on this device. Device and health permissions are managed in the mobile app.', [{ label: 'Choose a source', action: () => go('glucose-import') }]); return true;
     default: return false;
   }
 }

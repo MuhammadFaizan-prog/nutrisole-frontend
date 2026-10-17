@@ -60,7 +60,7 @@ jobs:
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
-      - name: Standalone phone history, report picker, camera and routes
+      - name: Standalone account readings, report correction and routes
         uses: reactivecircus/android-emulator-runner@v2
         env:
           GLUCOSE_TEST_USER_A_EMAIL: ${{ secrets.GLUCOSE_TEST_USER_A_EMAIL }}

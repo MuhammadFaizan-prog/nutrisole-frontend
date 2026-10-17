@@ -26,10 +26,10 @@ class GlucoseCaptureTest {
   // isolate test history from actual readings, and load fixtures from the test APK.
   private val context by lazy {
     object : ContextWrapper(instrumentation.targetContext) {
-      override fun getApplicationContext(): Context = baseContext.applicationContext
+      override fun getApplicationContext(): Context = this
       override fun getNoBackupFilesDir(): File = File(baseContext.noBackupFilesDir, "glucose-native-qa").apply { mkdirs() }
       override fun getCacheDir(): File = File(baseContext.cacheDir, "glucose-native-qa").apply { mkdirs() }
-      override fun getAssets() = instrumentation.context.assets
+      override fun getAssets() = baseContext.assets
     }
   }
   @Suppress("DEPRECATION")
@@ -70,10 +70,10 @@ class GlucoseCaptureTest {
     val module = module()
     val output = JSONObject()
     try {
-      val images = context.assets.list("")!!.filter { it.endsWith(".jpg") || it.endsWith(".png") || it.endsWith(".pdf") }
+      val images = instrumentation.context.assets.list("")!!.filter { it.endsWith(".jpg") || it.endsWith(".png") || it.endsWith(".pdf") }
       for (name in images.sorted()) {
         val file = File(context.cacheDir, name)
-        context.assets.open(name).use { src -> file.outputStream().use { src.copyTo(it) } }
+        instrumentation.context.assets.open(name).use { src -> file.outputStream().use { src.copyTo(it) } }
         val result = call { module.recognize(file.toURI().toString(), name.endsWith(".pdf"), name, it) } as WritableMap
         val data = JSONObject(result.toHashMap() as Map<*, *>)
         val pages = data.getJSONArray("pages")

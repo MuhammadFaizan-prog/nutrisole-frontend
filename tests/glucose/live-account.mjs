@@ -33,6 +33,12 @@ try {
   await until(()=>denied); check('Other account cannot subscribe to private account changes');
   const update = await first.save({...validated.draft,valueOriginal:'116',valueMgDl:116},saved.reading.id); assert.equal(update.ok,true);
   await until(()=>second.getSnapshot().readings.find(r=>r.id===saved.reading.id)?.valueOriginal==='116'); check('Second client receives update automatically');
+  const importedDraft = { ...validated.draft, source: { type: 'ocr', provider: 'isolated-readings-qa', device: null, recordId: 'report-'+Date.now(), meta: {originalValue: '113', originalUnit: 'mg/dL', rawText: 'Glucose 113 mg/dL'}, batchId: 'qa-report', dedupeKey: 'old-key' } };
+  const imported = await first.repository.create(importedDraft); created.push(imported.id);
+  const corrected = await first.repository.update(imported.id, { ...importedDraft, valueOriginal: '117', valueMgDl: 117 });
+  assert.equal(corrected.valueOriginal, '117'); assert.deepEqual(corrected.source.meta, importedDraft.source.meta);
+  assert.equal(corrected.source.recordId, importedDraft.source.recordId); assert.match(corrected.source.dedupeKey, /\|117\.0$/);
+  await assert.rejects(first.repository.create(importedDraft)); check('Saved OCR reading can be corrected without changing its source or duplicating a re-import');
   await first.client.flushSession(); first.dispose();
   restarted = createGlucoseStore({...config,sessionStorage:{read:async()=>persisted,write:async v=>{persisted=v;}}}); await restarted.start();
   assert.equal(restarted.getSnapshot().readings.find(r=>r.id===saved.reading.id)?.valueOriginal,'116'); check('New app instance restores sign-in and account history');
@@ -42,5 +48,5 @@ try {
   await writeFile('artifacts/native/glucose-live-qa/live-account-results.json',JSON.stringify({at:new Date().toISOString(),project:PROJECT_URL,results},null,2));
 } finally {
   for (const id of created) { try { await second.repository.remove(id); } catch { /* already deleted */ } }
-  first.dispose(); second.dispose(); outsider.dispose(); restarted?.dispose(); await unauthorized?.disconnect();
+  first.dispose(); second.dispose(); outsider.dispose(); restarted?.dispose(); await unauthorized?.removeAllChannels(); await unauthorized?.disconnect();
 }

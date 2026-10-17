@@ -25,3 +25,15 @@ test('temporary refresh failure keeps the session for retry; revoked tokens clea
   assert.equal(client.currentSession()?.userId,'user-a');
   assert.equal(await client.refresh(),false); assert.equal(value,'');
 });
+
+
+test('leaving during session restoration does not restart background polling', async t => {
+  const { createGlucoseStore } = await import('../../src/nutrisole/glucose/store.ts');
+  let finish!: (value: string | null) => void;
+  const store = createGlucoseStore({supabaseUrl:'https://test.supabase.co',supabaseAnonKey:'public',demo:false,sessionStorage:{read:()=>new Promise(resolve=>{finish=resolve;}),write:async()=>{}}});
+  t.mock.timers.enable({apis:['setInterval']});
+  const resume = t.mock.method(store, 'resume', async () => {});
+  const starting = store.start(); store.dispose(); finish(null); await starting;
+  t.mock.timers.tick(60000); assert.equal(resume.mock.callCount(),0);
+  store.dispose();
+});

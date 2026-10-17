@@ -91,7 +91,7 @@ jobs:
             echo "== native libs"; unzip -l "$apk" | grep -E 'lib/(arm64-v8a|x86_64)/' || true
             echo "== glucose import markers in JS bundle (counts)"
             echo "storage_mode=$NUTRISOLE_GLUCOSE_STORAGE"
-            for m in 'import-review' 'ble:gls' 'Health Connect' 'ML Kit Latin (on this phone)' 'Saved on this phone'; do echo "$m: $(grep -a -c "$m" /tmp/apkx/assets/index.android.bundle || true)"; done
+            for m in 'import-review' 'ble:gls' 'Health Connect' 'ML Kit Latin (on this phone)' 'Saved to your account'; do echo "$m: $(grep -a -c "$m" /tmp/apkx/assets/index.android.bundle || true)"; done
             echo "== bundled OCR resources"; unzip -l "$apk" | grep -Ei 'mlkit|ocr' || true
           } | tee $out/build-info.txt
           (cd $out && sha256sum "$(basename $apk)" > "$(basename $apk).sha256")

@@ -38,6 +38,7 @@ export class GlucoseStore {
   private syncTimer: ReturnType<typeof setInterval> | null = null;
   private reloadTimer: ReturnType<typeof setTimeout> | null = null;
   private syncing = false;
+  private lifecycle = 0;
   private realtimeReady = false;
   readonly repository: GlucoseRepository;
   readonly client: SupabaseRest | null;
@@ -63,9 +64,11 @@ export class GlucoseStore {
   async start() {
     if (this.repository.mode === 'demo' || this.repository.mode === 'local') return this.reload();
     if (!this.client) return;
-    this.syncing = true;
-    try { await this.client.initialize(); } catch (error) { this.fail(error); }
+    this.syncing = true; const lifecycle = ++this.lifecycle;
+    try { await this.client.initialize(); } catch (error) { if (lifecycle === this.lifecycle) this.fail(error); }
+    if (!this.syncing || lifecycle !== this.lifecycle) return;
     if (this.client.currentSession()) { this.connectRealtime(); await this.reload(); }
+    if (!this.syncing || lifecycle !== this.lifecycle) return;
     if (!this.syncTimer) this.syncTimer = setInterval(() => { void this.resume(!this.realtimeReady); }, 30_000);
   }
   private connectRealtime() {
@@ -79,7 +82,7 @@ export class GlucoseStore {
     if (!this.client?.currentSession()) return;
     try { await this.client.maintainSession(); if (reload) await this.reload(); } catch (error) { this.fail(error); }
   }
-  dispose() { this.syncing = false; this.stopRealtime?.(); this.stopRealtime = null; if (this.syncTimer) clearInterval(this.syncTimer); this.syncTimer = null; if (this.reloadTimer) clearTimeout(this.reloadTimer); this.reloadTimer = null; }
+  dispose() { this.lifecycle++; this.syncing = false; this.stopRealtime?.(); this.stopRealtime = null; if (this.syncTimer) clearInterval(this.syncTimer); this.syncTimer = null; if (this.reloadTimer) clearTimeout(this.reloadTimer); this.reloadTimer = null; }
 
   async reload(): Promise<MutationResult> {
     if (this.repository.mode === 'unconfigured') { this.set({ status: 'unconfigured', error: null }); return { ok: false, error: 'unconfigured', kind: 'unconfigured' }; }

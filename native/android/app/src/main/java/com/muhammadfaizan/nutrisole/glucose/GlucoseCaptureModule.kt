@@ -152,7 +152,7 @@ class GlucoseCaptureModule(private val context: ReactApplicationContext) : React
               for (index in 0 until document.pageCount) {
                 checkCancelled(requestId); progress(requestId, "Reading PDF page ${index + 1} of ${document.pageCount}…")
                 document.openPage(index).use { page ->
-                  var content: WritableArray? = extracted?.page(index) { checkCancelled(requestId) }
+                  var content: WritableArray? = try { extracted?.page(index) { checkCancelled(requestId) } } catch (_: java.io.IOException) { null }
                   if (content != null) textLayerPages++
                   if (content == null && Build.VERSION.SDK_INT >= 35) {
                     val texts = page.textContents

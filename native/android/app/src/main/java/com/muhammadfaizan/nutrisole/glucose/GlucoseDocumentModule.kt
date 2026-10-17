@@ -11,19 +11,20 @@ import java.io.File
 /** System document capture lets users crop, straighten and clean a report before OCR. */
 class GlucoseDocumentModule(private val context: ReactApplicationContext) : ReactContextBaseJavaModule(context) {
   private var pending: Promise? = null
+  private val files = java.util.concurrent.Executors.newSingleThreadExecutor()
   private val requestCode = 2948
   private val listener = object : BaseActivityEventListener() {
     override fun onActivityResult(activity: Activity, request: Int, result: Int, data: Intent?) {
       if (request != requestCode) return
       val promise = pending ?: return; pending = null
       if (result != Activity.RESULT_OK) { promise.resolve(null); return }
-      try {
+      files.execute { try {
         val uri = GmsDocumentScanningResult.fromActivityResultIntent(data)?.pages?.firstOrNull()?.imageUri
           ?: error("No report photo was selected.")
         val file = File.createTempFile("glucose-scan-", ".jpg", context.cacheDir)
         context.contentResolver.openInputStream(uri).use { input -> requireNotNull(input); file.outputStream().use { input.copyTo(it) } }
         promise.resolve(android.net.Uri.fromFile(file).toString())
-      } catch (_: Exception) { promise.reject("SCAN_READ", "The report photo could not be opened. Please try again.") }
+      } catch (_: Exception) { promise.reject("SCAN_READ", "The report photo could not be opened. Please try again.") } }
     }
   }
   init { context.addActivityEventListener(listener) }
@@ -43,5 +44,5 @@ class GlucoseDocumentModule(private val context: ReactApplicationContext) : Reac
       }
       .addOnFailureListener { pending = null; promise.reject("SCAN_UNAVAILABLE", "Document capture is unavailable.") }
   }
-  override fun invalidate() { context.removeActivityEventListener(listener); pending?.reject("SCAN_CLOSED", "Report capture was closed."); pending = null; super.invalidate() }
+  override fun invalidate() { context.removeActivityEventListener(listener); pending?.reject("SCAN_CLOSED", "Report capture was closed."); pending = null; files.shutdown(); super.invalidate() }
 }

@@ -152,6 +152,14 @@ open('glucose-overview');
 await visible('photo-history-after-restart', /112/);
 assert.doesNotMatch(currentXml, /Sign in to see your readings/);
 screenshot('photo-history-after-restart');
+await control('open-imported-reading', n => /action-open-reading-/.test(n['resource-id'] || ''));
+await control('edit-imported-reading', id('action-edit-reading'));
+await control('correct-imported-value', id('field-reading'));
+adb('shell','input','keyevent','KEYCODE_MOVE_END'); adb('shell','input','keyevent','67','67','67');
+adb('shell','input','text','114'); adb('shell','input','keyevent','KEYCODE_BACK');
+await control('save-imported-correction', id('action-review-reading'));
+await visible('saved-imported-correction',/Saved to your account/); assert.match(currentXml,/114/);
+screenshot('saved-imported-correction');
 
 // A report with no collection time must be fixable through the visible Confirm form.
 const incomplete = 'glucose-qa-missing-time.csv';
@@ -165,6 +173,7 @@ await control('confirm-incomplete',id('action-import-bulk-confirm-clean'));
 await visible('editable-incomplete',/Check reading/);
 await control('try-missing-time',text('Confirm reading'));
 await visible('missing-time-error',/Enter the measurement time/);
+screenshot('confirm-missing-time-error');
 await control('fix-missing-time',n=>n['content-desc']==='Time'&&n.class==='android.widget.EditText');
 adb('shell','input','text','09:25'); adb('shell','input','keyevent','KEYCODE_BACK');
 await control('confirm-fixed-time',text('Confirm reading'));
@@ -183,8 +192,14 @@ for (const screen of directoryScreens) {
 open('glucose-import');
 await visible('import-sources', /Attach a file/);
 screenshot('import-sources');
+open('flow-directory'); await control('account-sign-out', text('Sign out'));
+await control('confirm-account-sign-out', text('Sign out'));
+await visible('signed-out-form', /screen-sign-in/);
+open('flow-directory'); await visible('signed-out-menu', /Sign in/); assert.doesNotMatch(currentXml, /Sign out/);
+adb('shell','am','force-stop',app); open('glucose-overview');
+await visible('signed-out-after-restart', /Sign in to see your readings/);
 const errors = adb('logcat', '-d', `--uid=${appUid}`, '-s', 'ReactNativeJS:E', 'AndroidRuntime:E');
 fs.writeFileSync(path.join(out, 'runtime-errors.txt'), errors);
 assert.doesNotMatch(errors, /FATAL EXCEPTION|TypeError:|ReferenceError:|Unable to load script|Invariant Violation/);
-fs.writeFileSync(path.join(out, 'results.json'), JSON.stringify({ syntheticOnly: true, apkSourceCommit: process.env.NUTRISOLE_APK_SOURCE_SHA || null, smokeSourceCommit: process.env.GITHUB_SHA || null, systemLauncherAnrsDismissed: launcherAnrs, manualCreateRestartEditDelete: true, filePickerOcrReviewSaveRestart: true, missingTimeCorrection: true, accountStorage: true, standaloneWithoutMetro: true, routes }, null, 2));
+fs.writeFileSync(path.join(out, 'results.json'), JSON.stringify({ syntheticOnly: true, apkSourceCommit: process.env.NUTRISOLE_APK_SOURCE_SHA || null, smokeSourceCommit: process.env.GITHUB_SHA || null, systemLauncherAnrsDismissed: launcherAnrs, manualCreateRestartEditDelete: true, filePickerOcrReviewSaveRestart: true, missingTimeCorrection: true, importedReadingCorrection: true, signOutRestart: true, accountStorage: true, standaloneWithoutMetro: true, routes }, null, 2));
 console.log(`Standalone account CRUD, report photo import, missing-time correction and ${routes.length} rendered routes passed.`);
