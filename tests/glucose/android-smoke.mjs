@@ -24,6 +24,7 @@ const [width, height] = size.slice(1).map(Number);
 const decode = v => v.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&apos;', "'").replaceAll('&#10;', '\n');
 let currentXml = '';
 let launcherAnrs = 0;
+class AndroidUiFailure extends Error {}
 const nodes = () => [...currentXml.matchAll(/<node\s+([^>]+)>/g)].map(m => Object.fromEntries([...m[1].matchAll(/([\w-]+)="([^"]*)"/g)].map(x => [x[1], decode(x[2])])));
 function observe(name, owner = app) {
   adb('shell', 'uiautomator', 'dump', '/sdcard/glucose-ui.xml');
@@ -32,7 +33,7 @@ function observe(name, owner = app) {
   // An isolated emulator's Pixel Launcher can ANR behind the instrumentation
   // activity. Record and close only that named system dialog, never an app ANR.
   if (nodes().some(n => n.package === 'android' && n.text === "Pixel Launcher isn't responding")) {
-    assert.ok(++launcherAnrs <= 2, 'The emulator launcher repeatedly stopped responding');
+    if (++launcherAnrs > 2) throw new AndroidUiFailure('The emulator launcher repeatedly stopped responding');
     screenshot(`system-launcher-anr-${launcherAnrs}`);
     fs.writeFileSync(path.join(out, `system-launcher-anr-${launcherAnrs}.xml`), currentXml);
     const close = nodes().find(n => n['resource-id'] === 'android:id/aerr_close' || n.text === 'Close app');
@@ -41,14 +42,14 @@ function observe(name, owner = app) {
     adb('shell', 'am', 'force-stop', 'com.google.android.apps.nexuslauncher');
     return observe(name, owner);
   }
-  assert.ok(!nodes().some(n => /^android:id\/aerr_(?:close|wait|restart)$/.test(n['resource-id'] || '') || /(?:isn['’]t|is not) responding|keeps stopping/i.test(n.text || '')), `An Android crash or ANR dialog blocked ${name}`);
+  if (nodes().some(n => /^android:id\/aerr_(?:close|wait|restart)$/.test(n['resource-id'] || '') || /(?:isn['’]t|is not) responding|keeps stopping/i.test(n.text || ''))) throw new AndroidUiFailure(`An Android crash or ANR dialog blocked ${name}`);
   assert.ok(currentXml.includes('<hierarchy'), `Android returned a UI hierarchy: ${name}`);
   if (owner) assert.ok(currentXml.includes(owner), `Expected app owns the visible UI: ${name}`);
   return currentXml;
 }
 async function visible(name, pattern, owner = app) {
   for (let attempt = 0; attempt < 12; attempt++) {
-    try { if (pattern.test(observe(name, owner))) return; } catch (e) { if (attempt === 11) throw e; }
+    try { if (pattern.test(observe(name, owner))) return; } catch (e) { if (e instanceof AndroidUiFailure || attempt === 11) throw e; }
     await pause(1000);
   }
   throw new Error(`Expected visible state ${pattern} on ${name}`);
