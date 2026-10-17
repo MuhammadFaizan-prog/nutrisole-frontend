@@ -5,7 +5,7 @@ name: Android glucose standalone UI
 on:
   push:
     branches: [fix/glucose-live-inputs]
-    paths: ['tests/glucose/android-smoke.mjs', '.github/workflows/android-glucose-runtime.yml']
+    paths-ignore: ['docs/**', '**/*.md']
 
 permissions:
   contents: read

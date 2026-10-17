@@ -45,6 +45,7 @@ function stopImport(ctx: Ctx) {
   jobs.get(ctx.store)?.abort(); jobs.delete(ctx.store); patch(ctx, { busy: null });
 }
 async function run(ctx: Ctx, label: string, work: (progress: (p: string) => void, signal: AbortSignal) => Promise<ImportBatch | null>) {
+  if (imp(ctx.s).saving || ctx.store.getSnapshot().busy === 'saving') { notice(ctx, 'Saving readings', 'Wait for the current save to finish before opening another report.'); return; }
   if (jobs.has(ctx.store)) { notice(ctx, 'Import in progress', 'Stop the current import before starting another.'); return; }
   const control = new AbortController(); jobs.set(ctx.store, control);
   patch(ctx, { busy: label, error: null });
@@ -188,7 +189,12 @@ function save(ctx: Ctx) {
   void ctx.store.importMany(drafts).then(res => {
     const msg = [res.saved.length + ' saved', res.skipped ? res.skipped + ' already saved' : '', res.failed.length ? res.failed[0].error : '', res.stoppedEarly || ''].filter(Boolean).join(' · ');
     if ((res.saved.length || res.skipped) && !res.failed.length && !res.stoppedEarly) {
-      patch(ctx, { saving: false, batch: null, result: msg }); ctx.go('glucose-overview');
+      const sourceKey = (provider: string | null, device: string | null, recordId: string | null) => JSON.stringify([provider, device, recordId]);
+      const completed = new Set(drafts.map(d => sourceKey(d.source.provider, d.source.device, d.source.recordId)));
+      const remaining = b.candidates.filter(c => c.decision !== 'rejected' && !completed.has(sourceKey(c.provenance.provider, c.provenance.device, c.provenance.recordId)));
+      patch(ctx, { saving: false, batch: remaining.length ? { ...b, candidates: remaining } : null, result: msg });
+      if (remaining.length) notice(ctx, 'Readings saved', msg + '. The remaining readings are ready to check.');
+      else ctx.go('glucose-overview');
     } else {
       const savedIds = new Set(res.saved.map(r => r.source.recordId));
       setBatch(ctx, x => ({ ...x, candidates: x.candidates.filter(c => !savedIds.has(c.provenance.recordId)) }));
