@@ -1,26 +1,27 @@
 // Android/iOS import platform. Files: @react-native-documents/picker. Camera:
-// react-native-image-picker. OCR: PaddleOCR PP-OCRv5 mobile via onnxruntime-react-native,
-// on-device (no cloud); the same pipeline as the web app.
+// react-native-image-picker. Android OCR/PDF: bundled ML Kit and PdfRenderer;
+// iOS fallback: PP-OCRv5 through onnxruntime-react-native. No cloud OCR.
 // Devices: Health Connect (react-native-health-connect), Bluetooth GLS
 // (react-native-ble-plx). HealthKit is a typed path only (no native module in this build).
 // BETA: none of the device paths has been exercised with real hardware or a real phone.
-import { PermissionsAndroid, Platform } from 'react-native';
+import { NativeModules, PermissionsAndroid, Platform } from 'react-native';
 import { pick, keepLocalCopy, types, isErrorWithCode, errorCodes } from '@react-native-documents/picker';
 import { launchCamera } from 'react-native-image-picker';
-import { nativeOcrEngine } from '../ocr/runner.native';
-import { decodeImage } from '../ocr/decode';
+import { recognizeOnAndroid } from '../nativeCapture.native';
 import type { Rgba } from '../ocr/ppocr';
 import { getSdkStatus, initialize, requestPermission, getGrantedPermissions, readRecords, openHealthConnectSettings, SdkAvailabilityStatus } from 'react-native-health-connect';
 import { BleManager, State, type Device, type Subscription } from 'react-native-ble-plx';
 import type { ConnectionStatus } from '../types';
 import type { ImportPlatform, BleBridge, HealthSourceBridge } from './platform.types';
-import type { PickedFile, OcrResult } from './fileImport';
+import { MAX_FILE_BYTES, ImportFileError, type PickedFile, type OcrResult } from './fileImport';
 import type { HealthConnectGlucoseResult, HealthKitGlucoseSample } from './devices';
 import { GLS_SERVICE_UUID, GLS_MEASUREMENT_UUID, GLS_CONTEXT_UUID, GLS_RACP_UUID, downloadRecords, type GlsTransport } from './gls';
 import { base64ToBytes, bytesToBase64 } from './base64';
+import { scanGlucoseMeters } from './scan';
 
 async function readUri(uri: string): Promise<Uint8Array> {
   const blob = await (await fetch(uri)).blob();
+  if (blob.size > MAX_FILE_BYTES) throw new ImportFileError('too-large', 'This file is larger than 15 MB. Choose a smaller report or image.');
   const dataUrl: string = await new Promise((resolve, reject) => { const r = new FileReader(); r.onload = () => resolve(String(r.result)); r.onerror = () => reject(new Error('The file could not be read.')); r.readAsDataURL(blob); });
   return base64ToBytes(dataUrl.slice(dataUrl.indexOf(',') + 1));
 }
@@ -28,6 +29,7 @@ async function readUri(uri: string): Promise<Uint8Array> {
 async function pickFile(): Promise<PickedFile | null> {
   try {
     const [res] = await pick({ type: [types.csv, types.plainText, types.xlsx, types.pdf, types.images], mode: 'import' });
+    if (res.size && res.size > MAX_FILE_BYTES) throw new ImportFileError('too-large', 'This file is larger than 15 MB. Choose a smaller report or image.');
     const [copy] = await keepLocalCopy({ files: [{ uri: res.uri, fileName: res.name ?? 'import' }], destination: 'cachesDirectory' });
     if (copy.status !== 'success') throw new Error(`The file could not be copied for reading (${copy.copyError}).`);
     return { name: res.name ?? 'import', mime: res.type ?? null, bytes: await readUri(copy.localUri), uri: copy.localUri } as PickedFile & { uri: string };
@@ -38,19 +40,27 @@ async function pickFile(): Promise<PickedFile | null> {
 }
 
 async function captureReport(): Promise<PickedFile | null> {
+  if (Platform.OS === 'android' && NativeModules.NutriSoleDocument) {
+    let uri: string | null | undefined;
+    try { uri = await NativeModules.NutriSoleDocument.scan(); } catch { /* Camera fallback when Play Services scanner is unavailable. */ }
+    if (uri === null) return null;
+    if (uri) return { name: 'report-scan.jpg', mime: 'image/jpeg', bytes: await readUri(uri), uri };
+  }
   if (Platform.OS === 'android') {
     const r = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA, { title: 'Camera for report scanning', message: 'NutriSole uses the camera only to photograph a lab report or meter screen. Text is read on this phone; the photo is not uploaded.', buttonPositive: 'Allow', buttonNegative: 'Not now' });
     if (r !== PermissionsAndroid.RESULTS.GRANTED) throw new Error('Camera permission was denied. You can attach a photo of the report instead, or allow the camera in Settings.');
   }
-  const res = await launchCamera({ mediaType: 'photo', includeBase64: true, saveToPhotos: false, quality: 0.9, maxWidth: 2000, maxHeight: 2000 });
+  const res = await launchCamera({ mediaType: 'photo', includeBase64: false, saveToPhotos: false, quality: 1, maxWidth: 2400, maxHeight: 2400 });
   if (res.didCancel) return null;
   if (res.errorCode) throw new Error(res.errorCode === 'camera_unavailable' ? 'No camera is available on this device.' : res.errorCode === 'permission' ? 'Camera permission was denied.' : res.errorMessage || 'The camera could not be opened.');
-  const a = res.assets?.[0]; if (!a?.uri || !a.base64) return null;
-  return { name: a.fileName || 'scan.jpg', mime: a.type || 'image/jpeg', bytes: base64ToBytes(a.base64), uri: a.uri } as PickedFile & { uri: string };
+  const a = res.assets?.[0]; if (!a?.uri) return null;
+  return { name: a.fileName || 'scan.jpg', mime: a.type || 'image/jpeg', bytes: await readUri(a.uri), uri: a.uri };
 }
 
 const pixels = new WeakMap<PickedFile, Rgba>();
 async function ppOcr(file: PickedFile, onProgress?: (p: string) => void, mode: 'document' | 'sparse' = 'document'): Promise<OcrResult> {
+  const { nativeOcrEngine } = await import('../ocr/runner.native');
+  const { decodeImage } = await import('../ocr/decode');
   // Decoded in JS from the bytes we already hold (JPEG/PNG); nothing is uploaded.
   const engine = await nativeOcrEngine(onProgress);
   let img = pixels.get(file);
@@ -83,6 +93,7 @@ const healthConnect: HealthSourceBridge<HealthConnectGlucoseResult> = {
       const res = await readRecords('BloodGlucose', { timeRangeFilter: { operator: 'between', startTime: start.toISOString(), endTime: end.toISOString() }, pageSize: 500, pageToken }) as unknown as { records: HealthConnectGlucoseResult[]; pageToken?: string };
       out.push(...res.records); pageToken = res.pageToken || undefined;
     } while (pageToken && out.length < 5000);
+    if (pageToken) throw new Error('This period contains more than 5,000 readings. Choose a shorter period so no readings are silently omitted.');
     return out;
   },
   openSettings: () => openHealthConnectSettings(),
@@ -118,40 +129,53 @@ const bleBridge: BleBridge = {
     }
     return (await bleState()) ?? { state: 'ready', reason: 'Bluetooth is on.' };
   },
-  scan(seconds) {
-    return new Promise((resolve, reject) => {
-      const found = new Map<string, { id: string; name: string | null; rssi: number | null }>();
-      ble().startDeviceScan([GLS_SERVICE_UUID], { allowDuplicates: false }, (error, device) => {
-        if (error) { ble().stopDeviceScan(); reject(new Error(error.message)); return; }
-        if (device) found.set(device.id, { id: device.id, name: device.name || device.localName || null, rssi: device.rssi ?? null });
+  scan(seconds, opts = {}) {
+    return scanGlucoseMeters({ start: (found, fail) => {
+      return ble().startDeviceScan([GLS_SERVICE_UUID], { allowDuplicates: false }, (error, device) => {
+        if (error) fail(new Error(error.message));
+        else if (device) found({ id: device.id, name: device.name || device.localName || null, rssi: device.rssi ?? null });
       });
-      setTimeout(() => { ble().stopDeviceScan(); resolve([...found.values()]); }, seconds * 1000);
-    });
+    }, stop: () => ble().stopDeviceScan() }, { timeoutMs: seconds * 1000, ...opts });
   },
-  async download(deviceId, sinceSequence) {
+  async download(deviceId, sinceSequence, opts = {}) {
     // Bonding: GLS meters require an encrypted link for RACP; Android shows the pairing/passkey
     // dialog automatically on the first secured write (the passkey is printed on/shown by the meter).
-    let device: Device = await ble().connectToDevice(deviceId, { timeout: 15_000 });
+    if (opts.signal?.aborted) throw new Error('Transfer cancelled.');
+    const abort = () => { void ble().cancelDeviceConnection(deviceId).catch(() => undefined); };
+    opts.signal?.addEventListener('abort', abort, { once: true });
+    let device: Device;
     try {
+      device = await ble().connectToDevice(deviceId, { timeout: 15_000 });
+      if (opts.signal?.aborted) throw new Error('Transfer cancelled.');
       device = await device.discoverAllServicesAndCharacteristics();
+      const characteristics = await device.characteristicsForService(GLS_SERVICE_UUID);
       const uuidOf = { measurement: GLS_MEASUREMENT_UUID, context: GLS_CONTEXT_UUID, racp: GLS_RACP_UUID } as const;
       const transport: GlsTransport = {
-        async subscribe(kind, onValue) {
-          const sub: Subscription = ble().monitorCharacteristicForDevice(deviceId, GLS_SERVICE_UUID, uuidOf[kind], (err, ch) => { if (!err && ch?.value) onValue(base64ToBytes(ch.value)); });
+        supportsContext: characteristics.some(c => c.uuid.toLowerCase() === GLS_CONTEXT_UUID),
+        async subscribe(kind, onValue, onError) {
+          const sub: Subscription = ble().monitorCharacteristicForDevice(deviceId, GLS_SERVICE_UUID, uuidOf[kind], (err, ch) => { if (err) onError?.(new Error(err.message)); else if (ch?.value) onValue(base64ToBytes(ch.value)); });
           return () => sub.remove();
         },
         async writeRacp(bytes) { await ble().writeCharacteristicWithResponseForDevice(deviceId, GLS_SERVICE_UUID, GLS_RACP_UUID, bytesToBase64(bytes)); },
       };
-      return await downloadRecords(transport, { sinceSequence, timeoutMs: 45_000 });
-    } finally { await ble().cancelDeviceConnection(deviceId).catch(() => undefined); }
+      return await downloadRecords(transport, { sinceSequence, timeoutMs: 45_000, ...opts });
+    } finally { opts.signal?.removeEventListener('abort', abort); await ble().cancelDeviceConnection(deviceId).catch(() => undefined); }
   },
 };
 
 export function createImportPlatform(): ImportPlatform {
+  // One native result per selected photo. A sparse retry must not run the same
+  // expensive recognition again, and Android never decodes pixels on the JS thread.
+  const recognized = new WeakMap<PickedFile, Promise<OcrResult>>();
+  const androidOcr = (file: PickedFile, onProgress?: (p: string) => void, _mode?: 'document' | 'sparse', signal?: AbortSignal) => {
+    let result = recognized.get(file);
+    if (!result) { result = recognizeOnAndroid(file, false, onProgress, signal).catch(e => { recognized.delete(file); throw e; }); recognized.set(file, result); }
+    return result;
+  };
   return {
-    kind: 'native', os: Platform.OS === 'android' ? 'android' : Platform.OS === 'ios' ? 'ios' : 'other', ocrEngine: 'PP-OCRv5 (on this phone)',
+    kind: 'native', os: Platform.OS === 'android' ? 'android' : Platform.OS === 'ios' ? 'ios' : 'other', ocrEngine: Platform.OS === 'android' ? 'ML Kit Latin (on this phone)' : 'PP-OCRv5 (on this phone)',
     pickFile, captureReport,
-    extractors: { pdfText: async () => null, imageOcr: (file, onProgress, mode) => ppOcr(file, onProgress, mode) },
+    extractors: Platform.OS === 'android' ? { pdfDocument: (file, progress, signal) => recognizeOnAndroid(file, true, progress, signal), imageOcr: androidOcr } : { pdfText: async () => null, imageOcr: (file, onProgress, mode) => ppOcr(file, onProgress, mode) },
     devices: { healthConnect: Platform.OS === 'android' ? healthConnect : null, healthKit, ble: bleBridge },
   };
 }

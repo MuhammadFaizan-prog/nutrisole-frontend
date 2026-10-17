@@ -11,6 +11,7 @@ import { formatDisplayDate, formatDisplayTime, instantToWallClock, nowDisplay, p
 import { glucoseAdapters } from './adapters';
 import { rangeLabels, type GlucoseRange } from './history';
 import { importAction } from './importActions';
+import { importPlatform } from './importActions';
 
 type SetState = (fn: (s: ExpansionState) => ExpansionState) => void;
 export type GlucoseActionContext = { s: ExpansionState; setState: SetState; store: GlucoseStore; go: (r: AppRoute) => void; back: () => void; open: (sheet: Sheet) => void };
@@ -50,16 +51,12 @@ export function glucoseAction(action: string, ctx: GlucoseActionContext): boolea
       const result = validateGlucoseInput(inputFromState(s), { existing: snap.readings, editingId: s.glucoseEditingId });
       if (!result.ok) { notice('Check reading', result.error); return true; }
       const d = result.draft; const editingId = s.glucoseEditingId;
-      const when = instantToWallClock(d.measuredAt, d.tzOffsetMinutes);
-      const lines = [`${d.valueOriginal} ${d.unitOriginal}`, `${formatDisplayDate(when)} · ${formatDisplayTime(when)} · ${timeZoneLabel(d.tzName, d.tzOffsetMinutes)}`, contextLabel(d.mealContext), d.note ? `Note: ${d.note}` : '', 'Source: manual meter entry', snap.mode === 'demo' ? 'Demo mode: kept for this session only, not saved to a database.' : '', ...result.warnings.map(w => `⚠ ${w.message}`)].filter(Boolean);
-      let submitted = false; // rapid double taps on the confirm button submit once
-      notice(editingId ? 'Review changes' : 'Review manual reading', lines.join('\n'), [{ label: result.warnings.length ? 'I checked it · Save reading' : editingId ? 'Confirm & save changes' : 'Confirm & save reading', action: () => {
-        if (submitted) return; submitted = true;
-        void store.save(d, editingId).then(res => {
-          if (res.ok && res.reading) { const id = res.reading.id; setState(v => ({ ...v, glucoseCurrentId: id, glucoseRemoved: false, glucoseEditingId: null, glucoseEditOffset: null, glucoseEditTzName: null, fields: { ...v.fields, reading: '', readingNote: '' } })); go('reading-detail'); }
-          else if (!res.ok) notice('Reading not saved', `${res.error}\nYour entry is still on this screen. Nothing was stored.`, res.kind === 'unauthenticated' ? [{ label: 'Sign in', action: () => go('sign-in') }] : undefined);
-        });
-      } }]);
+      const saveReading = () => { void store.save(d, editingId).then(res => {
+        if (res.ok && res.reading) { const id = res.reading.id; setState(v => ({ ...v, glucoseCurrentId: id, glucoseRemoved: false, glucoseEditingId: null, glucoseEditOffset: null, glucoseEditTzName: null, fields: { ...v.fields, reading: '', readingNote: '' } })); go('reading-detail'); }
+        else if (!res.ok) notice('Reading not saved', res.error, res.kind === 'unauthenticated' ? [{ label: 'Sign in', action: () => go('sign-in') }] : undefined);
+      }); };
+      if (result.warnings.length) notice('Check this reading', result.warnings.map(w => w.message).join('\n'), [{ label: 'Save reading as entered', action: saveReading }]);
+      else saveReading();
       return true;
     }
     case 'latest-reading': { const latest = snap.readings.at(-1); setState(v => ({ ...v, glucoseCurrentId: latest?.id || null, glucoseRemoved: false })); go('reading-detail'); return true; }
@@ -74,7 +71,7 @@ export function glucoseAction(action: string, ctx: GlucoseActionContext): boolea
       const r = snap.readings.find(x => x.id === s.glucoseCurrentId);
       if (!r) { notice('No reading selected', 'Open a reading from your glucose history first.'); return true; }
       let confirmed = false;
-      notice('Delete this reading?', `${r.valueOriginal} ${r.unitOriginal} will be permanently deleted ${snap.mode === 'supabase' ? 'from your NutriSole account' : 'from this demo session'}. This cannot be undone.`, [{ label: 'Delete reading', action: () => {
+      notice('Delete this reading?', `${r.valueOriginal} ${r.unitOriginal} will be permanently deleted ${snap.mode === 'supabase' ? 'from your NutriSole account' : snap.mode === 'local' ? 'from this phone' : 'from this demo session'}. This cannot be undone.`, [{ label: 'Delete reading', action: () => {
         if (confirmed) return; confirmed = true;
         void store.remove(r.id).then(res => {
           if (res.ok) setState(v => ({ ...v, glucoseRemoved: true, glucoseCurrentId: null }));
@@ -86,7 +83,7 @@ export function glucoseAction(action: string, ctx: GlucoseActionContext): boolea
     case 'glucose-retry': void store.reload(); return true;
     case 'glucose-sign-in': go('sign-in'); return true;
     case 'provider-info': return glucoseAction('provider-info:health_connect', ctx);
-    case 'permissions': notice('Import permissions', `${glucoseAdapters.map(a => `${a.label}: not available (${a.evidence})`).join('\n')}\nNo operating-system permission is requested and nothing is imported in this build.`, [{ label: 'Add reading manually', action: () => startNew(ctx) }, { label: 'Review consent', action: () => go('privacy-data-rights') }]); return true;
+    case 'permissions': notice('Import permissions', importPlatform().os === 'android' ? `Reports and photos are read on this phone. The file is not uploaded. Confirmed readings are saved ${snap.mode === 'local' ? 'in encrypted storage on this phone' : 'to your NutriSole account'}. You can manage camera permission in Android Settings.` : 'Choose a file or photo to read it on this device. Device and health permissions are managed in the mobile app.', [{ label: 'Choose a source', action: () => go('glucose-import') }]); return true;
     default: return false;
   }
 }

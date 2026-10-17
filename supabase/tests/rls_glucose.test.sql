@@ -147,10 +147,9 @@ do $$ begin
     update public.glucose_readings set source_meta = '{"fileName":"forged"}' where source_record_id = 'abc123:line10';
     raise exception 'FAIL 10: meta updated';
   exception when insufficient_privilege or raise_exception then null; end;
-  begin  -- an imported value stays read-only
-    update public.glucose_readings set value_original = 150 where source_record_id = 'abc123:line10';
-    raise exception 'FAIL 10: imported value updated';
-  exception when raise_exception then null; end;
+  update public.glucose_readings set value_original = 150 where source_record_id = 'abc123:line10';
+  if (select value_original from public.glucose_readings where source_record_id = 'abc123:line10') <> 150 then raise exception 'FAIL 10: report correction not saved'; end if;
+  if (select source_meta->>'originalValue' from public.glucose_readings where source_record_id = 'abc123:line10') <> '112' then raise exception 'FAIL 10: original extraction lost'; end if;
 end $$;
 update public.glucose_readings set note = 'checked against the paper report' where source_record_id = 'abc123:line10';
 reset role;
@@ -158,5 +157,5 @@ do $$ begin
   if (select value_mg_dl from public.glucose_readings where source_record_id = 'def456:row2') <> 109.91 then raise exception 'FAIL 10: generated mg/dL'; end if;
   if (select source_meta->>'confidence' from public.glucose_readings where source_record_id = 'abc123:line10') <> '0.86' then raise exception 'FAIL 10: meta stored'; end if;
 end $$;
-\echo 'ok 10 - file/ocr imports: provenance meta + batch + dedupe key stored; re-import blocked; manual rows carry no meta; meta and imported values immutable'
+\echo 'ok 10 - file/ocr imports: provenance meta + batch + dedupe key stored; re-import blocked; manual rows carry no meta; meta immutable; report values correctable'
 \echo 'RLS SUITE PASSED'

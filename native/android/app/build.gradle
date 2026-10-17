@@ -90,8 +90,9 @@ android {
         applicationId "com.muhammadfaizan.nutrisole"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 5
-        versionName "1.0.4"
+        versionCode 7
+        versionName "1.0.6"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
         debug {
@@ -113,9 +114,19 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    sourceSets {
+        androidTest.assets.srcDirs += ["../../../tests/glucose/fixtures", "../../../tests/glucose/ocr-eval/heldout2"]
+    }
 }
 
 dependencies {
+    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
+    implementation("com.google.android.gms:play-services-mlkit-document-scanner:16.0.0")
+    // Bundled Latin model: no first-use download or cloud OCR call.
+    implementation("com.google.mlkit:text-recognition:16.0.1")
+    implementation("androidx.exifinterface:exifinterface:1.4.1")
+    androidTestImplementation("androidx.test:runner:1.7.0")
+    androidTestImplementation("androidx.test.ext:junit:1.3.0")
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 

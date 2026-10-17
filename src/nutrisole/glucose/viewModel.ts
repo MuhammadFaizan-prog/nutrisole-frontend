@@ -46,6 +46,7 @@ export function buildGlucoseView(snapshot: GlucoseSnapshot, opts: { displayUnit:
   const copy = stateCopy(snapshot);
   const emptyInRange = ready && snapshot.readings.length > 0 && filtered.length === 0;
   const banner = snapshot.mode === 'demo' ? 'Demo mode · readings stay in this session only and are not saved to a database.'
+    : snapshot.mode === 'local' ? 'Saved on this phone · encrypted storage. No account or internet needed.'
     : snapshot.stale ? `Showing readings from your last successful load. ${snapshot.error || ''}`.trim() : null;
   const chart = ready ? chartModel(filtered, opts.displayUnit) : null;
   const list = ready ? [...filtered].reverse().slice(0, 30).map(r => { const w = readingWhen(r); return { id: r.id, value: displayValue(r, opts.displayUnit), unit: opts.displayUnit, when: `${w.date} · ${w.time}`, context: contextLabel(r.mealContext), source: sourceLabel(r) }; }) : [];
@@ -59,7 +60,7 @@ export function buildGlucoseView(snapshot: GlucoseSnapshot, opts: { displayUnit:
     detail = {
       id: current.id, value: current.valueOriginal, unit: current.unitOriginal, alt: `≈ ${otherValue} ${other} · entered in ${current.unitOriginal}`,
       date: w.date, time: w.time, timeZone: timeZoneLabel(current.tzName, current.tzOffsetMinutes), context: contextLabel(current.mealContext), note: current.note || 'None',
-      source: sourceLabel(current), savedLabel: snapshot.mode === 'supabase' ? 'Saved to your account' : 'Demo session · not saved', entered: `${formatDisplayDate(created)} · ${formatDisplayTime(created)}`,
+      source: sourceLabel(current), savedLabel: snapshot.mode === 'supabase' ? 'Saved to your account' : snapshot.mode === 'local' ? 'Saved on this phone' : 'Demo session · not saved', entered: `${formatDisplayDate(created)} · ${formatDisplayTime(created)}`,
     };
   }
   const nowClock = { year: now.getFullYear(), month: now.getMonth(), day: now.getDate(), hour: now.getHours(), minute: now.getMinutes() };
@@ -68,6 +69,7 @@ export function buildGlucoseView(snapshot: GlucoseSnapshot, opts: { displayUnit:
     : snapshot.status === 'signed-out' ? 'Sign in to save this reading to your account.'
     : snapshot.status === 'offline' ? 'You are offline. The reading will not be saved until you retry online.'
     : snapshot.mode === 'demo' ? 'Demo mode: saved only for this session, not to a database.'
+    : snapshot.mode === 'local' ? 'Saved in encrypted storage on this phone. Enter the value and unit shown on your meter.'
     : 'Enter an existing meter reading.\nNutriSole does not measure or interpret glucose.';
   const fromDays = opts.range === '7d' ? 6 : opts.range === '30d' ? 29 : opts.range === '90d' ? 89 : null;
   const fromDate = fromDays === null ? null : new Date(now.getFullYear(), now.getMonth(), now.getDate() - fromDays);

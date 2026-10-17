@@ -13,7 +13,7 @@ export default function ScreenDirectory({ go, back, action, signedIn }: { go: (r
         const signOut = item.route === 'sign-in' && signedIn;
         const label = signOut ? 'Sign out' : item.label;
         return <Tap key={item.label} testID={`menu-${signOut ? 'sign-out' : item.route || item.action}`} label={label} onPress={() => signOut ? action('sign-out') : item.route === 'report-status' ? action('my-reports') : item.route ? go(item.route) : action(item.action!)} style={[s.row, { padding: 15, minHeight: 52, borderTopWidth: index ? .6 : 0, borderColor: colors.border }]}>
-          <Icons name={item.icon} size={23} color={colors.green} /><View style={[s.flex, { gap: 5 }]}><T size={16} bold>{label}</T><T size={13} color={colors.muted}>{signOut ? 'End the local demo session' : item.description}</T></View><Icons name="ChevronRight" size={18} color={colors.muted} />
+          <Icons name={item.icon} size={23} color={colors.green} /><View style={[s.flex, { gap: 5 }]}><T size={16} bold>{label}</T><T size={13} color={colors.muted}>{signOut ? 'Sign out of NutriSole' : item.description}</T></View><Icons name="ChevronRight" size={18} color={colors.muted} />
         </Tap>;
       })}</Panel>
     </View>)}

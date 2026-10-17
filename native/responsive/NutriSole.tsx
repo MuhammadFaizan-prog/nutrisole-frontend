@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from 'react';
-import { Keyboard, View } from 'react-native';
+import { AppState, Keyboard, View } from 'react-native';
 import type { AppRoute, Sheet } from '../../src/nutrisole/types';
 import { useDemoStore } from '../../src/nutrisole/store';
 import { useExpansion } from '../../src/nutrisole/extensions/useExpansion';
@@ -18,7 +18,11 @@ export const routes: AppRoute[] = ['onboarding', 'home', 'scan', 'log-meal', 'we
 export default function NutriSole({ open, requestedRoute = 'onboarding', requestedIntent = 'reset', navigationToken = 0, routeChanged }: { open: (sheet: Sheet) => void; requestedRoute?: AppRoute; requestedIntent?: 'reset' | 'push'; navigationToken?: number; routeChanged?: (route: AppRoute) => void }) {
   const store = useDemoStore(); const expansion = useExpansion();
   const [{ route, history }, dispatch] = useReducer(navigationReducer, { route: canonicalRoute(requestedRoute), history: [] });
+  useEffect(() => { const sub = AppState.addEventListener('change', value => { if (value === 'active') void expansion.glucose.resume(); }); return () => sub.remove(); }, [expansion.glucose]);
   const [signedIn, setSignedIn] = useState(false);
+  useEffect(() => {
+    if (navigationToken === 0 && route === 'onboarding' && expansion.state.session) dispatch({ type: 'reset', route: 'home' });
+  }, [navigationToken, route, expansion.state.session]);
   const [portionRecord, setPortionRecord] = useState<PortionContext | null>(null);
   const [applePortion, setApplePortion] = useState(freshApplePortion);
   const mobility = /^(none|unrestricted)$/i.test(store.state.profile.mobility.trim()) ? 'Unrestricted' : 'Limited';
@@ -50,7 +54,7 @@ export default function NutriSole({ open, requestedRoute = 'onboarding', request
       go('portion-confirmation'); return;
     }
     if (value.startsWith('choose:mobility:')) store.update(old => ({ ...old, profile: { ...old.profile, mobility: value.endsWith(':Limited') ? 'Limited' : 'None' } }));
-    if (value === 'sign-out') { open({ title: 'Sign out of the demo?', description: 'Your local demo records remain on this device.', choices: [{ label: 'Sign out', action: () => { setSignedIn(false); expansion.field('password', ''); void expansion.glucose.signOut(); go('sign-in'); } }] }); return; }
+    if (value === 'sign-out') { open({ title: 'Sign out?', description: 'Your glucose readings stay in your account.', choices: [{ label: 'Sign out', action: () => { setSignedIn(false); expansion.field('password', ''); void expansion.glucose.signOut(); go('sign-in'); } }] }); return; }
     if (value === 'my-reports') { if (expansion.state.reportSubmitted) go('report-status'); else open({ title: 'No reports yet', description: 'Reports you submit from a result or the Assistant appear here.', choices: [{ label: 'Report a result', action: () => go('report-output') }] }); return; }
     // Glucose display unit follows the profile preference; each reading keeps its entered unit.
     if (value === 'reading-unit') { open({ title: 'Display unit', description: 'Changes how readings are shown. Each reading keeps the unit it was entered in.', choices: ['mg/dL', 'mmol/L'].map(unit => ({ label: unit, selected: sceneState.choices.displayUnit === unit, action: () => { expansion.action(`choose:displayUnit:${unit}`, go, back, open); store.update(old => ({ ...old, profile: { ...old.profile, glucoseUnit: unit } })); } })) }); return; }
@@ -65,7 +69,7 @@ export default function NutriSole({ open, requestedRoute = 'onboarding', request
     if (value === 'export') { open({ title: 'Export local demo records', description: 'Preview your local records as JSON. Nothing is sent to a server.', fields: [{ key: 'json', label: 'Session export', value: JSON.stringify({ glucoseReadings: expansion.glucose.getSnapshot().readings.map(r => ({ measuredAt: r.measuredAt, value: r.valueOriginal, unit: r.unitOriginal, context: r.mealContext, source: r.source.type })), meals: sceneState.meals, report: sceneState.reportSubmitted ? { id: 'DEMO-104', reason: sceneState.choices.reason } : null }, null, 2), multiline: true }] }); return; }
     if (value === 'retained') { open({ title: 'Retained records', description: `${expansion.glucose.getSnapshot().mode === 'supabase' ? `${expansion.glucose.getSnapshot().readings.length} glucose readings in your account (not cleared here)` : expansion.glucose.getSnapshot().mode === 'demo' ? `${expansion.glucose.getSnapshot().readings.length} demo glucose readings (session only)` : 'Glucose: database not configured'}, ${sceneState.meals.length} meal entries.`, choices: [{ label: 'Clear local records', action: () => open({ title: 'Clear local demo records?', description: 'This clears the local demo preferences, readings and meal entries.', choices: [{ label: 'Confirm clear records', action: () => { store.reset(); expansion.reset(); setSignedIn(false); } }] }) }] }); return; }
     const destination = (next: AppRoute) => {
-      if (next === 'add-reading' && value !== 'new-reading' && value !== 'edit-reading') { expansion.action('new-reading', go, back, open); return; }
+      if (next === 'add-reading' && value !== 'new-reading' && value !== 'edit-reading' && value !== 'sign-in') { expansion.action('new-reading', go, back, open); return; }
       if (value === 'choose-photo' && next === 'analysis-result') setFood('Apple');
       if (value === 'go:portion-confirmation' || value === 'go:log-meal') setPortionRecord(null);
       if (value === 'sign-in' && next === 'flow-directory') { home(); return; }
@@ -76,12 +80,12 @@ export default function NutriSole({ open, requestedRoute = 'onboarding', request
     const flowSheet = (sheet: Sheet) => {
       if (value === 'sign-in' && (sheet.title === 'Frontend demo' || sheet.title === 'Signed in')) { setSignedIn(true); store.update(old => ({ ...old, profile: { ...old.profile, email: expansion.state.fields.email.trim() } })); sheet.choices?.[0].action(); return; }
       const save = sheet.save;
-      open({ ...sheet, choices: sheet.choices?.map(choice => ({ ...choice, label: choice.label === 'Explore all flows' ? 'Back to settings' : choice.label })), save: save ? values => { const error = save(values); if (!error && value === 'delete-account') { store.reset(); setSignedIn(false); } return error; } : undefined });
+      open({ ...sheet, choices: sheet.choices?.map(choice => ({ ...choice, label: choice.label === 'Explore all flows' ? 'Back to settings' : choice.label })), save: save ? async values => { const error = await save(values); if (!error && value === 'delete-account') { store.reset(); setSignedIn(false); } return error; } : undefined });
     };
     expansion.action(value, destination, back, flowSheet);
   };
   const props = { store, go, back, home, open };
-  const content = route === 'flow-directory' ? <ScreenDirectory go={go} back={back} action={action} signedIn={signedIn} />
+  const content = route === 'flow-directory' ? <ScreenDirectory go={go} back={back} action={action} signedIn={signedIn || expansion.state.session} />
     : (extensionRoutes as readonly string[]).includes(route) ? <ExpandedScreen key={`${route}-${navigationToken}`} route={route as ExtensionRoute} state={sceneState} profile={store.state.profile} connected={store.state.connected} editingMeal={!!portionRecord?.id && !portionRecord.draft} field={expansion.field} action={action} go={go} back={back} />
     : route === 'home' ? <Home {...props} /> : route === 'scan' ? <Scan {...props} />
     : route === 'log-meal' ? <LogMeal key={`${route}-${history.length}`} {...props} portion={applePortion} updatePortion={setApplePortion} /> : route === 'weekly-plan' ? <WeeklyPlan {...props} />

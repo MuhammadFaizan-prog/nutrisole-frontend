@@ -33,7 +33,7 @@ s,d=req("POST",T,ta,imp,R); check("A insert own ocr import (value_mg_dl generate
 s,d=req("POST",T,ta,imp,R); check("A re-import same source record rejected (unique import idx)",s==409,f"{s}")
 s,d=req("GET",T+f"?id=eq.{aid}",ta); check("A read own",s==200 and len(d)==1)
 s,d=req("PATCH",T+f"?id=eq.{aid}",ta,{"value_original":118},R); check("A update own manual",s==200 and len(d)==1 and float(d[0]["value_original"])==118)
-s,d=req("PATCH",T+f"?id=eq.{iid}",ta,{"value_original":7},R); check("A update imported value blocked by trigger",s>=400,f"{s}")
+s,d=req("PATCH",T+f"?id=eq.{iid}",ta,{"value_original":7},R); check("A correct own report reading",s==200 and len(d)==1 and float(d[0]["value_original"])==7,f"{s}")
 s,d=req("POST",T,ta,{**row,"user_id":idb},R); check("A insert as B denied",s in (401,403),f"{s}")
 s,d=req("GET",T+f"?id=eq.{aid}",tb); check("B read A's row returns nothing",s==200 and d==[],f"{s} {d}")
 s,d=req("GET",T,tb); check("B list sees no A rows",s==200 and all(x["user_id"]==idb for x in d))

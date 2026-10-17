@@ -64,11 +64,18 @@ export function resultNumbers(text: string): string[] {
 
 function findCollection(lines: TextLine[]): LabParseResult['collected'] {
   let best: { rank: number; date: DateParts | null; time: TimeParts | null; label: string } | null = null;
+  // OCR can merge collection and reporting fields into one geometrical row.
+  // A field ends at the next metadata label; never borrow its clock or date.
+  const field = (value: string, rank: number) => {
+    const next = COLLECTION_LABELS.filter(l => l.rank !== rank).map(l => l.re.exec(value)?.index).filter((i): i is number => i !== undefined);
+    return next.length ? value.slice(0, Math.min(...next)) : value;
+  };
   lines.forEach((line, i) => {
     for (const l of COLLECTION_LABELS) {
       const m = l.re.exec(line.text); if (!m) continue;
-      const rest = line.text.slice(m.index + m[0].length);
-      const nextText = lines[i + 1]?.text || '';
+      const rest = field(line.text.slice(m.index + m[0].length), l.rank);
+      const next = lines[i + 1]?.text || '';
+      const nextText = field(next, l.rank);
       const d = findDate(rest) || findDate(nextText);
       if (!d) continue;
       const source = findDate(rest) ? rest : nextText;
@@ -130,6 +137,18 @@ function pickFromCells(line: TextLine, labelIdx: number, labelTail: string, cols
 type Meta = { format: ImportFormat; method: 'file' | 'ocr'; fileName: string | null; fileSha256: string | null; batchId: string; engine: string | null; now?: Date };
 
 export function parseReportText(input: TextLine[], meta: Meta): LabParseResult {
+  // A file can contain separate reports. Never apply page one's collection time to
+  // another page, or collapse equal values that were measured on different dates.
+  const pages = new Map<string, TextLine[]>();
+  for (const line of input) {
+    const page = /^page\s+(\d+)\b/i.exec(line.locator)?.[1] || '1';
+    if (!pages.has(page)) pages.set(page, []);
+    pages.get(page)!.push(line);
+  }
+  if (pages.size > 1) {
+    const parts = [...pages].map(([page, lines]) => parseReportText(lines, { ...meta, batchId: `${meta.batchId}-p${page}` }));
+    return { kind: parts.some(p => p.kind === 'lab-report') ? 'lab-report' : parts.some(p => p.kind === 'meter-screen') ? 'meter-screen' : 'none', candidates: parts.flatMap(p => p.candidates), nonGlucose: parts.flatMap(p => p.nonGlucose), notes: [...new Set(parts.flatMap(p => p.notes))], collected: parts[0].collected };
+  }
   const lines = input.map(l => ({ ...l, text: normalizeOcrLine(l.text) })).filter(l => l.text);
   const notes: string[] = []; const nonGlucose: NonGlucoseFinding[] = []; const found: { line: number; value: string; unitText: GlucoseUnit | null; context: MealContext; label: string; conf: number; raw: string; locator: string }[] = [];
   const collected = findCollection(lines);
@@ -216,15 +235,24 @@ export function parseReportText(input: TextLine[], meta: Meta): LabParseResult {
 /** Meter screen photo: one big number (+unit), optional "16-10 08:15" style date/time. */
 export function parseMeterScreen(lines: TextLine[], meta: Meta): ImportCandidate | null {
   const text = lines.map(l => l.text).join('\n');
+  // A plausible number alone is not evidence of a glucose measurement. A meter
+  // photo must include its printed unit and must not be another lab table.
+  if (!unitFromText(text) || /cholesterol|triglycerides|creatinine|urea|bilirubin|\b(?:lipid|hdl|ldl|vldl)\b|reference\s*(?:range|interval)|test\s+result/i.test(text)) return null;
   const conf = lines.length ? lines.reduce((s, l) => s + (l.confidence ?? 0.7), 0) / lines.length : 0.5;
   const withUnit = /(?<![\d:./-])(\d{1,3}(?:\.\d)?)[ \t]*(mg\/dL|mmol\/L)/.exec(text);
   let value: string | null = null; let unit: GlucoseUnit | null = null;
   // Geometry first: on a meter the reading is by far the tallest number on the screen.
   const plausibleNum = (n: string) => (n.includes('.') && Number(n) >= 1.1 && Number(n) <= 33.3) || (!n.includes('.') && Number(n) >= 20 && Number(n) <= 600);
-  const tall = lines.flatMap(l => l.cells || []).filter(c => c.h && /^\d{2,3}(?:\.\d)?$/.test(normalizeOcrLine(c.text).replace(/\s/g, '')) && plausibleNum(normalizeOcrLine(c.text).replace(/\s/g, '')))
+  const tall = lines.flatMap(l => l.cells || []).filter(c => c.h && /^\d{1,3}(?:\.\d)?$/.test(normalizeOcrLine(c.text).replace(/\s/g, '')) && plausibleNum(normalizeOcrLine(c.text).replace(/\s/g, '')))
     .sort((a, b) => (b.h || 0) - (a.h || 0));
   const allH = lines.flatMap(l => l.cells || []).map(c => c.h || 0).sort((a, b) => a - b); const medH = allH[Math.floor(allH.length / 2)] || 0;
-  if (tall.length && (tall[0].h || 0) >= 1.6 * medH) { value = normalizeDecimal(normalizeOcrLine(tall[0].text).replace(/\s/g, '')); unit = unitFromText(text); }
+  const dominantNumber = tall.length > 0 && (tall[0].h || 0) >= 1.6 * medH;
+  const screenValues = lines.filter(l => /^\d{1,3}(?:\.\d)?\s*(?:(?:mg\/dL|mmol\/L))?$/i.test(l.text.trim()));
+  // Positive screen evidence: a dominant display numeral, or exactly one bare
+  // reading line with a printed unit. An arbitrary sentence containing mg/dL is
+  // never sufficient evidence that the document is a glucose meter screen.
+  if (!dominantNumber && screenValues.length !== 1) return null;
+  if (dominantNumber) { value = normalizeDecimal(normalizeOcrLine(tall[0].text).replace(/\s/g, '')); unit = unitFromText(text); }
   else if (withUnit) { value = normalizeDecimal(withUnit[1]); unit = unitFromText(withUnit[2]); }
   else {
     const nums = lines.flatMap(l => resultNumbers(l.text.replace(/\d{1,2}[:.]\d{2}(\s*[AP]M)?/gi, ' ').replace(/\d{1,4}[/-]\d{1,2}([/-]\d{2,4})?|\d{1,2}\.\d{1,2}\.\d{2,4}/g, ' ')));
@@ -246,10 +274,11 @@ export function parseMeterScreen(lines: TextLine[], meta: Meta): ImportCandidate
   // Capped below LOW_CONFIDENCE (0.6): meter photos read 5 of 9 right on the blind held-out set,
   // so every meter reading is flagged for a look against the meter before it can be saved.
   const confidence = Math.round(Math.max(0.1, Math.min(0.55, conf * 0.7 * (unit ? 1 : 0.8))) * 100) / 100;
+  const page = /^page\s+\d+\b/i.exec(lines[0]?.locator || '')?.[0];
   return {
     id: `${meta.batchId}-m1`, value, unit: u.unit, unitSource: u.source, date: date ? displayDate(date) : '', time: time ? displayTime(time) : '', tzOffsetMinutes: null,
     mealContext: 'unspecified', note: 'Meter screen photo', confidence, flags, original: { value, unit },
-    provenance: { method: meta.method, format: meta.format, provider: meta.method === 'ocr' ? `ocr:${meta.engine || 'unknown'}` : `file:${meta.format}`, recordId: `${(meta.fileSha256 || 'nohash').slice(0, 16)}:meter`, device: null, fileName: meta.fileName, fileSha256: meta.fileSha256, locator: 'whole image', raw: text.slice(0, 200), engine: meta.engine },
+    provenance: { method: meta.method, format: meta.format, provider: meta.method === 'ocr' ? `ocr:${meta.engine || 'unknown'}` : `file:${meta.format}`, recordId: `${(meta.fileSha256 || 'nohash').slice(0, 16)}:${page?.replace(/\s+/g, '') || 'image'}:meter`, device: null, fileName: meta.fileName, fileSha256: meta.fileSha256, locator: page ? `${page} meter screen` : 'whole image', raw: text.slice(0, 200), engine: meta.engine },
     decision: 'pending', edited: false,
   };
 }

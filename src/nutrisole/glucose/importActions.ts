@@ -12,10 +12,14 @@ import { fileToBatch, remapBatch, ImportFileError } from './import/fileImport';
 import { assessBatch, bulk, canConfirm, draftsToSave, editCandidate, flagText, setDecision } from './import/review';
 import { glsToBatch, healthConnectToBatch, healthKitToBatch } from './import/devices';
 import { remap, setColumnUnit, setDateOrder } from './import/tabular';
-import { initialImportState, type ImportUiState } from './import/view';
+import { IMPORT_PAGE_SIZE, initialImportState, type ImportUiState } from './import/view';
 import { contextLabel } from './validation';
-import { parseDisplayDate, parseDisplayTime } from './time';
+import { formatDisplayDate, formatDisplayTime } from './time';
+import { findDate, findTime } from './import/dates';
 import type { ImportBatch, TabularMapping } from './import/types';
+import type { GlucoseStore } from './store';
+import type { BleMeter } from './import/scan';
+import type { GlsDownload } from './import/gls';
 
 let platform: ImportPlatform | null = null;
 export function importPlatform(): ImportPlatform { return (platform ??= createImportPlatform()); }
@@ -29,21 +33,64 @@ const setBatch = (ctx: Ctx, fn: (b: ImportBatch) => ImportBatch) => ctx.setState
 const notice = (ctx: Ctx, title: string, description: string, choices?: Sheet['choices']) => ctx.open({ title, description, choices });
 
 function startBatch(ctx: Ctx, batch: ImportBatch) {
-  patch(ctx, { batch, busy: null, error: null, result: null });
+  ctx.setState(v => {
+    const old = imp(v); const previous = old.batch?.id === batch.id ? new Map(old.batch.candidates.map(c => [c.provenance.recordId, c])) : null;
+    return { ...v, glucoseImport: { ...old, page: previous ? old.page || 0 : 0, batch: { ...batch, candidates: batch.candidates.map(c => { const prior = previous?.get(c.provenance.recordId); return prior?.edited ? prior : prior ? { ...c, decision: prior.decision } : c; }) }, busy: null, error: null, result: null } };
+  });
   ctx.go('import-review');
 }
-async function run(ctx: Ctx, label: string, work: (progress: (p: string) => void) => Promise<ImportBatch | null>) {
-  if (imp(ctx.s).busy) { notice(ctx, 'Please wait', imp(ctx.s).busy || 'An import is already running.'); return; }
+const jobs = new WeakMap<GlucoseStore, AbortController>();
+const transfers = new WeakSet<GlucoseStore>();
+function stopImport(ctx: Ctx) {
+  jobs.get(ctx.store)?.abort(); jobs.delete(ctx.store); patch(ctx, { busy: null });
+}
+async function run(ctx: Ctx, label: string, work: (progress: (p: string) => void, signal: AbortSignal) => Promise<ImportBatch | null>) {
+  if (imp(ctx.s).saving || ctx.store.getSnapshot().busy === 'saving') { notice(ctx, 'Saving readings', 'Wait for the current save to finish before opening another report.'); return; }
+  if (jobs.has(ctx.store)) { notice(ctx, 'Import in progress', 'Stop the current import before starting another.'); return; }
+  const control = new AbortController(); jobs.set(ctx.store, control);
   patch(ctx, { busy: label, error: null });
   try {
-    const batch = await work(p => patch(ctx, { busy: p }));
-    if (!batch) { patch(ctx, { busy: null }); return; }
+    const batch = await work(p => { if (!control.signal.aborted) patch(ctx, { busy: p }); }, control.signal);
+    if (control.signal.aborted || !batch) return;
     startBatch(ctx, batch);
   } catch (e) {
+    if (control.signal.aborted) return;
     const message = e instanceof ImportFileError || e instanceof Error ? e.message : 'The import failed.';
     patch(ctx, { busy: null, error: message });
     notice(ctx, 'Nothing imported', `${message}\nNothing was saved.`, [{ label: 'Enter the reading manually', action: () => ctx.go('add-reading') }]);
-  }
+  } finally { if (jobs.get(ctx.store) === control) { jobs.delete(ctx.store); patch(ctx, { busy: null }); } }
+}
+
+function connectMeter(ctx: Ctx, device: BleMeter) {
+  const ble = importPlatform().devices?.ble; if (!ble) return;
+  if (transfers.has(ctx.store)) return;
+  transfers.add(ctx.store);
+  stopImport(ctx);
+  patch(ctx, { foundMeters: [] });
+  const batchId = `ble-${Date.now()}-${device.id}`;
+  const toBatch = (r: GlsDownload) => {
+    const b = glsToBatch(r, device);
+    return { ...b, id: batchId, candidates: b.candidates.map(c => ({ ...c, id: `${batchId}-${c.provenance.recordId}` })) };
+  };
+  void run(ctx, `Connecting to ${device.name || 'strip meter'}…`, async (progress, signal) => {
+    let showing = false; let published = 0;
+    const result = await ble.download(device.id, null, { signal, onProgress: r => {
+      if (signal.aborted) return;
+      progress(`${r.records.length} reading${r.records.length === 1 ? '' : 's'} received · transferring…`);
+      if (!showing || Date.now() - published >= 100) {
+        // Stable IDs retain the user's edits and confirmation decisions while new
+        // packets arrive. A cursor is never advanced merely because data arrived.
+        const batch = toBatch(r);
+        ctx.setState(v => {
+          const current = imp(v); const existing = current.batch?.id === batchId ? new Map(current.batch.candidates.map(c => [c.provenance.recordId, c])) : null;
+          return { ...v, glucoseImport: { ...current, page: existing ? current.page || 0 : 0, batch: { ...batch, candidates: batch.candidates.map(c => { const old = existing?.get(c.provenance.recordId); return old?.edited ? old : old ? { ...c, decision: old.decision } : c; }) } } };
+        });
+        if (!showing) ctx.go('import-review'); showing = true; published = Date.now();
+      }
+    } });
+    if (result.outcome === 'failed' && !result.records.length) throw new Error(result.message);
+    return toBatch(result);
+  }).finally(() => { transfers.delete(ctx.store); });
 }
 
 const statusText = (st: ConnectionStatus) => ('reason' in st && st.reason) || ({ 'permission-required': 'Permission is needed.', 'permission-denied': 'Permission was denied.', disconnected: 'Not connected.' } as Record<string, string>)[st.state] || st.state;
@@ -56,27 +103,21 @@ function deviceImport(ctx: Ctx, kind: 'health_connect' | 'healthkit' | 'ble_mete
   if (kind === 'ble_meter') {
     const ble = p.devices.ble; if (!ble) { notice(ctx, name, 'Bluetooth is not available in this build.'); return; }
     void ble.status().then(st => {
-      const go = () => void run(ctx, 'Scanning for glucose meters (10 s)…', async progress => {
-        const st2 = await ble.requestPermission();
-        if (st2.state !== 'ready') throw new Error(statusText(st2));
-        progress('Scanning for meters (Glucose Service 0x1808)… Put the meter in pairing/transfer mode.');
-        const found = await ble.scan(10);
-        if (!found.length) throw new Error('No Bluetooth glucose meter was found. Put the meter in pairing/transfer mode, keep it close, and try again.');
-        return await new Promise<ImportBatch | null>((resolve, reject) => {
-          ctx.open({ title: 'Choose your meter', description: `${found.length} meter${found.length === 1 ? '' : 's'} found. The first connection asks to pair; enter the PIN shown on or printed on the meter.`, choices: found.map(d => ({ label: `${d.name || 'Unnamed meter'} · ${d.id}`, action: () => {
-            const since = imp(ctx.s).lastSequence[d.id];
-            const fetchFrom = (seq: number | null) => { patch(ctx, { busy: `Downloading from ${d.name || d.id}…` }); ble.download(d.id, seq).then(dl => {
-              if (dl.lastSequence !== null) ctx.setState(v => ({ ...v, glucoseImport: { ...imp(v), lastSequence: { ...imp(v).lastSequence, [d.id]: dl.lastSequence! + 1 } } }));
-              if (dl.outcome === 'failed' && !dl.records.length) reject(new Error(dl.message)); else resolve(glsToBatch(dl, d));
-            }, reject); };
-            if (since !== undefined) ctx.open({ title: 'Which readings?', choices: [{ label: 'New since last import', action: () => fetchFrom(since) }, { label: 'All stored readings', action: () => fetchFrom(null) }] });
-            else fetchFrom(null);
-          } })) });
-        });
-      });
       if (st.state === 'bluetooth-off' || st.state === 'unsupported-device') { notice(ctx, name, statusText(st)); return; }
-      notice(ctx, 'Import from a Bluetooth meter', `NutriSole connects to strip meters that use the standard Bluetooth Glucose Profile and reads their stored readings. It needs the "Nearby devices" permission to find the meter. Nothing is sent anywhere.\n${beta}`, [{ label: st.state === 'ready' ? 'Find my meter' : 'Continue', action: go }]);
-    });
+      notice(ctx, 'Connect a Bluetooth strip meter', 'Use a meter with the standard Bluetooth Glucose Service (0x1808). Put it in pairing/transfer mode; tap it as soon as it appears. Pair using the PIN on the meter. Every transferred reading needs your review.\nHardware compatibility still needs a test with your exact meter.', [{ label: 'Find my meter', action: () => {
+        patch(ctx, { foundMeters: [] }); ctx.go('glucose-import');
+        void run(ctx, 'Finding Bluetooth strip meters…', async (progress, signal) => {
+          const permission = await ble.requestPermission();
+          if (permission.state !== 'ready') throw new Error(statusText(permission));
+          progress('Searching… Tap your meter as soon as it appears.');
+          const found = await ble.scan(10, { signal, onFound: device => {
+            if (!signal.aborted) ctx.setState(v => ({ ...v, glucoseImport: { ...imp(v), foundMeters: [...(imp(v).foundMeters || []).filter(d => d.id !== device.id), device] } }));
+          } });
+          if (!signal.aborted && !found.length) throw new Error('No compatible strip meter was found. Check its Bluetooth pairing mode and keep it near the phone.');
+          return null;
+        });
+      } }]);
+    }).catch(e => notice(ctx, 'Bluetooth unavailable', e instanceof Error ? e.message : 'Bluetooth could not start.'));
     return;
   }
   const bridge = kind === 'health_connect' ? p.devices.healthConnect : p.devices.healthKit;
@@ -89,11 +130,11 @@ function deviceImport(ctx: Ctx, kind: 'health_connect' | 'healthkit' | 'ble_mete
     }) })) });
     if (st.state === 'ready') { pickRange(); return; }
     // Rationale screen (shown before the OS permission sheet; Health Connect also links here).
-    notice(ctx, `Why NutriSole asks for ${name}`, `NutriSole asks to READ blood glucose only, to show the readings your meter app saved there. It never writes to ${name} and never reads other health data. You choose the period, and you review every value before it is saved to your account.\n${st.state === 'permission-denied' ? 'Access was denied earlier. You can allow it again, or change it in settings.\n' : ''}${beta}`, [
-      { label: 'Continue', action: () => void bridge.requestPermission().then(r => r.state === 'ready' ? pickRange() : notice(ctx, 'No access', `${statusText(r)}\nNothing was imported.`, bridge.openSettings ? [{ label: 'Open Health Connect settings', action: () => bridge.openSettings!() }] : undefined)) },
+    notice(ctx, `Why NutriSole asks for ${name}`, `NutriSole asks to READ blood glucose only, to show the readings your meter app saved there. It never writes to ${name} and never reads other health data. You choose the period, and you review every value before saving ${ctx.store.getSnapshot().mode === 'local' ? 'on this phone' : 'to your account'}.\n${st.state === 'permission-denied' ? 'Access was denied earlier. You can allow it again, or change it in settings.\n' : ''}${beta}`, [
+      { label: 'Continue', action: () => void bridge.requestPermission().then(r => r.state === 'ready' ? pickRange() : notice(ctx, 'No access', `${statusText(r)}\nNothing was imported.`, bridge.openSettings ? [{ label: 'Open Health Connect settings', action: () => bridge.openSettings!() }] : undefined)).catch(e => notice(ctx, 'Permission could not be requested', e instanceof Error ? e.message : 'Try again in Health Connect settings.')) },
       { label: 'Not now', action: () => undefined },
     ]);
-  });
+  }).catch(e => notice(ctx, `${name} unavailable`, e instanceof Error ? e.message : 'The health source could not start.'));
 }
 
 const roles: { key: 'value' | 'datetime' | 'date' | 'time' | 'unit' | 'context' | 'note'; label: string }[] = [
@@ -113,62 +154,91 @@ function mappingSheet(ctx: Ctx) {
 function rowSheet(ctx: Ctx, id: string) {
   const b = imp(ctx.s).batch; if (!b) return;
   const a = assessBatch(b, ctx.store.getSnapshot().readings).find(x => x.id === id); if (!a) return;
-  const ok = canConfirm(a);
-  const p = a.provenance;
-  const lines = [
-    `${a.value} ${a.unit || '(unit?)'} · ${a.date || 'no date'} ${a.time || ''} · ${a.mealContext === 'unspecified' ? 'no context' : contextLabel(a.mealContext)}`,
-    `Found in ${p.fileName || p.device || p.provider} · ${p.locator}: "${p.raw.slice(0, 120)}"`,
-    `As found: ${a.original.value}${a.original.unit ? ` ${a.original.unit}` : ' (no unit written)'} · unit ${a.unitSource} · confidence ${Math.round(a.confidence * 100)}%`,
-    ...a.allFlags.map(f => `⚠ ${flagText[f]}`), a.error && !a.allFlags.length ? `⚠ ${a.error}` : '', a.note ? `Note: ${a.note}` : '',
-    ok.ok ? '' : `Cannot be saved yet: ${ok.reason}`,
-  ].filter(Boolean);
-  ctx.open({ title: a.decision === 'confirmed' ? 'Confirmed reading' : a.decision === 'rejected' ? 'Rejected reading' : 'Check this reading', description: lines.join('\n'), choices: [
-    ...(ok.ok && a.decision !== 'confirmed' ? [{ label: a.allFlags.some(f => f !== 'meter-clock') ? 'I checked it · Confirm' : 'Confirm reading', action: () => setBatch(ctx, x => setDecision(x, id, 'confirmed')) }] : []),
-    { label: 'Edit value, date & time', action: () => ctx.open({ title: 'Edit reading', description: `Original: ${a.original.value}${a.original.unit ? ` ${a.original.unit}` : ''} (kept for the record).`, fields: [{ key: 'value', label: 'Reading', value: a.value, numeric: true }, { key: 'date', label: 'Date (e.g. Oct 16, 2026)', value: a.date }, { key: 'time', label: 'Time (e.g. 8:15 AM)', value: a.time }, { key: 'note', label: 'Note', value: a.note, multiline: true }], save: v => {
-      const date = (v.date || '').trim(); const time = (v.time || '').trim().toUpperCase().replace(/\s*(AM|PM)$/, ' $1');
-      if (!parseDisplayDate(date)) return 'Use a date such as Oct 16, 2026.'; if (!parseDisplayTime(time)) return 'Use a time such as 8:15 AM.';
-      setBatch(ctx, x => editCandidate(x, id, { value: (v.value || '').trim(), date, time, note: (v.note || '').trim() }));
-    } }) },
-    { label: `Unit: ${a.unit || 'unknown'} · change`, action: () => ctx.open({ title: 'Unit for this reading', description: 'Choose the unit printed on the report or meter. The value is not converted.', choices: (['mg/dL', 'mmol/L'] as GlucoseUnit[]).map(u => ({ label: u, selected: a.unit === u, action: () => setBatch(ctx, x => editCandidate(x, id, { unit: u })) })) }) },
-    { label: `Context: ${a.mealContext === 'unspecified' ? 'not specified' : contextLabel(a.mealContext)} · change`, action: () => ctx.open({ title: 'Measurement context', choices: [...mealContexts.map(c => c.value), 'unspecified' as MealContext].map(c => ({ label: c === 'unspecified' ? 'Not specified' : contextLabel(c), selected: a.mealContext === c, action: () => setBatch(ctx, x => editCandidate(x, id, { mealContext: c })) })) }) },
-    ...(a.decision !== 'rejected' ? [{ label: 'Reject (do not save)', action: () => setBatch(ctx, x => setDecision(x, id, 'rejected')) }] : [{ label: 'Undo reject', action: () => setBatch(ctx, x => setDecision(x, id, 'pending')) }]),
-  ] });
+  ctx.open({ title: 'Check reading', description: canConfirm(a).reason || 'Compare this reading with your report.',
+    fields: [
+      { key: 'value', label: 'Reading', value: a.value, numeric: true },
+      { key: 'unit', label: 'Unit', value: a.unit || '', options: ['mg/dL', 'mmol/L'].map(value => ({ label: value, value })) },
+      { key: 'date', label: 'Date', value: a.date, placeholder: 'DD/MM/YYYY' },
+      { key: 'time', label: 'Time', value: a.time, placeholder: 'e.g. 08:15 or 8:15 AM' },
+      { key: 'context', label: 'When was it taken?', value: a.mealContext, options: [{ label: 'Not specified', value: 'unspecified' }, ...mealContexts.map(c => ({ label: c.label, value: c.value }))] },
+    ], saveLabel: 'Confirm reading', save: v => {
+      const date = findDate((v.date || '').trim())?.date; const time = findTime((v.time || '').trim())?.time;
+      if (!date) return 'Enter the measurement date, for example 16/10/2026.';
+      if (!time) return 'Enter the measurement time. The report did not supply a usable time.';
+      if (v.unit !== 'mg/dL' && v.unit !== 'mmol/L') return 'Choose the unit printed on your report.';
+      const edited = editCandidate(b, id, { value: (v.value || '').trim(), unit: v.unit, date: formatDisplayDate(date), time: formatDisplayTime(time), mealContext: v.context as MealContext });
+      const candidate = assessBatch(edited, ctx.store.getSnapshot().readings).find(c => c.id === id)!;
+      const valid = canConfirm(candidate); if (!valid.ok) return valid.reason || 'Check this reading.';
+      setBatch(ctx, current => setDecision(editCandidate(current, id, { value: candidate.value, unit: candidate.unit, date: candidate.date, time: candidate.time, mealContext: candidate.mealContext }), id, 'confirmed'));
+    }, choices: [
+      { label: 'View source text', action: () => notice(ctx, a.provenance.fileName || 'Source', a.provenance.raw, [{ label: 'Back to reading', action: () => rowSheet(ctx, id) }]) },
+      { label: a.decision === 'rejected' ? 'Include reading' : 'Skip reading', action: () => setBatch(ctx, x => setDecision(x, id, a.decision === 'rejected' ? 'pending' : 'rejected')) },
+    ],
+  });
 }
 
 function save(ctx: Ctx) {
   const ui = imp(ctx.s); const b = ui.batch; if (!b) return;
+  if (ui.busy || ui.saving || jobs.has(ctx.store)) { notice(ctx, 'Transfer in progress', 'Wait for the transfer to finish or stop it before saving the received readings.'); return; }
   const snap = ctx.store.getSnapshot();
   if (snap.mode === 'unconfigured') { notice(ctx, 'Database not configured', 'This build is not connected to the NutriSole database, so imported readings cannot be saved. Your review stays here.'); return; }
   if (snap.status === 'signed-out') { notice(ctx, 'Sign in to save', 'Imported readings are saved to your NutriSole account. Sign in first; your review stays here.', [{ label: 'Sign in', action: () => ctx.go('sign-in') }]); return; }
-  const { drafts, blocked } = draftsToSave(b, snap.readings);
-  if (!drafts.length) { notice(ctx, 'Nothing to save', blocked.length ? `The confirmed rows still need a fix:\n${blocked.slice(0, 4).map(x => `• ${x.reason}`).join('\n')}` : 'Confirm at least one reading first (tap a row, or use "Confirm all unflagged").'); return; }
-  let submitted = false;
-  notice(ctx, `Save ${drafts.length} reading${drafts.length === 1 ? '' : 's'}?`, [`${drafts.length} confirmed reading${drafts.length === 1 ? '' : 's'} will be saved ${snap.mode === 'demo' ? 'for this demo session only (not to a database)' : 'to your NutriSole account'}, each with its source (${b.title}).`, blocked.length ? `${blocked.length} confirmed row${blocked.length === 1 ? '' : 's'} still need a fix and will not be saved.` : '', 'Rows you did not confirm are not saved.'].filter(Boolean).join('\n'), [{ label: `Save ${drafts.length} reading${drafts.length === 1 ? '' : 's'}`, action: () => {
-    if (submitted) return; submitted = true;
-    patch(ctx, { saving: true });
-    void ctx.store.importMany(drafts).then(res => {
-      const msg = [`${res.saved.length} saved`, res.skipped ? `${res.skipped} already imported (skipped)` : '', res.failed.length ? `${res.failed.length} failed: ${res.failed[0].error}` : ''].filter(Boolean).join(' · ');
-      if (res.saved.length && !res.failed.length) { patch(ctx, { saving: false, batch: null, result: msg }); ctx.go('glucose-overview'); notice(ctx, 'Readings saved', `${msg}.`); }
-      else { const savedIds = new Set(res.saved.map(r => r.source.recordId)); setBatch(ctx, x => ({ ...x, candidates: x.candidates.filter(c => !savedIds.has(c.provenance.recordId)) })); patch(ctx, { saving: false, result: msg }); notice(ctx, res.saved.length ? 'Some readings not saved' : 'Readings not saved', `${msg}.${res.stoppedEarly ? `\n${res.stoppedEarly}` : ''}\nUnsaved rows stay on this screen.`); }
-    });
-  } }]);
+  const { drafts } = draftsToSave(b, snap.readings);
+  if (!drafts.length) { const next = b.candidates.find(c => c.decision !== 'rejected'); if (next) rowSheet(ctx, next.id); else notice(ctx, 'Nothing selected', 'Include a reading before saving.'); return; }
+  patch(ctx, { saving: true, error: null });
+  void ctx.store.importMany(drafts).then(res => {
+    const msg = [res.saved.length + ' saved', res.skipped ? res.skipped + ' already saved' : '', res.failed.length ? res.failed[0].error : '', res.stoppedEarly || ''].filter(Boolean).join(' · ');
+    if ((res.saved.length || res.skipped) && !res.failed.length && !res.stoppedEarly) {
+      const sourceKey = (provider: string | null, device: string | null, recordId: string | null) => JSON.stringify([provider, device, recordId]);
+      const completed = new Set(drafts.map(d => sourceKey(d.source.provider, d.source.device, d.source.recordId)));
+      const remaining = b.candidates.filter(c => c.decision !== 'rejected' && !completed.has(sourceKey(c.provenance.provider, c.provenance.device, c.provenance.recordId)));
+      patch(ctx, { saving: false, batch: remaining.length ? { ...b, candidates: remaining } : null, result: msg });
+      if (remaining.length) notice(ctx, 'Readings saved', msg + '. The remaining readings are ready to check.');
+      else ctx.go('glucose-overview');
+    } else {
+      const savedIds = new Set(res.saved.map(r => r.source.recordId));
+      setBatch(ctx, x => ({ ...x, candidates: x.candidates.filter(c => !savedIds.has(c.provenance.recordId)) }));
+      patch(ctx, { saving: false, error: msg });
+      notice(ctx, 'Could not save all readings', msg + '. Your unsaved readings are still here.');
+    }
+  }).catch(() => { patch(ctx, { saving: false, error: 'Could not save. Please retry.' }); });
 }
 
 /** Returns true when the action belonged to the import flow. */
 export function importAction(action: string, ctx: Ctx): boolean {
   const p = () => importPlatform();
+  if (action === 'import-page:next' || action === 'import-page:previous') {
+    ctx.setState(v => {
+      const ui = imp(v); const last = Math.max(0, Math.ceil((ui.batch?.candidates.length || 0) / IMPORT_PAGE_SIZE) - 1);
+      const current = Math.max(0, Math.min(last, Math.floor(ui.page || 0)));
+      const page = Math.max(0, Math.min(last, current + (action === 'import-page:next' ? 1 : -1)));
+      return { ...v, glucoseImport: { ...ui, page } };
+    }); return true;
+  }
   if (action.startsWith('import-device:')) { deviceImport(ctx, action.slice(14) as 'health_connect' | 'healthkit' | 'ble_meter'); return true; }
+  if (action.startsWith('import-meter:')) { const device = imp(ctx.s).foundMeters?.find(d => d.id === action.slice(13)); if (device) connectMeter(ctx, device); return true; }
   if (action.startsWith('import-row:')) { rowSheet(ctx, action.slice(11)); return true; }
-  if (action.startsWith('import-bulk:')) { const kind = action.slice(12) as 'confirm-clean' | 'reject-all' | 'reject-flagged' | 'reset'; setBatch(ctx, b => bulk(b, kind, ctx.store.getSnapshot().readings)); return true; }
+  if (action.startsWith('import-bulk:')) {
+    const kind = action.slice(12) as 'confirm-clean' | 'reject-all' | 'reject-flagged' | 'reset';
+    const current = imp(ctx.s).batch;
+    if (current && kind === 'confirm-clean') {
+      const updated = bulk(current, kind, ctx.store.getSnapshot().readings);
+      const next = updated.candidates.find(c => c.decision === 'pending');
+      setBatch(ctx, () => updated);
+      if (next) rowSheet(ctx, next.id);
+    } else setBatch(ctx, b => bulk(b, kind, ctx.store.getSnapshot().readings));
+    return true;
+  }
   switch (action) {
-    case 'import-file': void run(ctx, 'Opening file…', async progress => { const f = await p().pickFile(); if (!f) return null; progress(`Reading ${f.name}…`); return fileToBatch(f, p().extractors, { onProgress: progress }); }); return true;
-    case 'import-scan': void run(ctx, 'Opening camera…', async progress => { const f = await p().captureReport(); if (!f) return null; progress(`Reading the photo with ${p().ocrEngine}…`); return fileToBatch(f, p().extractors, { camera: true, onProgress: progress }); }); return true;
+    case 'import-file': void run(ctx, 'Opening file…', async (progress, signal) => { const f = await p().pickFile(); if (!f || signal.aborted) return null; progress(`Reading ${f.name}…`); return fileToBatch(f, p().extractors, { onProgress: progress, signal }); }); return true;
+    case 'import-scan': void run(ctx, 'Opening camera…', async (progress, signal) => { const f = await p().captureReport(); if (!f || signal.aborted) return null; progress('Reading the photo…'); return fileToBatch(f, p().extractors, { camera: true, onProgress: progress, signal }); }); return true;
+    case 'import-stop': stopImport(ctx); return true;
     case 'import-mapping': mappingSheet(ctx); return true;
     case 'import-save': save(ctx); return true;
     case 'import-nonglucose': { const b = imp(ctx.s).batch; notice(ctx, 'Other lab values', `${(b?.nonGlucose || []).map(n => `${n.label}: ${n.value}${n.unit ? ` ${n.unit}` : ''} (${n.locator})`).join('\n')}\nHbA1c, estimated average glucose and urine sugar are different measurements, so they are never imported as glucose readings.`); return true; }
     case 'import-notes': { const b = imp(ctx.s).batch; notice(ctx, 'About this import', (b?.notes || []).join('\n') || 'No notes.'); return true; }
-    case 'import-cancel': notice(ctx, 'Discard this import?', 'Nothing from it has been saved. The file stays on your device.', [{ label: 'Discard import', action: () => { patch(ctx, { batch: null, error: null }); ctx.go('glucose-import'); } }]); return true;
-    case 'import-help': notice(ctx, 'How importing works', `Every value is shown here first with what was found, where, and how sure the reader is. Confirm, edit or reject each row, or confirm all rows that have no warnings. Nothing is saved until you tap Save.\nText in photos and PDFs is read ${p().kind === 'web' ? 'in your browser' : 'on this phone'} with the PP-OCRv5 reader; the file is never uploaded.\nHbA1c and other lab values are listed separately and never saved as glucose readings.`); return true;
+    case 'import-cancel': notice(ctx, 'Discard this import?', 'Nothing from it has been saved. The file stays on your device.', [{ label: 'Discard import', action: () => { stopImport(ctx); patch(ctx, { batch: null, error: null }); ctx.go('glucose-import'); } }]); return true;
+    case 'import-help': notice(ctx, 'How importing works', `Every value is shown here first with its source. Confirm, edit or reject each row. OCR scores are not a guarantee of accuracy; compare every value and unit with the report or meter. Nothing is saved until you tap Save.\nPhotos and PDFs are read ${p().kind === 'web' ? 'in your browser' : 'on this phone'} with ${p().ocrEngine}; the file is never uploaded.\nHbA1c and other lab values are listed separately and never saved as glucose readings.`); return true;
     default: return false;
   }
 }

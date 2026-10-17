@@ -39,6 +39,8 @@ export type ImportCandidate = {
   unitSource: UnitSource;
   date: string;
   time: string;
+  /** Source instant including seconds; cleared if the user changes date/time. */
+  sourceInstant?: string;
   /** Exact offset when the source supplies one (Health Connect, HealthKit); otherwise device offset. */
   tzOffsetMinutes: number | null;
   mealContext: MealContext;

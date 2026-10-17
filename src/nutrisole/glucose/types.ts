@@ -101,9 +101,11 @@ export class GlucoseRepositoryError extends Error {
 
 export interface GlucoseRepository {
   /** `supabase` writes to Postgres under RLS; `demo` is an explicit in-memory session flag. */
-  readonly mode: 'supabase' | 'demo' | 'unconfigured';
+  readonly mode: 'supabase' | 'local' | 'demo' | 'unconfigured';
   list(query?: GlucoseQuery): Promise<GlucoseReading[]>;
   create(draft: GlucoseDraft): Promise<GlucoseReading>;
+  /** Optional atomic batch. Local storage writes one encrypted snapshot per import. */
+  createMany?(drafts: GlucoseDraft[]): Promise<{ saved: GlucoseReading[]; skipped: number }>;
   update(id: string, draft: GlucoseDraft): Promise<GlucoseReading>;
   remove(id: string): Promise<void>;
 }
@@ -151,4 +153,5 @@ export interface GlucoseImportAdapter {
 }
 
 /** Client configuration: public project URL + publishable/anon key only, or the explicit demo flag. */
-export type GlucoseConfig = { supabaseUrl: string | null; supabaseAnonKey: string | null; demo: boolean; demoSeed?: boolean };
+export type GlucoseStorage = { read(): Promise<string | null>; write(value: string): Promise<void> };
+export type GlucoseConfig = { supabaseUrl: string | null; supabaseAnonKey: string | null; demo: boolean; demoSeed?: boolean; localStorage?: GlucoseStorage; sessionStorage?: GlucoseStorage };

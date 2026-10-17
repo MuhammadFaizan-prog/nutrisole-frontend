@@ -105,7 +105,10 @@ test('OCR text (real tesseract.js output on synthetic fixtures): lab layouts and
   for (const name of Object.keys(truth).filter(f => /\.(png|jpe?g)$/.test(f))) {
     const r = parseReportText(ocrLines(name), { format: 'image-ocr', method: 'ocr', fileName: name, fileSha256: 'h', batchId: 'b', engine: 'tesseract.js', now });
     const got = r.candidates.map(c => ({ value: c.value, unit: c.unit, context: c.mealContext, date: c.date, time: c.time }));
-    assert.deepEqual(got, truth[name].readings, name);
+    // The old reader guessed mg/dL when this OCR transcript omitted the unit.
+    // Missing units now require a clearer image or manual entry.
+    if (name === 'meter-mgdl.png') assert.deepEqual(got, [], 'a unit-less number is not sufficient meter evidence');
+    else assert.deepEqual(got, truth[name].readings, name);
     for (const k of truth[name].nonGlucose) assert.ok(r.nonGlucose.some(n => n.kind === k), `${name}: ${k} separated`);
     assert.ok(r.candidates.every(c => c.provenance.method === 'ocr' && c.provenance.engine === 'tesseract.js'));
   }
@@ -252,12 +255,12 @@ test('import actions end to end with a fake platform: file → review → bulk c
   assert.equal(importAction('import-file', ctx()), true);
   for (let i = 0; i < 50 && !routes.includes('import-review'); i++) await new Promise(r => setTimeout(r, 10));
   assert.deepEqual(routes, ['import-review']); assert.equal(s.glucoseImport!.batch!.candidates.length, 4);
-  importAction('import-save', ctx()); assert.equal(sheets.at(-1)!.title, 'Nothing to save'); assert.equal(store.getSnapshot().readings.length, 0, 'nothing auto-saves');
+  importAction('import-save', ctx()); assert.equal(sheets.at(-1)!.title, 'Check reading'); assert.equal(store.getSnapshot().readings.length, 0, 'nothing auto-saves');
   importAction('import-bulk:confirm-clean', ctx());
-  const view = buildImportView(s.glucoseImport, [], 'web'); assert.equal(view.confirmed, 4); assert.equal(view.saveLabel, 'Save 4 confirmed readings');
+  const view = buildImportView(s.glucoseImport, [], 'web'); assert.equal(view.confirmed, 4); assert.equal(view.saveLabel, 'Save 4 readings');
   s = { ...s, glucoseImportView: view }; const scene = buildScene('import-review', s);
   assert.ok(scene.layers.some(l => l.action === 'import-save' && !l.disabled)); assert.ok(scene.layers.some(l => l.action?.startsWith('import-row:')));
-  importAction('import-save', ctx()); sheets.at(-1)!.choices![0].action();
+  importAction('import-save', ctx());
   for (let i = 0; i < 50 && store.getSnapshot().readings.length < 4; i++) await new Promise(r => setTimeout(r, 10));
   assert.equal(store.getSnapshot().readings.length, 4); assert.equal(store.getSnapshot().readings[0].source.type, 'file'); assert.equal(s.glucoseImport!.batch, null);
   importAction('import-device:ble_meter', ctx()); assert.match(sheets.at(-1)!.title, /available in the mobile app/);

@@ -8,6 +8,7 @@ import { SupabaseRest } from './supabaseRest';
 import { compareChronological } from './time';
 import type { GlucoseConfig } from './types';
 import { demoSeed } from './demoSeed';
+import { LocalGlucoseRepository } from './localRepository';
 
 export type GlucoseStatus = 'unconfigured' | 'signed-out' | 'loading' | 'ready' | 'offline' | 'schema-missing' | 'error';
 export type GlucoseBusy = null | 'signing-in' | 'saving' | 'deleting';
@@ -25,17 +26,30 @@ export type GlucoseSnapshot = {
 };
 export type MutationResult = { ok: true; reading?: GlucoseReading } | { ok: false; error: string; kind: string };
 
-export const initialGlucoseSnapshot = (mode: GlucoseSnapshot['mode'] = 'unconfigured'): GlucoseSnapshot => ({ mode, status: mode === 'unconfigured' ? 'unconfigured' : mode === 'demo' ? 'loading' : 'signed-out', readings: [], error: null, busy: null, email: null, lastLoadedAt: null, stale: false });
+export const initialGlucoseSnapshot = (mode: GlucoseSnapshot['mode'] = 'unconfigured'): GlucoseSnapshot => ({ mode, status: mode === 'unconfigured' ? 'unconfigured' : mode === 'demo' || mode === 'local' ? 'loading' : 'signed-out', readings: [], error: null, busy: null, email: null, lastLoadedAt: null, stale: false });
 
 export class GlucoseStore {
   private snapshot: GlucoseSnapshot;
   private listeners = new Set<() => void>();
+  private generation = 0;
+  private revision = 0;
+  private request = 0;
+  private stopRealtime: (() => void) | null = null;
+  private syncTimer: ReturnType<typeof setInterval> | null = null;
+  private reloadTimer: ReturnType<typeof setTimeout> | null = null;
+  private syncing = false;
+  private lifecycle = 0;
+  private realtimeReady = false;
   readonly repository: GlucoseRepository;
   readonly client: SupabaseRest | null;
   constructor(repository: GlucoseRepository, client: SupabaseRest | null = null) {
     this.repository = repository; this.client = client;
     this.snapshot = initialGlucoseSnapshot(repository.mode);
-    client?.onSession(session => { if (!session) this.set({ status: 'signed-out', readings: [], email: null, lastLoadedAt: null, stale: false }); });
+    let userId = client?.currentSession()?.userId ?? null;
+    client?.onSession(session => {
+      const next = session?.userId ?? null;
+      if (next !== userId || !session) { this.generation++; this.request++; userId = next; this.stopRealtime?.(); this.stopRealtime = null; this.set({ status: 'signed-out', readings: [], email: session?.email ?? null, busy: null, error: null, lastLoadedAt: null, stale: false }); if (this.syncing && session) this.connectRealtime(); }
+    });
   }
   getSnapshot = () => this.snapshot;
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; };
@@ -47,17 +61,47 @@ export class GlucoseStore {
     return { ok: false, error: e.message, kind: e.kind };
   }
 
-  async start() { if (this.repository.mode === 'demo') return this.reload(); }
+  async start() {
+    if (this.repository.mode === 'demo' || this.repository.mode === 'local') return this.reload();
+    if (!this.client) return;
+    this.syncing = true; const lifecycle = ++this.lifecycle;
+    try { await this.client.initialize(); } catch (error) { if (lifecycle === this.lifecycle) this.fail(error); }
+    if (!this.syncing || lifecycle !== this.lifecycle) return;
+    if (this.client.currentSession()) { this.connectRealtime(); await this.reload(); }
+    if (!this.syncing || lifecycle !== this.lifecycle) return;
+    if (!this.syncTimer) this.syncTimer = setInterval(() => { void this.resume(!this.realtimeReady); }, 30_000);
+  }
+  private connectRealtime() {
+    if (!this.client || this.stopRealtime || !this.client.currentSession()) return;
+    this.stopRealtime = this.client.watchChanges(() => {
+      if (this.reloadTimer) clearTimeout(this.reloadTimer);
+      this.reloadTimer = setTimeout(() => { this.reloadTimer = null; void this.reload(); }, 80);
+    }, ready => { this.realtimeReady = ready; });
+  }
+  async resume(reload = true) {
+    if (!this.client?.currentSession()) return;
+    try { await this.client.maintainSession(); if (reload) await this.reload(); } catch (error) { this.fail(error); }
+  }
+  dispose() { this.lifecycle++; this.syncing = false; this.stopRealtime?.(); this.stopRealtime = null; if (this.syncTimer) clearInterval(this.syncTimer); this.syncTimer = null; if (this.reloadTimer) clearTimeout(this.reloadTimer); this.reloadTimer = null; }
 
   async reload(): Promise<MutationResult> {
     if (this.repository.mode === 'unconfigured') { this.set({ status: 'unconfigured', error: null }); return { ok: false, error: 'unconfigured', kind: 'unconfigured' }; }
     if (this.repository.mode === 'supabase' && !this.client?.currentSession()) { this.set({ status: 'signed-out' }); return { ok: false, error: 'Sign in to view your readings.', kind: 'unauthenticated' }; }
+    const generation = this.generation, revision = this.revision, request = ++this.request;
+    const before = new Map(this.snapshot.readings.map(r => [r.id, r]));
     this.set({ status: this.snapshot.lastLoadedAt ? this.snapshot.status : 'loading', error: null });
     try {
-      const rows = await this.repository.list({ limit: 1000 });
-      this.set({ status: 'ready', readings: [...rows].sort(compareChronological), lastLoadedAt: new Date().toISOString(), stale: false, error: null });
+      const rows = await this.repository.list({ limit: this.repository.mode === 'local' ? 20_000 : 1000 });
+      if (generation !== this.generation || request !== this.request) return { ok: true };
+      const merged = new Map(rows.map(r => [r.id, r]));
+      if (revision !== this.revision) {
+        const current = new Map(this.snapshot.readings.map(r => [r.id, r]));
+        for (const id of before.keys()) if (!current.has(id)) merged.delete(id);
+        for (const [id, row] of current) if (before.get(id) !== row) merged.set(id, row);
+      }
+      this.set({ status: 'ready', readings: [...merged.values()].sort(compareChronological), lastLoadedAt: new Date().toISOString(), stale: false, error: null });
       return { ok: true };
-    } catch (error) { return this.fail(error); }
+    } catch (error) { return generation !== this.generation || request !== this.request ? { ok: false, kind: 'unauthenticated', error: 'The account changed during this request.' } : this.fail(error); }
   }
 
   async signIn(email: string, password: string): Promise<MutationResult> {
@@ -74,39 +118,71 @@ export class GlucoseStore {
   async save(draft: GlucoseDraft, editingId: string | null = null): Promise<MutationResult> {
     if (this.snapshot.busy) return { ok: false, error: 'This reading is already being saved.', kind: 'busy' };
     this.set({ busy: 'saving', error: null });
+    const generation = this.generation; this.revision++;
     const before = this.snapshot.readings;
     try {
       if (editingId) {
         const old = before.find(r => r.id === editingId);
         if (!old) throw new GlucoseRepositoryError('not-found', 'This reading is no longer in your history.');
+        if (Math.floor(Date.parse(old.measuredAt) / 60_000) === Math.floor(Date.parse(draft.measuredAt) / 60_000)) draft = { ...draft, measuredAt: old.measuredAt };
         this.set({ readings: before.map(r => r.id === editingId ? { ...r, ...draft, source: r.source } : r).sort(compareChronological) });
       }
       const saved = editingId ? await this.repository.update(editingId, draft) : await this.repository.create(draft);
+      if (generation !== this.generation) return { ok: false, kind: 'unauthenticated', error: 'The account changed during this action. Reload its history before retrying.' };
+      this.revision++;
       this.set({ busy: null, readings: [...this.snapshot.readings.filter(r => r.id !== saved.id), saved].sort(compareChronological), status: 'ready' });
       return { ok: true, reading: saved };
     } catch (error) {
+      if (generation !== this.generation) return { ok: false, kind: 'unauthenticated', error: 'The account changed during this action.' };
       this.set({ busy: null, readings: before });
       return this.fail(error);
     }
   }
 
   /**
-   * Save reviewed import rows one by one (each waits for the server). A unique-index
+   * Save reviewed imports atomically on the phone or with up to four cloud requests. A unique-index
    * conflict means the row was already imported and is counted as skipped, never retried.
    */
   async importMany(drafts: GlucoseDraft[]): Promise<{ saved: GlucoseReading[]; skipped: number; failed: { index: number; error: string }[]; stoppedEarly: string | null }> {
     if (this.snapshot.busy) return { saved: [], skipped: 0, failed: [], stoppedEarly: 'Please wait for the current action to finish.' };
     this.set({ busy: 'saving', error: null });
+    const generation = this.generation; this.revision++;
     const saved: GlucoseReading[] = []; const failed: { index: number; error: string }[] = []; let skipped = 0; let stoppedEarly: string | null = null;
-    for (const [index, draft] of drafts.entries()) {
-      try { saved.push(await this.repository.create(draft)); }
-      catch (error) {
-        const e = error instanceof GlucoseRepositoryError ? error : new GlucoseRepositoryError('server', 'Something went wrong.');
-        if (e.kind === 'conflict') { skipped++; continue; }
-        failed.push({ index, error: e.message });
-        if (['offline', 'unauthenticated', 'unconfigured', 'schema-missing', 'forbidden'].includes(e.kind)) { stoppedEarly = e.message; break; }
+    if (this.repository.createMany) {
+      try {
+        const result = await this.repository.createMany(drafts);
+        if (generation !== this.generation) return { saved: [], skipped: 0, failed: [], stoppedEarly: 'The account changed during this action.' };
+        this.revision++;
+        this.set({ busy: null, readings: [...this.snapshot.readings, ...result.saved].sort(compareChronological), status: 'ready', error: null });
+        return { ...result, failed, stoppedEarly };
+      } catch (error) {
+        if (generation !== this.generation) return { saved: [], skipped: 0, failed: [], stoppedEarly: 'The account changed during this action.' };
+        const result = this.fail(error); this.set({ busy: null });
+        const message = result.ok ? 'Could not save readings.' : result.error;
+        return { saved: [], skipped: 0, failed: drafts.map((_, index) => ({ index, error: message })), stoppedEarly: message };
       }
     }
+    let next = 0;
+    const worker = async () => {
+      while (next < drafts.length && !stoppedEarly && generation === this.generation) {
+        const index = next++;
+        try {
+          const row = await this.repository.create(drafts[index]);
+          if (generation !== this.generation) return;
+          saved.push(row); this.revision++;
+          this.set({ readings: [...this.snapshot.readings.filter(r => r.id !== row.id), row].sort(compareChronological), status: 'ready' });
+        } catch (error) {
+          const e = error instanceof GlucoseRepositoryError ? error : new GlucoseRepositoryError('server', 'Something went wrong.');
+          if (e.kind === 'conflict') { skipped++; continue; }
+          failed.push({ index, error: e.message });
+          if (['offline', 'unauthenticated', 'unconfigured', 'schema-missing', 'forbidden'].includes(e.kind)) stoppedEarly = e.message;
+        }
+      }
+    };
+    await Promise.all(Array.from({ length: Math.min(4, drafts.length) }, worker));
+    failed.sort((a, b) => a.index - b.index);
+    if (generation !== this.generation) return { saved: [], skipped, failed, stoppedEarly: 'The account changed during this action.' };
+    this.revision++;
     this.set({ busy: null, readings: [...this.snapshot.readings.filter(r => !saved.some(n => n.id === r.id)), ...saved].sort(compareChronological), status: saved.length ? 'ready' : this.snapshot.status });
     return { saved, skipped, failed, stoppedEarly };
   }
@@ -115,14 +191,16 @@ export class GlucoseStore {
   async remove(id: string): Promise<MutationResult> {
     if (this.snapshot.busy) return { ok: false, error: 'Please wait for the current action to finish.', kind: 'busy' };
     const before = this.snapshot.readings;
+    const generation = this.generation; this.revision++;
     this.set({ busy: 'deleting', error: null, readings: before.filter(r => r.id !== id) });
-    try { await this.repository.remove(id); this.set({ busy: null }); return { ok: true }; }
-    catch (error) { this.set({ busy: null, readings: before }); return this.fail(error); }
+    try { await this.repository.remove(id); if (generation !== this.generation) return { ok: false, kind: 'unauthenticated', error: 'The account changed during this action.' }; this.revision++; this.set({ busy: null }); return { ok: true }; }
+    catch (error) { if (generation !== this.generation) return { ok: false, kind: 'unauthenticated', error: 'The account changed during this action.' }; this.set({ busy: null, readings: before }); return this.fail(error); }
   }
 }
 
 export function createGlucoseStore(config: GlucoseConfig): GlucoseStore {
   if (config.demo) return new GlucoseStore(new DemoGlucoseRepository(config.demoSeed ? demoSeed() : []));
-  if (config.supabaseUrl && config.supabaseAnonKey) { const client = new SupabaseRest(config.supabaseUrl, config.supabaseAnonKey); return new GlucoseStore(new SupabaseGlucoseRepository(client), client); }
+  if (config.localStorage) return new GlucoseStore(new LocalGlucoseRepository(config.localStorage));
+  if (config.supabaseUrl && config.supabaseAnonKey) { const client = new SupabaseRest(config.supabaseUrl, config.supabaseAnonKey, undefined, config.sessionStorage); return new GlucoseStore(new SupabaseGlucoseRepository(client), client); }
   return new GlucoseStore(new UnconfiguredGlucoseRepository());
 }

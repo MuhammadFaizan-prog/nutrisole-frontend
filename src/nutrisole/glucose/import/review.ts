@@ -31,32 +31,38 @@ export const flagText: Record<CandidateFlag, string> = {
 export type AssessedCandidate = ImportCandidate & { allFlags: CandidateFlag[]; error: string | null; mgDl: number | null; measuredAt: string | null };
 
 const sourceType = (c: ImportCandidate): Exclude<GlucoseSourceType, 'manual'> => c.provenance.method === 'file' ? 'file' : c.provenance.method;
+type ExistingIndex = { sources: Set<string>; content: Set<string> };
+const sourceKey = (type: string, provider: string | null, device: string | null, recordId: string | null) => JSON.stringify([type, provider, device, recordId]);
+function indexExisting(existing: GlucoseReading[]): ExistingIndex {
+  return { sources: new Set(existing.filter(r => r.source.recordId).map(r => sourceKey(r.source.type, r.source.provider, r.source.device, r.source.recordId))), content: new Set(existing.map(r => dedupeKey(r.measuredAt, r.valueMgDl))) };
+}
 
 /** Content key used to spot the same reading from two sources: minute instant + mg/dL. */
 export function dedupeKey(measuredAt: string, mgDl: number) { return `${new Date(Math.floor(Date.parse(measuredAt) / 60_000) * 60_000).toISOString()}|${mgDl.toFixed(1)}`; }
 
-export function assessCandidate(c: ImportCandidate, existing: GlucoseReading[], now = new Date()): AssessedCandidate {
+export function assessCandidate(c: ImportCandidate, existing: GlucoseReading[], now = new Date(), index = indexExisting(existing)): AssessedCandidate {
   const flags = new Set<CandidateFlag>(c.edited ? c.flags.filter(f => !['unit-inferred', 'unit-ambiguous', 'implausible', 'missing-date', 'missing-time', 'year-assumed', 'low-confidence', 'invalid'].includes(f)) : c.flags);
   if (c.confidence < LOW_CONFIDENCE && !c.edited) flags.add('low-confidence');
   if (!c.date) flags.add('missing-date'); if (!c.time) flags.add('missing-time');
   if (c.unit) for (const f of plausibilityFlags(c.value, c.unit)) flags.add(f);
   let error: string | null = null; let measuredAt: string | null = null; let mgDl: number | null = null;
   if (c.unit && c.date && c.time) {
-    const v = validateGlucoseInput({ value: c.value, unit: c.unit, date: c.date, time: c.time, tzOffsetMinutes: c.tzOffsetMinutes ?? undefined, mealContext: c.mealContext, note: c.note }, { now, existing: [] });
+    const v = validateGlucoseInput({ value: c.value, unit: c.unit, date: c.date, time: c.time, tzOffsetMinutes: c.tzOffsetMinutes ?? undefined, tzName: null, mealContext: c.mealContext, note: c.note }, { now, existing: [] });
     if (!v.ok) { error = v.error; flags.add(v.field === 'value' ? 'out-of-range' : v.field === 'date' && /future/.test(v.error) ? 'future' : 'invalid'); }
-    else { measuredAt = v.draft.measuredAt; mgDl = v.draft.valueMgDl; }
+    else { measuredAt = c.sourceInstant && Number.isFinite(Date.parse(c.sourceInstant)) && Math.floor(Date.parse(c.sourceInstant) / 60_000) === Math.floor(Date.parse(v.draft.measuredAt) / 60_000) ? c.sourceInstant : v.draft.measuredAt; mgDl = v.draft.valueMgDl; }
   } else if (!c.unit) { error = 'Choose mg/dL or mmol/L.'; flags.add('unit-ambiguous'); }
   if (mgDl === null && c.unit) mgDl = mgDlOf(c.value, c.unit);
   if (measuredAt && mgDl !== null) {
     const key = dedupeKey(measuredAt, mgDl);
-    if (existing.some(r => r.source.recordId === c.provenance.recordId && r.source.provider === c.provenance.provider)) flags.add('already-imported');
-    else if (existing.some(r => dedupeKey(r.measuredAt, r.valueMgDl) === key)) flags.add('duplicate-existing');
+    if (index.sources.has(sourceKey(sourceType(c), c.provenance.provider, c.provenance.device, c.provenance.recordId))) flags.add('already-imported');
+    else if (index.content.has(key)) flags.add('duplicate-existing');
   }
   return { ...c, allFlags: [...flags], error, mgDl, measuredAt };
 }
 
 export function assessBatch(batch: ImportBatch, existing: GlucoseReading[], now = new Date()): AssessedCandidate[] {
-  const assessed = batch.candidates.map(c => assessCandidate(c, existing, now));
+  const index = indexExisting(existing);
+  const assessed = batch.candidates.map(c => assessCandidate(c, [], now, index));
   const seen = new Map<string, string>();
   for (const a of assessed) {
     if (!a.measuredAt || a.mgDl === null || a.decision === 'rejected') continue;
@@ -72,7 +78,7 @@ export function setDecision(batch: ImportBatch, id: string, decision: ImportCand
 
 /** Edit a row. Keeps `original` untouched; an edit clears parser warnings the user has now resolved. */
 export function editCandidate(batch: ImportBatch, id: string, patch: Partial<Pick<ImportCandidate, 'value' | 'unit' | 'date' | 'time' | 'mealContext' | 'note'>>): ImportBatch {
-  return { ...batch, candidates: batch.candidates.map(c => c.id === id ? { ...c, ...patch, unitSource: patch.unit && patch.unit !== c.unit ? 'explicit' : c.unitSource, edited: true, decision: c.decision === 'rejected' ? 'pending' : c.decision } : c) };
+  return { ...batch, candidates: batch.candidates.map(c => c.id === id ? { ...c, ...patch, ...((patch.date !== undefined && patch.date !== c.date) || (patch.time !== undefined && patch.time !== c.time) ? { sourceInstant: undefined } : {}), unitSource: patch.unit && patch.unit !== c.unit ? 'explicit' : c.unitSource, edited: true, decision: c.decision === 'rejected' ? 'pending' : c.decision } : c) };
 }
 
 /** Bulk actions. "confirm-clean" only confirms rows with no flag at all; flagged rows stay pending. */
@@ -109,10 +115,10 @@ export function draftsToSave(batch: ImportBatch, existing: GlucoseReading[], now
     const ok = canConfirm(a);
     if (!ok.ok || !a.measuredAt || a.mgDl === null || !a.unit) { blocked.push({ id: a.id, reason: ok.reason || a.error || 'Incomplete row.' }); continue; }
     if (a.allFlags.includes('duplicate-batch')) { blocked.push({ id: a.id, reason: flagText['duplicate-batch'] }); continue; }
-    const v = validateGlucoseInput({ value: a.value, unit: a.unit, date: a.date, time: a.time, tzOffsetMinutes: a.tzOffsetMinutes ?? undefined, mealContext: a.mealContext, note: a.note }, { now });
+    const v = validateGlucoseInput({ value: a.value, unit: a.unit, date: a.date, time: a.time, tzOffsetMinutes: a.tzOffsetMinutes ?? undefined, tzName: null, mealContext: a.mealContext, note: a.note }, { now });
     if (!v.ok) { blocked.push({ id: a.id, reason: v.error }); continue; }
     const p = a.provenance;
-    drafts.push({ ...v.draft, source: {
+    drafts.push({ ...v.draft, measuredAt: a.measuredAt, source: {
       type: sourceType(a), provider: p.provider, device: p.device, recordId: p.recordId,
       meta: { format: p.format, fileName: p.fileName, fileSha256: p.fileSha256, locator: p.locator, raw: p.raw, engine: p.engine, confidence: a.confidence, flags: a.allFlags, edited: a.edited, originalValue: a.original.value, originalUnit: a.original.unit, unitSource: a.unitSource },
       batchId: batch.id, dedupeKey: dedupeKey(v.draft.measuredAt, v.draft.valueMgDl),

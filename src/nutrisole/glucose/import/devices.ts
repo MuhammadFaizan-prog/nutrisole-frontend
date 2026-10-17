@@ -30,10 +30,10 @@ export function glsToBatch(download: GlsDownload, device: { id: string; name: st
     if (r.sensorStatus.length) flags.push('sensor-status');
     const meal: MealContext = r.context?.meal || 'unspecified';
     candidates.push({
-      id: `${id}-s${r.sequence}`, value: r.value, unit: r.unit, unitSource: 'device', date: displayDate(clock), time: displayTime(clock), tzOffsetMinutes: deviceOffsetMinutes(clock),
+      id: `${id}-s${r.sequence}`, value: r.value, unit: r.unit, unitSource: 'device', date: displayDate(clock), time: displayTime(clock), tzOffsetMinutes: deviceOffsetMinutes(clock), sourceInstant: new Date(Date.parse(`${r.wallClock}Z`) - deviceOffsetMinutes(clock) * 60_000).toISOString(),
       mealContext: meal, note: [r.sensorStatus.length ? `Meter warning: ${r.sensorStatus.join(', ')}` : '', r.location !== 'finger' && r.location !== 'not available' ? `Site: ${r.location}` : ''].filter(Boolean).join(' · '),
       confidence: 1, flags, original: { value: r.value, unit: r.unit },
-      provenance: { method: 'ble_meter', format: 'ble_gls', provider: 'ble:gls', recordId: `seq${r.sequence}@${r.wallClock}`, device: device.name ? `${device.name} (${device.id})`.slice(0, 200) : device.id, fileName: null, fileSha256: null, locator: `sequence ${r.sequence}`, raw: r.raw, engine: null },
+      provenance: { method: 'ble_meter', format: 'ble_gls', provider: 'ble:gls', recordId: `seq${r.sequence}@${r.wallClock}`, device: device.id, fileName: null, fileSha256: null, locator: `sequence ${r.sequence}`, raw: r.raw, engine: null },
       decision: 'pending', edited: false,
     });
   }
@@ -57,7 +57,7 @@ export function healthConnectToBatch(records: HealthConnectGlucoseResult[], now 
     const flags: CandidateFlag[] = [...plausibilityFlags(value, 'mg/dL')];
     if (specimen === 'interstitial_fluid' || specimen === 'tears') flags.push('specimen');
     return {
-      id: `${id}-${r.metadata!.id}`, value, unit: 'mg/dL' as const, unitSource: 'device' as const, date: w.date, time: w.time, tzOffsetMinutes: offset,
+      id: `${id}-${r.metadata!.id}`, value, unit: 'mg/dL' as const, unitSource: 'device' as const, date: w.date, time: w.time, tzOffsetMinutes: offset, sourceInstant: new Date(r.time).toISOString(),
       mealContext: HC_RELATION[r.relationToMeal ?? 0] || 'unspecified', note: specimen === 'unknown' || specimen === 'capillary_blood' ? '' : `Specimen: ${specimen.replace('_', ' ')}`,
       confidence: 1, flags, original: { value: String(r.level.inMilligramsPerDeciliter), unit: 'mg/dL' },
       provenance: { method: 'health_connect' as const, format: 'health_connect' as const, provider: r.metadata?.dataOrigin || 'health_connect', recordId: r.metadata!.id!, device: null, fileName: null, fileSha256: null, locator: `record ${r.metadata!.id}`, raw: JSON.stringify({ time: r.time, mgdl: r.level.inMilligramsPerDeciliter, specimen: r.specimenSource, relation: r.relationToMeal }).slice(0, 200), engine: null },

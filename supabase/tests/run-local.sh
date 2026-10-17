@@ -12,7 +12,8 @@ P="psql -X -q -h /tmp -p $PORT -U postgres -v ON_ERROR_STOP=1"
 $P -c "create database glucose_test" postgres
 $P -d glucose_test -f "$HERE/local_auth_stub.sql" >/dev/null
 $P -d glucose_test -f "$ROOT/supabase/migrations/20261016000000_create_glucose_readings.sql" >/dev/null
-echo "migration applied"
+$P -d glucose_test -f "$ROOT/supabase/migrations/20261017205545_glucose_report_corrections.sql" >/dev/null
+echo "migrations applied"
 $P -d glucose_test -f "$HERE/rls_glucose.test.sql"
 # Rollback then re-apply to prove the down migration is clean and the up migration is repeatable.
 $P -d glucose_test -f "$ROOT/supabase/rollback/20261016000000_create_glucose_readings.down.sql" >/dev/null

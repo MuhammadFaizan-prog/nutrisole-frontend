@@ -18,8 +18,8 @@ export function useExpansion() {
   // One repository-backed glucose store per app session (Supabase, explicit demo flag, or unconfigured).
   const [glucose] = useState(() => createGlucoseStore(readGlucoseConfig()));
   const glucoseSnapshot = useSyncExternalStore(glucose.subscribe, glucose.getSnapshot, glucose.getSnapshot);
-  useEffect(() => { void glucose.start(); }, [glucose]);
-  const state: ExpansionState = useMemo(() => ({ ...rawState, glucose: buildGlucoseView(glucoseSnapshot, { displayUnit: (rawState.choices.displayUnit || 'mg/dL') as GlucoseUnit, range: (rawState.choices.glucoseRange || '7d') as GlucoseRange, currentId: rawState.glucoseCurrentId, removed: rawState.glucoseRemoved, editingId: rawState.glucoseEditingId, editOffset: rawState.glucoseEditOffset, editTzName: rawState.glucoseEditTzName }), glucoseImportView: buildImportView(rawState.glucoseImport, glucoseSnapshot.readings, importPlatform().kind) }), [rawState, glucoseSnapshot]);
+  useEffect(() => { void glucose.start(); return () => glucose.dispose(); }, [glucose]);
+  const state: ExpansionState = useMemo(() => ({ ...rawState, session: glucoseSnapshot.mode === 'supabase' ? glucoseSnapshot.email !== null : rawState.session, glucose: buildGlucoseView(glucoseSnapshot, { displayUnit: (rawState.choices.displayUnit || 'mg/dL') as GlucoseUnit, range: (rawState.choices.glucoseRange || '7d') as GlucoseRange, currentId: rawState.glucoseCurrentId, removed: rawState.glucoseRemoved, editingId: rawState.glucoseEditingId, editOffset: rawState.glucoseEditOffset, editTzName: rawState.glucoseEditTzName }), glucoseImportView: buildImportView(rawState.glucoseImport, glucoseSnapshot.readings, importPlatform().kind) }), [rawState, glucoseSnapshot]);
   const update = (patch: Partial<ExpansionState>) => setState(s => ({ ...s, ...patch }));
   const field = (key: string, value: string) => setState(s => ({ ...s, fields: { ...s.fields, [key]: value } }));
   function action(action: string, go: (r: AppRoute) => void, back: () => void, open: (s: Sheet) => void) {
@@ -34,17 +34,19 @@ export function useExpansion() {
     if (action.startsWith('choose:')) { const [, key, ...parts] = action.split(':'); return setState(v => ({ ...v, choices: { ...v.choices, [key]: parts.join(':') } })); }
     if (['sign-in', 'create-account', 'recover', 'reset-password'].includes(action)) {
       const error = accountError(s, action); if (error) return notice('Check your details', error);
-      if (action === 'recover') return notice('Check your inbox', 'If an account exists, a recovery link would be sent. This frontend sends no email.', [{ label: 'Preview recovery link', action: () => go('reset-password') }, { label: 'Back to sign in', action: () => go('sign-in') }]);
-      if (action === 'sign-in' && glucose.client) {
-        // Real Supabase Auth sign-in (only when the database is configured). Tokens stay in memory.
+      if (glucose.client) {
         const email = (s.fields.email || '').trim(); const password = s.fields.password || '';
-        setState(v => ({ ...v, fields: { ...v.fields, password: '' } }));
-        void glucose.signIn(email, password).then(res => {
-          if (!glucose.client?.currentSession()) return notice('Sign-in failed', res.ok ? 'Sign-in did not complete.' : res.error);
-          setState(v => ({ ...v, session: true }));
-          notice('Signed in', `Signed in as ${email}. Your glucose readings are saved to this account.${res.ok ? '' : `\n${res.error}`}`, [{ label: 'Continue to NutriSole', action: () => go('flow-directory') }]);
-        });
-        return;
+        const client = glucose.client;
+        if (action === 'recover') { void client.requestEmail(email, 'recover').then(() => notice('Check your inbox', 'Use the recovery link in your email to reset your password.')).catch(e => notice('Could not send email', e.message)); return; }
+        if (action === 'create-account') { void client.signUp(email, password, s.fields.name || '').then(async signedIn => { setState(v => ({ ...v, fields: { ...v.fields, password: '' } })); if (signedIn) { await glucose.reload(); go('flow-directory'); } else go('verify-email'); }).catch(e => notice('Could not create account', e.message)); return; }
+        if (action === 'sign-in') {
+          void glucose.signIn(email, password).then(res => {
+            if (!res.ok) return notice('Sign-in failed', res.error);
+            setState(v => ({ ...v, session: true, fields: { ...v.fields, password: '' } }));
+            go(s.glucoseImport?.batch ? 'import-review' : s.fields.reading ? 'add-reading' : 'flow-directory');
+          }); return;
+        }
+        if (action === 'reset-password') return notice('Use your recovery email', 'Open the secure recovery link sent to your email, then return here to sign in.');
       }
       setState(v => ({ ...v, session: action === 'sign-in', fields: { ...v.fields, password: '', newPassword: '', confirmPassword: '' } }));
       if (action === 'sign-in') return notice('Frontend demo', 'Account validation is simulated. No account or password is stored. Glucose readings need a configured database.', [{ label: 'Continue to NutriSole', action: () => go('flow-directory') }]);
@@ -52,8 +54,8 @@ export function useExpansion() {
     }
     switch (action) {
       case 'terms': return notice('Terms & Privacy', 'This local frontend uses synthetic records and keeps new entries in memory for this session. No account, health-provider connection or external processing is created.');
-      case 'resend': return notice('Resend link', 'No email is sent in this frontend demo. Preview the verification flow below.', [{ label: 'Preview verified link', action: () => go('sign-in') }, { label: 'Preview expired link', action: () => notice('Link expired', 'Request a fresh verification link or use another email.') }]);
-      case 'verify-demo': return notice('Verification preview', 'A real email application is not connected. Choose a demo link state.', [{ label: 'Valid link · Continue', action: () => go('sign-in') }, { label: 'Expired link', action: () => notice('Link expired', 'Return and choose Resend link.') }]);
+      case 'resend': if (glucose.client) { void glucose.client.requestEmail((s.fields.email || '').trim(), 'resend').then(() => notice('Check your inbox', 'Your confirmation email has been requested.')).catch(e => notice('Could not resend email', e.message)); return; } return notice('Resend link', 'No email is sent in this frontend demo. Preview the verification flow below.', [{ label: 'Preview verified link', action: () => go('sign-in') }, { label: 'Preview expired link', action: () => notice('Link expired', 'Request a fresh verification link or use another email.') }]);
+      case 'verify-demo': if (glucose.client) return go('sign-in'); return notice('Verification preview', 'A real email application is not connected. Choose a demo link state.', [{ label: 'Valid link · Continue', action: () => go('sign-in') }, { label: 'Expired link', action: () => notice('Link expired', 'Return and choose Resend link.') }]);
       case 'evidence': return notice('Assessment evidence', 'Sample visible colour: even red. Shape: whole apple. Surface: minor marks. Confidence: 97%. Model v1.0 · Rubric v1.0. The original prediction stays Apple even if you choose another food. A photo cannot determine food safety.', [{ label: 'Correct food label', action: () => go('food-selector') }, { label: 'Report assessment', action: () => go('report-output') }]);
       case 'market': return choose('Choose a market', 'market', ['Local retail · Demo', 'Wholesale · Demo', 'Online · Demo']);
       case 'unit-market': return notice('Market comparison unit', 'Per kg is the comparison unit for this demo entry. No verified market observations are available.');

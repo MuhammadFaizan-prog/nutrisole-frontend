@@ -9,15 +9,17 @@ import { parseReportText, type TextLine } from './labText';
 import { sha256Hex } from './sha256';
 import { emptyBatch, newBatchId } from './devices';
 
-export type PickedFile = { name: string; mime: string | null; bytes: Uint8Array };
-export type OcrResult = { lines: TextLine[]; confidence: number | null; engine: string };
+export type PickedFile = { name: string; mime: string | null; bytes: Uint8Array; uri?: string };
+export type OcrResult = { lines: TextLine[]; confidence: number | null; engine: string; durationMs?: number };
 export type TextExtractors = {
+  /** Native PDF reader: text layer where available, rendered-page OCR otherwise. */
+  pdfDocument?: (file: PickedFile, onProgress?: (p: string) => void, signal?: AbortSignal) => Promise<OcrResult>;
   /** PDF text layer as lines (null when this platform cannot read PDFs). */
   pdfText?: (bytes: Uint8Array) => Promise<TextLine[] | null>;
   /** Rasterise a scanned PDF and OCR it (null when unsupported). */
   pdfOcr?: (bytes: Uint8Array, onProgress?: (p: string) => void) => Promise<OcrResult | null>;
   /** OCR an image file/photo. */
-  imageOcr?: (file: PickedFile, onProgress?: (p: string) => void, mode?: 'document' | 'sparse') => Promise<OcrResult>;
+  imageOcr?: (file: PickedFile, onProgress?: (p: string) => void, mode?: 'document' | 'sparse', signal?: AbortSignal) => Promise<OcrResult>;
 };
 export class ImportFileError extends Error { kind: 'unsupported' | 'empty' | 'too-large' | 'unreadable'; constructor(kind: ImportFileError['kind'], message: string) { super(message); this.kind = kind; this.name = 'ImportFileError'; } }
 
@@ -33,7 +35,8 @@ export function detectKind(file: PickedFile): 'csv' | 'xlsx' | 'pdf' | 'image' |
   return 'unknown';
 }
 
-export async function fileToBatch(file: PickedFile, x: TextExtractors, opts: { camera?: boolean; now?: Date; onProgress?: (p: string) => void } = {}): Promise<ImportBatch> {
+export async function fileToBatch(file: PickedFile, x: TextExtractors, opts: { camera?: boolean; now?: Date; onProgress?: (p: string) => void; signal?: AbortSignal } = {}): Promise<ImportBatch> {
+  if (opts.signal?.aborted) throw new Error('Import cancelled.');
   if (!file.bytes.length) throw new ImportFileError('empty', 'This file is empty.');
   if (file.bytes.length > MAX_FILE_BYTES) throw new ImportFileError('too-large', 'This file is larger than 15 MB. Export a shorter date range or a smaller image.');
   const kind = detectKind(file);
@@ -50,6 +53,11 @@ export async function fileToBatch(file: PickedFile, x: TextExtractors, opts: { c
   }
   if (kind === 'pdf') {
     const id = newBatchId('pdf', opts.now);
+    if (x.pdfDocument) {
+      const ocr = await x.pdfDocument(file, opts.onProgress, opts.signal);
+      const r = parseReportText(ocr.lines, { format: 'pdf-ocr', method: 'ocr', fileName: file.name, fileSha256: sha, batchId: id, engine: ocr.engine, now: opts.now });
+      return emptyBatch({ id, method: 'ocr', format: 'pdf-ocr', title: file.name, ...base, candidates: r.candidates, nonGlucose: r.nonGlucose, ocrConfidence: ocr.confidence, notes: [`Read on this phone with ${ocr.engine}${ocr.durationMs != null ? ` · reader ${ocr.durationMs} ms` : ''}. Check every value against the report.`, ...r.notes] });
+    }
     const lines = x.pdfText ? await x.pdfText(file.bytes) : null;
     if (lines === null) throw new ImportFileError('unsupported', 'PDF reports can be read in the NutriSole web app. On this phone, scan the printed report with the camera or attach a photo of it.');
     const textChars = lines.reduce((n, l) => n + l.text.replace(/\s/g, '').length, 0);
@@ -65,16 +73,17 @@ export async function fileToBatch(file: PickedFile, x: TextExtractors, opts: { c
   if (kind === 'image') {
     if (!x.imageOcr) throw new ImportFileError('unsupported', 'Image OCR is not available on this platform.');
     const id = newBatchId(opts.camera ? 'scan' : 'img', opts.now);
-    let ocr = await x.imageOcr(file, opts.onProgress, 'document');
+    let ocr = await x.imageOcr(file, opts.onProgress, 'document', opts.signal);
     const format: ImportFormat = opts.camera ? 'camera-ocr' : 'image-ocr';
     const parse = (o: OcrResult) => parseReportText(o.lines, { format, method: 'ocr', fileName: file.name, fileSha256: sha, batchId: id, engine: o.engine, now: opts.now });
     let r = parse(ocr);
     if (!r.candidates.length && !r.nonGlucose.length) {
       // Meter screens: very large digits are often missed by document layout analysis; retry as sparse text.
-      const sparse = await x.imageOcr(file, opts.onProgress, 'sparse');
+      if (opts.signal?.aborted) throw new Error('Import cancelled.');
+      const sparse = await x.imageOcr(file, opts.onProgress, 'sparse', opts.signal);
       const r2 = parse(sparse); if (r2.candidates.length || r2.nonGlucose.length) { r = r2; ocr = sparse; }
     }
-    return emptyBatch({ id, method: 'ocr', format, title: opts.camera ? 'Scanned report' : file.name, ...base, candidates: r.candidates, nonGlucose: r.nonGlucose, ocrConfidence: ocr.confidence, notes: [`Read on this device with ${ocr.engine}; every value needs your check.`, ...r.notes] });
+    return emptyBatch({ id, method: 'ocr', format, title: opts.camera ? 'Scanned report' : file.name, ...base, candidates: r.candidates, nonGlucose: r.nonGlucose, ocrConfidence: ocr.confidence, notes: [`Read on this device with ${ocr.engine}${ocr.durationMs != null ? ` · reader ${ocr.durationMs} ms` : ''}; every value needs your check.`, ...r.notes] });
   }
   throw new ImportFileError('unsupported', name(file) + ' is not a supported file. Use CSV, XLSX, PDF or an image (JPG/PNG).');
 }

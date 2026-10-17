@@ -1,8 +1,11 @@
-// Native configuration: the public Supabase project URL + anon/publishable key come from
-// nativeEnv.ts (generated at build time by the QA APK workflow). Left null, the app shows the
-// honest "Configure database" state. Never put a service-role/secret key in the app.
+// Android defaults to the NutriSole account. Build-time public configuration can
+// select another project or explicit phone storage. Never ship a service-role key.
 import type { GlucoseConfig } from './types';
-import { NATIVE_SUPABASE_URL, NATIVE_SUPABASE_ANON_KEY } from './nativeEnv';
+import { NATIVE_SUPABASE_URL, NATIVE_SUPABASE_ANON_KEY, NATIVE_GLUCOSE_STORAGE } from './nativeEnv';
+import { Platform } from 'react-native';
+import { phoneGlucoseStorage } from './nativeCapture.native';
+import { PROJECT_KEY, PROJECT_URL } from './publicProject';
+import { accountSessionStorage } from './sessionStorage';
 
 /** Explicit demo flag: in-memory session records, clearly labelled as not saved. */
 const GLUCOSE_DEMO = false;
@@ -13,7 +16,10 @@ function decodeJwtPayload(k: string): string {
 }
 
 export function readGlucoseConfig(): GlucoseConfig {
-  const url = NATIVE_SUPABASE_URL && /^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(NATIVE_SUPABASE_URL) ? NATIVE_SUPABASE_URL : null;
-  const key = isPublicKey(NATIVE_SUPABASE_ANON_KEY) ? NATIVE_SUPABASE_ANON_KEY : null; // refuses a service_role key
-  return { supabaseUrl: url && key ? url : null, supabaseAnonKey: url && key ? key : null, demo: GLUCOSE_DEMO, demoSeed: false };
+  const configuredUrl = NATIVE_SUPABASE_URL || PROJECT_URL;
+  const configuredKey = NATIVE_SUPABASE_ANON_KEY || PROJECT_KEY;
+  const url = /^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(configuredUrl) ? configuredUrl : null;
+  const key = isPublicKey(configuredKey) ? configuredKey : null;
+  // The optional phone build stays separate; account sessions are encrypted on Android.
+  return { supabaseUrl: url && key ? url : null, supabaseAnonKey: url && key ? key : null, sessionStorage: url ? accountSessionStorage(url) : undefined, demo: GLUCOSE_DEMO, demoSeed: false, ...(Platform.OS === 'android' && NATIVE_GLUCOSE_STORAGE === 'phone' ? { localStorage: phoneGlucoseStorage } : {}) };
 }
