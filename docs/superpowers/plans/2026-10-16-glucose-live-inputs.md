@@ -13,5 +13,5 @@
 - [x] Route Android OCR/PDF through the module, keep cancellation/error states and remove JS image decoding from the Android capture path.
 - [x] Harden the pure GLS session with progressive records, abort/cleanup, optional context, valid dates and relevant RACP completion. Wire incremental discovery and transfer to import review without advancing cursors for unsaved rows.
 - [x] Correct parser safety and per-page dates. Keep unsupported inputs empty and retain original values, units and provenance.
-- [ ] Run root/native test suites and typechecks, native lint, runtime and six-screen preservation, web build and standalone Android build. Exercise rendered/native journeys, capture timing and document remaining hardware limits.
+- [x] Run root/native test suites and typechecks, native lint, runtime and six-screen preservation, web build and standalone Android build. Exercise rendered/native journeys, capture timing and document remaining hardware limits.
 - [x] Review final diff, commit on `fix/glucose-live-inputs`, push that branch and open a PR targeting `feature/glucose-monitoring`. Attach the PR and leave it unmerged.

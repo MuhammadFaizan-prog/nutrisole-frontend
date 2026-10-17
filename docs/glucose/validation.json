@@ -1,0 +1,556 @@
+{
+  "date": "2026-10-17",
+  "branch": "fix/glucose-live-inputs",
+  "pr": "https://github.com/MuhammadFaizan-prog/nutrisole-frontend/pull/4",
+  "base": "feature/glucose-monitoring",
+  "baseCommit": "39fa8b79925259c7145054cacd277611f47d8561",
+  "codeCommit": "5d731731dfd6d8c904fbd4bfae9b7030e9188896",
+  "checks": {
+    "sharedGlucoseTests": 99,
+    "nativeTests": 34,
+    "domainTests": 5,
+    "expansionTests": 8,
+    "sitesTests": 4,
+    "protectedRuntimeFiles": 28,
+    "protectedExpansionFiles": 119,
+    "rootBuild": true,
+    "rootTypecheck": true,
+    "nativeTypecheck": true,
+    "nativeLint": {
+      "errors": 0,
+      "warnings": 166
+    }
+  },
+  "firstNativeRun": {
+    "id": 38960923261,
+    "instrumentationPassed": 2,
+    "syntheticFiles": 56,
+    "encryptedWriteMilliseconds": [
+      9,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "ocr": {
+      "images": 42,
+      "readings": 66,
+      "value": 55,
+      "unit": 55,
+      "type": 54,
+      "allThree": 54,
+      "date": 33,
+      "extras": 0,
+      "wrongReturned": 0,
+      "byKind": {
+        "lab-report": {
+          "images": 33,
+          "readings": 57,
+          "value": 55,
+          "allThree": 54
+        },
+        "meter-screen": {
+          "images": 9,
+          "readings": 9,
+          "value": 0,
+          "allThree": 0
+        }
+      }
+    },
+    "timingMilliseconds": {
+      "files": 56,
+      "min": 2595,
+      "median": 6072,
+      "p95": 9868,
+      "max": 25335
+    },
+    "standardFixtures": {
+      "files": 14,
+      "readings": 16,
+      "fields": [
+        "value",
+        "unit",
+        "context",
+        "collectionDate",
+        "collectionTime"
+      ],
+      "passed": true,
+      "scoredWithCodeCommit": "16dd4e5"
+    }
+  },
+  "limits": [
+    "No physical strip meter or Android phone validation",
+    "Segmented LCD photo samples unrecovered; manual fallback",
+    "Health Connect source-app chain unverified",
+    "Web rendered preview blocked by automatic browser policy",
+    "No main merge, production migration or deployment"
+  ],
+  "apk": {
+    "artifactId": 12075336752,
+    "runId": 38966139455,
+    "sourceCommit": "5d731731dfd6d8c904fbd4bfae9b7030e9188896",
+    "file": "NutriSole-Glucose-v1.0.5-QA.apk",
+    "bytes": 82341793,
+    "sha256": "fa84a6ee752f749b1de59f260f74b5a6e512f6cf57be3d7c35fe16d8fed13999",
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "minimumAndroidApi": 26,
+    "versionName": "1.0.5",
+    "versionCode": 6,
+    "signing": "existing debug key, QA only"
+  },
+  "secondNativeRun": {
+    "id": 38964137185,
+    "sourceCommit": "37dfbca5a2dc97532ef82925fd4b6604a381d24a",
+    "instrumentationPassed": 2,
+    "syntheticFiles": 56,
+    "encryptedWriteMilliseconds": [
+      6,
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "ocr": {
+      "images": 42,
+      "readings": 66,
+      "value": 55,
+      "unit": 55,
+      "type": 54,
+      "allThree": 54,
+      "date": 33,
+      "extras": 0,
+      "wrongReturned": 0,
+      "byKind": {
+        "lab-report": {
+          "images": 33,
+          "readings": 57,
+          "value": 55,
+          "allThree": 54
+        },
+        "meter-screen": {
+          "images": 9,
+          "readings": 9,
+          "value": 0,
+          "allThree": 0
+        }
+      }
+    },
+    "timingMilliseconds": {
+      "files": 56,
+      "min": 2303,
+      "median": 4704,
+      "p95": 6784,
+      "max": 8646
+    },
+    "standardFixtures": {
+      "files": 14,
+      "readings": 16,
+      "passed": true,
+      "scoredWithCodeCommit": "5d731731dfd6d8c904fbd4bfae9b7030e9188896"
+    },
+    "nativeAndroidSourceUnchangedToDeliveredApk": true
+  },
+  "priorStandaloneUi": {
+    "runId": 38966955659,
+    "syntheticOnly": true,
+    "apkSourceCommit": "37dfbca5a2dc97532ef82925fd4b6604a381d24a",
+    "smokeSourceCommit": "e02946ae9782daa223859d21cd39611b44143691",
+    "systemLauncherAnrsDismissed": 1,
+    "manualCreateRestartEditDelete": true,
+    "filePickerOcrReviewSaveRestart": true,
+    "cameraLaunchCancel": true,
+    "standaloneWithoutMetro": true,
+    "routes": [
+      {
+        "route": "onboarding",
+        "xmlSha256": "2ba7e1e458f1e3c2ccf3fcee8d24b5768b1ae44870256d856c3d1dddb48fc598"
+      },
+      {
+        "route": "home",
+        "xmlSha256": "c4367cf6cbbadb0fa4485d8bfece743dfccd99a0f30aa9418cf6dcf5c7b4b856"
+      },
+      {
+        "route": "scan",
+        "xmlSha256": "9974199e0772feb6dcf985cf6d39f44f8e18e38bfefda96fd69ee8fb45bbd3a7"
+      },
+      {
+        "route": "log-meal",
+        "xmlSha256": "d5cfcdad179b2bea1d5e9ae9d9d60683115509b3c79292aadb1674cc90ccc09a"
+      },
+      {
+        "route": "weekly-plan",
+        "xmlSha256": "32362c5006d71c4a9e90dd4d5aa699e7ddd7f77cf1637234ebb35f06370887f8"
+      },
+      {
+        "route": "profile",
+        "xmlSha256": "c2a34ee60bfe2d99082d047d968abd9fc392a5fdc578097dc6ab4c20b1a95eee"
+      },
+      {
+        "route": "sign-in",
+        "xmlSha256": "ae6fccfe2d95f6bc1e772b84bb7c11248bfc2cdedf755834cb85755d39b2941d"
+      },
+      {
+        "route": "create-account",
+        "xmlSha256": "c8899c535d692e6e984e112478b2071f6b35c20b85418bf7b3fabd8b3d044859"
+      },
+      {
+        "route": "verify-email",
+        "xmlSha256": "e1922cfb9c2b451e87df07a45e6fdae4a63b28905d7e199ad16afe455eadc2f0"
+      },
+      {
+        "route": "recover-account",
+        "xmlSha256": "8f8774a49ffc9f76e37ef681271148828de814ec9b28f2f57f97732083517e87"
+      },
+      {
+        "route": "reset-password",
+        "xmlSha256": "c13e206483a273d50fe88ac82a6d82a70d0d341723140ffbfdf9573e0bca82ca"
+      },
+      {
+        "route": "analysis-result",
+        "xmlSha256": "c2044897a971db0f051b69945c80e325d5585608996bab8d39a9d4b69dd5dba1"
+      },
+      {
+        "route": "market-reference",
+        "xmlSha256": "6e81645cc4ef8b27afb235ff6633cf894894c0eb979a18fcb69b9f6651d37177"
+      },
+      {
+        "route": "capture-retry",
+        "xmlSha256": "64f34510197a224a7ccb326c872eabb9c35b6c0c79b43f4b1ef300f4c629bf0e"
+      },
+      {
+        "route": "food-selector",
+        "xmlSha256": "a5ecf96ee69f230c23fdc76e1a95cc6542d92efc16bfbbd2ab39e0c693364f93"
+      },
+      {
+        "route": "nutrition-details",
+        "xmlSha256": "e701358185327bae03d4092473bd8d05afb3598369a702a5723f791ef53aecf1"
+      },
+      {
+        "route": "portion-confirmation",
+        "xmlSha256": "f3de2a6ab9760525fddfe37e2dff7bf1263b70e3d3a0ec58f70cb336dfc2ef45"
+      },
+      {
+        "route": "glucose-overview",
+        "xmlSha256": "5059e511ccbc0b8f882488769ad88ed538f8181104b344810eb06842bd77f968"
+      },
+      {
+        "route": "add-reading",
+        "xmlSha256": "9efc0f3658a150f7cf236be5116d9df39168c1fd068408a6c8b764ac4839da0b"
+      },
+      {
+        "route": "reading-detail",
+        "xmlSha256": "74366e954b7dda70dbfb0f94931c38ad5bae107e3c3849e241b4731832bf390b"
+      },
+      {
+        "route": "health-connections",
+        "xmlSha256": "b4ece227987e51efd430b96415be1ab6882b1601c44bced1107960040cdacae2"
+      },
+      {
+        "route": "glucose-import",
+        "xmlSha256": "9694aba4a706e26014a4d6e82a4d57b624dd760b9d419d6c1ff2314f77e89d75"
+      },
+      {
+        "route": "import-review",
+        "xmlSha256": "79a4efc8bd54a2ba73a06f0f8e0cc66012aee1a217284fcc29f271591566c4ac"
+      },
+      {
+        "route": "plan-generation",
+        "xmlSha256": "7394dcf68658c24e49c325867efa1c3d761e9f61b0e627f870f068f6b6fcfe6a"
+      },
+      {
+        "route": "activity-plan",
+        "xmlSha256": "b0d1000cbe80d1789e636ddd5f4d328d1e1bf706dc5dce32ebf0509e500e9c15"
+      },
+      {
+        "route": "plan-rationale",
+        "xmlSha256": "4d2372aeebb5203a2b3e6a7423c468edb2ad3a8856d94245c8169cd1eb896bf7"
+      },
+      {
+        "route": "foot-questionnaire",
+        "xmlSha256": "ff3dc3c1da3e64da798a42b434690e27f5ea185c51a54c14dbf4f063705e486b"
+      },
+      {
+        "route": "foot-guidance",
+        "xmlSha256": "41da4574009bdb63685c7a03141f6375d6f73512658433e2f1d0fc23c8eed6e9"
+      },
+      {
+        "route": "assistant",
+        "xmlSha256": "ba1f702e3b4f917cc8ecbf7bfaa29528f23ff058f5bd0fea7acfde78eb9d0aff"
+      },
+      {
+        "route": "privacy-data-rights",
+        "xmlSha256": "9204b68af9e3ebe91a0f8ba6dd6c46559f91b5da0a9ab7ef23742b0aa9b29383"
+      },
+      {
+        "route": "reminders",
+        "xmlSha256": "8ea0d1b112dd5760051b6e88297f48e0014cb1c5998c16f4fc12127e53918b19"
+      },
+      {
+        "route": "report-output",
+        "xmlSha256": "a430bafa0da618cca493045f725e3d9a867d79624c2b12f14f4204e68069192a"
+      },
+      {
+        "route": "report-status",
+        "xmlSha256": "a7c17dd75523b6cefcf2130bff5639cdecd13ca00fb26ca963f12503c776fe60"
+      },
+      {
+        "route": "personal-history",
+        "xmlSha256": "3326f07fc550b6dd1cdf955540d087d7e0ca0fe6bd1c11d811ed1549e4690a42"
+      },
+      {
+        "route": "catalog-queue",
+        "xmlSha256": "dea2922954fe9e40db258a6b7bf15a9e0057f93c591f437c2ce848577cbca67e"
+      },
+      {
+        "route": "catalog-review",
+        "xmlSha256": "bcf32466abbb15a007f49c4abe48f04676557cfb2788ecd2a3f907f72398c44b"
+      },
+      {
+        "route": "model-release",
+        "xmlSha256": "ea69860a4f97cd0dfc582ce1fe2525e0cc5eb57c27bb82e46ac54bf084149edc"
+      },
+      {
+        "route": "operations-audit",
+        "xmlSha256": "13f72a5c1aecb3d319560c8242e32103c8ee306f15e061e893fe971f91518a8b"
+      },
+      {
+        "route": "report-triage",
+        "xmlSha256": "b0dbf28862e8ad85df3786c46e4934639cde7eafece5aaad5134e06e8d53bc0b"
+      },
+      {
+        "route": "flow-directory",
+        "xmlSha256": "12cfd8824e52d6030c633d0b050a09bd9dd144cf92c2107db9600709f5274a81"
+      }
+    ],
+    "appCrashOrAnrLogsEmpty": true
+  },
+  "finalStandaloneUi": {
+    "runId": 39022429267,
+    "status": "success",
+    "artifactId": 12097740300,
+    "artifactSha256": "6aa4a11ece24fef457f311015c6eb36dd6a149caa309ac376ad724b11905a096",
+    "syntheticOnly": true,
+    "apkSourceCommit": "5d731731dfd6d8c904fbd4bfae9b7030e9188896",
+    "smokeSourceCommit": "c6cdebf9421e3d1f026760928ad1050dc339e14f",
+    "systemLauncherAnrsDismissed": 1,
+    "manualCreateRestartEditDelete": true,
+    "filePickerOcrReviewSaveRestart": true,
+    "cameraLaunchCancel": true,
+    "standaloneWithoutMetro": true,
+    "routes": [
+      {
+        "route": "onboarding",
+        "xmlSha256": "2ba7e1e458f1e3c2ccf3fcee8d24b5768b1ae44870256d856c3d1dddb48fc598"
+      },
+      {
+        "route": "home",
+        "xmlSha256": "c4367cf6cbbadb0fa4485d8bfece743dfccd99a0f30aa9418cf6dcf5c7b4b856"
+      },
+      {
+        "route": "scan",
+        "xmlSha256": "9974199e0772feb6dcf985cf6d39f44f8e18e38bfefda96fd69ee8fb45bbd3a7"
+      },
+      {
+        "route": "log-meal",
+        "xmlSha256": "d5cfcdad179b2bea1d5e9ae9d9d60683115509b3c79292aadb1674cc90ccc09a"
+      },
+      {
+        "route": "weekly-plan",
+        "xmlSha256": "32362c5006d71c4a9e90dd4d5aa699e7ddd7f77cf1637234ebb35f06370887f8"
+      },
+      {
+        "route": "profile",
+        "xmlSha256": "c2a34ee60bfe2d99082d047d968abd9fc392a5fdc578097dc6ab4c20b1a95eee"
+      },
+      {
+        "route": "sign-in",
+        "xmlSha256": "ae6fccfe2d95f6bc1e772b84bb7c11248bfc2cdedf755834cb85755d39b2941d"
+      },
+      {
+        "route": "create-account",
+        "xmlSha256": "c8899c535d692e6e984e112478b2071f6b35c20b85418bf7b3fabd8b3d044859"
+      },
+      {
+        "route": "verify-email",
+        "xmlSha256": "e1922cfb9c2b451e87df07a45e6fdae4a63b28905d7e199ad16afe455eadc2f0"
+      },
+      {
+        "route": "recover-account",
+        "xmlSha256": "8f8774a49ffc9f76e37ef681271148828de814ec9b28f2f57f97732083517e87"
+      },
+      {
+        "route": "reset-password",
+        "xmlSha256": "c13e206483a273d50fe88ac82a6d82a70d0d341723140ffbfdf9573e0bca82ca"
+      },
+      {
+        "route": "analysis-result",
+        "xmlSha256": "c2044897a971db0f051b69945c80e325d5585608996bab8d39a9d4b69dd5dba1"
+      },
+      {
+        "route": "market-reference",
+        "xmlSha256": "6e81645cc4ef8b27afb235ff6633cf894894c0eb979a18fcb69b9f6651d37177"
+      },
+      {
+        "route": "capture-retry",
+        "xmlSha256": "64f34510197a224a7ccb326c872eabb9c35b6c0c79b43f4b1ef300f4c629bf0e"
+      },
+      {
+        "route": "food-selector",
+        "xmlSha256": "a5ecf96ee69f230c23fdc76e1a95cc6542d92efc16bfbbd2ab39e0c693364f93"
+      },
+      {
+        "route": "nutrition-details",
+        "xmlSha256": "e701358185327bae03d4092473bd8d05afb3598369a702a5723f791ef53aecf1"
+      },
+      {
+        "route": "portion-confirmation",
+        "xmlSha256": "f3de2a6ab9760525fddfe37e2dff7bf1263b70e3d3a0ec58f70cb336dfc2ef45"
+      },
+      {
+        "route": "glucose-overview",
+        "xmlSha256": "ff1739ad62451334ed527e6a3c338271ecbe4792ad633114e01491bfd431e8cc"
+      },
+      {
+        "route": "add-reading",
+        "xmlSha256": "519bbcde222f443b2d02fbd4063af9843a515171a3ac944e200ea16961be3247"
+      },
+      {
+        "route": "reading-detail",
+        "xmlSha256": "74366e954b7dda70dbfb0f94931c38ad5bae107e3c3849e241b4731832bf390b"
+      },
+      {
+        "route": "health-connections",
+        "xmlSha256": "24796da3e81cd19dee07e414a65c03ebc693d46ff5ab41b45b2f6fb52da8790e"
+      },
+      {
+        "route": "glucose-import",
+        "xmlSha256": "9694aba4a706e26014a4d6e82a4d57b624dd760b9d419d6c1ff2314f77e89d75"
+      },
+      {
+        "route": "import-review",
+        "xmlSha256": "79a4efc8bd54a2ba73a06f0f8e0cc66012aee1a217284fcc29f271591566c4ac"
+      },
+      {
+        "route": "plan-generation",
+        "xmlSha256": "7394dcf68658c24e49c325867efa1c3d761e9f61b0e627f870f068f6b6fcfe6a"
+      },
+      {
+        "route": "activity-plan",
+        "xmlSha256": "b0d1000cbe80d1789e636ddd5f4d328d1e1bf706dc5dce32ebf0509e500e9c15"
+      },
+      {
+        "route": "plan-rationale",
+        "xmlSha256": "4d2372aeebb5203a2b3e6a7423c468edb2ad3a8856d94245c8169cd1eb896bf7"
+      },
+      {
+        "route": "foot-questionnaire",
+        "xmlSha256": "ff3dc3c1da3e64da798a42b434690e27f5ea185c51a54c14dbf4f063705e486b"
+      },
+      {
+        "route": "foot-guidance",
+        "xmlSha256": "41da4574009bdb63685c7a03141f6375d6f73512658433e2f1d0fc23c8eed6e9"
+      },
+      {
+        "route": "assistant",
+        "xmlSha256": "ba1f702e3b4f917cc8ecbf7bfaa29528f23ff058f5bd0fea7acfde78eb9d0aff"
+      },
+      {
+        "route": "privacy-data-rights",
+        "xmlSha256": "9204b68af9e3ebe91a0f8ba6dd6c46559f91b5da0a9ab7ef23742b0aa9b29383"
+      },
+      {
+        "route": "reminders",
+        "xmlSha256": "8ea0d1b112dd5760051b6e88297f48e0014cb1c5998c16f4fc12127e53918b19"
+      },
+      {
+        "route": "report-output",
+        "xmlSha256": "a430bafa0da618cca493045f725e3d9a867d79624c2b12f14f4204e68069192a"
+      },
+      {
+        "route": "report-status",
+        "xmlSha256": "a7c17dd75523b6cefcf2130bff5639cdecd13ca00fb26ca963f12503c776fe60"
+      },
+      {
+        "route": "personal-history",
+        "xmlSha256": "3326f07fc550b6dd1cdf955540d087d7e0ca0fe6bd1c11d811ed1549e4690a42"
+      },
+      {
+        "route": "catalog-queue",
+        "xmlSha256": "dea2922954fe9e40db258a6b7bf15a9e0057f93c591f437c2ce848577cbca67e"
+      },
+      {
+        "route": "catalog-review",
+        "xmlSha256": "bcf32466abbb15a007f49c4abe48f04676557cfb2788ecd2a3f907f72398c44b"
+      },
+      {
+        "route": "model-release",
+        "xmlSha256": "ea69860a4f97cd0dfc582ce1fe2525e0cc5eb57c27bb82e46ac54bf084149edc"
+      },
+      {
+        "route": "operations-audit",
+        "xmlSha256": "13f72a5c1aecb3d319560c8242e32103c8ee306f15e061e893fe971f91518a8b"
+      },
+      {
+        "route": "report-triage",
+        "xmlSha256": "b0dbf28862e8ad85df3786c46e4934639cde7eafece5aaad5134e06e8d53bc0b"
+      },
+      {
+        "route": "flow-directory",
+        "xmlSha256": "12cfd8824e52d6030c633d0b050a09bd9dd144cf92c2107db9600709f5274a81"
+      }
+    ],
+    "appCrashOrAnrLogsEmpty": true,
+    "evidenceDownloadedAndReviewed": true
+  },
+  "finalBuildRuntimeEnvironmentFailure": "Android SDK system image invalid ZIP; application instrumentation not started",
+  "unchangedRemoteBranches": {
+    "main": "0bac3618bf9bcbe7bfa0932af56af29e24d61622",
+    "feature": "39fa8b79925259c7145054cacd277611f47d8561"
+  },
+  "uiAttempts": [
+    {
+      "runId": 39021901026,
+      "status": "failed_assertion",
+      "apkSourceCommit": "5d731731dfd6d8c904fbd4bfae9b7030e9188896",
+      "smokeSourceCommit": "2caf76aa7d450a52a50017eedcd721717d54353f",
+      "reason": "Source label was asserted on history overview before opening persisted reading details; saved 111 mg/dL survived restart; assertion moved to actual detail screen",
+      "appCrashLogsEmpty": true,
+      "evidenceArtifactId": 12096853368
+    },
+    {
+      "runId": 39022104100,
+      "status": "failed_assertion",
+      "apkSourceCommit": "5d731731dfd6d8c904fbd4bfae9b7030e9188896",
+      "smokeSourceCommit": "428b7296674784d7aa929237f30f97e88e94645e",
+      "reason": "Persisted detail value and unit are distinct Android text nodes; test corrected to assert each node",
+      "evidenceArtifactId": 12097052917
+    },
+    {
+      "runId": 39022283818,
+      "status": "cancelled",
+      "apkSourceCommit": "5d731731dfd6d8c904fbd4bfae9b7030e9188896",
+      "smokeSourceCommit": "5d1d1a6f04233aeba6aebfafedd37f42c343b139",
+      "reason": "Replaced by reviewed harness that immediately fails Android crash/ANR errors instead of allowing readiness retries"
+    }
+  ],
+  "finalReadOnlyReview": {
+    "commit": "c6cdebf9421e3d1f026760928ad1050dc339e14f",
+    "concreteIssuesRemaining": 0,
+    "controlSelectorsCompared": 19,
+    "stateAssertionsCompared": 22,
+    "routesCompared": 40
+  }
+}
