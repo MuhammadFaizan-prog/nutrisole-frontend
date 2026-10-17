@@ -148,6 +148,8 @@ await control('confirm-photo-reading', n => /^(I checked it · Confirm|Confirm r
 await control('save-photo-reading', id('action-import-save'));
 await visible('photo-reading-saved', /screen-glucose-overview/);
 adb('shell', 'am', 'force-stop', app);
+adb('shell', 'am', 'start', '-n', `${app}/.MainActivity`, '-a', 'android.intent.action.MAIN', '-c', 'android.intent.category.LAUNCHER');
+await visible('signed-in-normal-launch', /screen-home/);
 open('glucose-overview');
 await visible('photo-history-after-restart', /112/);
 assert.doesNotMatch(currentXml, /Sign in to see your readings/);
@@ -201,5 +203,5 @@ await visible('signed-out-after-restart', /Sign in to see your readings/);
 const errors = adb('logcat', '-d', `--uid=${appUid}`, '-s', 'ReactNativeJS:E', 'AndroidRuntime:E');
 fs.writeFileSync(path.join(out, 'runtime-errors.txt'), errors);
 assert.doesNotMatch(errors, /FATAL EXCEPTION|TypeError:|ReferenceError:|Unable to load script|Invariant Violation/);
-fs.writeFileSync(path.join(out, 'results.json'), JSON.stringify({ syntheticOnly: true, apkSourceCommit: process.env.NUTRISOLE_APK_SOURCE_SHA || null, smokeSourceCommit: process.env.GITHUB_SHA || null, systemLauncherAnrsDismissed: launcherAnrs, manualCreateRestartEditDelete: true, filePickerOcrReviewSaveRestart: true, missingTimeCorrection: true, importedReadingCorrection: true, signOutRestart: true, accountStorage: true, standaloneWithoutMetro: true, routes }, null, 2));
+fs.writeFileSync(path.join(out, 'results.json'), JSON.stringify({ syntheticOnly: true, apkSourceCommit: process.env.NUTRISOLE_APK_SOURCE_SHA || null, smokeSourceCommit: process.env.GITHUB_SHA || null, systemLauncherAnrsDismissed: launcherAnrs, manualCreateRestartEditDelete: true, filePickerOcrReviewSaveRestart: true, missingTimeCorrection: true, importedReadingCorrection: true, signOutRestart: true, signedInNormalLaunch: true, accountStorage: true, standaloneWithoutMetro: true, routes }, null, 2));
 console.log(`Standalone account CRUD, report photo import, missing-time correction and ${routes.length} rendered routes passed.`);

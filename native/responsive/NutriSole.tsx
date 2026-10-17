@@ -20,6 +20,9 @@ export default function NutriSole({ open, requestedRoute = 'onboarding', request
   const [{ route, history }, dispatch] = useReducer(navigationReducer, { route: canonicalRoute(requestedRoute), history: [] });
   useEffect(() => { const sub = AppState.addEventListener('change', value => { if (value === 'active') void expansion.glucose.resume(); }); return () => sub.remove(); }, [expansion.glucose]);
   const [signedIn, setSignedIn] = useState(false);
+  useEffect(() => {
+    if (navigationToken === 0 && route === 'onboarding' && expansion.state.session) dispatch({ type: 'reset', route: 'home' });
+  }, [navigationToken, route, expansion.state.session]);
   const [portionRecord, setPortionRecord] = useState<PortionContext | null>(null);
   const [applePortion, setApplePortion] = useState(freshApplePortion);
   const mobility = /^(none|unrestricted)$/i.test(store.state.profile.mobility.trim()) ? 'Unrestricted' : 'Limited';
