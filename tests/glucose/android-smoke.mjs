@@ -41,6 +41,7 @@ function observe(name, owner = app) {
     adb('shell', 'am', 'force-stop', 'com.google.android.apps.nexuslauncher');
     return observe(name, owner);
   }
+  assert.ok(!nodes().some(n => /^android:id\/aerr_(?:close|wait|restart)$/.test(n['resource-id'] || '') || /(?:isn['’]t|is not) responding|keeps stopping/i.test(n.text || '')), `An Android crash or ANR dialog blocked ${name}`);
   assert.ok(currentXml.includes('<hierarchy'), `Android returned a UI hierarchy: ${name}`);
   if (owner) assert.ok(currentXml.includes(owner), `Expected app owns the visible UI: ${name}`);
   return currentXml;
