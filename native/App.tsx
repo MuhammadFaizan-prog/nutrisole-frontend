@@ -16,6 +16,7 @@ export default function App() {
   const [sheet, setSheet] = useState<Sheet | null>(null);
   const [values, setValues] = useState<Record<string, string>>({});
   const [error, setError] = useState('');
+  const [saving, setSaving] = useState(false);
   useEffect(() => {
     const openLink = (url: string | null) => {
       const next = routeFromURL(url, routes);
@@ -27,7 +28,13 @@ export default function App() {
   }, []);
   useEffect(() => { setValues(Object.fromEntries((sheet?.fields || []).map(f => [f.key, f.value]))); setError(''); }, [sheet]);
   const close = () => { Keyboard.dismiss(); setSheet(null); };
-  const save = () => { const message = sheet?.save?.(values); if (message) setError(message); else close(); };
+  const save = async () => {
+    if (saving || !sheet?.save) return;
+    const current = sheet; setSaving(true); setError('');
+    try { const message = await current.save!(values); if (message) setError(message); else { Keyboard.dismiss(); setSheet(next => next === current ? null : next); } }
+    catch { setError('Could not save. Please try again.'); }
+    finally { setSaving(false); }
+  };
   const openScreen = (next: Route) => { close(); setRequestedIntent('push'); setRequestedRoute(next); setNavigationToken(token => token + 1); };
   return <SafeAreaProvider initialMetrics={initialWindowMetrics}><View testID={`screen-${currentRoute}`} style={[styles.app, currentRoute === 'scan' && { backgroundColor: '#111' }]}>
     <StatusBar barStyle={currentRoute === 'scan' ? 'light-content' : 'dark-content'} />
@@ -36,15 +43,15 @@ export default function App() {
     </FrameProvider></KeyboardFrame></SafeAreaView>
     <Modal visible={Boolean(sheet)} animationType="slide" transparent onRequestClose={close}>
       <KeyboardFrame style={styles.overlay}>
-        <Pressable style={StyleSheet.absoluteFill} onPress={close} accessibilityLabel="Dismiss sheet" />
+        <Pressable style={StyleSheet.absoluteFill} disabled={saving} onPress={close} accessibilityLabel="Dismiss sheet" />
         <SafeAreaView style={styles.sheet} edges={['bottom', 'left', 'right']}><ScrollView keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag" contentContainerStyle={styles.sheetContent}>
           <Text style={styles.title}>{sheet?.title}</Text>
           {sheet?.description && <Text style={styles.description}>{sheet.description}</Text>}
-          {sheet?.fields?.map(f => <View key={f.key} style={styles.field}><Text style={styles.label}>{f.label}</Text>{f.key === 'json' ? <Text selectable accessibilityLabel={f.label} style={[styles.input, styles.multiline]}>{values[f.key] || ''}</Text> : <TextInput accessibilityLabel={f.label} style={[styles.input, f.multiline && styles.multiline]} value={values[f.key] || ''} onChangeText={value => setValues(v => ({ ...v, [f.key]: value }))} multiline={f.multiline} keyboardType={f.numeric ? 'decimal-pad' : 'default'} maxLength={f.multiline ? 300 : 100} />}</View>)}
+          {sheet?.fields?.map(f => <View key={f.key} style={styles.field}><Text style={styles.label}>{f.label}</Text>{f.options ? <View style={styles.options}>{f.options.map(option => <Pressable key={option.value} disabled={saving} accessibilityRole="radio" accessibilityLabel={option.label} accessibilityState={{ checked: values[f.key] === option.value }} onPress={() => setValues(v => ({ ...v, [f.key]: option.value }))} style={[styles.option, values[f.key] === option.value && styles.selected]}><Text style={[styles.label, values[f.key] === option.value && { color: '#fff' }]}>{option.label}</Text></Pressable>)}</View> : f.key === 'json' ? <Text selectable accessibilityLabel={f.label} style={[styles.input, styles.multiline]}>{values[f.key] || ''}</Text> : <TextInput accessibilityLabel={f.label} editable={!saving} placeholder={f.placeholder} style={[styles.input, f.multiline && styles.multiline]} value={values[f.key] || ''} onChangeText={value => setValues(v => ({ ...v, [f.key]: value }))} multiline={f.multiline} keyboardType={f.numeric ? 'decimal-pad' : 'default'} maxLength={f.multiline ? 500 : 100} />}</View>)}
           {sheet?.choices?.map(choice => <Pressable key={choice.label} style={styles.choice} accessibilityRole="button" onPress={() => { close(); choice.action(); }}><Text style={styles.label}>{choice.label}{choice.selected ? ' ✓' : ''}</Text></Pressable>)}
           {error && <Text accessibilityRole="alert" style={styles.error}>{error}</Text>}
-          {sheet?.save && <Pressable style={styles.save} accessibilityRole="button" onPress={save}><Text style={styles.saveText}>Save</Text></Pressable>}
-          <Pressable onPress={close} accessibilityRole="button" style={styles.cancel}><Text style={[styles.label, styles.center]}>{sheet?.save ? 'Cancel' : 'Close'}</Text></Pressable>
+          {sheet?.save && <Pressable style={styles.save} accessibilityRole="button" disabled={saving} onPress={save}><Text style={styles.saveText}>{saving ? 'Saving…' : sheet.saveLabel || 'Save'}</Text></Pressable>}
+          <Pressable onPress={close} disabled={saving} accessibilityRole="button" style={styles.cancel}><Text style={[styles.label, styles.center]}>{sheet?.save ? 'Cancel' : 'Close'}</Text></Pressable>
         </ScrollView></SafeAreaView>
       </KeyboardFrame>
     </Modal>
@@ -55,6 +62,9 @@ const styles = StyleSheet.create({
   app: { flex: 1, backgroundColor: '#faf8f1' },
   sheetContent: { padding: 24, gap: 14 },
   field: { gap: 8 },
+  options: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  option: { paddingHorizontal: 14, paddingVertical: 12, borderWidth: 1, borderColor: '#dce2d8', borderRadius: 14 },
+  selected: { backgroundColor: '#194a32', borderColor: '#194a32' },
   multiline: { minHeight: 90 },
   error: { color: '#a52d22' },
   cancel: { padding: 15 },

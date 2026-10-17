@@ -90,8 +90,8 @@ android {
         applicationId "com.muhammadfaizan.nutrisole"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 6
-        versionName "1.0.5"
+        versionCode 7
+        versionName "1.0.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
@@ -120,6 +120,8 @@ android {
 }
 
 dependencies {
+    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
+    implementation("com.google.android.gms:play-services-mlkit-document-scanner:16.0.0")
     // Bundled Latin model: no first-use download or cloud OCR call.
     implementation("com.google.mlkit:text-recognition:16.0.1")
     implementation("androidx.exifinterface:exifinterface:1.4.1")

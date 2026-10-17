@@ -26,7 +26,7 @@ class GlucoseCaptureTest {
   // isolate test history from actual readings, and load fixtures from the test APK.
   private val context by lazy {
     object : ContextWrapper(instrumentation.targetContext) {
-      override fun getApplicationContext(): Context = this
+      override fun getApplicationContext(): Context = baseContext.applicationContext
       override fun getNoBackupFilesDir(): File = File(baseContext.noBackupFilesDir, "glucose-native-qa").apply { mkdirs() }
       override fun getCacheDir(): File = File(baseContext.cacheDir, "glucose-native-qa").apply { mkdirs() }
       override fun getAssets() = instrumentation.context.assets
@@ -54,6 +54,17 @@ class GlucoseCaptureTest {
       assertFalse(String(encrypted, Charsets.ISO_8859_1).contains("top-secret-test-reading"))
       instrumentation.sendStatus(0, Bundle().apply { putString("stream", "GLUCOSE encrypted write milliseconds: $times\n") })
     } finally { restarted.invalidate() }
+    val project = "https://qa.supabase.co"
+    val account = GlucoseSessionModule(BridgeReactContext(context))
+    call { account.writeSession(project, "private-session-test-token", it) }; account.invalidate()
+    val restored = GlucoseSessionModule(BridgeReactContext(context))
+    try {
+      assertEquals("private-session-test-token", call { restored.readSession(project, it) })
+      val encrypted = context.noBackupFilesDir.listFiles()!!.first { it.name.startsWith("account-") }.readBytes()
+      assertFalse(String(encrypted, Charsets.ISO_8859_1).contains("private-session-test-token"))
+      call { restored.writeSession(project, "", it) }
+      assertNull(call { restored.readSession(project, it) })
+    } finally { restored.invalidate() }
   }
   @Test fun realReaderProcessesImagesAndScannedPdf() {
     val module = module()
@@ -66,6 +77,7 @@ class GlucoseCaptureTest {
         val result = call { module.recognize(file.toURI().toString(), name.endsWith(".pdf"), name, it) } as WritableMap
         val data = JSONObject(result.toHashMap() as Map<*, *>)
         val pages = data.getJSONArray("pages")
+        if (name == "chughtai-style.pdf") assertTrue("Digital PDF must use its text on API 34", data.getString("engine").contains("PDF text"))
         assertTrue("No page on $name", pages.length() > 0)
         if (name == "heldout2-00-lab-report-clean.jpg") {
           assertTrue("Bundled OCR returned no text for the clean baseline", (0 until pages.length()).any { pages.getJSONObject(it).getJSONArray("boxes").length() > 0 })

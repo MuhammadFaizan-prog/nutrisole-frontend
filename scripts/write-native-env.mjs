@@ -1,7 +1,7 @@
 // Writes src/nutrisole/glucose/nativeEnv.ts from NUTRISOLE_SUPABASE_URL / NUTRISOLE_SUPABASE_ANON_KEY
 // (CI build-time env). Refuses anything but a public anon/publishable key.
 import { writeFileSync } from 'node:fs';
-const storage = process.env.NUTRISOLE_GLUCOSE_STORAGE || 'phone';
+const storage = process.env.NUTRISOLE_GLUCOSE_STORAGE || 'account';
 if (!['phone', 'account'].includes(storage)) throw new Error('NUTRISOLE_GLUCOSE_STORAGE must be phone or account');
 const url = (process.env.NUTRISOLE_SUPABASE_URL || '').trim(); const key = (process.env.NUTRISOLE_SUPABASE_ANON_KEY || '').trim();
 const write = (url, key) => writeFileSync(new URL('../src/nutrisole/glucose/nativeEnv.ts', import.meta.url), `// GENERATED at build time. Public values only; phone and account records remain separate.\nexport const NATIVE_SUPABASE_URL: string | null = ${JSON.stringify(url)};\nexport const NATIVE_SUPABASE_ANON_KEY: string | null = ${JSON.stringify(key)};\nexport const NATIVE_GLUCOSE_STORAGE: 'phone' | 'account' = ${JSON.stringify(storage)};\n`);

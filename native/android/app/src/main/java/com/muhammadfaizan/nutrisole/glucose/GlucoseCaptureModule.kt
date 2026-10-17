@@ -144,15 +144,17 @@ class GlucoseCaptureModule(private val context: ReactApplicationContext) : React
           try { pages.pushMap(Arguments.createMap().apply { putInt("page", 1); putArray("boxes", recognizeBitmap(bitmap)) }) }
           finally { bitmap.recycle() }
         } else {
-          context.contentResolver.openFileDescriptor(uri, "r").use { fd ->
+          val extracted = try { PdfReportText(context, uri) } catch (_: Exception) { null }
+          try { context.contentResolver.openFileDescriptor(uri, "r").use { fd ->
             requireNotNull(fd) { "The PDF could not be opened." }
             PdfRenderer(fd).use { document ->
               require(document.pageCount in 1..10) { "Choose a PDF with 1–10 pages. Split a longer report first; no pages have been imported." }
               for (index in 0 until document.pageCount) {
                 checkCancelled(requestId); progress(requestId, "Reading PDF page ${index + 1} of ${document.pageCount}…")
                 document.openPage(index).use { page ->
-                  var content: WritableArray? = null
-                  if (Build.VERSION.SDK_INT >= 35) {
+                  var content: WritableArray? = extracted?.page(index) { checkCancelled(requestId) }
+                  if (content != null) textLayerPages++
+                  if (content == null && Build.VERSION.SDK_INT >= 35) {
                     val texts = page.textContents
                     // Retain geometrical columns for searchable PDFs. Unsupported or
                     // empty text layers fall through to rendered-page OCR below.
@@ -182,7 +184,7 @@ class GlucoseCaptureModule(private val context: ReactApplicationContext) : React
                 }
               }
             }
-          }
+          } } finally { extracted?.close() }
         }
         checkCancelled(requestId)
         promise.resolve(Arguments.createMap().apply {

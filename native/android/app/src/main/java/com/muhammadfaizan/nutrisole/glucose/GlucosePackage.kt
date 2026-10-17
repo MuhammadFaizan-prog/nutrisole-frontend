@@ -6,6 +6,6 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.uimanager.ViewManager
 
 class GlucosePackage : ReactPackage {
-  override fun createNativeModules(context: ReactApplicationContext): List<NativeModule> = listOf(GlucoseCaptureModule(context))
+  override fun createNativeModules(context: ReactApplicationContext): List<NativeModule> = listOf(GlucoseCaptureModule(context), GlucoseSessionModule(context), GlucoseDocumentModule(context))
   override fun createViewManagers(context: ReactApplicationContext): List<ViewManager<*, *>> = emptyList()
 }

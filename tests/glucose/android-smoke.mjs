@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
+import { PROJECT_URL, PROJECT_KEY } from '../../src/nutrisole/glucose/publicProject.ts';
 import { directoryScreens } from '../../native/responsive/directoryManifest.ts';
 
 const adbPath = process.env.NUTRISOLE_ADB || 'adb';
@@ -81,16 +82,27 @@ process.on('uncaughtExceptionMonitor', () => {
   try { fs.writeFileSync(path.join(out, 'failure-logcat.txt'), adb('logcat', '-d', `--uid=${appUid}`)); } catch {}
 });
 
+const email = process.env.GLUCOSE_TEST_USER_A_EMAIL; const password = process.env.GLUCOSE_TEST_USER_A_PASSWORD;
+assert.ok(email?.endsWith('@example.invalid') && email.startsWith('glucose-') && password, 'Dedicated QA account configured');
+const auth = await fetch(PROJECT_URL+'/auth/v1/token?grant_type=password',{method:'POST',headers:{apikey:PROJECT_KEY,'Content-Type':'application/json'},body:JSON.stringify({email,password})});
+assert.equal(auth.status,200); const session = await auth.json();
+// This account was created exclusively for this smoke test, never a user's account.
+const cleared = await fetch(PROJECT_URL+'/rest/v1/glucose_readings?user_id=eq.'+session.user.id,{method:'DELETE',headers:{apikey:PROJECT_KEY,Authorization:'Bearer '+session.access_token}}); assert.equal(cleared.status,204);
+open('sign-in');
+await visible('account-sign-in', /screen-sign-in/);
+await control('email', id('field-email')); adb('shell','input','text',email);
+await control('password', id('field-password')); adb('shell','input','text',password);
+adb('shell','input','keyevent','KEYCODE_BACK');
+await control('sign-in',id('action-sign-in'));
+await visible('signed-in-home', /screen-home/);
 open('glucose-overview');
-await visible('empty-phone-history', /No readings yet/);
-assert.match(currentXml, /Saved on this phone/);
+await visible('empty-account-history', /No readings yet/);
 await control('add-reading', id('action-new-reading'));
 await control('reading-input', id('field-reading'));
 adb('shell', 'input', 'text', '111');
 adb('shell', 'input', 'keyevent', 'KEYCODE_BACK');
 await control('review-reading', id('action-review-reading'));
-await control('confirm-reading', text('Confirm & save reading'));
-await visible('saved-manual-reading', /Saved on this phone/);
+await visible('saved-manual-reading', /Saved to your account/);
 assert.match(currentXml, /111/);
 screenshot('saved-manual-reading');
 
@@ -109,8 +121,7 @@ adb('shell', 'input', 'keyevent', '67', '67', '67');
 adb('shell', 'input', 'text', '112');
 adb('shell', 'input', 'keyevent', 'KEYCODE_BACK');
 await control('review-changes', id('action-review-reading'));
-await control('confirm-changes', text('Confirm & save changes'));
-await visible('edited-reading', /Saved on this phone/);
+await visible('edited-reading', /Saved to your account/);
 assert.match(currentXml, /112/);
 await control('remove-test-reading', id('action-remove-reading'));
 await control('confirm-remove', text('Delete reading'));
@@ -135,26 +146,32 @@ screenshot('photo-ocr-review');
 await control('check-photo-reading', n => /action-import-row-/.test(n['resource-id'] || ''));
 await control('confirm-photo-reading', n => /^(I checked it · Confirm|Confirm reading)$/.test(n.text || ''));
 await control('save-photo-reading', id('action-import-save'));
-await control('confirm-save-photo', text('Save 1 reading'));
-await visible('photo-reading-saved', /Readings saved/);
-await control('close-import-result', text('Close'));
+await visible('photo-reading-saved', /screen-glucose-overview/);
 adb('shell', 'am', 'force-stop', app);
 open('glucose-overview');
 await visible('photo-history-after-restart', /112/);
-assert.match(currentXml, /Saved on this phone/);
+assert.doesNotMatch(currentXml, /Sign in to see your readings/);
 screenshot('photo-history-after-restart');
 
-// The virtual camera does not contain a medical report. Verify actual camera
-// launch/cancellation; real photo recognition is covered above and in native OCR.
-adb('shell', 'pm', 'grant', app, 'android.permission.CAMERA');
-open('glucose-import');
-await visible('camera-import-start', /screen-glucose-import/);
-await control('launch-report-camera', id('action-import-scan'));
-await visible('android-report-camera', /package="(?:com\.android\.camera2?|com\.google\.android\.GoogleCamera)"/, null);
-screenshot('report-camera');
-adb('shell', 'input', 'keyevent', 'KEYCODE_BACK');
-await visible('camera-cancelled', /screen-glucose-import/);
-
+// A report with no collection time must be fixable through the visible Confirm form.
+const incomplete = 'glucose-qa-missing-time.csv';
+adb('push', path.resolve('tests/glucose/fixtures/missing-time.csv'), '/sdcard/Download/'+incomplete);
+adb('shell','am','broadcast','-a','android.intent.action.MEDIA_SCANNER_SCAN_FILE','-d','file:///sdcard/Download/'+incomplete);
+open('glucose-import'); await visible('incomplete-import-start', /screen-glucose-import/);
+await control('attach-incomplete',id('action-import-file'));
+await visible('incomplete-picker', /glucose-qa-missing-time/, null); await control('select-incomplete',text(incomplete),null);
+await visible('incomplete-review',/screen-import-review/);
+await control('confirm-incomplete',id('action-import-bulk-confirm-clean'));
+await visible('editable-incomplete',/Check reading/);
+await control('try-missing-time',text('Confirm reading'));
+await visible('missing-time-error',/Enter the measurement time/);
+await control('fix-missing-time',n=>n['content-desc']==='Time'&&n.class==='android.widget.EditText');
+adb('shell','input','text','09:25'); adb('shell','input','keyevent','KEYCODE_BACK');
+await control('confirm-fixed-time',text('Confirm reading'));
+await control('save-corrected-report',id('action-import-save'));
+await visible('corrected-report-saved',/screen-glucose-overview/);
+screenshot('corrected-report-saved');
+// Capture entry is present. Physical camera/document scanner validation is separate.
 const routes = [];
 for (const screen of directoryScreens) {
   open(screen.route);
@@ -169,5 +186,5 @@ screenshot('import-sources');
 const errors = adb('logcat', '-d', `--uid=${appUid}`, '-s', 'ReactNativeJS:E', 'AndroidRuntime:E');
 fs.writeFileSync(path.join(out, 'runtime-errors.txt'), errors);
 assert.doesNotMatch(errors, /FATAL EXCEPTION|TypeError:|ReferenceError:|Unable to load script|Invariant Violation/);
-fs.writeFileSync(path.join(out, 'results.json'), JSON.stringify({ syntheticOnly: true, apkSourceCommit: process.env.NUTRISOLE_APK_SOURCE_SHA || null, smokeSourceCommit: process.env.GITHUB_SHA || null, systemLauncherAnrsDismissed: launcherAnrs, manualCreateRestartEditDelete: true, filePickerOcrReviewSaveRestart: true, cameraLaunchCancel: true, standaloneWithoutMetro: true, routes }, null, 2));
-console.log(`Standalone phone storage CRUD, report photo import, camera cancellation and ${routes.length} rendered routes passed.`);
+fs.writeFileSync(path.join(out, 'results.json'), JSON.stringify({ syntheticOnly: true, apkSourceCommit: process.env.NUTRISOLE_APK_SOURCE_SHA || null, smokeSourceCommit: process.env.GITHUB_SHA || null, systemLauncherAnrsDismissed: launcherAnrs, manualCreateRestartEditDelete: true, filePickerOcrReviewSaveRestart: true, missingTimeCorrection: true, accountStorage: true, standaloneWithoutMetro: true, routes }, null, 2));
+console.log(`Standalone account CRUD, report photo import, missing-time correction and ${routes.length} rendered routes passed.`);

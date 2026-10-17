@@ -1,6 +1,6 @@
 # Glucose QA APK (glucose branches only; never main, never deploy).
 # - Release build with the JS bundle embedded (no Metro), signed with the committed DEBUG keystore; no secrets.
-# - Default storage: encrypted on this phone. Optional Supabase account configuration
+# - Default storage: authenticated Supabase account. Native sessions are encrypted. Public configuration
 #   uses only public repository variables. Android OCR: bundled ML Kit.
 # - arm64-v8a for phones and x86_64 for the emulator. Includes the instrumentation APK.
 # - Artifact: nutrisole-glucose-qa-apk-<sha7> (APKs + .sha256 + build-info.txt).
@@ -25,7 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
-      NUTRISOLE_GLUCOSE_STORAGE: phone
+      NUTRISOLE_GLUCOSE_STORAGE: account
+      GLUCOSE_TEST_USER_A_EMAIL: ${{ secrets.GLUCOSE_TEST_USER_A_EMAIL }}
+      GLUCOSE_TEST_USER_A_PASSWORD: ${{ secrets.GLUCOSE_TEST_USER_A_PASSWORD }}
       SRC_SHA: ${{ github.sha }}
       BT: 36.0.0
       NUTRISOLE_SUPABASE_URL: ${{ vars.NUTRISOLE_SUPABASE_URL }}
@@ -62,7 +64,7 @@ jobs:
           npm run test:glucose
           npm --prefix native test
 
-      - name: Write phone storage and optional public account config
+      - name: Write account storage configuration
         run: node scripts/write-native-env.mjs
 
       - name: Gradle phone/emulator APK and native instrumentation
@@ -101,7 +103,7 @@ jobs:
           done
           grep -a -q 'import-review' /tmp/apkx/assets/index.android.bundle || { echo "::error::import UI not in bundle"; exit 1; }
           grep -a -q 'ML Kit Latin (on this phone)' /tmp/apkx/assets/index.android.bundle || { echo "::error::Android reader not in bundle"; exit 1; }
-          grep -a -q 'Saved on this phone' /tmp/apkx/assets/index.android.bundle || { echo "::error::phone history not in bundle"; exit 1; }
+          grep -a -q 'Saved to your account' /tmp/apkx/assets/index.android.bundle || { echo "::error::account history not in bundle"; exit 1; }
           if grep -a -q '"role":"service_role"' /tmp/apkx/assets/index.android.bundle; then echo "::error::service_role key in bundle"; exit 1; fi
 
       - name: Enable KVM for isolated Android runtime checks

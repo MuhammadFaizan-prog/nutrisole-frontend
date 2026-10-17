@@ -154,4 +154,4 @@ export interface GlucoseImportAdapter {
 
 /** Client configuration: public project URL + publishable/anon key only, or the explicit demo flag. */
 export type GlucoseStorage = { read(): Promise<string | null>; write(value: string): Promise<void> };
-export type GlucoseConfig = { supabaseUrl: string | null; supabaseAnonKey: string | null; demo: boolean; demoSeed?: boolean; localStorage?: GlucoseStorage };
+export type GlucoseConfig = { supabaseUrl: string | null; supabaseAnonKey: string | null; demo: boolean; demoSeed?: boolean; localStorage?: GlucoseStorage; sessionStorage?: GlucoseStorage };

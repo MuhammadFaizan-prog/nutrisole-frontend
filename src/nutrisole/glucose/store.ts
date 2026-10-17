@@ -34,6 +34,11 @@ export class GlucoseStore {
   private generation = 0;
   private revision = 0;
   private request = 0;
+  private stopRealtime: (() => void) | null = null;
+  private syncTimer: ReturnType<typeof setInterval> | null = null;
+  private reloadTimer: ReturnType<typeof setTimeout> | null = null;
+  private syncing = false;
+  private realtimeReady = false;
   readonly repository: GlucoseRepository;
   readonly client: SupabaseRest | null;
   constructor(repository: GlucoseRepository, client: SupabaseRest | null = null) {
@@ -42,7 +47,7 @@ export class GlucoseStore {
     let userId = client?.currentSession()?.userId ?? null;
     client?.onSession(session => {
       const next = session?.userId ?? null;
-      if (next !== userId || !session) { this.generation++; this.request++; userId = next; this.set({ status: 'signed-out', readings: [], email: session?.email ?? null, busy: null, error: null, lastLoadedAt: null, stale: false }); }
+      if (next !== userId || !session) { this.generation++; this.request++; userId = next; this.stopRealtime?.(); this.stopRealtime = null; this.set({ status: 'signed-out', readings: [], email: session?.email ?? null, busy: null, error: null, lastLoadedAt: null, stale: false }); if (this.syncing && session) this.connectRealtime(); }
     });
   }
   getSnapshot = () => this.snapshot;
@@ -55,7 +60,26 @@ export class GlucoseStore {
     return { ok: false, error: e.message, kind: e.kind };
   }
 
-  async start() { if (this.repository.mode === 'demo' || this.repository.mode === 'local') return this.reload(); }
+  async start() {
+    if (this.repository.mode === 'demo' || this.repository.mode === 'local') return this.reload();
+    if (!this.client) return;
+    this.syncing = true;
+    try { await this.client.initialize(); } catch (error) { this.fail(error); }
+    if (this.client.currentSession()) { this.connectRealtime(); await this.reload(); }
+    if (!this.syncTimer) this.syncTimer = setInterval(() => { void this.resume(!this.realtimeReady); }, 30_000);
+  }
+  private connectRealtime() {
+    if (!this.client || this.stopRealtime || !this.client.currentSession()) return;
+    this.stopRealtime = this.client.watchChanges(() => {
+      if (this.reloadTimer) clearTimeout(this.reloadTimer);
+      this.reloadTimer = setTimeout(() => { this.reloadTimer = null; void this.reload(); }, 80);
+    }, ready => { this.realtimeReady = ready; });
+  }
+  async resume(reload = true) {
+    if (!this.client?.currentSession()) return;
+    try { await this.client.maintainSession(); if (reload) await this.reload(); } catch (error) { this.fail(error); }
+  }
+  dispose() { this.syncing = false; this.stopRealtime?.(); this.stopRealtime = null; if (this.syncTimer) clearInterval(this.syncTimer); this.syncTimer = null; if (this.reloadTimer) clearTimeout(this.reloadTimer); this.reloadTimer = null; }
 
   async reload(): Promise<MutationResult> {
     if (this.repository.mode === 'unconfigured') { this.set({ status: 'unconfigured', error: null }); return { ok: false, error: 'unconfigured', kind: 'unconfigured' }; }
@@ -174,6 +198,6 @@ export class GlucoseStore {
 export function createGlucoseStore(config: GlucoseConfig): GlucoseStore {
   if (config.demo) return new GlucoseStore(new DemoGlucoseRepository(config.demoSeed ? demoSeed() : []));
   if (config.localStorage) return new GlucoseStore(new LocalGlucoseRepository(config.localStorage));
-  if (config.supabaseUrl && config.supabaseAnonKey) { const client = new SupabaseRest(config.supabaseUrl, config.supabaseAnonKey); return new GlucoseStore(new SupabaseGlucoseRepository(client), client); }
+  if (config.supabaseUrl && config.supabaseAnonKey) { const client = new SupabaseRest(config.supabaseUrl, config.supabaseAnonKey, undefined, config.sessionStorage); return new GlucoseStore(new SupabaseGlucoseRepository(client), client); }
   return new GlucoseStore(new UnconfiguredGlucoseRepository());
 }

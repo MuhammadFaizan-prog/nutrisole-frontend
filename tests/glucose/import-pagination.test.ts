@@ -1,4 +1,5 @@
 import test from 'node:test';
+import type { Sheet } from '../../src/nutrisole/types.ts';
 import assert from 'node:assert/strict';
 import { buildImportView, initialImportState } from '../../src/nutrisole/glucose/import/view.ts';
 import { healthConnectToBatch } from '../../src/nutrisole/glucose/import/devices.ts';
@@ -30,16 +31,15 @@ test('pagination clamps after a new mapping reduces the number of candidates', (
 test('the last page supports confirmation and saving through the actual import actions', async () => {
   const store = createGlucoseStore({ supabaseUrl: null, supabaseAnonKey: null, demo: true }); await store.start();
   let s = { ...initialExpansionState(), glucoseImport: { ...initialImportState(), batch: batch() } };
-  let sheet: { choices?: { label: string; action: () => void }[] } | null = null;
+  let sheet: Sheet | null = null;
   const ctx = () => ({ s, setState: (fn: (x: typeof s) => typeof s) => { s = fn(s); }, store, go: () => {}, back: () => {}, open: (sh: never) => { sheet = sh; } }) as never;
   importAction('import-page:next', ctx()); importAction('import-page:next', ctx());
   const last = buildImportView(s.glucoseImport, [], 'native', now).rows.at(-1)!;
   importAction(`import-row:${last.id}`, ctx());
-  const confirm = (sheet as { choices?: { label: string; action: () => void }[] } | null)?.choices?.find(c => /Confirm/.test(c.label));
-  assert.ok(confirm); confirm.action();
+  const review = sheet as Sheet | null; assert.ok(review?.save);
+  assert.equal(await review.save(Object.fromEntries(review.fields!.map(f => [f.key,f.value]))), undefined);
+  assert.equal(s.glucoseImport.batch!.candidates.at(-1)!.decision, 'confirmed');
   importAction('import-save', ctx());
-  const save = (sheet as { choices?: { label: string; action: () => void }[] } | null)?.choices?.find(c => /^Save 1 reading/.test(c.label));
-  assert.ok(save); save.action();
   for (let i = 0; i < 20 && !store.getSnapshot().readings.length; i++) await new Promise(r => setTimeout(r, 5));
   assert.equal(store.getSnapshot().readings[0].source.recordId, 'record-94');
 });

@@ -6,4 +6,4 @@
 export const NATIVE_SUPABASE_URL: string | null = null;
 export const NATIVE_SUPABASE_ANON_KEY: string | null = null;
 /** Explicit build mode. The default saves real readings on Android without a server. */
-export const NATIVE_GLUCOSE_STORAGE: 'phone' | 'account' = 'phone';
+export const NATIVE_GLUCOSE_STORAGE: 'phone' | 'account' = 'account';

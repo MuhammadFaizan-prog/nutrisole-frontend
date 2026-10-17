@@ -51,16 +51,12 @@ export function glucoseAction(action: string, ctx: GlucoseActionContext): boolea
       const result = validateGlucoseInput(inputFromState(s), { existing: snap.readings, editingId: s.glucoseEditingId });
       if (!result.ok) { notice('Check reading', result.error); return true; }
       const d = result.draft; const editingId = s.glucoseEditingId;
-      const when = instantToWallClock(d.measuredAt, d.tzOffsetMinutes);
-      const lines = [`${d.valueOriginal} ${d.unitOriginal}`, `${formatDisplayDate(when)} · ${formatDisplayTime(when)} · ${timeZoneLabel(d.tzName, d.tzOffsetMinutes)}`, contextLabel(d.mealContext), d.note ? `Note: ${d.note}` : '', 'Source: manual meter entry', snap.mode === 'demo' ? 'Demo mode: kept for this session only, not saved to a database.' : '', ...result.warnings.map(w => `⚠ ${w.message}`)].filter(Boolean);
-      let submitted = false; // rapid double taps on the confirm button submit once
-      notice(editingId ? 'Review changes' : 'Review manual reading', lines.join('\n'), [{ label: result.warnings.length ? 'I checked it · Save reading' : editingId ? 'Confirm & save changes' : 'Confirm & save reading', action: () => {
-        if (submitted) return; submitted = true;
-        void store.save(d, editingId).then(res => {
-          if (res.ok && res.reading) { const id = res.reading.id; setState(v => ({ ...v, glucoseCurrentId: id, glucoseRemoved: false, glucoseEditingId: null, glucoseEditOffset: null, glucoseEditTzName: null, fields: { ...v.fields, reading: '', readingNote: '' } })); go('reading-detail'); }
-          else if (!res.ok) notice('Reading not saved', `${res.error}\nYour entry is still on this screen. Nothing was stored.`, res.kind === 'unauthenticated' ? [{ label: 'Sign in', action: () => go('sign-in') }] : undefined);
-        });
-      } }]);
+      const saveReading = () => { void store.save(d, editingId).then(res => {
+        if (res.ok && res.reading) { const id = res.reading.id; setState(v => ({ ...v, glucoseCurrentId: id, glucoseRemoved: false, glucoseEditingId: null, glucoseEditOffset: null, glucoseEditTzName: null, fields: { ...v.fields, reading: '', readingNote: '' } })); go('reading-detail'); }
+        else if (!res.ok) notice('Reading not saved', res.error, res.kind === 'unauthenticated' ? [{ label: 'Sign in', action: () => go('sign-in') }] : undefined);
+      }); };
+      if (result.warnings.length) notice('Check this reading', result.warnings.map(w => w.message).join('\n'), [{ label: 'Save reading as entered', action: saveReading }]);
+      else saveReading();
       return true;
     }
     case 'latest-reading': { const latest = snap.readings.at(-1); setState(v => ({ ...v, glucoseCurrentId: latest?.id || null, glucoseRemoved: false })); go('reading-detail'); return true; }

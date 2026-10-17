@@ -4,7 +4,7 @@
 // Devices: Health Connect (react-native-health-connect), Bluetooth GLS
 // (react-native-ble-plx). HealthKit is a typed path only (no native module in this build).
 // BETA: none of the device paths has been exercised with real hardware or a real phone.
-import { PermissionsAndroid, Platform } from 'react-native';
+import { NativeModules, PermissionsAndroid, Platform } from 'react-native';
 import { pick, keepLocalCopy, types, isErrorWithCode, errorCodes } from '@react-native-documents/picker';
 import { launchCamera } from 'react-native-image-picker';
 import { recognizeOnAndroid } from '../nativeCapture.native';
@@ -40,6 +40,12 @@ async function pickFile(): Promise<PickedFile | null> {
 }
 
 async function captureReport(): Promise<PickedFile | null> {
+  if (Platform.OS === 'android' && NativeModules.NutriSoleDocument) {
+    let uri: string | null | undefined;
+    try { uri = await NativeModules.NutriSoleDocument.scan(); } catch { /* Camera fallback when Play Services scanner is unavailable. */ }
+    if (uri === null) return null;
+    if (uri) return { name: 'report-scan.jpg', mime: 'image/jpeg', bytes: await readUri(uri), uri };
+  }
   if (Platform.OS === 'android') {
     const r = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA, { title: 'Camera for report scanning', message: 'NutriSole uses the camera only to photograph a lab report or meter screen. Text is read on this phone; the photo is not uploaded.', buttonPositive: 'Allow', buttonNegative: 'Not now' });
     if (r !== PermissionsAndroid.RESULTS.GRANTED) throw new Error('Camera permission was denied. You can attach a photo of the report instead, or allow the camera in Settings.');

@@ -21,7 +21,7 @@ export type ImportView = {
   meters: BleMeter[]; importedCount: number; lastImport: string;
 };
 
-const methodLabel: Record<ImportBatch['format'], string> = { csv: 'CSV file', xlsx: 'Excel file', 'pdf-text': 'PDF report (text layer)', 'pdf-ocr': 'Scanned PDF (OCR)', 'image-ocr': 'Image (OCR)', 'camera-ocr': 'Camera scan (OCR)', health_connect: 'Health Connect', healthkit: 'Apple Health', ble_gls: 'Bluetooth meter' };
+const methodLabel: Record<ImportBatch['format'], string> = { csv: 'CSV file', xlsx: 'Excel file', 'pdf-text': 'PDF report', 'pdf-ocr': 'Scanned report', 'image-ocr': 'Photo', 'camera-ocr': 'Photo', health_connect: 'Health Connect', healthkit: 'Apple Health', ble_gls: 'Bluetooth meter' };
 
 export function rowView(a: AssessedCandidate): ImportRowView {
   const issues = a.allFlags.filter(f => !INFO.includes(f));
@@ -29,8 +29,8 @@ export function rowView(a: AssessedCandidate): ImportRowView {
   const flags = issues.length ? `⚠ ${short(flagText[issues[0]])}${issues.length > 1 ? ` +${issues.length - 1}` : ''}` : a.allFlags.length ? short(flagText[a.allFlags[0]]) : 'No issues found';
   const when = a.date || a.time ? `${a.date || 'No date'} · ${a.time || 'no time'}` : 'No date or time';
   return {
-    id: a.id, title: `${a.value} ${a.unit || '(unit?)'}${a.edited ? ' · edited' : ''}`,
-    description: `${when} · ${a.mealContext === 'unspecified' ? 'No context' : contextLabel(a.mealContext)}\n${flags} · ${Math.round(a.confidence * 100)}% · ${a.provenance.locator}`,
+    id: a.id, title: `${a.value} ${a.unit || ''}`,
+    description: `${when}${a.mealContext === 'unspecified' ? '' : ` · ${contextLabel(a.mealContext)}`}${issues.length ? `\n${flags.replace('⚠ ', '')}` : ''}`,
     decision: a.decision, flagged: issues.length > 0 || a.error !== null,
     icon: a.decision === 'confirmed' ? 'Check' : a.decision === 'rejected' ? 'Trash2' : issues.length ? 'TriangleAlert' : 'Clock3',
   };
@@ -52,13 +52,13 @@ export function buildImportView(ui: ImportUiState | undefined, existing: Glucose
     meters: s.foundMeters || [], importedCount: imported.length,
     lastImport: lastImport ? `${lastImport.replace('T', ' ').slice(0, 16)} UTC` : 'No imports saved',
     platform, busy: s.busy, saving: s.saving, error: s.error, result: s.result,
-    hasBatch: Boolean(b), title: b ? b.title : 'Nothing to review', subtitle: b ? `${methodLabel[b.format]}${b.ocrConfidence != null ? ` · OCR confidence ${Math.round(b.ocrConfidence * 100)}%` : ''}` : 'Attach a file, scan a report or import from a device first.',
-    summary: b ? `${sum.total} reading${sum.total === 1 ? '' : 's'} found · ${sum.flagged} need a look · ${sum.confirmed} confirmed · ${sum.rejected} rejected` : '',
+    hasBatch: Boolean(b), title: b ? b.title : 'Nothing to review', subtitle: b ? methodLabel[b.format] : 'Attach a file, scan a report or import from a device first.',
+    summary: b ? `${sum.total} reading${sum.total === 1 ? '' : 's'} · ${sum.confirmed} confirmed` : '',
     notes: b?.notes.filter(Boolean).slice(0, 3) ?? [],
     nonGlucose: b?.nonGlucose.length ? `Not imported as glucose: ${b.nonGlucose.map(n => `${n.label} ${n.value}${n.unit ? ` ${n.unit}` : ''}`).join(' · ')}` : null,
     mapping: m ? { label: m.auto ? 'Columns · detected' : 'Columns · set by you', value: `Value: ${col(m.value)}${m.columnUnit ? ` (${m.columnUnit})` : m.unit !== null ? ` · Unit: ${col(m.unit)}` : ''} · ${m.datetime !== null ? `Date & time: ${col(m.datetime)}` : `Date: ${col(m.date)} · Time: ${col(m.time)}`} · ${m.dateOrder}` } : null,
     page, pageCount, pageStart, pageEnd, totalRows: assessed.length,
     rows: assessed.slice(pageStart, pageEnd).map(rowView), hiddenRows: Math.max(0, assessed.length - pageSize),
-    confirmed: sum.confirmed, saveLabel: s.saving ? 'Saving…' : s.busy ? 'Transfer in progress…' : sum.confirmed ? `Save ${sum.confirmed} confirmed reading${sum.confirmed === 1 ? '' : 's'}` : 'Confirm readings to save', canSave: sum.confirmed > 0 && !s.saving && !s.busy,
+    confirmed: sum.confirmed, saveLabel: s.saving ? 'Saving…' : s.busy ? 'Transfer in progress…' : sum.confirmed ? `Save ${sum.confirmed} reading${sum.confirmed === 1 ? '' : 's'}` : 'Review readings', canSave: assessed.some(c => c.decision !== 'rejected') && !s.saving && !s.busy,
   };
 }

@@ -1,5 +1,7 @@
 # Mobile Prototype Agent Guide
 
+October 17 glucose correction: the user requires Supabase-backed readings, working editable confirmation, and accurate report/photo import using the existing main app UI. Remove verbose implementation labels and repeated confirmation dialogs from the reading flow. Device/Health Connect/Bluetooth work is deferred until readings work. Continue on the separate glucose repair PR; do not merge into main.
+
 ## NutriSole user decisions
 
 The six individual supplied PNGs are authoritative and override the collage. The user requests frontend only, real interactive components, source-coordinate visual fidelity, and testing/refinement. Preserve source documents. Shared React Native screens live in `src/nutrisole/`; the native app uses plain React Native with component-based screen history, while the Product Design preview preserves its protected device runtime. A whole screen must never be flattened into an image with click hotspots. Photographic crops containing source controls must only be displayed through ScenePhoto's exclusion mask, which hides all source UI pixels. Exact pixel identity is not verified; do not claim it.

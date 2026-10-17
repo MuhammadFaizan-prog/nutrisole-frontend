@@ -5,6 +5,7 @@ playwright-report/
 .vercel/
 .env
 .env.*
+supabase/.temp/
 !.env.example
 .DS_Store
 Thumbs.db
